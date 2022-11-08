@@ -8,11 +8,16 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@astrojs/vue": "^1.2.1",
     "astro": "^1.6.0",
     "vue": "^3.2.41"
+  },
+  "devDependencies": {
+    "vitest": "^0.25.0"
   }
 }
