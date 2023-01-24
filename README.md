@@ -1,4 +1,4 @@
-# <img src="./aes-adventure-ui/public/favicon.ico" alt="AES Educational Simulator" width="24"/> AES Adventure | <small>_An AES Educational Simulator_</small>
+# <img src="aes-adventure-ui/public/logo.svg" alt="AES Educational Simulator" width="24"/> AES Adventure | <small>_An AES Educational Simulator_</small>
 
 (FYP) Online tool for helping 3rd level Computer Science students learn about the Advanced Encryption Standard.
 
