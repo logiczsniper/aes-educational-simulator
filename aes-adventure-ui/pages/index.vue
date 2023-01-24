@@ -40,7 +40,7 @@ const closeTab = () => currentTab.value = Tab.None;
     </header>
 
     <section class="rightColumn">
-      <transition>
+      <transition name="slide">
         <div v-if="currentTab === Tab.None">
           <Infographic />
         </div>
@@ -101,11 +101,11 @@ const closeTab = () => currentTab.value = Tab.None;
     place-items: center;
     background-color: #f9f9f9;
     position: relative;
+    overflow: hidden;
 
     &>div {
-      position: absolute;
-      top: 5%;
       padding: 36px 60px;
+      height: 100vh;
     }
 
     .subPage {
@@ -114,13 +114,28 @@ const closeTab = () => currentTab.value = Tab.None;
   }
 }
 
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.5s ease;
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.5s ease-out;
 }
 
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
+.slide-enter-to {
+  position: absolute;
+  top: 0;
+}
+
+.slide-enter-from {
+  position: absolute;
+  top: -100%;
+}
+
+.slide-leave-to {
+  position: absolute;
+  top: -100%;
+}
+
+.slide-leave-from {
+  position: absolute;
+  top: 0;
 }
 </style>
