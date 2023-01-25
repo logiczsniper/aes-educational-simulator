@@ -5,7 +5,8 @@ const props = defineProps<{
   avatarAlt: string,
   name: string,
   role: string,
-  email: string
+  email: string,
+  linkedin?: string,
 }>()
 
 const emailHref = computed(() => `mailto:${props.email}`)
@@ -13,11 +14,20 @@ const emailHref = computed(() => `mailto:${props.email}`)
 
 <template>
   <div class="profile">
-    <img :src="props.avatarSrc" :alt="props.avatarAlt" />
-    <h4>{{ props.name }}</h4>
+    <v-avatar size="80" :image="props.avatarSrc" :alt="props.avatarAlt"></v-avatar>
+    <p><b>{{ props.name }}</b></p>
     <small>{{ props.role }}</small>
     <address>
-      <small><a :href="emailHref">{{ props.email }}</a></small>
+      <a :href="emailHref">
+        <v-btn size="x-small" variant="plain" icon @click="">
+          <v-icon icon="mdi-email" size="16" />
+        </v-btn>
+      </a>
+      <a v-if="props.linkedin" target="_blank" :href="props.linkedin">
+        <v-btn size="x-small" variant="plain" icon @click="">
+          <v-icon icon="mdi-linkedin" size="18" />
+        </v-btn>
+      </a>
     </address>
   </div>
 </template>
@@ -26,16 +36,16 @@ const emailHref = computed(() => `mailto:${props.email}`)
 .profile {
   display: grid;
   place-items: center;
-  gap: 1px;
 
-  img {
-    height: 8vw;
-    border-radius: 10px;
+  .v-avatar {
+    border-radius: 8px;
     margin-bottom: 8px;
   }
 
   address {
-    margin-top: -4px;
+    a {
+      color: unset;
+    }
   }
 }
 </style>

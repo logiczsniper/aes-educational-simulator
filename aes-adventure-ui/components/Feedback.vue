@@ -29,7 +29,7 @@ const emit = defineEmits<{
   <p class="contact">{{ t('home.feedback.contact') }}</p>
   <div class="contributors">
     <Profile avatar-src="/logan-avatar.jpg" avatar-alt="Logan Czernel headshot" name="Logan Czernel" role="Developer"
-      email="logan.czernel@ucdconnect.ie" />
+      email="logan.czernel@ucdconnect.ie" linkedin="https://www.linkedin.com/in/loganczernel/" />
     <Profile avatar-src="/felix-avatar.jpg" avatar-alt="Félix Balado headshot" name="Félix Balado" role="Advisor"
       email="felix@ucd.ie" />
   </div>
@@ -38,18 +38,19 @@ const emit = defineEmits<{
 <style scoped lang="scss">
 .feedbackBody {
   margin-top: 2px;
-  margin-bottom: 10px;
 
   .v-btn {
     font-size: 14px;
     height: 20px;
-    padding: 0 10px;
+    padding-left: 10px;
+    padding-right: 8px;
   }
 }
 
 .contributors {
   display: flex;
+  // flex-direction: column;
   gap: 28px;
-  margin-top: 24px;
+  margin-top: 22px;
 }
 </style>
