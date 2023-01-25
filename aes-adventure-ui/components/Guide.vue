@@ -7,12 +7,13 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <v-toolbar color="transparent" :title="t('home.support.title')">
+  <v-toolbar color="transparent" :title="t('home.guide.title')">
     <v-btn variant="plain" icon @click="emit('close')">
       <v-icon icon="mdi-close" size="20" />
     </v-btn>
   </v-toolbar>
-  <p></p>
+
+
 </template>
 
 <style scoped lang="scss">

@@ -12,18 +12,44 @@ const emit = defineEmits<{
       <v-icon icon="mdi-close" size="20" />
     </v-btn>
   </v-toolbar>
-  <p class="feedbackBody">{{ t('home.feedback.body') }}</p>
-  <a target="_blank" href="https://forms.gle/YffqgHzLDcPaZum99">
-    <v-btn prepend-icon="mdi-open-in-new" variant="plain">{{
-      t("home.feedback.button")
-    }}
-    </v-btn>
-  </a>
+
+  <i18n-t class="feedbackBody" keypath="home.feedback.body" tag="p">
+    <template v-slot:googleFormLink>
+      <a target="_blank" href="https://forms.gle/YffqgHzLDcPaZum99">
+        <v-btn size="small" variant="plain">{{
+          t("home.feedback.button")
+        }}
+          <template #prepend>
+            <v-icon icon="mdi-open-in-new" size="12" />
+          </template>
+        </v-btn>
+      </a>
+    </template>
+  </i18n-t>
+  <p class="contact">{{ t('home.feedback.contact') }}</p>
+  <div class="contributors">
+    <Profile avatar-src="/logan-avatar.jpg" avatar-alt="Logan Czernel headshot" name="Logan Czernel" role="Developer"
+      email="logan.czernel@ucdconnect.ie" />
+    <Profile avatar-src="/felix-avatar.jpg" avatar-alt="Félix Balado headshot" name="Félix Balado" role="Advisor"
+      email="felix@ucd.ie" />
+  </div>
 </template>
 
 <style scoped lang="scss">
 .feedbackBody {
   margin-top: 2px;
-  margin-bottom: 28px;
+  margin-bottom: 10px;
+
+  .v-btn {
+    font-size: 14px;
+    height: 20px;
+    padding: 0 10px;
+  }
+}
+
+.contributors {
+  display: flex;
+  gap: 28px;
+  margin-top: 24px;
 }
 </style>

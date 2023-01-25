@@ -2,7 +2,7 @@
 const { t } = useI18n();
 
 enum Tab {
-  None, Settings, Support, Feedback
+  None, Settings, Guide, Feedback
 }
 const currentTab = ref(Tab.None);
 const goToTab = (tab: Tab) => currentTab.value = tab;
@@ -26,8 +26,8 @@ const closeTab = () => currentTab.value = Tab.None;
         <v-btn prependIcon="mdi-cog" variant="plain" color="primary-darken-1" @click="goToTab(Tab.Settings)">{{
           t('home.settings.title')
         }}</v-btn>
-        <v-btn prependIcon="mdi-lifebuoy" variant="plain" color="primary-darken-1" @click="goToTab(Tab.Support)">{{
-          t('home.support.title')
+        <v-btn prependIcon="mdi-map" variant="plain" color="primary-darken-1" @click="goToTab(Tab.Guide)">{{
+          t('home.guide.title')
         }}</v-btn>
         <v-btn prependIcon="mdi-comment-quote" variant="plain" color="primary-darken-1"
           @click="goToTab(Tab.Feedback)">{{
@@ -47,8 +47,8 @@ const closeTab = () => currentTab.value = Tab.None;
         <div v-else-if="currentTab === Tab.Settings" class="subPage">
           <Settings @close="closeTab" />
         </div>
-        <div v-else-if="currentTab === Tab.Support" class="subPage">
-          <Support @close="closeTab" />
+        <div v-else-if="currentTab === Tab.Guide" class="subPage">
+          <Guide @close="closeTab" />
         </div>
         <div v-else-if="currentTab === Tab.Feedback" class="subPage">
           <Feedback @close="closeTab" />

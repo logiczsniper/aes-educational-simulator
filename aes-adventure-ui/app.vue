@@ -49,12 +49,22 @@ p {
   margin: 0 !important;
 }
 
-// Other corrections:
+// HTML defaults corrections:
 a:-webkit-any-link {
   text-decoration: unset;
 }
 
 a:-webkit-any-link:active {
   color: #2C1D66;
+}
+
+// TODO: temporary until source code can be made available.
+.v-btn--disabled:disabled {
+  cursor: not-allowed !important;
+  pointer-events: all !important;
+}
+
+address {
+  display: unset;
 }
 </style>

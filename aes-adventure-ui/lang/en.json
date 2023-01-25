@@ -8,13 +8,14 @@
     "settings": {
       "title": "Settings"
     },
-    "support": {
-      "title": "Support"
+    "guide": {
+      "title": "Guide"
     },
     "feedback": {
       "title": "Feedback",
-      "body": "This is a developing project and we would love to get your feedback on the tool. Below is a link to an anonymous Google Form that you can fill out to give us some highly valuable information - your thoughts!",
-      "button": "Google Form"
+      "body": "This is a developing project and we would love to get your feedback on the tool. There is a{googleFormLink}that you can fill out to give us some highly valuable information - your thoughts!",
+      "button": "Google Form",
+      "contact": "Alternatively, the creators of AES Adventure are listed below, feel free to send us an email if you're having issues with the tool."
     },
     "gitlab": "GitLab"
   }
