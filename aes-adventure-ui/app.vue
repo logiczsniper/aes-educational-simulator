@@ -12,7 +12,9 @@ useHead({
 </script>
 
 <template>
-  <NuxtPage />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <style lang="scss">
@@ -43,6 +45,10 @@ p {
   letter-spacing: unset;
 }
 
+.v-toolbar__content>a {
+  color: #2C1D66;
+}
+
 .v-toolbar-title {
   font-weight: 500;
   font-size: 1.1rem;
@@ -58,13 +64,39 @@ a:-webkit-any-link:active {
   color: #2C1D66;
 }
 
+address {
+  display: unset;
+}
+
 // TODO: temporary until source code can be made available.
 .v-btn--disabled:disabled {
   cursor: not-allowed !important;
   pointer-events: all !important;
 }
 
-address {
-  display: unset;
+// Vue 3 'slide' transition
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.5s ease-out;
+}
+
+.slide-enter-to {
+  position: absolute;
+  top: 0;
+}
+
+.slide-enter-from {
+  position: absolute;
+  top: -100%;
+}
+
+.slide-leave-to {
+  position: absolute;
+  top: -100%;
+}
+
+.slide-leave-from {
+  position: absolute;
+  top: 0;
 }
 </style>

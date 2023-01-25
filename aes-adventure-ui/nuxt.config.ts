@@ -34,4 +34,8 @@ export default defineNuxtConfig({
       'process.env.DEBUG': false,
     },
   },
+  app: {
+    pageTransition: { name: 'slide' },
+    // layoutTransition: { name: 'slide', mode: 'out-in' }
+  },
 })
