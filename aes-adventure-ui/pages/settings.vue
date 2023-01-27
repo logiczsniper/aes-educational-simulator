@@ -15,6 +15,7 @@ definePageMeta({
         </v-btn>
       </NuxtLink>
     </v-toolbar>
+    <LanguageSelect />
   </div>
 </template>
 

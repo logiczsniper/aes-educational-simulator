@@ -6,7 +6,8 @@
     "go": "Go to Simulator",
     "configure": "Configure",
     "settings": {
-      "title": "Settings"
+      "title": "Settings",
+      "badLang": "Is your language poorly translated or unavailable?"
     },
     "guide": {
       "title": "Guide"

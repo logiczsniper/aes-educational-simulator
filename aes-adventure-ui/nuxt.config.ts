@@ -9,10 +9,25 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/i18n',
+    '@pinia/nuxt',
   ],
   i18n: {
-    locales: ['en', 'es'],
+    locales: [
+      {
+        name: 'English',
+        code: 'en',
+        iso: 'en-US',
+        emoji: '🇺🇸'
+      },
+      {
+        name: 'Español',
+        code: 'es',
+        iso: 'es-ES',
+        emoji: '🇪🇸'
+      },
+    ],
     defaultLocale: 'en',
+    strategy: 'no_prefix',
     vueI18n: {
       legacy: false,
       missingWarn: false,
@@ -21,6 +36,11 @@ export default defineNuxtConfig({
         es
       }
     }
+  },
+  pinia: {
+    autoImports: [
+      'defineStore',
+    ],
   },
   css: [
     'vuetify/lib/styles/main.sass',

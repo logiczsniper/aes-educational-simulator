@@ -25,6 +25,13 @@ useHead({
   font-family: 'Inter', sans-serif;
 }
 
+// Adding an emoji font for flag support:
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+
+.emoji {
+  font-family: 'Noto Color Emoji', sans-serif;
+}
+
 // Nuxt corrections:
 body {
   margin: 0;
@@ -53,6 +60,10 @@ p {
   font-weight: 500;
   font-size: 1.1rem;
   margin: 0 !important;
+}
+
+.v-field {
+  box-shadow: none;
 }
 
 // HTML defaults corrections:
