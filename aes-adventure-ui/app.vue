@@ -52,18 +52,22 @@ p {
   letter-spacing: unset;
 }
 
-.v-toolbar__content>a {
-  color: #2C1D66;
-}
-
 .v-toolbar-title {
   font-weight: 500;
   font-size: 1.1rem;
-  margin: 0 !important;
 }
 
 .v-field {
   box-shadow: none;
+}
+
+.v-dialog-fixed {
+  border-radius: 8px;
+  overflow: clip;
+
+  * {
+    letter-spacing: 0;
+  }
 }
 
 // HTML defaults corrections:
@@ -83,6 +87,37 @@ address {
 .v-btn--disabled:disabled {
   cursor: not-allowed !important;
   pointer-events: all !important;
+}
+
+// Skeleton shimmer
+.skeleton {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  overflow: hidden;
+  background-color: #DDDBDD;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(90deg,
+        rgba(#fff, 0) 0,
+        rgba(#fff, 0.2) 20%,
+        rgba(#fff, 0.5) 60%,
+        rgba(#fff, 0));
+    animation: shimmer 2s infinite;
+    content: '';
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
 }
 
 // Vue 3 'slide' transition
@@ -106,8 +141,24 @@ address {
   top: -100%;
 }
 
-.slide-leave-from {
-  position: absolute;
-  top: 0;
+.test-enter-active,
+.test-leave-active {
+  transition: all 6s ease-out;
 }
+
+.test-enter-to {
+  .leftColumn {
+    width: 200px;
+  }
+}
+
+.test-enter-from {
+  grid-template-columns: 1fr 1fr;
+}
+
+.test-leave-to {
+  grid-template-columns: 1fr 2fr !important;
+}
+
+.test-leave-from {}
 </style>

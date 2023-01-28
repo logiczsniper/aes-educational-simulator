@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n();
+
 </script>
 
 <template>
@@ -8,14 +9,15 @@ const { t } = useI18n();
       <Logo big />
       <p class="description">{{ t('home.description') }}</p>
       <nav class="navMenu">
-        <NuxtLink to="/simulator">
-          <v-btn class="goButton" variant="flat" color="primary">{{
-            t('home.go')
-          }}</v-btn>
-          <v-btn class="configureButton" variant="outlined" color="primary-lighten-1">{{
-            t('home.configure')
-          }}</v-btn>
-        </NuxtLink>
+
+        <div class="primaryButtons">
+          <NuxtLink to="/simulator">
+            <v-btn class="goButton" variant="flat" color="primary">{{
+              t('home.go')
+            }}</v-btn>
+          </NuxtLink>
+          <ConfigSelect />
+        </div>
         <NuxtLink to="/settings">
           <v-btn prependIcon="mdi-cog" variant="plain" color="primary-darken-1">{{
             t('home.settings.title')
@@ -69,15 +71,10 @@ const { t } = useI18n();
       align-items: flex-start;
     }
 
-    $primaryButtonMarginBottom: 18px;
-
-    .goButton {
-      margin-bottom: $primaryButtonMarginBottom;
-    }
-
-    .configureButton {
-      margin-bottom: $primaryButtonMarginBottom;
-      margin-left: 8px;
+    .primaryButtons {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
     }
   }
 

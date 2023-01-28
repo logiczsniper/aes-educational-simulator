@@ -56,6 +56,6 @@ export default defineNuxtConfig({
   },
   app: {
     pageTransition: { name: 'slide' },
-    // layoutTransition: { name: 'slide', mode: 'out-in' }
+    layoutTransition: { name: 'test' }
   },
 })

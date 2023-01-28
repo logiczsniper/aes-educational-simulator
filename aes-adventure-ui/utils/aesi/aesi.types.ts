@@ -5,9 +5,21 @@ export type AesiInput = {
   config: AesiConfig;
 }
 
+export enum DefaultConfig {
+  Standard = "standard",
+  Short = "short",
+  Long = "long",
+  StaticColumns = "staticColumns",
+  StaticRows = "staticRows",
+  StaticBytes = "staticBytes"
+}
+
 export type AesiConfig = {
-  rounds?: number;
-  skips?: any;
+  defaultConfig?: DefaultConfig;
+
+  // Advanced configs:
+  // rounds?: number;
+  // skips?: any;
 }
 
 export type AesiOutput = {

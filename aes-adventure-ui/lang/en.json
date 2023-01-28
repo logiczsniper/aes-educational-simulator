@@ -4,7 +4,39 @@
   "home": {
     "description": "The Advanced Encryption Standard is the most popular symmetric-key cipher. If you want to learn the basics, dig deep into the details, or experiment with AES: you're in the right place!",
     "go": "Go to Simulator",
-    "configure": "Configure",
+    "configure": {
+      "button": "Configure",
+      "modal": {
+        "title": "Configure", 
+        "body": "Select configurations below. When selecting multiple configurations for comparison, the <b>last</b> selected configuration will be walked through step-by-step. If you are new to AES, we recommend that you use the default simulator before using this configuration.",
+        "defaults": {
+          "standard": {
+            "name": "Standard",
+            "description": "Vanilla."
+          },
+          "short": {
+            "name":  "Short",
+            "description": "Half the number of rounds."
+          },
+          "long": {
+            "name":  "Long",
+            "description": "Double the number of rounds."
+          },
+          "staticColumns": {
+            "name":  "Static Columns",
+            "description": "No MixColumns layers."
+          },
+          "staticRows": {
+            "name":  "Static Rows",
+            "description": "No ShiftRows layers."
+          },
+          "staticBytes": {
+            "name":  "Static Bytes",
+            "description": "No SubstituteBytes layers."
+          }
+        }
+      }
+    },
     "settings": {
       "title": "Settings",
       "badLang": "Is your language poorly translated or unavailable?"
@@ -14,9 +46,8 @@
     },
     "feedback": {
       "title": "Feedback",
-      "body": "This is a developing project and we would love to get your feedback on the tool. There is a{googleFormLink}that you can fill out to give us some highly valuable information - your thoughts!",
-      "button": "Google Form",
-      "contact": "Alternatively, the creators of AES Adventure are listed below, feel free to send us an email if you're having issues with the tool."
+      "body": "This is a developing project and we would love to get your feedback on the tool. There is a{googleFormLink}that you can fill out to give us some highly valuable information - your thoughts! Alternatively, the creators of AES Adventure are listed below, feel free to send us an email if you're having issues with the tool.",
+      "button": "Google Form"
     },
     "gitlab": "GitLab"
   }

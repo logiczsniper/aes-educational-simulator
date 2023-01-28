@@ -8,13 +8,14 @@ definePageMeta({
 
 <template>
   <div class="feedbackPage">
-    <v-toolbar color="transparent" :title="t('home.feedback.title')">
+    <header class="feedbackHeader">
+      <h4>{{ t('home.feedback.title') }}</h4>
       <NuxtLink to="/">
         <v-btn variant="plain" icon>
           <v-icon icon="mdi-close" size="20" />
         </v-btn>
       </NuxtLink>
-    </v-toolbar>
+    </header>
     <i18n-t class="feedbackBody" keypath="home.feedback.body" tag="p">
       <template v-slot:googleFormLink>
         <a target="_blank" href="https://forms.gle/YffqgHzLDcPaZum99">
@@ -28,7 +29,6 @@ definePageMeta({
         </a>
       </template>
     </i18n-t>
-    <p class="contact">{{ t('home.feedback.contact') }}</p>
     <div class="contributors">
       <Profile avatar-src="/logan-avatar.jpg" avatar-alt="Logan Czernel headshot" name="Logan Czernel" role="Developer"
         email="logan.czernel@ucdconnect.ie" linkedin="https://www.linkedin.com/in/loganczernel/" />
@@ -44,6 +44,17 @@ definePageMeta({
   padding: 36px 60px;
   height: 100vh;
 
+
+  .feedbackHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      color: #2C1D66;
+    }
+  }
+
   .feedbackBody {
     margin-top: 2px;
 
@@ -52,12 +63,12 @@ definePageMeta({
       height: 20px;
       padding-left: 10px;
       padding-right: 8px;
+      margin-top: -2px;
     }
   }
 
   .contributors {
     display: flex;
-    // flex-direction: column;
     gap: 28px;
     margin-top: 22px;
   }
