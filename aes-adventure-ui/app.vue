@@ -123,19 +123,16 @@ address {
 // Vue 3 'slide' transition
 .slide-enter-active,
 .slide-leave-active {
-  transition: all 0.5s ease-out;
+  transition: all .5s ease-out;
 }
 
-.slide-enter-to {
+.slide-enter-to,
+.slide-leave-from {
   position: absolute;
   top: 0;
 }
 
-.slide-enter-from {
-  position: absolute;
-  top: -100%;
-}
-
+.slide-enter-from,
 .slide-leave-to {
   position: absolute;
   top: -100%;
