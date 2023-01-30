@@ -32,6 +32,17 @@ useHead({
   font-family: 'Noto Color Emoji', sans-serif;
 }
 
+.highlight {
+  background-color: #8b75e49b;
+  border-radius: 2px;
+  padding: 1px 3px;
+  margin: 0px 2px;
+
+  @media (min-width: 1200px) {
+    white-space: nowrap;
+  }
+}
+
 // Nuxt corrections:
 body {
   margin: 0;

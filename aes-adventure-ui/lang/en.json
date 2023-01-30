@@ -7,31 +7,31 @@
     "configure": {
       "button": "Configure",
       "modal": {
-        "title": "Configure", 
-        "body": "Select configurations below. When selecting multiple configurations for comparison, the <b>last</b> selected configuration will be walked through step-by-step. If you are new to AES, we recommend that you use the default simulator before using this configuration.",
+        "title": "Configure",
+        "body": "Select configurations below. When selecting multiple configurations for comparison, <span class='highlight'>the <b>last</b> selected configuration will be walked through step-by-step.</span> If you are new to AES, we recommend that you use the default simulator before using this configuration.",
         "defaults": {
           "standard": {
             "name": "Standard",
             "description": "Vanilla."
           },
           "short": {
-            "name":  "Short",
+            "name": "Short",
             "description": "Half the number of rounds."
           },
           "long": {
-            "name":  "Long",
+            "name": "Long",
             "description": "Double the number of rounds."
           },
           "staticColumns": {
-            "name":  "Static Columns",
+            "name": "Static Columns",
             "description": "No MixColumns layers."
           },
           "staticRows": {
-            "name":  "Static Rows",
+            "name": "Static Rows",
             "description": "No ShiftRows layers."
           },
           "staticBytes": {
-            "name":  "Static Bytes",
+            "name": "Static Bytes",
             "description": "No SubstituteBytes layers."
           }
         }

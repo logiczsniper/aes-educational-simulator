@@ -111,7 +111,6 @@ const isLastSelected = (key: string) => selectedConfigurations.value.indexOf(key
   flex-direction: column;
   margin-left: 6px;
   gap: 2px;
-  color: black;
 
   small {
     font-size: 12px;
@@ -122,8 +121,13 @@ const isLastSelected = (key: string) => selectedConfigurations.value.indexOf(key
     p {
       transition: font-weight 0.1s ease-in;
       font-weight: bold;
+      color: #2C1D66;
     }
   }
+}
+
+:global(.v-label) {
+  opacity: 1;
 }
 
 .closeButton {
