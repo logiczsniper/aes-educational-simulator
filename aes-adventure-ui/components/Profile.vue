@@ -14,18 +14,42 @@ const emailHref = computed(() => `mailto:${props.email}`)
 
 <template>
   <div class="profile">
-    <v-avatar size="80" :image="props.avatarSrc" :alt="props.avatarAlt"></v-avatar>
+    <v-avatar
+      size="80"
+      :image="props.avatarSrc"
+      :alt="props.avatarAlt"
+    />
     <p><b>{{ props.name }}</b></p>
     <small>{{ props.role }}</small>
     <address>
       <a :href="emailHref">
-        <v-btn size="x-small" variant="plain" icon @click="">
-          <v-icon icon="mdi-email" size="16" />
+        <v-btn
+          size="x-small"
+          variant="plain"
+          icon
+          @click=""
+        >
+          <v-icon
+            icon="mdi-email"
+            size="16"
+          />
         </v-btn>
       </a>
-      <a v-if="props.linkedin" target="_blank" :href="props.linkedin">
-        <v-btn size="x-small" variant="plain" icon @click="">
-          <v-icon icon="mdi-linkedin" size="18" />
+      <a
+        v-if="props.linkedin"
+        target="_blank"
+        :href="props.linkedin"
+      >
+        <v-btn
+          size="x-small"
+          variant="plain"
+          icon
+          @click=""
+        >
+          <v-icon
+            icon="mdi-linkedin"
+            size="18"
+          />
         </v-btn>
       </a>
     </address>

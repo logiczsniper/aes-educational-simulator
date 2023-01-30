@@ -9,36 +9,55 @@ const { t } = useI18n();
       <Logo big />
       <p class="description">{{ t('home.description') }}</p>
       <nav class="navMenu">
-
         <div class="primaryButtons">
           <NuxtLink to="/simulator">
-            <v-btn class="goButton" variant="flat" color="primary">{{
-              t('home.go')
-            }}</v-btn>
+            <v-btn
+              class="goButton"
+              variant="flat"
+              color="primary"
+            >
+              {{ t('home.go') }}
+            </v-btn>
           </NuxtLink>
           <ConfigSelect />
         </div>
         <NuxtLink to="/settings">
-          <v-btn prependIcon="mdi-cog" variant="plain" color="primary-darken-1">{{
-            t('home.settings.title')
-          }}</v-btn>
+          <v-btn
+            prependIcon="mdi-cog"
+            variant="plain"
+            color="primary-darken-1"
+          >
+            {{ t('home.settings.title') }}
+          </v-btn>
         </NuxtLink>
         <NuxtLink to="/guide">
-          <v-btn prependIcon="mdi-map" variant="plain" color="primary-darken-1">{{
-            t('home.guide.title')
-          }}</v-btn>
+          <v-btn
+            prependIcon="mdi-map"
+            variant="plain"
+            color="primary-darken-1"
+          >
+            {{ t('home.guide.title') }}
+          </v-btn>
         </NuxtLink>
         <NuxtLink to="/feedback">
-          <v-btn prependIcon="mdi-comment-quote" variant="plain" color="primary-darken-1">{{
-            t('home.feedback.title')
-          }}</v-btn>
+          <v-btn
+            prependIcon="mdi-comment-quote"
+            variant="plain"
+            color="primary-darken-1"
+          >
+            {{ t('home.feedback.title') }}
+          </v-btn>
         </NuxtLink>
-        <v-btn prependIcon="mdi-code-tags" variant="plain" color="primary-darken-1" disabled>{{
-          t('home.gitlab')
-        }}</v-btn>
+        <v-btn
+          prependIcon="mdi-code-tags"
+          variant="plain"
+          color="primary-darken-1"
+          disabled
+        >
+          {{ t('home.gitlab') }}
+        </v-btn>
       </nav>
     </header>
-
     <section class="rightColumn">
       <slot />
     </section>

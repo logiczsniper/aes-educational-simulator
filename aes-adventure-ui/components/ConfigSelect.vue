@@ -11,36 +11,59 @@ const defaultConfigurations = Object.values(DefaultConfig).map(configKey => ({
   "key": configKey,
 }))
 const selectedConfigurations = ref(["standard"])
+const isLastSelected = (key: string) => selectedConfigurations.value.indexOf(key) === selectedConfigurations.value.length - 1
 </script>
 
 <template>
   <div class="configSelect">
-    <v-dialog v-model="configureDialogOpen" transition="dialog-top-transition" max-width="50%"
-      content-class="v-dialog-fixed">
+    <v-dialog
+      v-model="configureDialogOpen"
+      transition="dialog-top-transition"
+      max-width="50%"
+      content-class="v-dialog-fixed"
+    >
       <template v-slot:activator="{ props }">
-        <v-btn v-bind="props" class="configureButton" variant="outlined" color="primary-lighten-1">{{
-          t('home.configure.button')
-        }}</v-btn>
+        <v-btn
+          v-bind="props"
+          class="configureButton"
+          variant="outlined"
+          color="primary-lighten-1"
+        >
+          {{ t('home.configure.button') }}
+        </v-btn>
       </template>
-
-
-
       <v-card>
-
-        <v-toolbar color="white" title="Configure">
+        <v-toolbar
+          color="white"
+          title="Configure"
+        >
           <template #prepend>
-            <v-icon class="tuneIcon" icon="mdi-tune-vertical"></v-icon>
+            <v-icon
+              class="tuneIcon"
+              icon="mdi-tune-vertical"
+            />
           </template>
         </v-toolbar>
         <v-card-text>
-          <p class="configBody" v-html="t('home.configure.modal.body')" />
+          <p
+            class="configBody"
+            v-html="t('home.configure.modal.body')"
+          />
           <div class="configDefaultsGrid">
-            <v-checkbox v-for="defaultConfig in defaultConfigurations" v-model="selectedConfigurations"
-              color="primary-darken-1" :value="defaultConfig.key" :disabled="defaultConfig.key === 'standard'"
-              hide-details density="compact">
+            <v-checkbox
+              v-for="defaultConfig in defaultConfigurations"
+              v-model="selectedConfigurations"
+              color="primary-darken-1"
+              :value="defaultConfig.key"
+              :disabled="defaultConfig.key === 'standard'"
+              hide-details
+              density="compact"
+            >
               <template #label>
-                <div class="configDefaultLabel"
-                  :class="{ 'highlighted': selectedConfigurations.indexOf(defaultConfig.key) === selectedConfigurations.length - 1 }">
+                <div
+                  class="configDefaultLabel"
+                  :class="{ 'highlighted': isLastSelected(defaultConfig.key) }"
+                >
                   <p>{{ defaultConfig.name }}</p>
                   <small>{{ defaultConfig.description }}</small>
                 </div>
@@ -48,9 +71,15 @@ const selectedConfigurations = ref(["standard"])
             </v-checkbox>
           </div>
         </v-card-text>
-
         <v-card-actions>
-          <v-btn class="closeButton" color="primary" variant="flat" @click="configureDialogOpen = false">Close</v-btn>
+          <v-btn
+            class="closeButton"
+            color="primary"
+            variant="flat"
+            @click="configureDialogOpen = false"
+          >
+            Close
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>

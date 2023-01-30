@@ -6,14 +6,21 @@ const { t } = useI18n();
 
 <template>
   <figure class="thumbnail">
-    <img src="/infographicNoLogo.png" alt="AES infographic" class="infographic" />
+    <img
+      src="/infographicNoLogo.png"
+      alt="AES infographic"
+      class="infographic"
+    />
     <Logo class="logo" />
   </figure>
 
-  <a class="downloadLink" id="imageLink" href="/infographic.png" download="aes-adventure-infographic.png">
-    <v-btn variant="plain">{{
-      t("infographic")
-    }}
+  <a
+    class="downloadLink"
+    href="/infographic.png"
+    download="aes-adventure-infographic.png"
+  >
+    <v-btn variant="plain">
+      {{ t("infographic") }}
     </v-btn>
   </a>
 

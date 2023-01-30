@@ -7,9 +7,20 @@ const props = defineProps<{
 </script>
 
 <template>
-  <header class="logo" :class="{ 'big': props.big }">
-    <img src="/logo.svg" alt="AES Adventure logo" />
-    <h1 class="title" :class="{ 'big': props.big }">AES<br />{{ t('title') }}</h1>
+  <header
+    class="logo"
+    :class="{ 'big': props.big }"
+  >
+    <img
+      src="/logo.svg"
+      alt="AES Adventure logo"
+    />
+    <h1
+      class="title"
+      :class="{ 'big': props.big }"
+    >
+      AES<br />{{ t('title') }}
+    </h1>
   </header>
 </template>
 

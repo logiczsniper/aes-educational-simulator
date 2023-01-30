@@ -11,8 +11,14 @@ definePageMeta({
     <header class="settingsHeader">
       <h4>{{ t('home.settings.title') }}</h4>
       <NuxtLink to="/">
-        <v-btn variant="plain" icon>
-          <v-icon icon="mdi-close" size="20" />
+        <v-btn
+          variant="plain"
+          icon
+        >
+          <v-icon
+            icon="mdi-close"
+            size="20"
+          />
         </v-btn>
       </NuxtLink>
     </header>
