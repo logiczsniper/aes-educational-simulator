@@ -5,12 +5,15 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "devDependencies": {
     "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge",
     "nuxt": "^3.0.0",
-    "sass-loader": "^13.2.0"
+    "sass-loader": "^13.2.0",
+    "vitest": "^0.28.3"
   },
   "dependencies": {
     "@mdi/font": "^7.1.96",

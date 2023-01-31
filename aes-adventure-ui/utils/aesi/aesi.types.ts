@@ -37,11 +37,11 @@ export type AesiOutput = {
 }
 
 export type AesiRound = {
-  steps: [AesiRoundStep, AesiRoundStep, AesiRoundStep, AesiRoundStep] | [AesiRoundStep, AesiRoundStep, AesiRoundStep];
+  steps: AesiRoundStep[];
 }
 
 export type AesiRoundStep<T = never> = {
-  inputState: any;
-  outputState: any;
+  inputState: Uint8Array;
+  outputState: Uint8Array;
   meta?: T;
 }

@@ -1,4 +1,4 @@
-import type { AesiInput, AesiKeySize, AesiOutput, AesiRound } from "./aesi.types";
+import { AesiDefaultConfig, AesiInput, AesiKeySize, AesiOutput, AesiRound } from "./aesi.types";
 
 import { ROUND_COUNT, KEY_COUNT } from "./core/constants";
 import { createState, stateToResult } from "./core/utils";
@@ -15,14 +15,24 @@ import { shiftRows } from "./core/steps/shiftRows";
  * I(nteractive)
  * 
  * Implements AES but with 2 primary differences:
- *  1. Configurable via the [config] which will be used
- *     for Playground mode.
+ *  1. Configurable via the [config].
  *  2. Output includes ALL intermediate states which will
  *     be used for the animations.
  */
 export const aesi = ({ key, config }: AesiInput) => {
   const keySize = key.length as AesiKeySize;
-  const roundCount = ROUND_COUNT[keySize];
+
+  const roundCountMultiplier = (() => {
+    if (config.defaultConfig === AesiDefaultConfig.Short) return 0.5
+    if (config.defaultConfig === AesiDefaultConfig.Long) return 2
+
+    return 1
+  })()
+  const skipMixColumns = config.defaultConfig === AesiDefaultConfig.StaticColumns
+  const skipShiftRows = config.defaultConfig === AesiDefaultConfig.StaticRows
+  const skipSubBytes = config.defaultConfig === AesiDefaultConfig.StaticBytes
+
+  const roundCount = ROUND_COUNT[keySize] * roundCountMultiplier;
   const keyCount = KEY_COUNT[keySize];
 
   const expandedKey = expandKey(key, roundCount, keyCount);
@@ -36,11 +46,11 @@ export const aesi = ({ key, config }: AesiInput) => {
       const initialKeyAddition = addRoundKey(state, expandedKey, 0);
 
       for (let r = 1; r <= roundCount; r++) {
-        const includeMixColumns = r !== roundCount;
+        const includeMixColumns = r !== roundCount && !skipMixColumns;
         rounds.push({
           steps: [
-            subBytes(state),
-            shiftRows(state),
+            !skipSubBytes && subBytes(state),
+            !skipShiftRows && shiftRows(state),
             includeMixColumns && mixColumns(state),
             addRoundKey(state, expandedKey, r),
           ]
@@ -63,13 +73,13 @@ export const aesi = ({ key, config }: AesiInput) => {
       const rounds = []
 
       for (let r = roundCount; r >= 1; r--) {
-        const includeMixColumns = r !== roundCount;
+        const includeMixColumns = r !== roundCount && !skipMixColumns;
         rounds.push({
           steps: [
             addRoundKey(state, expandedKey, r),
             includeMixColumns && mixColumns(state, true),
-            shiftRows(state, true),
-            subBytes(state, true),
+            !skipShiftRows && shiftRows(state, true),
+            !skipSubBytes && subBytes(state, true),
           ]
             .filter(Boolean) as AesiRound['steps']
         })
