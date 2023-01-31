@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n',
     '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt'
   ],
   i18n: {
     locales: [
@@ -41,6 +42,9 @@ export default defineNuxtConfig({
     autoImports: [
       'defineStore',
     ],
+  },
+  piniaPersistedstate: {
+    storage: "localStorage"
   },
   css: [
     'vuetify/lib/styles/main.sass',

@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { DefaultConfig } from '~~/utils/aesi/aesi.types';
+import { useConfig } from '~~/composables/useConfig';
+import { AesiDefaultConfig } from '~~/utils/aesi/aesi.types';
 
 const { t } = useI18n();
 
 const configureDialogOpen = ref(false)
 
-const defaultConfigurations = Object.values(DefaultConfig).map(configKey => ({
+const defaultConfigurations = Object.values(AesiDefaultConfig).map(configKey => ({
   "name": t(`home.configure.modal.defaults.${configKey}.name`) + ' AES',
   "description": t(`home.configure.modal.defaults.${configKey}.description`),
   "key": configKey,
 }))
-const selectedConfigurations = ref(["standard"])
-const isLastSelected = (key: string) => selectedConfigurations.value.indexOf(key) === selectedConfigurations.value.length - 1
+const config = useConfig()
 </script>
 
 <template>
@@ -52,17 +52,17 @@ const isLastSelected = (key: string) => selectedConfigurations.value.indexOf(key
           <div class="configDefaultsGrid">
             <v-checkbox
               v-for="defaultConfig in defaultConfigurations"
-              v-model="selectedConfigurations"
+              v-model="config.selectedDefaultConfigs"
               color="primary-darken-1"
               :value="defaultConfig.key"
-              :disabled="defaultConfig.key === 'standard'"
+              :disabled="defaultConfig.key === AesiDefaultConfig.Standard"
               hide-details
               density="compact"
             >
               <template #label>
                 <div
                   class="configDefaultLabel"
-                  :class="{ 'highlighted': isLastSelected(defaultConfig.key) }"
+                  :class="{ 'highlighted': config.walkThroughConfig === defaultConfig.key }"
                 >
                   <p>{{ defaultConfig.name }}</p>
                   <small>{{ defaultConfig.description }}</small>

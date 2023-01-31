@@ -5,7 +5,7 @@ export type AesiInput = {
   config: AesiConfig;
 }
 
-export enum DefaultConfig {
+export enum AesiDefaultConfig {
   Standard = "standard",
   Short = "short",
   Long = "long",
@@ -15,7 +15,7 @@ export enum DefaultConfig {
 }
 
 export type AesiConfig = {
-  defaultConfig?: DefaultConfig;
+  defaultConfig?: AesiDefaultConfig;
 
   // Advanced configs:
   // rounds?: number;
