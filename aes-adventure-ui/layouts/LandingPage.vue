@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const { t } = useI18n();
-
 </script>
 
 <template>
@@ -102,7 +101,6 @@ const { t } = useI18n();
     place-items: center;
     background-color: #f9f9f9;
     position: relative;
-    overflow: hidden;
   }
 }
 </style>

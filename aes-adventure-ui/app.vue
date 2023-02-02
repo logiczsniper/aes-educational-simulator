@@ -149,24 +149,82 @@ address {
   top: -100%;
 }
 
-.test-enter-active,
-.test-leave-active {
-  transition: all 6s ease-out;
+// Vue 3 'fade' transition
+.fade-enter-active,
+.fade-leave-active {
+  transition: all .5s ease-out;
 }
 
-.test-enter-to {
-  .leftColumn {
-    width: 200px;
+.fade-enter-to,
+.fade-leave-from {
+  position: absolute;
+  opacity: 1;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  position: absolute;
+  opacity: 0;
+}
+
+// .test-enter-active,
+// .test-leave-active {
+//   transition: all 2s ease-out !important;
+// }
+
+.test-enter-active.simulatorPage,
+.test-leave-active.landingPage {
+  transition: grid-template-columns 1.5s ease-in-out 0.5s;
+
+  .description,
+  .navMenu,
+  .rightColumn>* {
+    transition: opacity .5s ease-in-out;
   }
 }
 
+.test-enter-active.landingPage,
+.test-leave-active.simulatorPage {
+  transition: grid-template-columns .5s ease-in-out 0s, top .5s ease-in-out .5s;
+}
+
+.test-enter-from.simulatorPage {
+  grid-template-columns: 1fr 1fr !important;
+  opacity: 0 !important;
+}
+
+.test-enter-from.landingPage {
+  grid-template-columns: .4fr 2fr !important;
+}
+
+.test-enter-to,
+.test-leave-from {
+  opacity: 1;
+}
+
 .test-enter-from {
-  grid-template-columns: 1fr 1fr;
+  opacity: 0 !important;
 }
 
-.test-leave-to {
-  grid-template-columns: 1fr 2fr !important;
+.test-leave-to.landingPage {
+  grid-template-columns: .2fr 4fr !important;
+
+  .description,
+  .navMenu,
+  .rightColumn>* {
+    opacity: 0;
+  }
+
+  .logo {
+    grid-template-columns: 30px auto !important;
+    gap: 8px;
+    position: fixed !important;
+
+    .title {
+      font-size: 14px !important;
+    }
+  }
 }
 
-.test-leave-from {}
+.test-leave-to.simulatorPage {}
 </style>

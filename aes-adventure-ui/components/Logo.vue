@@ -31,6 +31,7 @@ const props = defineProps<{
   display: grid;
   align-items: center;
   grid-template-rows: min-content;
+  transition: all 2s ease-in-out;
 
   grid-template-columns: 30px auto;
   gap: 8px;
@@ -39,22 +40,23 @@ const props = defineProps<{
     grid-template-columns: 100px auto;
     gap: 14px;
   }
-}
 
-.title {
-  font-family: 'Manrope';
-  line-height: 1;
-  font-weight: 800;
+  .title {
+    font-family: 'Manrope';
+    line-height: 1;
+    font-weight: 800;
+    transition: inherit;
 
-  background: -webkit-linear-gradient(#2C1D66, #0f0a23);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(#2C1D66, #0f0a23);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-  font-size: 14px;
+    font-size: 14px;
 
-  &.big {
-    font-size: 48px;
+    &.big {
+      font-size: 48px;
+    }
   }
 }
 </style>

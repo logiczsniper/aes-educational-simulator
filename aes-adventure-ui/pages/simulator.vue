@@ -3,16 +3,9 @@ const { t } = useI18n();
 
 definePageMeta({
   layout: 'simulator-page',
-  pageTransition: {
-    name: 'rotate'
-  }
 })
 </script>
 
 <template>
-  <div>Simulator</div>
+  <div>Test</div>
 </template>
-
-<style scoped lang="scss">
-
-</style>

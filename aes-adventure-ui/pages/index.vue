@@ -14,7 +14,7 @@ definePageMeta({
 
 <style scoped lang="scss">
 .homePage {
-  padding: 36px 60px;
   height: 100vh;
+  padding-top: 10%;
 }
 </style>
