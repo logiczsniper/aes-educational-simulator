@@ -11,14 +11,13 @@ const { t } = useI18n();
         <div class="primaryButtons">
           <NuxtLink to="/simulator">
             <v-btn
-              class="goButton"
               variant="flat"
               color="primary"
             >
               {{ t('home.go') }}
             </v-btn>
           </NuxtLink>
-          <ConfigSelect />
+          <ConfigButton />
         </div>
         <NuxtLink to="/settings">
           <v-btn
