@@ -4,39 +4,6 @@
   "home": {
     "description": "The Advanced Encryption Standard is the most popular symmetric-key cipher. If you want to learn the basics, dig deep into the details, or experiment with AES: you're in the right place!",
     "go": "Go to Simulator",
-    "configure": {
-      "button": "Configure",
-      "modal": {
-        "title": "Configure",
-        "body": "Select configurations below. When selecting multiple configurations for comparison, <span class='highlight'>the <b>last</b> selected configuration will be walked through step-by-step.</span> If you are new to AES, we recommend that you use the default simulator before using this configuration.",
-        "defaults": {
-          "standard": {
-            "name": "Standard",
-            "description": "Vanilla."
-          },
-          "short": {
-            "name": "Short",
-            "description": "Half the number of rounds."
-          },
-          "long": {
-            "name": "Long",
-            "description": "Double the number of rounds."
-          },
-          "staticColumns": {
-            "name": "Static Columns",
-            "description": "No MixColumns layers."
-          },
-          "staticRows": {
-            "name": "Static Rows",
-            "description": "No ShiftRows layers."
-          },
-          "staticBytes": {
-            "name": "Static Bytes",
-            "description": "No SubstituteBytes layers."
-          }
-        }
-      }
-    },
     "settings": {
       "title": "Settings",
       "badLang": "Is your language poorly translated or unavailable?"
@@ -50,5 +17,44 @@
       "button": "Google Form"
     },
     "gitlab": "GitLab"
+  },
+  "configure": {
+    "button": "Configure",
+    "modal": {
+      "title": "Configure",
+      "body": "Select configurations below. When selecting multiple configurations for comparison, <span class='highlight'>the <b>last</b> selected configuration will be walked through step-by-step.</span> If you are new to AES, we recommend that you use the default simulator before using this configuration.",
+      "defaults": {
+        "standard": {
+          "name": "Standard",
+          "description": "Vanilla."
+        },
+        "short": {
+          "name": "Short",
+          "description": "Half the number of rounds."
+        },
+        "long": {
+          "name": "Long",
+          "description": "Double the number of rounds."
+        },
+        "staticColumns": {
+          "name": "Static Columns",
+          "description": "No MixColumns layers."
+        },
+        "staticRows": {
+          "name": "Static Rows",
+          "description": "No ShiftRows layers."
+        },
+        "staticBytes": {
+          "name": "Static Bytes",
+          "description": "No SubstituteBytes layers."
+        }
+      }
+    }
+  },
+  "simulator": {
+    "hide": "Hide",
+    "show": "Show",
+    "quit": "Quit",
+    "configurations": "Configurations"
   }
 }
