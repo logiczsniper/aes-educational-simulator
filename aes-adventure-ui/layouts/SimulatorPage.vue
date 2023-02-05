@@ -4,6 +4,15 @@ const { t } = useI18n();
 const config = useConfig()
 const sidebarOpen = ref(true)
 const toggleSidebar = () => sidebarOpen.value = !sidebarOpen.value
+
+enum Tab {
+  Encrypt = "encrypt",
+  Decrypt = "decrypt",
+  KeyExpansion = "key-expansion",
+}
+const route = useRouteBaseName()
+const currentTab = ref(route === 'index' ? Tab.Encrypt : route?.substring(10))
+const getTabLink = (tab: Tab) => `/simulator/${tab}`
 </script>
 
 <template>
@@ -34,9 +43,10 @@ const toggleSidebar = () => sidebarOpen.value = !sidebarOpen.value
         </NuxtLink>
       </nav>
       <section>
-        <h5>{{ t('simulator.configurations') }}</h5>
+        <h5 v-if="config.selectedDefaultConfigs.length > 1">{{ t('simulator.configurations') }}</h5>
         <ClientOnly>
           <div
+            v-if="config.selectedDefaultConfigs.length > 1"
             v-for="selectedDefaultConfig in config.selectedDefaultConfigs"
             class="configDefaultLabel"
             :class="{ 'highlighted': config.walkThroughConfig === selectedDefaultConfig }"
@@ -48,7 +58,10 @@ const toggleSidebar = () => sidebarOpen.value = !sidebarOpen.value
             </p>
           </div>
           <template #fallback>
-            <div class="configSkeleton skeleton" />
+            <div>
+              <h5>{{ t('simulator.configurations') }}</h5>
+              <div class="configSkeleton skeleton" />
+            </div>
           </template>
         </ClientOnly>
       </section>
@@ -72,11 +85,25 @@ const toggleSidebar = () => sidebarOpen.value = !sidebarOpen.value
             icon="mdi-backburger"
           />
         </template>
-        {{ t('simulator.show') }}
+        <!-- {{ t('simulator.show') }} -->
       </v-btn>
     </div>
     <div v-if="!sidebarOpen" />
     <section class="rightColumn">
+      <nav class="tabBar">
+        <NuxtLink
+          v-for="tab in Object.values(Tab)"
+          :key="tab"
+          :to="getTabLink(tab)"
+          class="tab"
+          :class="{
+            'selected': currentTab === tab
+          }"
+          @click="currentTab = tab"
+        >
+          {{ t(`simulator.${ tab }`) }}
+        </NuxtLink>
+      </nav>
       <slot />
     </section>
   </div>
@@ -107,6 +134,8 @@ const toggleSidebar = () => sidebarOpen.value = !sidebarOpen.value
     min-width: 180px;
     max-width: 50vw;
     padding: 20px 20px 12px 26px;
+    z-index: 2;
+    background-color: white;
 
     position: relative;
 
@@ -158,10 +187,38 @@ const toggleSidebar = () => sidebarOpen.value = !sidebarOpen.value
   }
 
   .rightColumn {
-    display: grid;
     place-items: center;
     background-color: #f9f9f9;
-    position: relative;
+
+    .tabBar {
+      display: flex;
+      justify-content: space-around;
+      background-color: white;
+      border-radius: 12px;
+      padding: 6px;
+      margin: 20px;
+      margin-top: 32px;
+      transition: all .5s linear;
+      color: #2C1D66;
+      font-weight: bold;
+      position: relative;
+
+      .tab {
+        cursor: pointer;
+        width: 100%;
+        padding: 8px 0;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 14px;
+        color: unset;
+
+        &.selected {
+          transition: all .5s linear;
+          color: white !important;
+          background-color: #745CD0;
+        }
+      }
+    }
   }
 }
 </style>

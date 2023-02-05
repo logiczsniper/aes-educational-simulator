@@ -55,6 +55,9 @@
     "hide": "Hide",
     "show": "Show",
     "quit": "Quit",
-    "configurations": "Configurations"
+    "configurations": "Configurations",
+    "encrypt": "Encrypt",
+    "decrypt": "Decrypt",
+    "key-expansion": "Key Expansion"
   }
 }

@@ -9,7 +9,7 @@ const { t } = useI18n();
       <p class="description">{{ t('home.description') }}</p>
       <nav class="navMenu">
         <div class="primaryButtons">
-          <NuxtLink to="/simulator">
+          <NuxtLink to="/simulator/encrypt">
             <v-btn
               variant="flat"
               color="primary"

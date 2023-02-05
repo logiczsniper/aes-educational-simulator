@@ -7,8 +7,8 @@ const { t } = useI18n();
 const configureDialogOpen = ref(false)
 
 const defaultConfigurations = Object.values(AesiDefaultConfig).map(configKey => ({
-  "name": t(`configs.${configKey}.name`) + ' AES',
-  "description": t(`configs.${configKey}.description`),
+  "name": t(`configure.modal.defaults.${configKey}.name`) + ' AES',
+  "description": t(`configure.modal.defaults.${configKey}.description`),
   "key": configKey,
 }))
 const config = useConfig()

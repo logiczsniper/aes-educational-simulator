@@ -2,7 +2,10 @@
 const { t } = useI18n();
 
 definePageMeta({
-  layout: 'landing-page'
+  layout: 'landing-page',
+  pageTransition: {
+    name: 'slide'
+  }
 })
 </script>
 
