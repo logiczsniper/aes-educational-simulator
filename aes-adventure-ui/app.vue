@@ -90,6 +90,10 @@ a:-webkit-any-link:active {
   color: #2C1D66;
 }
 
+::-webkit-resizer {
+  background-color: transparent;
+}
+
 address {
   display: unset;
 }
@@ -106,7 +110,7 @@ address {
   height: 1em;
   position: relative;
   overflow: hidden;
-  background-color: #DDDBDD;
+  background-color: #f0f0f0;
 
   &::after {
     position: absolute;
@@ -131,6 +135,13 @@ address {
   }
 }
 
+.flipped {
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+}
+
 // Vue 3 'slide' transition
 .slide-enter-active,
 .slide-leave-active {
@@ -150,21 +161,18 @@ address {
 }
 
 // Vue 3 'fade' transition
-.fade-enter-active,
 .fade-leave-active {
   transition: all .5s ease-out;
 }
 
-.fade-enter-to,
-.fade-leave-from {
-  position: absolute;
-  opacity: 1;
+.fade-enter-active {
+  transition: all .5s ease-out .5s;
 }
 
 .fade-enter-from,
 .fade-leave-to {
-  position: absolute;
   opacity: 0;
+  transform: scale(0.98);
 }
 
 // .test-enter-active,
