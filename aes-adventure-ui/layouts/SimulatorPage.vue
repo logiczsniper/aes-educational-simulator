@@ -13,13 +13,26 @@ enum Tab {
 const route = useRouteBaseName()
 const currentTab = ref(route === 'index' ? Tab.Encrypt : route?.substring(10))
 const getTabLink = (tab: Tab) => `/simulator/${tab}`
+const leftColumnStyle = ref('padding-top: 20px;')
+const sidebar = ref<HTMLElement>()
+if (process.client) {
+  const adaptSidebar = () => {
+    const sidebarWidth = sidebar.value?.clientWidth ?? 0
+    const windowHeight = window.visualViewport?.height ?? 0
+    leftColumnStyle.value = `padding-top: ${window.scrollY + 20}px; height: ${window.scrollY + windowHeight}px; width: ${sidebarWidth}px`
+  }
+  window.onscroll = adaptSidebar
+  window.onresize = adaptSidebar
+}
 </script>
 
 <template>
   <div class="simulatorPage">
     <header
       v-if="sidebarOpen"
+      ref="sidebar"
       class="leftColumn"
+      :style="leftColumnStyle"
     >
       <Logo />
       <nav class="navMenu">
@@ -85,11 +98,14 @@ const getTabLink = (tab: Tab) => `/simulator/${tab}`
             icon="mdi-backburger"
           />
         </template>
-        <!-- {{ t('simulator.show') }} -->
+        {{ t('simulator.show') }}
       </v-btn>
     </div>
     <div v-if="!sidebarOpen" />
-    <section class="rightColumn">
+    <section
+      class="rightColumn"
+      :class="{ 'largePadding': !sidebarOpen }"
+    >
       <nav class="tabBar">
         <NuxtLink
           v-for="tab in Object.values(Tab)"
@@ -124,6 +140,8 @@ const getTabLink = (tab: Tab) => `/simulator/${tab}`
 
   .closedLeftColumn {
     position: fixed;
+    top: 70px;
+    left: 14px;
     z-index: 1;
   }
 
@@ -136,6 +154,7 @@ const getTabLink = (tab: Tab) => `/simulator/${tab}`
     padding: 20px 20px 12px 26px;
     z-index: 2;
     background-color: white;
+    transition: padding-top .16s ease-out;
 
     position: relative;
 
@@ -189,15 +208,19 @@ const getTabLink = (tab: Tab) => `/simulator/${tab}`
   .rightColumn {
     place-items: center;
     background-color: #f9f9f9;
+    padding: 20px 4%;
+
+    &.largePadding {
+      padding: 20px 10%;
+    }
 
     .tabBar {
       display: flex;
       justify-content: space-around;
       background-color: white;
-      border-radius: 12px;
+      border-radius: 8px;
       padding: 6px;
-      margin: 20px;
-      margin-top: 32px;
+      margin-bottom: 20px;
       transition: all .5s linear;
       color: #2C1D66;
       font-weight: bold;
@@ -206,8 +229,8 @@ const getTabLink = (tab: Tab) => `/simulator/${tab}`
       .tab {
         cursor: pointer;
         width: 100%;
-        padding: 8px 0;
-        border-radius: 8px;
+        padding: 12px 0;
+        border-radius: 6px;
         text-align: center;
         font-size: 14px;
         color: unset;
