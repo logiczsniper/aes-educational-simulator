@@ -1,0 +1,15 @@
+a:-webkit-any-link {
+  text-decoration: unset;
+}
+
+a:-webkit-any-link:active {
+  color: #2C1D66;
+}
+
+::-webkit-resizer {
+  background-color: transparent;
+}
+
+address {
+  display: unset;
+}

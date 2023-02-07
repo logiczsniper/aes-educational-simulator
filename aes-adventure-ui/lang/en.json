@@ -58,6 +58,11 @@
     "configurations": "Configurations",
     "encrypt": "Encrypt",
     "decrypt": "Decrypt",
-    "key-expansion": "Key Expansion"
+    "key-expansion": "Key Expansion",
+    "tutorial": {
+      "title": "Tutorial",
+      "description": "Click on {tutorialIcon} that you see to reveal relevant information here. There may be light explanations, deep details, interactive simulators and more!",
+      "tip": "<b>Tip!</b> Expand this sidebar to free up more room for the tutorial by dragging on the resizer in the bottom right corner."
+    }
   }
 }

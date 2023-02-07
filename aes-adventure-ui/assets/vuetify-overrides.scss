@@ -1,0 +1,43 @@
+html {
+  overflow: auto;
+}
+
+p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.v-btn {
+  text-transform: unset;
+  letter-spacing: unset;
+}
+
+.v-toolbar-title {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.v-field {
+  box-shadow: none;
+}
+
+.v-dialog-fixed {
+  border-radius: 8px;
+  overflow: clip;
+
+  * {
+    letter-spacing: 0;
+  }
+}
+
+.v-overlay[role="tooltip"] {
+  &>div {
+    background-color: #2C1D66;
+  }
+}
+
+// TODO: temporary until source code can be made available.
+.v-btn--disabled:disabled {
+  cursor: not-allowed !important;
+  pointer-events: all !important;
+}

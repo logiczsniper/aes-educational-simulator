@@ -56,7 +56,7 @@ if (process.client) {
         </NuxtLink>
       </nav>
       <section>
-        <h5 v-if="config.selectedDefaultConfigs.length > 1">{{ t('simulator.configurations') }}</h5>
+        <h4 v-if="config.selectedDefaultConfigs.length > 1">{{ t('simulator.configurations') }}</h4>
         <ClientOnly>
           <div
             v-if="config.selectedDefaultConfigs.length > 1"
@@ -64,7 +64,7 @@ if (process.client) {
             class="configDefaultLabel"
             :class="{ 'highlighted': config.walkThroughConfig === selectedDefaultConfig }"
           >
-            <p>{{ t(`configure.modal.defaults.${selectedDefaultConfig}.name`) }}
+            <p>{{ t(`configure.modal.defaults.${selectedDefaultConfig}.name`) + ' AES' }}
               <v-tooltip activator="parent">
                 {{ t(`configure.modal.defaults.${ selectedDefaultConfig }.description`) }}
               </v-tooltip>
@@ -72,11 +72,14 @@ if (process.client) {
           </div>
           <template #fallback>
             <div>
-              <h5>{{ t('simulator.configurations') }}</h5>
+              <h4>{{ t('simulator.configurations') }}</h4>
               <div class="configSkeleton skeleton" />
             </div>
           </template>
         </ClientOnly>
+      </section>
+      <section class="tutorialContainer">
+        <h4>{{ t('simulator.tutorial') }}</h4>
       </section>
       <v-icon
         class="resizer"
@@ -89,7 +92,7 @@ if (process.client) {
       class="closedLeftColumn"
     >
       <v-btn
-        variant="plain"
+        variant="flat"
         @click="toggleSidebar"
       >
         <template #prepend>
@@ -149,7 +152,7 @@ if (process.client) {
     resize: horizontal;
     overflow-x: auto;
     overflow-y: hidden;
-    min-width: 180px;
+    min-width: 200px;
     max-width: 50vw;
     padding: 20px 20px 12px 26px;
     z-index: 2;
@@ -201,7 +204,21 @@ if (process.client) {
           font-weight: bold;
           color: #2C1D66;
         }
+
+        ::before {
+          content: '✔ ';
+          margin-left: -14.4px;
+          margin-right: 3px;
+          font-size: 12px;
+        }
       }
+    }
+
+    .tutorialContainer {
+      margin-top: 32px;
+      height: 100%;
+      overflow-y: auto;
+
     }
   }
 
@@ -217,19 +234,20 @@ if (process.client) {
     .tabBar {
       display: flex;
       justify-content: space-around;
+      gap: 64px;
       background-color: white;
       border-radius: 8px;
       padding: 6px;
       margin-bottom: 20px;
       transition: all .5s linear;
       color: #2C1D66;
-      font-weight: bold;
+      font-weight: 500;
       position: relative;
 
       .tab {
         cursor: pointer;
         width: 100%;
-        padding: 12px 0;
+        padding: 10px 0;
         border-radius: 6px;
         text-align: center;
         font-size: 14px;
