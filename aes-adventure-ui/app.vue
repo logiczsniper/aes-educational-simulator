@@ -18,12 +18,13 @@ useHead({
 </template>
 
 <style lang="scss">
-@import url('~/assets/global-font.scss');
-@import url('~/assets/emoji-font.scss');
-@import url('~/assets/vuetify-overrides.scss');
-@import url('~/assets/html-overrides.scss');
-@import url('~/assets/utility-classes.scss');
-@import url('~/assets/vue-transitions.scss');
+@use '~/assets/global-font.scss';
+@use '~/assets/emoji-font.scss';
+@use '~/assets/vuetify-overrides.scss';
+@use '~/assets/html-overrides.scss';
+@use '~/assets/utility-classes.scss';
+@use '~/assets/vue-transitions.scss';
+@use '~/assets/custom-scrollbar.scss';
 
 body {
   margin: 0;

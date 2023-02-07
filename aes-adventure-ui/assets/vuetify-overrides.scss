@@ -1,12 +1,3 @@
-html {
-  overflow: auto;
-}
-
-p {
-  font-size: 14px;
-  line-height: 20px;
-}
-
 .v-btn {
   text-transform: unset;
   letter-spacing: unset;
@@ -32,7 +23,7 @@ p {
 
 .v-overlay[role="tooltip"] {
   &>div {
-    background-color: #2C1D66;
+    background-color: #2C1D66 !important;
   }
 }
 

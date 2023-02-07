@@ -13,3 +13,16 @@ a:-webkit-any-link:active {
 address {
   display: unset;
 }
+
+html {
+  overflow: auto;
+}
+
+p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+h4 {
+  font-size: 14.2px;
+}

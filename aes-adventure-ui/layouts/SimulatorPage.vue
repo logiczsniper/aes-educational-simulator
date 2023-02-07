@@ -13,26 +13,13 @@ enum Tab {
 const route = useRouteBaseName()
 const currentTab = ref(route === 'index' ? Tab.Encrypt : route?.substring(10))
 const getTabLink = (tab: Tab) => `/simulator/${tab}`
-const leftColumnStyle = ref('padding-top: 20px;')
-const sidebar = ref<HTMLElement>()
-if (process.client) {
-  const adaptSidebar = () => {
-    const sidebarWidth = sidebar.value?.clientWidth ?? 0
-    const windowHeight = window.visualViewport?.height ?? 0
-    leftColumnStyle.value = `padding-top: ${window.scrollY + 20}px; height: ${window.scrollY + windowHeight}px; width: ${sidebarWidth}px`
-  }
-  window.onscroll = adaptSidebar
-  window.onresize = adaptSidebar
-}
 </script>
 
 <template>
   <div class="simulatorPage">
     <header
       v-if="sidebarOpen"
-      ref="sidebar"
       class="leftColumn"
-      :style="leftColumnStyle"
     >
       <Logo />
       <nav class="navMenu">
@@ -55,11 +42,13 @@ if (process.client) {
           </v-btn>
         </NuxtLink>
       </nav>
-      <section>
-        <h4 v-if="config.selectedDefaultConfigs.length > 1">{{ t('simulator.configurations') }}</h4>
+      <section
+        v-if="config.selectedDefaultConfigs.length > 1"
+        class="leftColumnSection"
+      >
+        <h4>{{ t('simulator.configurations') }}</h4>
         <ClientOnly>
           <div
-            v-if="config.selectedDefaultConfigs.length > 1"
             v-for="selectedDefaultConfig in config.selectedDefaultConfigs"
             class="configDefaultLabel"
             :class="{ 'highlighted': config.walkThroughConfig === selectedDefaultConfig }"
@@ -70,16 +59,24 @@ if (process.client) {
               </v-tooltip>
             </p>
           </div>
-          <template #fallback>
-            <div>
-              <h4>{{ t('simulator.configurations') }}</h4>
-              <div class="configSkeleton skeleton" />
-            </div>
-          </template>
         </ClientOnly>
       </section>
-      <section class="tutorialContainer">
-        <h4>{{ t('simulator.tutorial') }}</h4>
+      <section class="leftColumnSection tutorialContainer scrollbar">
+        <h4>{{ t('simulator.tutorial.title') }}</h4>
+        <i18n-t
+          keypath="simulator.tutorial.description"
+          tag="p"
+        >
+          <template v-slot:tutorialIcon>
+            <v-icon
+              icon="mdi-information"
+              size="12"
+              color="secondary"
+            />
+          </template>
+        </i18n-t>
+        <br />
+        <p v-html="t('simulator.tutorial.tip')" />
       </section>
       <v-icon
         class="resizer"
@@ -134,13 +131,6 @@ if (process.client) {
   grid-template-columns: min-content auto;
   height: 100vh;
 
-  .configSkeleton {
-    height: 20px;
-    border-radius: 4px;
-    width: 120px;
-    margin-top: 14px;
-  }
-
   .closedLeftColumn {
     position: fixed;
     top: 70px;
@@ -149,6 +139,8 @@ if (process.client) {
   }
 
   .leftColumn {
+    display: flex;
+    flex-direction: column;
     resize: horizontal;
     overflow-x: auto;
     overflow-y: hidden;
@@ -161,6 +153,11 @@ if (process.client) {
 
     position: relative;
 
+    .leftColumnSection {
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
     .resizer {
       position: absolute;
       right: 0;
@@ -170,7 +167,7 @@ if (process.client) {
     }
 
     .navMenu {
-      margin: 20px 0 30px -12px;
+      margin: 20px 0 0 -12px;
 
       .quitButton {
         color: unset;
@@ -180,17 +177,11 @@ if (process.client) {
     .configDefaultLabel {
       display: flex;
       flex-direction: column;
-      gap: 2px;
-      margin-bottom: 4px;
       overflow-wrap: break-word;
 
       small {
         font-size: 12px;
         line-height: 12px;
-      }
-
-      &:first-of-type {
-        margin-top: 12px;
       }
 
       p {
@@ -215,10 +206,13 @@ if (process.client) {
     }
 
     .tutorialContainer {
-      margin-top: 32px;
-      height: 100%;
-      overflow-y: auto;
+      flex-grow: 1;
+      position: relative;
 
+      -webkit-mask-image: linear-gradient(180deg, #000 90%, transparent);
+      mask-image: linear-gradient(180deg, #000 90%, transparent);
+
+      padding-bottom: 40px;
     }
   }
 
@@ -226,6 +220,7 @@ if (process.client) {
     place-items: center;
     background-color: #f9f9f9;
     padding: 20px 4%;
+    overflow-y: auto;
 
     &.largePadding {
       padding: 20px 10%;
