@@ -12,6 +12,8 @@ definePageMeta({
 <template>
   <main class="encryptPage">
     Encrypt
+    <TutorialIconButton :tutorial-key="TutorialKey.Test" />
+    <TutorialIconButton :tutorial-key="TutorialKey.Default" />
   </main>
 </template>
 

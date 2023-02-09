@@ -53,3 +53,13 @@
   opacity: 0;
   transform: scale(0.98);
 }
+
+.opacity-enter-active,
+.opacity-leave-active {
+  transition: opacity .3s ease-in;
+}
+
+.opacity-enter-from,
+.opacity-leave-to {
+  opacity: 0;
+}

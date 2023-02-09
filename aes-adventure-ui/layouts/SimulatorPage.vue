@@ -13,6 +13,8 @@ enum Tab {
 const route = useRouteBaseName()
 const currentTab = ref(route === 'index' ? Tab.Encrypt : route?.substring(10))
 const getTabLink = (tab: Tab) => `/simulator/${tab}`
+
+const tutorial = useTutorial();
 </script>
 
 <template>
@@ -48,35 +50,38 @@ const getTabLink = (tab: Tab) => `/simulator/${tab}`
       >
         <h4>{{ t('simulator.configurations') }}</h4>
         <ClientOnly>
-          <div
-            v-for="selectedDefaultConfig in config.selectedDefaultConfigs"
-            class="configDefaultLabel"
-            :class="{ 'highlighted': config.walkThroughConfig === selectedDefaultConfig }"
+          <transition
+            appear
+            name="opacity"
           >
-            <p>{{ t(`configure.modal.defaults.${selectedDefaultConfig}.name`) + ' AES' }}
-              <v-tooltip activator="parent">
-                {{ t(`configure.modal.defaults.${ selectedDefaultConfig }.description`) }}
-              </v-tooltip>
-            </p>
-          </div>
+            <div>
+              <div
+                v-for="selectedDefaultConfig in config.selectedDefaultConfigs"
+                class="configDefaultLabel"
+                :class="{ 'highlighted': config.walkThroughConfig === selectedDefaultConfig }"
+              >
+                <p>{{ t(`configure.modal.defaults.${selectedDefaultConfig}.name`) + ' AES' }}
+                  <v-tooltip activator="parent">
+                    {{ t(`configure.modal.defaults.${ selectedDefaultConfig }.description`) }}
+                  </v-tooltip>
+                </p>
+              </div>
+            </div>
+          </transition>
         </ClientOnly>
+
       </section>
       <section class="leftColumnSection tutorialContainer scrollbar">
         <h4>{{ t('simulator.tutorial.title') }}</h4>
-        <i18n-t
-          keypath="simulator.tutorial.description"
-          tag="p"
-        >
-          <template v-slot:tutorialIcon>
-            <v-icon
-              icon="mdi-information"
-              size="12"
-              color="secondary"
-            />
-          </template>
-        </i18n-t>
-        <br />
-        <p v-html="t('simulator.tutorial.tip')" />
+        <ClientOnly>
+          <transition
+            appear
+            name="opacity"
+            mode="out-in"
+          >
+            <component :is="tutorial.currentTutorialComponent" />
+          </transition>
+        </ClientOnly>
       </section>
       <v-icon
         class="resizer"
