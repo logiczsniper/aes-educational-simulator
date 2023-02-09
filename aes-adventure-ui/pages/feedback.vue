@@ -93,8 +93,8 @@ definePageMeta({
       font-size: 14px;
       height: 20px;
       padding-left: 10px;
-      padding-right: 8px;
-      margin-top: -2px;
+      padding-right: 6px;
+      align-content: baseline;
     }
   }
 
