@@ -14,6 +14,10 @@ definePageMeta({
     Encrypt
     <TutorialIconButton :tutorial-key="TutorialKey.Test" />
     <TutorialIconButton :tutorial-key="TutorialKey.Default" />
+
+    <ClientOnly>
+      <BinaryInputArea title-key="Plaintext" />
+    </ClientOnly>
   </main>
 </template>
 
@@ -22,6 +26,6 @@ definePageMeta({
   // width: 100%;
   height: 100%;
 
-  background-color: green;
+  // background-color: green;
 }
 </style>
