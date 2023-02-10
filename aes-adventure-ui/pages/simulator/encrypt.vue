@@ -7,6 +7,8 @@ definePageMeta({
     name: 'slide-right',
   }
 })
+
+const encryptState = useEncryptState();
 </script>
 
 <template>
@@ -16,7 +18,10 @@ definePageMeta({
     <TutorialIconButton :tutorial-key="TutorialKey.Default" />
 
     <ClientOnly>
-      <BinaryInputArea title-key="Plaintext" />
+      <BinaryInputArea
+        v-model="encryptState.plaintext"
+        title-key="Plaintext"
+      />
     </ClientOnly>
   </main>
 </template>

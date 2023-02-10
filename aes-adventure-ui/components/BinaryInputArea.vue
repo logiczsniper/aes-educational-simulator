@@ -2,31 +2,36 @@
 const { t } = useI18n();
 
 /**
- * TODO: store in localstorage
  * TODO: add i18n keys
  * TODO: add quick-fill modal:
  * - all zeroes
  * - all ones
  * - random
  * - NIST test vector
+ * TODO: skeleton
  */
 
 const props = defineProps<{
-  titleKey: string
+  titleKey: string,
+  modelValue: string,
 }>();
 
-const currentValue = computed(() => {
-  return currentValueFormatted.value.replaceAll(' ', '')
-})
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: string): void
+}>()
 
-const currentValueFormatted = ref('')
-
-watch(currentValueFormatted, () => {
+const formatInput = (input: string) => {
   const spacer = '   '
-  const formattedValue = currentValue.value.match(/.{1,8}/g)?.join(spacer) ?? ''
+  const formattedValue = input.match(/.{1,8}/g)?.join(spacer) ?? ''
 
-  currentValueFormatted.value = formattedValue
-})
+  return formattedValue
+}
+
+const currentValueFormatted = ref(formatInput(props.modelValue))
+watch(currentValueFormatted, () => currentValueFormatted.value = formatInput(currentValue.value))
+
+const currentValue = computed(() => currentValueFormatted.value.replaceAll(' ', ''))
+watch(currentValue, newValue => emit('update:modelValue', newValue))
 
 const preventInvalidInput = (event: KeyboardEvent) => {
   const isBinary = event.key === '0' || event.key === '1'
@@ -96,6 +101,5 @@ const remainingCharsMessage = computed(() => `${remainingChars.value} ${t('binar
     margin-top: 8px;
     justify-self: right;
   }
-
 }
 </style>
