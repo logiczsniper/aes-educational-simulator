@@ -48,7 +48,8 @@
           "name": "Static Bytes",
           "description": "No SubstituteBytes layers."
         }
-      }
+      },
+      "close": "Close"
     }
   },
   "simulator": {
@@ -59,10 +60,21 @@
     "encrypt": "Encrypt",
     "decrypt": "Decrypt",
     "key-expansion": "Key Expansion",
+    "plaintext": "Plaintext",
+    "ciphertext": "Ciphertext",
+    "key": "Key",
     "tutorial": {
       "title": "Tutorial",
       "description": "Click on {tutorialIcon} that you see to reveal relevant information here. There may be light explanations, deep details, interactive simulators and more!",
       "tip": "<b>Tip!</b> Expand this sidebar to free up more room for the tutorial by dragging on the resizer in the bottom right corner."
+    },
+    "binaryInputArea": {
+      "bitsRemaining": "bit(s) remaining.",
+      "fill": {
+        "button": "Fill?",
+        "title": "Fill",
+        "close": "Close"
+      }
     }
   }
 }

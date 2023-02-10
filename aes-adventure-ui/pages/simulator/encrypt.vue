@@ -20,7 +20,7 @@ const encryptState = useEncryptState();
     <ClientOnly>
       <BinaryInputArea
         v-model="encryptState.plaintext"
-        title-key="Plaintext"
+        title-key="simulator.plaintext"
       />
     </ClientOnly>
   </main>

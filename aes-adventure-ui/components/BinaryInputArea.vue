@@ -2,7 +2,6 @@
 const { t } = useI18n();
 
 /**
- * TODO: add i18n keys
  * TODO: add quick-fill modal:
  * - all zeroes
  * - all ones
@@ -48,7 +47,7 @@ const preventInvalidInput = (event: KeyboardEvent) => {
 
 const maxLength = 4 * 4 * 8
 const remainingChars = computed(() => maxLength - currentValue.value.length);
-const remainingCharsMessage = computed(() => `${remainingChars.value} ${t('binaryInputArea.bitsRemaining')}`)
+const remainingCharsMessage = computed(() => `${remainingChars.value} ${t('simulator.binaryInputArea.bitsRemaining')}`)
 </script>
 
 <template>
@@ -69,7 +68,7 @@ const remainingCharsMessage = computed(() => `${remainingChars.value} ${t('binar
     </textarea>
     <small class="footer">
       {{ remainingCharsMessage }}
-      <span>Fill?</span>
+      <FillButton />
     </small>
   </div>
 </template>
@@ -100,6 +99,8 @@ const remainingCharsMessage = computed(() => `${remainingChars.value} ${t('binar
   .footer {
     margin-top: 8px;
     justify-self: right;
+    display: flex;
+    align-items: center;
   }
 }
 </style>

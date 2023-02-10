@@ -36,7 +36,7 @@ const config = useConfig()
         <v-card>
           <v-toolbar
             color="white"
-            title="Configure"
+            :title="t('configure.modal.title')"
           >
             <template #prepend>
               <v-icon
@@ -79,7 +79,7 @@ const config = useConfig()
               variant="flat"
               @click="configureDialogOpen = false"
             >
-              Close
+              {{ t('configure.modal.close') }}
             </v-btn>
           </v-card-actions>
         </v-card>
