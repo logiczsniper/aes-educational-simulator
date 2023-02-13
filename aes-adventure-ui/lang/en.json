@@ -73,7 +73,14 @@
       "fill": {
         "button": "Fill?",
         "title": "Fill",
-        "close": "Close"
+        "close": "Close",
+        "description": "Auto-fill this input by selecting one of the preset options below. Note: this will override the current content of the input.",
+        "options": {
+          "Zeroes": "All zeroes",
+          "Ones": "All ones",
+          "Random": "Random bits",
+          "TestVector": "NIST official test vector"
+        }
       }
     }
   }

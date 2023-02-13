@@ -13,15 +13,54 @@ const encryptState = useEncryptState();
 
 <template>
   <main class="encryptPage">
-    Encrypt
-    <TutorialIconButton :tutorial-key="TutorialKey.Test" />
-    <TutorialIconButton :tutorial-key="TutorialKey.Default" />
-
     <ClientOnly>
-      <BinaryInputArea
-        v-model="encryptState.plaintext"
-        title-key="simulator.plaintext"
-      />
+      <transition
+        appear
+        name="opacity"
+      >
+        <div>
+          <section class="inputs">
+            <BinaryInputArea
+              v-model="encryptState.plaintext"
+              title-key="simulator.plaintext"
+              :max-length="128"
+            />
+            <BinaryInputArea
+              v-model="encryptState.key"
+              title-key="simulator.key"
+              :max-length="encryptState.keySize"
+              :key="encryptState.keySize"
+            >
+              <template #after-title>
+                <v-radio-group
+                  inline
+                  density="compact"
+                  hide-details
+                  :model-value="encryptState.keySize"
+                  @update:model-value="encryptState.setKeySize"
+                >
+                  <v-radio
+                    label="128"
+                    value="128"
+                  />
+                  <v-radio
+                    label="192"
+                    value="192"
+                  />
+                  <v-radio
+                    label="256"
+                    value="256"
+                  />
+                </v-radio-group>
+              </template>
+            </BinaryInputArea>
+          </section>
+          Sample tutorial keys:
+          <TutorialIconButton :tutorial-key="TutorialKey.Test" />
+          <TutorialIconButton :tutorial-key="TutorialKey.Default" />
+        </div>
+      </transition>
+
     </ClientOnly>
   </main>
 </template>
@@ -31,6 +70,18 @@ const encryptState = useEncryptState();
   // width: 100%;
   height: 100%;
 
-  // background-color: green;
+  .inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: min-content;
+    gap: 20px;
+
+    :deep(.v-selection-control-group--inline) {
+      align-self: flex-end;
+      gap: 10px;
+      font-size: 12px;
+    }
+  }
 }
 </style>
