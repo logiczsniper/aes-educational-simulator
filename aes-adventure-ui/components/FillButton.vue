@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { FillOption } from './FillOption'
+enum FillOption {
+  Zeroes = "Zeroes",
+  Ones = "Ones",
+  Random = "Random",
+}
 
 const { t } = useI18n();
 
@@ -18,12 +22,25 @@ const fillOptionItems = Object.keys(FillOption).map(fillOptionKey => ({
   value: fillOptionKey
 }))
 
-const emit = defineEmits<{
-  (e: 'fill', value: FillOption): void
+const props = defineProps<{
+  onFillZeroes: (..._: any[]) => any,
+  onFillOnes: (..._: any[]) => any,
+  onFillRandom: (..._: any[]) => any
 }>()
-const onFillClick = () => {
-  fillDialogOpen.value = false
-  if (selectedFillOption.value !== null) emit('fill', selectedFillOption.value)
+
+const onFillClick = (): void => {
+  fillDialogOpen.value = false;
+  switch (selectedFillOption.value) {
+    case FillOption.Ones:
+      props.onFillOnes()
+      break
+    case FillOption.Zeroes:
+      props.onFillZeroes()
+      break
+    case FillOption.Random:
+      props.onFillRandom()
+      break
+  }
 }
 </script>
 

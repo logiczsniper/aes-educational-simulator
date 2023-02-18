@@ -58,6 +58,14 @@ const encryptState = useEncryptState();
           Sample tutorial keys:
           <TutorialIconButton :tutorial-key="TutorialKey.Test" />
           <TutorialIconButton :tutorial-key="TutorialKey.Default" />
+
+          <br />
+          Animation test:
+          <AnimationAesAnimationFrame>
+            <AnimationTestA>
+
+            </AnimationTestA>
+          </AnimationAesAnimationFrame>
         </div>
       </transition>
 

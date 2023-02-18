@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge",
+    "@types/animejs": "^3.1.7",
     "nuxt": "^3.2.0",
     "sass-loader": "^13.2.0",
     "vitest": "^0.28.3"
@@ -19,6 +20,7 @@
     "@mdi/font": "^7.1.96",
     "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
     "@pinia/nuxt": "^0.4.6",
+    "animejs": "^3.2.1",
     "pinia": "^2.0.29",
     "sass": "^1.57.1",
     "vuetify": "^3.1.2"

@@ -1,5 +1,4 @@
-<script setup lang="ts">import { FillOption } from './FillButton';
-
+<script setup lang="ts">
 const { t } = useI18n();
 
 const props = defineProps<{
@@ -48,21 +47,11 @@ const maxLengthPadding = computed(() => {
   return 93
 })
 
-const onFill = (fillOption: FillOption): void => {
-  switch (fillOption) {
-    case FillOption.Ones:
-      currentValueFormatted.value = formatInput('1'.repeat(maxLength.value))
-      break
-    case FillOption.Zeroes:
-      currentValueFormatted.value = formatInput('0'.repeat(maxLength.value))
-      break
-    case FillOption.Random:
-      currentValueFormatted.value = formatInput(
-        Array(maxLength.value).fill(null).map(_ => Number(Math.random() > 0.5)).join('')
-      )
-      break
-  }
-}
+const onFillZeroes = () => currentValueFormatted.value = formatInput('0'.repeat(maxLength.value))
+const onFillOnes = () => currentValueFormatted.value = formatInput('1'.repeat(maxLength.value))
+const onFillRandom = () => currentValueFormatted.value = formatInput(
+  Array(maxLength.value).fill(null).map(_ => Number(Math.random() > 0.5)).join('')
+)
 </script>
 
 <template>
@@ -91,10 +80,14 @@ const onFill = (fillOption: FillOption): void => {
       placeholder="00101010   1100000   11011..."
       @keydown="preventInvalidInput"
     >
-    </textarea>
+              </textarea>
     <small class="footer">
       {{ remainingCharsMessage }}
-      <FillButton @fill="onFill" />
+      <FillButton
+        :on-fill-ones="onFillOnes"
+        :on-fill-zeroes="onFillZeroes"
+        :on-fill-random="onFillRandom"
+      />
     </small>
   </div>
 </template>
@@ -145,5 +138,4 @@ const onFill = (fillOption: FillOption): void => {
     display: flex;
     align-items: center;
   }
-}
-</style>
+}</style>
