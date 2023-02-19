@@ -55,26 +55,69 @@ const encryptState = useEncryptState();
               </template>
             </BinaryInputArea>
           </section>
-          Sample tutorial keys:
-          <TutorialIconButton :tutorial-key="TutorialKey.Test" />
-          <TutorialIconButton :tutorial-key="TutorialKey.Default" />
+          <v-btn
+            class="startButton"
+            prependIcon="mdi-lock"
+            variant="flat"
+            color="primary"
+          >
+            {{ `${t('simulator.start')} ${t('simulator.encryption')}` }}
+          </v-btn>
+          <section class="inputToStateStep">
+            <StepDropdown
+              :title="`${t('simulator.plaintext')} ➙ ${t('simulator.state')}`"
+              :tutorial-key="TutorialKey.Test"
+              background-color="#f9f9f9"
+            >
+              <AnimationAesAnimationFrame>
+                <template #animation="{ timeline }">
+                  <AnimationTestA :timeline="timeline">
+                  </AnimationTestA>
+                </template>
+              </AnimationAesAnimationFrame>
+            </StepDropdown>
+          </section>
+          <section class="initialStep">
+            <StepDropdown
+              :title="`${t('simulator.add-key')}`"
+              :tutorial-key="TutorialKey.Test"
+            >
+              <AnimationAesAnimationFrame>
+                <template #animation="{ timeline }">
+                  <AnimationTestA :timeline="timeline">
+                  </AnimationTestA>
+                </template>
+              </AnimationAesAnimationFrame>
+            </StepDropdown>
+          </section>
+          <section class="roundsHeader">
+            [Round count, statistics and control timeline here]
+          </section>
+          <section class="rounds">
+            <StepDropdown
+              :title="`${t('simulator.substitute-bytes')}`"
+              :tutorial-key="TutorialKey.Default"
+            >
+            </StepDropdown>
 
-          <br />
-          Animation test:
-          <AnimationAesAnimationFrame>
-            <template #animation="{ timeline }">
-              <AnimationTestA :timeline="timeline">
-              </AnimationTestA>
-            </template>
+            <StepDropdown
+              :title="`${t('simulator.shift-rows')}`"
+              :tutorial-key="TutorialKey.Test"
+            >
+            </StepDropdown>
 
-          </AnimationAesAnimationFrame>
-          <AnimationAesAnimationFrame>
-            <template #animation="{ timeline }">
-              <AnimationTestA :timeline="timeline">
-              </AnimationTestA>
-            </template>
+            <StepDropdown
+              :title="`${t('simulator.mix-columns')}`"
+              :tutorial-key="TutorialKey.Test"
+            >
+            </StepDropdown>
 
-          </AnimationAesAnimationFrame>
+            <StepDropdown
+              :title="`${t('simulator.add-round-key')}`"
+              :tutorial-key="TutorialKey.Test"
+            >
+            </StepDropdown>
+          </section>
         </div>
       </transition>
 
@@ -99,6 +142,29 @@ const encryptState = useEncryptState();
       gap: 10px;
       font-size: 12px;
     }
+  }
+
+  .startButton {
+    display: flex;
+    margin: 18px 0 12px auto;
+  }
+
+  .inputToStateStep {
+    margin: 20px 0;
+  }
+
+  .initialStep {
+    margin-bottom: 20px;
+  }
+
+  .roundsHeader {
+    margin-bottom: 18px;
+  }
+
+  .rounds {
+    display: grid;
+    gap: 20px;
+    padding-bottom: 100px;
   }
 }
 </style>

@@ -7,10 +7,12 @@ const props = defineProps<{
 
 const tutorial = useTutorial()
 
-const onClick = () => {
+const onClick = (e: Event) => {
   if (props.tutorialKey === undefined) return;
 
   tutorial.setCurrentTutorialKey(props.tutorialKey)
+  e.preventDefault()
+  e.stopPropagation()
 }
 </script>
 
