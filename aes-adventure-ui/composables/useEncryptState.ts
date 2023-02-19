@@ -1,4 +1,4 @@
-export const useEncryptState = defineStore(getKey`encrypt-state`, () => {
+export const useEncryptState = defineStore(getKey`encryptState`, () => {
   const plaintext = ref('')
   const key = ref('')
   const keySize = ref<128 | 192 | 256>(128)

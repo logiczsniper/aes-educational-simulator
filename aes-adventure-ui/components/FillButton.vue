@@ -147,7 +147,7 @@ const onFillClick = (): void => {
   }
 
   .fillButton {
-    margin-top: -4px;
+    margin-top: -2px;
     margin-left: -16px;
     margin-right: -16px;
   }

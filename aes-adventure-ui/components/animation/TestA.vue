@@ -1,36 +1,29 @@
 <script setup lang="ts">
-import { AnimeInstance } from 'animejs';
+import { AnimeInstance, AnimeTimelineInstance } from 'animejs';
 import anime from 'animejs/lib/anime.es.js';
 
-const animationInstance = ref<AnimeInstance | null>(null)
+const props = defineProps<{
+  timeline: AnimeTimelineInstance
+}>();
 
-
-const hello = ref(0)
-
-const test = () => console.log(animationInstance.value?.currentTime)
 
 onMounted(() => {
-  animationInstance.value = anime({
+  props.timeline.add({
     targets: '.testanimation',
     translateX: 250,
-    rotate: '1turn',
-    backgroundColor: '#FFF',
-    duration: 8000,
-    loop: true,
-    update: () => {
-      hello.value = animationInstance.value?.currentTime ?? hello.value
-    }
+    duration: 4000,
   })
+    .add({
+      targets: '.testanimation1',
+      rotate: '1turn',
+      backgroundColor: '#292',
+    })
 })
 </script>
 
 <template>
-  <div
-    class="testanimation"
-    @click="test"
-  >
+  <div class="testanimation">
     Testing
-    {{ hello }}
   </div>
-  <div class="testanimation">Another one</div>
+  <div class="testanimation1">Another one</div>
 </template>

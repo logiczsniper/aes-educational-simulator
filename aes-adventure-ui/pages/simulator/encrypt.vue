@@ -62,9 +62,18 @@ const encryptState = useEncryptState();
           <br />
           Animation test:
           <AnimationAesAnimationFrame>
-            <AnimationTestA>
+            <template #animation="{ timeline }">
+              <AnimationTestA :timeline="timeline">
+              </AnimationTestA>
+            </template>
 
-            </AnimationTestA>
+          </AnimationAesAnimationFrame>
+          <AnimationAesAnimationFrame>
+            <template #animation="{ timeline }">
+              <AnimationTestA :timeline="timeline">
+              </AnimationTestA>
+            </template>
+
           </AnimationAesAnimationFrame>
         </div>
       </transition>
