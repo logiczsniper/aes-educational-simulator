@@ -25,24 +25,25 @@ const onControlClick = () => {
   }
 }
 
-const onSliderClick = (value: number) => {
-  const preClickStatePaused = timeline.value?.paused ?? false
+const pauseWhile = (fn: () => void) => {
+  const pausedBefore = timeline.value?.paused ?? false
   timeline.value?.pause()
 
-  const valueInMs = (value / 100) * (timeline.value?.duration ?? 0)
-  timeline.value?.seek(valueInMs)
+  fn()
 
-  if (!preClickStatePaused) timeline.value?.play()
+  if (!pausedBefore) timeline.value?.play()
 }
 
-const onPlaybackSpeedClick = (value: PlaybackSpeed | undefined) => {
-  const preClickStatePaused = timeline.value?.paused ?? false
-  timeline.value?.pause()
+const onSliderClick = (value: number) =>
+  pauseWhile(() => {
+    const valueInMs = (value / 100) * (timeline.value?.duration ?? 0)
+    timeline.value?.seek(valueInMs)
+  })
 
-  playbackSpeed.setCurrentPlaybackSpeed(value)
-
-  if (!preClickStatePaused) timeline.value?.play()
-}
+const onPlaybackSpeedClick = (value: PlaybackSpeed | undefined) =>
+  pauseWhile(() => {
+    playbackSpeed.setCurrentPlaybackSpeed(value)
+  })
 
 onMounted(() => {
   timeline.value = anime.timeline({

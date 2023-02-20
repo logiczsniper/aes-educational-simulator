@@ -6,4 +6,4 @@ interface AesAnimatable {
   animeInstance: AnimeInstance;
 }
 
-type AesAnimationFunction = (timelineInstance: AnimeTimelineInstance) => AnimeTimelineInstance;
+type AesAnimationFunction = (timelineInstance: AnimeTimelineInstance) => void;

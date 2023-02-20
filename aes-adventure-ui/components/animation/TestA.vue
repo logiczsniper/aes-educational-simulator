@@ -1,20 +1,28 @@
 <script setup lang="ts">
-import { AnimeInstance, AnimeTimelineInstance } from 'animejs';
-import anime from 'animejs/lib/anime.es.js';
+import { AnimeTimelineInstance } from 'animejs';
+import { stringToDivs } from '~~/utils/animation/stringToDivs';
 
 const props = defineProps<{
   timeline: AnimeTimelineInstance
 }>();
 
+const animationRoot = ref<HTMLElement>()
+const encryptState = useEncryptState()
+const { mountDivs, getDivIndexClass, getDivRowClass, getDivColumnClass } = stringToDivs(encryptState.plaintext)
 
 onMounted(() => {
+  // Mount the divs we created:
+  if (animationRoot.value)
+    mountDivs(animationRoot.value)
+
+  // Create the animation:
   props.timeline.add({
-    targets: '.testanimation',
+    targets: getDivColumnClass(3),
     translateX: 250,
     duration: 4000,
   })
     .add({
-      targets: '.testanimation1',
+      targets: getDivIndexClass(3),
       rotate: '1turn',
       backgroundColor: '#292',
     })
@@ -22,8 +30,23 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="testanimation">
-    Testing
-  </div>
-  <div class="testanimation1">Another one</div>
+  <figure
+    ref="animationRoot"
+    class="testAnimationRoot"
+  >
+  </figure>
 </template>
+
+<style lang="scss">
+.testAnimationRoot {
+  // display: grid;
+  grid-template-columns: repeat(4, min-content);
+  grid-template-rows: repeat(4, min-content);
+  gap: 10px;
+
+  &>div {
+    font-family: "Courier New";
+    font-weight: bold;
+  }
+}
+</style>
