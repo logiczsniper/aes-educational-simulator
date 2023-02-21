@@ -1,4 +1,4 @@
-export type AesiKeySize = 16 | 24 | 32;
+export type AesiKeySize = 128 | 192 | 256;
 
 export type AesiInput = {
   key: Uint8Array;

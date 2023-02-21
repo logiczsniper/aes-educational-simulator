@@ -80,7 +80,7 @@ const onFillRandom = () => currentValueFormatted.value = formatInput(
       placeholder="00101010   1100000   11011..."
       @keydown="preventInvalidInput"
     >
-                </textarea>
+                  </textarea>
     <small class="footer">
       {{ remainingCharsMessage }}
       <FillButton
@@ -111,6 +111,7 @@ const onFillRandom = () => currentValueFormatted.value = formatInput(
   .title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0 16px;
   }
 

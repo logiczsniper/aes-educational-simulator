@@ -135,7 +135,7 @@ const tutorial = useTutorial();
   display: grid;
   grid-template-columns: min-content auto;
   height: 100vh;
-  overflow: auto;
+  overflow-x: hidden;
 
   .closedLeftColumn {
     position: fixed;

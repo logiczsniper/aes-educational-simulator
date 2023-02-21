@@ -32,26 +32,44 @@ const encryptState = useEncryptState();
               :key="encryptState.keySize"
             >
               <template #after-title>
-                <v-radio-group
-                  inline
+                <v-btn-toggle
+                  class="keySizeGroup"
                   density="compact"
-                  hide-details
+                  selected-class="selectedKeySize"
                   :model-value="encryptState.keySize"
                   @update:model-value="encryptState.setKeySize"
                 >
-                  <v-radio
-                    label="128"
-                    value="128"
-                  />
-                  <v-radio
-                    label="192"
-                    value="192"
-                  />
-                  <v-radio
-                    label="256"
-                    value="256"
-                  />
-                </v-radio-group>
+                  <v-btn
+                    icon
+                    density="compact"
+                    variant="plain"
+                    :value="128"
+                  >
+                    <v-icon size="20">mdi-numeric-1</v-icon>
+                    <v-icon size="20">mdi-numeric-2</v-icon>
+                    <v-icon size="20">mdi-numeric-8</v-icon>
+                  </v-btn>
+                  <v-btn
+                    icon
+                    density="compact"
+                    variant="plain"
+                    :value="192"
+                  >
+                    <v-icon size="20">mdi-numeric-1</v-icon>
+                    <v-icon size="20">mdi-numeric-9</v-icon>
+                    <v-icon size="20">mdi-numeric-2</v-icon>
+                  </v-btn>
+                  <v-btn
+                    icon
+                    density="compact"
+                    variant="plain"
+                    :value="256"
+                  >
+                    <v-icon size="20">mdi-numeric-2</v-icon>
+                    <v-icon size="20">mdi-numeric-5</v-icon>
+                    <v-icon size="20">mdi-numeric-6</v-icon>
+                  </v-btn>
+                </v-btn-toggle>
               </template>
             </BinaryInputArea>
           </section>
@@ -65,7 +83,7 @@ const encryptState = useEncryptState();
           </v-btn>
           <section class="inputToStateStep">
             <StepDropdown
-              :title="`${t('simulator.plaintext')} ➙ ${t('simulator.state')}`"
+              :title="`${t('simulator.plaintext')} ➜ ${t('simulator.state')}`"
               :tutorial-key="TutorialKey.Test"
               background-color="#f9f9f9"
             >
@@ -142,6 +160,23 @@ const encryptState = useEncryptState();
       gap: 10px;
       font-size: 12px;
     }
+
+    .keySizeGroup {
+      height: unset;
+      gap: 4px;
+
+      .v-btn {
+        height: min-content !important;
+      }
+
+      .v-icon:first-of-type {
+        margin-right: -13px;
+      }
+
+      .v-icon:last-of-type {
+        margin-left: -13px;
+      }
+    }
   }
 
   .startButton {
@@ -166,5 +201,10 @@ const encryptState = useEncryptState();
     gap: 20px;
     padding-bottom: 100px;
   }
+}
+
+.selectedKeySize {
+  color: #2C1D66;
+  opacity: 1;
 }
 </style>
