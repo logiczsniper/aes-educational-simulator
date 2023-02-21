@@ -62,7 +62,7 @@ const tutorial = useTutorial();
               >
                 <p>{{ t(`configure.modal.defaults.${selectedDefaultConfig}.name`) + ' AES' }}
                   <v-tooltip activator="parent">
-                    {{ t(`configure.modal.defaults.${ selectedDefaultConfig }.description`) }}
+                    {{ t(`configure.modal.defaults.${selectedDefaultConfig}.description`) }}
                   </v-tooltip>
                 </p>
               </div>
@@ -122,7 +122,7 @@ const tutorial = useTutorial();
           }"
           @click="currentTab = tab"
         >
-          {{ t(`simulator.${ tab }`) }}
+          {{ t(`simulator.${tab}`) }}
         </NuxtLink>
       </nav>
       <slot />
@@ -135,6 +135,7 @@ const tutorial = useTutorial();
   display: grid;
   grid-template-columns: min-content auto;
   height: 100vh;
+  overflow: auto;
 
   .closedLeftColumn {
     position: fixed;
@@ -150,7 +151,6 @@ const tutorial = useTutorial();
     overflow-x: auto;
     overflow-y: hidden;
     min-width: 200px;
-    max-width: 50vw;
     padding: 20px 20px 12px 26px;
     z-index: 2;
     background-color: white;
@@ -226,6 +226,7 @@ const tutorial = useTutorial();
     background-color: #f9f9f9;
     padding: 20px 4%;
     overflow-y: auto;
+    min-width: 1000px;
 
     &.largePadding {
       padding: 20px 10%;

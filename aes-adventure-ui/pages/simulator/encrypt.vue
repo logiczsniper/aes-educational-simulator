@@ -133,7 +133,7 @@ const encryptState = useEncryptState();
   .inputs {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     height: min-content;
     gap: 20px;
 
