@@ -20,7 +20,8 @@ import { shiftRows } from "./core/steps/shiftRows";
  *     be used for the animations.
  */
 export const aesi = ({ key, config }: AesiInput) => {
-  const keySize = key.length as AesiKeySize;
+  // Each element of [key] is a byte, so multiply by 8 to convert to bits for the key size.
+  const keySize = (key.length * 8) as AesiKeySize;
 
   const roundCountMultiplier = (() => {
     if (config.defaultConfig === AesiDefaultConfig.Short) return 0.5
