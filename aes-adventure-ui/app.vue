@@ -19,6 +19,7 @@ useHead({
 
 <style lang="scss">
 @use '~/assets/global-font.scss';
+@use '~/assets/code-font.scss';
 @use '~/assets/emoji-font.scss';
 @use '~/assets/vuetify-overrides.scss';
 @use '~/assets/html-overrides.scss';
