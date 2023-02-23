@@ -226,7 +226,7 @@ const tutorial = useTutorial();
     background-color: #f9f9f9;
     padding: 20px 4%;
     overflow-y: auto;
-    min-width: 1000px;
+    min-width: 600px;
 
     &.largePadding {
       padding: 20px 10%;
@@ -235,11 +235,11 @@ const tutorial = useTutorial();
     .tabBar {
       display: flex;
       justify-content: space-around;
-      gap: 64px;
+      gap: 24px;
       background-color: white;
       border-radius: 8px;
       padding: 6px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       transition: all .5s linear;
       color: #2C1D66;
       font-weight: 500;

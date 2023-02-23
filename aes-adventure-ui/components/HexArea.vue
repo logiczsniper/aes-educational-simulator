@@ -15,7 +15,7 @@ const emit = defineEmits<{
 
 const formatInput = (input: string) => {
   const spacer = ' '
-  const formattedValue = input.match(/.{1,8}/g)?.join(spacer) ?? ''
+  const formattedValue = input.match(/.{1,2}/g)?.join(spacer) ?? ''
 
   return formattedValue
 }
@@ -27,37 +27,32 @@ const currentValue = computed(() => currentValueFormatted.value.replaceAll(' ', 
 watch(currentValue, newValue => emit('update:modelValue', newValue))
 
 const preventInvalidInput = (event: KeyboardEvent) => {
-  const isBinary = event.key === '0' || event.key === '1'
-  const isFull = currentValue.value.length === props.maxLength
+  const isHex = "0123456789ABCDEF".includes(event.key.toUpperCase())
+  const isFull = currentValue.value.length === maxLengthHex.value
   const isBackspace = event.key === 'Backspace'
   const hasModifier = event.altKey || event.ctrlKey
   const isNewCharacter = !isBackspace && !hasModifier
 
-  if (!isBinary && isNewCharacter || isFull && isNewCharacter) {
+  if (!isHex && isNewCharacter || isFull && isNewCharacter) {
     event.preventDefault()
     return
   }
 }
 
-const remainingChars = computed(() => props.maxLength - currentValue.value.length);
-const remainingCharsMessage = computed(() => `${remainingChars.value} ${t('simulator.binaryInputArea.bitsRemaining')}`)
+const maxLengthHex = computed(() => props.maxLength / 4)
+const remainingChars = computed(() => maxLengthHex.value - currentValue.value.length);
+const remainingCharsMessage = computed(() => `${remainingChars.value} ${t('simulator.hexArea.nibblesLeft')}`)
 const maxLengthPadding = computed(() => {
   if (props.maxLength === 128) return 45
   if (props.maxLength === 192) return 69
 
   return 93
 })
-
-const onFillZeroes = () => currentValueFormatted.value = formatInput('0'.repeat(props.maxLength))
-const onFillOnes = () => currentValueFormatted.value = formatInput('1'.repeat(props.maxLength))
-const onFillRandom = () => currentValueFormatted.value = formatInput(
-  Array(props.maxLength).fill(null).map(_ => Number(Math.random() > 0.5)).join('')
-)
 </script>
 
 <template>
   <div
-    class="binaryTextInput"
+    class="hexArea"
     :class="{
       'small': props.maxLength === 128,
       'medium': props.maxLength === 192,
@@ -76,43 +71,38 @@ const onFillRandom = () => currentValueFormatted.value = formatInput(
       :name="props.titleKey"
       rows="4"
       cols="4"
-      :maxlength="props.maxLength + maxLengthPadding"
+      :maxlength="maxLengthHex + maxLengthPadding"
       class="textArea code"
-      placeholder="00101010   1100000   11011..."
+      placeholder="2f 1c.."
       @keydown="preventInvalidInput"
     />
     <small class="footer">
       {{ remainingCharsMessage }}
-      <FillButton
-        :on-fill-ones="onFillOnes"
-        :on-fill-zeroes="onFillZeroes"
-        :on-fill-random="onFillRandom"
-      />
     </small>
   </div>
 </template>
 
 <style lang="scss">
-.binaryTextInput {
+.hexArea {
   display: grid;
 
   &.small {
-    width: 368px;
+    width: 136px;
   }
 
   &.medium {
-    width: 540px;
+    width: 196px;
   }
 
   &.large {
-    width: 712px;
+    width: 254px;
   }
 
   .title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 16px;
+    // margin: 0 16px;
   }
 
   .textArea {

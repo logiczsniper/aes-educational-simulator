@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { aesi } from '~~/utils/aesi';
+
 const { t } = useI18n();
 
 definePageMeta({
@@ -9,6 +11,13 @@ definePageMeta({
 })
 
 const encryptState = useEncryptState();
+
+const o = ref()
+const onStartEncryption = () => {
+  const { encrypt, decrypt } = aesi({ key: encryptState.key, config: {} })
+
+  o.value = encrypt(encryptState.plaintext)
+}
 </script>
 
 <template>
@@ -20,13 +29,13 @@ const encryptState = useEncryptState();
       >
         <div>
           <section class="inputs">
-            <BinaryInputArea
-              v-model="encryptState.plaintext"
+            <HexArea
+              v-model="encryptState.rawPlaintext"
               title-key="simulator.plaintext"
               :max-length="128"
             />
-            <BinaryInputArea
-              v-model="encryptState.key"
+            <HexArea
+              v-model="encryptState.rawKey"
               title-key="simulator.key"
               :max-length="encryptState.keySize"
               :key="encryptState.keySize"
@@ -71,13 +80,14 @@ const encryptState = useEncryptState();
                   </v-btn>
                 </v-btn-toggle>
               </template>
-            </BinaryInputArea>
+            </HexArea>
           </section>
           <v-btn
             class="startButton"
             prependIcon="mdi-lock"
             variant="flat"
             color="primary"
+            @click="onStartEncryption"
           >
             {{ `${t('simulator.start')} ${t('simulator.encryption')}` }}
           </v-btn>
@@ -149,16 +159,21 @@ const encryptState = useEncryptState();
   height: 100%;
 
   .inputs {
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     height: min-content;
-    gap: 20px;
+    gap: 40px;
 
     :deep(.v-selection-control-group--inline) {
       align-self: flex-end;
       gap: 10px;
       font-size: 12px;
+    }
+
+    &>*:first-child {
+      justify-self: end;
     }
 
     .keySizeGroup {
@@ -181,7 +196,7 @@ const encryptState = useEncryptState();
 
   .startButton {
     display: flex;
-    margin: 18px 0 12px auto;
+    margin: 36px 0 12px auto;
   }
 
   .inputToStateStep {
@@ -204,7 +219,6 @@ const encryptState = useEncryptState();
 }
 
 .selectedKeySize {
-  color: #2C1D66;
-  opacity: 1;
+  display: none;
 }
 </style>

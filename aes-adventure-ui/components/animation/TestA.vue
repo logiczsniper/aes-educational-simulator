@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { AnimeTimelineInstance } from 'animejs';
+import { hexToDivs } from '~~/utils/animation/hexToDivs';
 import { stringToDivs } from '~~/utils/animation/stringToDivs';
 
 const props = defineProps<{
@@ -8,7 +9,7 @@ const props = defineProps<{
 
 const animationRoot = ref<HTMLElement>()
 const encryptState = useEncryptState()
-const { mountDivs, getDivIndexClass, getDivRowClass, getDivColumnClass } = stringToDivs(encryptState.plaintext)
+const { mountDivs, getDivIndexClass, getDivRowClass, getDivColumnClass } = hexToDivs(encryptState.plaintext)
 
 onMounted(() => {
   // Mount the divs we created:

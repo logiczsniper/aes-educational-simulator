@@ -6,7 +6,7 @@ export const stringToDivs = (s: string) => {
   const getDivRowClass = (row: number) => `${id}-row-${row}`
   const getDivColumnClass = (column: number) => `${id}-column-${column}`
 
-  const bytes = (s.match(/.{1,8}/g) ?? []) as Array<string>
+  const bytes = (s.match(/.{1,2}/g) ?? []) as Array<string>
 
   const rowCount = 4
   const columnCount = bytes.length / rowCount

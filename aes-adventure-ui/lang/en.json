@@ -102,6 +102,9 @@
           "TestVector": "NIST official test vector"
         }
       }
+    },
+    "hexArea": {
+      "nibblesLeft": "nibbles left."
     }
   }
 }
