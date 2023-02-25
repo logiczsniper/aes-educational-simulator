@@ -104,7 +104,8 @@
       }
     },
     "hexArea": {
-      "nibblesLeft": "nibbles left."
+      "nibblesLeft": "nibbles left.",
+      "ready": "Ready!"
     }
   }
 }

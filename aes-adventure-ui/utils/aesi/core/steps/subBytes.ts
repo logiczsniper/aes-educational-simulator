@@ -1,4 +1,4 @@
-import type { AesiRoundStep } from "../../aesi.types";
+import { AesiRoundStep, AesiRoundStepType } from "../../aesi.types";
 import { S_BOX, S_BOX_INVERSE } from "../constants";
 
 export const subBytes = (state: Uint8Array, inverse?: boolean): AesiRoundStep => {
@@ -15,6 +15,7 @@ export const subBytes = (state: Uint8Array, inverse?: boolean): AesiRoundStep =>
   const outputState = new Uint8Array(state)
 
   return {
+    type: AesiRoundStepType.SubBytes,
     inputState,
     outputState,
   }

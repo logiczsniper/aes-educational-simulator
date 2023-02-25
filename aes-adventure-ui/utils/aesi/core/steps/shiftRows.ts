@@ -1,4 +1,4 @@
-import type { AesiRoundStep } from "../../aesi.types";
+import { AesiRoundStep, AesiRoundStepType } from "../../aesi.types";
 
 export const shiftRows = (state: Uint8Array, inverse?: boolean): AesiRoundStep => {
   const inputState = new Uint8Array(state)
@@ -32,6 +32,7 @@ export const shiftRows = (state: Uint8Array, inverse?: boolean): AesiRoundStep =
   const outputState = new Uint8Array(state)
 
   return {
+    type: AesiRoundStepType.ShiftRows,
     inputState,
     outputState,
   }

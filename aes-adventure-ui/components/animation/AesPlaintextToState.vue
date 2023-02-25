@@ -8,7 +8,11 @@ const props = defineProps<{
 
 const animationRoot = ref<HTMLElement>()
 const encryptState = useEncryptState()
-const { mountDivs, getDivIndexClass, getDivRowClass, getDivColumnClass } = hexToDivs(encryptState.plaintext)
+
+const plaintext = computed(() => encryptState.plaintext)
+const state = computed(() => encryptState.output?.initialState ?? [])
+
+const { mountDivs, getDivRowClass, getDivColumnClass } = hexToDivs(plaintext.value)
 
 onMounted(() => {
   // Mount the divs we created:
@@ -16,29 +20,31 @@ onMounted(() => {
     mountDivs(animationRoot.value)
 
   // Create the animation:
-  props.timeline.add({
-    targets: getDivColumnClass(3),
-    translateX: 250,
-    duration: 4000,
-  })
-    .add({
-      targets: getDivIndexClass(3),
-      rotate: '1turn',
-      backgroundColor: '#292',
-    })
+  for (let row = 0; row < 4; row++) {
+    for (let col = 0; col < 4; col++) {
+      if (row === col) props.timeline.add({
+        targets: `${getDivRowClass(row)}${getDivColumnClass(col)}`,
+        translateX: 250
+      })
+    }
+  }
+
+  // diagonal: move x only (no y)
+  // above diag: move x: normal translate x - (width of col) * col
+  // below
 })
 </script>
 
 <template>
   <figure
     ref="animationRoot"
-    class="testAnimationRoot"
+    class="plaintextToStateRoot"
   >
   </figure>
 </template>
 
 <style lang="scss">
-.testAnimationRoot {
+.plaintextToStateRoot {
   display: grid;
   grid-template-columns: repeat(4, min-content);
   grid-template-rows: repeat(4, min-content);

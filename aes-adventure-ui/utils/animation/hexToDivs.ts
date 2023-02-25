@@ -1,13 +1,13 @@
 import { getId } from "../getId"
 
-export const hexToDivs = (hex: Uint8Array) => {
+export const hexToDivs = (hex: Array<number> | Uint8Array) => {
+  const rowCount = 4
+  const columnCount = hex.length / rowCount
+
   const id = getId()
   const getDivIndexClass = (index: number) => `${id}-${index}`
   const getDivRowClass = (row: number) => `${id}-row-${row}`
   const getDivColumnClass = (column: number) => `${id}-column-${column}`
-
-  const rowCount = 4
-  const columnCount = hex.length / rowCount
 
   const byteDivs = [...hex].map((byte, index) => {
     const byteDiv = document.createElement('div')
@@ -16,7 +16,7 @@ export const hexToDivs = (hex: Uint8Array) => {
     const column = index % rowCount
 
     byteDiv.classList.add(id, getDivIndexClass(index), getDivRowClass(row), getDivColumnClass(column), 'code')
-    byteDiv.textContent = byte.toString(16)
+    byteDiv.textContent = formatHex(byte)
 
     return byteDiv
   })

@@ -6,7 +6,8 @@ const { t } = useI18n();
 const props = defineProps<{
   titleKey: string,
   modelValue: string,
-  maxLength: AesiKeySize
+  maxLength: AesiKeySize,
+  disabled?: boolean,
 }>();
 
 const emit = defineEmits<{
@@ -41,7 +42,10 @@ const preventInvalidInput = (event: KeyboardEvent) => {
 
 const maxLengthHex = computed(() => props.maxLength / 4)
 const remainingChars = computed(() => maxLengthHex.value - currentValue.value.length);
-const remainingCharsMessage = computed(() => `${remainingChars.value} ${t('simulator.hexArea.nibblesLeft')}`)
+const remainingCharsMessage = computed(() => remainingChars.value === 0
+  ? t('simulator.hexArea.ready')
+  : `${remainingChars.value} ${t('simulator.hexArea.nibblesLeft')}`
+)
 const maxLengthPadding = computed(() => {
   if (props.maxLength === 128) return 45
   if (props.maxLength === 192) return 69
@@ -54,6 +58,7 @@ const maxLengthPadding = computed(() => {
   <div
     class="hexArea"
     :class="{
+      'disabled': props.disabled,
       'small': props.maxLength === 128,
       'medium': props.maxLength === 192,
       'large': props.maxLength === 256
@@ -71,12 +76,17 @@ const maxLengthPadding = computed(() => {
       :name="props.titleKey"
       rows="4"
       cols="4"
+      spellcheck="false"
       :maxlength="maxLengthHex + maxLengthPadding"
       class="textArea code"
       placeholder="2f 1c.."
+      :disabled="props.disabled"
       @keydown="preventInvalidInput"
     />
-    <small class="footer">
+    <small
+      v-if="!props.disabled"
+      class="footer"
+    >
       {{ remainingCharsMessage }}
     </small>
   </div>
@@ -85,6 +95,13 @@ const maxLengthPadding = computed(() => {
 <style lang="scss">
 .hexArea {
   display: grid;
+
+  &.disabled {
+    &>textarea {
+      cursor: not-allowed;
+    }
+
+  }
 
   &.small {
     width: 136px;

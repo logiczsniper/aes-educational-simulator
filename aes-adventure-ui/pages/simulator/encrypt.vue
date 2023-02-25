@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import AesPlaintextToState from '~~/components/animation/AesPlaintextToState.vue';
 import { aesi } from '~~/utils/aesi';
+import { AesiOutput } from '~~/utils/aesi/aesi.types';
 
 const { t } = useI18n();
 
@@ -11,13 +13,6 @@ definePageMeta({
 })
 
 const encryptState = useEncryptState();
-
-const o = ref()
-const onStartEncryption = () => {
-  const { encrypt, decrypt } = aesi({ key: encryptState.key, config: {} })
-
-  o.value = encrypt(encryptState.plaintext)
-}
 </script>
 
 <template>
@@ -33,18 +28,21 @@ const onStartEncryption = () => {
               v-model="encryptState.rawPlaintext"
               title-key="simulator.plaintext"
               :max-length="128"
+              :disabled="encryptState.stage !== EncryptStage.Input"
             />
             <HexArea
               v-model="encryptState.rawKey"
               title-key="simulator.key"
               :max-length="encryptState.keySize"
               :key="encryptState.keySize"
+              :disabled="encryptState.stage !== EncryptStage.Input"
             >
               <template #after-title>
                 <v-btn-toggle
                   class="keySizeGroup"
                   density="compact"
                   selected-class="selectedKeySize"
+                  :disabled="encryptState.stage !== EncryptStage.Input"
                   :model-value="encryptState.keySize"
                   @update:model-value="encryptState.setKeySize"
                 >
@@ -83,15 +81,19 @@ const onStartEncryption = () => {
             </HexArea>
           </section>
           <v-btn
+            v-if="encryptState.stage === EncryptStage.Input"
             class="startButton"
             prependIcon="mdi-lock"
             variant="flat"
             color="primary"
-            @click="onStartEncryption"
+            @click="encryptState.calculateEncryptOutput"
           >
             {{ `${t('simulator.start')} ${t('simulator.encryption')}` }}
           </v-btn>
-          <section class="inputToStateStep">
+          <section
+            v-if="encryptState.output"
+            class="inputToStateStep"
+          >
             <StepDropdown
               :title="`${t('simulator.plaintext')} ➜ ${t('simulator.state')}`"
               :tutorial-key="TutorialKey.Test"
@@ -99,13 +101,16 @@ const onStartEncryption = () => {
             >
               <AnimationAesAnimationFrame>
                 <template #animation="{ timeline }">
-                  <AnimationTestA :timeline="timeline">
-                  </AnimationTestA>
+                  <AesPlaintextToState :timeline="timeline">
+                  </AesPlaintextToState>
                 </template>
               </AnimationAesAnimationFrame>
             </StepDropdown>
           </section>
-          <section class="initialStep">
+          <section
+            v-if="encryptState.output"
+            class="initialStep"
+          >
             <StepDropdown
               :title="`${t('simulator.add-key')}`"
               :tutorial-key="TutorialKey.Test"
@@ -118,10 +123,16 @@ const onStartEncryption = () => {
               </AnimationAesAnimationFrame>
             </StepDropdown>
           </section>
-          <section class="roundsHeader">
+          <section
+            v-if="encryptState.output"
+            class="roundsHeader"
+          >
             [Round count, statistics and control timeline here]
           </section>
-          <section class="rounds">
+          <section
+            v-if="encryptState.output"
+            class="rounds"
+          >
             <StepDropdown
               :title="`${t('simulator.substitute-bytes')}`"
               :tutorial-key="TutorialKey.Default"

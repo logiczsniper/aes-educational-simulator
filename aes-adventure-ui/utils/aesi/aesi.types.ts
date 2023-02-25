@@ -40,7 +40,16 @@ export type AesiRound = {
   steps: AesiRoundStep[];
 }
 
+export enum AesiRoundStepType {
+  AddKey,
+  SubBytes,
+  ShiftRows,
+  MixColumns,
+  AddRoundKey,
+}
+
 export type AesiRoundStep<T = never> = {
+  type: AesiRoundStepType;
   inputState: Uint8Array;
   outputState: Uint8Array;
   meta?: T;

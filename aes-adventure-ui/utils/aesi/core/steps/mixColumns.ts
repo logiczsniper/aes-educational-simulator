@@ -1,4 +1,4 @@
-import type { AesiRoundStep } from "../../aesi.types";
+import { AesiRoundStep, AesiRoundStepType } from "../../aesi.types";
 import { coefMult } from "../utils";
 
 export const mixColumns = (state: Uint8Array, inverse?: boolean): AesiRoundStep => {
@@ -23,6 +23,7 @@ export const mixColumns = (state: Uint8Array, inverse?: boolean): AesiRoundStep 
   const outputState = new Uint8Array(state)
 
   return {
+    type: AesiRoundStepType.MixColumns,
     inputState,
     outputState,
   }
