@@ -119,7 +119,7 @@ const log = console.log
   position: relative;
   padding: 20px;
 
-  .slider {}
+  // .slider {}
 
   .controls {
     display: grid;

@@ -15,8 +15,8 @@ export const hexToDivs = (hex: Uint8Array) => {
     const row = Math.floor(index / rowCount)
     const column = index % rowCount
 
-    byteDiv.classList.add(id, getDivIndexClass(index), getDivRowClass(row), getDivColumnClass(column))
-    byteDiv.textContent = String(byte)
+    byteDiv.classList.add(id, getDivIndexClass(index), getDivRowClass(row), getDivColumnClass(column), 'code')
+    byteDiv.textContent = byte.toString(16)
 
     return byteDiv
   })

@@ -40,14 +40,9 @@ onMounted(() => {
 
 <style lang="scss">
 .testAnimationRoot {
-  // display: grid;
+  display: grid;
   grid-template-columns: repeat(4, min-content);
   grid-template-rows: repeat(4, min-content);
   gap: 10px;
-
-  &>div {
-    font-family: "Courier New";
-    font-weight: bold;
-  }
 }
 </style>
