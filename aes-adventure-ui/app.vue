@@ -26,6 +26,7 @@ useHead({
 @use '~/assets/utility-classes.scss';
 @use '~/assets/vue-transitions.scss';
 @use '~/assets/custom-scrollbar.scss';
+@use '~/assets/animation-grid.scss';
 
 body {
   margin: 0;

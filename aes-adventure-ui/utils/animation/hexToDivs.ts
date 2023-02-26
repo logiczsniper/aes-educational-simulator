@@ -36,6 +36,7 @@ export const hexToDivs = (hex: Array<number> | Uint8Array) => {
     getDivIndexClass: toTarget(getDivIndexClass),
     getDivRowClass: toTarget(getDivRowClass),
     getDivColumnClass: toTarget(getDivColumnClass),
+    idClass: `.${id}`,
     id,
     byteDivs,
   }

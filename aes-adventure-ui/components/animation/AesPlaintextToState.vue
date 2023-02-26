@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { AnimeTimelineInstance } from 'animejs';
+import { COL_GAP, DIV_HEIGHT, DIV_WIDTH, ROW_GAP } from '~~/utils/animation/constants';
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
 
 const props = defineProps<{
@@ -12,7 +13,7 @@ const encryptState = useEncryptState()
 const plaintext = computed(() => encryptState.plaintext)
 const state = computed(() => encryptState.output?.initialState ?? [])
 
-const { mountDivs, getDivRowClass, getDivColumnClass } = hexToDivs(plaintext.value)
+const { mountDivs, getDivRowClass, getDivColumnClass, idClass } = hexToDivs(plaintext.value)
 
 onMounted(() => {
   // Mount the divs we created:
@@ -20,34 +21,33 @@ onMounted(() => {
     mountDivs(animationRoot.value)
 
   // Create the animation:
+  const rowSize = DIV_HEIGHT + ROW_GAP + 1
+  const columnSize = DIV_WIDTH + COL_GAP - 1
   for (let row = 0; row < 4; row++) {
     for (let col = 0; col < 4; col++) {
-      if (row === col) props.timeline.add({
+      props.timeline.add({
         targets: `${getDivRowClass(row)}${getDivColumnClass(col)}`,
-        translateX: 250
+        translateX: (row * rowSize + 250) - col * rowSize,
+        translateY: col * columnSize - row * columnSize
       })
     }
   }
 
-  // diagonal: move x only (no y)
-  // above diag: move x: normal translate x - (width of col) * col
-  // below
+  props.timeline.add({
+    targets: idClass,
+    color: '#745CD0'
+  })
 })
 </script>
 
 <template>
   <figure
     ref="animationRoot"
-    class="plaintextToStateRoot"
+    class="plaintextToStateRoot animationGrid"
   >
   </figure>
 </template>
 
 <style lang="scss">
-.plaintextToStateRoot {
-  display: grid;
-  grid-template-columns: repeat(4, min-content);
-  grid-template-rows: repeat(4, min-content);
-  gap: 10px;
-}
+.plaintextToStateRoot {}
 </style>

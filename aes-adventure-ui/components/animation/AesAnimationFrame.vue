@@ -118,8 +118,11 @@ const log = console.log
 .aesAnimationFrame {
   position: relative;
   padding: 20px;
+  padding-top: 0;
 
-  // .slider {}
+  .slider {
+    margin-top: 20px;
+  }
 
   .controls {
     display: grid;
