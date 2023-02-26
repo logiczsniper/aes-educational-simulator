@@ -20,6 +20,10 @@ export const usePlaybackSpeed = defineStore(getKey`playbackSpeed`, () => {
 
   }
 
+  onMounted(() => {
+    setCurrentPlaybackSpeed(currentPlaybackSpeed.value)
+  })
+
   return {
     currentPlaybackSpeed,
     setCurrentPlaybackSpeed
