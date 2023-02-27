@@ -17,30 +17,29 @@ const encryptState = useEncryptState()
 const plaintext = computed(() => encryptState.plaintext)
 const state = computed(() => encryptState.output?.initialState ?? [])
 
+const id = computed(getId)
 const byteDivs = hexToDivs(plaintext.value)
-const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(byteDivs)
+const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(byteDivs, id.value)
 
 onMounted(() => {
   byteDivs.forEach(byteDiv => inputGridRoot.value?.appendChild(byteDiv))
   targetDivs.forEach(targetDiv => animationRoot.value?.appendChild(targetDiv))
 
-  requestAnimationFrame(() => {
-    const rowSize = DIV_HEIGHT + ROW_GAP + 1
-    const columnSize = DIV_WIDTH + COL_GAP - 1
-    for (let row = 0; row < 4; row++) {
-      for (let column = 0; column < 4; column++) {
-        props.timeline.add({
-          targets: targetCoordsClass(row, column),
-          translateX: (row * rowSize + 140) - column * rowSize,
-          translateY: column * columnSize - row * columnSize
-        })
-      }
+  const rowSize = DIV_HEIGHT + ROW_GAP + 1
+  const columnSize = DIV_WIDTH + COL_GAP - 1
+  for (let row = 0; row < 4; row++) {
+    for (let column = 0; column < 4; column++) {
+      props.timeline.add({
+        targets: targetCoordsClass(row, column),
+        translateX: (row * rowSize + 140) - column * rowSize,
+        translateY: column * columnSize - row * columnSize
+      })
     }
+  }
 
-    props.timeline.add({
-      targets: targetAllClass,
-      color: '#745CD0'
-    })
+  props.timeline.add({
+    targets: targetAllClass,
+    color: '#745CD0'
   })
 })
 </script>

@@ -1,9 +1,6 @@
-import { getId } from "../getId"
-
-export const addAnimationClasses = (divs: Array<HTMLDivElement>) => {
+export const addAnimationClasses = (divs: Array<HTMLDivElement>, id: string) => {
   const rowCount = 4
 
-  const id = getId()
   const getDivIndexClass = (index: number) => `${id}-${index}`
   const getDivRowClass = (row: number) => `${id}-row-${row}`
   const getDivColumnClass = (column: number) => `${id}-column-${column}`

@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import AesPlaintextToState from '~~/components/animation/AesPlaintextToState.vue';
-import { aesi } from '~~/utils/aesi';
-import { AesiOutput } from '~~/utils/aesi/aesi.types';
-
 const { t } = useI18n();
 
 definePageMeta({
@@ -101,8 +97,8 @@ const encryptState = useEncryptState();
             >
               <AnimationAesAnimationFrame>
                 <template #animation="{ timeline }">
-                  <AesPlaintextToState :timeline="timeline">
-                  </AesPlaintextToState>
+                  <AnimationAesPlaintextToState :timeline="timeline">
+                  </AnimationAesPlaintextToState>
                 </template>
               </AnimationAesAnimationFrame>
             </StepDropdown>

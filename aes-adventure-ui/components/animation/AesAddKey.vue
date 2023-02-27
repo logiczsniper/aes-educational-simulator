@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { AnimeTimelineInstance } from 'animejs';
-import { COL_GAP, DIV_HEIGHT, DIV_WIDTH, ROW_GAP } from '~~/utils/animation/constants';
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 
@@ -21,11 +20,13 @@ const plaintext = computed(() => encryptState.plaintext)
 const key = computed(() => encryptState.key)
 const state = computed(() => encryptState.output?.initialState ?? [])
 
+const id = computed(getId)
 const byteDivs = hexToDivs(plaintext.value)
-const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(byteDivs)
+const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(byteDivs, id.value)
 
+const keyId = computed(getId)
 const keyByteDivs = hexToDivs(key.value)
-const { targetDivs: keyTargetDivs, targetAllClass: keyTargetAllClass, targetCoordsClass: keyTargetCoordsClass } = addAnimationClasses(keyByteDivs)
+const { targetDivs: keyTargetDivs, targetCoordsClass: keyTargetCoordsClass } = addAnimationClasses(keyByteDivs, keyId.value)
 
 onMounted(() => {
   byteDivs.forEach(byteDiv => inputGridRoot.value?.appendChild(byteDiv))
@@ -33,28 +34,21 @@ onMounted(() => {
   keyByteDivs.forEach(byteDiv => keyGridRoot.value?.appendChild(byteDiv))
   keyTargetDivs.forEach(targetDiv => keyAnimationRoot.value?.appendChild(targetDiv))
 
-  requestAnimationFrame(() => {
-    for (let row = 0; row < 4; row++) {
-      for (let column = 0; column < 4; column++) {
-        /**
-         * This works, but due to the inconsistent animation
-         * breaking, most of the time only one of these animations
-         * will play!! Must now fix this animation bug!
-         */
-        props.timeline.add({
-          targets: keyTargetCoordsClass(row, column),
-          translateX: 140
-        }).add({
-          targets: targetCoordsClass(row, column),
-          translateX: 300,
-        })
-      }
+  for (let row = 0; row < 4; row++) {
+    for (let column = 0; column < 4; column++) {
+      props.timeline.add({
+        targets: keyTargetCoordsClass(row, column),
+        translateX: 140
+      }).add({
+        targets: targetCoordsClass(row, column),
+        translateX: 300,
+      })
     }
+  }
 
-    props.timeline.add({
-      targets: targetAllClass,
-      color: '#745CD0'
-    })
+  props.timeline.add({
+    targets: targetAllClass,
+    color: '#745CD0'
   })
 })
 </script>
