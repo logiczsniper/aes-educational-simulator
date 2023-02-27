@@ -87,7 +87,7 @@ const encryptState = useEncryptState();
             {{ `${t('simulator.start')} ${t('simulator.encryption')}` }}
           </v-btn>
           <section
-            v-if="encryptState.output"
+            v-if="encryptState.output && encryptState.stage !== EncryptStage.Input"
             class="inputToStateStep"
           >
             <StepDropdown
@@ -104,7 +104,7 @@ const encryptState = useEncryptState();
             </StepDropdown>
           </section>
           <section
-            v-if="encryptState.output"
+            v-if="encryptState.output && encryptState.stage !== EncryptStage.Input"
             class="initialStep"
           >
             <StepDropdown
@@ -120,13 +120,13 @@ const encryptState = useEncryptState();
             </StepDropdown>
           </section>
           <section
-            v-if="encryptState.output"
+            v-if="encryptState.output && encryptState.stage !== EncryptStage.Input"
             class="roundsHeader"
           >
             [Round count, statistics and control timeline here]
           </section>
           <section
-            v-if="encryptState.output"
+            v-if="encryptState.output && encryptState.stage !== EncryptStage.Input"
             class="rounds"
           >
             <StepDropdown
