@@ -17,9 +17,8 @@ const encryptState = useEncryptState()
 const plaintext = computed(() => encryptState.plaintext)
 const state = computed(() => encryptState.output?.initialState ?? [])
 
-const id = computed(getId)
 const byteDivs = hexToDivs(plaintext.value)
-const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(byteDivs, id.value)
+const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(byteDivs, 'plaintext-to-state')
 
 onMounted(() => {
   byteDivs.forEach(byteDiv => inputGridRoot.value?.appendChild(byteDiv))

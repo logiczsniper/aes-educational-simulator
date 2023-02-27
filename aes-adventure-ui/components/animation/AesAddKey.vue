@@ -20,13 +20,11 @@ const plaintext = computed(() => encryptState.plaintext)
 const key = computed(() => encryptState.key)
 const state = computed(() => encryptState.output?.initialState ?? [])
 
-const id = computed(getId)
 const byteDivs = hexToDivs(plaintext.value)
-const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(byteDivs, id.value)
+const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(byteDivs, 'add-key-i')
 
-const keyId = computed(getId)
 const keyByteDivs = hexToDivs(key.value)
-const { targetDivs: keyTargetDivs, targetCoordsClass: keyTargetCoordsClass } = addAnimationClasses(keyByteDivs, keyId.value)
+const { targetDivs: keyTargetDivs, targetCoordsClass: keyTargetCoordsClass } = addAnimationClasses(keyByteDivs, 'add-key-k')
 
 onMounted(() => {
   byteDivs.forEach(byteDiv => inputGridRoot.value?.appendChild(byteDiv))
@@ -94,5 +92,9 @@ onMounted(() => {
   grid-template-rows: repeat(2, min-content);
   column-gap: 40px;
   row-gap: 8px;
+
+  &>*:nth-child(3n) {
+    margin-left: 120px;
+  }
 }
 </style>
