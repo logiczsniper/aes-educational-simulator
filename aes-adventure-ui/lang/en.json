@@ -64,8 +64,8 @@
     "ciphertext": "Ciphertext",
     "key": "Key",
     "state": "State",
-    "input-state": "Input State",
-    "output-state": "Output State",
+    "input": "Input",
+    "output": "Output",
     "add-key": "Add Key",
     "substitute-bytes": "Substitute Bytes",
     "shift-rows": "Shift Rows",
@@ -87,21 +87,6 @@
       "title": "Tutorial",
       "description": "Click on {tutorialIcon} that you see to reveal relevant information here. There may be light explanations, deep details, interactive simulators and more!",
       "tip": "<b>Tip!</b> Expand this sidebar to free up more room for the tutorial by dragging on the resizer in the bottom right corner."
-    },
-    "binaryInputArea": {
-      "bitsRemaining": "bit(s) remaining.",
-      "fill": {
-        "button": "Fill?",
-        "title": "Fill",
-        "close": "Close",
-        "description": "Auto-fill this input by selecting one of the preset options below. Note: this will override the current content of the input.",
-        "options": {
-          "Zeroes": "All zeroes",
-          "Ones": "All ones",
-          "Random": "Random bits",
-          "TestVector": "NIST official test vector"
-        }
-      }
     },
     "hexArea": {
       "nibblesLeft": "nibbles left.",

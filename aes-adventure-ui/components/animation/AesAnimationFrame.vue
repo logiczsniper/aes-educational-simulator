@@ -56,12 +56,7 @@ onMounted(() => {
       controlIconName.value = 'mdi-restart'
     },
   })
-
-
 })
-
-const log = console.log
-
 </script>
 
 <template>

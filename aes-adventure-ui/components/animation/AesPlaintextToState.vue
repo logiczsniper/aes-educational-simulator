@@ -1,53 +1,80 @@
 <script setup lang="ts">
-import { AnimeTimelineInstance } from 'animejs';
+import type { AnimeTimelineInstance } from 'animejs';
 import { COL_GAP, DIV_HEIGHT, DIV_WIDTH, ROW_GAP } from '~~/utils/animation/constants';
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
+import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 
 const props = defineProps<{
   timeline: AnimeTimelineInstance
 }>();
 
+const { t } = useI18n();
+
 const animationRoot = ref<HTMLElement>()
+const inputGridRoot = ref<HTMLElement>()
 const encryptState = useEncryptState()
 
 const plaintext = computed(() => encryptState.plaintext)
 const state = computed(() => encryptState.output?.initialState ?? [])
 
-const { mountDivs, getDivRowClass, getDivColumnClass, idClass } = hexToDivs(plaintext.value)
+const byteDivs = hexToDivs(plaintext.value)
+const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(byteDivs)
 
 onMounted(() => {
   // Mount the divs we created:
-  if (animationRoot.value)
-    mountDivs(animationRoot.value)
+  byteDivs.forEach(byteDiv => inputGridRoot.value?.appendChild(byteDiv))
+  targetDivs.forEach(targetDiv => animationRoot.value?.appendChild(targetDiv))
 
   // Create the animation:
   const rowSize = DIV_HEIGHT + ROW_GAP + 1
   const columnSize = DIV_WIDTH + COL_GAP - 1
   for (let row = 0; row < 4; row++) {
-    for (let col = 0; col < 4; col++) {
+    for (let colunm = 0; colunm < 4; colunm++) {
       props.timeline.add({
-        targets: `${getDivRowClass(row)}${getDivColumnClass(col)}`,
-        translateX: (row * rowSize + 250) - col * rowSize,
-        translateY: col * columnSize - row * columnSize
+        targets: targetCoordsClass(row, colunm),
+        translateX: (row * rowSize + 250) - colunm * rowSize,
+        translateY: colunm * columnSize - row * columnSize
       })
     }
   }
 
   props.timeline.add({
-    targets: idClass,
+    targets: targetAllClass,
     color: '#745CD0'
   })
 })
 </script>
 
 <template>
-  <figure
-    ref="animationRoot"
-    class="plaintextToStateRoot animationGrid"
-  >
-  </figure>
+  <div class="plaintextToStateRoot">
+    <div class="animationSubheaders">
+      <h4>{{ t('simulator.input') }}</h4>
+      <h4>{{ t('simulator.output') }}</h4>
+    </div>
+    <div
+      ref="inputGridRoot"
+      class="animationGrid absolute"
+    ></div>
+    <figure
+      ref="animationRoot"
+      class="animationGrid"
+    >
+    </figure>
+  </div>
 </template>
 
 <style lang="scss">
-.plaintextToStateRoot {}
+.plaintextToStateRoot {
+  position: relative;
+
+  .animationSubheaders {
+    display: flex;
+    gap: 214px;
+    margin-bottom: 4px;
+  }
+}
+
+.absolute {
+  position: absolute;
+}
 </style>
