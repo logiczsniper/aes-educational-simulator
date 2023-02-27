@@ -117,8 +117,8 @@ const encryptState = useEncryptState();
             >
               <AnimationAesAnimationFrame>
                 <template #animation="{ timeline }">
-                  <AnimationTestA :timeline="timeline">
-                  </AnimationTestA>
+                  <AnimationAesAddKey :timeline="timeline">
+                  </AnimationAesAddKey>
                 </template>
               </AnimationAesAnimationFrame>
             </StepDropdown>
