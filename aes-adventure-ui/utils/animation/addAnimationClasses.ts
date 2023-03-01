@@ -2,7 +2,7 @@ export const addAnimationClasses = (divs: Array<HTMLDivElement>, id: string, row
   const getDivIndexClass = (index: number) => `${id}-${index}`
   const getDivRowClass = (row: number) => `${id}-row-${row}`
   const getDivColumnClass = (column: number) => `${id}-column-${column}`
-  const getSpanClass = (row: number, column: number, child: 1 | 2) => `${id}-row-${row}-column-${column}-span-${child}`
+  const getChildClass = (row: number, column: number, child: 1 | 2) => `${id}-row-${row}-column-${column}-span-${child}`
 
   const targetDivs = divs.map((div, index) => {
     const row = Math.floor(index / rowCount)
@@ -11,9 +11,9 @@ export const addAnimationClasses = (divs: Array<HTMLDivElement>, id: string, row
     const targetDiv = div.cloneNode(true) as HTMLDivElement
     targetDiv.classList.add(id, getDivIndexClass(index), getDivRowClass(row), getDivColumnClass(column))
 
-    const [firstByteSpan, secondByteSpan] = targetDiv.children
-    firstByteSpan.classList.add(getSpanClass(row, column, 1))
-    secondByteSpan.classList.add(getSpanClass(row, column, 2))
+    const [firstChildDiv, secondChildDiv] = targetDiv.children
+    firstChildDiv.classList.add(getChildClass(row, column, 1))
+    secondChildDiv.classList.add(getChildClass(row, column, 2))
 
     return targetDiv
   })
@@ -26,6 +26,6 @@ export const addAnimationClasses = (divs: Array<HTMLDivElement>, id: string, row
     targetRowClass: (row: number) => `.${getDivRowClass(row)}`,
     targetColumnClass: (column: number) => `.${getDivColumnClass(column)}`,
     targetCoordsClass: (row: number, column: number) => `.${getDivRowClass(row)}.${getDivColumnClass(column)}`,
-    targetSpanClass: (row: number, column: number, child: 1 | 2) => `.${getSpanClass(row, column, child)}`
+    targetChildClass: (row: number, column: number, child: 1 | 2) => `.${getChildClass(row, column, child)}`
   }
 }

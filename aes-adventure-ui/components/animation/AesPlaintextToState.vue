@@ -31,7 +31,7 @@ onMounted(() => {
       props.timeline.add({
         targets: targetCoordsClass(row, column),
         translateX: (row * rowSize + 140) - column * rowSize,
-        translateY: column * columnSize - row * (rowSize + 1)
+        translateY: column * columnSize - row * (rowSize - 1)
       })
     }
   }
