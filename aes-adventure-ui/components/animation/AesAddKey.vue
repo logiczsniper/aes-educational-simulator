@@ -2,6 +2,7 @@
 import type { AnimeTimelineInstance } from 'animejs';
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
+import { COL_GAP, DIV_WIDTH } from '~~/utils/animation/constants';
 
 const props = defineProps<{
   timeline: AnimeTimelineInstance
@@ -13,39 +14,55 @@ const animationRoot = ref<HTMLElement>()
 const inputGridRoot = ref<HTMLElement>()
 const keyAnimationRoot = ref<HTMLElement>()
 const keyGridRoot = ref<HTMLElement>()
+const outputAnimationRoot = ref<HTMLElement>()
 
 const encryptState = useEncryptState()
 
 const plaintext = computed(() => encryptState.plaintext)
 const key = computed(() => encryptState.key)
-const state = computed(() => encryptState.output?.initialState ?? [])
+const output = computed(() => encryptState.output?.symmetryKeyAddition.outputState || [] as Array<number>)
 
 const byteDivs = hexToDivs(plaintext.value)
-const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(byteDivs, 'add-key-i')
+const { targetDivs, targetCoordsClass } = addAnimationClasses(byteDivs, 'add-key-i')
 
 const keyByteDivs = hexToDivs(key.value)
 const { targetDivs: keyTargetDivs, targetCoordsClass: keyTargetCoordsClass } = addAnimationClasses(keyByteDivs, 'add-key-k')
 
-onMounted(() => {
-  byteDivs.forEach(byteDiv => inputGridRoot.value?.appendChild(byteDiv))
-  targetDivs.forEach(targetDiv => animationRoot.value?.appendChild(targetDiv))
-  keyByteDivs.forEach(byteDiv => keyGridRoot.value?.appendChild(byteDiv))
-  keyTargetDivs.forEach(targetDiv => keyAnimationRoot.value?.appendChild(targetDiv))
+const outputDivs = hexToDivs(output.value)
+const { targetDivs: outputTargetDivs, targetCoordsClass: outputTargetCoordsClass, targetAllClass: outputTargetAllClass } = addAnimationClasses(outputDivs, 'add-key-o')
 
+onMounted(() => {
+  byteDivs.forEach(div => inputGridRoot.value?.appendChild(div))
+  targetDivs.forEach(div => animationRoot.value?.appendChild(div))
+  keyByteDivs.forEach(div => keyGridRoot.value?.appendChild(div))
+  keyTargetDivs.forEach(div => keyAnimationRoot.value?.appendChild(div))
+  outputTargetDivs.forEach(div => outputAnimationRoot.value?.appendChild(div))
+
+  const columnSize = DIV_WIDTH + COL_GAP
   for (let row = 0; row < 4; row++) {
     for (let column = 0; column < 4; column++) {
       props.timeline.add({
         targets: keyTargetCoordsClass(row, column),
-        translateX: 140
+        translateX: 146 - column * columnSize
       }).add({
         targets: targetCoordsClass(row, column),
-        translateX: 300,
+        translateX: 336 - column * columnSize
+      }).add({
+        targets: '.addKeyXorSymbol',
+        translateY: -2 + row * (24 + row / 2),
+        opacity: 1
+      }).add({
+        targets: outputTargetCoordsClass(row, column),
+        opacity: 1,
+      }).add({
+        targets: [keyTargetCoordsClass(row, column), targetCoordsClass(row, column), '.addKeyXorSymbol'],
+        opacity: 0,
       })
     }
   }
 
   props.timeline.add({
-    targets: targetAllClass,
+    targets: outputTargetAllClass,
     color: '#745CD0'
   })
 })
@@ -70,6 +87,7 @@ onMounted(() => {
     </div>
 
     <div class="relative">
+      <span class="addKeyXorSymbol absolute">⊕</span>
       <div
         ref="keyGridRoot"
         class="animationGrid absolute keyGridRoot"
@@ -81,7 +99,13 @@ onMounted(() => {
       </figure>
     </div>
 
-    <div />
+    <div class="relative">
+      <figure
+        ref="outputAnimationRoot"
+        class="animationGrid startNoOpacity"
+      >
+      </figure>
+    </div>
   </div>
 </template>
 
@@ -95,6 +119,17 @@ onMounted(() => {
 
   &>*:nth-child(3n) {
     margin-left: 120px;
+  }
+
+  .addKeyXorSymbol {
+    right: -88px;
+    opacity: 0;
+  }
+
+  .startNoOpacity {
+    &>div {
+      opacity: 0;
+    }
   }
 }
 </style>
