@@ -18,11 +18,11 @@ const outputAnimationRoot = ref<HTMLElement>()
 
 const encryptState = useEncryptState()
 
-const plaintext = computed(() => encryptState.plaintext)
 const key = computed(() => encryptState.key)
+const input = computed(() => encryptState.output?.symmetryKeyAddition.inputState || [] as Array<number>)
 const output = computed(() => encryptState.output?.symmetryKeyAddition.outputState || [] as Array<number>)
 
-const byteDivs = hexToDivs(plaintext.value)
+const byteDivs = hexToDivs(input.value)
 const { targetDivs, targetCoordsClass } = addAnimationClasses(byteDivs, 'add-key-i')
 
 const keyByteDivs = hexToDivs(key.value)
