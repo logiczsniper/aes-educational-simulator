@@ -48,6 +48,7 @@ const onPlaybackSpeedClick = (value: PlaybackSpeed | undefined) =>
 onMounted(() => {
   timeline.value = anime.timeline({
     ...props.timelineParams,
+    easing: 'easeInOutQuad',
     autoplay: false,
     update: currentAnimeInstance => {
       progress.value = currentAnimeInstance.progress
