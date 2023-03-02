@@ -133,6 +133,12 @@ const encryptState = useEncryptState();
               :title="`${t('simulator.substitute-bytes')}`"
               :tutorial-key="TutorialKey.Default"
             >
+              <AnimationAesAnimationFrame>
+                <template #animation="{ timeline }">
+                  <AnimationAesSubstituteBytes :timeline="timeline">
+                  </AnimationAesSubstituteBytes>
+                </template>
+              </AnimationAesAnimationFrame>
             </StepDropdown>
 
             <StepDropdown

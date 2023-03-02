@@ -63,6 +63,8 @@
     "plaintext": "Plaintext",
     "ciphertext": "Ciphertext",
     "key": "Key",
+    "sbox": "Substitution Box",
+    "inverse": "Inverse",
     "state": "State",
     "input": "Input",
     "output": "Output",

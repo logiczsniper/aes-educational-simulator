@@ -1,4 +1,4 @@
-export const hexToDivs = (hex: Array<number> | Uint8Array) => [...hex].map((byte) => {
+export const hexToDivs = (hex: Array<number> | Uint8Array) => [...hex].map(byte => {
   const byteDiv = document.createElement('div')
 
   const [firstByte, secondByte] = formatHex(byte);
