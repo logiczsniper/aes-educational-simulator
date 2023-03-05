@@ -145,6 +145,12 @@ const encryptState = useEncryptState();
               :title="`${t('simulator.shift-rows')}`"
               :tutorial-key="TutorialKey.Test"
             >
+              <AnimationAesAnimationFrame>
+                <template #animation="{ timeline }">
+                  <AnimationAesShiftRows :timeline="timeline">
+                  </AnimationAesShiftRows>
+                </template>
+              </AnimationAesAnimationFrame>
             </StepDropdown>
 
             <StepDropdown
