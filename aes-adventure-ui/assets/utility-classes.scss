@@ -39,6 +39,29 @@
   }
 }
 
+.matrixBrackets {
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 1px solid black;
+    width: 7px;
+    height: 100%;
+  }
+
+  &:before {
+    left: -5px;
+    border-right: 0px;
+  }
+
+  &:after {
+    right: -5px;
+    border-left: 0px;
+  }
+}
+
 .flipped {
   transform: scaleX(-1);
   -moz-transform: scaleX(-1);

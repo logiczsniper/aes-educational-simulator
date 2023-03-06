@@ -157,6 +157,12 @@ const encryptState = useEncryptState();
               :title="`${t('simulator.mix-columns')}`"
               :tutorial-key="TutorialKey.Test"
             >
+              <AnimationAesAnimationFrame>
+                <template #animation="{ timeline }">
+                  <AnimationAesMixColumns :timeline="timeline">
+                  </AnimationAesMixColumns>
+                </template>
+              </AnimationAesAnimationFrame>
             </StepDropdown>
 
             <StepDropdown

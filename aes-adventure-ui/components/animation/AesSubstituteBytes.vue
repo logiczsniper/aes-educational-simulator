@@ -84,7 +84,7 @@ onMounted(() => {
       }).add({
         targets: [sboxTargetRowClass(firstChildHex), sboxTargetColumnClass(secondChildHex)],
         color: 'rgba(0, 0, 0, 0.87)', // this is the color set by vuetify, we cannot simply 'unset' in this animation
-      })
+      }, '+=1100')
     }
   }
 

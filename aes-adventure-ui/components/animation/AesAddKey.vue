@@ -57,7 +57,7 @@ onMounted(() => {
       }).add({
         targets: [keyTargetCoordsClass(row, column), targetCoordsClass(row, column), '.addKeyXorSymbol'],
         opacity: 0,
-      })
+      }, '+=400')
     }
   }
 
