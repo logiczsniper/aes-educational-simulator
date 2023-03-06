@@ -51,7 +51,7 @@ onMounted(() => {
         targets: '.addKeyXorSymbol',
         translateY: -2 + row * (24 + row / 2),
         opacity: 1
-      }).add({
+      }, '-=400').add({
         targets: outputTargetCoordsClass(row, column),
         opacity: 1,
       }).add({
