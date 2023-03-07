@@ -2,6 +2,7 @@
 import { TutorialKey } from '~~/composables/useTutorial';
 
 const props = defineProps<{
+  modelValue: boolean;
   title: string;
   lineThroughTitle?: boolean;
   tutorialKey?: TutorialKey;
@@ -15,6 +16,7 @@ const props = defineProps<{
     class="stepDropdown"
   >
     <v-expansion-panel
+      :value="props.modelValue"
       eager
       elevation="0"
       :bg-color="props.backgroundColor"
@@ -32,6 +34,9 @@ const props = defineProps<{
       </template>
       <template #text>
         <slot />
+        <div class="footerSlot">
+          <slot name="footer" />
+        </div>
       </template>
     </v-expansion-panel>
   </v-expansion-panels>
@@ -53,6 +58,15 @@ const props = defineProps<{
       margin-top: -2px;
       margin-left: 14px;
     }
+  }
+
+  .footerSlot {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-right: 28px;
+    margin-top: -8px;
+    margin-bottom: 4px;
   }
 
   :deep(.v-expansion-panel-title__overlay) {

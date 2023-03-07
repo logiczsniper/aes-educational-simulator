@@ -5,6 +5,7 @@ import '~~/utils/parsingPatches'
 export enum EncryptStage {
   Input,
   ToState,
+  SymmetryKeyAddition,
   Rounds,
   FromState,
 }
@@ -17,9 +18,13 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
   const keySize = ref<AesiKeySize>(128)
   const stage = ref(EncryptStage.Input)
   const output = ref<AesiOutput>()
+  const roundIndex = ref(0)
+  const stepIndex = ref(0)
 
   const plaintext = computed(() => parseInputValue(rawPlaintext.value))
   const key = computed(() => parseInputValue(rawKey.value))
+  const round = computed(() => output.value?.rounds.at(roundIndex.value))
+  const step = computed(() => round.value?.steps.at(stepIndex.value))
 
   const setKeySize = (newKeySize: AesiKeySize) => {
     const mustClipKey = newKeySize < keySize.value
@@ -37,16 +42,39 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
     stage.value = EncryptStage.ToState
   }
 
+  const startRounds = () => {
+    roundIndex.value = 0
+    stepIndex.value = 0
+  }
+
+  const nextStep = () => stepIndex.value += 1
+  const nextRound = () => {
+    roundIndex.value += 1
+    stepIndex.value = 0
+  }
+
+  const skipToLastRound = () => {
+    roundIndex.value = (output.value?.rounds.length ?? 0) - 1
+  }
+
   return {
     output,
     stage,
+    roundIndex,
+    round,
+    stepIndex,
+    step,
     plaintext,
     rawPlaintext,
     key,
     rawKey,
     keySize,
     setKeySize,
-    calculateEncryptOutput
+    calculateEncryptOutput,
+    startRounds,
+    nextStep,
+    nextRound,
+    skipToLastRound,
   }
 }, {
   persist: true

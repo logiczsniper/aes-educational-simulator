@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { AesiRound, AesiRoundStepType } from '~~/utils/aesi/aesi.types';
+
 const { t } = useI18n();
 
 definePageMeta({
@@ -9,6 +11,8 @@ definePageMeta({
 })
 
 const encryptState = useEncryptState();
+
+const getStep = (round: AesiRound, stepType: AesiRoundStepType) => round.steps.find(({ type }) => type === stepType) 
 </script>
 
 <template>
@@ -78,7 +82,6 @@ const encryptState = useEncryptState();
           </section>
           <v-btn
             v-if="encryptState.stage === EncryptStage.Input"
-            class="startButton"
             prependIcon="mdi-lock"
             variant="flat"
             color="primary"
@@ -91,16 +94,29 @@ const encryptState = useEncryptState();
             class="inputToStateStep"
           >
             <StepDropdown
+              :model-value="encryptState.stage === EncryptStage.ToState"
               :title="`${t('simulator.plaintext')} ➜ ${t('simulator.state')}`"
               :tutorial-key="TutorialKey.Test"
               background-color="#f9f9f9"
             >
               <AnimationAesAnimationFrame>
                 <template #animation="{ timeline }">
-                  <AnimationAesPlaintextToState :timeline="timeline">
+                  <AnimationAesPlaintextToState
+                    :timeline="timeline"
+                    :input="encryptState.output"
+                    :output="encryptState.output"
+                  >
                   </AnimationAesPlaintextToState>
                 </template>
               </AnimationAesAnimationFrame>
+              <template #footer>
+                <v-btn
+                  variant="flat"
+                  prepend-icon="mdi-redo"
+                  color="primary"
+                  @click="encryptState.stage = EncryptStage.SymmetryKeyAddition"
+                >{{ t('simulator.next-step') }}</v-btn>
+              </template>
             </StepDropdown>
           </section>
           <section
@@ -108,15 +124,28 @@ const encryptState = useEncryptState();
             class="initialStep"
           >
             <StepDropdown
+              :model-value="encryptState.stage === EncryptStage.SymmetryKeyAddition"
               :title="`${t('simulator.add-key')}`"
               :tutorial-key="TutorialKey.Test"
             >
               <AnimationAesAnimationFrame>
                 <template #animation="{ timeline }">
-                  <AnimationAesAddKey :timeline="timeline">
+                  <AnimationAesAddKey
+                    :timeline="timeline"
+                    :input="encryptState.output"
+                    :output="encryptState.output"
+                  >
                   </AnimationAesAddKey>
                 </template>
               </AnimationAesAnimationFrame>
+              <template #footer>
+                <v-btn
+                  variant="flat"
+                  prepend-icon="mdi-selection-ellipse-arrow-inside"
+                  color="primary"
+                  @click="encryptState.stage = EncryptStage.Rounds"
+                >{{ t('simulator.start-rounds') }}</v-btn>
+              </template>
             </StepDropdown>
           </section>
           <section
@@ -124,51 +153,108 @@ const encryptState = useEncryptState();
             class="roundsHeader"
           >
             [Round count, statistics and control timeline here]
+            {{ 'Round: ' + encryptState.roundIndex }}
+            {{ 'Step: ' + encryptState.stepIndex }}
           </section>
           <section
-            v-if="encryptState.output && encryptState.stage !== EncryptStage.Input"
+            v-if="encryptState.output && encryptState.stage === EncryptStage.Rounds"
             class="rounds"
           >
             <StepDropdown
+              v-if="encryptState.output.rounds"
+              :model-value="encryptState.step?.type === AesiRoundStepType.SubBytes"
               :title="`${t('simulator.substitute-bytes')}`"
               :tutorial-key="TutorialKey.Default"
             >
               <AnimationAesAnimationFrame>
                 <template #animation="{ timeline }">
-                  <AnimationAesSubstituteBytes :timeline="timeline">
+                  <AnimationAesSubstituteBytes
+                    :timeline="timeline"
+                    :input="encryptState.output"
+                    :output="encryptState.output"
+                  >
                   </AnimationAesSubstituteBytes>
                 </template>
               </AnimationAesAnimationFrame>
+              <template #footer>
+                <v-btn
+                  variant="flat"
+                  prepend-icon="mdi-redo"
+                  color="primary"
+                  @click="encryptState.nextStep"
+                >{{ t('simulator.next-step') }}</v-btn>
+              </template>
             </StepDropdown>
 
             <StepDropdown
+              :model-value="encryptState.step?.type === AesiRoundStepType.ShiftRows"
               :title="`${t('simulator.shift-rows')}`"
               :tutorial-key="TutorialKey.Test"
             >
               <AnimationAesAnimationFrame>
                 <template #animation="{ timeline }">
-                  <AnimationAesShiftRows :timeline="timeline">
+                  <AnimationAesShiftRows
+                    :timeline="timeline"
+                    :input="encryptState.output"
+                    :output="encryptState.output"
+                  >
                   </AnimationAesShiftRows>
                 </template>
               </AnimationAesAnimationFrame>
+              <template #footer>
+                <v-btn
+                  variant="flat"
+                  prepend-icon="mdi-redo"
+                  color="primary"
+                  @click="encryptState.nextStep"
+                >{{ t('simulator.next-step') }}</v-btn>
+              </template>
             </StepDropdown>
 
             <StepDropdown
+              :model-value="encryptState.step?.type === AesiRoundStepType.MixColumns"
               :title="`${t('simulator.mix-columns')}`"
               :tutorial-key="TutorialKey.Test"
             >
               <AnimationAesAnimationFrame>
                 <template #animation="{ timeline }">
-                  <AnimationAesMixColumns :timeline="timeline">
+                  <AnimationAesMixColumns
+                    :timeline="timeline"
+                    :input="encryptState.output"
+                    :output="encryptState.output"
+                  >
                   </AnimationAesMixColumns>
                 </template>
               </AnimationAesAnimationFrame>
+              <template #footer>
+                <v-btn
+                  variant="flat"
+                  prepend-icon="mdi-redo"
+                  color="primary"
+                  @click="encryptState.nextStep"
+                >{{ t('simulator.next-step') }}</v-btn>
+              </template>
             </StepDropdown>
 
             <StepDropdown
+              :model-value="encryptState.step?.type === AesiRoundStepType.AddRoundKey"
               :title="`${t('simulator.add-round-key')}`"
               :tutorial-key="TutorialKey.Test"
             >
+              <template #footer>
+                <v-btn
+                  variant="outlined"
+                  prepend-icon="mdi-arrow-u-down-right"
+                  color="primary"
+                  @click="encryptState.skipToLastRound"
+                >{{ t('simulator.skip') }}</v-btn>
+                <v-btn
+                  variant="flat"
+                  prepend-icon="mdi-rotate-right"
+                  color="primary"
+                  @click="encryptState.nextRound"
+                >{{ t('simulator.next-round') }}</v-btn>
+              </template>
             </StepDropdown>
           </section>
         </div>
