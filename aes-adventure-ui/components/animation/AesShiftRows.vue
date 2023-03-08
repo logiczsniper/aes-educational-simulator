@@ -5,7 +5,8 @@ import { hexToDivs } from '~~/utils/animation/hexToDivs';
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 
 const props = defineProps<{
-  timeline: AnimeTimelineInstance
+  timeline: AnimeTimelineInstance,
+  input?: Uint8Array
 }>();
 
 const { t } = useI18n();
@@ -13,10 +14,7 @@ const { t } = useI18n();
 const animationRoot = ref<HTMLElement>()
 const inputGridRoot = ref<HTMLElement>()
 
-const encryptState = useEncryptState()
-
-const input = computed(() => encryptState.output?.rounds.at(0)?.steps.at(0)?.outputState || [] as Array<number>)
-const output = computed(() => encryptState.output?.rounds.at(0)?.steps.at(1)?.outputState || [] as Array<number>)
+const input = computed(() => props.input || [] as Array<number>)
 
 const byteDivs = hexToDivs(input.value)
 const { targetDivs, targetAllClass, targetCoordsClass, targetRowClass } = addAnimationClasses(byteDivs, 'shift-rows')

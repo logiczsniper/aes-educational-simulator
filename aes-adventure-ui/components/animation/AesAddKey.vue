@@ -5,7 +5,11 @@ import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 import { COL_GAP, DIV_WIDTH } from '~~/utils/animation/constants';
 
 const props = defineProps<{
-  timeline: AnimeTimelineInstance
+  timeline: AnimeTimelineInstance,
+  id: string,
+  keyValue?: Uint8Array,
+  input?: Uint8Array,
+  output?: Uint8Array,
 }>();
 
 const { t } = useI18n();
@@ -16,17 +20,15 @@ const keyAnimationRoot = ref<HTMLElement>()
 const keyGridRoot = ref<HTMLElement>()
 const outputAnimationRoot = ref<HTMLElement>()
 
-const encryptState = useEncryptState()
-
-const key = computed(() => encryptState.key)
-const input = computed(() => encryptState.output?.symmetryKeyAddition.inputState || [] as Array<number>)
-const output = computed(() => encryptState.output?.symmetryKeyAddition.outputState || [] as Array<number>)
+const key = computed(() => props.keyValue || [] as Array<number>)
+const input = computed(() => props.input || [] as Array<number>)
+const output = computed(() => props.output || [] as Array<number>)
 
 const byteDivs = hexToDivs(input.value)
 const { targetDivs, targetCoordsClass } = addAnimationClasses(byteDivs, 'add-key-i')
 
 const keyByteDivs = hexToDivs(key.value)
-const { targetDivs: keyTargetDivs, targetCoordsClass: keyTargetCoordsClass } = addAnimationClasses(keyByteDivs, 'add-key-k')
+const { targetDivs: keyTargetDivs, targetCoordsClass: keyTargetCoordsClass } = addAnimationClasses(keyByteDivs, `add-key-k--${props.id}`)
 
 const outputDivs = hexToDivs(output.value)
 const { targetDivs: outputTargetDivs, targetCoordsClass: outputTargetCoordsClass, targetAllClass: outputTargetAllClass } = addAnimationClasses(outputDivs, 'add-key-o')

@@ -5,20 +5,20 @@ import { hexToDivs } from '~~/utils/animation/hexToDivs';
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 
 const props = defineProps<{
-  timeline: AnimeTimelineInstance
+  timeline: AnimeTimelineInstance,
+  id: string,
+  input?: Uint8Array,
 }>();
 
 const { t } = useI18n();
 
 const animationRoot = ref<HTMLElement>()
 const inputGridRoot = ref<HTMLElement>()
-const encryptState = useEncryptState()
 
-const plaintext = computed(() => encryptState.plaintext)
-const state = computed(() => encryptState.output?.initialState ?? [])
+const input = computed(() => props.input || [] as Array<number>)
 
-const byteDivs = hexToDivs(plaintext.value)
-const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(byteDivs, 'plaintext-to-state')
+const byteDivs = hexToDivs(input.value)
+const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(byteDivs, `transpose--${props.id}`)
 
 onMounted(() => {
   byteDivs.forEach(byteDiv => inputGridRoot.value?.appendChild(byteDiv))
@@ -44,7 +44,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="plaintextToStateRoot">
+  <div class="transposeRoot">
     <h4>{{ t('simulator.input') }}</h4>
     <h4>{{ t('simulator.output') }}</h4>
 
@@ -64,7 +64,7 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-.plaintextToStateRoot {
+.transposeRoot {
   display: grid;
   grid-template-columns: repeat(2, min-content);
   grid-template-rows: repeat(2, min-content);

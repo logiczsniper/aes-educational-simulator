@@ -3,10 +3,12 @@ import type { AnimeTimelineInstance } from 'animejs';
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 import { COL_GAP, DIV_HEIGHT, DIV_WIDTH, ROW_GAP } from '~~/utils/animation/constants';
-import { S_BOX } from '~~/utils/aesi/core/constants';
 
 const props = defineProps<{
-  timeline: AnimeTimelineInstance
+  timeline: AnimeTimelineInstance,
+  sbox: number[],
+  input?: Uint8Array,
+  output?: Uint8Array,
 }>();
 
 const { t } = useI18n();
@@ -16,15 +18,13 @@ const inputGridRoot = ref<HTMLElement>()
 const sboxAnimationRoot = ref<HTMLElement>()
 const outputAnimationRoot = ref<HTMLElement>()
 
-const encryptState = useEncryptState()
-
-const input = computed(() => encryptState.output?.symmetryKeyAddition.outputState || [] as Array<number>)
-const output = computed(() => encryptState.output?.rounds.at(0)?.steps.at(0)?.outputState || [] as Array<number>)
+const input = computed(() => props.input || [] as Array<number>)
+const output = computed(() => props.output || [] as Array<number>)
 
 const byteDivs = hexToDivs(input.value)
 const { targetDivs, targetChildClass } = addAnimationClasses(byteDivs, 'substitute-bytes-i')
 
-const sboxByteDivs = hexToDivs(S_BOX)
+const sboxByteDivs = hexToDivs(props.sbox)
 const { targetDivs: sboxTargetDivs, targetColumnClass: sboxTargetColumnClass, targetRowClass: sboxTargetRowClass, targetCoordsClass: sboxTargetCoordsClass } = addAnimationClasses(sboxByteDivs, 'substitute-bytes-sbox', 16)
 
 const outputDivs = hexToDivs(output.value)

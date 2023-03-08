@@ -3,10 +3,12 @@ import type { AnimeTimelineInstance } from 'animejs';
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 import { COL_GAP, DIV_HEIGHT, DIV_WIDTH, ROW_GAP } from '~~/utils/animation/constants';
-import { A } from '~~/utils/aesi/core/constants';
 
 const props = defineProps<{
-  timeline: AnimeTimelineInstance
+  timeline: AnimeTimelineInstance,
+  matrix: number[],
+  input?: Uint8Array,
+  output?: Uint8Array,
 }>();
 
 const { t } = useI18n();
@@ -17,15 +19,13 @@ const matrixGridRoot = ref<HTMLElement>()
 const matrixAnimationRoot = ref<HTMLElement>()
 const outputAnimationRoot = ref<HTMLElement>()
 
-const encryptState = useEncryptState()
-
-const input = computed(() => encryptState.output?.rounds.at(0)?.steps.at(1)?.outputState || [] as Array<number>)
-const output = computed(() => encryptState.output?.rounds.at(0)?.steps.at(2)?.outputState || [] as Array<number>)
+const input = computed(() => props.input || [] as Array<number>)
+const output = computed(() => props.output || [] as Array<number>)
 
 const byteDivs = hexToDivs(input.value)
 const { targetDivs, targetColumnClass } = addAnimationClasses(byteDivs, 'mix-columns-i')
 
-const matrixByteDivs = hexToDivs(A)
+const matrixByteDivs = hexToDivs(props.matrix)
 const { targetDivs: matrixTargetDivs, targetColumnClass: matrixTargetColumnClass, targetCoordsClass: matrixTargetCoordsClass } = addAnimationClasses(matrixByteDivs, 'mix-columns-matrix')
 
 const outputDivs = hexToDivs(output.value)

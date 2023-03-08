@@ -41,16 +41,24 @@ export type AesiRound = {
 }
 
 export enum AesiRoundStepType {
-  AddKey,
+  // AddKey,
   SubBytes,
   ShiftRows,
   MixColumns,
   AddRoundKey,
 }
 
-export type AesiRoundStep<T = never> = {
+export type AesiRoundStep = {
   type: AesiRoundStepType;
   inputState: Uint8Array;
   outputState: Uint8Array;
-  meta?: T;
+}
+
+export interface AesiRoundStepAddKey extends AesiRoundStep {
+  type: AesiRoundStepType.AddRoundKey,
+  roundKey: Uint8Array
+}
+
+export function isAddRoundKey(roundStep: AesiRoundStep): roundStep is AesiRoundStepAddKey {
+  return roundStep.type === AesiRoundStepType.AddRoundKey
 }

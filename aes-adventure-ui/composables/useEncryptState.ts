@@ -1,5 +1,5 @@
 import { aesi } from "~~/utils/aesi"
-import { AesiKeySize, AesiOutput } from "~~/utils/aesi/aesi.types"
+import { AesiKeySize, AesiOutput, AesiRoundStepType } from "~~/utils/aesi/aesi.types"
 import '~~/utils/parsingPatches'
 
 export enum EncryptStage {
@@ -8,6 +8,7 @@ export enum EncryptStage {
   SymmetryKeyAddition,
   Rounds,
   FromState,
+  Output,
 }
 
 const parseInputValue = (hex: string) => Uint8Array.from(hex.match(/.{1,2}/g)?.map(byte => parseInt(byte, 16)) ?? [])
@@ -25,11 +26,19 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
   const key = computed(() => parseInputValue(rawKey.value))
   const round = computed(() => output.value?.rounds.at(roundIndex.value))
   const step = computed(() => round.value?.steps.at(stepIndex.value))
+  const isLastStep = computed(() =>
+    (roundIndex.value === (output.value?.rounds.length ?? 0) - 1) &&
+    (stepIndex.value === (output.value?.rounds.at(-1)?.steps.length ?? 0) - 1)
+  )
+  const isLastRound = computed(() => (roundIndex.value === (output.value?.rounds.length ?? 0) - 1))
+  const isSecondToLastRound = computed(() => (roundIndex.value === (output.value?.rounds.length ?? 0) - 2))
+
+  const getStep = (stepType: AesiRoundStepType) => round.value?.steps.find(({ type }) => type === stepType)
 
   const setKeySize = (newKeySize: AesiKeySize) => {
     const mustClipKey = newKeySize < keySize.value
     if (mustClipKey) {
-      rawKey.value = rawKey.value.substring(0, newKeySize)
+      rawKey.value = rawKey.value.substring(0, newKeySize / 4)
     }
 
     keySize.value = newKeySize
@@ -40,11 +49,14 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
 
     output.value = encrypt(plaintext.value)
     stage.value = EncryptStage.ToState
+    roundIndex.value = 0
+    stepIndex.value = 0
   }
 
   const startRounds = () => {
     roundIndex.value = 0
     stepIndex.value = 0
+    stage.value = EncryptStage.Rounds
   }
 
   const nextStep = () => stepIndex.value += 1
@@ -55,6 +67,7 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
 
   const skipToLastRound = () => {
     roundIndex.value = (output.value?.rounds.length ?? 0) - 1
+    stepIndex.value = 0
   }
 
   return {
@@ -69,7 +82,11 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
     key,
     rawKey,
     keySize,
+    isLastStep,
+    isLastRound,
+    isSecondToLastRound,
     setKeySize,
+    getStep,
     calculateEncryptOutput,
     startRounds,
     nextStep,

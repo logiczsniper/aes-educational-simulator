@@ -8,15 +8,19 @@ const props = defineProps<{
   tutorialKey?: TutorialKey;
   backgroundColor?: string;
 }>();
+
+const expansionPanelValue = `step-dropdown--${props.title}`
 </script>
 
 <template>
   <v-expansion-panels
+    :model-value="props.modelValue ? expansionPanelValue : null"
+    :readonly="props.modelValue"
     variant="popout"
     class="stepDropdown"
   >
     <v-expansion-panel
-      :value="props.modelValue"
+      :value="expansionPanelValue"
       eager
       elevation="0"
       :bg-color="props.backgroundColor"

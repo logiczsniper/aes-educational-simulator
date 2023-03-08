@@ -91,10 +91,10 @@ definePageMeta({
 
     .v-btn {
       font-size: 14px;
-      height: 20px;
+      height: 18px;
       padding-left: 10px;
       padding-right: 6px;
-      align-content: baseline;
+      margin-top: -2px;
     }
   }
 
