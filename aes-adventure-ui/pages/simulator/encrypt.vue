@@ -135,7 +135,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                     </AnimationAesTranspose>
                   </template>
                   <template
-                    #prependControls="{ timeline, pause }"
+                    #prependControls="{ timeline, restartAndPause }"
                     v-if="encryptState.stage === EncryptStage.ToState"
                   >
                     <v-btn
@@ -143,7 +143,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                       prepend-icon="mdi-redo"
                       color="primary"
                       @click="() => {
-                        pause()
+                        restartAndPause()
                         encryptState.stage = EncryptStage.SymmetryKeyAddition
                       }"
                     >{{ t('simulator.next-step') }}</v-btn>
@@ -170,7 +170,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                     </AnimationAesAddKey>
                   </template>
                   <template
-                    #prependControls="{ timeline, pause }"
+                    #prependControls="{ timeline, restartAndPause }"
                     v-if="encryptState.stage === EncryptStage.SymmetryKeyAddition"
                   >
                     <v-btn
@@ -178,7 +178,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                       prepend-icon="mdi-selection-ellipse-arrow-inside"
                       color="primary"
                       @click="() => {
-                        pause()
+                        restartAndPause()
                         encryptState.startRounds()
                       }"
                     >{{ t('simulator.start-rounds') }}</v-btn>
@@ -211,7 +211,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                     </AnimationAesSubstituteBytes>
                   </template>
                   <template
-                    #prependControls="{ timeline, pause }"
+                    #prependControls="{ timeline, restartAndPause }"
                     v-if="encryptState.step?.type === AesiRoundStepType.SubBytes && encryptState.stage === EncryptStage.Rounds"
                   >
                     <v-btn
@@ -219,7 +219,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                       prepend-icon="mdi-redo"
                       color="primary"
                       @click="() => {
-                        pause()
+                        restartAndPause()
                         encryptState.nextStep()
                       }"
                     >{{ t('simulator.next-step') }}</v-btn>
@@ -241,7 +241,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                     </AnimationAesShiftRows>
                   </template>
                   <template
-                    #prependControls="{ timeline, pause }"
+                    #prependControls="{ timeline, restartAndPause }"
                     v-if="encryptState.step?.type === AesiRoundStepType.ShiftRows"
                   >
                     <v-btn
@@ -249,7 +249,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                       prepend-icon="mdi-redo"
                       color="primary"
                       @click="() => {
-                        pause()
+                        restartAndPause()
                         encryptState.nextStep()
                       }"
                     >{{ t('simulator.next-step') }}</v-btn>
@@ -277,7 +277,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                     </AnimationAesMixColumns>
                   </template>
                   <template
-                    #prependControls="{ timeline, pause }"
+                    #prependControls="{ timeline, restartAndPause }"
                     v-if="encryptState.step?.type === AesiRoundStepType.MixColumns"
                   >
                     <v-btn
@@ -285,7 +285,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                       prepend-icon="mdi-redo"
                       color="primary"
                       @click="() => {
-                        pause()
+                        restartAndPause()
                         encryptState.nextStep()
                       }"
                     >{{ t('simulator.next-step') }}</v-btn>
@@ -312,7 +312,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                     </AnimationAesAddKey>
                   </template>
                   <template
-                    #prependControls="{ timeline, pause }"
+                    #prependControls="{ timeline, restartAndPause }"
                     v-if="encryptState.step?.type === AesiRoundStepType.AddRoundKey"
                   >
                     <v-btn
@@ -340,7 +340,10 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                       :variant="timeline.currentTime > 9_500 ? 'flat' : 'plain'"
                       prepend-icon="mdi-flag-checkered"
                       color="primary"
-                      @click="encryptState.stage = EncryptStage.FromState"
+                      @click="() => {
+                        restartAndPause()
+                        encryptState.stage = EncryptStage.FromState
+                      }"
                     >{{ t('simulator.finish-rounds') }}</v-btn>
                   </template>
                 </AnimationAesAnimationFrame>
@@ -363,7 +366,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                     </AnimationAesTranspose>
                   </template>
                   <template
-                    #prependControls="{ timeline, pause }"
+                    #prependControls="{ timeline, restartAndPause }"
                     v-if="encryptState.stage === EncryptStage.FromState"
                   >
                     <v-btn
@@ -371,7 +374,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                       prepend-icon="mdi-lock"
                       color="primary"
                       @click="() => {
-                        pause()
+                        restartAndPause()
                         encryptState.stage = EncryptStage.Output
                       }"
                     >{{ `${t('simulator.finish')} ${t('simulator.encryption')}` }}</v-btn>

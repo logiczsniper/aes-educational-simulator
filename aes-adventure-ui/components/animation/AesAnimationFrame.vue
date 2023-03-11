@@ -16,12 +16,17 @@ const controlIconName = ref('mdi-play')
 
 const pause = () => {
   timeline.value?.pause()
-  if (timeline.value?.completed === false) controlIconName.value = 'mdi-play'
+  controlIconName.value = 'mdi-play'
 }
 
 const play = () => {
   timeline.value?.play()
   controlIconName.value = 'mdi-pause'
+}
+
+const restartAndPause = () => {
+  pause()
+  timeline.value?.seek(0)
 }
 
 const onControlClick = () => {
@@ -68,8 +73,7 @@ const createTimeline = () => {
 }
 
 watch(() => props.timelineKey, () => {
-  pause()
-  timeline.value?.seek(0)
+  restartAndPause()
   createTimeline()
 })
 
@@ -129,6 +133,7 @@ onMounted(() => {
             :timeline="timeline"
             :play="play"
             :pause="pause"
+            :restartAndPause="restartAndPause"
           />
         </div>
       </div>
