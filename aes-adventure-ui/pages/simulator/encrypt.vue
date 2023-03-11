@@ -348,6 +348,28 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
               </StepDropdown>
             </section>
           </template>
+          <section
+            class="output"
+            v-if="encryptState.stage === EncryptStage.Output && encryptState.outputString"
+          >
+            <HexArea
+              v-model="encryptState.outputString"
+              title-key="simulator.ciphertext"
+              :max-length="128"
+              disabled
+            />
+          </section>
+          <v-btn
+            v-if="encryptState.stage !== EncryptStage.Input"
+            prependIcon="mdi-lock-reset"
+            :variant="encryptState.stage === EncryptStage.Output ? 'flat' : 'outlined'"
+            color="primary"
+            class="resetButton"
+            @click="encryptState.reset"
+          >
+            {{ t('simulator.reset') }}
+          </v-btn>
+          <div style="height: 1px;" />
         </div>
       </transition>
     </ClientOnly>
@@ -395,9 +417,20 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
     }
   }
 
-  .startButton {
+  .output {
     display: flex;
-    margin: 36px 0 12px auto;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .startButton,
+  .resetButton {
+    display: flex;
+    margin: 36px 20px 12px auto;
+  }
+
+  .resetButton {
+    margin-bottom: 5vh;
   }
 
   .transposeStep {
