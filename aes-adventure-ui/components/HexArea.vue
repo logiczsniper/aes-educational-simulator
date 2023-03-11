@@ -84,7 +84,12 @@ const maxLengthPadding = computed(() => {
       @keydown="preventInvalidInput"
     />
     <small class="footer">
-      {{ props.disabled ? '' : remainingCharsMessage }}
+      <transition
+        appear
+        name="opacity"
+      >
+        <p v-if="!props.disabled">{{ remainingCharsMessage }}</p>
+      </transition>
     </small>
   </div>
 </template>
