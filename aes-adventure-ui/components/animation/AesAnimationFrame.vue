@@ -14,17 +14,25 @@ const timeline = ref<AnimeTimelineInstance | null>(null)
 const progress = ref(0)
 const controlIconName = ref('mdi-play')
 
-const onControlClick = () => {
-  if (timeline.value?.paused) {
-    timeline.value.play()
-    controlIconName.value = 'mdi-pause'
-  }
-  else {
-    timeline.value?.pause()
-    controlIconName.value = 'mdi-play'
-  }
+const pause = () => {
+  timeline.value?.pause()
+  if (timeline.value?.completed === false) controlIconName.value = 'mdi-play'
 }
 
+const play = () => {
+  timeline.value?.play()
+  controlIconName.value = 'mdi-pause'
+}
+
+const onControlClick = () => {
+  timeline.value?.paused
+    ? play()
+    : pause()
+}
+
+// Hacky fix to avoid stutters in timeline
+// when modifying the current position &
+// playback speed.
 const pauseWhile = (fn: () => void) => {
   const pausedBefore = timeline.value?.paused ?? false
   timeline.value?.pause()
@@ -60,9 +68,8 @@ const createTimeline = () => {
 }
 
 watch(() => props.timelineKey, () => {
-  timeline.value?.pause()
+  pause()
   timeline.value?.seek(0)
-  controlIconName.value = 'mdi-play'
   createTimeline()
 })
 
@@ -87,13 +94,6 @@ onMounted(() => {
         :thumb-size="0"
       />
       <div class="controls">
-        <v-btn
-          class="playPauseButton"
-          variant="plain"
-          density="compact"
-          :icon="controlIconName"
-          @click="onControlClick"
-        />
         <v-btn-toggle
           :model-value="playbackSpeed.currentPlaybackSpeed"
           @update:model-value="onPlaybackSpeedClick"
@@ -116,6 +116,21 @@ onMounted(() => {
             <v-icon size="18">mdi-rabbit</v-icon>
           </v-btn>
         </v-btn-toggle>
+        <v-btn
+          class="playPauseButton"
+          variant="plain"
+          density="compact"
+          :icon="controlIconName"
+          @click="onControlClick"
+        />
+        <div class="prependControls">
+          <slot
+            name="prependControls"
+            :timeline="timeline"
+            :play="play"
+            :pause="pause"
+          />
+        </div>
       </div>
     </ClientOnly>
   </section>
@@ -124,25 +139,33 @@ onMounted(() => {
 <style lang="scss">
 .aesAnimationFrame {
   position: relative;
-  padding: 20px;
-  padding-top: 0;
+  padding: 0 20px 10px 20px;
 
   .slider {
     margin-top: 20px;
   }
 
   .controls {
+    $sideElementWidth: 5fr;
+
     display: grid;
-    grid-template-columns: 100% min-content;
+    grid-template-columns: $sideElementWidth 1fr $sideElementWidth;
     align-items: center;
+    margin-top: 4px;
 
     .playbackSpeedGroup {
-      margin-left: -120%;
+      margin-left: 8px;
     }
 
-    .playPauseButton {
-      justify-self: center;
+    .prependControls {
+      margin-left: auto;
+      display: flex;
+      gap: 8px;
     }
+  }
+
+  .playPauseButton {
+    justify-self: center;
   }
 }
 

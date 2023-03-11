@@ -83,11 +83,8 @@ const maxLengthPadding = computed(() => {
       :disabled="props.disabled"
       @keydown="preventInvalidInput"
     />
-    <small
-      v-if="!props.disabled"
-      class="footer"
-    >
-      {{ remainingCharsMessage }}
+    <small class="footer">
+      {{ props.disabled ? '' : remainingCharsMessage }}
     </small>
   </div>
 </template>
@@ -143,6 +140,7 @@ const maxLengthPadding = computed(() => {
     justify-self: right;
     display: flex;
     align-items: center;
+    min-height: 19px;
   }
 }
 </style>
