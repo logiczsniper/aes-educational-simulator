@@ -2,6 +2,7 @@
 import type { AnimeTimelineInstance } from 'animejs';
 import { COL_GAP, DIV_HEIGHT, DIV_WIDTH, ROW_GAP } from '~~/utils/animation/constants';
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
+import { updateDivs } from '~~/utils/animation/updateDivs'
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 
 const props = defineProps<{
@@ -19,10 +20,7 @@ const input = computed(() => props.input || [] as Array<number>)
 const byteDivs = hexToDivs(input.value)
 const { targetDivs, targetAllClass, targetCoordsClass, targetRowClass } = addAnimationClasses(byteDivs, 'shift-rows')
 
-onMounted(() => {
-  byteDivs.forEach(byteDiv => inputGridRoot.value?.appendChild(byteDiv))
-  targetDivs.forEach(targetDiv => animationRoot.value?.appendChild(targetDiv))
-
+const createAnimation = () => {
   const rowSize = DIV_HEIGHT + ROW_GAP + 1
   const columnSize = DIV_WIDTH + COL_GAP
   for (let row = 0; row < 4; row++) {
@@ -56,6 +54,22 @@ onMounted(() => {
     targets: targetAllClass,
     color: '#745CD0'
   })
+}
+
+watch(input, newInput => {
+  updateDivs(byteDivs, newInput)
+  updateDivs(targetDivs, newInput)
+})
+
+watch(() => props.timeline, () => {
+  createAnimation()
+})
+
+onMounted(() => {
+  byteDivs.forEach(byteDiv => inputGridRoot.value?.appendChild(byteDiv))
+  targetDivs.forEach(targetDiv => animationRoot.value?.appendChild(targetDiv))
+
+  createAnimation()
 })
 </script>
 

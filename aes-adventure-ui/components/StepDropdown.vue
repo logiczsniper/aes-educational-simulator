@@ -48,6 +48,7 @@ const expansionPanelValue = `step-dropdown--${props.title}`
 
 <style scoped lang="scss">
 .stepDropdown {
+  content-visibility: auto;
 
   .title {
     display: flex;

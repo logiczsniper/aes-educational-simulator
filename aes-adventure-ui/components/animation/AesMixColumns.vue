@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { AnimeTimelineInstance } from 'animejs';
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
+import { updateDivs } from '~~/utils/animation/updateDivs'
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
-import { COL_GAP, DIV_HEIGHT, DIV_WIDTH, ROW_GAP } from '~~/utils/animation/constants';
+import { COL_GAP, DIV_WIDTH } from '~~/utils/animation/constants';
 
 const props = defineProps<{
   timeline: AnimeTimelineInstance,
@@ -26,20 +27,12 @@ const byteDivs = hexToDivs(input.value)
 const { targetDivs, targetColumnClass } = addAnimationClasses(byteDivs, 'mix-columns-i')
 
 const matrixByteDivs = hexToDivs(props.matrix)
-const { targetDivs: matrixTargetDivs, targetColumnClass: matrixTargetColumnClass, targetCoordsClass: matrixTargetCoordsClass } = addAnimationClasses(matrixByteDivs, 'mix-columns-matrix')
 
 const outputDivs = hexToDivs(output.value)
 const { targetDivs: outputTargetDivs, targetColumnClass: outputTargetColumnClass, targetAllClass: outputTargetAllClass } = addAnimationClasses(outputDivs, 'mix-columns-o')
 
-onMounted(() => {
-  byteDivs.forEach(div => inputGridRoot.value?.appendChild(div))
-  targetDivs.forEach(div => animationRoot.value?.appendChild(div))
-  matrixTargetDivs.forEach(div => matrixAnimationRoot.value?.appendChild(div))
-  matrixByteDivs.forEach(div => matrixGridRoot.value?.appendChild(div))
-  outputTargetDivs.forEach(div => outputAnimationRoot.value?.appendChild(div))
-
+const createAnimation = () => {
   const columnSize = DIV_WIDTH + COL_GAP
-  const rowSize = DIV_HEIGHT + ROW_GAP
   for (let column = 0; column < 4; column++) {
     props.timeline.add({
       targets: targetColumnClass(column),
@@ -63,6 +56,25 @@ onMounted(() => {
     targets: outputTargetAllClass,
     color: '#745CD0'
   })
+}
+
+watch([input, output], ([newInput, newOutput]) => {
+  updateDivs(byteDivs, newInput)
+  updateDivs(targetDivs, newInput)
+  updateDivs(outputTargetDivs, newOutput)
+})
+
+watch(() => props.timeline, () => {
+  createAnimation()
+})
+
+onMounted(() => {
+  byteDivs.forEach(div => inputGridRoot.value?.appendChild(div))
+  targetDivs.forEach(div => animationRoot.value?.appendChild(div))
+  matrixByteDivs.forEach(div => matrixGridRoot.value?.appendChild(div))
+  outputTargetDivs.forEach(div => outputAnimationRoot.value?.appendChild(div))
+
+  createAnimation()
 })
 </script>
 

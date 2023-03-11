@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { AnimeTimelineInstance } from 'animejs';
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
+import { updateDivs } from '~~/utils/animation/updateDivs'
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 import { COL_GAP, DIV_HEIGHT, DIV_WIDTH, ROW_GAP } from '~~/utils/animation/constants';
 
@@ -30,21 +31,7 @@ const { targetDivs: sboxTargetDivs, targetColumnClass: sboxTargetColumnClass, ta
 const outputDivs = hexToDivs(output.value)
 const { targetDivs: outputTargetDivs, targetCoordsClass: outputTargetCoordsClass, targetAllClass: outputTargetAllClass } = addAnimationClasses(outputDivs, 'substitute-bytes-o')
 
-onMounted(() => {
-  byteDivs.forEach(div => inputGridRoot.value?.appendChild(div))
-  targetDivs.forEach(div => animationRoot.value?.appendChild(div))
-  sboxTargetDivs.forEach((div, index) => {
-    if (index % 16 === 0) {
-      const counterDiv = document.createElement('div')
-      counterDiv.classList.add('code', 'leftDiv')
-      counterDiv.textContent = (index / 16).toString(16)
-
-      sboxAnimationRoot.value?.appendChild(counterDiv)
-    }
-    sboxAnimationRoot.value?.appendChild(div)
-  })
-  outputTargetDivs.forEach(div => outputAnimationRoot.value?.appendChild(div))
-
+const createAnimation = () => {
   const columnSize = DIV_WIDTH + COL_GAP
   const rowSize = DIV_HEIGHT + ROW_GAP
   for (let row = 0; row < 4; row++) {
@@ -92,6 +79,34 @@ onMounted(() => {
     targets: outputTargetAllClass,
     color: '#745CD0'
   })
+}
+
+watch([input, output], ([newInput, newOutput]) => {
+  updateDivs(byteDivs, newInput)
+  updateDivs(targetDivs, newInput)
+  updateDivs(outputTargetDivs, newOutput)
+})
+
+watch(() => props.timeline, () => {
+  createAnimation()
+})
+
+onMounted(() => {
+  byteDivs.forEach(div => inputGridRoot.value?.appendChild(div))
+  targetDivs.forEach(div => animationRoot.value?.appendChild(div))
+  sboxTargetDivs.forEach((div, index) => {
+    if (index % 16 === 0) {
+      const counterDiv = document.createElement('div')
+      counterDiv.classList.add('code', 'leftDiv')
+      counterDiv.textContent = (index / 16).toString(16)
+
+      sboxAnimationRoot.value?.appendChild(counterDiv)
+    }
+    sboxAnimationRoot.value?.appendChild(div)
+  })
+  outputTargetDivs.forEach(div => outputAnimationRoot.value?.appendChild(div))
+
+  createAnimation()
 })
 </script>
 

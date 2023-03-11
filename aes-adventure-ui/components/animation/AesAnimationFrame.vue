@@ -3,15 +3,15 @@ import { AnimeTimelineAnimParams, AnimeTimelineInstance } from 'animejs';
 import anime from 'animejs/lib/anime.es.js';
 import { PlaybackSpeed } from '~~/composables/usePlaybackSpeed'
 
+const props = defineProps<{
+  timelineParams?: AnimeTimelineAnimParams,
+  timelineKey?: number | string,
+}>();
+
 const playbackSpeed = usePlaybackSpeed()
 
 const timeline = ref<AnimeTimelineInstance | null>(null)
 const progress = ref(0)
-
-const props = defineProps<{
-  timelineParams?: AnimeTimelineAnimParams
-}>();
-
 const controlIconName = ref('mdi-play')
 
 const onControlClick = () => {
@@ -45,7 +45,7 @@ const onPlaybackSpeedClick = (value: PlaybackSpeed | undefined) =>
     playbackSpeed.setCurrentPlaybackSpeed(value)
   })
 
-onMounted(() => {
+const createTimeline = () => {
   timeline.value = anime.timeline({
     ...props.timelineParams,
     easing: 'easeInOutQuad',
@@ -57,6 +57,17 @@ onMounted(() => {
       controlIconName.value = 'mdi-restart'
     },
   })
+}
+
+watch(() => props.timelineKey, () => {
+  timeline.value?.pause()
+  timeline.value?.seek(0)
+  controlIconName.value = 'mdi-play'
+  createTimeline()
+})
+
+onMounted(() => {
+  createTimeline()
 })
 </script>
 

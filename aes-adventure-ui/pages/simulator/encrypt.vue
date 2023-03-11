@@ -179,7 +179,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                 :title="`${t('simulator.substitute-bytes')}`"
                 :tutorial-key="TutorialKey.Default"
               >
-                <AnimationAesAnimationFrame :key="encryptState.roundIndex">
+                <AnimationAesAnimationFrame :timeline-key="encryptState.roundIndex">
                   <template #animation="{ timeline }">
                     <AnimationAesSubstituteBytes
                       :timeline="timeline"
@@ -207,7 +207,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                 :title="`${t('simulator.shift-rows')}`"
                 :tutorial-key="TutorialKey.Test"
               >
-                <AnimationAesAnimationFrame :key="encryptState.roundIndex">
+                <AnimationAesAnimationFrame :timeline-key="encryptState.roundIndex">
                   <template #animation="{ timeline }">
                     <AnimationAesShiftRows
                       :timeline="timeline"
@@ -238,7 +238,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
               >
                 <AnimationAesAnimationFrame
                   v-if="!encryptState.isLastRound"
-                  :key="encryptState.roundIndex"
+                  :timeline-key="encryptState.roundIndex"
                 >
                   <template #animation="{ timeline }">
                     <AnimationAesMixColumns
@@ -270,7 +270,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                 :title="`${t('simulator.add-round-key')}`"
                 :tutorial-key="TutorialKey.Test"
               >
-                <AnimationAesAnimationFrame :key="encryptState.roundIndex">
+                <AnimationAesAnimationFrame :timeline-key="encryptState.roundIndex">
                   <template #animation="{ timeline }">
                     <AnimationAesAddKey
                       id="add-round-key"
@@ -453,5 +453,4 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
 
 .selectedKeySize {
   display: none;
-}
-</style>
+}</style>

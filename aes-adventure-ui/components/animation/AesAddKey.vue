@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { AnimeTimelineInstance } from 'animejs';
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
+import { updateDivs } from '~~/utils/animation/updateDivs'
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 import { COL_GAP, DIV_WIDTH } from '~~/utils/animation/constants';
 
@@ -33,13 +34,7 @@ const { targetDivs: keyTargetDivs, targetCoordsClass: keyTargetCoordsClass } = a
 const outputDivs = hexToDivs(output.value)
 const { targetDivs: outputTargetDivs, targetCoordsClass: outputTargetCoordsClass, targetAllClass: outputTargetAllClass } = addAnimationClasses(outputDivs, 'add-key-o')
 
-onMounted(() => {
-  byteDivs.forEach(div => inputGridRoot.value?.appendChild(div))
-  targetDivs.forEach(div => animationRoot.value?.appendChild(div))
-  keyByteDivs.forEach(div => keyGridRoot.value?.appendChild(div))
-  keyTargetDivs.forEach(div => keyAnimationRoot.value?.appendChild(div))
-  outputTargetDivs.forEach(div => outputAnimationRoot.value?.appendChild(div))
-
+const createAnimation = () => {
   const columnSize = DIV_WIDTH + COL_GAP
   for (let row = 0; row < 4; row++) {
     for (let column = 0; column < 4; column++) {
@@ -67,6 +62,28 @@ onMounted(() => {
     targets: outputTargetAllClass,
     color: '#745CD0'
   })
+}
+
+watch(() => props.timeline, () => {
+  createAnimation()
+})
+
+watch([input, output, key], ([newInput, newOutput, newKey]) => {
+  updateDivs(byteDivs, newInput)
+  updateDivs(targetDivs, newInput)
+  updateDivs(outputTargetDivs, newOutput)
+  updateDivs(keyByteDivs, newKey)
+  updateDivs(keyTargetDivs, newKey)
+})
+
+onMounted(() => {
+  byteDivs.forEach(div => inputGridRoot.value?.appendChild(div))
+  targetDivs.forEach(div => animationRoot.value?.appendChild(div))
+  keyByteDivs.forEach(div => keyGridRoot.value?.appendChild(div))
+  keyTargetDivs.forEach(div => keyAnimationRoot.value?.appendChild(div))
+  outputTargetDivs.forEach(div => outputAnimationRoot.value?.appendChild(div))
+
+  createAnimation()
 })
 </script>
 
