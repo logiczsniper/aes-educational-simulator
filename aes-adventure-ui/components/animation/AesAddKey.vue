@@ -20,7 +20,7 @@ const keyAnimationRoot = ref<HTMLElement>()
 const keyGridRoot = ref<HTMLElement>()
 const outputAnimationRoot = ref<HTMLElement>()
 
-const key = computed(() => props.keyValue || [] as Array<number>)
+const key = computed(() => (props.keyValue || [] as Array<number>).slice(0, 16))
 const input = computed(() => props.input || [] as Array<number>)
 const output = computed(() => props.output || [] as Array<number>)
 
