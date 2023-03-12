@@ -21,6 +21,7 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
   const output = ref<AesiOutput>()
   const roundIndex = ref(0)
   const stepIndex = ref(0)
+  const showStats = ref(false)
 
   const plaintext = computed(() => parseInputValue(rawPlaintext.value))
   const key = computed(() => parseInputValue(rawKey.value))
@@ -33,6 +34,7 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
   const isLastRound = computed(() => (roundIndex.value === (output.value?.rounds.length ?? 0) - 1))
   const isSecondToLastRound = computed(() => (roundIndex.value === (output.value?.rounds.length ?? 0) - 2))
   const outputString = computed(() => Array.from(output.value?.block ?? []).map(formatHex).join('') ?? '')
+  const roundCount = computed(() => output.value?.rounds.length ?? 0)
 
   const getStep = (stepType: AesiRoundStepType) => round.value?.steps.find(({ type }) => type === stepType)
 
@@ -94,6 +96,8 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
     isLastRound,
     isSecondToLastRound,
     outputString,
+    showStats,
+    roundCount,
     setKeySize,
     getStep,
     calculateEncryptOutput,

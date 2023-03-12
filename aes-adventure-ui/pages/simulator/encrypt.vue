@@ -167,8 +167,8 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                       <AnimationAesAddKey
                         id="add-key"
                         :timeline="timeline"
-                        :key-value="encryptState.key"
-                        :input="encryptState.output.symmetryKeyAddition?.inputState"
+                      :key-value="encryptState.key"
+                      :input="encryptState.output.symmetryKeyAddition?.inputState"
                         :output="encryptState.output.symmetryKeyAddition?.outputState"
                       >
                       </AnimationAesAddKey>
@@ -194,9 +194,17 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                 ref="roundsHeader"
                 class="roundsHeader"
               >
-                [Round count, statistics and control timeline here]
-                {{ 'Round: ' + encryptState.roundIndex }}
-                {{ 'Step: ' + encryptState.stepIndex }}
+                <!-- [Round count, statistics and control timeline here]
+                  {{ 'Round: ' + encryptState.roundIndex }}
+                  {{ 'Step: ' + encryptState.stepIndex }} -->
+
+                <StatsDropdown
+                  v-model="encryptState.showStats"
+                  :roundIndex="encryptState.roundIndex"
+                  :roundCount="encryptState.roundCount"
+                >
+
+                </StatsDropdown>
               </section>
               <section class="rounds">
                 <StepDropdown
