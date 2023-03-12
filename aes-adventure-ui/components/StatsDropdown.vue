@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { TutorialKey } from '~~/composables/useTutorial';
+import { ApexOptions } from "apexcharts";
+import ApexChart from "vue3-apexcharts";
 
 const props = defineProps<{
   modelValue: boolean;
@@ -16,6 +17,61 @@ const emit = defineEmits<{
 }>()
 
 const roundNumber = computed(() => props.roundIndex + 1)
+
+const series = [
+  {
+    name: "series-1",
+    data: [30, 40, 35, 50, 49, 60, 70,],
+  },
+]
+const chartOptions: ApexOptions = {
+  chart: {
+    id: "vuechart-example",
+    fontFamily: 'Inter',
+    toolbar: {
+      show: false,
+    },
+
+  },
+  grid: {
+    show: false,
+  },
+  xaxis: {
+    // tickAmount: props.roundCount,
+    max: props.roundCount,
+    labels: {
+      // show: false
+    },
+    axisTicks: {
+      // show: false,
+
+    },
+    tooltip: {
+      enabled: false,
+    }
+  },
+  yaxis: {
+    tickAmount: 2,
+    labels: {
+      show: false,
+      offsetX: -30
+    }
+  },
+  tooltip: {
+    custom: ({ series, seriesIndex, dataPointIndex, w }) => {
+      const thisSeries = series.at(seriesIndex)
+      const thisPoint = thisSeries ? thisSeries.at(dataPointIndex) : null
+      return `
+        <div class="arrow_box">
+          <span>${thisPoint + 1000}</span>
+        </div>
+      `
+    }
+  },
+  stroke: {
+    curve: 'smooth'
+  }
+}
 </script>
 
 <template>
@@ -43,7 +99,15 @@ const roundNumber = computed(() => props.roundIndex + 1)
         </div>
       </template>
       <template #text>
-        Graphs yooooo
+        <figure class="statsChart">
+          <ApexChart
+            height="200"
+            width="102%"
+            type="line"
+            :options="chartOptions"
+            :series="series"
+          ></ApexChart>
+        </figure>
       </template>
     </v-expansion-panel>
   </v-expansion-panels>
@@ -89,5 +153,16 @@ const roundNumber = computed(() => props.roundIndex + 1)
   :deep(.v-expansion-panel-title__overlay) {
     opacity: 0;
   }
+
+  .statsChart {
+    margin-left: -20px;
+
+    :deep(svg.apexcharts-svg) {
+      overflow: visible;
+
+    }
+  }
+
+
 }
 </style>
