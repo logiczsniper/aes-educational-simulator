@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ApexOptions } from "apexcharts";
 import ApexChart from "vue3-apexcharts";
+import { AesiStatistics } from "~~/utils/statistics/generateStatistics";
 
 const props = defineProps<{
   modelValue: boolean;
+  stats: AesiStatistics;
   roundIndex: number;
   roundCount: number;
 }>();
@@ -18,12 +20,18 @@ const emit = defineEmits<{
 
 const roundNumber = computed(() => props.roundIndex + 1)
 
-const series = [
-  {
-    name: "series-1",
-    data: [30, 40, 35, 50, 49, 60, 70,],
-  },
-]
+const series = computed(() => {
+  return [
+    {
+      name: "Confusion",
+      data: [100, ...props.stats.confusion.slice(0, props.roundIndex)]
+    },
+    {
+      name: "Diffusion",
+      data: [0, ...props.stats.diffusion.slice(0, props.roundIndex)]
+    }
+  ]
+})
 const chartOptions: ApexOptions = {
   chart: {
     id: "vuechart-example",
@@ -51,7 +59,9 @@ const chartOptions: ApexOptions = {
     }
   },
   yaxis: {
-    tickAmount: 2,
+    // tickAmount: 2,
+    min: 0,
+    max: 100,
     labels: {
       show: false,
       offsetX: -30
@@ -63,7 +73,7 @@ const chartOptions: ApexOptions = {
       const thisPoint = thisSeries ? thisSeries.at(dataPointIndex) : null
       return `
         <div class="arrow_box">
-          <span>${thisPoint + 1000}</span>
+          <span>${thisPoint}</span>
         </div>
       `
     }

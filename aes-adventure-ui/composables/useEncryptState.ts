@@ -53,7 +53,7 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
     const { encrypt } = aesi({ key: key.value, config: {} })
 
     output.value = encrypt(plaintext.value)
-    stats.value = generateStatistics(output.value, encrypt)
+    stats.value = generateStatistics(output.value, key.value, encrypt)
     stage.value = EncryptStage.ToState
     roundIndex.value = 0
     stepIndex.value = 0

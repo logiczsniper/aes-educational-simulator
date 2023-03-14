@@ -196,7 +196,9 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                 class="roundsHeader"
               >
                 <StatsDropdown
+                  v-if="encryptState.stats"
                   v-model="encryptState.showStats"
+                  :stats="encryptState.stats"
                   :roundIndex="encryptState.roundIndex"
                   :roundCount="encryptState.roundCount"
                 >
