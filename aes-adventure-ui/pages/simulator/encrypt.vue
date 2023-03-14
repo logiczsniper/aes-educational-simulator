@@ -34,6 +34,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
         name="opacity"
       >
         <div>
+          {{ encryptState.stats }}
           <section class="inputs">
             <HexArea
               v-model="encryptState.rawPlaintext"

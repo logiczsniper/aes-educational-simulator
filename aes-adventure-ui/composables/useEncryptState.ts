@@ -1,6 +1,7 @@
 import { aesi } from "~~/utils/aesi"
 import { AesiKeySize, AesiOutput, AesiRoundStepType } from "~~/utils/aesi/aesi.types"
 import '~~/utils/parsingPatches'
+import { AesiStatistics, generateStatistics } from "~~/utils/statistics/generateStatistics"
 
 export enum EncryptStage {
   Input,
@@ -22,6 +23,7 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
   const roundIndex = ref(0)
   const stepIndex = ref(0)
   const showStats = ref(false)
+  const stats = ref<AesiStatistics>()
 
   const plaintext = computed(() => parseInputValue(rawPlaintext.value))
   const key = computed(() => parseInputValue(rawKey.value))
@@ -51,6 +53,7 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
     const { encrypt } = aesi({ key: key.value, config: {} })
 
     output.value = encrypt(plaintext.value)
+    stats.value = generateStatistics(output.value, encrypt)
     stage.value = EncryptStage.ToState
     roundIndex.value = 0
     stepIndex.value = 0
@@ -82,6 +85,7 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
 
   return {
     output,
+    stats,
     stage,
     roundIndex,
     round,
