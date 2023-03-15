@@ -47,7 +47,8 @@ export const computeDiffusion = (initialWork: DiffusionInitialWork, outputBinary
   let flipsTotal = 0
 
   for (const variantOutput of initialWork) {
-    const thisVariantOutputState = variantOutput.rounds.at(roundIndex)?.steps.at(-1)?.outputState
+    // const thisVariantOutputState = variantOutput.rounds.at(roundIndex)?.steps.at(-1)?.outputState
+    const thisVariantOutputState = variantOutput.rounds.at(roundIndex)?.steps.at(0)?.inputState
 
     if (!thisVariantOutputState) continue
 

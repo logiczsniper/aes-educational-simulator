@@ -1,5 +1,5 @@
 import { AesiOutput } from "../aesi/aesi.types";
-import { computeConfusion } from "./computeConfusion";
+import { computeConfusion, computeConfusionPhi } from "./computeConfusion";
 import { computeDiffusion, computeDiffusionInitialWork } from "./computeDiffusion";
 import { hexToBinary } from "./hexToBinary";
 
@@ -18,14 +18,16 @@ export const generateStatistics = (output: AesiOutput, key: Uint8Array, cryptoFn
 
   for (let i = 0; i < output.rounds.length; i++) {
     const round = output.rounds[i]
+    const inputState = round.steps.at(0)?.inputState
     const outputState = round.steps.at(-1)?.outputState
 
-    if (!outputState) continue
+    if (!inputState || !outputState) continue
 
+    const inputBinary = hexToBinary(inputState)
     const outputBinary = hexToBinary(outputState)
 
-    confusion.push(computeConfusion(key, outputBinary))
-    diffusion.push(computeDiffusion(diffusionInitialWork, outputBinary, i))
+    confusion.push(computeConfusion(key, inputBinary))
+    diffusion.push(computeDiffusion(diffusionInitialWork, inputBinary, i))
   }
 
   return {

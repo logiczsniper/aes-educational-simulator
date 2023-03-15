@@ -24,11 +24,11 @@ const series = computed(() => {
   return [
     {
       name: "Confusion",
-      data: [100, ...props.stats.confusion.slice(0, props.roundIndex)]
+      data: [...props.stats.confusion.slice(0, props.roundIndex + 1)]
     },
     {
       name: "Diffusion",
-      data: [0, ...props.stats.diffusion.slice(0, props.roundIndex)]
+      data: [...props.stats.diffusion.slice(0, props.roundIndex + 1)]
     }
   ]
 })
@@ -68,15 +68,15 @@ const chartOptions: ApexOptions = {
     }
   },
   tooltip: {
-    custom: ({ series, seriesIndex, dataPointIndex, w }) => {
-      const thisSeries = series.at(seriesIndex)
-      const thisPoint = thisSeries ? thisSeries.at(dataPointIndex) : null
-      return `
-        <div class="arrow_box">
-          <span>${thisPoint}</span>
-        </div>
-      `
-    }
+    // custom: ({ series, seriesIndex, dataPointIndex, w }) => {
+    //   const thisSeries = series.at(seriesIndex)
+    //   const thisPoint = thisSeries ? thisSeries.at(dataPointIndex) : null
+    //   return `
+    //     <div class="arrow_box">
+    //       <span>${thisPoint}</span>
+    //     </div>
+    //   `
+    // }
   },
   stroke: {
     curve: 'smooth'
