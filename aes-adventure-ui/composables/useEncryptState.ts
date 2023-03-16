@@ -49,8 +49,13 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
     keySize.value = newKeySize
   }
 
+  const config = useConfig()
   const calculateEncryptOutput = () => {
-    const { encrypt } = aesi({ key: key.value, config: {} })
+    const { encrypt } = aesi({
+      key: key.value, config: {
+        defaultConfig: config.walkThroughConfig
+      }
+    })
 
     output.value = encrypt(plaintext.value)
     stats.value = generateStatistics(output.value, key.value, encrypt)

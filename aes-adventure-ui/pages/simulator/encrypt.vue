@@ -22,6 +22,7 @@ const scrollToRoundsHeader = () => {
 }
 
 const encryptState = useEncryptState();
+const config = useConfig()
 
 const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 32 && encryptState.rawKey.length * 4 === encryptState.keySize)
 </script>

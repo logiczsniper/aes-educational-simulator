@@ -9,6 +9,10 @@ const props = defineProps<{
   backgroundColor?: string;
 }>();
 
+// TODO: disabled prop 
+// TODO: disabled text prop
+// TODO: use with configurations (disabled step if walkThroughConfig === step)
+
 const expansionPanelValue = `step-dropdown--${props.title}`
 </script>
 
