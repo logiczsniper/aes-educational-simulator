@@ -23,13 +23,13 @@ const roundNumber = computed(() => props.roundIndex + 1)
 const series = computed(() => {
   return [
     {
-      name: "Confusion",
-      data: [...props.stats.confusion.slice(0, props.roundIndex + 1)]
+      name: ' ' + t('simulator.diffusion') + ' %',
+      data: [...props.stats.diffusion.slice(0, props.roundIndex + 1)]
     },
     {
-      name: "Diffusion",
-      data: [...props.stats.diffusion.slice(0, props.roundIndex + 1)]
-    }
+      name: ' ' + t('simulator.confusion') + ' %',
+      data: [...props.stats.confusion.slice(0, props.roundIndex + 1)]
+    },
   ]
 })
 const chartOptions: ApexOptions = {
@@ -39,19 +39,27 @@ const chartOptions: ApexOptions = {
     toolbar: {
       show: false,
     },
-
   },
+  colors: ['#0084DB', '#67BAA6'],
   grid: {
     show: false,
   },
+  legend: {
+    position: 'top',
+    horizontalAlign: 'left',
+    offsetX: -14,
+    itemMargin: {
+      horizontal: 10
+    }
+  },
   xaxis: {
     // tickAmount: props.roundCount,
-    max: props.roundCount,
+    max: props.roundCount + 1,
     labels: {
-      // show: false
+      show: false
     },
     axisTicks: {
-      // show: false,
+      show: false,
 
     },
     tooltip: {
@@ -64,7 +72,7 @@ const chartOptions: ApexOptions = {
     max: 100,
     labels: {
       show: false,
-      offsetX: -30
+      // offsetX: -30
     }
   },
   tooltip: {
@@ -77,6 +85,11 @@ const chartOptions: ApexOptions = {
     //     </div>
     //   `
     // }
+    x: {
+      formatter: (val, opts) => {
+        return `${t('simulator.round')} #${val}`
+      }
+    }
   },
   stroke: {
     curve: 'smooth'
@@ -104,7 +117,7 @@ const chartOptions: ApexOptions = {
         >
           <div />
           <h4 class="roundLabel">{{ t('simulator.round') }}</h4>
-          <h2 class="roundIndex">{{ roundNumber }}</h2>
+          <h2 class="roundIndex">{{ Math.min(props.roundCount, roundNumber) }}</h2>
           <h4 class="roundCount">/ {{ props.roundCount }}</h4>
         </div>
       </template>
@@ -112,7 +125,7 @@ const chartOptions: ApexOptions = {
         <figure class="statsChart">
           <ApexChart
             height="200"
-            width="102%"
+            width="100%"
             type="line"
             :options="chartOptions"
             :series="series"
@@ -164,12 +177,34 @@ const chartOptions: ApexOptions = {
     opacity: 0;
   }
 
+  :deep(.v-expansion-panel-text__wrapper) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .statsChart {
     margin-left: -20px;
 
     :deep(svg.apexcharts-svg) {
       overflow: visible;
+    }
 
+    :deep(div.apexcharts-legend-series) {
+      display: flex;
+      gap: 2px;
+    }
+
+    :deep(.apexcharts-tooltip) {
+      &>* {
+        border: none;
+        background-color: #2C1D66;
+        color: white;
+      }
+    }
+
+    :deep(.apexcharts-tooltip-title) {
+      margin-bottom: 0;
+      padding-bottom: 10px;
     }
   }
 

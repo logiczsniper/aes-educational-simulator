@@ -8,6 +8,8 @@ export type AesiStatistics = {
   diffusion: Array<number>
 }
 
+const round = (n: number) => Number.parseFloat(n.toPrecision(2))
+
 export const generateStatistics = (output: AesiOutput, key: Uint8Array, cryptoFn: (_: Uint8Array) => AesiOutput): AesiStatistics => {
   const { initialState } = output
   const initialBinary = hexToBinary(initialState)
@@ -30,9 +32,14 @@ export const generateStatistics = (output: AesiOutput, key: Uint8Array, cryptoFn
     diffusion.push(computeDiffusion(diffusionInitialWork, inputBinary, i))
   }
 
+  const finalOutputState = output.rounds.at(-1)?.steps.at(-1)?.outputState
+  const finalOutputBinary = hexToBinary(finalOutputState as Uint8Array)
+  diffusion.push(computeDiffusion(diffusionInitialWork, finalOutputBinary, output.rounds.length - 1, true))
+  confusion.push(computeConfusion(key, finalOutputBinary))
+
   return {
-    diffusion,
-    confusion
+    diffusion: diffusion.map(round),
+    confusion: confusion.map(round)
   }
 }
 

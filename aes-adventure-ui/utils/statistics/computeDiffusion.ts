@@ -43,12 +43,14 @@ export const computeDiffusionInitialWork = (inputBinary: Array<number>, cryptoFn
 }
 
 
-export const computeDiffusion = (initialWork: DiffusionInitialWork, outputBinary: Array<number>, roundIndex: number) => {
+export const computeDiffusion = (initialWork: DiffusionInitialWork, outputBinary: Array<number>, roundIndex: number, output?: boolean) => {
   let flipsTotal = 0
 
   for (const variantOutput of initialWork) {
     // const thisVariantOutputState = variantOutput.rounds.at(roundIndex)?.steps.at(-1)?.outputState
-    const thisVariantOutputState = variantOutput.rounds.at(roundIndex)?.steps.at(0)?.inputState
+    const thisVariantOutputState = output
+      ? variantOutput.rounds.at(-1)?.steps.at(-1)?.outputState
+      : variantOutput.rounds.at(roundIndex)?.steps.at(0)?.inputState
 
     if (!thisVariantOutputState) continue
 

@@ -34,7 +34,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
         name="opacity"
       >
         <div>
-          {{ encryptState.stats }}
+          <!-- {{ encryptState.stats }} -->
           <section class="inputs">
             <HexArea
               v-model="encryptState.rawPlaintext"
@@ -199,13 +199,19 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                   v-if="encryptState.stats"
                   v-model="encryptState.showStats"
                   :stats="encryptState.stats"
-                  :roundIndex="encryptState.roundIndex"
+                  :roundIndex="encryptState.roundIndex + Number(encryptState.stage >= EncryptStage.FromState) - Number(encryptState.stage < EncryptStage.Rounds)"
                   :roundCount="encryptState.roundCount"
                 >
 
                 </StatsDropdown>
-
-
+                <RoundProgressBar
+                  class="roundProgressBar"
+                  :class="{
+                    'moveUp': encryptState.showStats
+                  }"
+                  :roundIndex="encryptState.roundIndex + Number(encryptState.stage >= EncryptStage.FromState) - Number(encryptState.stage < EncryptStage.Rounds)"
+                  :roundCount="encryptState.roundCount"
+                />
               </section>
               <section class="rounds">
                 <StepDropdown
@@ -274,7 +280,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                   :title="`${t('simulator.mix-columns')}`"
                   :tutorial-key="encryptState.isLastRound ? undefined : TutorialKey.Test"
                   :line-through-title="encryptState.isLastRound"
-                  :background-color="encryptState.isLastRound ? '#e53f33' : undefined"
+                  :background-color="encryptState.isLastRound ? '#CC3933' : undefined"
                 >
                   <AnimationAesAnimationFrame
                     v-if="!encryptState.isLastRound"
@@ -478,6 +484,16 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
 
   .roundsHeader {
     margin-bottom: 18px;
+    display: grid;
+    place-items: center;
+    grid-template-rows: min-content, min-content;
+
+    .roundProgressBar {
+      &.moveUp {
+        margin: -20px 16px 0 16px;
+        z-index: 1;
+      }
+    }
   }
 
   .rounds {

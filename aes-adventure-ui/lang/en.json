@@ -70,6 +70,8 @@
     "input": "Input",
     "output": "Output",
     "add-key": "Add Key",
+    "confusion": "Confusion",
+    "diffusion": "Diffusion",
     "substitute-bytes": "Substitute Bytes",
     "shift-rows": "Shift Rows",
     "mix-columns": "Mix Columns",
