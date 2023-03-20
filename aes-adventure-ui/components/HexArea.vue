@@ -29,12 +29,16 @@ watch(currentValue, newValue => emit('update:modelValue', newValue))
 
 const preventInvalidInput = (event: KeyboardEvent) => {
   const isHex = "0123456789ABCDEF".includes(event.key.toUpperCase())
-  const isFull = currentValue.value.length === maxLengthHex.value
   const isBackspace = event.key === 'Backspace'
   const hasModifier = event.altKey || event.ctrlKey
   const isNewCharacter = !isBackspace && !hasModifier
+  const isPaste = (event.ctrlKey || event.metaKey) && event.key.toUpperCase() === "V"
 
-  if (!isHex && isNewCharacter || isFull && isNewCharacter) {
+  if (isPaste) {
+    // TODO: sanitize paste
+  }
+
+  if (!isHex && isNewCharacter) {
     event.preventDefault()
     return
   }
@@ -47,10 +51,10 @@ const remainingCharsMessage = computed(() => remainingChars.value === 0
   : `${remainingChars.value} ${t('simulator.hexArea.nibblesLeft')}`
 )
 const maxLengthPadding = computed(() => {
-  if (props.maxLength === 128) return 45
-  if (props.maxLength === 192) return 69
+  if (props.maxLength === 128) return 15
+  if (props.maxLength === 192) return 23
 
-  return 93
+  return 31
 })
 </script>
 
@@ -121,7 +125,6 @@ const maxLengthPadding = computed(() => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // margin: 0 16px;
   }
 
   .textArea {
@@ -134,6 +137,7 @@ const maxLengthPadding = computed(() => {
     border: 3px solid white;
     outline: none;
     resize: none;
+    overflow: hidden;
 
     &:focus {
       border-color: #745CD0;
