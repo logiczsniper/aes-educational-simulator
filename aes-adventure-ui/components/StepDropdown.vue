@@ -4,16 +4,15 @@ import { TutorialKey } from '~~/composables/useTutorial';
 const props = defineProps<{
   modelValue: boolean;
   title: string;
+  turnedOff?: boolean;
   lineThroughTitle?: boolean;
   tutorialKey?: TutorialKey;
   backgroundColor?: string;
 }>();
 
-// TODO: disabled prop 
-// TODO: disabled text prop
-// TODO: use with configurations (disabled step if walkThroughConfig === step)
-
 const expansionPanelValue = `step-dropdown--${props.title}`
+const backgroundColor = computed(() => props.backgroundColor ?? (props.turnedOff ? '#CC3933' : undefined))
+const lineThroughTitle = computed(() => props.lineThroughTitle ?? props.turnedOff)
 </script>
 
 <template>
@@ -27,15 +26,15 @@ const expansionPanelValue = `step-dropdown--${props.title}`
       :value="expansionPanelValue"
       eager
       elevation="0"
-      :bg-color="props.backgroundColor"
+      :bg-color="backgroundColor"
     >
       <template #title>
         <h3
           class="title"
-          :class="{ 'strikeThrough': props.lineThroughTitle }"
+          :class="{ 'strikeThrough': lineThroughTitle }"
         >
           {{ props.title }}
-          <span v-if="props.tutorialKey !== undefined">
+          <span v-if="props.tutorialKey !== undefined && !props.turnedOff">
             <TutorialIconButton :tutorial-key="props.tutorialKey" />
           </span>
         </h3>

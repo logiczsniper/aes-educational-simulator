@@ -86,6 +86,7 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
     stage.value = EncryptStage.Input
     roundIndex.value = 0
     stepIndex.value = 0
+    showStats.value = false
   }
 
   return {

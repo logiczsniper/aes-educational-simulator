@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AesiRound, AesiRoundStepAddKey, AesiRoundStepType } from '~~/utils/aesi/aesi.types';
+import { AesiRoundStepAddKey, AesiRoundStepType } from '~~/utils/aesi/aesi.types';
 import { S_BOX } from '~~/utils/aesi/core/constants';
 import { A } from '~~/utils/aesi/core/constants';
 
@@ -22,9 +22,11 @@ const scrollToRoundsHeader = () => {
 }
 
 const encryptState = useEncryptState();
-const config = useConfig()
+const configState = useConfig()
 
 const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 32 && encryptState.rawKey.length * 4 === encryptState.keySize)
+const noMixColumns = computed(() => encryptState.isLastRound || configState.noMixColumns)
+const offConfigurationMessage = computed(() => `${t('simulator.no-step-configuration')}: ${t(`configure.modal.defaults.${configState.walkThroughConfig}.name`)} AES`)
 </script>
 
 <template>
@@ -35,7 +37,6 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
         name="opacity"
       >
         <div>
-          <!-- {{ encryptState.stats }} -->
           <section class="inputs">
             <HexArea
               v-model="encryptState.rawPlaintext"
@@ -169,7 +170,7 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                       <AnimationAesAddKey
                         id="add-key"
                         :timeline="timeline"
-                        :key-value="encryptState.key"
+                        :key-value="(encryptState.output.symmetryKeyAddition as AesiRoundStepAddKey)?.roundKey"
                         :input="encryptState.output.symmetryKeyAddition?.inputState"
                         :output="encryptState.output.symmetryKeyAddition?.outputState"
                       >
@@ -218,9 +219,16 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                 <StepDropdown
                   :model-value="encryptState.step?.type === AesiRoundStepType.SubBytes && encryptState.stage === EncryptStage.Rounds"
                   :title="`${t('simulator.substitute-bytes')}`"
+                  :turned-off="configState.noSubBytes"
                   :tutorial-key="TutorialKey.Default"
                 >
-                  <AnimationAesAnimationFrame :timeline-key="encryptState.roundIndex">
+                  <p v-if="configState.noSubBytes">
+                    {{ offConfigurationMessage }}
+                  </p>
+                  <AnimationAesAnimationFrame
+                    v-else
+                    :timeline-key="encryptState.roundIndex"
+                  >
                     <template #animation="{ timeline }">
                       <AnimationAesSubstituteBytes
                         :timeline="timeline"
@@ -249,9 +257,16 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                 <StepDropdown
                   :model-value="encryptState.step?.type === AesiRoundStepType.ShiftRows"
                   :title="`${t('simulator.shift-rows')}`"
+                  :turned-off="configState.noShiftRows"
                   :tutorial-key="TutorialKey.Test"
                 >
-                  <AnimationAesAnimationFrame :timeline-key="encryptState.roundIndex">
+                  <p v-if="configState.noShiftRows">
+                    {{ offConfigurationMessage }}
+                  </p>
+                  <AnimationAesAnimationFrame
+                    v-else
+                    :timeline-key="encryptState.roundIndex"
+                  >
                     <template #animation="{ timeline }">
                       <AnimationAesShiftRows
                         :timeline="timeline"
@@ -279,12 +294,14 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                 <StepDropdown
                   :model-value="encryptState.step?.type === AesiRoundStepType.MixColumns"
                   :title="`${t('simulator.mix-columns')}`"
-                  :tutorial-key="encryptState.isLastRound ? undefined : TutorialKey.Test"
-                  :line-through-title="encryptState.isLastRound"
-                  :background-color="encryptState.isLastRound ? '#CC3933' : undefined"
+                  :turned-off="noMixColumns"
+                  :tutorial-key="TutorialKey.Test"
                 >
+                  <p v-if="noMixColumns">
+                    {{ encryptState.isLastRound ? t('simulator.no-mix-columns-last') : offConfigurationMessage }}
+                  </p>
                   <AnimationAesAnimationFrame
-                    v-if="!encryptState.isLastRound"
+                    v-else
                     :timeline-key="encryptState.roundIndex"
                   >
                     <template #animation="{ timeline }">
@@ -311,9 +328,6 @@ const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 3
                       >{{ t('simulator.next-step') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
-                  <p v-else>
-                    {{ t('simulator.no-mix-columns-last') }}
-                  </p>
                 </StepDropdown>
                 <StepDropdown
                   :model-value="encryptState.step?.type === AesiRoundStepType.AddRoundKey && encryptState.stage === EncryptStage.Rounds"
