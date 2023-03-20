@@ -12,6 +12,7 @@ const defaultConfigurations = Object.values(AesiDefaultConfig).map(configKey => 
   "key": configKey,
 }))
 const config = useConfig()
+const encryptState = useEncryptState()
 </script>
 
 <template>
@@ -54,6 +55,7 @@ const config = useConfig()
               <v-checkbox
                 v-for="defaultConfig in defaultConfigurations"
                 v-model="config.selectedDefaultConfigs"
+                @update:model-value="encryptState.reset()"
                 color="primary-darken-1"
                 :value="defaultConfig.key"
                 :disabled="defaultConfig.key === AesiDefaultConfig.Standard"

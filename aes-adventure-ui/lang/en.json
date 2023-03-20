@@ -22,7 +22,7 @@
     "button": "Configure",
     "modal": {
       "title": "Configure",
-      "body": "Select configurations below. When selecting multiple configurations for comparison, <span class='highlight'>the <b>last</b> selected configuration will be walked through step-by-step.</span> If you are new to AES, we recommend that you use the default simulator before using this configuration.",
+      "body": "Select configurations below. When selecting multiple configurations for comparison, <span class='highlight'>the <b>last</b> selected configuration will be walked through step-by-step.</span> If you are new to AES, we recommend that you use the default simulator before using this configuration. <br /><b>Note:</b> changes made here will cause the simulator to abort all activities.",
       "defaults": {
         "standard": {
           "name": "Standard",
@@ -83,8 +83,9 @@
     "finish": "Finish",
     "start-rounds": "Start rounds",
     "finish-rounds": "Finish rounds",
-    "no-mix-columns-last": "Mix Columns is skipped in the last round!",
-    "no-mix-columns-first": "Mix Columns is skipped in the first round!",
+    "no-mix-columns-last": "Turned off because Mix Columns is skipped in the last round!",
+    "no-mix-columns-first": "Turned off because Mix Columns is skipped in the first round!",
+    "no-step-configuration": "Turned off because the selected configuration is",
     "round": "Round",
     "next-step": "Next step",
     "skip": "Skip to last round",
