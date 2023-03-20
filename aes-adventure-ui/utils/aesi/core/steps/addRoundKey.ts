@@ -1,4 +1,5 @@
 import { AesiRoundStepAddKey, AesiRoundStepType } from "../../aesi.types";
+import { createState } from "../utils";
 
 export const addRoundKey = (state: Uint8Array, expandedKey: Uint8Array, round: number): AesiRoundStepAddKey => {
   const inputState = new Uint8Array(state)
@@ -30,6 +31,6 @@ export const addRoundKey = (state: Uint8Array, expandedKey: Uint8Array, round: n
     type: AesiRoundStepType.AddRoundKey,
     inputState,
     outputState,
-    roundKey: Uint8Array.from(roundKey)
+    roundKey: createState(Uint8Array.from(roundKey))
   }
 }

@@ -26,13 +26,16 @@ const input = computed(() => props.input || [] as Array<number>)
 const output = computed(() => props.output || [] as Array<number>)
 
 const byteDivs = hexToDivs(input.value)
-const { targetDivs, targetCoordsClass } = addAnimationClasses(byteDivs, 'add-key-i')
+const { targetDivs, targetCoordsClass } = addAnimationClasses(byteDivs, `add-key-i--${props.id}`)
 
 const keyByteDivs = hexToDivs(key.value)
 const { targetDivs: keyTargetDivs, targetCoordsClass: keyTargetCoordsClass } = addAnimationClasses(keyByteDivs, `add-key-k--${props.id}`)
 
 const outputDivs = hexToDivs(output.value)
-const { targetDivs: outputTargetDivs, targetCoordsClass: outputTargetCoordsClass, targetAllClass: outputTargetAllClass } = addAnimationClasses(outputDivs, 'add-key-o')
+const { targetDivs: outputTargetDivs, targetCoordsClass: outputTargetCoordsClass, targetAllClass: outputTargetAllClass } = addAnimationClasses(outputDivs, `add-key-o--${props.id}`)
+
+const xorSymbolClass = `add-key-xor--${props.id}`
+const xorSymbolTarget = `.${xorSymbolClass}`
 
 const createAnimation = () => {
   const columnSize = DIV_WIDTH + COL_GAP
@@ -45,14 +48,14 @@ const createAnimation = () => {
         targets: targetCoordsClass(row, column),
         translateX: 336 - column * columnSize
       }).add({
-        targets: '.addKeyXorSymbol',
+        targets: xorSymbolTarget,
         translateY: -2 + row * (24 + row / 2),
         opacity: 1
       }, '-=400').add({
         targets: outputTargetCoordsClass(row, column),
         opacity: 1,
       }).add({
-        targets: [keyTargetCoordsClass(row, column), targetCoordsClass(row, column), '.addKeyXorSymbol'],
+        targets: [keyTargetCoordsClass(row, column), targetCoordsClass(row, column), xorSymbolTarget],
         opacity: 0,
       }, '+=400')
     }
@@ -106,7 +109,10 @@ onMounted(() => {
     </div>
 
     <div class="relative">
-      <span class="addKeyXorSymbol absolute">⊕</span>
+      <span
+        class="addKeyXorSymbol absolute"
+        :class="xorSymbolClass"
+      >⊕</span>
       <div
         ref="keyGridRoot"
         class="animationGrid absolute keyGridRoot"
