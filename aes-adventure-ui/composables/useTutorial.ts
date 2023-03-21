@@ -1,14 +1,18 @@
 import DefaultTutorial from '~~/components/tutorials/DefaultTutorial.vue'
+import PlaintextToStateTutorial from '~~/components/tutorials/PlaintextToStateTutorial.vue'
+
 import TestTutorial from '~~/components/tutorials/TestTutorial.vue'
 
 export enum TutorialKey {
   Default,
+  PlaintextToState,
   Test
 }
 
 export const tutorialKeyToComponentMap = {
   [TutorialKey.Default]: DefaultTutorial,
-  [TutorialKey.Test]: TestTutorial
+  [TutorialKey.Test]: TestTutorial,
+  [TutorialKey.PlaintextToState]: PlaintextToStateTutorial,
 }
 
 export const useTutorial = defineStore(getKey`tutorialKey`, () => {

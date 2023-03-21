@@ -5,7 +5,7 @@ const { t } = useI18n();
 <template>
   <div>
     <i18n-t
-      keypath="simulator.tutorial.description"
+      keypath="simulator.tutorial.default.description"
       tag="p"
     >
       <template v-slot:tutorialIcon>
@@ -13,6 +13,6 @@ const { t } = useI18n();
       </template>
     </i18n-t>
     <br />
-    <p v-html="t('simulator.tutorial.tip')" />
+    <p v-html="t('simulator.tutorial.default.tip')" />
   </div>
 </template>
