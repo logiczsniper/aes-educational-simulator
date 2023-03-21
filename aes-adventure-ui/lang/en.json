@@ -94,8 +94,32 @@
     "reset": "Reset",
     "tutorial": {
       "title": "Tutorial",
-      "description": "Click on {tutorialIcon} that you see to reveal relevant information here. There may be light explanations, deep details, interactive simulators and more!",
-      "tip": "<b>Tip!</b> Expand this sidebar to free up more room for the tutorial by dragging on the resizer in the bottom right corner."
+      "default": {
+        "description": "Click on {tutorialIcon} that you see to reveal relevant information here.",
+        "tip": "<i>Tip!</i> Expand this sidebar to free up more room for the tutorial by dragging on the resizer in the bottom right corner."
+      },
+      "read-more": "Read More",
+      "encryption": {
+        "plaintext-to-state": {
+          "body": "The first step is to create the state matrix that will be operated on throughout the encryption process. It is done by arranging the plaintext into a 4x4 matrix of bytes and transposing this matrix."
+        },
+        "add-key": {
+          "body": "Before the first round of AES steps during encryption, the key is XORed with the state matrix. Note that the key is also arranged into a 4x4 matrix of bytes and transposed, just like the plaintext."
+        },
+        "rounds-header": {
+          "body": "AES operates on the state matrix in rounds. 10 rounds for a key size of 128 bits, 12 rounds for 192 bits, and 14 rounds for 256 bits. Each round consists of the steps Substitute Bytes, Shift Rows, Mix Columns, Add Round Key; except for the final round, which does not include Mix Columns."
+        },
+        "rounds-stats": {
+          "diffusion": "Diffusion is the influence of a single plaintext bit on the (current) ciphertext. The metric is represented in AES Adventure by the 'avalanche' effect. This is calculated as follows: for each plaintext bit, flip it and compute the (current) ciphertext with the modified plaintext. Then, count the number of bits flipped in the (current) ciphertext: the metric is the average number of bits flipped across all plaintext variations.",
+          "confusion": "Confusion is the relationship between the (current) ciphertext and the key. The metric is represented in AES Adventure by a measure of association between the (current) ciphertext and key in which all 0s have been mapped to -1s."
+        },
+        "sub-bytes": {
+          "body": "Substitute Bytes replaces each state matrix byte with a byte from the S-BOX, which provides non-linearity in AES."
+        },
+        "shift-rows": {
+          "body": ""
+        }
+      }
     },
     "hexArea": {
       "nibblesLeft": "nibbles left.",
