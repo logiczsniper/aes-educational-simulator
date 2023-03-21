@@ -7,10 +7,14 @@ const props = defineProps<{
 
 const tutorial = useTutorial()
 
+const isSelected = computed(() => props.tutorialKey === tutorial.currentTutorialKey)
+
 const onClick = (e: Event) => {
   if (props.tutorialKey === undefined) return;
 
-  tutorial.setCurrentTutorialKey(props.tutorialKey)
+  isSelected.value
+    ? tutorial.setCurrentTutorialKey(TutorialKey.Default)
+    : tutorial.setCurrentTutorialKey(props.tutorialKey)
   e.preventDefault()
   e.stopPropagation()
 }
@@ -18,8 +22,8 @@ const onClick = (e: Event) => {
 
 <template>
   <v-btn
-    icon="mdi-information-variant"
-    color="secondary"
+    :icon="isSelected ? 'mdi-close' : 'mdi-information-variant'"
+    :color="isSelected ? 'primary' : 'secondary'"
     size="xx-small"
     variant="flat"
     class="tutorialIconButton"
