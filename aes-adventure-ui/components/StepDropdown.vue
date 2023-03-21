@@ -11,8 +11,8 @@ const props = defineProps<{
 }>();
 
 const expansionPanelValue = `step-dropdown--${props.title}`
-const backgroundColor = computed(() => props.backgroundColor ?? (props.turnedOff ? '#CC3933' : undefined))
-const lineThroughTitle = computed(() => props.lineThroughTitle ?? props.turnedOff)
+const backgroundColor = computed(() => (props.turnedOff ? '#CC3933' : undefined) ?? props.backgroundColor)
+const lineThroughTitle = computed(() => props.turnedOff ?? props.lineThroughTitle)
 </script>
 
 <template>
