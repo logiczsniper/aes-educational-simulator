@@ -8,7 +8,6 @@ const props = defineProps<{
 const emit = defineEmits<{
   (event: 'click', roundIndex: number): void
 }>()
-
 </script>
 
 <template>
@@ -26,8 +25,8 @@ const emit = defineEmits<{
       }"
       @click="() => emit('click', round)"
     >
+      <p class="roundProgressBarValue">{{ round }}</p>
     </span>
-
   </div>
 </template>
 
@@ -38,16 +37,20 @@ const emit = defineEmits<{
   margin: 0 16px;
 
   display: grid;
-  transition: border-radius 0.25s,
-    column-gap 0.6s ease,
-    margin 0.3s;
+  transition: border-radius 0.20s,
+    column-gap 0.3s ease,
+    padding .3s;
 
   border-radius: 0px;
   column-gap: 0px;
 
-  &:hover {
-    border-radius: 4px;
-    column-gap: 2px;
+  .roundProgressBarValue {
+    transition: opacity 1s, margin-left 0.7s;
+    opacity: 0;
+    font-size: 11px;
+    cursor: default;
+    user-select: none;
+    -webkit-user-select: none;
   }
 
   .roundProgressBarPiece {
@@ -57,12 +60,20 @@ const emit = defineEmits<{
 
     &.filled {
       background-color: #745CD0;
+
+      .roundProgressBarValue {
+        color: white;
+      }
     }
 
     &.current {
       background-color: #8C75E4;
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px;
+
+      .roundProgressBarValue {
+        color: white;
+      }
     }
 
     &:first-child {
@@ -73,6 +84,10 @@ const emit = defineEmits<{
     &:last-child {
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px;
+    }
+
+    &:hover {
+      opacity: 0.95;
     }
   }
 

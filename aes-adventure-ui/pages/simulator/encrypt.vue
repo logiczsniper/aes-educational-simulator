@@ -129,7 +129,7 @@ const offConfigurationMessage = computed(() => `${t('simulator.no-step-configura
                 <StepDropdown
                   :model-value="encryptState.stage === EncryptStage.ToState"
                   :title="`${t('simulator.plaintext')} ➜ ${t('simulator.state')}`"
-                  :tutorial-key="TutorialKey.Test"
+                  :tutorial-key="TutorialKey.PlaintextToState"
                   background-color="#f9f9f9"
                 >
                   <AnimationAesAnimationFrame>
@@ -501,11 +501,24 @@ const offConfigurationMessage = computed(() => `${t('simulator.no-step-configura
     margin-bottom: 18px;
     display: grid;
     place-items: center;
-    grid-template-rows: min-content, min-content;
+    grid-template-rows: min-content;
+
+    &:hover {
+      :deep(.roundProgressBarValue) {
+        opacity: 1;
+        margin-left: 4px;
+      }
+
+      .roundProgressBar {
+        border-radius: 4px;
+        column-gap: 2px;
+      }
+    }
 
     .roundProgressBar {
       &.moveUp {
-        margin: -20px 16px 0 16px;
+        padding-left: 29px;
+        padding-right: 25px;
         z-index: 1;
       }
     }
