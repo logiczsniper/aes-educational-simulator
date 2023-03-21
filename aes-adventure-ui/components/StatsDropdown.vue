@@ -38,6 +38,11 @@ const chartOptions: ApexOptions = {
     fontFamily: 'Inter',
     toolbar: {
       show: false,
+      tools: {
+        selection: false,
+        pan: false,
+        zoom: false,
+      }
     },
   },
   colors: ['#0084DB', '#67BAA6'],
@@ -46,10 +51,10 @@ const chartOptions: ApexOptions = {
   },
   legend: {
     position: 'top',
-    horizontalAlign: 'left',
-    offsetX: -14,
+    horizontalAlign: 'right',
+    offsetY: 20,
     itemMargin: {
-      horizontal: 10
+      // horizontal: 100
     }
   },
   xaxis: {
@@ -59,20 +64,27 @@ const chartOptions: ApexOptions = {
       show: false
     },
     axisTicks: {
-      show: false,
-
+      // show: false,
     },
     tooltip: {
       enabled: false,
     }
   },
   yaxis: {
-    // tickAmount: 2,
+    tickAmount: 2,
     min: 0,
     max: 100,
+    decimalsInFloat: 0,
+    // floating: true,
     labels: {
-      show: false,
-      // offsetX: -30
+      // show: false,
+      // offsetX: 28,
+      // offsetY: 16,
+      // minWidth: 10,
+      // rotate: 270,
+      // formatter(val, opts) {
+      //   return Math.round(val).toString()
+      // }
     }
   },
   tooltip: {
@@ -89,6 +101,16 @@ const chartOptions: ApexOptions = {
       formatter: (val, opts) => {
         return `${t('simulator.round')} #${val}`
       }
+    },
+    y: {
+      title: {
+        formatter: (name) => {
+          return name.replace(' %', ':')
+        }
+      },
+      formatter: (val, opts) => {
+        return `${val}%`
+      }
     }
   },
   stroke: {
@@ -101,7 +123,7 @@ const chartOptions: ApexOptions = {
   <v-expansion-panels
     :model-value="props.modelValue ? expansionPanelValue : null"
     @update:model-value="newValue => emit('update:modelValue', newValue === expansionPanelValue)"
-    variant="popout"
+    variant="accordion"
     class="statsDropdown"
   >
     <v-expansion-panel
@@ -118,11 +140,19 @@ const chartOptions: ApexOptions = {
           <div />
           <h4 class="roundLabel">{{ t('simulator.round') }}</h4>
           <h2 class="roundIndex">{{ Math.min(props.roundCount, roundNumber) }}</h2>
-          <h4 class="roundCount">/ {{ props.roundCount }}</h4>
+          <div class="roundCount">
+            <h4>/ {{ props.roundCount }}</h4>
+            <TutorialIconButton :tutorial-key="TutorialKey.Test" />
+          </div>
         </div>
+
       </template>
       <template #text>
         <figure class="statsChart">
+          <TutorialIconButton
+            :tutorial-key="TutorialKey.Test"
+            class="statsTutorial"
+          />
           <ApexChart
             height="200"
             width="100%"
@@ -139,18 +169,19 @@ const chartOptions: ApexOptions = {
 <style scoped lang="scss">
 .statsDropdown {
   content-visibility: auto;
+  // position: relative;
 
   .titleContainer {
     display: grid;
 
-    $icon-width: 22.5px;
+    $toggle-icon-width: 22.5px;
     align-items: center;
     width: 100%;
 
-    grid-template-columns: $icon-width 1fr 56px 1fr;
+    grid-template-columns: $toggle-icon-width 1fr 56px 1fr;
 
     &.singleDigit {
-      grid-template-columns: $icon-width 1fr 38px 1fr;
+      grid-template-columns: $toggle-icon-width 1fr 38px 1fr;
     }
 
     .roundIndex {
@@ -170,6 +201,8 @@ const chartOptions: ApexOptions = {
 
     .roundCount {
       margin-left: 9px;
+      display: flex;
+      gap: 16px;
     }
   }
 
@@ -180,10 +213,22 @@ const chartOptions: ApexOptions = {
   :deep(.v-expansion-panel-text__wrapper) {
     padding-left: 0;
     padding-right: 0;
+    padding-top: 0;
   }
 
   .statsChart {
-    margin-left: -20px;
+    margin-left: -16px;
+    margin-right: 16px;
+    margin-bottom: -36px;
+    // position: relative;
+
+    .statsTutorial {
+      position: absolute;
+      // right: 29px;
+      right: 6px;
+      top: 104px;
+      z-index: 1;
+    }
 
     :deep(svg.apexcharts-svg) {
       overflow: visible;

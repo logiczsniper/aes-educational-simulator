@@ -2,12 +2,18 @@ import { hexToBinary } from "./hexToBinary"
 
 const mapToRho = (binary: Array<number>) => binary.map(b => b === 0 ? -1 : 1)
 
+const computeNorm = (binaryRho: Array<number>) => Math.sqrt(binaryRho.reduce((acc, cur) => acc + Math.pow(cur, 2)))
+
 export const computeConfusion = (key: Uint8Array, outputBinary: Array<number>) => {
   const keyBinaryRho = mapToRho(hexToBinary(key))
   const outputBinaryRho = mapToRho(outputBinary)
   const n = 128
 
-  // let rhoSum = 0
+  const keyBinaryRhoNorm = computeNorm(keyBinaryRho)
+  const outputBinaryRhoNorm = computeNorm(outputBinaryRho)
+
+  console.log('KBRN: ', keyBinaryRhoNorm)
+  console.log('OBRN: ', outputBinaryRhoNorm)
 
   let rhoMax = null
   let rhoMaxDiff = null
@@ -19,19 +25,16 @@ export const computeConfusion = (key: Uint8Array, outputBinary: Array<number>) =
       sum += outputBinaryRho[j] * keyBinaryRho[((j + k) % n)]
     }
 
-    const rho = (1 / n) * sum
+    const rho = (1 / (keyBinaryRhoNorm * outputBinaryRhoNorm)) * sum
     const rhoDiff = Math.abs(rho)
 
     if (rhoMaxDiff === null || rhoDiff > rhoMaxDiff) {
       rhoMax = rho
       rhoMaxDiff = rhoDiff
     }
-    // rhoSum += rho
   }
 
-  // const confusion = (1 / (n - 1)) * rhoSum
-
-  const confusion = Math.abs(rhoMax as number) * 100
+  const confusion = Math.max((1 - Math.abs(rhoMax as number)) * 100, 0)
 
   return confusion
 }
