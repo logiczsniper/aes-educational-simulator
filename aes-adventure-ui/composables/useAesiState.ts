@@ -1,31 +1,21 @@
 import { aesi } from "~~/utils/aesi"
 import { AesiKeySize, AesiOutput, AesiRoundStepType } from "~~/utils/aesi/aesi.types"
 import '~~/utils/parsingPatches'
-import { AesiStatistics, generateEncryptStatistics } from "~~/utils/statistics/generateStatistics"
-
-export enum EncryptStage {
-  Input,
-  ToState,
-  SymmetryKeyAddition,
-  Rounds,
-  FromState,
-  Output,
-}
+import { AesiStatistics, generateStatistics } from "~~/utils/statistics/generateStatistics"
 
 const parseInputValue = (hex: string) => Uint8Array.from(hex.match(/.{1,2}/g)?.map(byte => parseInt(byte, 16)) ?? [])
 
-export const useEncryptState = defineStore(getKey`encryptState`, () => {
-  const rawPlaintext = ref('')
+export const useAesiState = (key: string, mode: keyof ReturnType<typeof aesi>) => defineStore(key, () => {
+  const rawInput = ref('')
   const rawKey = ref('')
   const keySize = ref<AesiKeySize>(128)
-  const stage = ref(EncryptStage.Input)
   const output = ref<AesiOutput>()
   const roundIndex = ref(0)
   const stepIndex = ref(0)
   const showStats = ref(false)
   const stats = ref<AesiStatistics>()
 
-  const plaintext = computed(() => parseInputValue(rawPlaintext.value))
+  const input = computed(() => parseInputValue(rawInput.value))
   const key = computed(() => parseInputValue(rawKey.value))
   const round = computed(() => output.value?.rounds.at(roundIndex.value))
   const step = computed(() => round.value?.steps.at(stepIndex.value))
@@ -50,34 +40,32 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
   }
 
   const config = useConfig()
-
-  const canComputeEncryptOutput = computed(() => rawPlaintext.value.length === 32 && rawKey.value.length * 4 === keySize.value)
-  const computeEncryptOutput = () => {
-    const { encrypt } = aesi({
+  const computeOutput = () => {
+    const aes = aesi({
       key: key.value, config: {
         defaultConfig: config.walkThroughConfig
       }
     })
 
-    output.value = encrypt(plaintext.value)
-    stats.value = generateEncryptStatistics(output.value, key.value, encrypt)
-    stage.value = EncryptStage.ToState
+    const cryptoFn = aes[mode]
+
+    output.value = cryptoFn(input.value)
+    stats.value = generateStatistics(output.value, key.value, cryptoFn)
+    // stage.value = EncryptStage.ToState
     roundIndex.value = 0
     stepIndex.value = 0
   }
 
-  const startRounds = () => {
-    roundIndex.value = 0
-    stepIndex.value = 0
-    stage.value = EncryptStage.Rounds
-  }
-
+  // const startRounds = () => {
+  //   roundIndex.value = 0
+  //   stepIndex.value = 0
+  //   // stage.value = Rounds
+  // }
   const nextStep = () => stepIndex.value += 1
   const nextRound = () => {
     roundIndex.value += 1
     stepIndex.value = 0
   }
-
   const skipToLastRound = () => {
     roundIndex.value = (output.value?.rounds.length ?? 0) - 1
     stepIndex.value = 0
@@ -85,22 +73,21 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
 
   const reset = () => {
     output.value = undefined
-    stage.value = EncryptStage.Input
     roundIndex.value = 0
     stepIndex.value = 0
+    // stage.value = Input
     showStats.value = false
   }
 
   return {
     output,
     stats,
-    stage,
     roundIndex,
     round,
     stepIndex,
     step,
-    plaintext,
-    rawPlaintext,
+    input,
+    rawInput,
     key,
     rawKey,
     keySize,
@@ -112,9 +99,8 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
     roundCount,
     setKeySize,
     getStep,
-    canComputeEncryptOutput,
-    computeEncryptOutput,
-    startRounds,
+    computeOutput,
+    // startRounds,
     nextStep,
     nextRound,
     skipToLastRound,

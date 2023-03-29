@@ -9,11 +9,11 @@ export const computeConfusion = (key: Uint8Array, outputBinary: Array<number>) =
   const outputBinaryRho = mapToRho(outputBinary)
   const n = 128
 
+  // TODO: pad outputBinaryRho for (let i = 0; i < keyBinaryRho.length - outputBinaryRho.length; i++) outputBinaryRho.push(0) // or push -1 ??
+  // n = outputBinaryRho.length
+
   const keyBinaryRhoNorm = computeNorm(keyBinaryRho)
   const outputBinaryRhoNorm = computeNorm(outputBinaryRho)
-
-  console.log('KBRN: ', keyBinaryRhoNorm)
-  console.log('OBRN: ', outputBinaryRhoNorm)
 
   let rhoMax = null
   let rhoMaxDiff = null

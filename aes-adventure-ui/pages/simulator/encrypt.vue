@@ -24,9 +24,7 @@ const scrollToRoundsHeader = () => {
 const encryptState = useEncryptState();
 const configState = useConfig()
 
-const canBeginEncryption = computed(() => encryptState.rawPlaintext.length === 32 && encryptState.rawKey.length * 4 === encryptState.keySize)
 const noMixColumns = computed(() => encryptState.isLastRound || configState.noMixColumns)
-const offConfigurationMessage = computed(() => `${t('simulator.no-step-configuration')}: ${t(`configure.modal.defaults.${configState.walkThroughConfig}.name`)} AES`)
 </script>
 
 <template>
@@ -100,12 +98,12 @@ const offConfigurationMessage = computed(() => `${t('simulator.no-step-configura
           >
             <v-btn
               v-if="encryptState.stage === EncryptStage.Input"
-              :disabled="!canBeginEncryption"
+              :disabled="!encryptState.canComputeEncryptOutput"
               prependIcon="mdi-lock"
               variant="flat"
               color="primary"
               class="startButton"
-              @click="encryptState.calculateEncryptOutput"
+              @click="encryptState.computeEncryptOutput"
             >
               {{ `${t('simulator.start')} ${t('simulator.encryption')}` }}
             </v-btn>
@@ -223,7 +221,7 @@ const offConfigurationMessage = computed(() => `${t('simulator.no-step-configura
                   :tutorial-key="TutorialKey.Default"
                 >
                   <p v-if="configState.noSubBytes">
-                    {{ offConfigurationMessage }}
+                    {{ configState.offMessage }}
                   </p>
                   <AnimationAesAnimationFrame
                     v-else
@@ -261,7 +259,7 @@ const offConfigurationMessage = computed(() => `${t('simulator.no-step-configura
                   :tutorial-key="TutorialKey.Test"
                 >
                   <p v-if="configState.noShiftRows">
-                    {{ offConfigurationMessage }}
+                    {{ configState.offMessage }}
                   </p>
                   <AnimationAesAnimationFrame
                     v-else
@@ -298,7 +296,7 @@ const offConfigurationMessage = computed(() => `${t('simulator.no-step-configura
                   :tutorial-key="TutorialKey.Test"
                 >
                   <p v-if="noMixColumns">
-                    {{ encryptState.isLastRound ? t('simulator.no-mix-columns-last') : offConfigurationMessage }}
+                    {{ encryptState.isLastRound ? t('simulator.no-mix-columns-last') : configState.offMessage }}
                   </p>
                   <AnimationAesAnimationFrame
                     v-else

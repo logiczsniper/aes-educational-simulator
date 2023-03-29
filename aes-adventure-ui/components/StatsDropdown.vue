@@ -99,7 +99,10 @@ const chartOptions: ApexOptions = {
     // }
     x: {
       formatter: (val, opts) => {
-        return `${t('simulator.round')} #${val}`
+        const isOver = val === 11
+        return isOver
+          ? t('simulator.output')
+          : `${t('simulator.round')} #${val}`
       }
     },
     y: {

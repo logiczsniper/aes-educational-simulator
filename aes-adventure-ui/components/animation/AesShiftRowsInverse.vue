@@ -24,7 +24,7 @@ const createAnimation = () => {
   const rowSize = DIV_HEIGHT + ROW_GAP + 1
   const columnSize = DIV_WIDTH + COL_GAP
   for (let row = 0; row < 4; row++) {
-    const initialTranslateX = 220 + row * columnSize
+    const initialTranslateX = 140 + row * columnSize
 
     props.timeline.add({
       targets: targetRowClass(row),
@@ -34,7 +34,7 @@ const createAnimation = () => {
     for (let column = 3; column >= 0; column--) {
       const isCycle = column > (3 - row)
       const duration = row === 0 ? 250 : 1200
-      const timeOffset = column === 0 ? undefined : '-=800'
+      const timeOffset = column === 3 ? undefined : '-=800'
 
       props.timeline.add({
         targets: targetCoordsClass(row, column),
@@ -100,9 +100,5 @@ onMounted(() => {
   grid-template-rows: repeat(2, min-content);
   column-gap: 40px;
   row-gap: 8px;
-
-  &>*:nth-child(2n) {
-    margin-left: 80px;
-  }
 }
 </style>
