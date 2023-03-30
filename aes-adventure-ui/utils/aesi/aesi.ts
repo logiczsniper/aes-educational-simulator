@@ -36,7 +36,8 @@ export const aesi = ({ key, config }: AesiInput) => {
   const roundCount = ROUND_COUNT[keySize] * roundCountMultiplier;
   const keyCount = KEY_COUNT[keySize];
 
-  const expandedKey = expandKey(key, roundCount, keyCount);
+  const expandedKeyOutput = expandKey(key, roundCount, keyCount);
+  const { expandedKey } = expandedKeyOutput
 
   return {
     encrypt: (plaintext: Uint8Array): AesiOutput => {
@@ -96,7 +97,7 @@ export const aesi = ({ key, config }: AesiInput) => {
         symmetryKeyAddition: finalKeyAddition,
         rounds,
       }
-    }
-
+    },
+    expandedKeyOutput
   }
 }

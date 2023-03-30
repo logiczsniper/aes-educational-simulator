@@ -37,7 +37,7 @@ export type AesiOutput = {
 }
 
 export type AesiRound = {
-  steps: AesiRoundStep[];
+  steps: Array<AesiRoundStep>;
 }
 
 export enum AesiRoundStepType {
@@ -61,4 +61,46 @@ export interface AesiRoundStepAddKey extends AesiRoundStep {
 
 export function isAddRoundKey(roundStep: AesiRoundStep): roundStep is AesiRoundStepAddKey {
   return roundStep.type === AesiRoundStepType.AddRoundKey
+}
+
+export type AesiExpandKeyOutput = {
+  // Full key
+  expandedKey: Uint8Array;
+
+  // Total number of keys
+  keyCount: number;
+
+  rounds: Array<AesiExpandKeyRound>;
+}
+
+export type AesiExpandKeyRound = {
+  steps: Array<AesiExpandKeyRoundStep>
+}
+
+export enum AesiExpandKeyRoundStepType {
+  RoundGFn,
+  RoundHFn,
+  AddWords
+}
+
+export type AesiExpandKeyRoundStep = {
+  type: AesiExpandKeyRoundStepType;
+  inputWords: Array<Uint8Array>;
+  outputWords: Array<Uint8Array>;
+}
+
+export interface AesiExpandKeyRoundStepRoundGFn extends AesiExpandKeyRoundStep {
+  type: AesiExpandKeyRoundStepType.RoundGFn,
+  rotateWordOutput: Uint8Array;
+  subWordOutput: Uint8Array;
+  addRoundConstantOutput: {
+    // ROUND CONSTANT IS BASE 10 USE toString(radix) BEFORE USE
+    roundConstant: number;
+    output: Uint8Array;
+  };
+}
+
+export interface AesiExpandKeyRoundStepRoundHFn extends AesiExpandKeyRoundStep {
+  type: AesiExpandKeyRoundStepType.RoundHFn,
+  subWordOutput: Uint8Array;
 }
