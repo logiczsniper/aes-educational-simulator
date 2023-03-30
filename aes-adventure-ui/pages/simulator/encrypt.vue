@@ -491,7 +491,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
   .startButton,
   .resetButton {
     display: flex;
-    margin: 36px 44px 12px auto;
+    margin: 36px 24px 12px auto;
   }
 
   .transposeStep {

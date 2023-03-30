@@ -144,7 +144,7 @@ onMounted(() => {
 <style lang="scss">
 .aesAnimationFrame {
   position: relative;
-  padding: 0 20px 10px 20px;
+  padding-bottom: 8px;
 
   .slider {
     margin-top: 20px;

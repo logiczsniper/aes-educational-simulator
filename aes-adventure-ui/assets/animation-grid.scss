@@ -49,6 +49,24 @@
   }
 }
 
+.animationGridKey {
+  @extend .baseAnimationGrid;
+
+  grid-template-rows: repeat(4, min-content);
+
+  &.small {
+    grid-template-columns: repeat(4, min-content);
+  }
+
+  &.medium {
+    grid-template-columns: repeat(6, min-content);
+  }
+
+  &.large {
+    grid-template-columns: repeat(8, min-content);
+  }
+}
+
 .relative {
   position: relative;
 }

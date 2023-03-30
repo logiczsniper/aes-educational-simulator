@@ -111,7 +111,13 @@ const keyExpansionState = useKeyExpansionState()
                 >
                   <AnimationAesAnimationFrame>
                     <template #animation="{ timeline }">
-                      TODO: animation
+                      <AnimationAesKeyToState
+                        :timeline="timeline"
+                        :key-size="keyExpansionState.keySize"
+                        :input="keyExpansionState.key"
+                      >
+
+                      </AnimationAesKeyToState>
                     </template>
                     <template
                       #prependControls="{ timeline, restartAndPause }"
@@ -136,14 +142,14 @@ const keyExpansionState = useKeyExpansionState()
               >
                 TODO: custom rounds header
                 <!-- <StatsDropdown
-                              v-if="keyExpansionState.stats"
-                              v-model="keyExpansionState.showStats"
-                              :stats="keyExpansionState.stats"
-                              :roundIndex="keyExpansionState.roundIndex + Number(keyExpansionState.stage >= KeyExpansionStage.FromWords) - Number(keyExpansionState.stage < KeyExpansionStage.Rounds)"
-                              :roundCount="keyExpansionState.roundCount"
-                            >
+                                        v-if="keyExpansionState.stats"
+                                        v-model="keyExpansionState.showStats"
+                                        :stats="keyExpansionState.stats"
+                                        :roundIndex="keyExpansionState.roundIndex + Number(keyExpansionState.stage >= KeyExpansionStage.FromWords) - Number(keyExpansionState.stage < KeyExpansionStage.Rounds)"
+                                        :roundCount="keyExpansionState.roundCount"
+                                      >
 
-                            </StatsDropdown> -->
+                                      </StatsDropdown> -->
                 <RoundProgressBar
                   class="roundProgressBar"
                   :roundIndex="keyExpansionState.roundIndex + Number(keyExpansionState.stage >= KeyExpansionStage.FromWords) - Number(keyExpansionState.stage < KeyExpansionStage.Rounds)"
@@ -164,7 +170,6 @@ const keyExpansionState = useKeyExpansionState()
                 >
                   <AnimationAesAnimationFrame>
                     <template #animation="{ timeline }">
-
                     </template>
                     <template
                       #prependControls="{ timeline, restartAndPause }"
@@ -250,7 +255,7 @@ const keyExpansionState = useKeyExpansionState()
   .startButton,
   .resetButton {
     display: flex;
-    margin: 36px 44px 12px auto;
+    margin: 36px 24px 12px auto;
   }
 
   .transposeStep {
