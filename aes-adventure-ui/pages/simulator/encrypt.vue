@@ -8,7 +8,7 @@ const { t } = useI18n();
 definePageMeta({
   layout: 'simulator-page',
   pageTransition: {
-    name: 'slide-right',
+    name: 'fade-drop'
   }
 })
 
@@ -126,6 +126,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
               <section class="transposeStep">
                 <StepDropdown
                   :model-value="encryptState.stage === EncryptStage.ToState"
+                  eager
                   :title="`${t('simulator.plaintext')} ➜ ${t('simulator.state')}`"
                   :tutorial-key="TutorialKey.PlaintextToState"
                   background-color="#f9f9f9"
@@ -159,6 +160,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
               <section class="initialStep">
                 <StepDropdown
                   :model-value="encryptState.stage === EncryptStage.SymmetryKeyAddition"
+                  :eager="encryptState.stage === EncryptStage.ToState"
                   :title="`${t('simulator.add-key')}`"
                   :tutorial-key="TutorialKey.Test"
                   background-color="#f9f9f9"
@@ -216,6 +218,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
               <section class="rounds">
                 <StepDropdown
                   :model-value="encryptState.step?.type === AesiRoundStepType.SubBytes && encryptState.stage === EncryptStage.Rounds"
+                  :eager="(encryptState.stage === EncryptStage.SymmetryKeyAddition) || ((encryptState.step?.type === AesiRoundStepType.AddRoundKey) && encryptState.stage === EncryptStage.Rounds)"
                   :title="`${t('simulator.substitute-bytes')}`"
                   :turned-off="configState.noSubBytes"
                   :tutorial-key="TutorialKey.Default"
@@ -254,6 +257,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                 </StepDropdown>
                 <StepDropdown
                   :model-value="encryptState.step?.type === AesiRoundStepType.ShiftRows"
+                  :eager="encryptState.step?.type === AesiRoundStepType.SubBytes"
                   :title="`${t('simulator.shift-rows')}`"
                   :turned-off="configState.noShiftRows"
                   :tutorial-key="TutorialKey.Test"
@@ -291,6 +295,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                 </StepDropdown>
                 <StepDropdown
                   :model-value="encryptState.step?.type === AesiRoundStepType.MixColumns"
+                  :eager="encryptState.step?.type === AesiRoundStepType.ShiftRows"
                   :title="`${t('simulator.mix-columns')}`"
                   :turned-off="noMixColumns"
                   :tutorial-key="TutorialKey.Test"
@@ -329,6 +334,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                 </StepDropdown>
                 <StepDropdown
                   :model-value="encryptState.step?.type === AesiRoundStepType.AddRoundKey && encryptState.stage === EncryptStage.Rounds"
+                  :eager="encryptState.step?.type === AesiRoundStepType.MixColumns || ((encryptState.step?.type === AesiRoundStepType.ShiftRows) && encryptState.isLastRound)"
                   :title="`${t('simulator.add-round-key')}`"
                   :tutorial-key="TutorialKey.Test"
                 >
@@ -384,6 +390,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
               <section class="transposeStep">
                 <StepDropdown
                   :model-value="encryptState.stage === EncryptStage.FromState"
+                  :eager="encryptState.step?.type === AesiRoundStepType.AddRoundKey"
                   :title="`${t('simulator.state')} ➜ ${t('simulator.ciphertext')}`"
                   :tutorial-key="TutorialKey.Test"
                   background-color="#f9f9f9"

@@ -8,13 +8,7 @@ const { t } = useI18n();
 definePageMeta({
   layout: 'simulator-page',
   pageTransition: {
-    name: 'slide-left',
-  },
-  middleware(to, from) {
-    if (typeof (to.meta.pageTransition) == 'object') {
-      console.log(to, from)
-      to.meta.pageTransition.name = from.name?.toString().includes('encrypt') ? 'slide-left' : 'slide-right'
-    }
+    name: 'fade-drop',
   }
 })
 
@@ -132,6 +126,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
               <section class="transposeStep">
                 <StepDropdown
                   :model-value="decryptState.stage === DecryptStage.ToState"
+                  eager
                   :title="`${t('simulator.ciphertext')} ➜ ${t('simulator.state')}`"
                   :tutorial-key="TutorialKey.PlaintextToState"
                   background-color="#f9f9f9"
@@ -187,6 +182,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
               <section class="rounds">
                 <StepDropdown
                   :model-value="decryptState.step?.type === AesiRoundStepType.AddRoundKey && decryptState.stage === DecryptStage.Rounds"
+                  :eager="(decryptState.stage === DecryptStage.ToState) || (decryptState.step?.type === AesiRoundStepType.SubBytes)"
                   :title="`${t('simulator.add-round-key')}`"
                   :tutorial-key="TutorialKey.Test"
                 >
@@ -219,6 +215,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                 </StepDropdown>
                 <StepDropdown
                   :model-value="decryptState.step?.type === AesiRoundStepType.MixColumns"
+                  :eager="decryptState.step?.type === AesiRoundStepType.AddRoundKey"
                   :title="`${t('simulator.mix-columns')}`"
                   :turned-off="noMixColumns"
                   :tutorial-key="TutorialKey.Test"
@@ -257,6 +254,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                 </StepDropdown>
                 <StepDropdown
                   :model-value="decryptState.step?.type === AesiRoundStepType.ShiftRows"
+                  :eager="decryptState.step?.type === AesiRoundStepType.MixColumns || ((decryptState.step?.type === AesiRoundStepType.AddRoundKey) && decryptState.roundIndex === 0)"
                   :title="`${t('simulator.shift-rows')}`"
                   :turned-off="configState.noShiftRows"
                   :tutorial-key="TutorialKey.Test"
@@ -294,6 +292,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                 </StepDropdown>
                 <StepDropdown
                   :model-value="decryptState.step?.type === AesiRoundStepType.SubBytes && decryptState.stage === DecryptStage.Rounds"
+                  :eager="decryptState.step?.type === AesiRoundStepType.ShiftRows"
                   :title="`${t('simulator.substitute-bytes')}`"
                   :turned-off="configState.noSubBytes"
                   :tutorial-key="TutorialKey.Default"
@@ -355,6 +354,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
               <section class="finalStep">
                 <StepDropdown
                   :model-value="decryptState.stage === DecryptStage.SymmetryKeyAddition"
+                  :eager="decryptState.step?.type === AesiRoundStepType.SubBytes"
                   :title="`${t('simulator.add-key')}`"
                   :tutorial-key="TutorialKey.Test"
                   background-color="#f9f9f9"
@@ -390,6 +390,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
               <section class="transposeStep">
                 <StepDropdown
                   :model-value="decryptState.stage === DecryptStage.FromState"
+                  :eager="decryptState.stage === DecryptStage.SymmetryKeyAddition"
                   :title="`${t('simulator.state')} ➜ ${t('simulator.plaintext')}`"
                   :tutorial-key="TutorialKey.Test"
                   background-color="#f9f9f9"

@@ -4,15 +4,21 @@ import { TutorialKey } from '~~/composables/useTutorial';
 const props = defineProps<{
   modelValue: boolean;
   title: string;
+  eager: boolean;
   turnedOff?: boolean;
   lineThroughTitle?: boolean;
   tutorialKey?: TutorialKey;
   backgroundColor?: string;
 }>();
 
+const hoverEager = ref(false)
+const makeHoverEager = () => hoverEager.value = true
+
 const expansionPanelValue = `step-dropdown--${props.title}`
 const backgroundColor = computed(() => (props.turnedOff ? '#CC3933' : undefined) ?? props.backgroundColor)
 const lineThroughTitle = computed(() => props.turnedOff ?? props.lineThroughTitle)
+const eager = computed(() => props.eager || hoverEager.value)
+
 </script>
 
 <template>
@@ -21,10 +27,11 @@ const lineThroughTitle = computed(() => props.turnedOff ?? props.lineThroughTitl
     :readonly="props.modelValue"
     variant="popout"
     class="stepDropdown"
+    @mouseenter="makeHoverEager"
   >
     <v-expansion-panel
       :value="expansionPanelValue"
-      eager
+      :eager="eager"
       elevation="0"
       :bg-color="backgroundColor"
     >
