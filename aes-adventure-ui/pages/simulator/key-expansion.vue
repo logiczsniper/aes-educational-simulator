@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { AesiExpandKeyRoundStepType } from '~~/utils/aesi/aesi.types';
+
 const { t } = useI18n();
 
 definePageMeta({
@@ -9,6 +11,20 @@ definePageMeta({
 })
 
 const keyExpansionState = useKeyExpansionState()
+
+const noHFunction = computed(() => !keyExpansionState.round?.steps.find(({ type }) => type === AesiExpandKeyRoundStepType.RoundHFn))
+const noHFunctionMessage = computed(() => {
+  if (keyExpansionState.keySize === 128 || keyExpansionState.keySize === 192) return t('simulator.no-h-function-key-size')
+
+  return t('simulator.no-h-function-last')
+})
+
+const smallLastRound = computed(() => keyExpansionState.keySize === 192 || keyExpansionState.keySize === 256)
+
+const roundIndex = computed(() => Math.min(
+  keyExpansionState.roundCount,
+  keyExpansionState.roundIndex + Number(keyExpansionState.stage >= KeyExpansionStage.FromWords) - Number(keyExpansionState.stage < KeyExpansionStage.Rounds) + 1
+))
 </script>
 
 <template>
@@ -131,59 +147,140 @@ const keyExpansionState = useKeyExpansionState()
                           restartAndPause()
                           keyExpansionState.startRounds()
                         }"
-                    >{{ t('simulator.start-rounds') }}</v-btn>
-                  </template>
-                </AnimationAesAnimationFrame>
-              </StepDropdown>
-            </section>
-            <section
+                      >{{ t('simulator.start-rounds') }}</v-btn>
+                    </template>
+                  </AnimationAesAnimationFrame>
+                </StepDropdown>
+              </section>
+              <section
                 ref="roundsHeader"
                 class="roundsHeader"
               >
-                TODO: custom rounds header
-                <!-- <StatsDropdown
-                                        v-if="keyExpansionState.stats"
-                                        v-model="keyExpansionState.showStats"
-                                        :stats="keyExpansionState.stats"
-                                        :roundIndex="keyExpansionState.roundIndex + Number(keyExpansionState.stage >= KeyExpansionStage.FromWords) - Number(keyExpansionState.stage < KeyExpansionStage.Rounds)"
-                                        :roundCount="keyExpansionState.roundCount"
-                                      >
+                <div class="titleContainer singleDigit">
+                  <div />
+                  <h4 class="roundLabel">{{ t('simulator.round') }}</h4>
+                  <h2 class="roundIndex">
+                    {{ roundIndex }}
+                  </h2>
+                  <div class="roundCount">
+                    <h4>/ {{ keyExpansionState.roundCount }}</h4>
+                    <div>
+                      <TutorialIconButton :tutorial-key="TutorialKey.Test" />
+                    </div>
+                  </div>
+                  <p>
+                    // TODO: fix this computation, gonna be based on input key size too
+                    {{ `${Math.floor(roundIndex * 8 / 4) + 1} ${t('simulator.keys-generated')}` }}
+                  </p>
+                </div>
 
-                                      </StatsDropdown> -->
                 <RoundProgressBar
                   class="roundProgressBar"
                   :roundIndex="keyExpansionState.roundIndex + Number(keyExpansionState.stage >= KeyExpansionStage.FromWords) - Number(keyExpansionState.stage < KeyExpansionStage.Rounds)"
                   :roundCount="keyExpansionState.roundCount"
+                  :small-last-round="smallLastRound"
                 />
               </section>
               <section class="rounds">
-                TODO: rounds
-
-                {{ keyExpansionState.output }}
-
                 <StepDropdown
-                  :model-value="keyExpansionState.stage === KeyExpansionStage.FromWords"
+                  :model-value="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.RoundGFn && keyExpansionState.stage === KeyExpansionStage.Rounds"
                   eager
-                  :title="`${t('simulator.state')} ➜ ${t('simulator.round')} ${t('simulator.key')}`"
+                  :title="`${t('simulator.round')} <i>g</i>-${t('simulator.function')}`"
                   :tutorial-key="TutorialKey.Test"
-                  background-color="#f9f9f9"
                 >
                   <AnimationAesAnimationFrame>
                     <template #animation="{ timeline }">
+                      TODO: animation
                     </template>
                     <template
                       #prependControls="{ timeline, restartAndPause }"
-                      v-if="keyExpansionState.stage === KeyExpansionStage.FromWords"
+                      v-if="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.RoundGFn && keyExpansionState.stage === KeyExpansionStage.Rounds"
                     >
                       <v-btn
-                        :variant="timeline.currentTime > 7_000 ? 'flat' : 'plain'"
-                        prepend-icon="mdi-lock"
+                        :variant="timeline.currentTime > 20_000 ? 'flat' : 'plain'"
+                        prepend-icon="mdi-redo"
+                        color="primary"
+                        @click="() => {
+                          restartAndPause()
+                          keyExpansionState.nextStep()
+                        }"
+                      >{{ t('simulator.next-step') }}</v-btn>
+                    </template>
+                  </AnimationAesAnimationFrame>
+                </StepDropdown>
+                <StepDropdown
+                  :model-value="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.RoundHFn"
+                  eager
+                  :turned-off="noHFunction"
+                  :title="`${t('simulator.round')} <i>h</i>-${t('simulator.function')}`"
+                  :tutorial-key="TutorialKey.Test"
+                >
+                  <p v-if="noHFunction">
+                    {{ noHFunctionMessage }}
+                  </p>
+                  <AnimationAesAnimationFrame v-else>
+                    <template #animation="{ timeline }">
+                      H fn
+                    </template>
+                    <template
+                      #prependControls="{ timeline, restartAndPause }"
+                      v-if="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.RoundHFn"
+                    >
+                      <v-btn
+                        :variant="timeline.currentTime > 10_000 ? 'flat' : 'plain'"
+                        prepend-icon="mdi-redo"
+                        color="primary"
+                        @click="() => {
+                          restartAndPause()
+                          keyExpansionState.nextStep()
+                        }"
+                      >{{ t('simulator.next-step') }}</v-btn>
+                    </template>
+                  </AnimationAesAnimationFrame>
+                </StepDropdown>
+                <StepDropdown
+                  :model-value="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.AddWords && keyExpansionState.stage === KeyExpansionStage.Rounds"
+                  eager
+                  :title="t('simulator.add-words')"
+                  :tutorial-key="TutorialKey.Test"
+                >
+                  <AnimationAesAnimationFrame>
+                    <template #animation="{ timeline }">
+                      add words animation
+                    </template>
+                    <template
+                      #prependControls="{ timeline, restartAndPause }"
+                      v-if="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.AddWords && keyExpansionState.stage === KeyExpansionStage.Rounds"
+                    >
+                      <v-btn
+                        v-if="!keyExpansionState.isLastStep && !keyExpansionState.isSecondToLastRound"
+                        :variant="timeline.currentTime > 9_500 ? 'outlined' : 'plain'"
+                        prepend-icon="mdi-arrow-u-down-right"
+                        color="primary"
+                        @click="(_: Event) => {
+                          keyExpansionState.skipToLastRound()
+                        }"
+                      >{{ t('simulator.skip') }}</v-btn>
+                      <v-btn
+                        v-if="!keyExpansionState.isLastStep"
+                        :variant="timeline.currentTime > 9_500 ? 'flat' : 'plain'"
+                        prepend-icon="mdi-rotate-right"
+                        color="primary"
+                        @click="(_: Event) => {
+                          keyExpansionState.nextRound()
+                        }"
+                      >{{ t('simulator.next-round') }}</v-btn>
+                      <v-btn
+                        v-if="keyExpansionState.isLastStep && keyExpansionState.stage === KeyExpansionStage.Rounds"
+                        :variant="timeline.currentTime > 9_500 ? 'flat' : 'plain'"
+                        prepend-icon="mdi-flag-checkered"
                         color="primary"
                         @click="() => {
                           restartAndPause()
                           keyExpansionState.stage = KeyExpansionStage.Output
+                          // TODO: can we remove KeyExpansionStage.FromWords?
                         }"
-                      >{{ `${t('simulator.finish')} ${t('simulator.encryption')}` }}</v-btn>
+                      >{{ t('simulator.finish-rounds') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
                 </StepDropdown>
@@ -297,5 +394,43 @@ const keyExpansionState = useKeyExpansionState()
 
 .selectedKeySize {
   display: none;
+}
+
+.titleContainer {
+  display: grid;
+
+  margin-bottom: 16px;
+
+  $key-count-progress-width: 130px;
+  align-items: center;
+  width: 100%;
+
+  grid-template-columns: $key-count-progress-width 1fr 56px 1fr $key-count-progress-width;
+
+  &.singleDigit {
+    grid-template-columns: $key-count-progress-width 1fr 38px 1fr $key-count-progress-width;
+  }
+
+  .roundIndex {
+    background-color: white;
+    border-radius: 4px;
+    place-self: center;
+    padding: 14px;
+    font-weight: bold;
+  }
+
+  .roundLabel {
+    justify-self: flex-end;
+    margin-right: 10px;
+  }
+
+  .roundIndex {}
+
+  .roundCount {
+    margin-left: 9px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
 }
 </style>

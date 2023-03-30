@@ -32,6 +32,15 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
   // const outputString = computed(() => Array.from(output.value?.block ?? []).map(formatHex).join('') ?? '')
   const roundCount = computed(() => output.value?.rounds.length ?? 0)
 
+  const keysGeneratedSoFar = computed(() => {
+    switch (keySize.value) {
+      case 128: return roundIndex.value + 1
+      case 192: return Math.floor(roundIndex.value * 6 / 4) + 1
+      case 256: return Math.floor(roundIndex.value * 8 / 4) + 1
+      default: return 1
+    }
+  })
+
   // const getStep = (stepType: AesiRoundStepType) => round.value?.steps.find(({ type }) => type === stepType)
 
   const setKeySize = (newKeySize: AesiKeySize) => {
@@ -100,6 +109,7 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
     roundCount,
     setKeySize,
     // getStep,
+    keysGeneratedSoFar,
     canComputeKeyExpansionOutput,
     computeKeyExpansionOutput,
     startRounds,

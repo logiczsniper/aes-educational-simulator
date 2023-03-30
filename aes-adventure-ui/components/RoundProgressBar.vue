@@ -2,7 +2,8 @@
 
 const props = defineProps<{
   roundIndex: number;
-  roundCount: number
+  roundCount: number;
+  smallLastRound?: boolean;
 }>()
 
 const emit = defineEmits<{
@@ -13,7 +14,7 @@ const emit = defineEmits<{
 <template>
   <div
     class="roundProgressBar"
-    :style="`grid-template-columns: repeat(${props.roundCount}, 1fr)`"
+    :style="`grid-template-columns: repeat(${props.roundCount - 1}, 1fr) ${props.smallLastRound ? '0.5fr' : '1fr'}`"
   >
     <span
       v-for="round in roundCount"

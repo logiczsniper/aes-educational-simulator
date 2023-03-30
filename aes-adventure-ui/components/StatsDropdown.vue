@@ -148,7 +148,6 @@ const chartOptions: ApexOptions = {
             <TutorialIconButton :tutorial-key="TutorialKey.Test" />
           </div>
         </div>
-
       </template>
       <template #text>
         <figure class="statsChart">

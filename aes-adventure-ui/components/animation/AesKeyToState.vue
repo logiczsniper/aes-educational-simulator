@@ -27,14 +27,7 @@ onMounted(() => {
   byteDivs.forEach(byteDiv => inputGridRoot.value?.appendChild(byteDiv))
   targetDivs.forEach(targetDiv => animationRoot.value?.appendChild(targetDiv))
 
-  const rowSize = DIV_HEIGHT + ROW_GAP + 1
-  const columnSize = DIV_WIDTH + COL_GAP - 1
   for (let row = 0; row < 4; row++) {
-    // props.timeline.add({
-    //   targets: targetRowClass(row),
-    //   translateX: (row * columnCount.value * DIV_WIDTH + COL_GAP) + 100,
-    //   translateY: -row * rowSize
-    // })
     for (let column = 0; column < columnCount.value; column++) {
       const duration = 700
       const index = row * columnCount.value + column
@@ -55,13 +48,7 @@ onMounted(() => {
         translateX: (row * columnCount.value * DIV_WIDTH + COL_GAP) + xOffset - (8.2 * column) + (Math.floor(index / 4) * COL_GAP),
         translateY: -row * (DIV_HEIGHT + ROW_GAP),
         duration
-      }, offset)
-
-      // props.timeline.add({
-      //   targets: targetCoordsClass(row, column),
-      //   translateX: (row * rowSize + 140) - column * rowSize,
-      //   translateY: column * columnSize - row * (rowSize - 1)
-      // })
+      }, row === 0 && column === 0 ? undefined : offset)
     }
   }
 

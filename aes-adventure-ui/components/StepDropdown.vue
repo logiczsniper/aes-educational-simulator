@@ -40,7 +40,7 @@ const eager = computed(() => props.eager || hoverEager.value)
           class="title"
           :class="{ 'strikeThrough': lineThroughTitle }"
         >
-          {{ props.title }}
+          <div v-html="props.title" />
           <span v-if="props.tutorialKey !== undefined && !props.turnedOff">
             <TutorialIconButton :tutorial-key="props.tutorialKey" />
           </span>
@@ -48,9 +48,10 @@ const eager = computed(() => props.eager || hoverEager.value)
       </template>
       <template #text>
         <slot />
-        <div class="footerSlot">
-          <slot name="footer" />
-        </div>
+        <div
+          v-if="props.turnedOff"
+          style="height: 8px"
+        />
       </template>
     </v-expansion-panel>
   </v-expansion-panels>
