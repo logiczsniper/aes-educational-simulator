@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AesiExpandKeyRoundStepType } from '~~/utils/aesi/aesi.types';
+import { AesiExpandKeyRoundStepRoundGFn, AesiExpandKeyRoundStepType } from '~~/utils/aesi/aesi.types';
 
 const { t } = useI18n();
 
@@ -25,10 +25,6 @@ const roundIndex = computed(() => Math.min(
   keyExpansionState.roundCount,
   keyExpansionState.roundIndex + Number(keyExpansionState.stage >= KeyExpansionStage.FromWords) - Number(keyExpansionState.stage < KeyExpansionStage.Rounds) + 1
 ))
-
-const keysGenerated = computed(() => {
-
-})
 </script>
 
 <template>
@@ -202,7 +198,14 @@ const keysGenerated = computed(() => {
                 >
                   <AnimationAesAnimationFrame>
                     <template #animation="{ timeline }">
-                      TODO: animation
+                      <!-- {{ (keyExpansionState.output as AesiExpandKeyRoundStepRoundGFn) }} -->
+                      <AnimationAesGFn
+                        :timeline="timeline"
+                        :input="keyExpansionState.step?.inputWords"
+                        :step="keyExpansionState.step"
+                      >
+
+                      </AnimationAesGFn>
                     </template>
                     <template
                       #prependControls="{ timeline, restartAndPause }"

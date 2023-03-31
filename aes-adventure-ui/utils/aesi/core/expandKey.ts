@@ -1,4 +1,4 @@
-import { AesiExpandKeyOutput, AesiExpandKeyRound, AesiExpandKeyRoundStep, AesiExpandKeyRoundStepRoundGFn, AesiExpandKeyRoundStepRoundHFn, AesiExpandKeyRoundStepType } from "../aesi.types";
+import { AesiExpandKeyOutput, AesiExpandKeyRound, AesiExpandKeyRoundStep, AesiExpandKeyRoundStepAddWords, AesiExpandKeyRoundStepRoundGFn, AesiExpandKeyRoundStepRoundHFn, AesiExpandKeyRoundStepType } from "../aesi.types";
 import { rotWord, subWord, coefAdd, gmult } from "./utils";
 
 export const expandKey = (key: Uint8Array, roundCount: number, keyCount: number): AesiExpandKeyOutput => {
@@ -10,18 +10,20 @@ export const expandKey = (key: Uint8Array, roundCount: number, keyCount: number)
 
   const rounds = [] as AesiExpandKeyOutput['rounds']
 
-  let thisRound = { steps: [] as Array<AesiExpandKeyRoundStep> }
-  let thisRoundAddWords = {
+  const thisRound = { steps: [] as Array<AesiExpandKeyRoundStep> }
+  const thisRoundAddWords: AesiExpandKeyRoundStepAddWords = {
     type: AesiExpandKeyRoundStepType.AddWords,
     inputWords: [],
     outputWords: [],
-  } as AesiExpandKeyRoundStep
+  }
 
   // This creates one word per iteration - we need to make groups of 8 add key steps.
   // keyCount is the number of words per round (4, 6, 8)
   for (let i = keyCount; i < length; i++) {
     const previousWord = expandedKey.subarray(4 * (i - 1), 4 * (i - 1) + 4)
     tmp.set(previousWord)
+    // const inputWord = Uint8Array.from(tmp)
+    // thisRoundAddWords.inputWords.push(inputWord)
 
     const shouldInvokeG = i % keyCount === 0
     const shouldInvokeH = keyCount > 6 && i % keyCount === 4
@@ -45,7 +47,7 @@ export const expandKey = (key: Uint8Array, roundCount: number, keyCount: number)
           output: addRoundConstantOutput,
           roundConstant: lsbRoundConstant,
         }
-      } as AesiExpandKeyRoundStepRoundGFn)
+      })
     } else if (shouldInvokeH) {
       subWord(tmp);
       const subWordOutput = Uint8Array.from(tmp)
@@ -53,23 +55,27 @@ export const expandKey = (key: Uint8Array, roundCount: number, keyCount: number)
       thisRound.steps.push({
         type: AesiExpandKeyRoundStepType.RoundHFn,
         subWordOutput,
-      } as AesiExpandKeyRoundStepRoundHFn)
+      })
     }
 
     // @ts-ignore - This index access is safe.
-    expandedKey[4 * i + 0] = expandedKey[4 * (i - keyCount) + 0] ^ tmp[0];
+    const input1 = expandedKey[4 * (i - keyCount) + 0]
+    expandedKey[4 * i + 0] = input1 ^ tmp[0];
     const output1 = expandedKey[4 * i + 0]
     // @ts-ignore - This index access is safe.
-    expandedKey[4 * i + 1] = expandedKey[4 * (i - keyCount) + 1] ^ tmp[1];
+    const input2 = expandedKey[4 * (i - keyCount) + 1]
+    expandedKey[4 * i + 1] = input2 ^ tmp[1];
     const output2 = expandedKey[4 * i + 1]
     // @ts-ignore - This index access is safe.
-    expandedKey[4 * i + 2] = expandedKey[4 * (i - keyCount) + 2] ^ tmp[2];
+    const input3 = expandedKey[4 * (i - keyCount) + 2]
+    expandedKey[4 * i + 2] = input3 ^ tmp[2];
     const output3 = expandedKey[4 * i + 2]
     // @ts-ignore - This index access is safe.
-    expandedKey[4 * i + 3] = expandedKey[4 * (i - keyCount) + 3] ^ tmp[3];
+    const input4 = expandedKey[4 * (i - keyCount) + 3]
+    expandedKey[4 * i + 3] = input4 ^ tmp[3];
     const output4 = expandedKey[4 * i + 3]
 
-    thisRoundAddWords.inputWords.push(tmp)
+    thisRoundAddWords.inputWords.push(Uint8Array.from([input1, input2, input3, input4]))
     thisRoundAddWords.outputWords.push(Uint8Array.from([output1, output2, output3, output4]))
 
     if (thisRoundAddWords.inputWords.length === keyCount) {

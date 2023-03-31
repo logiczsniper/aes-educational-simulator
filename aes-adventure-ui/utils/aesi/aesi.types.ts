@@ -83,13 +83,15 @@ export enum AesiExpandKeyRoundStepType {
   AddWords
 }
 
-export type AesiExpandKeyRoundStep = {
-  type: AesiExpandKeyRoundStepType;
+export type AesiExpandKeyRoundStep = AesiExpandKeyRoundStepAddWords | AesiExpandKeyRoundStepRoundGFn | AesiExpandKeyRoundStepRoundHFn
+
+export interface AesiExpandKeyRoundStepAddWords {
+  type: AesiExpandKeyRoundStepType.AddWords,
   inputWords: Array<Uint8Array>;
   outputWords: Array<Uint8Array>;
 }
 
-export interface AesiExpandKeyRoundStepRoundGFn extends AesiExpandKeyRoundStep {
+export interface AesiExpandKeyRoundStepRoundGFn {
   type: AesiExpandKeyRoundStepType.RoundGFn,
   rotateWordOutput: Uint8Array;
   subWordOutput: Uint8Array;
@@ -100,7 +102,7 @@ export interface AesiExpandKeyRoundStepRoundGFn extends AesiExpandKeyRoundStep {
   };
 }
 
-export interface AesiExpandKeyRoundStepRoundHFn extends AesiExpandKeyRoundStep {
+export interface AesiExpandKeyRoundStepRoundHFn {
   type: AesiExpandKeyRoundStepType.RoundHFn,
   subWordOutput: Uint8Array;
 }

@@ -1,5 +1,5 @@
 import { aesi } from "~~/utils/aesi"
-import { AesiExpandKeyOutput, AesiKeySize, AesiOutput, AesiRoundStepType } from "~~/utils/aesi/aesi.types"
+import { AesiExpandKeyOutput, AesiExpandKeyRoundStepAddWords, AesiExpandKeyRoundStepType, AesiKeySize, AesiOutput, AesiRoundStepType } from "~~/utils/aesi/aesi.types"
 import '~~/utils/parsingPatches'
 
 export enum KeyExpansionStage {
@@ -22,7 +22,19 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
 
   const key = computed(() => parseInputValue(rawKey.value))
   const round = computed(() => output.value?.rounds.at(roundIndex.value))
-  const step = computed(() => round.value?.steps.at(stepIndex.value))
+  const step = computed(() => {
+    const bareStep = round.value?.steps.at(stepIndex.value)
+    if (!bareStep) return;
+
+    const addStep = round.value?.steps.find(({ type }) => AesiExpandKeyRoundStepType.AddWords === type)
+    if (!addStep) return;
+
+    return {
+      inputWords: (addStep as AesiExpandKeyRoundStepAddWords).inputWords,
+      outputWords: (addStep as AesiExpandKeyRoundStepAddWords).outputWords,
+      ...bareStep,
+    }
+  })
   const isLastStep = computed(() =>
     (roundIndex.value === (output.value?.rounds.length ?? 0) - 1) &&
     (stepIndex.value === (output.value?.rounds.at(-1)?.steps.length ?? 0) - 1)

@@ -74,3 +74,12 @@
 .absolute {
   position: absolute;
 }
+
+.animationGridKeyRow {
+  @extend .baseAnimationGrid;
+  grid-template-columns: repeat(8, min-content);
+
+  & div {
+    display: flex;
+  }
+}
