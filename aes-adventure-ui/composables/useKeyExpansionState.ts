@@ -33,10 +33,20 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
   const roundCount = computed(() => output.value?.rounds.length ?? 0)
 
   const keysGeneratedSoFar = computed(() => {
+    const finalKey = stage.value > KeyExpansionStage.Rounds ? 1 : 0
     switch (keySize.value) {
-      case 128: return roundIndex.value + 1
-      case 192: return Math.floor(roundIndex.value * 6 / 4) + 1
-      case 256: return Math.floor(roundIndex.value * 8 / 4) + 1
+      case 128: return roundIndex.value + 1 + finalKey
+      case 192: return Math.floor((roundIndex.value + 1) * 6 / 4) + finalKey
+      case 256: return Math.floor((roundIndex.value + 1) * 8 / 4) + finalKey
+      default: return 1
+    }
+  })
+
+  const keysTotal = computed(() => {
+    switch (keySize.value) {
+      case 128: return 11
+      case 192: return 13
+      case 256: return 15
       default: return 1
     }
   })
@@ -109,6 +119,7 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
     roundCount,
     setKeySize,
     // getStep,
+    keysTotal,
     keysGeneratedSoFar,
     canComputeKeyExpansionOutput,
     computeKeyExpansionOutput,

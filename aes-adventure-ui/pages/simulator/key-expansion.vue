@@ -25,6 +25,10 @@ const roundIndex = computed(() => Math.min(
   keyExpansionState.roundCount,
   keyExpansionState.roundIndex + Number(keyExpansionState.stage >= KeyExpansionStage.FromWords) - Number(keyExpansionState.stage < KeyExpansionStage.Rounds) + 1
 ))
+
+const keysGenerated = computed(() => {
+
+})
 </script>
 
 <template>
@@ -156,7 +160,10 @@ const roundIndex = computed(() => Math.min(
                 ref="roundsHeader"
                 class="roundsHeader"
               >
-                <div class="titleContainer singleDigit">
+                <div
+                  class="titleContainer"
+                  :class="{ 'singleDigit': roundIndex < 10 }"
+                >
                   <div />
                   <h4 class="roundLabel">{{ t('simulator.round') }}</h4>
                   <h2 class="roundIndex">
@@ -168,9 +175,14 @@ const roundIndex = computed(() => Math.min(
                       <TutorialIconButton :tutorial-key="TutorialKey.Test" />
                     </div>
                   </div>
-                  <p>
-                    // TODO: fix this computation, gonna be based on input key size too
-                    {{ `${Math.floor(roundIndex * 8 / 4) + 1} ${t('simulator.keys-generated')}` }}
+                  <p class="totalRoundKeys">
+                    <v-icon
+                      icon="mdi-key-chain"
+                      :size="18"
+                    />
+                    <b>{{ `${keyExpansionState.keysGeneratedSoFar}` }}</b>
+                    <small class="denominator">{{ ` / ${keyExpansionState.keysTotal} ${t('simulator.keys-generated')}`
+                    }}</small>
                   </p>
                 </div>
 
@@ -185,7 +197,7 @@ const roundIndex = computed(() => Math.min(
                 <StepDropdown
                   :model-value="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.RoundGFn && keyExpansionState.stage === KeyExpansionStage.Rounds"
                   eager
-                  :title="`${t('simulator.round')} <i>g</i>-${t('simulator.function')}`"
+                  :title="`${t('simulator.round')} <i class='code'>g-</i> ${t('simulator.function')}`"
                   :tutorial-key="TutorialKey.Test"
                 >
                   <AnimationAesAnimationFrame>
@@ -212,7 +224,7 @@ const roundIndex = computed(() => Math.min(
                   :model-value="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.RoundHFn"
                   eager
                   :turned-off="noHFunction"
-                  :title="`${t('simulator.round')} <i>h</i>-${t('simulator.function')}`"
+                  :title="`${t('simulator.round')} <i class='code'>h-</i> ${t('simulator.function')}`"
                   :tutorial-key="TutorialKey.Test"
                 >
                   <p v-if="noHFunction">
@@ -401,7 +413,7 @@ const roundIndex = computed(() => Math.min(
 
   margin-bottom: 16px;
 
-  $key-count-progress-width: 130px;
+  $key-count-progress-width: 180px;
   align-items: center;
   width: 100%;
 
@@ -409,6 +421,16 @@ const roundIndex = computed(() => Math.min(
 
   &.singleDigit {
     grid-template-columns: $key-count-progress-width 1fr 38px 1fr $key-count-progress-width;
+  }
+
+  .totalRoundKeys {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    .denominator {
+      height: 22px;
+    }
   }
 
   .roundIndex {
