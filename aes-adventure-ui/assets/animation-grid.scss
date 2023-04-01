@@ -83,3 +83,9 @@
     display: flex;
   }
 }
+
+.tinyAnimationGrid {
+  @extend .baseAnimationGrid;
+  grid-template-columns: min-content;
+  grid-template-rows: min-content;
+}
