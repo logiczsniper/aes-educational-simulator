@@ -67,7 +67,7 @@
     "constant-matrix": "Constant Matrix",
     "substitute-step": "Substitute",
     "shift-step": "Shift",
-    "add-rcon-step": "Add Round Constant",
+    "rcon": "Round Constant",
     "inverse": "Inverse",
     "state": "State",
     "input": "Input",

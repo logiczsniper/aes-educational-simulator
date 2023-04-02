@@ -4,6 +4,8 @@ import { COL_GAP, DIV_HEIGHT, DIV_WIDTH, ROW_GAP } from '~~/utils/animation/cons
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 import { AesiExpandKeyRoundStepRoundGFn } from '~~/utils/aesi/aesi.types';
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
+import { S_BOX } from '~~/utils/aesi/core/constants';
+import anime from 'animejs';
 
 const props = defineProps<{
   timeline: AnimeTimelineInstance,
@@ -16,130 +18,201 @@ const { t } = useI18n();
 const animationRoot = ref<HTMLElement>()
 const inputGridRoot = ref<HTMLElement>()
 const shiftAnimationRoot = ref<HTMLElement>()
+const sboxAnimationRoot = ref<HTMLElement>()
+const outputAnimationRoot = ref<HTMLElement>()
 
 const input = computed(() => props.input?.at(-1) || [])
 const shiftOutput = computed(() => props.step?.rotateWordOutput || [])
+const subOutput = computed(() => props.step?.subWordOutput || [])
+const rconFirstByteOutput = computed(() => formatHex(props.step?.addRoundConstantOutput.output.at(0) || 0))
 
 const byteDivs = hexToDivs(input.value)
 const { targetDivs, targetAllClass, targetColumnClass, targetChildClass } = addAnimationClasses(byteDivs, "g-fn")
 
+const sboxByteDivs = hexToDivs(S_BOX)
+const { targetDivs: sboxTargetDivs, targetColumnClass: sboxTargetColumnClass, targetRowClass: sboxTargetRowClass, targetCoordsClass: sboxTargetCoordsClass } = addAnimationClasses(sboxByteDivs, 'g-fn-substitute-bytes-sbox', 16)
+
+const subOutputDivs = hexToDivs(subOutput.value)
+const { targetDivs: subOutputTargetDivs, targetCoordsClass: subOutputTargetCoordsClass, targetColumnClass: subOutputTargetColumnClass } = addAnimationClasses(subOutputDivs, 'g-fn-substitute-bytes-o')
+
 const shiftOutputDivs = hexToDivs(shiftOutput.value)
 const { targetDivs: shiftOutputTargetDivs, targetAllClass: shiftTargetAllClass, targetColumnClass: shiftTargetColumnClass } = addAnimationClasses(shiftOutputDivs, 'g-fn-shift-o')
+
+const xorSymbolClass = `g-fn-xor`
+const xorSymbolTarget = `.${xorSymbolClass}`
+
+const rconNewByteClass = 'g-fn-rcon-new-byte'
+const rconNewByteTarget = `.${rconNewByteClass}`
+
+const inputGridRootClass = 'g-fn-input-grid-root'
+const inputGridRootTarget = `.${inputGridRootClass}`
 
 onMounted(() => {
   byteDivs.forEach(byteDiv => inputGridRoot.value?.appendChild(byteDiv))
   targetDivs.forEach(targetDiv => animationRoot.value?.appendChild(targetDiv))
   shiftOutputTargetDivs.forEach(byteDiv => shiftAnimationRoot.value?.appendChild(byteDiv))
+  sboxTargetDivs.forEach((div, index) => {
+    if (index % 16 === 0) {
+      const counterDiv = document.createElement('div')
+      counterDiv.classList.add('code', 'leftDiv')
+      counterDiv.textContent = (index / 16).toString(16)
 
-  const rowSize = DIV_HEIGHT + ROW_GAP + 1
-  const columnSize = DIV_WIDTH + COL_GAP
+      sboxAnimationRoot.value?.appendChild(counterDiv)
+    }
+    sboxAnimationRoot.value?.appendChild(div)
+  })
+  subOutputTargetDivs.forEach(div => outputAnimationRoot.value?.appendChild(div))
 
-  const initialTranslateX = 122
+  for (let column = 0; column < 4; column++) {
+    props.timeline.add({
+      targets: targetColumnClass(column),
+      translateX: 8 * column,
+      delay: anime.stagger(20, { direction: 'reverse' }),
+    }, '-=600')
+  }
 
   props.timeline.add({
-    targets: targetAllClass,
+    targets: inputGridRootTarget,
+    opacity: 1,
+  })
+
+  const columnSize = DIV_WIDTH + COL_GAP
+  const rowSize = DIV_HEIGHT + ROW_GAP
+  for (let column = 0; column < 4; column++) {
+    const firstChildContent = document.getElementsByClassName(targetChildClass(0, column, 1).substring(1)).item(0)?.textContent ?? '0'
+    const secondChildContent = document.getElementsByClassName(targetChildClass(0, column, 2).substring(1)).item(0)?.textContent ?? '0'
+
+    const firstChildHex = parseInt(firstChildContent, 16)
+    const secondChildHex = parseInt(secondChildContent, 16)
+
+    props.timeline.add({
+      targets: targetChildClass(0, column, 1),
+      translateX: 140 - column * columnSize,
+      translateY: 22 + rowSize * firstChildHex
+    }).add({
+      targets: targetChildClass(0, column, 1),
+      opacity: 0,
+    }, '-=320').add({
+      targets: sboxTargetRowClass(firstChildHex),
+      color: '#D755B9'
+    }, '-=300').add({
+      targets: targetChildClass(0, column, 2),
+      translateX: 155 + columnSize * (secondChildHex - column)
+    }).add({
+      targets: targetChildClass(0, column, 2),
+      opacity: 0,
+    }, '-=320').add({
+      targets: sboxTargetColumnClass(secondChildHex),
+      color: '#D755B9'
+    }, '-=300').add({
+      targets: sboxTargetCoordsClass(firstChildHex, secondChildHex),
+      color: '#745CD0'
+    }, '-=200').add({
+      targets: subOutputTargetCoordsClass(0, column),
+      opacity: 1,
+    }).add({
+      targets: [sboxTargetRowClass(firstChildHex), sboxTargetColumnClass(secondChildHex)],
+      color: 'rgba(0, 0, 0, 0.87)', // this is the color set by vuetify, we cannot simply 'unset' in this animation
+    }, '+=1100')
+  }
+
+
+  // const rowSize = DIV_HEIGHT + ROW_GAP + 1
+  // const columnSize = DIV_WIDTH + COL_GAP
+
+  const initialTranslateX = -28
+
+  props.timeline.add({
+    targets: subOutputTargetDivs,
     translateX: initialTranslateX,
   }).add({
-    targets: targetColumnClass(0),
+    targets: subOutputTargetColumnClass(0),
     keyframes: [
       { translateY: rowSize },
       { translateX: initialTranslateX + columnSize * 4 },
       { translateY: 0 },
     ]
   }).add({
-    targets: shiftTargetAllClass,
+    targets: subOutputTargetColumnClass(1),
+    translateX: -128,
+  }, '+=200').add({
+    targets: xorSymbolTarget,
+    opacity: 1
+  }).add({
+    targets: rconNewByteTarget,
     opacity: 1,
+  }).add({
+    targets: [xorSymbolTarget, subOutputTargetColumnClass(1)],
+    opacity: 0
+  }, '+=400')
+
+  // TODO: optimise
+
+  props.timeline.add({
+    targets: subOutputTargetColumnClass(2),
+    translateX: -35,
   })
 
-  for (let column = 0; column < 4; column++) {
-    props.timeline.add({
-      targets: shiftTargetColumnClass(column),
-      translateX: 158 - (column * columnSize)
-    })
-  }
+  props.timeline.add({
+    targets: subOutputTargetColumnClass(3),
+    translateX: -43,
+  }, '-=600')
 
+  props.timeline.add({
+    targets: subOutputTargetColumnClass(0),
+    translateX: 57,
+  }, '-=600')
 
-  // const inputWordIndex = byteDivs.length - 1
-  // const inputWordTarget = targetColumnClass(inputWordIndex)
-  // const otherWordTargets = byteDivs.flatMap((_, i) => {
-  //   if (i === byteDivs.length - 1) return '';
-
-  //   return [targetChildClass(0, i, 1), targetChildClass(0, i, 2), targetChildClass(0, i, 3), targetChildClass(0, i, 4)]
-  // })
-  // props.timeline.add({
-  //   targets: inputWordTarget,
-  //   color: '#D755B9'
-  // }).add({
-  //   targets: otherWordTargets,
-  //   opacity: 0,
-  //   delay: anime.stagger(20, { direction: 'reverse' }),
-  //   duration: 800,
-  // }, '+=1000').add({
-  //   targets: inputWordTarget,
-  //   translateX: -594,
-  // }, '-=900').add({
-  //   targets: targetChildClass(0, inputWordIndex, 2),
-  //   translateX: COL_GAP,
-  // }).add({
-  //   targets: targetChildClass(0, inputWordIndex, 3),
-  //   translateX: COL_GAP * 2,
-  // }, '-=1000').add({
-  //   targets: targetChildClass(0, inputWordIndex, 4),
-  //   translateX: COL_GAP * 3,
-  // }, '-=1100').add({
-  //   targets: inputWordTarget,
-  //   color: 'rgba(0, 0, 0, 0.87)'
-  // }, '-=1000')
-
-  // props.timeline.add({
-  //   targets: targetAllClass,
-  //   color: '#745CD0'
-  // })
+  props.timeline.add({
+    targets: [rconNewByteTarget, subOutputTargetDivs],
+    color: '#745CD0'
+  })
 })
 </script>
 
 <template>
   <div class="gFnRoot">
     <h4>{{ t('simulator.input') }}</h4>
-    <h4>Shifted Input</h4>
-    <!-- <h4>{{ t('simulator.shift-step') }}</h4> -->
     <h4>{{ t('simulator.sbox') }}</h4>
-    <h4>Round Constant</h4>
-    <!-- <h4>{{ t('simulator.add-rcon-step') }}</h4> -->
+    <h4>{{ t('simulator.rcon') }}</h4>
     <h4>{{ t('simulator.output') }}</h4>
 
     <div class="relative">
       <div
         ref="inputGridRoot"
         class="animationGrid absolute"
+        :class="inputGridRootClass"
       ></div>
       <figure
         ref="animationRoot"
-        class="animationGrid"
+        class="animationGrid compact"
       >
       </figure>
     </div>
 
     <div class="relative">
       <figure
-        ref="shiftAnimationRoot"
-        class="animationGrid startNoOpacity"
+        ref="sboxAnimationRoot"
+        class="animationGridSbox"
       >
+        <div />
+        <div
+          v-for="i in 16"
+          class="upperDiv code"
+        >{{ (i - 1).toString(16) }}</div>
       </figure>
     </div>
 
     <div class="relative">
-      <div class="subBox" />
-      <div class="subArrow" />
-      <figure
-        ref="subAnimationRoot"
-        class="tinyAnimationGrid"
-      >
-      </figure>
-    </div>
-
-    <div class="relative">
-      <div class="code">{{ Number(step?.addRoundConstantOutput.roundConstant).toString(16).padStart(2, '0') }}</div>
+      <div class="code">{{ formatHex(step?.addRoundConstantOutput.roundConstant || 0) }}</div>
+      <span
+        class="addKeyXorSymbol absolute"
+        :class="xorSymbolClass"
+      >⊕</span>
+      <div
+        class="code"
+        :class="rconNewByteClass"
+      >{{ formatHex(step?.addRoundConstantOutput.output?.at(0) || 0) }}</div>
       <div
         ref="addGridRoot"
         class="animationGrid absolute"
@@ -165,7 +238,7 @@ onMounted(() => {
 .gFnRoot {
 
   display: grid;
-  grid-template-columns: repeat(5, min-content);
+  grid-template-columns: repeat(4, min-content);
   grid-template-rows: repeat(2, min-content);
   column-gap: 40px;
   row-gap: 8px;
@@ -174,35 +247,31 @@ onMounted(() => {
     white-space: nowrap;
   }
 
-  &>*:nth-child(5n + 2) {
-    margin-left: 8px;
+  &>*:nth-child(4n + 2) {
+    margin-left: 24px;
   }
 
-  &>*:nth-child(5n + 3) {
-    margin-left: 4px;
+  .addKeyXorSymbol {
+    top: -3px;
+    left: 28px;
+    opacity: 0;
+  }
+
+  .g-fn-input-grid-root {
+    opacity: 0;
+  }
+
+  .g-fn-rcon-new-byte {
+    position: absolute;
+    top: 0;
+    left: 152px;
+    opacity: 0;
   }
 
   .startNoOpacity {
     &>div {
       opacity: 0;
     }
-  }
-
-  .subBox {
-    position: absolute;
-    top: -34px;
-    left: -10px;
-    width: 136px;
-    height: 68px;
-    border: 1px solid black;
-    border-radius: 2px;
-  }
-
-  .subArrow::after {
-    content: "->";
-    position: absolute;
-    top: -2px;
-    left: 50px;
   }
 }
 </style>

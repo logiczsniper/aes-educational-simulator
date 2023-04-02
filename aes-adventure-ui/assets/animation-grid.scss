@@ -6,6 +6,10 @@
   &>div {
     display: flex;
   }
+
+  &.compact {
+    column-gap: 0;
+  }
 }
 
 .animationGrid {

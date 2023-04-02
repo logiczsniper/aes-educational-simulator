@@ -28,10 +28,12 @@ export const expandKey = (key: Uint8Array, roundCount: number, keyCount: number)
     const shouldInvokeG = i % keyCount === 0
     const shouldInvokeH = keyCount > 6 && i % keyCount === 4
     if (shouldInvokeG) {
-      rotWord(tmp);
-      const rotateWordOutput = Uint8Array.from(tmp)
       subWord(tmp);
       const subWordOutput = Uint8Array.from(tmp)
+
+      rotWord(tmp);
+      const rotateWordOutput = Uint8Array.from(tmp)
+
       // Rcon take 8 LSB of roundConstant(i / keyCount)[0] to get
       // same numbers as the book (beyond arent used anyway). Use bitmask to do so.
       const [thisRoundConstant] = roundConstant(i / keyCount)
