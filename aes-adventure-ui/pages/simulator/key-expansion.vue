@@ -191,25 +191,18 @@ const roundIndex = computed(() => Math.min(
               </section>
               <section class="rounds">
                 <StepDropdown
-                  :model-value="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.RoundGFn && keyExpansionState.stage === KeyExpansionStage.Rounds"
+                  :model-value="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.AddWords && keyExpansionState.stage === KeyExpansionStage.Rounds"
                   eager
-                  :title="`${t('simulator.round')} <i class='code'>g-</i> ${t('simulator.function')}`"
+                  :title="t('simulator.add-words')"
                   :tutorial-key="TutorialKey.Test"
                 >
                   <AnimationAesAnimationFrame>
                     <template #animation="{ timeline }">
-                      <!-- {{ (keyExpansionState.output as AesiExpandKeyRoundStepRoundGFn) }} -->
-                      <AnimationAesGFn
-                        :timeline="timeline"
-                        :input="keyExpansionState.step?.inputWords"
-                        :step="keyExpansionState.step"
-                      >
-
-                      </AnimationAesGFn>
+                      add words animation
                     </template>
                     <template
                       #prependControls="{ timeline, restartAndPause }"
-                      v-if="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.RoundGFn && keyExpansionState.stage === KeyExpansionStage.Rounds"
+                      v-if="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.AddWords && keyExpansionState.stage === KeyExpansionStage.Rounds"
                     >
                       <v-btn
                         :variant="timeline.currentTime > 20_000 ? 'flat' : 'plain'"
@@ -224,10 +217,74 @@ const roundIndex = computed(() => Math.min(
                   </AnimationAesAnimationFrame>
                 </StepDropdown>
                 <StepDropdown
+                  :model-value="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.RoundGFn && keyExpansionState.stage === KeyExpansionStage.Rounds"
+                  eager
+                  :title="`${t('simulator.round')} <span class='math'>𝑔</span>-${t('simulator.function')}`"
+                  :tutorial-key="TutorialKey.Test"
+                >
+                  <AnimationAesAnimationFrame>
+                    <template #animation="{ timeline }">
+                      <AnimationAesGFn
+                        :timeline="timeline"
+                        :input="keyExpansionState.step?.inputWords"
+                        :step="keyExpansionState.getStep(AesiExpandKeyRoundStepType.RoundGFn) as AesiExpandKeyRoundStepRoundGFn"
+                      >
+                      </AnimationAesGFn>
+                    </template>
+                    <template
+                      #prependControls="{ timeline, restartAndPause }"
+                      v-if="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.RoundGFn && keyExpansionState.stage === KeyExpansionStage.Rounds"
+                    >
+                      <template v-if="noHFunction">
+                        <v-btn
+                          v-if="!keyExpansionState.isLastStep && !keyExpansionState.isSecondToLastRound"
+                          :variant="timeline.currentTime > 9_500 ? 'outlined' : 'plain'"
+                          prepend-icon="mdi-arrow-u-down-right"
+                          color="primary"
+                          @click="(_: Event) => {
+                            keyExpansionState.skipToLastRound()
+                          }"
+                        >{{ t('simulator.skip') }}</v-btn>
+                        <v-btn
+                          v-if="!keyExpansionState.isLastStep"
+                          :variant="timeline.currentTime > 9_500 ? 'flat' : 'plain'"
+                          prepend-icon="mdi-rotate-right"
+                          color="primary"
+                          @click="(_: Event) => {
+                            keyExpansionState.nextRound()
+                          }"
+                        >{{ t('simulator.next-round') }}</v-btn>
+                        <v-btn
+                          v-if="keyExpansionState.isLastStep && keyExpansionState.stage === KeyExpansionStage.Rounds"
+                          :variant="timeline.currentTime > 9_500 ? 'flat' : 'plain'"
+                          prepend-icon="mdi-flag-checkered"
+                          color="primary"
+                          @click="() => {
+                            restartAndPause()
+                            keyExpansionState.stage = KeyExpansionStage.Output
+                            // TODO: can we remove KeyExpansionStage.FromWords?
+                          }"
+                        >{{ t('simulator.finish-rounds') }}</v-btn>
+                      </template>
+                      <template v-else>
+                        <v-btn
+                          :variant="timeline.currentTime > 20_000 ? 'flat' : 'plain'"
+                          prepend-icon="mdi-redo"
+                          color="primary"
+                          @click="() => {
+                            restartAndPause()
+                            keyExpansionState.nextStep()
+                          }"
+                        >{{ t('simulator.next-step') }}</v-btn>
+                      </template>
+                    </template>
+                  </AnimationAesAnimationFrame>
+                </StepDropdown>
+                <StepDropdown
                   :model-value="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.RoundHFn"
                   eager
                   :turned-off="noHFunction"
-                  :title="`${t('simulator.round')} <i class='code'>h-</i> ${t('simulator.function')}`"
+                  :title="`${t('simulator.round')} <span class='math'>ℎ</span>-${t('simulator.function')}`"
                   :tutorial-key="TutorialKey.Test"
                 >
                   <p v-if="noHFunction">
@@ -240,32 +297,6 @@ const roundIndex = computed(() => Math.min(
                     <template
                       #prependControls="{ timeline, restartAndPause }"
                       v-if="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.RoundHFn"
-                    >
-                      <v-btn
-                        :variant="timeline.currentTime > 10_000 ? 'flat' : 'plain'"
-                        prepend-icon="mdi-redo"
-                        color="primary"
-                        @click="() => {
-                          restartAndPause()
-                          keyExpansionState.nextStep()
-                        }"
-                      >{{ t('simulator.next-step') }}</v-btn>
-                    </template>
-                  </AnimationAesAnimationFrame>
-                </StepDropdown>
-                <StepDropdown
-                  :model-value="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.AddWords && keyExpansionState.stage === KeyExpansionStage.Rounds"
-                  eager
-                  :title="t('simulator.add-words')"
-                  :tutorial-key="TutorialKey.Test"
-                >
-                  <AnimationAesAnimationFrame>
-                    <template #animation="{ timeline }">
-                      add words animation
-                    </template>
-                    <template
-                      #prependControls="{ timeline, restartAndPause }"
-                      v-if="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.AddWords && keyExpansionState.stage === KeyExpansionStage.Rounds"
                     >
                       <v-btn
                         v-if="!keyExpansionState.isLastStep && !keyExpansionState.isSecondToLastRound"

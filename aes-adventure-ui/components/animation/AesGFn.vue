@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import anime from 'animejs';
 import type { AnimeTimelineInstance } from 'animejs';
 import { COL_GAP, DIV_HEIGHT, DIV_WIDTH, ROW_GAP } from '~~/utils/animation/constants';
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 import { AesiExpandKeyRoundStepRoundGFn } from '~~/utils/aesi/aesi.types';
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
 import { S_BOX } from '~~/utils/aesi/core/constants';
-import anime from 'animejs';
 
 const props = defineProps<{
   timeline: AnimeTimelineInstance,
@@ -24,10 +24,9 @@ const outputAnimationRoot = ref<HTMLElement>()
 const input = computed(() => props.input?.at(-1) || [])
 const shiftOutput = computed(() => props.step?.rotateWordOutput || [])
 const subOutput = computed(() => props.step?.subWordOutput || [])
-const rconFirstByteOutput = computed(() => formatHex(props.step?.addRoundConstantOutput.output.at(0) || 0))
 
 const byteDivs = hexToDivs(input.value)
-const { targetDivs, targetAllClass, targetColumnClass, targetChildClass } = addAnimationClasses(byteDivs, "g-fn")
+const { targetDivs, targetColumnClass, targetChildClass } = addAnimationClasses(byteDivs, "g-fn")
 
 const sboxByteDivs = hexToDivs(S_BOX)
 const { targetDivs: sboxTargetDivs, targetColumnClass: sboxTargetColumnClass, targetRowClass: sboxTargetRowClass, targetCoordsClass: sboxTargetCoordsClass } = addAnimationClasses(sboxByteDivs, 'g-fn-substitute-bytes-sbox', 16)
@@ -36,7 +35,7 @@ const subOutputDivs = hexToDivs(subOutput.value)
 const { targetDivs: subOutputTargetDivs, targetCoordsClass: subOutputTargetCoordsClass, targetColumnClass: subOutputTargetColumnClass } = addAnimationClasses(subOutputDivs, 'g-fn-substitute-bytes-o')
 
 const shiftOutputDivs = hexToDivs(shiftOutput.value)
-const { targetDivs: shiftOutputTargetDivs, targetAllClass: shiftTargetAllClass, targetColumnClass: shiftTargetColumnClass } = addAnimationClasses(shiftOutputDivs, 'g-fn-shift-o')
+const { targetDivs: shiftOutputTargetDivs } = addAnimationClasses(shiftOutputDivs, 'g-fn-shift-o')
 
 const xorSymbolClass = `g-fn-xor`
 const xorSymbolTarget = `.${xorSymbolClass}`
@@ -115,10 +114,6 @@ onMounted(() => {
       color: 'rgba(0, 0, 0, 0.87)', // this is the color set by vuetify, we cannot simply 'unset' in this animation
     }, '+=1100')
   }
-
-
-  // const rowSize = DIV_HEIGHT + ROW_GAP + 1
-  // const columnSize = DIV_WIDTH + COL_GAP
 
   const initialTranslateX = -28
 
@@ -236,7 +231,6 @@ onMounted(() => {
 
 <style lang="scss">
 .gFnRoot {
-
   display: grid;
   grid-template-columns: repeat(4, min-content);
   grid-template-rows: repeat(2, min-content);

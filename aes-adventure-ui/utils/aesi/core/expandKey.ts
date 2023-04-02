@@ -16,14 +16,13 @@ export const expandKey = (key: Uint8Array, roundCount: number, keyCount: number)
     inputWords: [],
     outputWords: [],
   }
+  let thisRoundFunctions: Array<AesiExpandKeyRoundStepRoundGFn | AesiExpandKeyRoundStepRoundHFn> = []
 
   // This creates one word per iteration - we need to make groups of 8 add key steps.
   // keyCount is the number of words per round (4, 6, 8)
   for (let i = keyCount; i < length; i++) {
     const previousWord = expandedKey.subarray(4 * (i - 1), 4 * (i - 1) + 4)
     tmp.set(previousWord)
-    // const inputWord = Uint8Array.from(tmp)
-    // thisRoundAddWords.inputWords.push(inputWord)
 
     const shouldInvokeG = i % keyCount === 0
     const shouldInvokeH = keyCount > 6 && i % keyCount === 4
@@ -41,7 +40,7 @@ export const expandKey = (key: Uint8Array, roundCount: number, keyCount: number)
       coefAdd(tmp, roundConstant(i / keyCount) as any, tmp);
       const addRoundConstantOutput = Uint8Array.from(tmp)
 
-      thisRound.steps.push({
+      thisRoundFunctions.push({
         type: AesiExpandKeyRoundStepType.RoundGFn,
         rotateWordOutput,
         subWordOutput,
@@ -54,7 +53,7 @@ export const expandKey = (key: Uint8Array, roundCount: number, keyCount: number)
       subWord(tmp);
       const subWordOutput = Uint8Array.from(tmp)
 
-      thisRound.steps.push({
+      thisRoundFunctions.push({
         type: AesiExpandKeyRoundStepType.RoundHFn,
         subWordOutput,
       })
@@ -81,7 +80,8 @@ export const expandKey = (key: Uint8Array, roundCount: number, keyCount: number)
     thisRoundAddWords.outputWords.push(Uint8Array.from([output1, output2, output3, output4]))
 
     if (thisRoundAddWords.inputWords.length === keyCount) {
-      thisRound.steps.push({ ...thisRoundAddWords })
+      thisRound.steps.push({ ...thisRoundAddWords }, ...thisRoundFunctions)
+      thisRoundFunctions = []
       thisRoundAddWords.inputWords = []
       thisRoundAddWords.outputWords = []
 
@@ -90,10 +90,10 @@ export const expandKey = (key: Uint8Array, roundCount: number, keyCount: number)
     }
   }
 
-  if (thisRound.steps.length) {
-    thisRound.steps.push({ ...thisRoundAddWords })
-    rounds.push({ ...thisRound })
-  }
+  // if (thisRound.steps.length) {
+  thisRound.steps.push({ ...thisRoundAddWords }, ...thisRoundFunctions)
+  rounds.push({ ...thisRound })
+  // }
 
 
   return {

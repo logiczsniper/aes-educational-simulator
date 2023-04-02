@@ -35,6 +35,7 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
       ...bareStep,
     }
   })
+  const getStep = (stepType: AesiExpandKeyRoundStepType) => round.value?.steps.find(({ type }) => type === stepType)
   const isLastStep = computed(() =>
     (roundIndex.value === (output.value?.rounds.length ?? 0) - 1) &&
     (stepIndex.value === (output.value?.rounds.at(-1)?.steps.length ?? 0) - 1)
@@ -130,7 +131,7 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
     // outputString,
     roundCount,
     setKeySize,
-    // getStep,
+    getStep,
     keysTotal,
     keysGeneratedSoFar,
     canComputeKeyExpansionOutput,
