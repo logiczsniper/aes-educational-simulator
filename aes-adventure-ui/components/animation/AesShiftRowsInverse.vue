@@ -66,8 +66,8 @@ watch(() => props.timeline, () => {
 })
 
 onMounted(() => {
-  byteDivs.forEach(byteDiv => inputGridRoot.value?.appendChild(byteDiv))
-  targetDivs.forEach(targetDiv => animationRoot.value?.appendChild(targetDiv))
+  byteDivs.forEach(div => inputGridRoot.value?.appendChild(div))
+  targetDivs.forEach(div => animationRoot.value?.appendChild(div))
 
   createAnimation()
 })

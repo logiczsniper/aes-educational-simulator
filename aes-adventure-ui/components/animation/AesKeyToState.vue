@@ -24,8 +24,8 @@ const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(by
 
 
 onMounted(() => {
-  byteDivs.forEach(byteDiv => inputGridRoot.value?.appendChild(byteDiv))
-  targetDivs.forEach(targetDiv => animationRoot.value?.appendChild(targetDiv))
+  byteDivs.forEach(div => inputGridRoot.value?.appendChild(div))
+  targetDivs.forEach(div => animationRoot.value?.appendChild(div))
 
   for (let row = 0; row < 4; row++) {
     for (let column = 0; column < columnCount.value; column++) {

@@ -196,7 +196,7 @@ const roundIndex = computed(() => Math.min(
                   :title="t('simulator.add-words')"
                   :tutorial-key="TutorialKey.Test"
                 >
-                  <AnimationAesAnimationFrame>
+                  <AnimationAesAnimationFrame :timeline-key="keyExpansionState.roundIndex">
                     <template #animation="{ timeline }">
                       add words animation
                     </template>
@@ -222,7 +222,7 @@ const roundIndex = computed(() => Math.min(
                   :title="`${t('simulator.round')} <span class='math'>𝑔</span>-${t('simulator.function')}`"
                   :tutorial-key="TutorialKey.Test"
                 >
-                  <AnimationAesAnimationFrame>
+                  <AnimationAesAnimationFrame :timeline-key="keyExpansionState.roundIndex">
                     <template #animation="{ timeline }">
                       <AnimationAesGFn
                         :timeline="timeline"
@@ -290,7 +290,10 @@ const roundIndex = computed(() => Math.min(
                   <p v-if="noHFunction">
                     {{ noHFunctionMessage }}
                   </p>
-                  <AnimationAesAnimationFrame v-else>
+                  <AnimationAesAnimationFrame
+                    v-else
+                    :timeline-key="keyExpansionState.roundIndex"
+                  >
                     <template #animation="{ timeline }">
                       H fn
                     </template>
@@ -488,5 +491,4 @@ const roundIndex = computed(() => Math.min(
     gap: 16px;
     align-items: center;
   }
-}
-</style>
+}</style>

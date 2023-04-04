@@ -21,8 +21,8 @@ const byteDivs = hexToDivs(input.value)
 const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(byteDivs, `transpose--${props.id}`)
 
 onMounted(() => {
-  byteDivs.forEach(byteDiv => inputGridRoot.value?.appendChild(byteDiv))
-  targetDivs.forEach(targetDiv => animationRoot.value?.appendChild(targetDiv))
+  byteDivs.forEach(div => inputGridRoot.value?.appendChild(div))
+  targetDivs.forEach(div => animationRoot.value?.appendChild(div))
 
   const rowSize = DIV_HEIGHT + ROW_GAP + 1
   const columnSize = DIV_WIDTH + COL_GAP - 1

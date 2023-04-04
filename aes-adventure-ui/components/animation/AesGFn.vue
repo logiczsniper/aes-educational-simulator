@@ -6,6 +6,7 @@ import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 import { AesiExpandKeyRoundStepRoundGFn } from '~~/utils/aesi/aesi.types';
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
 import { S_BOX } from '~~/utils/aesi/core/constants';
+import { updateDivs } from '~~/utils/animation/updateDivs';
 
 const props = defineProps<{
   timeline: AnimeTimelineInstance,
@@ -37,31 +38,16 @@ const { targetDivs: subOutputTargetDivs, targetCoordsClass: subOutputTargetCoord
 const shiftOutputDivs = hexToDivs(shiftOutput.value)
 const { targetDivs: shiftOutputTargetDivs } = addAnimationClasses(shiftOutputDivs, 'g-fn-shift-o')
 
-const xorSymbolClass = `g-fn-xor`
+const xorSymbolClass = 'gFnXor'
 const xorSymbolTarget = `.${xorSymbolClass}`
 
-const rconNewByteClass = 'g-fn-rcon-new-byte'
+const rconNewByteClass = 'gFnRconNewByte'
 const rconNewByteTarget = `.${rconNewByteClass}`
 
-const inputGridRootClass = 'g-fn-input-grid-root'
+const inputGridRootClass = 'gFnInputGridRoot'
 const inputGridRootTarget = `.${inputGridRootClass}`
 
-onMounted(() => {
-  byteDivs.forEach(byteDiv => inputGridRoot.value?.appendChild(byteDiv))
-  targetDivs.forEach(targetDiv => animationRoot.value?.appendChild(targetDiv))
-  shiftOutputTargetDivs.forEach(byteDiv => shiftAnimationRoot.value?.appendChild(byteDiv))
-  sboxTargetDivs.forEach((div, index) => {
-    if (index % 16 === 0) {
-      const counterDiv = document.createElement('div')
-      counterDiv.classList.add('code', 'leftDiv')
-      counterDiv.textContent = (index / 16).toString(16)
-
-      sboxAnimationRoot.value?.appendChild(counterDiv)
-    }
-    sboxAnimationRoot.value?.appendChild(div)
-  })
-  subOutputTargetDivs.forEach(div => outputAnimationRoot.value?.appendChild(div))
-
+const createAnimation = () => {
   for (let column = 0; column < 4; column++) {
     props.timeline.add({
       targets: targetColumnClass(column),
@@ -83,7 +69,6 @@ onMounted(() => {
 
     const firstChildHex = parseInt(firstChildContent, 16)
     const secondChildHex = parseInt(secondChildContent, 16)
-
     props.timeline.add({
       targets: targetChildClass(0, column, 1),
       translateX: 140 - column * columnSize,
@@ -116,7 +101,6 @@ onMounted(() => {
   }
 
   const initialTranslateX = -28
-
   props.timeline.add({
     targets: subOutputTargetDivs,
     translateX: initialTranslateX,
@@ -141,7 +125,7 @@ onMounted(() => {
     opacity: 0
   }, '+=400')
 
-  // TODO: optimise
+  // TODO: numbers are wrong in later stages; investigate after optimise
 
   props.timeline.add({
     targets: subOutputTargetColumnClass(2),
@@ -162,6 +146,38 @@ onMounted(() => {
     targets: [rconNewByteTarget, subOutputTargetDivs],
     color: '#745CD0'
   })
+}
+
+watch([input, shiftOutput, subOutput], ([newInput, newShiftOutput, newSubOutput]) => {
+  updateDivs(byteDivs, newInput)
+  updateDivs(targetDivs, newInput)
+  updateDivs(shiftOutputDivs, newShiftOutput)
+  updateDivs(shiftOutputTargetDivs, newShiftOutput)
+  updateDivs(subOutputDivs, newSubOutput)
+  updateDivs(subOutputTargetDivs, newSubOutput)
+})
+
+watch(() => props.timeline, () => {
+  createAnimation()
+})
+
+onMounted(() => {
+  byteDivs.forEach(div => inputGridRoot.value?.appendChild(div))
+  targetDivs.forEach(div => animationRoot.value?.appendChild(div))
+  shiftOutputTargetDivs.forEach(div => shiftAnimationRoot.value?.appendChild(div))
+  sboxTargetDivs.forEach((div, index) => {
+    if (index % 16 === 0) {
+      const counterDiv = document.createElement('div')
+      counterDiv.classList.add('code', 'leftDiv')
+      counterDiv.textContent = (index / 16).toString(16)
+
+      sboxAnimationRoot.value?.appendChild(counterDiv)
+    }
+    sboxAnimationRoot.value?.appendChild(div)
+  })
+  subOutputTargetDivs.forEach(div => outputAnimationRoot.value?.appendChild(div))
+
+  createAnimation()
 })
 </script>
 
@@ -251,11 +267,11 @@ onMounted(() => {
     opacity: 0;
   }
 
-  .g-fn-input-grid-root {
+  .gFnInputGridRoot {
     opacity: 0;
   }
 
-  .g-fn-rcon-new-byte {
+  .gFnRconNewByte {
     position: absolute;
     top: 0;
     left: 152px;
