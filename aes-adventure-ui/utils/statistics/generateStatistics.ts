@@ -1,5 +1,5 @@
 import { AesiOutput } from "../aesi/aesi.types";
-import { computeConfusion, computeConfusionPhi } from "./computeConfusion";
+import { computeConfusion } from "./computeConfusion";
 import { computeDiffusion, computeDiffusionInitialWork } from "./computeDiffusion";
 import { hexToBinary } from "./hexToBinary";
 

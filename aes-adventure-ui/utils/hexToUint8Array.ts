@@ -1,0 +1,1 @@
+export const hexToUint8Array = (hex: string) => Uint8Array.from(hex.match(/.{1,2}/g)?.map(byte => parseInt(byte, 16)) ?? [])

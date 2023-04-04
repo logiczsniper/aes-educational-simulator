@@ -1,4 +1,4 @@
-import { AesiDefaultConfig } from "~~/utils/aesi/aesi.types"
+import { AesiDefaultConfig } from "~~/utils/aesi/aesi.types";
 
 export const useConfig = defineStore(getKey`config`, () => {
   const { t } = useI18n();

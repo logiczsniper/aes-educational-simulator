@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { AnimeTimelineInstance } from 'animejs';
+import { AesiKeySize } from '~~/utils/aesi/aesi.types';
+import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 import { COL_GAP, DIV_HEIGHT, DIV_WIDTH, ROW_GAP } from '~~/utils/animation/constants';
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
-import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
-import { AesiKeySize } from '~~/utils/aesi/aesi.types';
 
 const props = defineProps<{
   timeline: AnimeTimelineInstance,

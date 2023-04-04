@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { AesiRoundStepAddKey, AesiRoundStepType } from '~~/utils/aesi/aesi.types';
-import { S_BOX_INVERSE } from '~~/utils/aesi/core/constants';
-import { A_INVERSE } from '~~/utils/aesi/core/constants';
+import { A_INVERSE, S_BOX_INVERSE } from '~~/utils/aesi/core/constants';
 
 const { t } = useI18n();
 

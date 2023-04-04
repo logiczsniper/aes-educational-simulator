@@ -1,5 +1,6 @@
 import { aesi } from "~~/utils/aesi"
-import { AesiExpandKeyOutput, AesiExpandKeyRoundStepAddWords, AesiExpandKeyRoundStepType, AesiKeySize, AesiOutput, AesiRoundStepType } from "~~/utils/aesi/aesi.types"
+import { AesiExpandKeyOutput, AesiExpandKeyRoundStepType, AesiKeySize } from "~~/utils/aesi/aesi.types"
+import { hexToUint8Array } from "~~/utils/hexToUint8Array"
 import '~~/utils/parsingPatches'
 
 export enum KeyExpansionStage {
@@ -10,8 +11,6 @@ export enum KeyExpansionStage {
   Output,
 }
 
-const parseInputValue = (hex: string) => Uint8Array.from(hex.match(/.{1,2}/g)?.map(byte => parseInt(byte, 16)) ?? [])
-
 export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () => {
   const rawKey = ref('')
   const keySize = ref<AesiKeySize>(128)
@@ -20,21 +19,9 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
   const roundIndex = ref(0)
   const stepIndex = ref(0)
 
-  const key = computed(() => parseInputValue(rawKey.value))
+  const key = computed(() => hexToUint8Array(rawKey.value))
   const round = computed(() => output.value?.rounds.at(roundIndex.value))
-  const step = computed(() => {
-    const bareStep = round.value?.steps.at(stepIndex.value)
-    if (!bareStep) return;
-
-    const addStep = round.value?.steps.find(({ type }) => AesiExpandKeyRoundStepType.AddWords === type)
-    if (!addStep) return;
-
-    return {
-      inputWords: (addStep as AesiExpandKeyRoundStepAddWords).inputWords,
-      outputWords: (addStep as AesiExpandKeyRoundStepAddWords).outputWords,
-      ...bareStep,
-    }
-  })
+  const step = computed(() => round.value?.steps.at(stepIndex.value))
   const getStep = (stepType: AesiExpandKeyRoundStepType) => round.value?.steps.find(({ type }) => type === stepType)
   const isLastStep = computed(() =>
     (roundIndex.value === (output.value?.rounds.length ?? 0) - 1) &&
@@ -42,7 +29,7 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
   )
   const isLastRound = computed(() => (roundIndex.value === (output.value?.rounds.length ?? 0) - 1))
   const isSecondToLastRound = computed(() => (roundIndex.value === (output.value?.rounds.length ?? 0) - 2))
-  // const outputString = computed(() => Array.from(output.value?.block ?? []).map(formatHex).join('') ?? '')
+  // const outputString = computed(() => Array.from(output.value?.block ?? []).map(hexToString).join('') ?? '')
   const roundCount = computed(() => output.value?.rounds.length ?? 0)
 
   const keysGeneratedSoFar = computed(() => {

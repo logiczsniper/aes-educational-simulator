@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Logo from './Logo.vue'
+import Logo from './Logo.vue';
 
 const { t } = useI18n();
 </script>
@@ -23,7 +23,6 @@ const { t } = useI18n();
       {{ t("infographic") }}
     </v-btn>
   </a>
-
 </template>
 
 <style scoped lang="scss">

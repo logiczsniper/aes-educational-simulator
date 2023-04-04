@@ -93,6 +93,7 @@ export interface AesiExpandKeyRoundStepAddWords {
 
 export interface AesiExpandKeyRoundStepRoundGFn {
   type: AesiExpandKeyRoundStepType.RoundGFn,
+  inputWord: Uint8Array;
   rotateWordOutput: Uint8Array;
   subWordOutput: Uint8Array;
   addRoundConstantOutput: {
@@ -103,6 +104,7 @@ export interface AesiExpandKeyRoundStepRoundGFn {
 }
 
 export interface AesiExpandKeyRoundStepRoundHFn {
-  type: AesiExpandKeyRoundStepType.RoundHFn,
+  type: AesiExpandKeyRoundStepType.RoundHFn;
+  inputWord: Uint8Array;
   subWordOutput: Uint8Array;
 }

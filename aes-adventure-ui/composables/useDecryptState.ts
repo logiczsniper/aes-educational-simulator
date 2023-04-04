@@ -1,5 +1,6 @@
 import { aesi } from "~~/utils/aesi"
 import { AesiKeySize, AesiOutput, AesiRoundStepType } from "~~/utils/aesi/aesi.types"
+import { hexToUint8Array } from "~~/utils/hexToUint8Array"
 import '~~/utils/parsingPatches'
 import { AesiStatistics, generateDecryptStatistics } from "~~/utils/statistics/generateStatistics"
 
@@ -12,8 +13,6 @@ export enum DecryptStage {
   Output,
 }
 
-const parseInputValue = (hex: string) => Uint8Array.from(hex.match(/.{1,2}/g)?.map(byte => parseInt(byte, 16)) ?? [])
-
 export const useDecryptState = defineStore(getKey`decryptState`, () => {
   const rawCiphertext = ref('')
   const rawKey = ref('')
@@ -25,8 +24,8 @@ export const useDecryptState = defineStore(getKey`decryptState`, () => {
   const showStats = ref(false)
   const stats = ref<AesiStatistics>()
 
-  const ciphertext = computed(() => parseInputValue(rawCiphertext.value))
-  const key = computed(() => parseInputValue(rawKey.value))
+  const ciphertext = computed(() => hexToUint8Array(rawCiphertext.value))
+  const key = computed(() => hexToUint8Array(rawKey.value))
   const round = computed(() => output.value?.rounds.at(roundIndex.value))
   const step = computed(() => round.value?.steps.at(stepIndex.value))
   const isLastStep = computed(() =>
@@ -36,7 +35,7 @@ export const useDecryptState = defineStore(getKey`decryptState`, () => {
   const isFirstRound = computed(() => roundIndex.value === 0)
   const isLastRound = computed(() => (roundIndex.value === (output.value?.rounds.length ?? 0) - 1))
   const isSecondToLastRound = computed(() => (roundIndex.value === (output.value?.rounds.length ?? 0) - 2))
-  const outputString = computed(() => Array.from(output.value?.block ?? []).map(formatHex).join('') ?? '')
+  const outputString = computed(() => Array.from(output.value?.block ?? []).map(hexToString).join('') ?? '')
   const roundCount = computed(() => output.value?.rounds.length ?? 0)
 
   const getStep = (stepType: AesiRoundStepType) => round.value?.steps.find(({ type }) => type === stepType)

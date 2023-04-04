@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { AnimeTimelineInstance } from 'animejs';
-import { hexToDivs } from '~~/utils/animation/hexToDivs';
-import { updateDivs } from '~~/utils/animation/updateDivs'
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 import { COL_GAP, DIV_WIDTH } from '~~/utils/animation/constants';
+import { hexToDivs } from '~~/utils/animation/hexToDivs';
+import { updateDivs } from '~~/utils/animation/updateDivs';
 
 const props = defineProps<{
   timeline: AnimeTimelineInstance,

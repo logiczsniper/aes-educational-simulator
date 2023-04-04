@@ -27,6 +27,8 @@ export const expandKey = (key: Uint8Array, roundCount: number, keyCount: number)
     const shouldInvokeG = i % keyCount === 0
     const shouldInvokeH = keyCount > 6 && i % keyCount === 4
     if (shouldInvokeG) {
+      const gInput = Uint8Array.from(tmp)
+
       subWord(tmp);
       const subWordOutput = Uint8Array.from(tmp)
 
@@ -42,6 +44,7 @@ export const expandKey = (key: Uint8Array, roundCount: number, keyCount: number)
 
       thisRoundFunctions.push({
         type: AesiExpandKeyRoundStepType.RoundGFn,
+        inputWord: gInput,
         rotateWordOutput,
         subWordOutput,
         addRoundConstantOutput: {
@@ -50,12 +53,14 @@ export const expandKey = (key: Uint8Array, roundCount: number, keyCount: number)
         }
       })
     } else if (shouldInvokeH) {
+      const hInput = Uint8Array.from(tmp)
       subWord(tmp);
       const subWordOutput = Uint8Array.from(tmp)
 
       thisRoundFunctions.push({
         type: AesiExpandKeyRoundStepType.RoundHFn,
         subWordOutput,
+        inputWord: hInput,
       })
     }
 

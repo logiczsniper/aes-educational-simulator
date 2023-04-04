@@ -1,0 +1,1 @@
+export const hexToString = (hex: number) => hex.toString(16).padStart(2, '0')

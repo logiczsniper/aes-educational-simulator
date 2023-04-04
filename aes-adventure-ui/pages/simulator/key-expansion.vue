@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AesiExpandKeyRoundStepRoundGFn, AesiExpandKeyRoundStepType } from '~~/utils/aesi/aesi.types';
+import { AesiExpandKeyRoundStepRoundGFn, AesiExpandKeyRoundStepRoundHFn, AesiExpandKeyRoundStepType } from '~~/utils/aesi/aesi.types';
 
 const { t } = useI18n();
 
@@ -226,7 +226,6 @@ const roundIndex = computed(() => Math.min(
                     <template #animation="{ timeline }">
                       <AnimationAesGFn
                         :timeline="timeline"
-                        :input="keyExpansionState.step?.inputWords"
                         :step="keyExpansionState.getStep(AesiExpandKeyRoundStepType.RoundGFn) as AesiExpandKeyRoundStepRoundGFn"
                       >
                       </AnimationAesGFn>
@@ -238,7 +237,7 @@ const roundIndex = computed(() => Math.min(
                       <template v-if="noHFunction">
                         <v-btn
                           v-if="!keyExpansionState.isLastStep && !keyExpansionState.isSecondToLastRound"
-                          :variant="timeline.currentTime > 9_500 ? 'outlined' : 'plain'"
+                          :variant="timeline.completed ? 'outlined' : 'plain'"
                           prepend-icon="mdi-arrow-u-down-right"
                           color="primary"
                           @click="(_: Event) => {
@@ -247,7 +246,7 @@ const roundIndex = computed(() => Math.min(
                         >{{ t('simulator.skip') }}</v-btn>
                         <v-btn
                           v-if="!keyExpansionState.isLastStep"
-                          :variant="timeline.currentTime > 9_500 ? 'flat' : 'plain'"
+                          :variant="timeline.completed ? 'flat' : 'plain'"
                           prepend-icon="mdi-rotate-right"
                           color="primary"
                           @click="(_: Event) => {
@@ -256,7 +255,7 @@ const roundIndex = computed(() => Math.min(
                         >{{ t('simulator.next-round') }}</v-btn>
                         <v-btn
                           v-if="keyExpansionState.isLastStep && keyExpansionState.stage === KeyExpansionStage.Rounds"
-                          :variant="timeline.currentTime > 9_500 ? 'flat' : 'plain'"
+                          :variant="timeline.completed ? 'flat' : 'plain'"
                           prepend-icon="mdi-flag-checkered"
                           color="primary"
                           @click="() => {
@@ -268,7 +267,7 @@ const roundIndex = computed(() => Math.min(
                       </template>
                       <template v-else>
                         <v-btn
-                          :variant="timeline.currentTime > 20_000 ? 'flat' : 'plain'"
+                          :variant="timeline.completed ? 'flat' : 'plain'"
                           prepend-icon="mdi-redo"
                           color="primary"
                           @click="() => {
@@ -287,15 +286,21 @@ const roundIndex = computed(() => Math.min(
                   :title="`${t('simulator.round')} <span class='math'>ℎ</span>-${t('simulator.function')}`"
                   :tutorial-key="TutorialKey.Test"
                 >
-                  <p v-if="noHFunction">
-                    {{ noHFunctionMessage }}
+                  <p
+                    v-if="noHFunction"
+                    v-html="noHFunctionMessage"
+                  >
                   </p>
                   <AnimationAesAnimationFrame
                     v-else
                     :timeline-key="keyExpansionState.roundIndex"
                   >
                     <template #animation="{ timeline }">
-                      H fn
+                      <AnimationAesHFn
+                        :timeline="timeline"
+                        :step="keyExpansionState.getStep(AesiExpandKeyRoundStepType.RoundHFn) as AesiExpandKeyRoundStepRoundHFn"
+                      >
+                      </AnimationAesHFn>
                     </template>
                     <template
                       #prependControls="{ timeline, restartAndPause }"
@@ -491,4 +496,5 @@ const roundIndex = computed(() => Math.min(
     gap: 16px;
     align-items: center;
   }
-}</style>
+}
+</style>

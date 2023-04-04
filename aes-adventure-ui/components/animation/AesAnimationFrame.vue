@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { AnimeTimelineAnimParams, AnimeTimelineInstance } from 'animejs';
 import anime from 'animejs/lib/anime.es.js';
-import { PlaybackSpeed } from '~~/composables/usePlaybackSpeed'
+import { PlaybackSpeed } from '~~/composables/usePlaybackSpeed';
 
 const props = defineProps<{
   timelineParams?: AnimeTimelineAnimParams,
