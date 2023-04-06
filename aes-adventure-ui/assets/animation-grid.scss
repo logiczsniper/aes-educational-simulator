@@ -55,6 +55,7 @@
 
 .animationGridKey {
   @extend .baseAnimationGrid;
+  // column-gap: 28px;
 
   grid-template-rows: repeat(4, min-content);
 
@@ -68,6 +69,10 @@
 
   &.large {
     grid-template-columns: repeat(8, min-content);
+  }
+
+  & div {
+    display: flex;
   }
 }
 

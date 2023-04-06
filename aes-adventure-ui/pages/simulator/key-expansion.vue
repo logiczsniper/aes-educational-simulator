@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AesiExpandKeyRoundStepRoundGFn, AesiExpandKeyRoundStepRoundHFn, AesiExpandKeyRoundStepType } from '~~/utils/aesi/aesi.types';
+import { AesiExpandKeyRoundStepAddWords, AesiExpandKeyRoundStepRoundGFn, AesiExpandKeyRoundStepRoundHFn, AesiExpandKeyRoundStepType } from '~~/utils/aesi/aesi.types';
 
 const { t } = useI18n();
 
@@ -196,9 +196,16 @@ const roundIndex = computed(() => Math.min(
                   :title="t('simulator.add-words')"
                   :tutorial-key="TutorialKey.Test"
                 >
+                  {{ keyExpansionState.getStep(AesiExpandKeyRoundStepType.AddWords) as AesiExpandKeyRoundStepAddWords
+                  }}
                   <AnimationAesAnimationFrame :timeline-key="keyExpansionState.roundIndex">
                     <template #animation="{ timeline }">
-                      add words animation
+                      <AnimationAesAddWords
+                        :timeline="timeline"
+                        :key-size="keyExpansionState.keySize"
+                        :step="(keyExpansionState.getStep(AesiExpandKeyRoundStepType.AddWords) as AesiExpandKeyRoundStepAddWords)"
+                      >
+                      </AnimationAesAddWords>
                     </template>
                     <template
                       #prependControls="{ timeline, restartAndPause }"
@@ -226,7 +233,7 @@ const roundIndex = computed(() => Math.min(
                     <template #animation="{ timeline }">
                       <AnimationAesGFn
                         :timeline="timeline"
-                        :step="keyExpansionState.getStep(AesiExpandKeyRoundStepType.RoundGFn) as AesiExpandKeyRoundStepRoundGFn"
+                        :step="(keyExpansionState.getStep(AesiExpandKeyRoundStepType.RoundGFn) as AesiExpandKeyRoundStepRoundGFn)"
                       >
                       </AnimationAesGFn>
                     </template>
@@ -298,7 +305,7 @@ const roundIndex = computed(() => Math.min(
                     <template #animation="{ timeline }">
                       <AnimationAesHFn
                         :timeline="timeline"
-                        :step="keyExpansionState.getStep(AesiExpandKeyRoundStepType.RoundHFn) as AesiExpandKeyRoundStepRoundHFn"
+                        :step="(keyExpansionState.getStep(AesiExpandKeyRoundStepType.RoundHFn) as AesiExpandKeyRoundStepRoundHFn)"
                       >
                       </AnimationAesHFn>
                     </template>
