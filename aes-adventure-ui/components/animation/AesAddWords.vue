@@ -20,12 +20,16 @@ const outputAnimationRoot = ref<HTMLElement>()
 const input = computed(() => props.step?.inputWords || [])
 const output = computed(() => props.step?.outputWords || [])
 const columnCount = computed(() => props.keySize / 32)
+const hasHFn = computed(() => columnCount.value === 8)
 
 const inputWordDivs = wordsToDivs(input.value)
 const { targetDivs, targetAllClass, targetColumnClass } = addAnimationClasses(inputWordDivs, `add-words-i`, columnCount.value)
 
 const outputWordDivs = wordsToDivs(output.value)
 const { targetDivs: outputTargetDivs, targetAllClass: outputTargetAllClass, targetColumnClass: targetOutputColumnClass } = addAnimationClasses(outputWordDivs, `add-words-o`, columnCount.value)
+
+const hFnInput = computed(() => output.value.at(3))
+const hFnInputString = computed(() => Array.from(hFnInput.value || [])?.map(hexToString).join(""))
 
 const xorSymbolClass = 'addWordsXor'
 const xorSymbolTarget = `.${xorSymbolClass}`
@@ -35,6 +39,9 @@ const gFnTarget = `.${gFnClass}`
 
 const hFnClass = 'hFnBox'
 const hFnTarget = `.${hFnClass}`
+
+const hFnInputClass = 'hFnInput'
+const hFnInputTarget = `.${hFnInputClass}`
 
 onMounted(() => {
   inputWordDivs.forEach(div => inputGridRoot.value?.appendChild(div))
@@ -49,80 +56,93 @@ onMounted(() => {
     translateX: -(76.5 * (columnCount.value) - 32.5),
     translateY
   }).add({
-    targets: [gFnTarget, `${xorSymbolTarget}-0`],
+    targets: gFnTarget,
     opacity: 1,
-  }).add({
+  }, '-=150').add({
+    targets: `${xorSymbolTarget}-0`,
+    opacity: 1,
+  }, '+=1000').add({
     targets: targetColumnClass(0),
     translateX: 123,
     translateY
-  }, '-=800').add({
+  }, '-=500').add({
     targets: targetOutputColumnClass(0),
     opacity: 1,
-  })
+  }, '+=1000')
 
-  const maxFirstHalfColumns = columnCount.value === 8 ? 4 : columnCount.value
+  const maxFirstHalfColumns = hasHFn.value ? 4 : columnCount.value
   for (let column = 1; column < maxFirstHalfColumns; column++) {
     firstHalfTargets.push(targetColumnClass(column), `${xorSymbolTarget}-${column}`)
 
     props.timeline.add({
+      targets: `${xorSymbolTarget}-${column}`,
+      translateX: 102.2 * column,
+      duration: 1,
+    }).add({
+      targets: `${xorSymbolTarget}-${column}`,
+      opacity: 1,
+    }, '+=1000').add({
       targets: targetColumnClass(column),
       translateX: 123 + 17.5 * column,
       translateY
-    }).add({
-      targets: `${xorSymbolTarget}-${column}`,
-      translateX: 102.8 * column,
-      duration: 100,
-    }, '-=50').add({
-      targets: `${xorSymbolTarget}-${column}`,
-      opacity: 1,
-    }).add({
+    }, '-=500').add({
       targets: targetOutputColumnClass(column),
       opacity: 1,
     })
   }
 
-
   props.timeline.add({
     targets: firstHalfTargets,
     opacity: 0,
-  })
+  }, '+=1200').add({
+    targets: hFnInputTarget,
+    opacity: 1
+  }, '-=700')
 
   // Reset last word for usage in its own computation in second half
   props.timeline.add({
     targets: targetColumnClass(columnCount.value - 1),
     translateX: 0,
     translateY: 0
-  })
-  props.timeline.add({
+  }).add({
     targets: targetColumnClass(columnCount.value - 1),
     opacity: 1,
-  })
-
-  props.timeline.add({
+  }).add({
     targets: hFnTarget,
     opacity: 1
-  })
+  }, '-=1200')
 
-  // TODO: make h-fn input appear in between brackets
-  // TODO: continue addition with the rest of the input words
+  const secondHalfTargets = [hFnTarget, hFnInputTarget]
+  for (let column = maxFirstHalfColumns; column < columnCount.value; column++) {
+    secondHalfTargets.push(targetColumnClass(column), `${xorSymbolTarget}-${column}`)
+
+    const columnFactor = column - maxFirstHalfColumns
+    props.timeline.add({
+      targets: `${xorSymbolTarget}-${column}`,
+      translateX: 101.4 * columnFactor,
+      duration: 1,
+    }).add({
+      targets: `${xorSymbolTarget}-${column}`,
+      opacity: 1,
+    }, '+=1000').add({
+      targets: targetColumnClass(column),
+      translateX: -216 + 16.5 * columnFactor,
+      translateY
+    }, '-=500').add({
+      targets: targetOutputColumnClass(column),
+      opacity: 1,
+    })
+  }
+
+  props.timeline.add({
+    targets: secondHalfTargets,
+    opacity: 0,
+  }, '+=900')
+
   // TODO: make work for other key sizes
+  // TODO: adjust timings
   // TODO: optimize
   // TODO: double check numbers
-
-  // for (let column = 0; column < columnCount.value; column++) {
-  //   props.timeline.add({
-  //     targets: targetColumnClass(column),
-  //     translateY: 40,
-  //     translateX: 86,
-  //     delay: anime.stagger(18, { direction: 'reverse' }),
-  //   }, column === 0 ? undefined : '-=500')
-  // }
-
-  // for (let row = 0; row < 4; row++) {
-  //   for (let column = 0; column < columnCount.value; column++) {
-
-  //   }
-  // }
 
   props.timeline.add({
     targets: outputTargetAllClass,
@@ -158,6 +178,10 @@ onMounted(() => {
 
     <div class="intermediate">
       <span
+        class="code"
+        :class="hFnInputClass"
+      >{{ hFnInputString }}</span>
+      <span
         class='math'
         :class="hFnClass"
       >ℎ</span>
@@ -166,7 +190,7 @@ onMounted(() => {
         :class="gFnClass"
       >𝑔</span>
       <span
-        v-for="i in 4"
+        v-for="i in 8"
         class="addKeyXorSymbol absolute"
         :class="{
           [xorSymbolClass]: true,
@@ -204,8 +228,15 @@ onMounted(() => {
     position: relative;
     height: 24px;
 
+    .hFnInput {
+      margin-left: 15px;
+      top: 2px;
+      position: absolute;
+      opacity: 0;
+    }
+
     .addKeyXorSymbol {
-      left: 102px;
+      left: 103px;
       opacity: 0;
     }
 
@@ -229,6 +260,7 @@ onMounted(() => {
       &::after {
         content: "(\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0)";
         position: absolute;
+        font-size: 16px;
       }
     }
 
@@ -236,8 +268,14 @@ onMounted(() => {
       left: 8px;
     }
 
+    .hFnBox::after {
+      top: -2px;
+    }
+
     .hFnBox {
-      margin-left: -2px;
+      // margin-left: -2px;
+      font-size: 15px;
+      top: 2px;
     }
   }
 

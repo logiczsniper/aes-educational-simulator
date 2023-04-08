@@ -196,8 +196,6 @@ const roundIndex = computed(() => Math.min(
                   :title="t('simulator.add-words')"
                   :tutorial-key="TutorialKey.Test"
                 >
-                  {{ keyExpansionState.getStep(AesiExpandKeyRoundStepType.AddWords) as AesiExpandKeyRoundStepAddWords
-                  }}
                   <AnimationAesAnimationFrame :timeline-key="keyExpansionState.roundIndex">
                     <template #animation="{ timeline }">
                       <AnimationAesAddWords
