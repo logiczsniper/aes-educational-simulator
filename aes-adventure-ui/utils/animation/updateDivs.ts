@@ -7,6 +7,7 @@ export const updateDivs = (divs: HTMLDivElement[], newHex: Array<number> | Uint8
 
     const [firstNibble, secondNibble] = hexToString(thisByte);
 
+    div.style.transform = ''
     if (div.firstChild) div.firstChild.textContent = firstNibble
     if (div.lastChild) div.lastChild.textContent = secondNibble
   })

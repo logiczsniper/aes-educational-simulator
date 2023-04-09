@@ -3,11 +3,13 @@ import type { AnimeTimelineInstance } from 'animejs';
 import { AesiExpandKeyRoundStepAddWords, AesiKeySize } from '~~/utils/aesi/aesi.types';
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 import { COL_GAP } from '~~/utils/animation/constants';
+import { updateWordDivs } from '~~/utils/animation/updateWordDivs';
 import { wordsToDivs } from '~~/utils/animation/wordsToDivs';
 
 const props = defineProps<{
   timeline: AnimeTimelineInstance,
   keySize: AesiKeySize,
+  isLastRound: boolean,
   input?: Uint8Array,
   step?: AesiExpandKeyRoundStepAddWords,
 }>();
@@ -20,14 +22,23 @@ const outputAnimationRoot = ref<HTMLElement>()
 
 const input = computed(() => props.step?.inputWords || [])
 const output = computed(() => props.step?.outputWords || [])
-const columnCount = computed(() => props.keySize / 32)
+const standardRoundColumnCount = computed(() => props.keySize / 32)
+const columnCount = computed(() => {
+  switch (standardRoundColumnCount.value) {
+    case 4: return standardRoundColumnCount.value
+    default: return props.isLastRound
+      ? 4
+      : standardRoundColumnCount.value
+  }
+})
+
 const hasHFn = computed(() => columnCount.value === 8)
 
 const inputWordDivs = wordsToDivs(input.value)
-const { targetDivs, targetColumnClass } = addAnimationClasses(inputWordDivs, `add-words-i`, columnCount.value)
+const { targetDivs, targetColumnClass } = addAnimationClasses(inputWordDivs, `add-words-i`, standardRoundColumnCount.value)
 
 const outputWordDivs = wordsToDivs(output.value)
-const { targetDivs: outputTargetDivs, targetAllClass: outputTargetAllClass, targetColumnClass: targetOutputColumnClass } = addAnimationClasses(outputWordDivs, `add-words-o`, columnCount.value)
+const { targetDivs: outputTargetDivs, targetAllClass: outputTargetAllClass, targetColumnClass: targetOutputColumnClass } = addAnimationClasses(outputWordDivs, `add-words-o`, standardRoundColumnCount.value)
 
 const gFnInput = computed(() => input.value.at(-1))
 const gFnInputString = computed(() => Array.from(gFnInput.value || [])?.map(hexToString).join(""))
@@ -50,14 +61,10 @@ const hFnInputTarget = `.${hFnInputClass}`
 const gFnInputClass = 'gFnInput'
 const gFnInputTarget = `.${gFnInputClass}`
 
-onMounted(() => {
-  inputWordDivs.forEach(div => inputGridRoot.value?.appendChild(div))
-  outputTargetDivs.forEach(div => outputAnimationRoot.value?.appendChild(div))
-  targetDivs.forEach(div => animationRoot.value?.appendChild(div))
-
+const createAnimation = () => {
   const translateY = 71
-  const firstHalfTargets = [targetColumnClass(columnCount.value - 1), gFnTarget, `${xorSymbolTarget}-0`, targetColumnClass(0)]
-  const offset = COL_GAP * (8 - columnCount.value)
+  const firstHalfTargets = [targetColumnClass(standardRoundColumnCount.value - 1), gFnTarget, `${xorSymbolTarget}-0`, targetColumnClass(0)]
+  const offset = COL_GAP * (8 - standardRoundColumnCount.value)
 
   if (columnCount.value === 6) {
     props.timeline.add({
@@ -67,9 +74,17 @@ onMounted(() => {
     })
   }
 
+  if (standardRoundColumnCount.value === 4) {
+    props.timeline.add({
+      targets: gFnInputTarget,
+      translateY: -1.5,
+      duration: 1
+    })
+  }
+
   props.timeline.add({
-    targets: targetColumnClass(columnCount.value - 1),
-    translateX: -(76.5 * (columnCount.value) - 32.5) + offset + (columnCount.value === 4 ? 2 : 0),
+    targets: targetColumnClass(standardRoundColumnCount.value - 1),
+    translateX: -(76.5 * (standardRoundColumnCount.value) - 32.5) + offset + (standardRoundColumnCount.value === 4 ? 2 : 0),
     translateY
   }).add({
     targets: gFnTarget,
@@ -88,7 +103,7 @@ onMounted(() => {
 
   if (!hasHFn.value) {
     props.timeline.add({
-      targets: targetColumnClass(columnCount.value - 1),
+      targets: targetColumnClass(standardRoundColumnCount.value - 1),
       opacity: 0,
       duration: 100,
     }).add({
@@ -96,12 +111,12 @@ onMounted(() => {
       opacity: 1,
       duration: 100,
     }, '-=100').add({
-      targets: targetColumnClass(columnCount.value - 1),
+      targets: targetColumnClass(standardRoundColumnCount.value - 1),
       translateX: 0,
       translateY: 0,
       duration: 1,
     }).add({
-      targets: targetColumnClass(columnCount.value - 1),
+      targets: targetColumnClass(standardRoundColumnCount.value - 1),
       opacity: 1,
     })
   }
@@ -189,6 +204,24 @@ onMounted(() => {
     targets: outputTargetAllClass,
     color: '#745CD0'
   })
+}
+
+watch([input, output], ([newInput, newOutput]) => {
+  updateWordDivs(inputWordDivs, newInput)
+  updateWordDivs(targetDivs, newInput)
+  updateWordDivs(outputTargetDivs, newOutput)
+})
+
+watch(() => props.timeline, () => {
+  createAnimation()
+})
+
+onMounted(() => {
+  inputWordDivs.forEach(div => inputGridRoot.value?.appendChild(div))
+  outputTargetDivs.forEach(div => outputAnimationRoot.value?.appendChild(div))
+  targetDivs.forEach(div => animationRoot.value?.appendChild(div))
+
+  createAnimation()
 })
 </script>
 
@@ -200,18 +233,18 @@ onMounted(() => {
         ref="inputGridRoot"
         class="animationGridKey absolute"
         :class="{
-          'small': columnCount === 4,
-          'medium': columnCount === 6,
-          'large': columnCount === 8,
+          'small': standardRoundColumnCount === 4,
+          'medium': standardRoundColumnCount === 6,
+          'large': standardRoundColumnCount === 8,
         }"
       ></div>
       <figure
         ref="animationRoot"
         class="animationGridKey"
         :class="{
-          'small': columnCount === 4,
-          'medium': columnCount === 6,
-          'large': columnCount === 8,
+          'small': standardRoundColumnCount === 4,
+          'medium': standardRoundColumnCount === 6,
+          'large': standardRoundColumnCount === 8,
         }"
       >
       </figure>
@@ -250,9 +283,9 @@ onMounted(() => {
         ref="outputAnimationRoot"
         class="animationGridKey startNoOpacity"
         :class="{
-          'small': columnCount === 4,
-          'medium': columnCount === 6,
-          'large': columnCount === 8,
+          'small': standardRoundColumnCount === 4,
+          'medium': standardRoundColumnCount === 6,
+          'large': standardRoundColumnCount === 8,
         }"
       >
       </figure>

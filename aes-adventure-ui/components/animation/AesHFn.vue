@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { AnimeTimelineInstance } from 'animejs';
-import anime from 'animejs';
 import { AesiExpandKeyRoundStepRoundHFn } from '~~/utils/aesi/aesi.types';
 import { S_BOX } from '~~/utils/aesi/core/constants';
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
@@ -40,7 +39,6 @@ const createAnimation = () => {
     props.timeline.add({
       targets: targetColumnClass(column),
       translateX: 8 * column,
-      delay: anime.stagger(20, { direction: 'reverse' }),
     }, '-=600')
   }
 
@@ -92,7 +90,6 @@ const createAnimation = () => {
     props.timeline.add({
       targets: subOutputTargetColumnClass(column),
       translateX: -8 * column,
-      delay: anime.stagger(20, { direction: 'reverse' }),
     }, '-=600')
   }
 

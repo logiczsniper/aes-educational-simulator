@@ -1,5 +1,5 @@
-import { AesiExpandKeyOutput, AesiExpandKeyRound, AesiExpandKeyRoundStep, AesiExpandKeyRoundStepAddWords, AesiExpandKeyRoundStepRoundGFn, AesiExpandKeyRoundStepRoundHFn, AesiExpandKeyRoundStepType } from "../aesi.types";
-import { rotWord, subWord, coefAdd, gmult } from "./utils";
+import { AesiExpandKeyOutput, AesiExpandKeyRoundStep, AesiExpandKeyRoundStepAddWords, AesiExpandKeyRoundStepRoundGFn, AesiExpandKeyRoundStepRoundHFn, AesiExpandKeyRoundStepType } from "../aesi.types";
+import { coefAdd, gmult, rotWord, subWord } from "./utils";
 
 export const expandKey = (key: Uint8Array, roundCount: number, keyCount: number): AesiExpandKeyOutput => {
   const expandedKey = new Uint8Array(4 * (roundCount + 1) * 4);
@@ -95,11 +95,10 @@ export const expandKey = (key: Uint8Array, roundCount: number, keyCount: number)
     }
   }
 
-  // if (thisRound.steps.length) {
-  thisRound.steps.push({ ...thisRoundAddWords }, ...thisRoundFunctions)
-  rounds.push({ ...thisRound })
-  // }
-
+  if (thisRoundFunctions.length) {
+    thisRound.steps.push({ ...thisRoundAddWords, inputWords: (rounds.at(-1)?.steps?.at(0) as AesiExpandKeyRoundStepAddWords).outputWords }, ...thisRoundFunctions)
+    rounds.push({ ...thisRound })
+  }
 
   return {
     expandedKey,

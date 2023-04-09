@@ -6,6 +6,9 @@ const props = defineProps<{
   smallLastRound?: boolean;
 }>()
 
+// TODO: props.smallRounds: number[]
+// 192 bit has small rounds sprinkled around (key expansion only)
+
 const emit = defineEmits<{
   (event: 'click', roundIndex: number): void
 }>()
