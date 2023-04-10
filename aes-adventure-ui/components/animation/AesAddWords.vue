@@ -9,8 +9,6 @@ const props = defineProps<{
   timeline: AnimeTimelineInstance,
   keySize: AesiKeySize,
   hasHFn: boolean,
-  isLastRound: boolean,
-  input?: Uint8Array,
   step?: AesiExpandKeyRoundStepAddWords,
 }>();
 
@@ -267,8 +265,7 @@ onMounted(() => {
     }
 
     .gFnInput {
-      // margin-left: 13px;
-      margin-left: 14.5px;
+      margin-left: 14.5px; // Cannot be touched! gFnInputTranslateX above relies on this.
       top: 3.5px;
       position: absolute;
       opacity: 0;

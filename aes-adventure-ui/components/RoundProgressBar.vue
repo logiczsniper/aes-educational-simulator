@@ -3,21 +3,30 @@
 const props = defineProps<{
   roundIndex: number;
   roundCount: number;
-  smallLastRound?: boolean;
+  smallRounds?: number[];
 }>()
-
-// TODO: props.smallRounds: number[]
-// 192 bit has small rounds sprinkled around (key expansion only)
 
 const emit = defineEmits<{
   (event: 'click', roundIndex: number): void
 }>()
+
+const gridTemplateColumns = computed(() => {
+  let output = ''
+
+  for (let round = 0; round < props.roundCount; round++) {
+    output += props.smallRounds?.includes(round)
+      ? '0.5fr '
+      : '1fr '
+  }
+
+  return output
+})
 </script>
 
 <template>
   <div
     class="roundProgressBar"
-    :style="`grid-template-columns: repeat(${props.roundCount - 1}, 1fr) ${props.smallLastRound ? '0.5fr' : '1fr'}`"
+    :style="`grid-template-columns: ${gridTemplateColumns}`"
   >
     <span
       v-for="round in roundCount"

@@ -19,7 +19,13 @@ const noHFunctionMessage = computed(() => {
   return t('simulator.no-h-function-last')
 })
 
-const smallLastRound = computed(() => keyExpansionState.keySize === 192 || keyExpansionState.keySize === 256)
+const smallRounds = computed(() => {
+  switch (keyExpansionState.keySize) {
+    case 128: return []
+    case 192: return [1, 3, 5, 7]
+    case 256: return [6]
+  }
+})
 
 const roundIndex = computed(() => Math.min(
   keyExpansionState.roundCount,
@@ -186,7 +192,7 @@ const roundIndex = computed(() => Math.min(
                   class="roundProgressBar"
                   :roundIndex="keyExpansionState.roundIndex + Number(keyExpansionState.stage >= KeyExpansionStage.FromWords) - Number(keyExpansionState.stage < KeyExpansionStage.Rounds)"
                   :roundCount="keyExpansionState.roundCount"
-                  :small-last-round="smallLastRound"
+                  :small-rounds="smallRounds"
                 />
               </section>
               <section class="rounds">
@@ -196,14 +202,12 @@ const roundIndex = computed(() => Math.min(
                   :title="t('simulator.add-words')"
                   :tutorial-key="TutorialKey.Test"
                 >
-                  <!-- {{ keyExpansionState.getStep(AesiExpandKeyRoundStepType.AddWords) }} -->
                   <AnimationAesAnimationFrame :timeline-key="keyExpansionState.roundIndex">
                     <template #animation="{ timeline }">
                       <AnimationAesAddWords
                         :timeline="timeline"
                         :key-size="keyExpansionState.keySize"
                         :has-h-fn="!noHFunction"
-                        :is-last-round="keyExpansionState.isLastRound"
                         :step="(keyExpansionState.getStep(AesiExpandKeyRoundStepType.AddWords) as AesiExpandKeyRoundStepAddWords)"
                       >
                       </AnimationAesAddWords>
