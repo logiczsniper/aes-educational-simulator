@@ -5,16 +5,8 @@ const config = useConfig()
 const sidebarOpen = ref(true)
 const toggleSidebar = () => sidebarOpen.value = !sidebarOpen.value
 
-enum Tab {
-  Encrypt = "encrypt",
-  Decrypt = "decrypt",
-  KeyExpansion = "key-expansion",
-}
-const route = useRouteBaseName()
-const currentTab = ref(route === 'index' ? Tab.Encrypt : route?.substring(10))
-const getTabLink = (tab: Tab) => `/simulator/${tab}`
-
-const tutorial = useTutorial();
+const simulatorTabs = useSimulatorTabs()
+const tutorial = useTutorial()
 </script>
 
 <template>
@@ -115,12 +107,12 @@ const tutorial = useTutorial();
         <NuxtLink
           v-for="tab in Object.values(Tab)"
           :key="tab"
-          :to="getTabLink(tab)"
+          :to="simulatorTabs.getTabLink(tab)"
           class="tab"
           :class="{
-            'selected': currentTab === tab
+            'selected': simulatorTabs.currentTab === tab
           }"
-          @click="currentTab = tab"
+          @click="simulatorTabs.goToTab(tab)"
         >
           {{ t(`simulator.${tab}`) }}
         </NuxtLink>

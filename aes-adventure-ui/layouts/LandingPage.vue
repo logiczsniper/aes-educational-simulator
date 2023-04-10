@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n();
+
+const simulatorTabs = useSimulatorTabs()
 </script>
 
 <template>
@@ -9,7 +11,7 @@ const { t } = useI18n();
       <p class="description">{{ t('home.description') }}</p>
       <nav class="navMenu">
         <div class="primaryButtons">
-          <NuxtLink to="/simulator/encrypt">
+          <NuxtLink :to="simulatorTabs.getTabLink()">
             <v-btn
               variant="flat"
               color="primary"
