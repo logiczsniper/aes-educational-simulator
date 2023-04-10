@@ -2,13 +2,13 @@
 import type { AnimeTimelineInstance } from 'animejs';
 import { AesiExpandKeyRoundStepAddWords, AesiKeySize } from '~~/utils/aesi/aesi.types';
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
-import { COL_GAP } from '~~/utils/animation/constants';
 import { updateWordDivs } from '~~/utils/animation/updateWordDivs';
 import { wordsToDivs } from '~~/utils/animation/wordsToDivs';
 
 const props = defineProps<{
   timeline: AnimeTimelineInstance,
   keySize: AesiKeySize,
+  hasHFn: boolean,
   isLastRound: boolean,
   input?: Uint8Array,
   step?: AesiExpandKeyRoundStepAddWords,
@@ -22,23 +22,15 @@ const outputAnimationRoot = ref<HTMLElement>()
 
 const input = computed(() => props.step?.inputWords || [])
 const output = computed(() => props.step?.outputWords || [])
-const standardRoundColumnCount = computed(() => props.keySize / 32)
-const columnCount = computed(() => {
-  switch (standardRoundColumnCount.value) {
-    case 4: return standardRoundColumnCount.value
-    default: return props.isLastRound
-      ? 4
-      : standardRoundColumnCount.value
-  }
-})
+const columnCount = computed(() => props.keySize / 32)
 
-const hasHFn = computed(() => columnCount.value === 8)
+const hasHFn = computed(() => props.hasHFn)
 
 const inputWordDivs = wordsToDivs(input.value)
-const { targetDivs, targetColumnClass } = addAnimationClasses(inputWordDivs, `add-words-i`, standardRoundColumnCount.value)
+const { targetDivs, targetColumnClass } = addAnimationClasses(inputWordDivs, `add-words-i`, columnCount.value)
 
 const outputWordDivs = wordsToDivs(output.value)
-const { targetDivs: outputTargetDivs, targetAllClass: outputTargetAllClass, targetColumnClass: targetOutputColumnClass } = addAnimationClasses(outputWordDivs, `add-words-o`, standardRoundColumnCount.value)
+const { targetDivs: outputTargetDivs, targetAllClass: outputTargetAllClass, targetColumnClass: targetOutputColumnClass } = addAnimationClasses(outputWordDivs, `add-words-o`, columnCount.value)
 
 const gFnInput = computed(() => input.value.at(-1))
 const gFnInputString = computed(() => Array.from(gFnInput.value || [])?.map(hexToString).join(""))
@@ -62,142 +54,103 @@ const gFnInputClass = 'gFnInput'
 const gFnInputTarget = `.${gFnInputClass}`
 
 const createAnimation = () => {
-  const translateY = 71
-  const firstHalfTargets = [targetColumnClass(standardRoundColumnCount.value - 1), gFnTarget, `${xorSymbolTarget}-0`, targetColumnClass(0)]
-  const offset = COL_GAP * (8 - standardRoundColumnCount.value)
-
-  if (columnCount.value === 6) {
-    props.timeline.add({
-      targets: gFnInputTarget,
-      translateX: -1.5,
-      duration: 1
-    })
-  }
-
-  if (standardRoundColumnCount.value === 4) {
-    props.timeline.add({
-      targets: gFnInputTarget,
-      translateY: -1.5,
-      duration: 1
-    })
-  }
+  const gFnInputTranslateX = (() => {
+    switch (columnCount.value) {
+      case 4: return -240.0
+      case 6: return -409.2
+      case 8: return -578.8
+      default: return 0
+    }
+  })()
+  const translateY = 71.34
+  const lastColumnTarget = targetColumnClass(columnCount.value - 1)
 
   props.timeline.add({
-    targets: targetColumnClass(standardRoundColumnCount.value - 1),
-    translateX: -(76.5 * (standardRoundColumnCount.value) - 32.5) + offset + (standardRoundColumnCount.value === 4 ? 2 : 0),
+    targets: lastColumnTarget,
+    translateX: gFnInputTranslateX,
     translateY
   }).add({
     targets: gFnTarget,
     opacity: 1,
   }, '-=150').add({
-    targets: `${xorSymbolTarget}-0`,
+    targets: lastColumnTarget,
+    opacity: 0,
+    duration: 100,
+  }).add({
+    targets: gFnInputTarget,
     opacity: 1,
-  }, '+=1000').add({
-    targets: targetColumnClass(0),
-    translateX: 123,
-    translateY
-  }, '-=500').add({
-    targets: targetOutputColumnClass(0),
+    duration: 100,
+  }, '-=100').add({
+    targets: lastColumnTarget,
+    translateX: 0,
+    translateY: 0,
+    duration: 1,
+  }).add({
+    targets: lastColumnTarget,
     opacity: 1,
-  }, '+=1000')
+  })
 
-  if (!hasHFn.value) {
-    props.timeline.add({
-      targets: targetColumnClass(standardRoundColumnCount.value - 1),
-      opacity: 0,
-      duration: 100,
-    }).add({
-      targets: gFnInputTarget,
-      opacity: 1,
-      duration: 100,
-    }, '-=100').add({
-      targets: targetColumnClass(standardRoundColumnCount.value - 1),
-      translateX: 0,
-      translateY: 0,
-      duration: 1,
-    }).add({
-      targets: targetColumnClass(standardRoundColumnCount.value - 1),
-      opacity: 1,
-    })
-  }
+  const halfWayPoint = 3
+  let inSecondHalf = false
+  let targetsToDisappear = [lastColumnTarget, gFnTarget, gFnInputTarget]
+  const highestColumnIndex = Math.min(columnCount.value, output.value.length)
 
-  const maxFirstHalfColumns = hasHFn.value ? 4 : columnCount.value
-  for (let column = 1; column < maxFirstHalfColumns; column++) {
-    firstHalfTargets.push(targetColumnClass(column), `${xorSymbolTarget}-${column}`)
+  for (let column = 0; column < highestColumnIndex; column++) {
+    const _column = inSecondHalf ? column + halfWayPoint : column
+    const _xorColumn = inSecondHalf ? column - 1 : column
+    const _secondHalfTranslateXCorrection = inSecondHalf ? -356 : 0
+    targetsToDisappear.push(targetColumnClass(_column), `${xorSymbolTarget}-${_xorColumn}`)
 
     props.timeline.add({
-      targets: `${xorSymbolTarget}-${column}`,
-      translateX: 102.2 * column,
+      targets: `${xorSymbolTarget}-${_xorColumn}`,
+      translateX: 102.2 * _xorColumn,
       duration: 1,
     }).add({
-      targets: `${xorSymbolTarget}-${column}`,
+      targets: `${xorSymbolTarget}-${_xorColumn}`,
       opacity: 1,
     }, '+=1000').add({
-      targets: targetColumnClass(column),
-      translateX: 123 + 17.5 * column,
+      targets: targetColumnClass(_column),
+      translateX: 123 + 17.5 * column + _secondHalfTranslateXCorrection,
       translateY
     }, '-=500').add({
-      targets: targetOutputColumnClass(column),
+      targets: targetOutputColumnClass(_column),
       opacity: 1,
     })
-  }
 
-  if (hasHFn.value) {
-    props.timeline.add({
-      targets: firstHalfTargets,
-      opacity: 0,
-    }, '+=1200').add({
-      targets: hFnInputTarget,
-      opacity: 1
-    }, '-=700')
-
-    // Reset last word for usage in its own computation in second half
-    props.timeline.add({
-      targets: targetColumnClass(columnCount.value - 1),
-      translateX: 0,
-      translateY: 0
-    }).add({
-      targets: targetColumnClass(columnCount.value - 1),
-      opacity: 1,
-    }).add({
-      targets: hFnTarget,
-      opacity: 1
-    }, '-=1200')
-
-    const secondHalfTargets = [hFnTarget, hFnInputTarget]
-    for (let column = maxFirstHalfColumns; column < columnCount.value; column++) {
-      secondHalfTargets.push(targetColumnClass(column), `${xorSymbolTarget}-${column}`)
-
-      const columnFactor = column - maxFirstHalfColumns
+    const shouldPrepareForHFn = _column === halfWayPoint && hasHFn.value
+    if (shouldPrepareForHFn) {
       props.timeline.add({
-        targets: `${xorSymbolTarget}-${column}`,
-        translateX: 101.4 * columnFactor,
-        duration: 1,
+        targets: targetsToDisappear,
+        opacity: 0,
+      }, '+=1200').add({
+        targets: hFnInputTarget,
+        opacity: 1
+      }, '-=700').add({
+        targets: lastColumnTarget,
+        translateX: 0,
+        translateY: 0
       }).add({
-        targets: `${xorSymbolTarget}-${column}`,
+        targets: lastColumnTarget,
         opacity: 1,
-      }, '+=1000').add({
-        targets: targetColumnClass(column),
-        translateX: -216 + 16.5 * columnFactor,
-        translateY
-      }, '-=500').add({
-        targets: targetOutputColumnClass(column),
-        opacity: 1,
-      })
+      }).add({
+        targets: hFnTarget,
+        opacity: 1
+      }, '-=1200')
+
+      column -= halfWayPoint
+      inSecondHalf = true
+      targetsToDisappear = [hFnTarget, hFnInputTarget]
     }
 
-    props.timeline.add({
-      targets: secondHalfTargets,
-      opacity: 0,
-    }, '+=900')
-  } else {
-    props.timeline.add({
-      targets: [...firstHalfTargets, gFnInputTarget],
-      opacity: 0,
-    }, '+=900')
+    const shouldBreak = _column >= columnCount.value - 1
+    if (shouldBreak) break;
   }
 
-  // TODO: optimize
+  props.timeline.add({
+    targets: targetsToDisappear,
+    opacity: 0,
+  }, '+=900')
+
   // TODO: double check numbers
 
   props.timeline.add({
@@ -233,18 +186,18 @@ onMounted(() => {
         ref="inputGridRoot"
         class="animationGridKey absolute"
         :class="{
-          'small': standardRoundColumnCount === 4,
-          'medium': standardRoundColumnCount === 6,
-          'large': standardRoundColumnCount === 8,
+          'small': columnCount === 4,
+          'medium': columnCount === 6,
+          'large': columnCount === 8,
         }"
       ></div>
       <figure
         ref="animationRoot"
         class="animationGridKey"
         :class="{
-          'small': standardRoundColumnCount === 4,
-          'medium': standardRoundColumnCount === 6,
-          'large': standardRoundColumnCount === 8,
+          'small': columnCount === 4,
+          'medium': columnCount === 6,
+          'large': columnCount === 8,
         }"
       >
       </figure>
@@ -283,9 +236,9 @@ onMounted(() => {
         ref="outputAnimationRoot"
         class="animationGridKey startNoOpacity"
         :class="{
-          'small': standardRoundColumnCount === 4,
-          'medium': standardRoundColumnCount === 6,
-          'large': standardRoundColumnCount === 8,
+          'small': columnCount === 4,
+          'medium': columnCount === 6,
+          'large': columnCount === 8,
         }"
       >
       </figure>

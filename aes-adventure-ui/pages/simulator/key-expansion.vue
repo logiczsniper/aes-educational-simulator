@@ -202,6 +202,7 @@ const roundIndex = computed(() => Math.min(
                       <AnimationAesAddWords
                         :timeline="timeline"
                         :key-size="keyExpansionState.keySize"
+                        :has-h-fn="!noHFunction"
                         :is-last-round="keyExpansionState.isLastRound"
                         :step="(keyExpansionState.getStep(AesiExpandKeyRoundStepType.AddWords) as AesiExpandKeyRoundStepAddWords)"
                       >
