@@ -98,7 +98,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
             <v-btn
               v-if="decryptState.stage === DecryptStage.Input"
               :disabled="!decryptState.canComputeDecryptOutput"
-              prependIcon="mdi-lock"
+              prependIcon="mdi-lock-open-variant"
               variant="flat"
               color="primary"
               class="startButton"
@@ -140,7 +140,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                       </AnimationAesTranspose>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="decryptState.stage === DecryptStage.ToState"
                     >
                       <v-btn
@@ -197,7 +197,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                       </AnimationAesAddKey>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="decryptState.step?.type === AesiRoundStepType.AddRoundKey && decryptState.stage === DecryptStage.Rounds"
                     >
                       <v-btn
@@ -236,7 +236,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                       </AnimationAesMixColumns>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="decryptState.step?.type === AesiRoundStepType.MixColumns"
                     >
                       <v-btn
@@ -274,7 +274,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                       </AnimationAesShiftRowsInverse>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="decryptState.step?.type === AesiRoundStepType.ShiftRows"
                     >
                       <v-btn
@@ -313,7 +313,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                       </AnimationAesSubstituteBytes>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="decryptState.step?.type === AesiRoundStepType.SubBytes"
                     >
                       <v-btn
@@ -370,7 +370,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                       </AnimationAesAddKey>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="decryptState.stage === DecryptStage.SymmetryKeyAddition"
                     >
                       <v-btn
@@ -404,12 +404,12 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                       </AnimationAesTranspose>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="decryptState.stage === DecryptStage.FromState"
                     >
                       <v-btn
                         :variant="timeline.currentTime > 7_000 ? 'flat' : 'plain'"
-                        prepend-icon="mdi-lock"
+                        prepend-icon="mdi-lock-open-variant"
                         color="primary"
                         @click="() => {
                           restartAndPause()
@@ -498,11 +498,12 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
   }
 
   .finalStep {
-    margin-top: 20px;
+    margin-top: 58px;
   }
 
   .roundsHeader {
     margin-bottom: 18px;
+    margin-top: 48px;
     display: grid;
     place-items: center;
     grid-template-rows: min-content;

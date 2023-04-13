@@ -85,10 +85,12 @@ onMounted(() => {
 <template>
   <section class="aesAnimationFrame">
     <ClientOnly v-if="timeline !== null">
-      <slot
-        name="animation"
-        :timeline="timeline"
-      />
+      <div class="viewContainer scrollbar">
+        <slot
+          name="animation"
+          :timeline="timeline"
+        />
+      </div>
       <v-slider
         :model-value="progress"
         @update:model-value="onSliderClick"
@@ -98,28 +100,30 @@ onMounted(() => {
         :thumb-size="0"
       />
       <div class="controls">
-        <v-btn-toggle
-          :model-value="playbackSpeed.currentPlaybackSpeed"
-          @update:model-value="onPlaybackSpeedClick"
-          class="playbackSpeedGroup"
-          density="compact"
-          selected-class="selectedPlaybackSpeed"
-        >
-          <v-btn
-            icon
+        <div class="prependControls">
+          <v-btn-toggle
+            :model-value="playbackSpeed.currentPlaybackSpeed"
+            @update:model-value="onPlaybackSpeedClick"
+            class="playbackSpeedGroup"
             density="compact"
-            variant="plain"
+            selected-class="selectedPlaybackSpeed"
           >
-            <v-icon size="18">mdi-tortoise</v-icon>
-          </v-btn>
-          <v-btn
-            icon
-            density="compact"
-            variant="plain"
-          >
-            <v-icon size="18">mdi-rabbit</v-icon>
-          </v-btn>
-        </v-btn-toggle>
+            <v-btn
+              icon
+              density="compact"
+              variant="plain"
+            >
+              <v-icon size="18">mdi-tortoise</v-icon>
+            </v-btn>
+            <v-btn
+              icon
+              density="compact"
+              variant="plain"
+            >
+              <v-icon size="18">mdi-rabbit</v-icon>
+            </v-btn>
+          </v-btn-toggle>
+        </div>
         <v-btn
           class="playPauseButton"
           variant="plain"
@@ -127,9 +131,9 @@ onMounted(() => {
           :icon="controlIconName"
           @click="onControlClick"
         />
-        <div class="prependControls">
+        <div class="appendControls">
           <slot
-            name="prependControls"
+            name="appendControls"
             :timeline="timeline"
             :play="play"
             :pause="pause"
@@ -146,8 +150,13 @@ onMounted(() => {
   position: relative;
   padding-bottom: 8px;
 
+  .viewContainer {
+    padding-bottom: 22px;
+    overflow-x: overlay;
+  }
+
   .slider {
-    margin-top: 20px;
+    margin-top: 6px;
   }
 
   .controls {
@@ -162,7 +171,7 @@ onMounted(() => {
       margin-left: 8px;
     }
 
-    .prependControls {
+    .appendControls {
       margin-left: auto;
       display: flex;
       gap: 8px;

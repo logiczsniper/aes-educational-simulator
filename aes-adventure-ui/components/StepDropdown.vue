@@ -19,6 +19,26 @@ const backgroundColor = computed(() => (props.turnedOff ? '#CC3933' : undefined)
 const lineThroughTitle = computed(() => props.turnedOff ?? props.lineThroughTitle)
 const eager = computed(() => props.eager || hoverEager.value)
 
+const scrollTarget = ref<HTMLElement>()
+const tryScrollToBody = () => {
+  const animationDuration = 350
+  setTimeout(() => {
+    scrollTarget.value?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'center'
+    })
+  }, animationDuration)
+}
+
+watch(() => props.modelValue, newModelValue => {
+  if (newModelValue) tryScrollToBody()
+})
+
+onMounted(() => {
+  if (props.modelValue) tryScrollToBody()
+})
+
 </script>
 
 <template>
@@ -36,6 +56,10 @@ const eager = computed(() => props.eager || hoverEager.value)
       :bg-color="backgroundColor"
     >
       <template #title>
+        <div
+          ref="scrollTarget"
+          style="position: absolute; top: 12px"
+        />
         <h3
           class="title"
           :class="{ 'strikeThrough': lineThroughTitle }"

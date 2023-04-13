@@ -140,7 +140,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                       </AnimationAesTranspose>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="encryptState.stage === EncryptStage.ToState"
                     >
                       <v-btn
@@ -176,7 +176,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                       </AnimationAesAddKey>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="encryptState.stage === EncryptStage.SymmetryKeyAddition"
                     >
                       <v-btn
@@ -239,7 +239,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                       </AnimationAesSubstituteBytes>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="encryptState.step?.type === AesiRoundStepType.SubBytes && encryptState.stage === EncryptStage.Rounds"
                     >
                       <v-btn
@@ -277,7 +277,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                       </AnimationAesShiftRows>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="encryptState.step?.type === AesiRoundStepType.ShiftRows"
                     >
                       <v-btn
@@ -316,7 +316,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                       </AnimationAesMixColumns>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="encryptState.step?.type === AesiRoundStepType.MixColumns"
                     >
                       <v-btn
@@ -349,7 +349,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                       </AnimationAesAddKey>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="encryptState.step?.type === AesiRoundStepType.AddRoundKey"
                     >
                       <v-btn
@@ -404,7 +404,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                       </AnimationAesTranspose>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="encryptState.stage === EncryptStage.FromState"
                     >
                       <v-btn
@@ -498,7 +498,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
   }
 
   .initialStep {
-    margin-bottom: 20px;
+    margin-bottom: 42px;
   }
 
   .roundsHeader {
@@ -531,6 +531,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
   .rounds {
     display: grid;
     gap: 20px;
+    margin-bottom: 58px;
   }
 }
 

@@ -100,6 +100,7 @@
     "function": "function",
     "add-words": "Add Words",
     "keys-generated": "round keys ready",
+    "round-keys": "Round Keys",
     "tutorial": {
       "title": "Tutorial",
       "default": {

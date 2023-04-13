@@ -54,9 +54,9 @@ const gFnInputTarget = `.${gFnInputClass}`
 const createAnimation = () => {
   const gFnInputTranslateX = (() => {
     switch (columnCount.value) {
-      case 4: return -240.0
-      case 6: return -409.2
-      case 8: return -578.8
+      case 4: return -238.0
+      case 6: return -407.2
+      case 8: return -576.8
       default: return 0
     }
   })()
@@ -148,8 +148,6 @@ const createAnimation = () => {
     targets: targetsToDisappear,
     opacity: 0,
   }, '+=900')
-
-  // TODO: double check numbers
 
   props.timeline.add({
     targets: outputTargetAllClass,
@@ -265,7 +263,7 @@ onMounted(() => {
     }
 
     .gFnInput {
-      margin-left: 14.5px; // Cannot be touched! gFnInputTranslateX above relies on this.
+      margin-left: 16.5px; // Cannot be touched! gFnInputTranslateX above relies on this.
       top: 3.5px;
       position: absolute;
       opacity: 0;
@@ -288,8 +286,12 @@ onMounted(() => {
       }
     }
 
+    .gFnBox {
+      left: 2px;
+    }
+
     .gFnBox::after {
-      left: 8px;
+      left: 9px;
     }
 
     .hFnBox::after {

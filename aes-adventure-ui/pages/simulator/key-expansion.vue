@@ -142,7 +142,7 @@ const roundIndex = computed(() => Math.min(
                       </AnimationAesKeyToState>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="keyExpansionState.stage === KeyExpansionStage.ToWords"
                     >
                       <v-btn
@@ -213,7 +213,7 @@ const roundIndex = computed(() => Math.min(
                       </AnimationAesAddWords>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.AddWords && keyExpansionState.stage === KeyExpansionStage.Rounds"
                     >
                       <v-btn
@@ -243,7 +243,7 @@ const roundIndex = computed(() => Math.min(
                       </AnimationAesGFn>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.RoundGFn && keyExpansionState.stage === KeyExpansionStage.Rounds"
                     >
                       <template v-if="noHFunction">
@@ -272,8 +272,7 @@ const roundIndex = computed(() => Math.min(
                           color="primary"
                           @click="() => {
                             restartAndPause()
-                            keyExpansionState.stage = KeyExpansionStage.Output
-                            // TODO: can we remove KeyExpansionStage.FromWords?
+                            keyExpansionState.stage = KeyExpansionStage.FromWords
                           }"
                         >{{ t('simulator.finish-rounds') }}</v-btn>
                       </template>
@@ -315,7 +314,7 @@ const roundIndex = computed(() => Math.min(
                       </AnimationAesHFn>
                     </template>
                     <template
-                      #prependControls="{ timeline, restartAndPause }"
+                      #appendControls="{ timeline, restartAndPause }"
                       v-if="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.RoundHFn"
                     >
                       <v-btn
@@ -343,10 +342,44 @@ const roundIndex = computed(() => Math.min(
                         color="primary"
                         @click="() => {
                           restartAndPause()
-                          keyExpansionState.stage = KeyExpansionStage.Output
-                          // TODO: can we remove KeyExpansionStage.FromWords?
+                          keyExpansionState.stage = KeyExpansionStage.FromWords
                         }"
                       >{{ t('simulator.finish-rounds') }}</v-btn>
+                    </template>
+                  </AnimationAesAnimationFrame>
+                </StepDropdown>
+              </section>
+              <section class="transposeStep">
+                <StepDropdown
+                  :model-value="keyExpansionState.stage === KeyExpansionStage.FromWords"
+                  :eager="keyExpansionState.isLastStep"
+                  :title="`${t('simulator.state')} ➜ ${t('simulator.round-keys')}`"
+                  :tutorial-key="TutorialKey.Test"
+                  background-color="#f9f9f9"
+                >
+                  <AnimationAesAnimationFrame>
+                    <template #animation="{ timeline }">
+                      <AnimationAesStateToRoundKeys
+                        :timeline="timeline"
+                        :key-size="keyExpansionState.keySize"
+                        :round-count="keyExpansionState.roundCount"
+                        :expanded-key="keyExpansionState.output.expandedKey"
+                      >
+                      </AnimationAesStateToRoundKeys>
+                    </template>
+                    <template
+                      #appendControls="{ timeline, restartAndPause }"
+                      v-if="keyExpansionState.stage === KeyExpansionStage.FromWords"
+                    >
+                      <v-btn
+                        :variant="timeline.currentTime > 7_000 ? 'flat' : 'plain'"
+                        prepend-icon="mdi-key-plus"
+                        color="primary"
+                        @click="() => {
+                          restartAndPause()
+                          keyExpansionState.stage = KeyExpansionStage.Output
+                        }"
+                      >{{ `${t('simulator.finish')} ${t('simulator.key-expansion')}` }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
                 </StepDropdown>
@@ -357,7 +390,7 @@ const roundIndex = computed(() => Math.min(
             class="output"
             v-if="keyExpansionState.stage === KeyExpansionStage.Output"
           >
-            TODO: output show the round keys
+            TODO output show the round keys
           </section>
           <div style="height: 1px;" />
         </div>
@@ -427,6 +460,7 @@ const roundIndex = computed(() => Math.min(
 
   .roundsHeader {
     margin-bottom: 18px;
+    margin-top: 48px;
     display: grid;
     place-items: center;
     grid-template-rows: min-content;
@@ -455,6 +489,7 @@ const roundIndex = computed(() => Math.min(
   .rounds {
     display: grid;
     gap: 20px;
+    margin-bottom: 58px;
   }
 }
 
