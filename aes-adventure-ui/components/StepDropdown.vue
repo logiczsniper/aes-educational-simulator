@@ -9,6 +9,7 @@ const props = defineProps<{
   lineThroughTitle?: boolean;
   tutorialKey?: TutorialKey;
   backgroundColor?: string;
+  noAutoScrollOnUpdate?: boolean;
 }>();
 
 const hoverEager = ref(false)
@@ -32,7 +33,7 @@ const tryScrollToBody = () => {
 }
 
 watch(() => props.modelValue, newModelValue => {
-  if (newModelValue) tryScrollToBody()
+  if (newModelValue && !props.noAutoScrollOnUpdate) tryScrollToBody()
 })
 
 onMounted(() => {

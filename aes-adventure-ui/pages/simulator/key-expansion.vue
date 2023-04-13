@@ -390,9 +390,23 @@ const roundIndex = computed(() => Math.min(
             class="output"
             v-if="keyExpansionState.stage === KeyExpansionStage.Output"
           >
-            TODO output show the round keys
+            <div>
+              <div class="outputHeader">
+                <h3>{{ t('simulator.round-keys') }}</h3>
+                <TutorialIconButton
+                  class="outputTutorial"
+                  :tutorial-key="TutorialKey.PlaintextToState"
+                />
+              </div>
+              <div class="outputBody">
+                <div
+                  v-for="roundKeyString in keyExpansionState.outputRoundKeysStrings"
+                  class="code"
+                >{{ roundKeyString }}</div>
+              </div>
+            </div>
           </section>
-          <div style="height: 1px;" />
+          <div style="height: 140px;" />
         </div>
       </transition>
     </ClientOnly>
@@ -401,14 +415,9 @@ const roundIndex = computed(() => Math.min(
 
 <style scoped lang="scss">
 .keyExpansionPage {
-  // width: 100%;
-  height: 100%;
-
   height: 100%;
 
   .inputs {
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
     display: flex;
     justify-content: center;
     height: min-content;
@@ -443,9 +452,35 @@ const roundIndex = computed(() => Math.min(
   }
 
   .output {
-    display: flex;
     justify-content: center;
     height: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .outputHeader {
+      display: flex;
+      cursor: default;
+
+      .outputTutorial {
+        height: min-content;
+        margin-top: 6px;
+        margin-left: 12px;
+      }
+    }
+
+    .outputBody {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      background-color: white;
+      border: 3px solid white;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-top: 8px;
+      margin-bottom: 26px;
+      color: rgb(84, 84, 84);
+    }
   }
 
   .startButton,

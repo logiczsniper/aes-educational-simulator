@@ -29,8 +29,13 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
   )
   const isLastRound = computed(() => (roundIndex.value === (output.value?.rounds.length ?? 0) - 1))
   const isSecondToLastRound = computed(() => (roundIndex.value === (output.value?.rounds.length ?? 0) - 2))
-  // const outputString = computed(() => Array.from(output.value?.block ?? []).map(hexToString).join('') ?? '')
   const roundCount = computed(() => output.value?.rounds.length ?? 0)
+
+  const outputRoundKeysStrings = computed(() => {
+    if (!output.value?.expandedKey) return []
+
+    return groupHex(output.value.expandedKey, 16).map(key => Array.from(key).map(hexToString).join(''))
+  })
 
   const keysGeneratedSoFar = computed(() => {
     const finalKey = stage.value > KeyExpansionStage.Rounds ? 1 : 0
@@ -115,7 +120,7 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
     isLastStep,
     isLastRound,
     isSecondToLastRound,
-    // outputString,
+    outputRoundKeysStrings,
     roundCount,
     setKeySize,
     getStep,

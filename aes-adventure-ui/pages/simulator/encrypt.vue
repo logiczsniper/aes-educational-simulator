@@ -163,6 +163,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                   :title="`${t('simulator.add-key')}`"
                   :tutorial-key="TutorialKey.Test"
                   background-color="#f9f9f9"
+                  no-auto-scroll-on-update
                 >
                   <AnimationAesAnimationFrame>
                     <template #animation="{ timeline }">
@@ -433,7 +434,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
               disabled
             />
           </section>
-          <div style="height: 1px;" />
+          <div style="height: 140px;" />
         </div>
       </transition>
     </ClientOnly>

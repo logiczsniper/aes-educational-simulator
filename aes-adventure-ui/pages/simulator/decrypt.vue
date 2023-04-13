@@ -433,7 +433,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
               disabled
             />
           </section>
-          <div style="height: 1px;" />
+          <div style="height: 140px;" />
         </div>
       </transition>
     </ClientOnly>

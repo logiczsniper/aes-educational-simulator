@@ -17,7 +17,7 @@ const { t } = useI18n();
 const animationRoot = ref<HTMLElement>()
 const inputGridRoot = ref<HTMLElement>()
 
-const input = computed(() => hexToWords(props.expandedKey))
+const input = computed(() => groupHex(props.expandedKey, 4))
 const rowCount = computed(() => props.roundCount + 1)
 const columnCount = computed(() => props.keySize / 32)
 
