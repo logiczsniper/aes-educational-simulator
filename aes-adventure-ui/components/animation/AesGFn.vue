@@ -110,7 +110,7 @@ const createAnimation = () => {
     ]
   }).add({
     targets: subOutputTargetColumnClass(1),
-    translateX: -128,
+    translateX: -141.8,
   }, '+=200').add({
     targets: xorSymbolTarget,
     opacity: 1
@@ -269,7 +269,7 @@ onMounted(() => {
   .gFnRconNewByte {
     position: absolute;
     top: 0;
-    left: 152px;
+    left: 166.5px;
     opacity: 0;
   }
 

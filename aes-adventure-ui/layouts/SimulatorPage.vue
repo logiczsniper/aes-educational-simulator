@@ -205,6 +205,8 @@ const tutorial = useTutorial()
     .tutorialContainer {
       flex-grow: 1;
       position: relative;
+      padding-right: 4px;
+      margin-right: -4px;
 
       -webkit-mask-image: linear-gradient(180deg, #000 90%, transparent);
       mask-image: linear-gradient(180deg, #000 90%, transparent);

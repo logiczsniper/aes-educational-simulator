@@ -1,6 +1,7 @@
 {
   "title": "Adventure",
   "infographic": "Download Infographic",
+  "edit": "Edit",
   "home": {
     "description": "The Advanced Encryption Standard is the most popular symmetric-key cipher. If you want to learn the basics, dig deep into the details, or experiment with AES: you're in the right place!",
     "go": "Go to Simulator",
@@ -106,6 +107,11 @@
       "default": {
         "description": "Click on {tutorialIcon} that you see to reveal relevant information here.",
         "tip": "<i>Tip!</i> Expand this sidebar to free up more room for the tutorial by dragging on the resizer in the bottom right corner."
+      },
+      "sandbox": {
+        "button": "Sandbox",
+        "title": "Sandbox",
+        "close": "Close"
       },
       "read-more": "Read More",
       "encryption": {

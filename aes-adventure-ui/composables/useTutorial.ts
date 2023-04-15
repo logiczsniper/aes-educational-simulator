@@ -9,13 +9,13 @@ export enum TutorialKey {
   Test
 }
 
-export const tutorialKeyToComponentMap = {
-  [TutorialKey.Default]: DefaultTutorial,
-  [TutorialKey.Test]: TestTutorial,
-  [TutorialKey.PlaintextToState]: PlaintextToStateTutorial,
-}
-
 export const useTutorial = defineStore(getKey`tutorialKey`, () => {
+  const tutorialKeyToComponentMap = {
+    [TutorialKey.Default]: DefaultTutorial,
+    [TutorialKey.Test]: TestTutorial,
+    [TutorialKey.PlaintextToState]: PlaintextToStateTutorial,
+  }
+
   const currentTutorialKey = ref(TutorialKey.Default)
   const currentTutorialComponent = computed(() => tutorialKeyToComponentMap[currentTutorialKey.value])
 

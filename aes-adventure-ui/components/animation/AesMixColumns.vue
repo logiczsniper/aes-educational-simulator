@@ -149,14 +149,14 @@ onMounted(() => {
   .multiplySymbol {
     position: absolute;
     top: 36.5%;
-    right: -17px;
+    right: -3px;
     opacity: 0;
   }
 
   .columnVectorPlaceholder {
     position: absolute;
     top: 0;
-    right: -54px;
+    right: -40px;
     width: 23px;
     height: 100%;
     opacity: 0;

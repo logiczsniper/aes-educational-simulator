@@ -7,6 +7,9 @@ const props = defineProps<{
 
 const tutorial = useTutorial()
 
+// expand width on open, saving the previous width? 
+// return to previous width on close
+
 const isSelected = computed(() => props.tutorialKey === tutorial.currentTutorialKey)
 
 const onClick = (e: Event) => {
