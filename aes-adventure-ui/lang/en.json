@@ -116,7 +116,10 @@
       "read-more": "Read More",
       "encryption": {
         "plaintext-to-state": {
-          "body": "The first step is to create the state matrix that will be operated on throughout the encryption process. It is done by arranging the plaintext into a 4x4 matrix of bytes and transposing this matrix."
+          "body": "The first step is to create the state matrix that will be operated on throughout the encryption process. The plaintext is arranged into a 4x4 matrix of bytes and then this matrix is transposed.",
+          "learn-more": {
+            "matrices": "Matrix Transposition"
+          }
         },
         "add-key": {
           "body": "Before the first round of AES steps during encryption, the key is XORed with the state matrix. Note that the key is also arranged into a 4x4 matrix of bytes and transposed, just like the plaintext."

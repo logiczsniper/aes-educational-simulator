@@ -11,6 +11,7 @@ definePageMeta({
 })
 
 const keyExpansionState = useKeyExpansionState()
+const tutorial = useTutorial()
 
 const noHFunction = computed(() => !keyExpansionState.round?.steps.find(({ type }) => type === AesiExpandKeyRoundStepType.RoundHFn))
 const noHFunctionMessage = computed(() => {
@@ -151,6 +152,7 @@ const roundIndex = computed(() => Math.min(
                         color="primary"
                         @click="() => {
                           restartAndPause()
+                          tutorial.close()
                           keyExpansionState.startRounds()
                         }"
                       >{{ t('simulator.start-rounds') }}</v-btn>
@@ -222,6 +224,7 @@ const roundIndex = computed(() => Math.min(
                         color="primary"
                         @click="() => {
                           restartAndPause()
+                          tutorial.close()
                           keyExpansionState.nextStep()
                         }"
                       >{{ t('simulator.next-step') }}</v-btn>
@@ -253,6 +256,7 @@ const roundIndex = computed(() => Math.min(
                           prepend-icon="mdi-arrow-u-down-right"
                           color="primary"
                           @click="(_: Event) => {
+                            tutorial.close()
                             keyExpansionState.skipToLastRound()
                           }"
                         >{{ t('simulator.skip') }}</v-btn>
@@ -262,6 +266,7 @@ const roundIndex = computed(() => Math.min(
                           prepend-icon="mdi-rotate-right"
                           color="primary"
                           @click="(_: Event) => {
+                            tutorial.close()
                             keyExpansionState.nextRound()
                           }"
                         >{{ t('simulator.next-round') }}</v-btn>
@@ -272,6 +277,7 @@ const roundIndex = computed(() => Math.min(
                           color="primary"
                           @click="() => {
                             restartAndPause()
+                            tutorial.close()
                             keyExpansionState.stage = KeyExpansionStage.FromWords
                           }"
                         >{{ t('simulator.finish-rounds') }}</v-btn>
@@ -283,6 +289,7 @@ const roundIndex = computed(() => Math.min(
                           color="primary"
                           @click="() => {
                             restartAndPause()
+                            tutorial.close()
                             keyExpansionState.nextStep()
                           }"
                         >{{ t('simulator.next-step') }}</v-btn>
@@ -323,6 +330,7 @@ const roundIndex = computed(() => Math.min(
                         prepend-icon="mdi-arrow-u-down-right"
                         color="primary"
                         @click="(_: Event) => {
+                          tutorial.close()
                           keyExpansionState.skipToLastRound()
                         }"
                       >{{ t('simulator.skip') }}</v-btn>
@@ -332,6 +340,7 @@ const roundIndex = computed(() => Math.min(
                         prepend-icon="mdi-rotate-right"
                         color="primary"
                         @click="(_: Event) => {
+                          tutorial.close()
                           keyExpansionState.nextRound()
                         }"
                       >{{ t('simulator.next-round') }}</v-btn>
@@ -342,6 +351,7 @@ const roundIndex = computed(() => Math.min(
                         color="primary"
                         @click="() => {
                           restartAndPause()
+                          tutorial.close()
                           keyExpansionState.stage = KeyExpansionStage.FromWords
                         }"
                       >{{ t('simulator.finish-rounds') }}</v-btn>
@@ -377,6 +387,7 @@ const roundIndex = computed(() => Math.min(
                         color="primary"
                         @click="() => {
                           restartAndPause()
+                          tutorial.close()
                           keyExpansionState.stage = KeyExpansionStage.Output
                         }"
                       >{{ `${t('simulator.finish')} ${t('simulator.key-expansion')}` }}</v-btn>

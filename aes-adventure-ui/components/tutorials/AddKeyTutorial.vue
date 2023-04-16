@@ -4,24 +4,22 @@ const { t } = useI18n();
 
 <template>
   <div class="tutorialBody">
-    <p v-html="t('simulator.tutorial.encryption.plaintext-to-state.body')" />
+    <p v-html="t('simulator.tutorial.encryption.add-key.body')" />
     <TutorialsCommonSandboxButton>
       <template #animation="{ input }">
         <AnimationAesAnimationFrame>
           <template #animation="{ timeline }">
-            <AnimationAesTranspose
+            <AnimationAesAddKey
               id="sandbox"
               :timeline="timeline"
               :input="input"
             >
-            </AnimationAesTranspose>
+            </AnimationAesAddKey>
           </template>
         </AnimationAesAnimationFrame>
       </template>
     </TutorialsCommonSandboxButton>
-    <TutorialsCommonLearnMore
-      :links="[{ label: t('simulator.tutorial.encryption.plaintext-to-state.learn-more.matrices'), href: 'https://mathinsight.org/matrix_transpose' }]"
-    />
+    <TutorialsCommonLearnMore :links="[{ label: t('simulator.tutorial.encryption.add-key.learn-more'), href: '' }]" />
   </div>
 </template>
 

@@ -22,6 +22,7 @@ const scrollToRoundsHeader = () => {
 
 const decryptState = useDecryptState();
 const configState = useConfig()
+const tutorial = useTutorial()
 
 const noMixColumns = computed(() => decryptState.isFirstRound || configState.noMixColumns)
 </script>
@@ -149,6 +150,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                         color="primary"
                         @click="() => {
                           restartAndPause()
+                          tutorial.close()
                           decryptState.stage = DecryptStage.Rounds
                         }"
                       >{{ t('simulator.start-rounds') }}</v-btn>
@@ -206,6 +208,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                         color="primary"
                         @click="() => {
                           restartAndPause()
+                          tutorial.close()
                           decryptState.nextStep()
                         }"
                       >{{ t('simulator.next-step') }}</v-btn>
@@ -245,6 +248,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                         color="primary"
                         @click="() => {
                           restartAndPause()
+                          tutorial.close()
                           decryptState.nextStep()
                         }"
                       >{{ t('simulator.next-step') }}</v-btn>
@@ -283,6 +287,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                         color="primary"
                         @click="() => {
                           restartAndPause()
+                          tutorial.close()
                           decryptState.nextStep()
                         }"
                       >{{ t('simulator.next-step') }}</v-btn>
@@ -322,6 +327,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                         prepend-icon="mdi-arrow-u-down-right"
                         color="primary"
                         @click="(_: Event) => {
+                          tutorial.close()
                           decryptState.skipToLastRound()
                           scrollToRoundsHeader()
                         }"
@@ -332,6 +338,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                         prepend-icon="mdi-rotate-right"
                         color="primary"
                         @click="(_: Event) => {
+                          tutorial.close()
                           decryptState.nextRound()
                           scrollToRoundsHeader()
                         }"
@@ -343,6 +350,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                         color="primary"
                         @click="() => {
                           restartAndPause()
+                          tutorial.close()
                           decryptState.stage = DecryptStage.SymmetryKeyAddition
                         }"
                       >{{ t('simulator.finish-rounds') }}</v-btn>
@@ -379,6 +387,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                         color="primary"
                         @click="() => {
                           restartAndPause()
+                          tutorial.close()
                           decryptState.stage = DecryptStage.FromState
                         }"
                       >{{ t('simulator.next-step') }}</v-btn>
@@ -413,6 +422,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                         color="primary"
                         @click="() => {
                           restartAndPause()
+                          tutorial.close()
                           decryptState.stage = DecryptStage.Output
                         }"
                       >{{ `${t('simulator.finish')} ${t('simulator.decryption')}` }}</v-btn>

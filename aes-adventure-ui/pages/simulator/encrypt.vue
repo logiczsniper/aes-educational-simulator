@@ -22,6 +22,7 @@ const scrollToRoundsHeader = () => {
 
 const encryptState = useEncryptState();
 const configState = useConfig()
+const tutorial = useTutorial()
 
 const noMixColumns = computed(() => encryptState.isLastRound || configState.noMixColumns)
 </script>
@@ -148,6 +149,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
+                          tutorial.close()
                           restartAndPause()
                           encryptState.stage = EncryptStage.SymmetryKeyAddition
                         }"
@@ -185,6 +187,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-selection-ellipse-arrow-inside"
                         color="primary"
                         @click="() => {
+                          tutorial.close()
                           restartAndPause()
                           encryptState.startRounds()
                         }"
@@ -248,6 +251,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
+                          tutorial.close()
                           restartAndPause()
                           encryptState.nextStep()
                         }"
@@ -286,6 +290,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
+                          tutorial.close()
                           restartAndPause()
                           encryptState.nextStep()
                         }"
@@ -325,6 +330,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
+                          tutorial.close()
                           restartAndPause()
                           encryptState.nextStep()
                         }"
@@ -359,6 +365,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-arrow-u-down-right"
                         color="primary"
                         @click="(_: Event) => {
+                          tutorial.close()
                           encryptState.skipToLastRound()
                           scrollToRoundsHeader()
                         }"
@@ -369,6 +376,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-rotate-right"
                         color="primary"
                         @click="(_: Event) => {
+                          tutorial.close()
                           encryptState.nextRound()
                           scrollToRoundsHeader()
                         }"
@@ -379,6 +387,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-flag-checkered"
                         color="primary"
                         @click="() => {
+                          tutorial.close()
                           restartAndPause()
                           encryptState.stage = EncryptStage.FromState
                         }"
@@ -413,6 +422,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-lock"
                         color="primary"
                         @click="() => {
+                          tutorial.close()
                           restartAndPause()
                           encryptState.stage = EncryptStage.Output
                         }"

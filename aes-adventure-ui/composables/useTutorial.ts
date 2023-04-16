@@ -19,14 +19,23 @@ export const useTutorial = defineStore(getKey`tutorialKey`, () => {
   const currentTutorialKey = ref(TutorialKey.Default)
   const currentTutorialComponent = computed(() => tutorialKeyToComponentMap[currentTutorialKey.value])
 
-  function setCurrentTutorialKey(newKey: TutorialKey) {
+  const sidebar = useSidebar()
+
+  function open(newKey: TutorialKey) {
     currentTutorialKey.value = newKey
+    sidebar.expand()
+  }
+
+  function close() {
+    currentTutorialKey.value = TutorialKey.Default
+    sidebar.shrink()
   }
 
   return {
     currentTutorialKey,
     currentTutorialComponent,
-    setCurrentTutorialKey
+    open,
+    close
   }
 }, {
   persist: true

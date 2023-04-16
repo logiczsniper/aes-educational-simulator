@@ -6,21 +6,14 @@ const props = defineProps<{
 }>()
 
 const tutorial = useTutorial()
-
-const sidebar = useSidebar()
-
 const isSelected = computed(() => props.tutorialKey === tutorial.currentTutorialKey)
 
 const onClick = (e: Event) => {
   if (props.tutorialKey === undefined) return;
 
-  if (isSelected.value) {
-    tutorial.setCurrentTutorialKey(TutorialKey.Default)
-    sidebar.shrink()
-  } else {
-    tutorial.setCurrentTutorialKey(props.tutorialKey)
-    sidebar.expand()
-  }
+  isSelected.value
+    ? tutorial.close()
+    : tutorial.open(props.tutorialKey)
 
   e.preventDefault()
   e.stopPropagation()

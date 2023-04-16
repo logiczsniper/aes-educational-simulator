@@ -8,6 +8,9 @@ const { t } = useI18n();
 
 const sandboxDialogOpen = ref(false)
 
+const sandboxInput = ref('')
+const sandboxInputParsed = computed(() => hexToUint8Array(sandboxInput.value.padEnd(32, '0')))
+
 const title = computed(() => t('simulator.tutorial.sandbox.title') + (props.subtitle ? ` - ${props.subtitle}` : ''))
 </script>
 
@@ -45,7 +48,23 @@ const title = computed(() => t('simulator.tutorial.sandbox.title') + (props.subt
             </template>
           </v-toolbar>
           <v-card-text>
-            <slot />
+            <div class="sandboxInputContainer">
+              <div class="sandboxInput">
+                <HexArea
+                  v-model="sandboxInput"
+                  title-key="simulator.input"
+                  :max-length="128"
+                  :text-area-style="{ 'border-color': '#745CD0', 'margin-bottom': '18px' }"
+                  hide-footer
+                />
+              </div>
+            </div>
+            <div :key="sandboxInput">
+              <slot
+                name="animation"
+                :input="sandboxInputParsed"
+              />
+            </div>
           </v-card-text>
           <v-card-actions>
             <v-btn
@@ -72,6 +91,15 @@ const title = computed(() => t('simulator.tutorial.sandbox.title') + (props.subt
     padding-left: 12px;
     padding-top: 4px;
   }
+}
+
+.sandboxInputContainer {
+  display: grid;
+
+  .sandboxInput {
+    justify-self: center;
+  }
+
 }
 
 .skeleton {

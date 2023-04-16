@@ -1,13 +1,16 @@
 <script setup lang="ts">
+import { StyleValue } from 'vue';
 import { AesiKeySize } from '~~/utils/aesi/aesi.types';
 
 const { t } = useI18n();
 
 const props = defineProps<{
-  titleKey: string,
+  titleKey?: string,
   modelValue: string,
   maxLength: AesiKeySize,
   disabled?: boolean,
+  textAreaStyle?: StyleValue,
+  hideFooter?: boolean,
 }>();
 
 const emit = defineEmits<{
@@ -69,6 +72,7 @@ const maxLengthPadding = computed(() => {
     }"
   >
     <label
+      v-if="props.titleKey"
       :for="props.titleKey"
       class="title"
     >
@@ -85,9 +89,13 @@ const maxLengthPadding = computed(() => {
       class="textArea code"
       placeholder="2f 1c.."
       :disabled="props.disabled"
+      :style="props.textAreaStyle"
       @keydown="preventInvalidInput"
     />
-    <small class="footer">
+    <small
+      v-if="!props.hideFooter"
+      class="footer"
+    >
       <transition
         appear
         name="opacity"
