@@ -7,17 +7,21 @@ const props = defineProps<{
 
 const tutorial = useTutorial()
 
-// expand width on open, saving the previous width? 
-// return to previous width on close
+const sidebar = useSidebar()
 
 const isSelected = computed(() => props.tutorialKey === tutorial.currentTutorialKey)
 
 const onClick = (e: Event) => {
   if (props.tutorialKey === undefined) return;
 
-  isSelected.value
-    ? tutorial.setCurrentTutorialKey(TutorialKey.Default)
-    : tutorial.setCurrentTutorialKey(props.tutorialKey)
+  if (isSelected.value) {
+    tutorial.setCurrentTutorialKey(TutorialKey.Default)
+    sidebar.shrink()
+  } else {
+    tutorial.setCurrentTutorialKey(props.tutorialKey)
+    sidebar.expand()
+  }
+
   e.preventDefault()
   e.stopPropagation()
 }

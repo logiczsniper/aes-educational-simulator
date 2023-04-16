@@ -2,25 +2,30 @@
 const { t } = useI18n();
 
 const config = useConfig()
-const sidebarOpen = ref(true)
-const toggleSidebar = () => sidebarOpen.value = !sidebarOpen.value
 
 const simulatorTabs = useSimulatorTabs()
 const tutorial = useTutorial()
+
+const sidebar = useSidebar()
+const sidebarElement = ref<HTMLElement>()
+onMounted(() => {
+  if (sidebarElement.value) sidebar.register(sidebarElement.value)
+})
 </script>
 
 <template>
   <div class="simulatorPage">
     <header
-      v-if="sidebarOpen"
+      v-if="sidebar.open"
       class="leftColumn"
+      ref="sidebarElement"
     >
       <Logo />
       <nav class="navMenu">
         <v-btn
           variant="plain"
           prependIcon="mdi-backburger"
-          @click="toggleSidebar"
+          @click="sidebar.toggle"
         >
           {{ t('simulator.hide') }}
         </v-btn>
@@ -87,7 +92,7 @@ const tutorial = useTutorial()
     >
       <v-btn
         variant="flat"
-        @click="toggleSidebar"
+        @click="sidebar.toggle"
       >
         <template #prepend>
           <v-icon
@@ -98,10 +103,10 @@ const tutorial = useTutorial()
         {{ t('simulator.show') }}
       </v-btn>
     </div>
-    <div v-if="!sidebarOpen" />
+    <div v-if="!sidebar.open" />
     <section
       class="rightColumn"
-      :class="{ 'largePadding': !sidebarOpen }"
+      :class="{ 'largePadding': !sidebar.open }"
     >
       <nav class="tabBar">
         <NuxtLink
