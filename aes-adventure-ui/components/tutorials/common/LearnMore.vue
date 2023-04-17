@@ -21,7 +21,8 @@ const props = defineProps<{
             :href="href"
             target="_blank"
           >
-            {{ label }} <v-icon
+            <p v-html="label" />
+            <v-icon
               :size="12"
               icon="mdi-open-in-new"
             />
@@ -37,6 +38,11 @@ const props = defineProps<{
   margin-left: 20px;
 
   .href {
+    p {
+      display: inline;
+      margin-right: 4px;
+    }
+
     .v-icon {
       margin-top: -3px;
     }

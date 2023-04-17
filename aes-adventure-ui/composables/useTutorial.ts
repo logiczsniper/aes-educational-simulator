@@ -1,11 +1,27 @@
+import AddKeyTutorial from '~~/components/tutorials/AddKeyTutorial.vue'
+import AddRoundKeyTutorial from '~~/components/tutorials/AddRoundKeyTutorial.vue'
 import DefaultTutorial from '~~/components/tutorials/DefaultTutorial.vue'
+import MixColumnsTutorial from '~~/components/tutorials/MixColumnsTutorial.vue'
 import PlaintextToStateTutorial from '~~/components/tutorials/PlaintextToStateTutorial.vue'
+import RoundHeaderTutorial from '~~/components/tutorials/RoundHeaderTutorial.vue'
+import RoundStatsTutorial from '~~/components/tutorials/RoundStatsTutorial.vue'
+import ShiftRowsTutorial from '~~/components/tutorials/ShiftRowsTutorial.vue'
+import StateToCiphertextTutorial from '~~/components/tutorials/StateToCiphertextTutorial.vue'
+import SubBytesTutorial from '~~/components/tutorials/SubBytesTutorial.vue'
 
 import TestTutorial from '~~/components/tutorials/TestTutorial.vue'
 
 export enum TutorialKey {
   Default,
   PlaintextToState,
+  AddKey,
+  AddRoundKey,
+  MixColumns,
+  RoundHeader,
+  RoundStats,
+  ShiftRows,
+  StateToCiphertext,
+  SubBytes,
   Test
 }
 
@@ -14,6 +30,14 @@ export const useTutorial = defineStore(getKey`tutorialKey`, () => {
     [TutorialKey.Default]: DefaultTutorial,
     [TutorialKey.Test]: TestTutorial,
     [TutorialKey.PlaintextToState]: PlaintextToStateTutorial,
+    [TutorialKey.AddKey]: AddKeyTutorial,
+    [TutorialKey.AddRoundKey]: AddRoundKeyTutorial,
+    [TutorialKey.MixColumns]: MixColumnsTutorial,
+    [TutorialKey.RoundHeader]: RoundHeaderTutorial,
+    [TutorialKey.RoundStats]: RoundStatsTutorial,
+    [TutorialKey.ShiftRows]: ShiftRowsTutorial,
+    [TutorialKey.StateToCiphertext]: StateToCiphertextTutorial,
+    [TutorialKey.SubBytes]: SubBytesTutorial,
   }
 
   const currentTutorialKey = ref(TutorialKey.Default)

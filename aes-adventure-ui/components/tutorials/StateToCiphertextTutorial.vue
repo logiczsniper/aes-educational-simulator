@@ -4,7 +4,7 @@ const { t } = useI18n();
 
 <template>
   <div class="tutorialBody">
-    <p v-html="t('simulator.tutorial.plaintext-to-state.body')" />
+    <p v-html="t('simulator.tutorial.state-to-ciphertext.body')" />
     <TutorialsCommonSandboxButton>
       <template #animation="{ input }">
         <AnimationAesAnimationFrame>
@@ -20,7 +20,7 @@ const { t } = useI18n();
       </template>
     </TutorialsCommonSandboxButton>
     <TutorialsCommonLearnMore
-      :links="[{ label: t('simulator.tutorial.plaintext-to-state.learn-more.matrices'), href: 'https://mathinsight.org/matrix_transpose' }]"
+      :links="[{ label: t('simulator.tutorial.state-to-ciphertext.learn-more.matrices'), href: 'https://mathinsight.org/matrix_transpose' }]"
     />
   </div>
 </template>

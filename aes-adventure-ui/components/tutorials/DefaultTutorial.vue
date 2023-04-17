@@ -12,21 +12,21 @@ const { t } = useI18n();
 
 <template>
   <div>
-    <EditOnGitLabButton gitlabHref="www.google.com" />
+  <!-- <EditOnGitLabButton gitlabHref="www.google.com" />
     <TutorialsCommonSandboxButton subtitle="sandboz">
       Hello i am the sandboz
-    </TutorialsCommonSandboxButton>
-    <TutorialsCommonWarningCard text="Lol vuetify sucks ass" />
-    <TutorialsCommonLearnMore :links="[
-      {
-        label: 'Elements',
-        href: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a'
-      },
-      {
-        label: 'Vue 3 Cards',
-        href: 'https://vuetifyjs.com/en/components/cards/'
-      }
-    ]" />
+      </TutorialsCommonSandboxButton>
+      <TutorialsCommonWarningCard text="Lol vuetify sucks ass" />
+      <TutorialsCommonLearnMore :links="[
+        {
+          label: 'Elements',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a'
+        },
+        {
+          label: 'Vue 3 Cards',
+          href: 'https://vuetifyjs.com/en/components/cards/'
+        }
+      ]" /> -->
     <i18n-t
       keypath="simulator.tutorial.default.description"
       tag="p"

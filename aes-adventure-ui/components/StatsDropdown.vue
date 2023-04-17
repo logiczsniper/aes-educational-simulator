@@ -145,14 +145,14 @@ const chartOptions: ApexOptions = {
           <h2 class="roundIndex">{{ Math.min(props.roundCount, roundNumber) }}</h2>
           <div class="roundCount">
             <h4>/ {{ props.roundCount }}</h4>
-            <TutorialIconButton :tutorial-key="TutorialKey.Test" />
+            <TutorialIconButton :tutorial-key="TutorialKey.RoundHeader" />
           </div>
         </div>
       </template>
       <template #text>
         <figure class="statsChart">
           <TutorialIconButton
-            :tutorial-key="TutorialKey.Test"
+            :tutorial-key="TutorialKey.RoundStats"
             class="statsTutorial"
           />
           <ApexChart

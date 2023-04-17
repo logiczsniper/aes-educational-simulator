@@ -114,28 +114,52 @@
         "close": "Close"
       },
       "read-more": "Read More",
-      "encryption": {
-        "plaintext-to-state": {
-          "body": "The first step is to create the state matrix that will be operated on throughout the encryption process. The plaintext is arranged into a 4x4 matrix of bytes and then this matrix is transposed.",
-          "learn-more": {
-            "matrices": "Matrix Transposition"
-          }
-        },
-        "add-key": {
-          "body": "Before the first round of AES steps during encryption, the key is XORed with the state matrix. Note that the key is also arranged into a 4x4 matrix of bytes and transposed, just like the plaintext."
-        },
-        "rounds-header": {
-          "body": "AES operates on the state matrix in rounds. 10 rounds for a key size of 128 bits, 12 rounds for 192 bits, and 14 rounds for 256 bits. Each round consists of the steps Substitute Bytes, Shift Rows, Mix Columns, Add Round Key; except for the final round, which does not include Mix Columns."
-        },
-        "rounds-stats": {
-          "diffusion": "Diffusion is the influence of a single plaintext bit on the (current) ciphertext. The metric is represented in AES Adventure by the 'avalanche' effect. This is calculated as follows: for each plaintext bit, flip it and compute the (current) ciphertext with the modified plaintext. Then, count the number of bits flipped in the (current) ciphertext: the metric is the average number of bits flipped across all plaintext variations.",
-          "confusion": "Confusion is the relationship between the (current) ciphertext and the key. The metric is represented in AES Adventure by a measure of association between the (current) ciphertext and key in which all 0s have been mapped to -1s."
-        },
-        "sub-bytes": {
-          "body": "Substitute Bytes replaces each state matrix byte with a byte from the S-BOX, which provides non-linearity in AES."
-        },
-        "shift-rows": {
-          "body": ""
+      "plaintext-to-state": {
+        "body": "The first step is to create the state matrix that will be operated on throughout the encryption process. The plaintext is arranged into a 4x4 matrix of bytes and then this matrix is transposed.",
+        "learn-more": {
+          "matrices": "Matrix Transposition"
+        }
+      },
+      "add-key": {
+        "body": "The key is XORed with the state matrix. Note that the key is also arranged into a 4x4 matrix of bytes and transposed, just like the input. This is also referred to as <i>key whitening</i>."
+      },
+      "add-round-key": {
+        "body": "The round key is XORed with the state matrix. Note that the round key is also arranged into a 4x4 matrix of bytes and transposed. Head over to the <i>Key Expansion</i> tab to learn how these round keys are created. During <b>encryption</b>, the round keys are used in the order they are created. During <b>decryption</b>, the round keys are used in the <b>opposite</b> order."
+      },
+      "rounds-header": {
+        "body": "AES operates on the state matrix in rounds. 10 rounds for a key size of 128 bits, 12 rounds for 192 bits, and 14 rounds for 256 bits. Each round consists of the steps Substitute Bytes, Shift Rows, Mix Columns, Add Round Key; <span class='highlight'>except for the final round, which does not include Mix Columns</span>. During <b>decryption</b>, the steps are executed in the <b>opposite</b> order and Mix Columns is not included in the first round."
+      },
+      "rounds-stats": {
+        "diffusion": "<b>Diffusion</b> is the influence of a single plaintext bit on the (current) ciphertext. The metric is represented in AES Adventure by the <i>avalanche</i> effect. This is calculated as follows: for each plaintext bit, flip it and compute the (current) ciphertext with the modified plaintext. Then, count the number of bits flipped in the (current) ciphertext: the metric is the average number of bits flipped across all plaintext variations.",
+        "confusion": "<b>Confusion</b> is the relationship between the (current) ciphertext and the key. The metric is represented in AES Adventure by a measure of association between the (current) ciphertext and key in which all 0s have been mapped to -1s.",
+        "learn-more": {
+          "conf-diff": "Confusion & Diffusion",
+          "avalanche": "Avalanche Effect"
+        }
+      },
+      "sub-bytes": {
+        "body": "Substitute Bytes replaces each state matrix byte with a byte from the substitution box, which provides non-linearity in AES. It is a bijective mapping; during <b>decryption</b>, we use the unique <b>inverse</b> of the substitution box.",
+        "learn-more": {
+          "bijective": "Bijective Functions",
+          "sbox": "Computing AES's Substitution Box"
+        }
+      },
+      "shift-rows": {
+        "body": "Shift Rows performs a byte-wise cyclic shift on each row of the state matrix. During <b>decryption</b>, the shift is in the <b>opposite</b> direction. In both cases, the shift on the first row is 0, meaning the first row is never affected."
+      },
+      "mix-columns": {
+        "body": "Mix Columns multiplies each column vector of the state matrix by a matrix of constants to produce the corresponding column of the resulting state matrix. The constant matrix is invertible; during <b>decryption</b>, we use the unique <b>inverse</b> of the constant matrix.",
+        "learn-more": {
+          "matrix-multiplication": "Matrix Multiplication",
+          "matrix-inversion": "Matrix Inverses",
+          "gf": "Galois Fields",
+          "gf-arithmetic": "Arithmetics in <span class='math'>𝐺𝐹(2 ̂ 8)</span>"
+        }
+      },
+      "state-to-ciphertext": {
+        "body": "The final step is to create the ciphertext that is the output of the encryption process. The state matrix is transposed and then each entry is concatenated.",
+        "learn-more": {
+          "matrices": "Matrix Transposition"
         }
       }
     },

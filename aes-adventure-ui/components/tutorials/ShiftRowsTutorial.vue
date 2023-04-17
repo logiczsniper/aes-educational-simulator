@@ -1,25 +1,20 @@
 <script setup lang="ts">
-
 const { t } = useI18n();
-
-const copyInput = (input: Uint8Array) => Uint8Array.from(input)
 </script>
 
 <template>
   <div class="tutorialBody">
-  <p v-html="t('simulator.tutorial.add-key.body')" />
+  <p v-html="t('simulator.tutorial.shift-rows.body')" />
   <!-- <TutorialsCommonSandboxButton>
       <template #animation="{ input }">
         <AnimationAesAnimationFrame>
           <template #animation="{ timeline }">
-            <AnimationAesAddKey
+            <AnimationAesShiftRows
               id="sandbox"
               :timeline="timeline"
               :input="input"
-              :key-value="input"
-                :output="addRoundKey(copyInput(input), input, 0).outputState"
-              >
-              </AnimationAesAddKey>
+            >
+            </AnimationAesShiftRows>
             </template>
           </AnimationAesAnimationFrame>
         </template>

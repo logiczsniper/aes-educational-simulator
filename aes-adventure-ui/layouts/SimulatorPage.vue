@@ -105,7 +105,7 @@ onMounted(() => {
     </div>
     <div v-if="!sidebar.open" />
     <section
-      class="rightColumn"
+      class="rightColumn scrollbar"
       :class="{ 'largePadding': !sidebar.open }"
     >
       <nav class="tabBar">

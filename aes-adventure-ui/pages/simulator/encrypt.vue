@@ -163,7 +163,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                   :model-value="encryptState.stage === EncryptStage.SymmetryKeyAddition"
                   :eager="encryptState.stage === EncryptStage.ToState"
                   :title="`${t('simulator.add-key')}`"
-                  :tutorial-key="TutorialKey.Test"
+                  :tutorial-key="TutorialKey.AddKey"
                   background-color="#f9f9f9"
                   no-auto-scroll-on-update
                 >
@@ -224,7 +224,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                   :eager="(encryptState.stage === EncryptStage.SymmetryKeyAddition) || ((encryptState.step?.type === AesiRoundStepType.AddRoundKey) && encryptState.stage === EncryptStage.Rounds)"
                   :title="`${t('simulator.substitute-bytes')}`"
                   :turned-off="configState.noSubBytes"
-                  :tutorial-key="TutorialKey.Default"
+                  :tutorial-key="TutorialKey.SubBytes"
                 >
                   <p v-if="configState.noSubBytes">
                     {{ configState.offMessage }}
@@ -264,7 +264,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                   :eager="encryptState.step?.type === AesiRoundStepType.SubBytes"
                   :title="`${t('simulator.shift-rows')}`"
                   :turned-off="configState.noShiftRows"
-                  :tutorial-key="TutorialKey.Test"
+                  :tutorial-key="TutorialKey.ShiftRows"
                 >
                   <p v-if="configState.noShiftRows">
                     {{ configState.offMessage }}
@@ -303,7 +303,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                   :eager="encryptState.step?.type === AesiRoundStepType.ShiftRows"
                   :title="`${t('simulator.mix-columns')}`"
                   :turned-off="noMixColumns"
-                  :tutorial-key="TutorialKey.Test"
+                  :tutorial-key="TutorialKey.MixColumns"
                 >
                   <p v-if="noMixColumns">
                     {{ encryptState.isLastRound ? t('simulator.no-mix-columns-last') : configState.offMessage }}
@@ -342,7 +342,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                   :model-value="encryptState.step?.type === AesiRoundStepType.AddRoundKey && encryptState.stage === EncryptStage.Rounds"
                   :eager="encryptState.step?.type === AesiRoundStepType.MixColumns || ((encryptState.step?.type === AesiRoundStepType.ShiftRows) && encryptState.isLastRound)"
                   :title="`${t('simulator.add-round-key')}`"
-                  :tutorial-key="TutorialKey.Test"
+                  :tutorial-key="TutorialKey.AddRoundKey"
                 >
                   <AnimationAesAnimationFrame :timeline-key="encryptState.roundIndex">
                     <template #animation="{ timeline }">
@@ -401,7 +401,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                   :model-value="encryptState.stage === EncryptStage.FromState"
                   :eager="encryptState.step?.type === AesiRoundStepType.AddRoundKey"
                   :title="`${t('simulator.state')} ➜ ${t('simulator.ciphertext')}`"
-                  :tutorial-key="TutorialKey.Test"
+                  :tutorial-key="TutorialKey.StateToCiphertext"
                   background-color="#f9f9f9"
                 >
                   <AnimationAesAnimationFrame>
