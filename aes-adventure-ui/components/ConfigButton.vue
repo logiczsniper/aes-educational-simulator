@@ -13,6 +13,14 @@ const defaultConfigurations = Object.values(AesiDefaultConfig).map(configKey => 
 }))
 const config = useConfig()
 const encryptState = useEncryptState()
+const decryptState = useDecryptState()
+const keyExpansionState = useKeyExpansionState()
+
+const resetSimulator = () => {
+  encryptState.reset()
+  decryptState.reset()
+  keyExpansionState.reset()
+}
 </script>
 
 <template>
@@ -55,7 +63,7 @@ const encryptState = useEncryptState()
               <v-checkbox
                 v-for="defaultConfig in defaultConfigurations"
                 v-model="config.selectedDefaultConfigs"
-                @update:model-value="encryptState.reset()"
+                @update:model-value="resetSimulator"
                 color="primary-darken-1"
                 :value="defaultConfig.key"
                 :disabled="defaultConfig.key === AesiDefaultConfig.Standard"
