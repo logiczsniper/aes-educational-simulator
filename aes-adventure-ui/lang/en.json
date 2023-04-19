@@ -120,6 +120,12 @@
           "matrices": "Matrix Transposition"
         }
       },
+      "ciphertext-to-state": {
+        "body": "The first step is to create the state matrix that will be operated on throughout the decryption process. The ciphertext is arranged into a 4x4 matrix of bytes and then this matrix is transposed.",
+        "learn-more": {
+          "matrices": "Matrix Transposition"
+        }
+      },
       "add-key": {
         "body": "The key is XORed with the state matrix. Note that the key is also arranged into a 4x4 matrix of bytes and transposed, just like the input. This is also referred to as <i>key whitening</i>."
       },
@@ -158,6 +164,12 @@
       },
       "state-to-ciphertext": {
         "body": "The final step is to create the ciphertext that is the output of the encryption process. The state matrix is transposed and then each entry is concatenated.",
+        "learn-more": {
+          "matrices": "Matrix Transposition"
+        }
+      },
+      "state-to-plaintext": {
+        "body": "The final step is to create the plaintext that is the output of the decryption process. The state matrix is transposed and then each entry is concatenated.",
         "learn-more": {
           "matrices": "Matrix Transposition"
         }

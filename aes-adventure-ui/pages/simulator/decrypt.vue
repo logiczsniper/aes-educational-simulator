@@ -128,7 +128,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                   :model-value="decryptState.stage === DecryptStage.ToState"
                   eager
                   :title="`${t('simulator.ciphertext')} ➜ ${t('simulator.state')}`"
-                  :tutorial-key="TutorialKey.PlaintextToState"
+                  :tutorial-key="TutorialKey.CiphertextToState"
                   background-color="#f9f9f9"
                 >
                   <AnimationAesAnimationFrame>
@@ -185,7 +185,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                   :model-value="decryptState.step?.type === AesiRoundStepType.AddRoundKey && decryptState.stage === DecryptStage.Rounds"
                   :eager="(decryptState.stage === DecryptStage.ToState) || (decryptState.step?.type === AesiRoundStepType.SubBytes)"
                   :title="`${t('simulator.add-round-key')}`"
-                  :tutorial-key="TutorialKey.Test"
+                  :tutorial-key="TutorialKey.AddRoundKey"
                 >
                   <AnimationAesAnimationFrame :timeline-key="decryptState.roundIndex">
                     <template #animation="{ timeline }">
@@ -220,7 +220,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                   :eager="decryptState.step?.type === AesiRoundStepType.AddRoundKey"
                   :title="`${t('simulator.mix-columns')}`"
                   :turned-off="noMixColumns"
-                  :tutorial-key="TutorialKey.Test"
+                  :tutorial-key="TutorialKey.MixColumns"
                 >
                   <p v-if="noMixColumns">
                     {{ decryptState.isFirstRound ? t('simulator.no-mix-columns-first') : configState.offMessage }}
@@ -260,7 +260,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                   :eager="decryptState.step?.type === AesiRoundStepType.MixColumns || ((decryptState.step?.type === AesiRoundStepType.AddRoundKey) && decryptState.roundIndex === 0)"
                   :title="`${t('simulator.shift-rows')}`"
                   :turned-off="configState.noShiftRows"
-                  :tutorial-key="TutorialKey.Test"
+                  :tutorial-key="TutorialKey.ShiftRows"
                 >
                   <p v-if="configState.noShiftRows">
                     {{ configState.offMessage }}
@@ -299,7 +299,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                   :eager="decryptState.step?.type === AesiRoundStepType.ShiftRows"
                   :title="`${t('simulator.substitute-bytes')}`"
                   :turned-off="configState.noSubBytes"
-                  :tutorial-key="TutorialKey.Default"
+                  :tutorial-key="TutorialKey.SubBytes"
                 >
                   <p v-if="configState.noSubBytes">
                     {{ configState.offMessage }}
@@ -363,7 +363,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                   :model-value="decryptState.stage === DecryptStage.SymmetryKeyAddition"
                   :eager="decryptState.step?.type === AesiRoundStepType.SubBytes"
                   :title="`${t('simulator.add-key')}`"
-                  :tutorial-key="TutorialKey.Test"
+                  :tutorial-key="TutorialKey.AddKey"
                   background-color="#f9f9f9"
                 >
                   <AnimationAesAnimationFrame>
@@ -400,7 +400,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                   :model-value="decryptState.stage === DecryptStage.FromState"
                   :eager="decryptState.stage === DecryptStage.SymmetryKeyAddition"
                   :title="`${t('simulator.state')} ➜ ${t('simulator.plaintext')}`"
-                  :tutorial-key="TutorialKey.Test"
+                  :tutorial-key="TutorialKey.StateToPlaintext"
                   background-color="#f9f9f9"
                 >
                   <AnimationAesAnimationFrame>
