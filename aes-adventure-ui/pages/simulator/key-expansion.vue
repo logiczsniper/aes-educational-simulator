@@ -129,7 +129,7 @@ const roundIndex = computed(() => Math.min(
                   :model-value="keyExpansionState.stage === KeyExpansionStage.ToWords"
                   eager
                   :title="`${t('simulator.key')} ➜ ${t('simulator.state')}`"
-                  :tutorial-key="TutorialKey.PlaintextToState"
+                  :tutorial-key="TutorialKey.KeyToState"
                   background-color="#f9f9f9"
                 >
                   <AnimationAesAnimationFrame>
@@ -176,7 +176,7 @@ const roundIndex = computed(() => Math.min(
                   <div class="roundCount">
                     <h4>/ {{ keyExpansionState.roundCount }}</h4>
                     <div>
-                      <TutorialIconButton :tutorial-key="TutorialKey.Test" />
+                      <TutorialIconButton :tutorial-key="TutorialKey.KeyRoundHeader" />
                     </div>
                   </div>
                   <p class="totalRoundKeys">
@@ -202,7 +202,7 @@ const roundIndex = computed(() => Math.min(
                   :model-value="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.AddWords && keyExpansionState.stage === KeyExpansionStage.Rounds"
                   eager
                   :title="t('simulator.add-words')"
-                  :tutorial-key="TutorialKey.Test"
+                  :tutorial-key="TutorialKey.AddWords"
                 >
                   <AnimationAesAnimationFrame :timeline-key="keyExpansionState.roundIndex">
                     <template #animation="{ timeline }">
@@ -235,7 +235,7 @@ const roundIndex = computed(() => Math.min(
                   :model-value="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.RoundGFn && keyExpansionState.stage === KeyExpansionStage.Rounds"
                   eager
                   :title="`${t('simulator.round')} <span class='math'>𝑔</span>-${t('simulator.function')}`"
-                  :tutorial-key="TutorialKey.Test"
+                  :tutorial-key="TutorialKey.RoundGFn"
                 >
                   <AnimationAesAnimationFrame :timeline-key="keyExpansionState.roundIndex">
                     <template #animation="{ timeline }">
@@ -302,7 +302,7 @@ const roundIndex = computed(() => Math.min(
                   eager
                   :turned-off="noHFunction"
                   :title="`${t('simulator.round')} <span class='math'>ℎ</span>-${t('simulator.function')}`"
-                  :tutorial-key="TutorialKey.Test"
+                  :tutorial-key="TutorialKey.RoundHFn"
                 >
                   <p
                     v-if="noHFunction"
@@ -364,7 +364,7 @@ const roundIndex = computed(() => Math.min(
                   :model-value="keyExpansionState.stage === KeyExpansionStage.FromWords"
                   :eager="keyExpansionState.isLastStep"
                   :title="`${t('simulator.state')} ➜ ${t('simulator.round-keys')}`"
-                  :tutorial-key="TutorialKey.Test"
+                  :tutorial-key="TutorialKey.StateToRoundKeys"
                   background-color="#f9f9f9"
                 >
                   <AnimationAesAnimationFrame>
@@ -406,7 +406,7 @@ const roundIndex = computed(() => Math.min(
                 <h3>{{ t('simulator.round-keys') }}</h3>
                 <TutorialIconButton
                   class="outputTutorial"
-                  :tutorial-key="TutorialKey.PlaintextToState"
+                  :tutorial-key="TutorialKey.RoundKeys"
                 />
               </div>
               <div class="outputBody">

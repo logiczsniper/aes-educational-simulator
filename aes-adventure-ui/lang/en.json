@@ -126,14 +126,38 @@
           "matrices": "Matrix Transposition"
         }
       },
+      "key-to-state": {
+        "body": "The first step is to create the state vector that will be appended to throughout the key expansion process. The key is arranged into a vector of words, where 1 word is 4 bytes. <span class='highlight'>The AES key schedule changes slightly with each key size</span>, but it is always word-oriented."
+      },
       "add-key": {
         "body": "The key is XORed with the state matrix. Note that the key is also arranged into a 4x4 matrix of bytes and transposed, just like the input. This is also referred to as <i>key whitening</i>."
       },
       "add-round-key": {
         "body": "The round key is XORed with the state matrix. Note that the round key is also arranged into a 4x4 matrix of bytes and transposed. Head over to the <i>Key Expansion</i> tab to learn how these round keys are created. During <b>encryption</b>, the round keys are used in the order they are created. During <b>decryption</b>, the round keys are used in the <b>opposite</b> order."
       },
+      "add-words": {
+        "body": "The first word is XORed with the last word, after the Round <span class='math'>𝑔</span>-function has been invoked on it. From there, each word is XORed with the previously computed word to create a new word which is then appended to the state vector. The <b>256-bit</b> key schedule invokes the Round <span class='math'>ℎ</span>-function on the 4th word generated in the round before continuing as normal.",
+        "note": "The <span class='math'>𝑔</span>-function and <span class='math'>ℎ</span>-function computations are outlined in the following round steps."
+      },
+      "round-g-fn": {
+        "body": "The <span class='math'>𝑔</span>-function consists of a series of operations on the bytes of the input word: Substitute Bytes, Shift Rows (shift = 1), and the first byte is XORed with the <i>round constant</i>. The bytes are then concatenated to form the output word.",
+        "learn-more": {
+          "rcon": "Computing AES's Round Constants"
+        }
+      },
+      "round-h-fn": {
+        "body": "The <span class='math'>ℎ</span>-function consists of a Substitute Bytes on the bytes of the input word. The bytes are then concatenated to form the output word."
+      },
+      "round-keys": {
+        "body": "These subkeys are taken in the order shown during encryption. During <b>decryption</b>, they are used in the opposite order."
+      },
       "rounds-header": {
         "body": "AES operates on the state matrix in rounds. 10 rounds for a key size of 128 bits, 12 rounds for 192 bits, and 14 rounds for 256 bits. Each round consists of the steps Substitute Bytes, Shift Rows, Mix Columns, Add Round Key; <span class='highlight'>except for the final round, which does not include Mix Columns</span>. During <b>decryption</b>, the steps are executed in the <b>opposite</b> order and Mix Columns is not included in the first round."
+      },
+      "key-rounds-header": {
+        "body": "Each round of AES needs a subkey, plus 1 for key whitening. 11 subkeys for a key size of 128 bits, 13 subkeys for 192 bits, and 15 subkeys for 256 bits. Each round operates on the previous round's output to derive new words.",
+        "aes-a": " AES Adventure breaks down each round into Add Words, Round <span class='math'>𝑔</span>-function and Round <span class='math'>ℎ</span>-function steps. Only the <b>256-bit</b> key schedule uses the Round <span class='math'>ℎ</span>-function step in each round, except for the final round.",
+        "note": "Each round generates 1 subkey for a key size of 128 bits, 1.5 subkeys for 192 bits, and 2 subkeys for 256 bits, except the final round which generates 1 subkey for all three key sizes."
       },
       "rounds-stats": {
         "diffusion": "<b>Diffusion</b> is the influence of a single plaintext bit on the (current) ciphertext. The metric is represented in AES Adventure by the <i>avalanche</i> effect. This is calculated as follows: for each plaintext bit, flip it and compute the (current) ciphertext with the modified plaintext. Then, count the number of bits flipped in the (current) ciphertext: the metric is the average number of bits flipped across all plaintext variations.",
@@ -173,6 +197,9 @@
         "learn-more": {
           "matrices": "Matrix Transposition"
         }
+      },
+      "state-to-round-keys": {
+        "body": "The final step is to create the round keys that are the output of the key expansion process. The state vector words are taken 4 at a time and then each group is concatenated to form a subkey."
       }
     },
     "hexArea": {

@@ -148,6 +148,7 @@ onMounted(() => {
     overflow-x: auto;
     overflow-y: hidden;
     min-width: 200px;
+    max-width: 50vw;
     padding: 20px 20px 12px 26px;
     z-index: 2;
     background-color: white;

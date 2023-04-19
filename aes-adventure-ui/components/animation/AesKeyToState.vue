@@ -6,6 +6,7 @@ import { COL_GAP, DIV_HEIGHT, DIV_WIDTH, ROW_GAP } from '~~/utils/animation/cons
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
 
 const props = defineProps<{
+  id?: string,
   timeline: AnimeTimelineInstance,
   keySize: AesiKeySize,
   input?: Uint8Array,
@@ -20,7 +21,7 @@ const input = computed(() => props.input || [] as Array<number>)
 const columnCount = computed(() => props.keySize / 32)
 
 const byteDivs = hexToDivs(input.value)
-const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(byteDivs, `key-to-state`, columnCount.value)
+const { targetDivs, targetAllClass, targetCoordsClass } = addAnimationClasses(byteDivs, `key-to-state-${props.id}`, columnCount.value)
 
 
 onMounted(() => {
