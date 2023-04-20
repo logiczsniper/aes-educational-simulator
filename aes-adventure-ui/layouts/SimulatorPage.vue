@@ -8,8 +8,18 @@ const tutorial = useTutorial()
 
 const sidebar = useSidebar()
 const sidebarElement = ref<HTMLElement>()
+
 onMounted(() => {
   if (sidebarElement.value) sidebar.register(sidebarElement.value)
+})
+onBeforeUnmount(() => {
+  if (sidebarElement.value) sidebar.unregister(sidebarElement.value)
+})
+watch(sidebarElement, newSidebarElement => {
+  const sidebarElementRemoved = !newSidebarElement
+
+  if (sidebarElementRemoved) sidebar.unregister()
+  else if (sidebarElement.value) sidebar.register(sidebarElement.value)
 })
 </script>
 

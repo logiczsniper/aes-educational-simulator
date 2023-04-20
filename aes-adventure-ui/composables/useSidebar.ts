@@ -6,6 +6,12 @@ export const useSidebar = defineStore(getKey`sidebar`, () => {
   const toggle = () => open.value = !open.value
 
   const sidebarClass = 'sidebar-animation-target'
+  const resize = (width: number | string) => anime({
+    targets: `.${sidebarClass}`,
+    width,
+    easing: 'easeInOutExpo',
+    duration: 300,
+  })
 
   const onManualResize = ([{ contentRect: { width: newWidthWithoutPadding } }]: ResizeObserverEntry[]) => {
     const sidebarPadding = 46
@@ -13,18 +19,18 @@ export const useSidebar = defineStore(getKey`sidebar`, () => {
 
     width.value = `${newWidth}px`
   }
+  const resizeObserver = new ResizeObserver(onManualResize)
 
   const register = (sidebarElement: HTMLElement) => {
-    sidebarElement.style.setProperty('width', width.value)
     sidebarElement.classList.add(sidebarClass)
-    new ResizeObserver(onManualResize).observe(sidebarElement)
+    requestAnimationFrame(() => resize(width.value))
+    resizeObserver.observe(sidebarElement)
   }
 
-  const resize = (width: number) => anime({
-    targets: `.${sidebarClass}`,
-    width,
-    easing: 'easeInOutExpo'
-  })
+  const unregister = (sidebarElement?: HTMLElement) => {
+    if (sidebarElement) resizeObserver.unobserve(sidebarElement)
+    else resizeObserver.disconnect()
+  }
 
   const expand = () => resize(document.body.clientWidth * 0.4)
   const shrink = () => resize(document.body.clientWidth * 0.16)
@@ -34,9 +40,12 @@ export const useSidebar = defineStore(getKey`sidebar`, () => {
     open,
     toggle,
     register,
+    unregister,
     expand,
     shrink,
   }
 }, {
-  persist: true
+  persist: {
+    paths: ['width']
+  },
 })
