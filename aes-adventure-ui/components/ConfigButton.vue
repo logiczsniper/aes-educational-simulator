@@ -6,11 +6,11 @@ const { t } = useI18n();
 
 const configureDialogOpen = ref(false)
 
-const defaultConfigurations = Object.values(AesiDefaultConfig).map(configKey => ({
+const defaultConfigurations = computed(() => Object.values(AesiDefaultConfig).map(configKey => ({
   "name": t(`configure.modal.defaults.${configKey}.name`) + ' AES',
   "description": t(`configure.modal.defaults.${configKey}.description`),
   "key": configKey,
-}))
+})))
 const config = useConfig()
 const encryptState = useEncryptState()
 const decryptState = useDecryptState()
