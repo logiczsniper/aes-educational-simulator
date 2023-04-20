@@ -1,4 +1,4 @@
-# <img src="aes-adventure-ui/public/logo.svg" alt="AES Educational Simulator" width="24"/> AES Adventure <small>| _An AES Educational Simulator_</small>
+# <img src="aes-adventure-ui/public/banner.png" alt="AES Educational Simulator" style="border-radius: 20px; max-width: 50%;"/>
 
 #### 🚀 [https://aes-adventure.web.app](https://aes-adventure.web.app/)
 #### 🔎 [Sentry Monitoring](https://logans-sentry-of-solitude.sentry.io/projects/aes-adventure-ui/?project=4505047073423360)
