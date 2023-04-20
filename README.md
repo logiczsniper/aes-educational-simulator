@@ -1,6 +1,8 @@
 # <img src="aes-adventure-ui/public/logo.svg" alt="AES Educational Simulator" width="24"/> AES Adventure <small>| _An AES Educational Simulator_</small>
 
 #### 🚀 [https://aes-adventure.web.app](https://aes-adventure.web.app/)
+#### 🔎 [Sentry Monitoring](https://logans-sentry-of-solitude.sentry.io/projects/aes-adventure-ui/?project=4505047073423360)
+#### 📈 [Firebase Usage & Billing](https://console.firebase.google.com/project/aes-adventure/usage)
 <br/>
 
 Online tool for helping 3rd level Computer Science students learn about the Advanced Encryption Standard.
