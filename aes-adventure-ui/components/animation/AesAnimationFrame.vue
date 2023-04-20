@@ -53,10 +53,17 @@ const onSliderClick = (value: number) =>
     timeline.value?.seek(valueInMs)
   })
 
-const onPlaybackSpeedClick = (value: PlaybackSpeed | undefined) =>
+const onPlaybackSpeedClick = (value: PlaybackSpeed | undefined) => {
+  // Hack to blur the stupid v-btns
+  setTimeout(() => {
+    const buttons = Array.from(document.getElementsByClassName("playbackSpeedButton"))
+    buttons.forEach(button => (button as HTMLElement).blur());
+  }, 200)
+
   pauseWhile(() => {
     playbackSpeed.setCurrentPlaybackSpeed(value)
   })
+}
 
 const createTimeline = () => {
   timeline.value = anime.timeline({
@@ -112,6 +119,7 @@ onMounted(() => {
               icon
               density="compact"
               variant="plain"
+              class="playbackSpeedButton"
             >
               <v-icon size="18">mdi-tortoise</v-icon>
             </v-btn>
@@ -119,6 +127,7 @@ onMounted(() => {
               icon
               density="compact"
               variant="plain"
+              class="playbackSpeedButton"
             >
               <v-icon size="18">mdi-rabbit</v-icon>
             </v-btn>
@@ -183,8 +192,9 @@ onMounted(() => {
   }
 }
 
-.selectedPlaybackSpeed {
-  color: #2C1D66;
+.selectedPlaybackSpeed,
+.selectedPlaybackSpeed:focus {
+  color: #2C1D66 !important;
   opacity: 1;
 }
 </style>
