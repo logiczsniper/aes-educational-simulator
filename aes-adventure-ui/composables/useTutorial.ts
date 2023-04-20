@@ -18,8 +18,6 @@ import StateToPlaintextTutorial from '~~/components/tutorials/StateToPlaintextTu
 import StateToRoundKeysTutorial from '~~/components/tutorials/StateToRoundKeysTutorial.vue'
 import SubBytesTutorial from '~~/components/tutorials/SubBytesTutorial.vue'
 
-import TestTutorial from '~~/components/tutorials/TestTutorial.vue'
-
 export enum TutorialKey {
   Default,
   PlaintextToState,
@@ -39,14 +37,12 @@ export enum TutorialKey {
   StateToCiphertext,
   StateToPlaintext,
   StateToRoundKeys,
-  SubBytes,
-  Test
+  SubBytes
 }
 
 export const useTutorial = defineStore(getKey`tutorialKey`, () => {
   const tutorialKeyToComponentMap = {
     [TutorialKey.Default]: DefaultTutorial,
-    [TutorialKey.Test]: TestTutorial,
     [TutorialKey.PlaintextToState]: PlaintextToStateTutorial,
     [TutorialKey.CiphertextToState]: CiphertextToStateTutorial,
     [TutorialKey.AddKey]: AddKeyTutorial,
