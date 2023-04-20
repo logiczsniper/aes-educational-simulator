@@ -2,6 +2,10 @@
   "title": "Adventure",
   "infographic": "Download Infographic",
   "edit": "Edit",
+  "error": {
+    "mistake": "Something went wrong...",
+    "back": "Go back"
+  },
   "home": {
     "description": "The Advanced Encryption Standard is the most popular symmetric-key cipher. If you want to learn the basics, dig deep into the details, or experiment with AES: you're in the right place!",
     "go": "Go to Simulator",
