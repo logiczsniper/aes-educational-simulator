@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n();
+const localePath = useLocalePath()
+const { locale } = useI18n()
 
 definePageMeta({
   layout: 'landing-page',
@@ -7,13 +9,26 @@ definePageMeta({
     name: 'slide'
   }
 })
+
+useHead({
+  titleTemplate: `%s: ${t('seo.feedback')}`,
+  htmlAttrs: { lang: locale.value ?? 'en' },
+  link: [{ rel: 'canonical', href: `https://aes-adventure.web.app/${locale.value ?? 'en'}/feedback` }],
+  meta: [
+    {
+      name: 'description',
+      content: t('seo.feedback-description')
+    },
+    { property: 'og:locale', content: locale.value ?? 'en' },
+  ]
+})
 </script>
 
 <template>
   <div class="feedbackPage">
     <header class="feedbackHeader">
       <h4>{{ t('home.feedback.title') }}</h4>
-      <NuxtLink to="/">
+      <NuxtLink :to="localePath('/')">
         <v-btn
           variant="plain"
           icon
@@ -34,6 +49,7 @@ definePageMeta({
         <a
           target="_blank"
           href="https://forms.gle/YffqgHzLDcPaZum99"
+          rel="external"
         >
           <v-btn
             size="small"

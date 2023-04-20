@@ -28,7 +28,7 @@ export default defineNuxtConfig({
       },
     ],
     defaultLocale: 'en',
-    strategy: 'no_prefix',
+    // strategy: 'no_prefix',
     vueI18n: {
       legacy: false,
       missingWarn: false,
@@ -60,6 +60,15 @@ export default defineNuxtConfig({
   },
   app: {
     // pageTransition: { name: 'slide' },
-    layoutTransition: { name: 'fade' }
+    layoutTransition: { name: 'fade' },
+    head: {
+      meta: [
+        { property: 'og:title', content: 'The Intuitive AES Simulator' },
+        { property: 'og:description', content: 'The Advanced Encryption Standard is the most popular symmetric-key cipher. Use AES Adventure to learn the basics, dig deep into the details, or experiment with AES.' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://aes-adventure.web.app' },
+        { property: 'og:image', content: 'https://aes-adventure.web.app/banner.png' },
+      ]
+    }
   },
 })

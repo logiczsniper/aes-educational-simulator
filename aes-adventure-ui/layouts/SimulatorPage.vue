@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n();
+const localePath = useLocalePath()
 
 const config = useConfig()
 
@@ -40,7 +41,7 @@ watch(sidebarElement, newSidebarElement => {
           {{ t('simulator.hide') }}
         </v-btn>
         <NuxtLink
-          to="/"
+          :to="localePath('/')"
           class="quitButton"
         >
           <v-btn
@@ -122,7 +123,7 @@ watch(sidebarElement, newSidebarElement => {
         <NuxtLink
           v-for="tab in Object.values(Tab)"
           :key="tab"
-          :to="simulatorTabs.getTabLink(tab)"
+          :to="localePath(simulatorTabs.getTabLink(tab))"
           class="tab"
           :class="{
             'selected': simulatorTabs.currentTab === tab

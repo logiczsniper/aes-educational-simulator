@@ -2,12 +2,26 @@
 import { AesiExpandKeyRoundStepAddWords, AesiExpandKeyRoundStepRoundGFn, AesiExpandKeyRoundStepRoundHFn, AesiExpandKeyRoundStepType } from '~~/utils/aesi/aesi.types';
 
 const { t } = useI18n();
+const { locale } = useI18n()
 
 definePageMeta({
   layout: 'simulator-page',
   pageTransition: {
     name: 'fade-drop'
   }
+})
+
+useHead({
+  titleTemplate: `%s: ${t('seo.expand')}`,
+  htmlAttrs: { lang: locale.value ?? 'en' },
+  link: [{ rel: 'canonical', href: `https://aes-adventure.web.app/${locale.value ?? 'en'}/simulator/key-expansion` }],
+  meta: [
+    {
+      name: 'description',
+      content: t('seo.expand-description')
+    },
+    { property: 'og:locale', content: locale.value ?? 'en' },
+  ]
 })
 
 const keyExpansionState = useKeyExpansionState()
@@ -580,8 +594,6 @@ const roundIndex = computed(() => Math.min(
     justify-self: flex-end;
     margin-right: 10px;
   }
-
-  .roundIndex {}
 
   .roundCount {
     margin-left: 9px;

@@ -19,6 +19,7 @@ const props = defineProps<{
           <a
             class="href"
             :href="href"
+            rel="external"
             target="_blank"
           >
             <p v-html="label" />

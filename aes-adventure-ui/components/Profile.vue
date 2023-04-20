@@ -22,7 +22,10 @@ const emailHref = computed(() => `mailto:${props.email}`)
     <p><b>{{ props.name }}</b></p>
     <small>{{ props.role }}</small>
     <address>
-      <a :href="emailHref">
+      <a
+        :href="emailHref"
+        rel="author"
+      >
         <v-btn
           size="x-small"
           variant="plain"
@@ -39,6 +42,7 @@ const emailHref = computed(() => `mailto:${props.email}`)
         v-if="props.linkedin"
         target="_blank"
         :href="props.linkedin"
+        rel="author"
       >
         <v-btn
           size="x-small"

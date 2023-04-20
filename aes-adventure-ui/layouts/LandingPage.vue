@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n();
+const localePath = useLocalePath()
 
 const simulatorTabs = useSimulatorTabs()
 </script>
@@ -11,7 +12,7 @@ const simulatorTabs = useSimulatorTabs()
       <p class="description">{{ t('home.description') }}</p>
       <nav class="navMenu">
         <div class="primaryButtons">
-          <NuxtLink :to="simulatorTabs.getTabLink()">
+          <NuxtLink :to="localePath(simulatorTabs.getTabLink())">
             <v-btn
               variant="flat"
               color="primary"
@@ -21,7 +22,7 @@ const simulatorTabs = useSimulatorTabs()
           </NuxtLink>
           <ConfigButton />
         </div>
-        <NuxtLink to="/settings">
+        <NuxtLink :to="localePath('/settings')">
           <v-btn
             prependIcon="mdi-cog"
             variant="plain"
@@ -30,7 +31,7 @@ const simulatorTabs = useSimulatorTabs()
             {{ t('home.settings.title') }}
           </v-btn>
         </NuxtLink>
-        <NuxtLink to="/guide">
+        <NuxtLink :to="localePath('/guide')">
           <v-btn
             prependIcon="mdi-map"
             variant="plain"
@@ -39,7 +40,7 @@ const simulatorTabs = useSimulatorTabs()
             {{ t('home.guide.title') }}
           </v-btn>
         </NuxtLink>
-        <NuxtLink to="/feedback">
+        <NuxtLink :to="localePath('/feedback')">
           <v-btn
             prependIcon="mdi-comment-quote"
             variant="plain"

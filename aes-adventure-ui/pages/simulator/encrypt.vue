@@ -3,12 +3,26 @@ import { AesiRoundStepAddKey, AesiRoundStepType } from '~~/utils/aesi/aesi.types
 import { A, S_BOX } from '~~/utils/aesi/core/constants';
 
 const { t } = useI18n();
+const { locale } = useI18n()
 
 definePageMeta({
   layout: 'simulator-page',
   pageTransition: {
     name: 'fade-drop'
   }
+})
+
+useHead({
+  titleTemplate: `%s: ${t('seo.encrypt')}`,
+  htmlAttrs: { lang: locale.value ?? 'en' },
+  link: [{ rel: 'canonical', href: `https://aes-adventure.web.app/${locale.value ?? 'en'}/simulator/encrypt` }],
+  meta: [
+    {
+      name: 'description',
+      content: t('seo.encrypt-description')
+    },
+    { property: 'og:locale', content: locale.value ?? 'en' },
+  ]
 })
 
 const roundsHeader = ref<HTMLElement>()

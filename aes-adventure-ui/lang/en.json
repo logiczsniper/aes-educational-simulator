@@ -2,6 +2,21 @@
   "title": "Adventure",
   "infographic": "Download Infographic",
   "edit": "Edit",
+  "seo": {
+    "encrypt": "Encrypt",
+    "decrypt": "Decrypt",
+    "expand": "Expand Key",
+    "encrypt-description": "Learn how AES encryption works with AES Adventure's step-by-step simulator. Supports all three key sizes and has tutorials to help guide your learning!",
+    "decrypt-description": "Learn how AES decryption works with AES Adventure's step-by-step simulator. Supports all three key sizes and has tutorials to help guide your learning!",
+    "expand-description": "Learn how AES key expansion works with AES Adventure's step-by-step simulator. Supports all three key sizes and has tutorials to help guide your learning!",
+    "feedback": "Feedback",
+    "feedback-description": "Give your valuable feedback to the creators of AES Adventure so we can improve the experience for everyone.",
+    "guide": "Guide",
+    "guide-description": "Learn how to get the most out of AES Adventure.",
+    "home-description": "Welcome to AES Adventure, an intuitive AES educational tool. Input your own data and walk through step-by-step encryption, decryption, and key expansion of all three key sizes.",
+    "settings": "Settings",
+    "settings-description": "Change how AES Adventure looks to suit your needs."
+  },
   "error": {
     "mistake": "Something went wrong...",
     "back": "Go back"
