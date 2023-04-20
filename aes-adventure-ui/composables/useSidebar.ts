@@ -19,17 +19,23 @@ export const useSidebar = defineStore(getKey`sidebar`, () => {
 
     width.value = `${newWidth}px`
   }
-  const resizeObserver = new ResizeObserver(onManualResize)
+
+  let _resizeObserver: ResizeObserver;
+  const getResizeObserver = () => {
+    _resizeObserver ??= new ResizeObserver(onManualResize)
+
+    return _resizeObserver
+  }
 
   const register = (sidebarElement: HTMLElement) => {
     sidebarElement.classList.add(sidebarClass)
     requestAnimationFrame(() => resize(width.value))
-    resizeObserver.observe(sidebarElement)
+    getResizeObserver().observe(sidebarElement)
   }
 
   const unregister = (sidebarElement?: HTMLElement) => {
-    if (sidebarElement) resizeObserver.unobserve(sidebarElement)
-    else resizeObserver.disconnect()
+    if (sidebarElement) getResizeObserver().unobserve(sidebarElement)
+    else getResizeObserver().disconnect()
   }
 
   const expand = () => resize(document.body.clientWidth * 0.4)
@@ -46,6 +52,6 @@ export const useSidebar = defineStore(getKey`sidebar`, () => {
   }
 }, {
   persist: {
-    paths: ['width']
+    paths: ['width'],
   },
 })

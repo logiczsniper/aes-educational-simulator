@@ -53,18 +53,13 @@ const chartOptions: ApexOptions = {
     position: 'top',
     horizontalAlign: 'right',
     offsetY: 20,
-    itemMargin: {
-      // horizontal: 100
-    }
   },
   xaxis: {
-    // tickAmount: props.roundCount,
     max: props.roundCount + 1,
     labels: {
       show: false
     },
     axisTicks: {
-      // show: false,
     },
     tooltip: {
       enabled: false,
@@ -75,28 +70,8 @@ const chartOptions: ApexOptions = {
     min: 0,
     max: 100,
     decimalsInFloat: 0,
-    // floating: true,
-    labels: {
-      // show: false,
-      // offsetX: 28,
-      // offsetY: 16,
-      // minWidth: 10,
-      // rotate: 270,
-      // formatter(val, opts) {
-      //   return Math.round(val).toString()
-      // }
-    }
   },
   tooltip: {
-    // custom: ({ series, seriesIndex, dataPointIndex, w }) => {
-    //   const thisSeries = series.at(seriesIndex)
-    //   const thisPoint = thisSeries ? thisSeries.at(dataPointIndex) : null
-    //   return `
-    //     <div class="arrow_box">
-    //       <span>${thisPoint}</span>
-    //     </div>
-    //   `
-    // }
     x: {
       formatter: (val, opts) => {
         const isOver = val === 11
@@ -171,7 +146,6 @@ const chartOptions: ApexOptions = {
 <style scoped lang="scss">
 .statsDropdown {
   content-visibility: auto;
-  // position: relative;
 
   .titleContainer {
     display: grid;
@@ -222,11 +196,9 @@ const chartOptions: ApexOptions = {
     margin-left: -16px;
     margin-right: 16px;
     margin-bottom: -36px;
-    // position: relative;
 
     .statsTutorial {
       position: absolute;
-      // right: 29px;
       right: 6px;
       top: 104px;
       z-index: 1;
