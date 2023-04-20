@@ -1,32 +1,40 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "build": "cross-env NITRO_PRESET=firebase nuxt build",
+    "clean": "cd .output/server && rm -rf node_modules && npm i",
+    "build:workaround": "npm run build && npm run clean",
+    "preview:workaround": "npm run build:workaround && cross-env NITRO_PRESET=firebase firebase emulators:start",
+    "preview": "cross-env NITRO_PRESET=firebase firebase emulators:start",
+    "deploy:workaround": "npm run build:workaround && cross-env NITRO_PRESET=firebase firebase deploy",
+    "deploy": "cross-env NITRO_PRESET=firebase firebase deploy",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
   "devDependencies": {
-    "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge",
-    "@types/animejs": "^3.1.7",
-    "nuxt": "^3.2.0",
-    "sass-loader": "^13.2.0",
-    "vitest": "^0.28.3"
+    "@nuxtjs/i18n": "8.0.0-beta.8",
+    "@types/animejs": "3.1.7",
+    "cross-env": "7.0.3",
+    "nuxt": "3.4.0",
+    "sass-loader": "13.2.0",
+    "vitest": "0.28.3"
   },
   "dependencies": {
-    "@mdi/font": "^7.1.96",
-    "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
-    "@pinia/nuxt": "^0.4.6",
-    "animejs": "^3.2.1",
-    "apexcharts": "^3.37.1",
-    "nanoid": "^4.0.1",
-    "pinia": "^2.0.29",
-    "sass": "^1.57.1",
-    "vue3-apexcharts": "^1.4.1",
-    "vuetify": "^3.1.2"
+    "@mdi/font": "7.1.96",
+    "@pinia-plugin-persistedstate/nuxt": "1.0.0",
+    "@pinia/nuxt": "0.4.6",
+    "animejs": "3.2.1",
+    "apexcharts": "3.37.1",
+    "firebase-admin": "11.7.0",
+    "firebase-functions": "4.3.0",
+    "nanoid": "4.0.1",
+    "pinia": "2.0.29",
+    "sass": "1.57.1",
+    "vue3-apexcharts": "1.4.1",
+    "vuetify": "3.1.2"
   },
   "overrides": {
     "vue": "latest"

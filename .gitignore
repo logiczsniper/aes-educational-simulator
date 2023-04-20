@@ -21,3 +21,6 @@ pnpm-debug.log*
 
 # IDE
 .vscode
+
+# deploy cache files
+.firebase
