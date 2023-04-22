@@ -1,8 +1,9 @@
-# <img src="aes-adventure-ui/public/banner.png" alt="AES Educational Simulator" style="border-radius: 20px; max-width: 50%;"/>
+# <img src="aes-adventure-ui/public/banner.png" alt="AES Educational Simulator" style="border-radius: 20px; max-width: 50vw;"/>
 
 #### 🚀 [https://aes-adventure.web.app](https://aes-adventure.web.app/)
-#### 🔎 [Sentry Monitoring](https://logans-sentry-of-solitude.sentry.io/projects/aes-adventure-ui/?project=4505047073423360)
+#### 🔎 [Sentry Error Monitoring](https://logans-sentry-of-solitude.sentry.io/projects/aes-adventure-ui/?project=4505047073423360)
 #### 📈 [Firebase Usage & Billing](https://console.firebase.google.com/project/aes-adventure/usage)
+#### 📖 [Google Cloud Logs](https://console.cloud.google.com/logs/query?authuser=0&project=aes-adventure)
 <br/>
 
 Online tool for helping 3rd level Computer Science students learn about the Advanced Encryption Standard.
