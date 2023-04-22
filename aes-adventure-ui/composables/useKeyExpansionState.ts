@@ -73,7 +73,7 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
   const computeKeyExpansionOutput = () => {
     const { expandedKeyOutput } = aesi({
       key: key.value, config: {
-        defaultConfig: config.walkThroughConfig
+        defaultConfig: config.selection
       }
     })
 

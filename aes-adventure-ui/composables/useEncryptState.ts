@@ -54,7 +54,7 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
   const computeEncryptOutput = () => {
     const { encrypt } = aesi({
       key: key.value, config: {
-        defaultConfig: config.walkThroughConfig
+        defaultConfig: config.selection
       }
     })
 

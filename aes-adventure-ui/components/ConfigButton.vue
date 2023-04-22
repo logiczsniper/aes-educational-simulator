@@ -59,28 +59,28 @@ const resetSimulator = () => {
               class="configBody"
               v-html="t('configure.modal.body')"
             />
-            <div class="configDefaultsGrid">
-              <v-checkbox
+            <v-radio-group
+              v-model="config.selection"
+              @update:model-value="resetSimulator"
+              class="configDefaultsGrid"
+              color="primary-darken-1"
+              hide-details
+            >
+              <v-radio
                 v-for="defaultConfig in defaultConfigurations"
-                v-model="config.selectedDefaultConfigs"
-                @update:model-value="resetSimulator"
-                color="primary-darken-1"
                 :value="defaultConfig.key"
-                :disabled="defaultConfig.key === AesiDefaultConfig.Standard"
-                hide-details
-                density="compact"
               >
                 <template #label>
                   <div
                     class="configDefaultLabel"
-                    :class="{ 'highlighted': config.walkThroughConfig === defaultConfig.key }"
+                    :class="{ 'highlighted': config.selection === defaultConfig.key }"
                   >
                     <p>{{ defaultConfig.name }}</p>
                     <small>{{ defaultConfig.description }}</small>
                   </div>
                 </template>
-              </v-checkbox>
-            </div>
+              </v-radio>
+            </v-radio-group>
           </v-card-text>
           <v-card-actions>
             <v-btn
@@ -120,11 +120,19 @@ const resetSimulator = () => {
 }
 
 .configDefaultsGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 14px;
-  margin-bottom: 20px;
-  padding-right: 12px;
+  :deep(.v-selection-control-group) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 14px;
+    margin-bottom: 20px;
+    padding-right: 12px;
+
+    .v-selection-control {
+      grid-area: auto;
+      align-items: start;
+    }
+  }
 }
 
 .configDefaultLabel {
@@ -132,6 +140,7 @@ const resetSimulator = () => {
   flex-direction: column;
   margin-left: 6px;
   gap: 2px;
+  align-self: start;
 
   small {
     font-size: 12px;

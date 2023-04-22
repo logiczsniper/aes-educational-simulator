@@ -53,28 +53,19 @@ watch(sidebarElement, newSidebarElement => {
         </NuxtLink>
       </nav>
       <section
-        v-if="config.selectedDefaultConfigs.length > 1"
+        v-if="!config.isStandard"
         class="leftColumnSection"
       >
-        <h4>{{ t('simulator.configurations') }}</h4>
+        <h4>{{ t('simulator.configuration') }}</h4>
         <ClientOnly>
           <transition
             appear
             name="opacity"
           >
-            <div>
-              <div
-                v-for="selectedDefaultConfig in config.selectedDefaultConfigs"
-                class="configDefaultLabel"
-                :class="{ 'highlighted': config.walkThroughConfig === selectedDefaultConfig }"
-              >
-                <p>{{ t(`configure.modal.defaults.${selectedDefaultConfig}.name`) + ' AES' }}
-                  <v-tooltip activator="parent">
-                    {{ t(`configure.modal.defaults.${selectedDefaultConfig}.description`) }}
-                  </v-tooltip>
-                </p>
-              </div>
-            </div>
+            <p>
+              {{ t(`configure.modal.defaults.${config.selection}.name`) + ' AES' }}.
+              {{ t(`configure.modal.defaults.${config.selection}.description`) }}
+            </p>
           </transition>
         </ClientOnly>
 
@@ -126,8 +117,8 @@ watch(sidebarElement, newSidebarElement => {
           :to="localePath(simulatorTabs.getTabLink(tab))"
           class="tab"
           :class="{
-            'selected': simulatorTabs.currentTab === tab
-          }"
+              'selected': simulatorTabs.currentTab === tab
+            }"
           @click="simulatorTabs.goToTab(tab)"
         >
           {{ t(`simulator.${tab}`) }}
@@ -185,37 +176,6 @@ watch(sidebarElement, newSidebarElement => {
 
       .quitButton {
         color: unset;
-      }
-    }
-
-    .configDefaultLabel {
-      display: flex;
-      flex-direction: column;
-      overflow-wrap: break-word;
-
-      small {
-        font-size: 12px;
-        line-height: 12px;
-      }
-
-      p {
-        width: min-content;
-        white-space: nowrap;
-      }
-
-      &.highlighted {
-        p {
-          transition: font-weight 0.1s ease-in;
-          font-weight: bold;
-          color: #2C1D66;
-        }
-
-        ::before {
-          content: '✔ ';
-          margin-left: -14.4px;
-          margin-right: 3px;
-          font-size: 12px;
-        }
       }
     }
 

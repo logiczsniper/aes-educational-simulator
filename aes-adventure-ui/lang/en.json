@@ -42,7 +42,7 @@
     "button": "Configure",
     "modal": {
       "title": "Configure",
-      "body": "Select configurations below. When selecting multiple configurations for comparison, <span class='highlight'>the <b>last</b> selected configuration will be walked through step-by-step.</span> If you are new to AES, we recommend that you use the default simulator before using this configuration. <br /><b>Note:</b> changes made here will cause the simulator to abort all activities.",
+      "body": "Select a configuration below. If you are new to AES, we recommend that you use the default simulator before using this configuration. <b>Note:</b> changing the configuration will reset all simulators.",
       "defaults": {
         "standard": {
           "name": "Standard",
@@ -77,6 +77,7 @@
     "show": "Show",
     "quit": "Quit",
     "configurations": "Configurations",
+    "configuration": "Configuration",
     "encrypt": "Encrypt",
     "decrypt": "Decrypt",
     "key-expansion": "Key Expansion",

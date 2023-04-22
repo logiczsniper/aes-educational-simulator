@@ -55,7 +55,7 @@ export const useDecryptState = defineStore(getKey`decryptState`, () => {
   const computeDecryptOutput = () => {
     const { decrypt } = aesi({
       key: key.value, config: {
-        defaultConfig: config.walkThroughConfig
+        defaultConfig: config.selection
       }
     })
 
