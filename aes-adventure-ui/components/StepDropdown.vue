@@ -24,8 +24,7 @@ const lineThroughTitle = computed(() => props.turnedOff ?? props.lineThroughTitl
 const eager = computed(() => props.eager || hoverEager.value)
 
 const scrollTarget = ref<HTMLElement>()
-const tryScrollToBody = () => {
-  const animationDuration = 350
+const tryScrollToBody = (animationDuration: number) => {
   setTimeout(() => {
     scrollTarget.value?.scrollIntoView({
       behavior: 'smooth',
@@ -36,11 +35,11 @@ const tryScrollToBody = () => {
 }
 
 watch(() => props.modelValue, newModelValue => {
-  if (newModelValue && !props.noAutoScrollOnUpdate) tryScrollToBody()
+  if (newModelValue && !props.noAutoScrollOnUpdate) tryScrollToBody(400)
 })
 
 onMounted(() => {
-  if (props.modelValue) tryScrollToBody()
+  if (props.modelValue) tryScrollToBody(900)
 })
 
 </script>
