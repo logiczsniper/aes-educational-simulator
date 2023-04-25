@@ -10,10 +10,13 @@ const props = defineProps<{
   tutorialKey?: TutorialKey;
   backgroundColor?: string;
   noAutoScrollOnUpdate?: boolean;
+  variant?: "popout" | "default";
 }>();
 
 const hoverEager = ref(false)
 const makeHoverEager = () => hoverEager.value = true
+
+const variant = computed(() => props.variant ?? "popout")
 
 const expansionPanelValue = `step-dropdown--${props.title}`
 const backgroundColor = computed(() => (props.turnedOff ? '#CC3933' : undefined) ?? props.backgroundColor)
@@ -46,7 +49,7 @@ onMounted(() => {
   <v-expansion-panels
     :model-value="props.modelValue ? expansionPanelValue : null"
     :readonly="props.modelValue"
-    variant="popout"
+    :variant="variant"
     class="stepDropdown"
     @mouseenter="makeHoverEager"
   >

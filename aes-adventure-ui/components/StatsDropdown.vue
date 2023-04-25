@@ -101,7 +101,7 @@ const chartOptions: ApexOptions = {
   <v-expansion-panels
     :model-value="props.modelValue ? expansionPanelValue : null"
     @update:model-value="newValue => emit('update:modelValue', newValue === expansionPanelValue)"
-    variant="accordion"
+    variant="default"
     class="statsDropdown"
   >
     <v-expansion-panel

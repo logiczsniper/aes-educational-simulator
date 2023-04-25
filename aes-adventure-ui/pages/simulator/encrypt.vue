@@ -163,10 +163,10 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
-                          tutorial.close()
-                          restartAndPause()
-                          encryptState.stage = EncryptStage.SymmetryKeyAddition
-                        }"
+                            tutorial.close()
+                            restartAndPause()
+                            encryptState.stage = EncryptStage.SymmetryKeyAddition
+                          }"
                       >{{ t('simulator.next-step') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -201,10 +201,10 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-selection-ellipse-arrow-inside"
                         color="primary"
                         @click="() => {
-                          tutorial.close()
-                          restartAndPause()
-                          encryptState.startRounds()
-                        }"
+                            tutorial.close()
+                            restartAndPause()
+                            encryptState.startRounds()
+                          }"
                       >{{ t('simulator.start-rounds') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -226,8 +226,8 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                 <RoundProgressBar
                   class="roundProgressBar"
                   :class="{
-                    'moveUp': encryptState.showStats
-                  }"
+                      'moveUp': encryptState.showStats
+                    }"
                   :roundIndex="encryptState.roundIndex + Number(encryptState.stage >= EncryptStage.FromState) - Number(encryptState.stage < EncryptStage.Rounds)"
                   :roundCount="encryptState.roundCount"
                 />
@@ -239,6 +239,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                   :title="`${t('simulator.substitute-bytes')}`"
                   :turned-off="configState.noSubBytes"
                   :tutorial-key="TutorialKey.SubBytes"
+                  variant="default"
                 >
                   <p v-if="configState.noSubBytes">
                     {{ configState.offMessage }}
@@ -265,10 +266,10 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
-                          tutorial.close()
-                          restartAndPause()
-                          encryptState.nextStep()
-                        }"
+                            tutorial.close()
+                            restartAndPause()
+                            encryptState.nextStep()
+                          }"
                       >{{ t('simulator.next-step') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -279,6 +280,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                   :title="`${t('simulator.shift-rows')}`"
                   :turned-off="configState.noShiftRows"
                   :tutorial-key="TutorialKey.ShiftRows"
+                  variant="default"
                 >
                   <p v-if="configState.noShiftRows">
                     {{ configState.offMessage }}
@@ -304,10 +306,10 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
-                          tutorial.close()
-                          restartAndPause()
-                          encryptState.nextStep()
-                        }"
+                            tutorial.close()
+                            restartAndPause()
+                            encryptState.nextStep()
+                          }"
                       >{{ t('simulator.next-step') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -318,6 +320,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                   :title="`${t('simulator.mix-columns')}`"
                   :turned-off="noMixColumns"
                   :tutorial-key="TutorialKey.MixColumns"
+                  variant="default"
                 >
                   <p v-if="noMixColumns">
                     {{ encryptState.isLastRound ? t('simulator.no-mix-columns-last') : configState.offMessage }}
@@ -344,10 +347,10 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
-                          tutorial.close()
-                          restartAndPause()
-                          encryptState.nextStep()
-                        }"
+                            tutorial.close()
+                            restartAndPause()
+                            encryptState.nextStep()
+                          }"
                       >{{ t('simulator.next-step') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -357,6 +360,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                   :eager="encryptState.step?.type === AesiRoundStepType.MixColumns || ((encryptState.step?.type === AesiRoundStepType.ShiftRows) && encryptState.isLastRound)"
                   :title="`${t('simulator.add-round-key')}`"
                   :tutorial-key="TutorialKey.AddRoundKey"
+                  variant="default"
                 >
                   <AnimationAesAnimationFrame :timeline-key="encryptState.roundIndex">
                     <template #animation="{ timeline }">
@@ -379,10 +383,10 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-arrow-u-down-right"
                         color="primary"
                         @click="(_: Event) => {
-                          tutorial.close()
-                          encryptState.skipToLastRound()
-                          scrollToRoundsHeader()
-                        }"
+                            tutorial.close()
+                            encryptState.skipToLastRound()
+                            scrollToRoundsHeader()
+                          }"
                       >{{ t('simulator.skip') }}</v-btn>
                       <v-btn
                         v-if="!encryptState.isLastStep"
@@ -390,10 +394,10 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-rotate-right"
                         color="primary"
                         @click="(_: Event) => {
-                          tutorial.close()
-                          encryptState.nextRound()
-                          scrollToRoundsHeader()
-                        }"
+                            tutorial.close()
+                            encryptState.nextRound()
+                            scrollToRoundsHeader()
+                          }"
                       >{{ t('simulator.next-round') }}</v-btn>
                       <v-btn
                         v-if="encryptState.isLastStep && encryptState.stage === EncryptStage.Rounds"
@@ -401,10 +405,10 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-flag-checkered"
                         color="primary"
                         @click="() => {
-                          tutorial.close()
-                          restartAndPause()
-                          encryptState.stage = EncryptStage.FromState
-                        }"
+                            tutorial.close()
+                            restartAndPause()
+                            encryptState.stage = EncryptStage.FromState
+                          }"
                       >{{ t('simulator.finish-rounds') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -436,10 +440,10 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                         prepend-icon="mdi-lock"
                         color="primary"
                         @click="() => {
-                          tutorial.close()
-                          restartAndPause()
-                          encryptState.stage = EncryptStage.Output
-                        }"
+                            tutorial.close()
+                            restartAndPause()
+                            encryptState.stage = EncryptStage.Output
+                          }"
                       >{{ `${t('simulator.finish')} ${t('simulator.encryption')}` }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
