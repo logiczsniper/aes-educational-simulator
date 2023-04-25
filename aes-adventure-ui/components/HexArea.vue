@@ -142,7 +142,7 @@ const onDuplicateClick = () => {
             variant="plain"
             @click="onCopyClick"
           >
-            <v-icon size="16">mdi-content-copy</v-icon>
+            <v-icon size="18">mdi-content-copy</v-icon>
           </v-btn>
           <v-btn
             v-if="duplicate"
@@ -151,7 +151,7 @@ const onDuplicateClick = () => {
             variant="plain"
             @click="onDuplicateClick"
           >
-            <v-icon size="16">mdi-content-duplicate</v-icon>
+            <v-icon size="18">mdi-content-duplicate</v-icon>
           </v-btn>
         </div>
       </transition>
@@ -252,7 +252,7 @@ const onDuplicateClick = () => {
     position: relative;
 
     .copyButtons {
-      margin-left: -5px;
+      margin-left: -4px;
       position: absolute;
     }
   }
