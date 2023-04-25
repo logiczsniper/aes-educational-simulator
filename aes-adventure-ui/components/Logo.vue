@@ -1,9 +1,42 @@
 <script setup lang="ts">
+import anime from "animejs";
+
 const { t } = useI18n();
 
 const props = defineProps<{
   big?: boolean;
 }>()
+
+const imageClass = `logo__${props.big ? 'big' : 'small'}`
+const imageTarget = `.${imageClass}`
+
+const onClick = () => {
+  anime({
+    targets: imageTarget,
+    rotate: 360,
+    duration: 400,
+    easing: 'easeInOutQuad',
+  })
+}
+
+onMounted(() => {
+  if (!props.big) return
+
+  anime({
+    targets: imageTarget,
+    keyframes: [{
+      translateY: () => anime.random(2, 3),
+      rotate: () => anime.random(1, 2) * 0.5
+    }, {
+      translateY: () => -anime.random(2, 3),
+      rotate: () => -anime.random(1, 2) * 0.5
+    }],
+    duration: 3000,
+    loop: true,
+    direction: 'alternate',
+    easing: 'easeInOutSine',
+  })
+})
 </script>
 
 <template>
@@ -14,6 +47,8 @@ const props = defineProps<{
     <img
       src="/logo.svg"
       alt="AES Adventure logo"
+      :class="imageClass"
+      @click="onClick"
     />
     <h1
       class="title"
