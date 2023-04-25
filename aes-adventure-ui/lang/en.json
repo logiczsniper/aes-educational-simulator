@@ -224,7 +224,12 @@
     },
     "hexArea": {
       "nibblesLeft": "nibbles left.",
-      "ready": "Ready!"
+      "ready": "Ready!",
+      "copied": "Copied to clipboard.",
+      "duplicated-keys": "Copied to all key inputs.",
+      "duplicated-plaintext": "Copied to encrypt input.",
+      "duplicated-ciphertext": "Copied to decrypt input.",
+      "go": "Go"
     }
   }
 }

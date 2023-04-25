@@ -11,6 +11,11 @@ const props = defineProps<{
   disabled?: boolean,
   textAreaStyle?: StyleValue,
   hideFooter?: boolean,
+  duplicate?: {
+    snackbarMessage: string,
+    onDuplicate: (value: string) => void,
+    goTo?: string,  // Localised path!
+  }
 }>();
 
 const emit = defineEmits<{
@@ -49,7 +54,8 @@ const preventInvalidInput = (event: KeyboardEvent) => {
 
 const maxLengthHex = computed(() => props.maxLength / 4)
 const remainingChars = computed(() => maxLengthHex.value - currentValue.value.length);
-const remainingCharsMessage = computed(() => remainingChars.value === 0
+const isFull = computed(() => remainingChars.value === 0)
+const remainingCharsMessage = computed(() => isFull.value
   ? t('simulator.hexArea.ready')
   : `${remainingChars.value} ${t('simulator.hexArea.nibblesLeft')}`
 )
@@ -59,6 +65,28 @@ const maxLengthPadding = computed(() => {
 
   return 31
 })
+
+const snackbarOpen = ref(false)
+const snackbarMessage = ref('')
+const snackbarGoTo = ref<string>()
+
+const openSnackbar = (message: string, goTo?: string) => {
+  snackbarMessage.value = message
+  snackbarGoTo.value = goTo
+  snackbarOpen.value = true
+}
+
+const onCopyClick = () => {
+  openSnackbar(t('simulator.hexArea.copied'))
+  navigator.clipboard.writeText(currentValue.value)
+}
+
+const onDuplicateClick = () => {
+  if (!props.duplicate) return
+
+  openSnackbar(props.duplicate.snackbarMessage, props.duplicate.goTo)
+  props.duplicate.onDuplicate(currentValue.value)
+}
 </script>
 
 <template>
@@ -96,6 +124,37 @@ const maxLengthPadding = computed(() => {
       v-if="!props.hideFooter"
       class="footer"
     >
+      <div />
+      <transition
+        appear
+        name="opacity"
+        :duration="{
+            'leave': 240
+          }"
+      >
+        <div
+          v-if="isFull"
+          class="copyButtons"
+        >
+          <v-btn
+            icon
+            density="compact"
+            variant="plain"
+            @click="onCopyClick"
+          >
+            <v-icon size="16">mdi-content-copy</v-icon>
+          </v-btn>
+          <v-btn
+            v-if="duplicate"
+            icon
+            density="compact"
+            variant="plain"
+            @click="onDuplicateClick"
+          >
+            <v-icon size="16">mdi-content-duplicate</v-icon>
+          </v-btn>
+        </div>
+      </transition>
       <transition
         appear
         name="opacity"
@@ -103,10 +162,42 @@ const maxLengthPadding = computed(() => {
         <p v-if="!props.disabled">{{ remainingCharsMessage }}</p>
       </transition>
     </small>
+    <v-snackbar
+      v-model="snackbarOpen"
+      color="#2C1D66"
+      min-width="fit-content"
+    >
+      <p>
+        <v-icon
+          icon="mdi-check-bold"
+          :size="15"
+        />
+        {{ snackbarMessage }}
+        <NuxtLink
+          v-if="snackbarGoTo"
+          :to="snackbarGoTo"
+        >
+          <v-btn
+            variant="flat"
+            color="white"
+            size="small"
+            class="goButtonWrapper"
+          >
+            <div class="goButton">
+              <v-icon
+                :size="18"
+                icon="mdi-open-in-app"
+              />
+              <p>{{ t('simulator.hexArea.go') }}</p>
+            </div>
+          </v-btn>
+        </NuxtLink>
+      </p>
+    </v-snackbar>
   </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .hexArea {
   display: grid;
 
@@ -154,10 +245,26 @@ const maxLengthPadding = computed(() => {
 
   .footer {
     margin-top: 8px;
-    justify-self: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 28px;
+    position: relative;
+
+    .copyButtons {
+      margin-left: -5px;
+      position: absolute;
+    }
+  }
+}
+
+.goButtonWrapper {
+  margin-left: 8px;
+
+  .goButton {
     display: flex;
     align-items: center;
-    min-height: 19px;
+    gap: 6px;
   }
 }
 </style>

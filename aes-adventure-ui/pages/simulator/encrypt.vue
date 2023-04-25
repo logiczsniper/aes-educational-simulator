@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { AesiRoundStepAddKey, AesiRoundStepType } from '~~/utils/aesi/aesi.types';
 import { A, S_BOX } from '~~/utils/aesi/core/constants';
+import { duplicateCiphertext } from '~~/utils/state/duplicateCiphertext';
+import { duplicateKey } from '~~/utils/state/duplicateKey';
 
 const { t } = useI18n();
 const { locale } = useI18n()
+const localePath = useLocalePath()
 
 definePageMeta({
   layout: 'simulator-page',
@@ -62,6 +65,10 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
               :max-length="encryptState.keySize"
               :key="encryptState.keySize"
               :disabled="encryptState.stage !== EncryptStage.Input"
+              :duplicate="{
+                  snackbarMessage: t('simulator.hexArea.duplicated-keys'),
+                  onDuplicate: key => duplicateKey(key, 'encrypt')
+                }"
             >
               <template #after-title>
                 <v-btn-toggle
@@ -460,6 +467,11 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
               title-key="simulator.ciphertext"
               :max-length="128"
               disabled
+              :duplicate="{
+                  snackbarMessage: t('simulator.hexArea.duplicated-ciphertext'),
+                  onDuplicate: duplicateCiphertext,
+                  goTo: localePath('/simulator/decrypt')
+                }"
             />
           </section>
           <div style="height: 140px;" />

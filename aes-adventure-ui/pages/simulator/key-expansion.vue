@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { AesiExpandKeyRoundStepAddWords, AesiExpandKeyRoundStepRoundGFn, AesiExpandKeyRoundStepRoundHFn, AesiExpandKeyRoundStepType } from '~~/utils/aesi/aesi.types';
+import { duplicateKey } from '~~/utils/state/duplicateKey';
 
 const { t } = useI18n();
 const { locale } = useI18n()
@@ -63,6 +64,10 @@ const roundIndex = computed(() => Math.min(
               :max-length="keyExpansionState.keySize"
               :key="keyExpansionState.keySize"
               :disabled="keyExpansionState.stage !== KeyExpansionStage.Input"
+              :duplicate="{
+                  snackbarMessage: t('simulator.hexArea.duplicated-keys'),
+                  onDuplicate: key => duplicateKey(key, 'key-expansion')
+                }"
             >
               <template #after-title>
                 <v-btn-toggle
@@ -145,6 +150,7 @@ const roundIndex = computed(() => Math.min(
                   :title="`${t('simulator.key')} ➜ ${t('simulator.state')}`"
                   :tutorial-key="TutorialKey.KeyToState"
                   background-color="#f9f9f9"
+                  no-auto-scroll-on-update
                 >
                   <AnimationAesAnimationFrame>
                     <template #animation="{ timeline }">
