@@ -48,7 +48,7 @@ onMounted(() => {
         ? (keyIndex % 2 !== 0 ? -306 : 0)
         : 0
       const multiRowCorrection = columnCount.value === 6
-        ? [4, 5].includes(column) || (row % 2 !== 0 && [2, 3].includes(column)) ? -153.5 : 0
+        ? ([4, 5].includes(column) && row % 2 === 0) ? -307 : ([0, 1].includes(column) && row % 2 !== 0) ? 153.5 : ([2, 3, 4, 5].includes(column) && row % 2 !== 0) ? -153.5 : 0
         : 0
 
       props.timeline.add({
@@ -93,10 +93,10 @@ onMounted(() => {
         ref="animationRoot"
         class="animationGridKey"
         :class="{
-          'small': columnCount === 4,
-          'medium': columnCount === 6,
-          'large': columnCount === 8,
-        }"
+            'small': columnCount === 4,
+            'medium': columnCount === 6,
+            'large': columnCount === 8,
+          }"
       >
       </figure>
     </div>
