@@ -77,7 +77,7 @@ const roundIndex = computed(() => Math.min(
               :disabled="keyExpansionState.stage !== KeyExpansionStage.Input"
               :duplicate="{
                   snackbarMessage: t('simulator.hexArea.duplicated-keys'),
-                  onDuplicate: key => duplicateKey(key, 'key-expansion')
+                  onDuplicate: key => duplicateKey(key, Tab.KeyExpansion)
                 }"
             >
               <template #after-title>

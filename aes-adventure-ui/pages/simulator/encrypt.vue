@@ -6,7 +6,6 @@ import { duplicateKey } from '~~/utils/state/duplicateKey';
 
 const { t } = useI18n();
 const { locale } = useI18n()
-const localePath = useLocalePath()
 
 definePageMeta({
   layout: 'simulator-page',
@@ -78,7 +77,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
               :disabled="encryptState.stage !== EncryptStage.Input"
               :duplicate="{
                   snackbarMessage: t('simulator.hexArea.duplicated-keys'),
-                  onDuplicate: key => duplicateKey(key, 'encrypt')
+                  onDuplicate: key => duplicateKey(key, Tab.Encrypt)
                 }"
             >
               <template #after-title>
@@ -482,7 +481,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
               :duplicate="{
                   snackbarMessage: t('simulator.hexArea.duplicated-ciphertext'),
                   onDuplicate: duplicateCiphertext,
-                  goTo: localePath('/simulator/decrypt')
+                  goTo: Tab.Decrypt
                 }"
             />
           </section>

@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { StyleValue } from 'vue';
+import { Tab } from '~~/composables/useSimulatorTabs';
 import { AesiKeySize } from '~~/utils/aesi/aesi.types';
 
 const { t } = useI18n();
+const localePath = useLocalePath()
+const simulatorTabs = useSimulatorTabs()
 
 const props = defineProps<{
   titleKey?: string,
@@ -14,7 +17,7 @@ const props = defineProps<{
   duplicate?: {
     snackbarMessage: string,
     onDuplicate: (value: string) => void,
-    goTo?: string,  // Localised path!
+    goTo?: Tab,
   }
 }>();
 
@@ -68,9 +71,9 @@ const maxLengthPadding = computed(() => {
 
 const snackbarOpen = ref(false)
 const snackbarMessage = ref('')
-const snackbarGoTo = ref<string>()
+const snackbarGoTo = ref<Tab>()
 
-const openSnackbar = (message: string, goTo?: string) => {
+const openSnackbar = (message: string, goTo?: Tab) => {
   snackbarMessage.value = message
   snackbarGoTo.value = goTo
   snackbarOpen.value = true
@@ -175,7 +178,8 @@ const onDuplicateClick = () => {
         {{ snackbarMessage }}
         <NuxtLink
           v-if="snackbarGoTo"
-          :to="snackbarGoTo"
+          :to="localePath(simulatorTabs.getTabLink(snackbarGoTo))"
+          @click="simulatorTabs.goToTab(snackbarGoTo)"
         >
           <v-btn
             variant="flat"
