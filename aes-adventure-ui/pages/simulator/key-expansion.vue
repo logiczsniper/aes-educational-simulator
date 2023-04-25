@@ -43,9 +43,20 @@ const smallRounds = computed(() => {
   }
 })
 
+const roundProgressBarOffsetRoundOffset = computed(() => {
+  const showRoundZeroBeforeRounds = keyExpansionState.roundIndex === 0 ? -Number(keyExpansionState.stage < KeyExpansionStage.Rounds) : 0
+  const showRoundMaxAfterRounds = keyExpansionState.isLastRound ? Number(keyExpansionState.stage > KeyExpansionStage.Rounds) : 0
+
+  return showRoundZeroBeforeRounds + showRoundMaxAfterRounds
+})
+const onRoundProgressBarClick = (roundNumber: number) => {
+  const roundIndex = roundNumber - 1
+  keyExpansionState.setRound(roundIndex)
+}
+
 const roundIndex = computed(() => Math.min(
   keyExpansionState.roundCount,
-  keyExpansionState.roundIndex + Number(keyExpansionState.stage >= KeyExpansionStage.FromWords) - Number(keyExpansionState.stage < KeyExpansionStage.Rounds) + 1
+  keyExpansionState.roundIndex + roundProgressBarOffsetRoundOffset.value + 1
 ))
 </script>
 
@@ -209,12 +220,12 @@ const roundIndex = computed(() => Math.min(
                     }}</small>
                   </p>
                 </div>
-
                 <RoundProgressBar
                   class="roundProgressBar"
-                  :roundIndex="keyExpansionState.roundIndex + Number(keyExpansionState.stage >= KeyExpansionStage.FromWords) - Number(keyExpansionState.stage < KeyExpansionStage.Rounds)"
+                  :roundIndex="keyExpansionState.roundIndex + roundProgressBarOffsetRoundOffset"
                   :roundCount="keyExpansionState.roundCount"
                   :small-rounds="smallRounds"
+                  @click="onRoundProgressBarClick"
                 />
               </section>
               <section class="rounds">

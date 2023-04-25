@@ -82,6 +82,11 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
     stepIndex.value = 0
   }
 
+  const setRound = (newRoundIndex: number) => {
+    roundIndex.value = newRoundIndex
+    stepIndex.value = 0
+  }
+
   const reset = () => {
     output.value = undefined
     stage.value = EncryptStage.Input
@@ -115,6 +120,7 @@ export const useEncryptState = defineStore(getKey`encryptState`, () => {
     computeEncryptOutput,
     startRounds,
     nextStep,
+    setRound,
     nextRound,
     skipToLastRound,
     reset

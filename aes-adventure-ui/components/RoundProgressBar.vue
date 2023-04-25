@@ -33,9 +33,9 @@ const gridTemplateColumns = computed(() => {
       :key="round"
       class="roundProgressBarPiece"
       :class="{
-        'filled': (round - 1) < props.roundIndex,
-        'current': (round - 1) === props.roundIndex
-      }"
+          'filled': (round - 1) < props.roundIndex,
+          'current': (round - 1) === props.roundIndex
+        }"
       @click="() => emit('click', round)"
     >
       <p class="roundProgressBarValue">{{ round }}</p>
@@ -52,7 +52,8 @@ const gridTemplateColumns = computed(() => {
   display: grid;
   transition: border-radius 0.20s,
     column-gap 0.3s ease,
-    padding .3s;
+    padding .3s,
+    opacity .2s;
 
   border-radius: 0px;
   column-gap: 0px;
@@ -61,7 +62,6 @@ const gridTemplateColumns = computed(() => {
     transition: opacity 1s, margin-left 0.7s;
     opacity: 0;
     font-size: 11px;
-    cursor: default;
     user-select: none;
     -webkit-user-select: none;
   }
@@ -99,8 +99,9 @@ const gridTemplateColumns = computed(() => {
       border-bottom-right-radius: 4px;
     }
 
-    &:hover {
-      opacity: 0.95;
+    &:hover:not(.current) {
+      opacity: 0.9;
+      cursor: pointer;
     }
   }
 

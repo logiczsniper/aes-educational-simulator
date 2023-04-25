@@ -42,6 +42,17 @@ const configState = useConfig()
 const tutorial = useTutorial()
 
 const noMixColumns = computed(() => decryptState.isFirstRound || configState.noMixColumns)
+
+const roundProgressBarOffsetRoundOffset = computed(() => {
+  const showRoundZeroBeforeRounds = decryptState.roundIndex === 0 ? -Number(decryptState.stage < DecryptStage.Rounds) : 0
+  const showRoundMaxAfterRounds = decryptState.isLastRound ? Number(decryptState.stage > DecryptStage.Rounds) : 0
+
+  return showRoundZeroBeforeRounds + showRoundMaxAfterRounds
+})
+const onRoundProgressBarClick = (roundNumber: number) => {
+  const roundIndex = roundNumber - 1
+  decryptState.setRound(roundIndex)
+}
 </script>
 
 <template>
@@ -172,7 +183,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                         @click="() => {
                             restartAndPause()
                             tutorial.close()
-                            decryptState.stage = DecryptStage.Rounds
+                            decryptState.startRounds()
                           }"
                       >{{ t('simulator.start-rounds') }}</v-btn>
                     </template>
@@ -187,7 +198,7 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                   v-if="decryptState.stats"
                   v-model="decryptState.showStats"
                   :stats="decryptState.stats"
-                  :roundIndex="decryptState.roundIndex + Number(decryptState.stage >= DecryptStage.SymmetryKeyAddition) - Number(decryptState.stage < DecryptStage.Rounds)"
+                  :roundIndex="decryptState.roundIndex + roundProgressBarOffsetRoundOffset"
                   :roundCount="decryptState.roundCount"
                 >
 
@@ -197,8 +208,9 @@ const noMixColumns = computed(() => decryptState.isFirstRound || configState.noM
                   :class="{
                       'moveUp': decryptState.showStats
                     }"
-                  :roundIndex="decryptState.roundIndex + Number(decryptState.stage >= DecryptStage.SymmetryKeyAddition) - Number(decryptState.stage < DecryptStage.Rounds)"
+                  :roundIndex="decryptState.roundIndex + roundProgressBarOffsetRoundOffset"
                   :roundCount="decryptState.roundCount"
+                  @click="onRoundProgressBarClick"
                 />
               </section>
               <section class="rounds">

@@ -38,7 +38,7 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
   })
 
   const keysGeneratedSoFar = computed(() => {
-    const finalKey = stage.value > KeyExpansionStage.Rounds ? 1 : 0
+    const finalKey = (isLastRound.value && stage.value > KeyExpansionStage.Rounds) ? 1 : 0
     switch (keySize.value) {
       case 128: return roundIndex.value + 1 + finalKey
       case 192: return Math.floor((roundIndex.value + 1) * 6 / 4) + finalKey
@@ -55,8 +55,6 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
       default: return 1
     }
   })
-
-  // const getStep = (stepType: AesiRoundStepType) => round.value?.steps.find(({ type }) => type === stepType)
 
   const setKeySize = (newKeySize: AesiKeySize) => {
     const mustClipKey = newKeySize < keySize.value
@@ -92,6 +90,11 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
   const nextStep = () => stepIndex.value += 1
   const nextRound = () => {
     roundIndex.value += 1
+    stepIndex.value = 0
+  }
+
+  const setRound = (newRoundIndex: number) => {
+    roundIndex.value = newRoundIndex
     stepIndex.value = 0
   }
 
@@ -131,6 +134,7 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
     startRounds,
     nextStep,
     nextRound,
+    setRound,
     skipToLastRound,
     reset
   }

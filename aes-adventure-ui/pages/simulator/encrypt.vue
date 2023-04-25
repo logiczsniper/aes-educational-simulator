@@ -42,6 +42,17 @@ const configState = useConfig()
 const tutorial = useTutorial()
 
 const noMixColumns = computed(() => encryptState.isLastRound || configState.noMixColumns)
+
+const roundProgressBarOffsetRoundOffset = computed(() => {
+  const showRoundZeroBeforeRounds = encryptState.roundIndex === 0 ? -Number(encryptState.stage < EncryptStage.Rounds) : 0
+  const showRoundMaxAfterRounds = encryptState.isLastRound ? Number(encryptState.stage > EncryptStage.Rounds) : 0
+
+  return showRoundZeroBeforeRounds + showRoundMaxAfterRounds
+})
+const onRoundProgressBarClick = (roundNumber: number) => {
+  const roundIndex = roundNumber - 1
+  encryptState.setRound(roundIndex)
+}
 </script>
 
 <template>
@@ -225,7 +236,7 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                   v-if="encryptState.stats"
                   v-model="encryptState.showStats"
                   :stats="encryptState.stats"
-                  :roundIndex="encryptState.roundIndex + Number(encryptState.stage >= EncryptStage.FromState) - Number(encryptState.stage < EncryptStage.Rounds)"
+                  :roundIndex="encryptState.roundIndex + roundProgressBarOffsetRoundOffset"
                   :roundCount="encryptState.roundCount"
                 >
 
@@ -235,8 +246,9 @@ const noMixColumns = computed(() => encryptState.isLastRound || configState.noMi
                   :class="{
                       'moveUp': encryptState.showStats
                     }"
-                  :roundIndex="encryptState.roundIndex + Number(encryptState.stage >= EncryptStage.FromState) - Number(encryptState.stage < EncryptStage.Rounds)"
+                  :roundIndex="encryptState.roundIndex + roundProgressBarOffsetRoundOffset"
                   :roundCount="encryptState.roundCount"
+                  @click="onRoundProgressBarClick"
                 />
               </section>
               <section class="rounds">
