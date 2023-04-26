@@ -14,6 +14,7 @@ const onClick = () => {
   anime({
     targets: imageTarget,
     rotate: 360,
+    scale: 1.01,
     duration: 400,
     easing: 'easeInOutQuad',
   })
@@ -25,11 +26,15 @@ onMounted(() => {
   anime({
     targets: imageTarget,
     keyframes: [{
-      translateY: () => anime.random(2, 3),
-      rotate: () => anime.random(1, 2) * 0.5
+      translateY: () => anime.random(2, 3) * 0.8,
+      rotateZ: () => anime.random(1, 2) * 0.5,
+      rotateX: () => anime.random(5, 10),
+      rotateY: () => anime.random(5, 10)
     }, {
-      translateY: () => -anime.random(2, 3),
-      rotate: () => -anime.random(1, 2) * 0.5
+      translateY: () => -anime.random(2, 3) * 0.8,
+      rotateZ: () => -anime.random(1, 2) * 0.5,
+      rotateX: () => -anime.random(5, 10),
+      rotateY: () => -anime.random(5, 10)
     }],
     duration: 3000,
     loop: true,

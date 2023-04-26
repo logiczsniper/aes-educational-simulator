@@ -27,7 +27,7 @@ useHead({
 <template>
   <div class="settingsPage">
     <header class="settingsHeader">
-      <h4>{{ t('home.settings.title') }}</h4>
+      <h2>{{ t('home.settings.title') }}</h2>
       <NuxtLink :to="localePath('/')">
         <v-btn
           variant="plain"
@@ -54,6 +54,7 @@ useHead({
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 12px;
 
     a {
       color: #2C1D66;

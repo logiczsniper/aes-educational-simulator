@@ -28,7 +28,6 @@ export default defineNuxtConfig({
       },
     ],
     defaultLocale: 'en',
-    // strategy: 'no_prefix',
     vueI18n: {
       legacy: false,
       missingWarn: false,
@@ -59,7 +58,6 @@ export default defineNuxtConfig({
     },
   },
   app: {
-    // pageTransition: { name: 'slide' },
     layoutTransition: { name: 'fade' },
     head: {
       meta: [

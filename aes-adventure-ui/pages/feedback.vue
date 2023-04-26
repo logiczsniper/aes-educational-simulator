@@ -27,7 +27,7 @@ useHead({
 <template>
   <div class="feedbackPage">
     <header class="feedbackHeader">
-      <h4>{{ t('home.feedback.title') }}</h4>
+      <h2>{{ t('home.feedback.title') }}</h2>
       <NuxtLink :to="localePath('/')">
         <v-btn
           variant="plain"
@@ -96,6 +96,7 @@ useHead({
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 12px;
 
     a {
       color: #2C1D66;
@@ -103,8 +104,6 @@ useHead({
   }
 
   .feedbackBody {
-    margin-top: 2px;
-
     .v-btn {
       font-size: 14px;
       height: 18px;

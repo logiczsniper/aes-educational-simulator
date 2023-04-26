@@ -29,7 +29,46 @@
       "badLang": "Is your language poorly translated or unavailable?"
     },
     "guide": {
-      "title": "Guide"
+      "title": "Guide",
+      "table-of-contents": "Table of Contents",
+      "intro": {
+        "header": "Introduction",
+        "body": "The Advanced Encryption Standard is a <i>symmetric block</i> cipher, meaning that it encrypts/decrypts fixed size blocks with only one key. AES Adventure breaks down AES into 3 primary processes: encryption, decryption, and key expansion. Key expansion is the derivation of subkeys from the input key - these subkeys are used by both encryption and decryption. Each of these complex aspects of AES has a simulator in AES Adventure that will walk you through how AES operates on your input. AES Adventure supports all 3 key sizes used by AES: 128, 192 and 256 bits. <b>Note:</b> all data in AES Adventure is represented in hexadecimal; 1 hexadecimal digit is 4 bits = 1 nibble = 0.5 bytes."
+      },
+      "features": {
+        "header": "Features",
+        "animations": {
+          "header": "Animations",
+          "body": "All of the simulators use animations to clearly show each step of the process. These animations support play, pause and seek operations. The playback speed of all animations can be doubled or halved using the rabbit and turtle icons respectively. Each step will have a button to move on to the next step - if you are learning the step, it is recommended that you do not move on until the button becomes highlighed (which generally occurs near the end of the animation)."
+        },
+        "tutorials": {
+          "header": "Tutorials",
+          "body": "All of the simulators have Tutorial icons scattered throughout. To get a textual explanation of what the icon is beside, click the tutorial icon to expand the simulator sidebar and reveal the corresponding tutorial. The sidebar will automatically return to the original size by clicking the same tutorial icon or moving on to the next step. Alternatively, the sidebar width can be manually adjusted using the dragging handle in the bottom right."
+        },
+        "configuration": {
+          "header": "Configuration",
+          "body": "The encryption and decryption simulators support a limited set of configurations that can be used by more advanced users to experiment with AES. These configurations can be found in the <i>Configure</i> modal to the left of this page. <b>Note:</b> changing the configuration will reset all simulators."
+        },
+        "persistence": {
+          "header": "Local Persistence",
+          "body": "The entire state of AES Adventure is saved to your browser's <i>localstorage</i> with keys that begin with <span class='code'>'AES_ADVENTURE_UI__'</span>. This means that if you close or leave AES Adventure, any simulations that are currently running will be completely restored when you return. If, for whatever reason, the application enters a broken state, it can be hard reset by deleting it's data in <i>localstorage</i> and refreshing the page."
+        },
+        "duplicate-buttons": {
+          "header": "Copy Buttons",
+          "body": "When an input area is full, you will see 1 or 2 <i>copy</i> icon buttons. The first button is a standard copy-to-clipboard button. The second one has a special ease-of-use function depending on which input it is beneath. Under the 'Ciphertext' output of encryption: copies the ciphertext over to the input of the decryption simulator. Under the 'Plaintext' output of decryption: copies the plaintext over to the input of the encryption simulator. Under any key input: copies the key into all other simulators - this is particularly useful to quickly use the same key for encryption, decryption and key expansion. <b>Note:</b> if the copy operation modifies input, the target simulator will be reset as inputs cannot be changed mid-simulation."
+        },
+        "i18n": {
+          "header": "Internationalization",
+          "body": "The language of the entire app can be changed in 'Settings'. These translations are expected to be imperfect; we did not hire professional translators to do this translation. Soon, there will be a way for you to request a fix/correction to the language files that store all of the translations."
+        }
+      },
+      "quick-points": {
+        "header": "Final Tips",
+        "cant-input": "Input data cannot be changed if a simulator is currently using it. Hit the 'Reset' button to exit the current simulation and you will be able to modify the inputs once more.",
+        "cant-start": "Simulators cannot be started until all required input areas are filled. All input areas will have a 'nibbles remaining' counter below them.",
+        "nibble": "1 nibble is half a byte of course! (Also equivalent to 1 hexadecimal digit)",
+        "small": "AES Adventure is designed to be viewed through screens that are atleast <b>13\"</b> in size. This is the smallest standard laptop size, which we expect all our users to be equipped with. If you find yourself with something smaller, utilize the browser's zoom capabilities and zoom out. If you are on mobile, rotate the device into landscape mode to get as much additional width as possible."
+      }
     },
     "feedback": {
       "title": "Feedback",
