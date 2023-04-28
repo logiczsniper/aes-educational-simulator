@@ -12,7 +12,7 @@ const { t } = useI18n();
 
 <template>
   <div>
-  <!-- <EditOnGitLabButton gitlabHref="www.google.com" />
+    <!-- <EditOnGitLabButton gitlabHref="www.google.com" />
     <TutorialsCommonSandboxButton subtitle="sandboz">
       Hello i am the sandboz
       </TutorialsCommonSandboxButton>
@@ -35,7 +35,5 @@ const { t } = useI18n();
         <TutorialIconButton />
       </template>
     </i18n-t>
-    <br />
-    <p v-html="t('simulator.tutorial.default.tip')" />
   </div>
 </template>

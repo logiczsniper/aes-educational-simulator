@@ -164,8 +164,7 @@
     "tutorial": {
       "title": "Tutorial",
       "default": {
-        "description": "Click on {tutorialIcon} that you see to reveal relevant information here.",
-        "tip": "<i>Tip!</i> Expand this sidebar to free up more room for the tutorial by dragging on the resizer in the bottom right corner."
+        "description": "Click on {tutorialIcon} that you see to reveal relevant information here."
       },
       "sandbox": {
         "button": "Sandbox",
@@ -219,15 +218,15 @@
         "note": "Each round generates 1 subkey for a key size of 128 bits, 1.5 subkeys for 192 bits, and 2 subkeys for 256 bits, except the final round which generates 1 subkey for all three key sizes."
       },
       "rounds-stats": {
-        "diffusion": "<b>Diffusion</b> is the influence of a single plaintext bit on the (current) ciphertext. The metric is represented in AES Adventure by the <i>avalanche</i> effect. This is calculated as follows: for each plaintext bit, flip it and compute the (current) ciphertext with the modified plaintext. Then, count the number of bits flipped in the (current) ciphertext: the metric is the average number of bits flipped across all plaintext variations.",
-        "confusion": "<b>Confusion</b> is the relationship between the (current) ciphertext and the key. The metric is represented in AES Adventure by a measure of association between the (current) ciphertext and key in which all 0s have been mapped to -1s.",
+        "diffusion": "<b>Diffusion</b> is the influence of a single plaintext bit on the (current) ciphertext. The metric is represented in AES Adventure by the <i>avalanche</i> effect. This is calculated as follows: for each plaintext bit, flip it and compute the (current) ciphertext with the modified plaintext. Then, count the number of bits flipped in the (current) ciphertext: the metric is the average number of bits flipped across all plaintext variations.<br />Shift Rows and Mix Columns may be collectively referred to as the <i>diffusion layer</i> because they are the major diffusive steps in AES.",
+        "confusion": "<b>Confusion</b> is the relationship between the (current) ciphertext and the key. The metric is represented in AES Adventure by a measure of association between the (current) ciphertext and key in which all 0s have been mapped to -1s.<br />Substitute Bytes introduces confusion in AES.",
         "learn-more": {
           "conf-diff": "Confusion & Diffusion",
           "avalanche": "Avalanche Effect"
         }
       },
       "sub-bytes": {
-        "body": "Substitute Bytes replaces each state matrix byte with a byte from the substitution box, which provides non-linearity in AES. It is a bijective mapping; during <b>decryption</b>, we use the unique <b>inverse</b> of the substitution box.",
+        "body": "Substitute Bytes replaces each state matrix byte with a byte from the substitution box, which provides non-linearity in AES (protection against analytical attacks). It is a bijective mapping; during <b>decryption</b>, we use the unique <b>inverse</b> of the substitution box.",
         "learn-more": {
           "bijective": "Bijective Functions",
           "sbox": "Computing AES's Substitution Box"

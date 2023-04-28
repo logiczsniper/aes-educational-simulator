@@ -22,15 +22,6 @@ const simulatorTabs = useSimulatorTabs()
           </NuxtLink>
           <ConfigButton />
         </div>
-        <NuxtLink :to="localePath('/settings')">
-          <v-btn
-            prependIcon="mdi-cog"
-            variant="plain"
-            color="primary-darken-1"
-          >
-            {{ t('home.settings.title') }}
-          </v-btn>
-        </NuxtLink>
         <NuxtLink :to="localePath('/guide')">
           <v-btn
             prependIcon="mdi-map"
@@ -38,6 +29,15 @@ const simulatorTabs = useSimulatorTabs()
             color="primary-darken-1"
           >
             {{ t('home.guide.title') }}
+          </v-btn>
+        </NuxtLink>
+        <NuxtLink :to="localePath('/settings')">
+          <v-btn
+            prependIcon="mdi-cog"
+            variant="plain"
+            color="primary-darken-1"
+          >
+            {{ t('home.settings.title') }}
           </v-btn>
         </NuxtLink>
         <NuxtLink :to="localePath('/feedback')">

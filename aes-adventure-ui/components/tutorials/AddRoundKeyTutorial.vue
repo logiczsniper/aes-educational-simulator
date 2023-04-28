@@ -5,7 +5,7 @@ const { t } = useI18n();
 <template>
   <div class="tutorialBody">
     <p v-html="t('simulator.tutorial.add-round-key.body')" />
-    <TutorialsCommonSandboxButton>
+    <!-- <TutorialsCommonSandboxButton>
       <template #animation="{ input }">
         <AnimationAesAnimationFrame>
           <template #animation="{ timeline }">
@@ -19,7 +19,7 @@ const { t } = useI18n();
           </template>
         </AnimationAesAnimationFrame>
       </template>
-    </TutorialsCommonSandboxButton>
+    </TutorialsCommonSandboxButton> -->
   </div>
 </template>
 
