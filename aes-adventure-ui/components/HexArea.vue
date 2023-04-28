@@ -12,6 +12,7 @@ const props = defineProps<{
   modelValue: string,
   maxLength: AesiKeySize,
   disabled?: boolean,
+  disabledText?: string,
   textAreaStyle?: StyleValue,
   hideFooter?: boolean,
   duplicate?: {
@@ -120,6 +121,7 @@ const onDuplicateClick = () => {
       class="textArea code"
       placeholder="2f 1c.."
       :disabled="props.disabled"
+      :title="props.disabled ? props.disabledText : ''"
       :style="props.textAreaStyle"
       @keydown="preventInvalidInput"
     />

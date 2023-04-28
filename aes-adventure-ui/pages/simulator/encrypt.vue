@@ -68,6 +68,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
               title-key="simulator.plaintext"
               :max-length="128"
               :disabled="encryptState.stage !== EncryptStage.Input"
+              :disabled-text="t('simulator.disabled-input')"
             />
             <HexArea
               v-model="encryptState.rawKey"
@@ -75,6 +76,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
               :max-length="encryptState.keySize"
               :key="encryptState.keySize"
               :disabled="encryptState.stage !== EncryptStage.Input"
+              :disabled-text="t('simulator.disabled-input')"
               :duplicate="{
                   snackbarMessage: t('simulator.hexArea.duplicated-keys'),
                   onDuplicate: key => duplicateKey(key, Tab.Encrypt)
@@ -86,6 +88,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                   density="compact"
                   selected-class="selectedKeySize"
                   :disabled="encryptState.stage !== EncryptStage.Input"
+                  :title="encryptState.stage !== EncryptStage.Input ? t('simulator.disabled-input') : ''"
                   :model-value="encryptState.keySize"
                   @update:model-value="encryptState.setKeySize"
                 >
@@ -130,6 +133,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
             <v-btn
               v-if="encryptState.stage === EncryptStage.Input"
               :disabled="!encryptState.canComputeEncryptOutput"
+              :title="!encryptState.canComputeEncryptOutput ? t('simulator.disabled-start') : ''"
               prependIcon="mdi-lock"
               variant="flat"
               color="primary"

@@ -75,6 +75,7 @@ const roundIndex = computed(() => Math.min(
               :max-length="keyExpansionState.keySize"
               :key="keyExpansionState.keySize"
               :disabled="keyExpansionState.stage !== KeyExpansionStage.Input"
+              :disabled-text="t('simulator.disabled-input')"
               :duplicate="{
                   snackbarMessage: t('simulator.hexArea.duplicated-keys'),
                   onDuplicate: key => duplicateKey(key, Tab.KeyExpansion)
@@ -86,6 +87,7 @@ const roundIndex = computed(() => Math.min(
                   density="compact"
                   selected-class="selectedKeySize"
                   :disabled="keyExpansionState.stage !== KeyExpansionStage.Input"
+                  :title="keyExpansionState.stage !== KeyExpansionStage.Input ? t('simulator.disabled-input') : ''"
                   :model-value="keyExpansionState.keySize"
                   @update:model-value="keyExpansionState.setKeySize"
                 >
@@ -130,6 +132,7 @@ const roundIndex = computed(() => Math.min(
             <v-btn
               v-if="keyExpansionState.stage === KeyExpansionStage.Input"
               :disabled="!keyExpansionState.canComputeKeyExpansionOutput"
+              :title="!keyExpansionState.canComputeKeyExpansionOutput ? t('simulator.disabled-start') : ''"
               prependIcon="mdi-key-plus"
               variant="flat"
               color="primary"

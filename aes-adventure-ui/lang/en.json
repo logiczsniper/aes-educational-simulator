@@ -161,6 +161,8 @@
     "add-words": "Add Words",
     "keys-generated": "round keys ready",
     "round-keys": "Round Keys",
+    "disabled-input": "Click the 'Reset' button to enable editing",
+    "disabled-start": "Fill the input(s) to enable simulation",
     "tutorial": {
       "title": "Tutorial",
       "default": {
