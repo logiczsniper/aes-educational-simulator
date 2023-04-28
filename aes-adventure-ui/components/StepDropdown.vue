@@ -50,6 +50,7 @@ onMounted(() => {
     :readonly="props.modelValue"
     :variant="variant"
     class="stepDropdown"
+    :class="{ 'readonly': props.modelValue }"
     @mouseenter="makeHoverEager"
   >
     <v-expansion-panel
@@ -119,6 +120,14 @@ onMounted(() => {
     margin-right: 28px;
     margin-top: -8px;
     margin-bottom: 4px;
+  }
+
+  &.readonly {
+
+    :deep(.v-expansion-panel-title__overlay),
+    :deep(.v-expansion-panel-title__icon) {
+      cursor: default;
+    }
   }
 
   :deep(.v-expansion-panel-title__overlay) {
