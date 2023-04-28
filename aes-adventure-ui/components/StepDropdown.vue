@@ -65,7 +65,7 @@ onMounted(() => {
         />
         <h3
           class="title"
-          :class="{ 'strikeThrough': lineThroughTitle }"
+          :class="{ 'strikeThrough': lineThroughTitle, 'underline': props.modelValue }"
         >
           <div v-html="props.title" />
           <span v-if="props.tutorialKey !== undefined && !props.turnedOff">
@@ -92,9 +92,18 @@ onMounted(() => {
     display: flex;
     padding: 2px 0;
     font-size: 1.26em;
+    transition: text-decoration 2.4s;
+    text-underline-offset: 6px;
+    text-decoration-color: transparent;
 
     &.strikeThrough {
       text-decoration: line-through;
+    }
+
+    &.underline {
+      text-decoration: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: rgb(213, 213, 213);
     }
 
     span {
