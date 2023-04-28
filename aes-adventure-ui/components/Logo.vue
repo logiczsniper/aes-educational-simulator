@@ -10,13 +10,38 @@ const props = defineProps<{
 const imageClass = `logo__${props.big ? 'big' : 'small'}`
 const imageTarget = `.${imageClass}`
 
+const clickCount = ref(0)
+
 const onClick = () => {
+  clickCount.value += 1
+  const celebrate = clickCount.value % 10 === 0
+  const easterEggModifier = celebrate ? 2 : 1
+
   anime({
     targets: imageTarget,
-    rotate: 360,
-    scale: 1.01,
+    rotate: 360 * easterEggModifier,
+    scale: 1.01 * easterEggModifier,
     duration: 400,
     easing: 'easeInOutQuad',
+  }).finished.then(() => {
+    const messages = [
+      "Think this is a fun easter egg?",
+      "Wow you really enjoy clicking this, don't you?",
+      "Still going, huh?",
+      "Wondering when these messages will stop?",
+      "A long time, is the answer.",
+      "I can write these all day long.",
+      "The force is strong with this one.",
+      "You are a person of focus, commitment, sheer will... something I know very little about.",
+      "You're a wizard, Harry!",
+      "Perfectly balanced...",
+      "You know, I'm something of a scientist myself.",
+      "Alright that's enough, this is the last message.",
+      "Now that the weak-willed AES Adventure users are gone...",
+      "Congrats, you made it! You clicked this logo 140 times. It is late. I must rest. Thank you."
+    ]
+    const message = messages.at(Math.round(clickCount.value / 10) - 1)
+    if (celebrate && message) alert(message)
   })
 }
 
