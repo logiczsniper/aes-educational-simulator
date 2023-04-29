@@ -13,6 +13,8 @@ const imageTarget = `.${imageClass}`
 const clickCount = ref(0)
 
 const onClick = () => {
+  if (!props.big) return
+
   clickCount.value += 1
   const celebrate = clickCount.value % 10 === 0
   const easterEggModifier = celebrate ? 2 : 1
