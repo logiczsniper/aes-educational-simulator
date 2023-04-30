@@ -104,7 +104,7 @@ onMounted(() => {
     &.underline {
       text-decoration: underline;
       text-decoration-style: wavy;
-      text-decoration-color: rgb(213, 213, 213);
+      text-decoration-color: rgba(var(--v-theme-opposite), 0.25);
     }
 
     span {

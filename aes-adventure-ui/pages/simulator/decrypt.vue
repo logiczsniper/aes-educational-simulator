@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useTheme } from 'vuetify';
 import { AesiRoundStepAddKey, AesiRoundStepType } from '~~/utils/aesi/aesi.types';
 import { A_INVERSE, S_BOX_INVERSE } from '~~/utils/aesi/core/constants';
 import { duplicateKey } from '~~/utils/state/duplicateKey';
@@ -26,6 +27,8 @@ useHead({
     { property: 'og:locale', content: locale.value ?? 'en' },
   ]
 })
+
+const theme = useTheme()
 
 const roundsHeader = ref<HTMLElement>()
 const scrollToRoundsHeader = () => {
@@ -164,7 +167,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                   eager
                   :title="`${t('simulator.ciphertext')} ➜ ${t('simulator.state')}`"
                   :tutorial-key="TutorialKey.CiphertextToState"
-                  background-color="#f9f9f9"
+                  :background-color="theme.current.value.colors.background"
                 >
                   <AnimationAesAnimationFrame>
                     <template #animation="{ timeline }">
@@ -404,7 +407,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                   :eager="decryptState.step?.type === AesiRoundStepType.SubBytes"
                   :title="`${t('simulator.add-key')}`"
                   :tutorial-key="TutorialKey.AddKey"
-                  background-color="#f9f9f9"
+                  :background-color="theme.current.value.colors.background"
                 >
                   <AnimationAesAnimationFrame>
                     <template #animation="{ timeline }">
@@ -441,7 +444,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                   :eager="decryptState.stage === DecryptStage.SymmetryKeyAddition"
                   :title="`${t('simulator.state')} ➜ ${t('simulator.plaintext')}`"
                   :tutorial-key="TutorialKey.StateToPlaintext"
-                  background-color="#f9f9f9"
+                  :background-color="theme.current.value.colors.background"
                 >
                   <AnimationAesAnimationFrame>
                     <template #animation="{ timeline }">

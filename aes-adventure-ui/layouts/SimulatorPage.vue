@@ -153,7 +153,7 @@ watch(sidebarElement, newSidebarElement => {
     max-width: 50vw;
     padding: 20px 20px 12px 26px;
     z-index: 2;
-    background-color: white;
+    background-color: rgb(var(--v-theme-surface));
     transition: padding-top .16s ease-out;
 
     position: relative;
@@ -167,7 +167,7 @@ watch(sidebarElement, newSidebarElement => {
       position: absolute;
       right: 0;
       bottom: 0;
-      background-color: white;
+      background-color: rgb(var(--v-theme-surface));
       z-index: 20;
     }
 
@@ -194,7 +194,7 @@ watch(sidebarElement, newSidebarElement => {
 
   .rightColumn {
     place-items: center;
-    background-color: #f9f9f9;
+    background-color: rgb(var(--v-theme-background));
     padding: 20px 4%;
     overflow-y: auto;
     min-width: 600px;
@@ -207,7 +207,7 @@ watch(sidebarElement, newSidebarElement => {
       display: flex;
       justify-content: space-around;
       gap: 24px;
-      background-color: white;
+      background-color: rgb(var(--v-theme-surface));
       border-radius: 8px;
       padding: 6px;
       margin-bottom: 30px;

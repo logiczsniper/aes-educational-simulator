@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { AnimeTimelineInstance } from 'animejs';
+import { useTheme } from 'vuetify';
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
 import { COL_GAP, DIV_HEIGHT, DIV_WIDTH, ROW_GAP } from '~~/utils/animation/constants';
 import { hexToDivs } from '~~/utils/animation/hexToDivs';
@@ -13,6 +14,7 @@ const props = defineProps<{
 }>();
 
 const { t } = useI18n();
+const theme = useTheme()
 
 const animationRoot = ref<HTMLElement>()
 const inputGridRoot = ref<HTMLElement>()
@@ -70,7 +72,7 @@ const createAnimation = () => {
         opacity: 1,
       }).add({
         targets: [sboxTargetRowClass(firstChildHex), sboxTargetColumnClass(secondChildHex)],
-        color: 'rgba(0, 0, 0, 0.87)', // this is the color set by vuetify, we cannot simply 'unset' in this animation
+        color: theme.current.value.dark ? 'rgba(255, 255, 255, 0.87)' : 'rgba(0, 0, 0, 0.87)' // this is the color set by vuetify, we cannot simply 'unset' in this animation
       }, '+=1100')
     }
   }

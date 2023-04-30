@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { useTheme } from 'vuetify';
 import { useConfig } from '~~/composables/useConfig';
 import { AesiDefaultConfig } from '~~/utils/aesi/aesi.types';
 
 const { t } = useI18n();
+const theme = useTheme()
 
 const configureDialogOpen = ref(false)
 
@@ -44,7 +46,7 @@ const resetSimulator = () => {
         </template>
         <v-card>
           <v-toolbar
-            color="white"
+            :color="theme.current.value.colors.surface"
             :title="t('configure.modal.title')"
           >
             <template #prepend>

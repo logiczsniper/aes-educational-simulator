@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ApexOptions } from "apexcharts";
 import ApexChart from "vue3-apexcharts";
+import { useTheme } from 'vuetify';
 import { AesiStatistics } from "~~/utils/statistics/generateStatistics";
 
 const props = defineProps<{
@@ -13,6 +14,7 @@ const props = defineProps<{
 const expansionPanelValue = `stat-dropdown`
 
 const { t } = useI18n();
+const theme = useTheme()
 
 const emit = defineEmits<{
   (e: 'update:modelValue', value: boolean): void
@@ -108,7 +110,7 @@ const chartOptions: ApexOptions = {
       :value="expansionPanelValue"
       eager
       elevation="0"
-      bg-color="#f9f9f9"
+      :bg-color="theme.current.value.colors.background"
     >
       <template #title>
         <div
@@ -161,7 +163,7 @@ const chartOptions: ApexOptions = {
     }
 
     .roundIndex {
-      background-color: white;
+      background-color: rgb(var(--v-theme-surface));
       border-radius: 4px;
       place-self: center;
       padding: 14px;

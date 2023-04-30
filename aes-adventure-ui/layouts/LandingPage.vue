@@ -1,6 +1,9 @@
 <script setup lang="ts">
 const { t } = useI18n();
+const themeName = useThemeName();
 const localePath = useLocalePath()
+
+const plainButtonColor = computed(() => themeName.name === ThemeName.Dark ? 'primary' : 'primary-darken-1')
 
 const simulatorTabs = useSimulatorTabs()
 </script>
@@ -26,7 +29,7 @@ const simulatorTabs = useSimulatorTabs()
           <v-btn
             prependIcon="mdi-map"
             variant="plain"
-            color="primary-darken-1"
+            :color="plainButtonColor"
           >
             {{ t('home.guide.title') }}
           </v-btn>
@@ -35,7 +38,7 @@ const simulatorTabs = useSimulatorTabs()
           <v-btn
             prependIcon="mdi-cog"
             variant="plain"
-            color="primary-darken-1"
+            :color="plainButtonColor"
           >
             {{ t('home.settings.title') }}
           </v-btn>
@@ -44,7 +47,7 @@ const simulatorTabs = useSimulatorTabs()
           <v-btn
             prependIcon="mdi-comment-quote"
             variant="plain"
-            color="primary-darken-1"
+            :color="plainButtonColor"
           >
             {{ t('home.feedback.title') }}
           </v-btn>
@@ -52,7 +55,7 @@ const simulatorTabs = useSimulatorTabs()
         <v-btn
           prependIcon="mdi-code-tags"
           variant="plain"
-          color="primary-darken-1"
+          :color="plainButtonColor"
           disabled
         >
           {{ t('home.gitlab') }}
@@ -78,6 +81,7 @@ const simulatorTabs = useSimulatorTabs()
 
   .leftColumn {
     padding: 48px 62px 36px 62px;
+    background-color: rgb(var(--v-theme-surface));
 
     .description {
       margin-top: 36px;
@@ -101,7 +105,7 @@ const simulatorTabs = useSimulatorTabs()
   .rightColumn {
     display: grid;
     place-items: center;
-    background-color: #f9f9f9;
+    background-color: rgb(var(--v-theme-background));
     position: relative;
   }
 }

@@ -233,13 +233,13 @@ const onDuplicateClick = () => {
   }
 
   .textArea {
-    background-color: white;
+    background-color: rgb(var(--v-theme-surface));
     border-radius: 6px;
     padding: 8px 12px;
     margin-top: 8px;
 
     transition: border-color .18s ease;
-    border: 3px solid white;
+    border: 3px solid rgb(var(--v-theme-surface));
     outline: none;
     resize: none;
     overflow: hidden;

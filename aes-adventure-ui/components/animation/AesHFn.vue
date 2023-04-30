@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { AnimeTimelineInstance } from 'animejs';
+import { useTheme } from 'vuetify';
 import { AesiExpandKeyRoundStepRoundHFn } from '~~/utils/aesi/aesi.types';
 import { S_BOX } from '~~/utils/aesi/core/constants';
 import { addAnimationClasses } from '~~/utils/animation/addAnimationClasses';
@@ -13,6 +14,7 @@ const props = defineProps<{
 }>();
 
 const { t } = useI18n();
+const theme = useTheme()
 
 const animationRoot = ref<HTMLElement>()
 const inputGridRoot = ref<HTMLElement>()
@@ -82,7 +84,7 @@ const createAnimation = () => {
       opacity: 1,
     }).add({
       targets: [sboxTargetRowClass(firstChildHex), sboxTargetColumnClass(secondChildHex)],
-      color: 'rgba(0, 0, 0, 0.87)', // this is the color set by vuetify, we cannot simply 'unset' in this animation
+      color: theme.current.value.dark ? 'rgba(255, 255, 255, 0.87)' : 'rgba(0, 0, 0, 0.87)'
     }, '+=1100')
   }
 

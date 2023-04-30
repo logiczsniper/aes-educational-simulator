@@ -67,7 +67,7 @@ const gridTemplateColumns = computed(() => {
   }
 
   .roundProgressBarPiece {
-    background-color: white;
+    background-color: rgb(var(--v-theme-surface));
     transition: inherit;
     border-radius: inherit;
 
@@ -75,7 +75,7 @@ const gridTemplateColumns = computed(() => {
       background-color: #745CD0;
 
       .roundProgressBarValue {
-        color: white;
+        color: rgb(var(--v-theme-surface));
       }
     }
 
@@ -85,7 +85,7 @@ const gridTemplateColumns = computed(() => {
       border-bottom-right-radius: 4px;
 
       .roundProgressBarValue {
-        color: white;
+        color: rgb(var(--v-theme-surface));
       }
     }
 

@@ -41,6 +41,7 @@ useHead({
       </NuxtLink>
     </header>
     <LanguageSelect />
+    <ThemeToggle />
   </div>
 </template>
 

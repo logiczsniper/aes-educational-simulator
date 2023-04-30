@@ -11,111 +11,115 @@ watch(selectedLocaleCode, newLocaleCode => {
 
 <template>
   <div class="languageSelect">
-    <v-icon
-      class="translateIcon"
-      icon="mdi-translate-variant"
-      size="18"
-    />
-    <ClientOnly>
-      <v-select
-        v-model="selectedLocaleCode"
-        class="selectComponent"
-        density="compact"
-        :items="availableLocales"
-        item-title="name"
-        item-value="code"
-        variant="solo"
-        hide-selected
-        :menu-props="{
-          closeOnContentClick: true,
-        }"
-      >
-        <template #item="{ item: { raw: { code, name, emoji } } }">
-          <v-btn
-            variant="plain"
-            @click="selectedLocaleCode = code"
-          >
-            <span
-              v-if="emoji"
-              class="emoji"
+    <div class="languageSelectInput">
+      <v-icon
+        class="translateIcon"
+        icon="mdi-translate-variant"
+        size="18"
+      />
+      <ClientOnly>
+        <v-select
+          v-model="selectedLocaleCode"
+          class="selectComponent"
+          density="compact"
+          :items="availableLocales"
+          item-title="name"
+          item-value="code"
+          variant="solo"
+          hide-selected
+          :menu-props="{
+              closeOnContentClick: true,
+            }"
+        >
+          <template #item="{ item: { raw: { code, name, emoji } } }">
+            <v-btn
+              variant="plain"
+              @click="selectedLocaleCode = code"
             >
-              {{ emoji }}
-            </span>
-            {{ name }}
-          </v-btn>
-        </template>
-        <template #selection="{ item: { raw: { code, name, emoji } } }">
-          <v-btn
-            class="languageItem"
-            variant="plain"
-            @click="selectedLocaleCode = code"
-          >
-            <span
-              v-if="emoji"
-              class="emoji"
+              <span
+                v-if="emoji"
+                class="emoji"
+              >
+                {{ emoji }}
+              </span>
+              {{ name }}
+            </v-btn>
+          </template>
+          <template #selection="{ item: { raw: { code, name, emoji } } }">
+            <v-btn
+              class="languageItem"
+              variant="plain"
+              @click="selectedLocaleCode = code"
             >
-              {{ emoji }}
-            </span>
-            {{ name }}
-          </v-btn>
+              <span
+                v-if="emoji"
+                class="emoji"
+              >
+                {{ emoji }}
+              </span>
+              {{ name }}
+            </v-btn>
+          </template>
+        </v-select>
+        <template #fallback>
+          <div class="selectSkeleton skeleton" />
         </template>
-      </v-select>
-      <template #fallback>
-        <div class="selectSkeleton skeleton" />
-      </template>
-    </ClientOnly>
+      </ClientOnly>
+    </div>
+    <v-btn
+      variant="plain"
+      size="x-small"
+      class="languageHelp"
+    >
+      <!-- TODO: link to GitLab README explaining how to contribute -->
+      <p><small>{{ t('home.settings.badLang') }}</small></p>
+    </v-btn>
   </div>
-  <v-btn
-    variant="plain"
-    size="x-small"
-    class="languageHelp"
-  >
-    <!-- TODO: link to GitLab README explaining how to contribute -->
-    <p><small>{{ t('home.settings.badLang') }}</small></p>
-  </v-btn>
 </template>
 
 <style scoped lang="scss">
 .languageSelect {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-
-  .translateIcon {
-    opacity: 0.6;
-    margin-top: -22px;
-  }
-
-  .selectComponent {
-    max-width: 50%;
-    display: grid;
+  .languageSelectInput {
+    display: flex;
+    gap: 12px;
     align-items: center;
 
-    .languageItem {
-      margin-left: -10px;
+    .translateIcon {
+      opacity: 0.6;
+      margin-top: -22px;
     }
 
-    :deep(.v-field__append-inner) {
+    .selectComponent {
+      max-width: 50%;
+      display: grid;
       align-items: center;
-      padding: 0;
+
+      .languageItem {
+        margin-left: -10px;
+      }
+
+      :deep(.v-field__append-inner) {
+        align-items: center;
+        padding: 0;
+      }
+    }
+
+    .selectSkeleton {
+      @extend .selectComponent;
+      height: 52px;
+      margin-bottom: 22px;
+      border-radius: 4px;
+      width: 50%;
     }
   }
 
-  .selectSkeleton {
-    @extend .selectComponent;
-    height: 52px;
-    margin-bottom: 22px;
-    border-radius: 4px;
-    width: 50%;
+  .languageHelp {
+    margin-top: -36px;
+    padding-left: 0;
   }
-}
 
-.languageHelp {
-  margin-top: -36px;
-  padding-left: 0;
-}
-
-.emoji {
-  margin-right: 8px;
+  .emoji {
+    margin-right: 8px;
+  }
 }
 </style>

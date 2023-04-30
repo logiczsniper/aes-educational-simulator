@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useTheme } from 'vuetify';
 import { AesiExpandKeyRoundStepAddWords, AesiExpandKeyRoundStepRoundGFn, AesiExpandKeyRoundStepRoundHFn, AesiExpandKeyRoundStepType } from '~~/utils/aesi/aesi.types';
 import { duplicateKey } from '~~/utils/state/duplicateKey';
 
@@ -24,6 +25,8 @@ useHead({
     { property: 'og:locale', content: locale.value ?? 'en' },
   ]
 })
+
+const theme = useTheme()
 
 const keyExpansionState = useKeyExpansionState()
 const tutorial = useTutorial()
@@ -163,7 +166,7 @@ const roundIndex = computed(() => Math.min(
                   eager
                   :title="`${t('simulator.key')} ➜ ${t('simulator.state')}`"
                   :tutorial-key="TutorialKey.KeyToState"
-                  background-color="#f9f9f9"
+                  :background-color="theme.current.value.colors.background"
                   no-auto-scroll-on-update
                 >
                   <AnimationAesAnimationFrame>
@@ -402,7 +405,7 @@ const roundIndex = computed(() => Math.min(
                   :eager="keyExpansionState.isLastStep"
                   :title="`${t('simulator.state')} ➜ ${t('simulator.round-keys')}`"
                   :tutorial-key="TutorialKey.StateToRoundKeys"
-                  background-color="#f9f9f9"
+                  :background-color="theme.current.value.colors.background"
                 >
                   <AnimationAesAnimationFrame>
                     <template #animation="{ timeline }">
@@ -521,8 +524,8 @@ const roundIndex = computed(() => Math.min(
       display: flex;
       flex-direction: column;
       gap: 2px;
-      background-color: white;
-      border: 3px solid white;
+      background-color: rgb(var(--v-theme-surface));
+      border: 3px solid rgb(var(--v-theme-surface));
       border-radius: 6px;
       padding: 8px 12px;
       margin-top: 8px;
@@ -606,7 +609,7 @@ const roundIndex = computed(() => Math.min(
   }
 
   .roundIndex {
-    background-color: white;
+    background-color: rgb(var(--v-theme-surface));
     border-radius: 4px;
     place-self: center;
     padding: 14px;

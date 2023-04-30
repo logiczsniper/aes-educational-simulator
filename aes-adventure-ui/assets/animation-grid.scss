@@ -34,7 +34,7 @@
       bottom: -2px;
       left: -9px;
       width: 30px;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid rgb(var(--v-theme-opposite));
     }
   }
 
@@ -48,7 +48,7 @@
       top: 0;
 
       height: 30px;
-      border-right: 1px solid black;
+      border-right: 1px solid rgb(var(--v-theme-opposite));
     }
   }
 }

@@ -17,8 +17,11 @@ const baseColors = {
 const lightTheme: ThemeDefinition = {
   dark: false,
   colors: {
-    background: '#f7f7f7',
+    background: '#f9f9f9',
     surface: '#ffffff',
+    opposite: '#0f0a23',
+    inverse: '#000000',
+    skeleton: '#f0f0f0',
     ...baseColors
   }
 }
@@ -26,8 +29,11 @@ const lightTheme: ThemeDefinition = {
 const darkTheme: ThemeDefinition = {
   dark: true,
   colors: {
-    background: '#494454',
-    surface: '#000000',
+    background: '#17141b',
+    surface: '#141217',
+    opposite: '#ded6ff',
+    inverse: '#ffffff',
+    skeleton: '#141317',
     ...baseColors
   }
 }
@@ -38,6 +44,7 @@ export default defineNuxtPlugin(nuxtApp => {
     components,
     directives,
     theme: {
+      defaultTheme: 'light',
       themes: {
         light: lightTheme,
         dark: darkTheme,

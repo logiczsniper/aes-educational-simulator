@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const themeName = useThemeName()
 
 useHead({
   title: 'AES Adventure',
@@ -8,6 +9,10 @@ useHead({
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
   ]
+})
+
+onMounted(() => {
+  themeName.setInitialTheme()
 })
 </script>
 

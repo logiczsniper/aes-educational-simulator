@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useTheme } from 'vuetify';
 import { AesiRoundStepAddKey, AesiRoundStepType } from '~~/utils/aesi/aesi.types';
 import { A, S_BOX } from '~~/utils/aesi/core/constants';
 import { duplicateCiphertext } from '~~/utils/state/duplicateCiphertext';
@@ -26,6 +27,8 @@ useHead({
     { property: 'og:locale', content: locale.value ?? 'en' },
   ]
 })
+
+const theme = useTheme()
 
 const roundsHeader = ref<HTMLElement>()
 const scrollToRoundsHeader = () => {
@@ -164,7 +167,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                   eager
                   :title="`${t('simulator.plaintext')} ➜ ${t('simulator.state')}`"
                   :tutorial-key="TutorialKey.PlaintextToState"
-                  background-color="#f9f9f9"
+                  :background-color="theme.current.value.colors.background"
                 >
                   <AnimationAesAnimationFrame>
                     <template #animation="{ timeline }">
@@ -199,7 +202,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                   :eager="encryptState.stage === EncryptStage.ToState"
                   :title="`${t('simulator.add-key')}`"
                   :tutorial-key="TutorialKey.AddKey"
-                  background-color="#f9f9f9"
+                  :background-color="theme.current.value.colors.background"
                   no-auto-scroll-on-update
                 >
                   <AnimationAesAnimationFrame>
@@ -442,7 +445,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                   :eager="encryptState.step?.type === AesiRoundStepType.AddRoundKey"
                   :title="`${t('simulator.state')} ➜ ${t('simulator.ciphertext')}`"
                   :tutorial-key="TutorialKey.StateToCiphertext"
-                  background-color="#f9f9f9"
+                  :background-color="theme.current.value.colors.background"
                 >
                   <AnimationAesAnimationFrame>
                     <template #animation="{ timeline }">

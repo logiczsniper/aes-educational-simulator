@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n();
+const themeName = useThemeName()
 
 const props = defineProps({
   error: Object
@@ -11,6 +12,10 @@ const statusMessage = computed(() => props.error?.statusMessage ?? "An unknown e
 const handleError = () => clearError({ redirect: '/' })
 
 const title = computed(() => `${statusCode.value} - ${t('error.mistake')}`)
+
+onMounted(() => {
+  themeName.setInitialTheme()
+})
 </script>
 
 <template>
@@ -35,6 +40,6 @@ const title = computed(() => `${statusCode.value} - ${t('error.mistake')}`)
   border-radius: 12px;
   padding: 40px;
   gap: 18px;
-  background-color: #f9f9f9;
+  background-color: rgb(var(--v-theme-background));
 }
 </style>

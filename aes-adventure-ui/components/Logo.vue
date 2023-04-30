@@ -112,7 +112,7 @@ onMounted(() => {
     line-height: 1;
     font-weight: 800;
 
-    background: -webkit-linear-gradient(#2C1D66, #0f0a23);
+    background: -webkit-linear-gradient(#2C1D66, rgb(var(--v-theme-opposite)));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

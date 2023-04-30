@@ -41,60 +41,69 @@ useHead({
       </NuxtLink>
     </header>
     <section class="toc">
-      <a
+      <v-btn
         href="#intro"
-        class="tocHeader"
+        class="tocButton"
+        variant="flat"
       >
         {{ t('home.guide.intro.header') }}
-      </a>
-      <a
+      </v-btn>
+      <v-btn
         href="#features"
-        class="tocHeader"
+        class="tocButton"
+        variant="flat"
       >
         {{ t('home.guide.features.header') }}
-      </a>
-      <a
+      </v-btn>
+      <v-btn
         href="#animations"
-        class="tocItem"
+        class="tocButton subButton"
+        variant="flat"
       >
         {{ t('home.guide.features.animations.header') }}
-      </a>
-      <a
+      </v-btn>
+      <v-btn
         href="#tutorials"
-        class="tocItem"
+        class="tocButton subButton"
+        variant="flat"
       >
         {{ t('home.guide.features.tutorials.header') }}
-      </a>
-      <a
+      </v-btn>
+      <v-btn
         href="#configuration"
-        class="tocItem"
+        class="tocButton subButton"
+        variant="flat"
       >
         {{ t('home.guide.features.configuration.header') }}
-      </a>
-      <a
+      </v-btn>
+      <v-btn
         href="#persistence"
-        class="tocItem"
+        class="tocButton subButton"
+        variant="flat"
       >
         {{ t('home.guide.features.persistence.header') }}
-      </a>
-      <a
+      </v-btn>
+      <v-btn
         href="#duplicate"
-        class="tocItem"
+        class="tocButton subButton"
+        variant="flat"
       >
         {{ t('home.guide.features.duplicate-buttons.header') }}
-      </a>
-      <a
+      </v-btn>
+      <v-btn
         href="#i18n"
-        class="tocItem"
+        class="tocButton subButton"
+        variant="flat"
       >
         {{ t('home.guide.features.i18n.header') }}
-      </a>
-      <a
+      </v-btn>
+      <v-btn
         href="#quick-points"
-        class="tocHeader"
+        class="tocButton"
+        variant="flat"
       >
         {{ t('home.guide.quick-points.header') }}
-      </a>
+      </v-btn>
     </section>
     <section class="guideBody">
       <section
@@ -188,7 +197,6 @@ useHead({
 
   a {
     transition: color .2s;
-    color: black;
     width: fit-content;
 
     &:hover {
@@ -204,30 +212,24 @@ useHead({
   }
 
   .toc {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 
-    .tocHeader {
-      display: block;
-      font-size: 15px;
-    }
-
-    .tocItem {
-      display: block;
-      font-size: 14px;
-      margin-left: 20px;
-    }
-
-    .tocHeader,
-    .tocItem {
-      font-weight: bold;
+    .tocButton {
+      // display: block;
       position: relative;
+
+      &.subButton {
+        margin-left: 20px;
+      }
 
       &::before {
         content: '#';
         color: gray;
         font-size: 10px;
         position: absolute;
-        top: 3.5px;
-        left: -10px;
+        left: -14px;
       }
     }
   }
