@@ -99,7 +99,7 @@ useHead({
     margin-bottom: 12px;
 
     a {
-      color: #2C1D66;
+      color: rgb(var(--v-theme-opposite));
     }
   }
 

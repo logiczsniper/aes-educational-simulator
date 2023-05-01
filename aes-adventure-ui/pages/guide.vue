@@ -196,12 +196,7 @@ useHead({
   padding-bottom: 200px;
 
   a {
-    transition: color .2s;
-    width: fit-content;
-
-    &:hover {
-      color: #2C1D66;
-    }
+    color: rgb(var(--v-theme-opposite));
   }
 
   .guideHeader {
@@ -216,9 +211,11 @@ useHead({
     flex-direction: column;
     gap: 4px;
 
+
     .tocButton {
-      // display: block;
+      transition: color .2s;
       position: relative;
+      width: fit-content;
 
       &.subButton {
         margin-left: 20px;
@@ -230,6 +227,10 @@ useHead({
         font-size: 10px;
         position: absolute;
         left: -14px;
+      }
+
+      &:hover {
+        color: #2C1D66;
       }
     }
   }
