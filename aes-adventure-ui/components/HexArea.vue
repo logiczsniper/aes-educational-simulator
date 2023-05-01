@@ -172,12 +172,12 @@ const onDuplicateClick = () => {
       color="#2C1D66"
       min-width="fit-content"
     >
-      <p>
+      <div class="snackbar">
         <v-icon
           icon="mdi-check-bold"
           :size="15"
         />
-        {{ snackbarMessage }}
+        <p>{{ snackbarMessage }}</p>
         <NuxtLink
           v-if="snackbarGoTo"
           :to="localePath(simulatorTabs.getTabLink(snackbarGoTo))"
@@ -198,7 +198,7 @@ const onDuplicateClick = () => {
             </div>
           </v-btn>
         </NuxtLink>
-      </p>
+      </div>
     </v-snackbar>
   </div>
 </template>
@@ -264,13 +264,20 @@ const onDuplicateClick = () => {
   }
 }
 
-.goButtonWrapper {
-  margin-left: 8px;
+.snackbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ded6ff;
 
-  .goButton {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  .goButtonWrapper {
+    margin-left: 8px;
+
+    .goButton {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
   }
 }
 </style>
