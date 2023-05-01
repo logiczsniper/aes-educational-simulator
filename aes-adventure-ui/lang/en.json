@@ -47,7 +47,7 @@
         },
         "configuration": {
           "header": "Configuration",
-          "body": "The encryption and decryption simulators support a limited set of configurations that can be used by more advanced users to experiment with AES. These configurations can be found in the <i>Configure</i> modal to the left of this page. <b>Note:</b> changing the configuration will reset all simulators."
+          "body": "The encryption and decryption simulators support a limited set of configurations that can be used by more advanced users to experiment with AES. These configurations can be found in the <i>Configure</i> modal to the left of this page. <b>Note:</b> changing the configuration will reset the encryption and decryption simulators."
         },
         "persistence": {
           "header": "Local Persistence",
@@ -81,7 +81,7 @@
     "button": "Configure",
     "modal": {
       "title": "Configure",
-      "body": "Select a configuration below. If you are new to AES, we recommend that you use the default simulator before using this configuration. <b>Note:</b> changing the configuration will reset all simulators.",
+      "body": "Select a configuration below. If you are new to AES, we recommend that you use the default simulator before using this configuration. <b>Note:</b> changing the configuration will reset the encryption and decryption simulators.",
       "defaults": {
         "standard": {
           "name": "Standard",

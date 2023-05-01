@@ -21,7 +21,6 @@ const keyExpansionState = useKeyExpansionState()
 const resetSimulator = () => {
   encryptState.reset()
   decryptState.reset()
-  keyExpansionState.reset()
 }
 </script>
 
