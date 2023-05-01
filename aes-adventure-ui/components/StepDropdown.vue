@@ -19,7 +19,7 @@ const makeHoverEager = () => hoverEager.value = true
 const variant = computed(() => props.variant ?? "popout")
 
 const expansionPanelValue = `step-dropdown--${props.title}`
-const backgroundColor = computed(() => (props.turnedOff ? '#CC3933' : undefined) ?? props.backgroundColor)
+const backgroundColor = computed(() => (props.turnedOff ? '#C34A36' : undefined) ?? props.backgroundColor)
 const lineThroughTitle = computed(() => props.turnedOff ?? props.lineThroughTitle)
 const eager = computed(() => props.eager || hoverEager.value)
 

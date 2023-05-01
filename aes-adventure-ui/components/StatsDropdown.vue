@@ -47,7 +47,9 @@ const chartOptions: ApexOptions = {
       }
     },
   },
-  colors: ['#0084DB', '#67BAA6'],
+  // colors: ['#0084DB', '#67BAA6'],
+  // colors: ['#B8D05C', '#5CD0AE'],
+  colors: ['#0089BA', '#008F7A'],
   grid: {
     show: false,
   },
@@ -55,6 +57,9 @@ const chartOptions: ApexOptions = {
     position: 'top',
     horizontalAlign: 'right',
     offsetY: 20,
+    labels: {
+      colors: [theme.current.value.colors.opposite]
+    }
   },
   xaxis: {
     max: props.roundCount + 1,
@@ -72,6 +77,11 @@ const chartOptions: ApexOptions = {
     min: 0,
     max: 100,
     decimalsInFloat: 0,
+    labels: {
+      style: {
+        colors: [theme.current.value.colors.opposite]
+      }
+    }
   },
   tooltip: {
     x: {

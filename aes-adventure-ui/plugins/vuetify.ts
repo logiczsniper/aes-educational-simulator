@@ -7,7 +7,7 @@ const baseColors = {
   'primary-darken-1': '#2C1D66',
   'primary-lighten-1': '#8C75E4',
   secondary: '#D755B9',
-  error: '#CC3933',
+  error: '#C34A36',
   info: '#0084DB',
   success: '#67BAA6',
   warning: '#FFC65B'
