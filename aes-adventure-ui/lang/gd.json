@@ -1,0 +1,275 @@
+{
+  "title": "Dàn-thuras",
+  "infographic": "Luchdaich sìos Infographic",
+  "edit": "Deasaich",
+  "seo": {
+    "encrypt": "Crioptaich",
+    "decrypt": "Dì-chrioptachadh",
+    "expand": "Leudaich an iuchair",
+    "encrypt-description": "Ionnsaich mar a bhios crioptachadh AES ag obair le simuladair ceum air cheum AES Adventure. ",
+    "decrypt-description": "Ionnsaich mar a bhios dì-chrioptachadh AES ag obair le simuladair ceum air cheum AES Adventure. ",
+    "expand-description": "Ionnsaich mar a tha prìomh leudachadh AES ag obair le simuladair ceum air cheum AES Adventure. ",
+    "feedback": "Fios air ais",
+    "feedback-description": "Thoir do bheachdan luachmhor air ais do luchd-cruthachaidh AES Adventure gus an urrainn dhuinn eòlas a h-uile duine a leasachadh.",
+    "guide": "Stiùiridh",
+    "guide-description": "Ionnsaich mar a gheibh thu a’ chuid as fheàrr de AES Adventure.",
+    "home-description": "Fàilte gu AES Adventure, inneal foghlaim AES intuitive. ",
+    "settings": "Suidhichidhean",
+    "settings-description": "Atharraich mar a tha AES Adventure a’ coimhead a rèir na feumalachdan agad."
+  },
+  "error": {
+    "mistake": "Chaidh rudeigin ceàrr...",
+    "back": "Theirig air ais"
+  },
+  "home": {
+    "description": "Is e an Inbhe Crioptachaidh Adhartach an cipher iuchair co-chothromach as mòr-chòrdte. ",
+    "go": "Rach gu simulator",
+    "settings": {
+      "title": "Suidhichidhean",
+      "badLang": "A bheil do chànan air a dhroch eadar-theangachadh no nach eil e ri fhaighinn?"
+    },
+    "guide": {
+      "title": "Stiùiridh",
+      "table-of-contents": "Clàr-innse",
+      "intro": {
+        "header": "Ro-ràdh",
+        "body": "Tha an Inbhe Crioptachaidh Adhartach a <i>bloc co-chothromach</i> cipher, a’ ciallachadh gu bheil e a’ crioptachadh/dì-chrioptachadh blocaichean meud stèidhichte le dìreach aon iuchair.  <b>Thoir an aire:</b> tha a h-uile dàta ann an AES Adventure air a riochdachadh ann an hexadecimal; "
+      },
+      "features": {
+        "header": "Feartan",
+        "animations": {
+          "header": "Beothachaidhean",
+          "body": "Bidh a h-uile simuladair a’ cleachdadh beòthachaidhean gus gach ceum den phròiseas a thaisbeanadh gu soilleir. "
+        },
+        "tutorials": {
+          "header": "Clasaichean-teagaisg",
+          "body": "Tha ìomhaighean Tutorial sgapte air feadh gach simuladair. "
+        },
+        "configuration": {
+          "header": "Rèiteachadh",
+          "body": "Bidh na simuladairean crioptachaidh is dì-chrioptachaidh a’ toirt taic do sheata cuibhrichte de rèiteachaidhean a dh’ fhaodas luchd-cleachdaidh nas adhartaiche a chleachdadh gus deuchainn a dhèanamh air AES.  <i>Dèan rèiteachadh</i> modal air taobh clì na duilleige seo. <b>Thoir an aire:</b> ath-shuidhichidh atharrachadh an rèiteachaidh na simuladairean crioptachaidh is dì-chrioptachaidh."
+        },
+        "persistence": {
+          "header": "Seasmhachd ionadail",
+          "body": "Tha staid iomlan AES Adventure air a shàbhaladh don bhrobhsair agad <i>stòras ionadail</i> le iuchraichean a thòisicheas <span class='code'>'AES_ADVENTURE_UI__'</span>.  <i>stòras ionadail</i> agus ag ùrachadh na duilleige."
+        },
+        "duplicate-buttons": {
+          "header": "Dèan lethbhreac de na putanan",
+          "body": "Nuair a bhios raon cuir a-steach làn, chì thu 1 no 2 <i>leth-bhreac</i> putanan ìomhaigh.  <b>Thoir an aire:</b> ma dh’ atharraicheas an obair leth-bhreac cuir a-steach, thèid an simuladair targaid ath-shuidheachadh leis nach urrainn cuir a-steach atharrachadh ann am meadhan an atharrais."
+        },
+        "i18n": {
+          "header": "Eadar-nàiseantachd",
+          "body": "Faodar cànan an aplacaid gu lèir atharrachadh ann an 'Settings'. "
+        }
+      },
+      "quick-points": {
+        "header": "Molaidhean deireannach",
+        "cant-input": "Chan urrainnear dàta cuir a-steach atharrachadh ma tha simuladair ga chleachdadh an-dràsta. ",
+        "cant-start": "Chan urrainnear simuladairean a thòiseachadh gus am bi a h-uile raon cuir a-steach air a lìonadh. ",
+        "nibble": "Tha 1 nibble na leth byte gu dearbh! ",
+        "small": "Tha AES Adventure air a dhealbhadh gus a bhith air fhaicinn tro scrionaichean a tha co-dhiù <b>13\"</b> ann am meud. "
+      }
+    },
+    "feedback": {
+      "title": "Fios air ais",
+      "body": "Is e pròiseact leasachaidh a tha seo agus bu mhath leinn do bheachdan fhaighinn air ais mun inneal. ",
+      "button": "Foirm Google"
+    },
+    "gitlab": "GitLab"
+  },
+  "configure": {
+    "button": "Dèan rèiteachadh",
+    "modal": {
+      "title": "Dèan rèiteachadh",
+      "body": "Tagh rèiteachadh gu h-ìosal.  <b>Thoir an aire:</b> ath-shuidhichidh atharrachadh an rèiteachaidh na simuladairean crioptachaidh is dì-chrioptachaidh.",
+      "defaults": {
+        "standard": {
+          "name": "Inbhe",
+          "description": "Vanilla."
+        },
+        "short": {
+          "name": "Goirid",
+          "description": "Leth an àireamh de chuairtean."
+        },
+        "long": {
+          "name": "Fada",
+          "description": "Dèan dùblachadh air an àireamh de chuairtean."
+        },
+        "staticColumns": {
+          "name": "Colbhan Statach",
+          "description": "Chan eil sreathan MixColumns ann."
+        },
+        "staticRows": {
+          "name": "Sreathan Statach",
+          "description": "Chan eil sreathan ShiftRows ann."
+        },
+        "staticBytes": {
+          "name": "Bytes Statach",
+          "description": "Chan eil sreathan SubstituteBytes ann."
+        }
+      },
+      "close": "Dùin"
+    }
+  },
+  "simulator": {
+    "hide": "Falaich",
+    "show": "Seall",
+    "quit": "Cuidhtich",
+    "configurations": "rèiteachaidhean",
+    "configuration": "Rèiteachadh",
+    "encrypt": "Crioptaich",
+    "decrypt": "Dì-chrioptachadh",
+    "key-expansion": "Leudachadh iuchair",
+    "plaintext": "Co-theacsa",
+    "ciphertext": "Co-theacsa",
+    "key": "iuchair",
+    "sbox": "Bogsa ionadachaidh",
+    "constant-matrix": "Matrix seasmhach",
+    "substitute-step": "Neach-ionaid",
+    "shift-step": "Gluasad",
+    "rcon": "Constant cruinn",
+    "inverse": "Inbhéartach",
+    "state": "Stàite",
+    "input": "Cuir a-steach",
+    "output": "Toradh",
+    "add-key": "Cuir iuchair ris",
+    "confusion": "Troimh-chèile",
+    "diffusion": "Sgaoileadh",
+    "substitute-bytes": "Cur an àite Bytes",
+    "shift-rows": "Sreathan Shift",
+    "mix-columns": "Measgaich na colbhan",
+    "add-round-key": "Cuir a-steach Round Key",
+    "encryption": "crioptachadh",
+    "decryption": "dì-chrioptachadh",
+    "expansion": "leudachadh",
+    "start": "Tòisich",
+    "finish": "Crìochnaich",
+    "start-rounds": "Tòisich cuairtean",
+    "finish-rounds": "Crìochnaich cuairtean",
+    "no-mix-columns-last": "Air a chuir dheth leis gu bheil Mix Columns air a dhol thairis air a’ chuairt mu dheireadh!",
+    "no-mix-columns-first": "Air a chuir dheth leis gu bheil Mix Columns air a leigeil seachad sa chiad chuairt!",
+    "no-step-configuration": "Air a chuir dheth a chionn 's gu bheil an rèiteachadh taghte",
+    "no-h-function-key-size": "Air a chuir dheth leis nach e meud an iuchrach 256 bit!",
+    "no-h-function-last": "Air a chur dheth air sgàth <span class='math'>ℎ</span>-function air a chleachdadh gus an 5mh facal a ghineadh ach chan eil ach 4 faclan air an gineadh sa chuairt mu dheireadh!",
+    "round": "Cruinn",
+    "next-step": "An ath cheum",
+    "skip": "Rach don chuairt mu dheireadh",
+    "next-round": "An ath chuairt",
+    "copy": "Dèan lethbhreac",
+    "reset": "Ath-shuidhich",
+    "function": "gnìomh",
+    "add-words": "Cuir Faclan ris",
+    "keys-generated": "iuchraichean cruinn deiseil",
+    "round-keys": "Iuchraichean cruinn",
+    "disabled-input": "Cliog air a’ phutan ‘Ath-shuidhich’ gus deasachadh a chomasachadh",
+    "disabled-start": "Lìon a-steach an cuir a-steach (ean) gus atharrais a chomasachadh",
+    "tutorial": {
+      "title": "Oideachadh",
+      "default": {
+        "description": "Cliog air {tutorialIcon} a chì thu gus fiosrachadh iomchaidh fhoillseachadh an seo."
+      },
+      "sandbox": {
+        "button": "Bogsa gainmhich",
+        "title": "Bogsa gainmhich",
+        "close": "Dùin"
+      },
+      "read-more": "Leugh Tuilleadh",
+      "plaintext-to-state": {
+        "body": "Is e a’ chiad cheum am matrix stàite a chruthachadh a thèid obrachadh air feadh a’ phròiseas crioptachaidh. ",
+        "learn-more": {
+          "matrices": "Eadar-theangachadh matrix"
+        }
+      },
+      "ciphertext-to-state": {
+        "body": "Is e a’ chiad cheum am matrix stàite a chruthachadh a thèid obrachadh air feadh a’ phròiseas dì-chrioptachaidh. ",
+        "learn-more": {
+          "matrices": "Eadar-theangachadh matrix"
+        }
+      },
+      "key-to-state": {
+        "body": "Is e a’ chiad cheum a bhith a’ cruthachadh an vectar stàite a thèid a chur ris tron ​​phrìomh phròiseas leudachaidh.  <span class='highlight'>Bidh prìomh chlàr AES ag atharrachadh beagan a rèir gach prìomh mheud</span>, ach tha e an-còmhnaidh stèidhichte air facal."
+      },
+      "add-key": {
+        "body": "Tha an iuchair XORed le matrix na stàite.  <i>gealachadh iuchrach</i>."
+      },
+      "add-round-key": {
+        "body": "Tha an iuchair chruinn XORed le matrix na stàite.  <i>Leudachadh iuchair</i> tab gus ionnsachadh mar a tha na h-iuchraichean cruinn seo air an cruthachadh.  <b>crioptachadh</b>, tha na h-iuchraichean cruinn air an cleachdadh san òrdugh a tha iad air an cruthachadh.  <b>dì-chrioptachadh</b>, tha na h-iuchraichean cruinn air an cleachdadh anns an <b>mu choinneamh</b> òrdugh."
+      },
+      "add-words": {
+        "body": "Tha a' chiad fhacal XORed leis an fhacal mu dheireadh, an dèidh a' Chuairt <span class='math'>𝑔</span>- Chaidh gnìomh a chuir a-steach air.  <b>256-bit</b> tha prìomh chlàr a’ toirt a-steach a’ Chuairt <span class='math'>ℎ</span>-gnìomh air an 4mh facal a chaidh a chruthachadh sa chuairt mus lean thu air adhart mar as àbhaist.",
+        "note": "Tha an <span class='math'>𝑔</span>- gnìomh agus <span class='math'>ℎ</span>- tha àireamhachadh gnìomh air a mhìneachadh anns na ceumannan cruinn a leanas."
+      },
+      "round-g-fn": {
+        "body": "Tha an <span class='math'>𝑔</span>-function air a dhèanamh suas de shreath de ghnìomhachd air bytes an fhacail cuir a-steach: Substitute Bytes, Shift Rows (shift = 1), agus tha a’ chiad byte XORed leis an <i>seasmhach cruinn</i>. ",
+        "learn-more": {
+          "rcon": "Coimpiutaireachd Round Constants AES"
+        }
+      },
+      "round-h-fn": {
+        "body": "Tha an <span class='math'>ℎ</span>-function air a dhèanamh suas de Substitute Bytes air bytes an fhacail cuir a-steach. "
+      },
+      "round-keys": {
+        "body": "Tha na subkeys sin air an toirt san òrdugh a chithear rè crioptachadh.  <b>dì-chrioptachadh</b>, tha iad air an cleachdadh ann an òrdugh eile."
+      },
+      "rounds-header": {
+        "body": "Bidh AES ag obair air matrix na stàite ann an cuairtean.  <span class='highlight'>ach a-mhàin a’ chuairt mu dheireadh, nach eil a’ toirt a-steach Mix Colbhan</span>.  <b>dì-chrioptachadh</b>, tha na ceumannan air an cur gu bàs anns an <b>mu choinneamh</b> chan eil òrdugh agus Mix Colbhan air an toirt a-steach don chiad chuairt."
+      },
+      "key-rounds-header": {
+        "body": "Feumaidh gach cuairt de AES subkey, a bharrachd air 1 airson prìomh ghealadh. ",
+        "aes-a": " Bidh AES Adventure a’ briseadh sìos gach cuairt gu Add Words, Round <span class='math'>𝑔</span>- gnìomh agus Round <span class='math'>ℎ</span>- ceumannan gnìomh.  <b>256-bit</b> prìomh chlàr a’ cleachdadh a’ Chuairt <span class='math'>ℎ</span>- gnìomh ceum anns gach cuairt, ach a-mhàin a’ chuairt mu dheireadh.",
+        "note": "Bidh gach cuairt a’ gineadh 1 subkey airson prìomh mheud de 128 buillean, 1.5 subkeys airson 192 pìosan, agus 2 subkeys airson 256 pìosan, ach a-mhàin a’ chuairt mu dheireadh a ghineas 1 subkey airson na trì prìomh mheudan."
+      },
+      "rounds-stats": {
+        "diffusion": "<b>Sgaoileadh</b> is e a’ bhuaidh a th’ aig aon phìos teacsa lom air an teacsa (gnàthach).  <i>maoim-sneachda</i> buaidh. <br />Faodar iomradh a thoirt còmhla air Shift Rows agus Mix Colbhan mar an <i>còmhdach sgaoilidh</i> oir is iad na prìomh cheumannan sgaoilte ann an AES.",
+        "confusion": "<b>Troimh-chèile</b> an dàimh eadar an teacsa (gnàthach) agus an iuchair. <br />Tha Substitute Bytes a’ toirt a-steach troimh-chèile ann an AES.",
+        "learn-more": {
+          "conf-diff": "Troimh-chèile",
+          "avalanche": "Buaidh maoim-sneachda"
+        }
+      },
+      "sub-bytes": {
+        "body": "Bidh Substitute Bytes a’ dol an àite gach matrix stàite byte le byte bhon bhogsa ionadachaidh, a bheir seachad neo-loidhneachd ann an AES (dìon an aghaidh ionnsaighean anailis).  <b>dì-chrioptachadh</b>, bidh sinn a 'cleachdadh an àraid <b>neo-dhìreach</b> den bhogsa ionadachaidh.",
+        "learn-more": {
+          "bijective": "Gnìomhan dà-chànanach",
+          "sbox": "Coimpiutaireachd Bogsa ionadachaidh AES"
+        }
+      },
+      "shift-rows": {
+        "body": "Bidh Shift Rows a’ dèanamh gluasad cearcallach le byte air gach sreath de mhaitrix na stàite.  <b>dì-chrioptachadh</b>, tha an gluasad anns an <b>mu choinneamh</b> stiùir. "
+      },
+      "mix-columns": {
+        "body": "Bidh Mix Colbhan ag iomadachadh gach vector colbh de mhaitris na stàite le matrix de sheasmhachd gus an colbh co-fhreagarrach den mhaitris stàite a thig às a thoirt gu buil.  <b>dì-chrioptachadh</b>, bidh sinn a 'cleachdadh an àraid <b>neo-dhìreach</b> den matrix seasmhach.",
+        "learn-more": {
+          "matrix-multiplication": "Matrix iomadachadh",
+          "matrix-inversion": "Matrix Inverses",
+          "gf": "Raointean Galois",
+          "gf-arithmetic": "Àireamhachd ann an <span class='math'>𝐺𝐹(2 ̂ 8)</span>"
+        }
+      },
+      "state-to-ciphertext": {
+        "body": "Is e an ceum mu dheireadh an ciphertext a chruthachadh a tha mar thoradh air a’ phròiseas crioptachaidh. ",
+        "learn-more": {
+          "matrices": "Eadar-theangachadh matrix"
+        }
+      },
+      "state-to-plaintext": {
+        "body": "Is e an ceum mu dheireadh an teacsa lom a chruthachadh a tha mar thoradh air a’ phròiseas dì-chrioptachaidh. ",
+        "learn-more": {
+          "matrices": "Eadar-theangachadh matrix"
+        }
+      },
+      "state-to-round-keys": {
+        "body": "Is e an ceum mu dheireadh na h-iuchraichean cruinn a chruthachadh a tha mar thoradh air a’ phrìomh phròiseas leudachaidh. "
+      }
+    },
+    "hexArea": {
+      "nibblesLeft": "dh' fhalbh an gnothuch.",
+      "ready": "Deiseil!",
+      "copied": "Air a chopaigeadh gu clipboard.",
+      "duplicated-keys": "Air a chopaigeadh gu gach prìomh chuir a-steach.",
+      "duplicated-plaintext": "Air a chopaigeadh gus cuir a-steach a chrioptachadh.",
+      "duplicated-ciphertext": "Air a chopaigeadh gus cuir a-steach a dhì-chrioptachadh.",
+      "go": "Rachaibh"
+    }
+  }
+}

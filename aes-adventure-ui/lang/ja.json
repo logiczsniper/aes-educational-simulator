@@ -1,0 +1,275 @@
+{
+  "title": "冒険",
+  "infographic": "インフォグラフィックをダウンロード",
+  "edit": "編集",
+  "seo": {
+    "encrypt": "暗号化する",
+    "decrypt": "復号化",
+    "expand": "キーを展開",
+    "encrypt-description": "AES Adventure の段階的なシミュレーターで AES 暗号化がどのように機能するかを学びます。 ",
+    "decrypt-description": "AES Adventure の段階的なシミュレーターで AES 復号化がどのように機能するかを学びます。 ",
+    "expand-description": "AES Adventure の段階的なシミュレーターで AES キー拡張がどのように機能するかを学びます。 ",
+    "feedback": "フィードバック",
+    "feedback-description": "AES アドベンチャーの作成者に貴重なフィードバックをお寄せください。すべてのユーザーのエクスペリエンスを向上させることができます。",
+    "guide": "ガイド",
+    "guide-description": "AES Adventure を最大限に活用する方法を学びましょう。",
+    "home-description": "直感的な AES 教育ツールである AES アドベンチャーへようこそ。",
+    "settings": "設定",
+    "settings-description": "ニーズに合わせて AES Adventure の外観を変更します。"
+  },
+  "error": {
+    "mistake": "何かがうまくいかなかった...",
+    "back": "戻る"
+  },
+  "home": {
+    "description": "Advanced Encryption Standard は、最も一般的な対称キー暗号です。",
+    "go": "シミュレーターに行く",
+    "settings": {
+      "title": "設定",
+      "badLang": "あなたの言語は翻訳が不十分であるか、利用できませんか?"
+    },
+    "guide": {
+      "title": "ガイド",
+      "table-of-contents": "目次",
+      "intro": {
+        "header": "序章",
+        "body": "Advanced Encryption Standard は、 <i>対称ブロック</i> つまり、固定サイズのブロックを 1 つのキーだけで暗号化/復号化します。  <b>ノート：</b> AES Adventure のすべてのデータは 16 進数で表されます。 "
+      },
+      "features": {
+        "header": "特徴",
+        "animations": {
+          "header": "アニメーション",
+          "body": "すべてのシミュレーターはアニメーションを使用して、プロセスの各ステップを明確に示します。"
+        },
+        "tutorials": {
+          "header": "チュートリアル",
+          "body": "すべてのシミュレータには、チュートリアル アイコンが散在しています。"
+        },
+        "configuration": {
+          "header": "構成",
+          "body": "暗号化および復号化のシミュレーターは、より上級のユーザーが AES を試すために使用できる限定された構成セットをサポートします。 <i>構成、設定</i> このページの左側にあるモーダル。 <b>ノート：</b> 構成を変更すると、暗号化および復号化シミュレーターがリセットされます。"
+        },
+        "persistence": {
+          "header": "ローカル持続性",
+          "body": "AES アドベンチャーの全体の状態は、ブラウザの <i>ローカルストレージ</i> で始まるキーで <span class='code'>「AES_ADVENTURE_UI__」</span>. <i>ローカルストレージ</i> ページを更新します。"
+        },
+        "duplicate-buttons": {
+          "header": "コピーボタン",
+          "body": "入力領域がいっぱいになると、1 または 2 が表示されます <i>コピー</i> アイコン ボタン。 <b>ノート：</b> コピー操作で入力が変更されると、シミュレーション中に入力を変更できないため、ターゲット シミュレータがリセットされます。"
+        },
+        "i18n": {
+          "header": "国際化",
+          "body": "アプリ全体の言語は「設定」で変更できます。"
+        }
+      },
+      "quick-points": {
+        "header": "最後のヒント",
+        "cant-input": "シミュレータで使用中の入力データは変更できません。 ",
+        "cant-start": "必要なすべての入力域が満たされるまで、シミュレーターを開始することはできません。",
+        "nibble": "1ニブルはもちろん半バイト！ ",
+        "small": "AES アドベンチャーは、少なくとも <b>13\"</b> サイズで。"
+      }
+    },
+    "feedback": {
+      "title": "フィードバック",
+      "body": "これは開発中のプロジェクトであり、ツールに関するフィードバックをお待ちしております。 ",
+      "button": "Google フォーム"
+    },
+    "gitlab": "GitLab"
+  },
+  "configure": {
+    "button": "構成、設定",
+    "modal": {
+      "title": "構成、設定",
+      "body": "以下の構成を選択します。  <b>ノート：</b> 構成を変更すると、暗号化および復号化シミュレーターがリセットされます。",
+      "defaults": {
+        "standard": {
+          "name": "標準",
+          "description": "バニラ。"
+        },
+        "short": {
+          "name": "短い",
+          "description": "ラウンド数の半分。"
+        },
+        "long": {
+          "name": "長さ",
+          "description": "ラウンド数を2倍にします。"
+        },
+        "staticColumns": {
+          "name": "静的列",
+          "description": "MixColumns レイヤーはありません。"
+        },
+        "staticRows": {
+          "name": "静的行",
+          "description": "ShiftRows レイヤーはありません。"
+        },
+        "staticBytes": {
+          "name": "静的バイト",
+          "description": "SubstituteBytes レイヤーはありません。"
+        }
+      },
+      "close": "近い"
+    }
+  },
+  "simulator": {
+    "hide": "隠れる",
+    "show": "見せる",
+    "quit": "やめる",
+    "configurations": "構成",
+    "configuration": "構成",
+    "encrypt": "暗号化する",
+    "decrypt": "復号化",
+    "key-expansion": "キー拡張",
+    "plaintext": "平文",
+    "ciphertext": "暗号文",
+    "key": "鍵",
+    "sbox": "代用箱",
+    "constant-matrix": "定数行列",
+    "substitute-step": "代わりの",
+    "shift-step": "シフト",
+    "rcon": "ラウンド定数",
+    "inverse": "逆",
+    "state": "州",
+    "input": "入力",
+    "output": "出力",
+    "add-key": "キーを追加",
+    "confusion": "錯乱",
+    "diffusion": "拡散",
+    "substitute-bytes": "代替バイト",
+    "shift-rows": "行をシフト",
+    "mix-columns": "ミックスカラム",
+    "add-round-key": "ラウンドキーを追加",
+    "encryption": "暗号化",
+    "decryption": "復号化",
+    "expansion": "拡張",
+    "start": "始める",
+    "finish": "終了",
+    "start-rounds": "開始ラウンド",
+    "finish-rounds": "ラウンドを終える",
+    "no-mix-columns-last": "最後のラウンドで Mix Columns がスキップされたため、オフにしました!",
+    "no-mix-columns-first": "最初のラウンドで Mix Columns がスキップされるため、オフにしました!",
+    "no-step-configuration": "選択した構成が",
+    "no-h-function-key-size": "キーのサイズが 256 ビットではないため、オフにしました。",
+    "no-h-function-last": "オフにした理由は、 <span class='math'>ℎ</span>- 関数は 5 番目の単語を生成するために使用されますが、最後のラウンドで生成される単語は 4 つだけです!",
+    "round": "ラウンド",
+    "next-step": "次のステップ",
+    "skip": "最終ラウンドにスキップ",
+    "next-round": "次のラウンド",
+    "copy": "コピー",
+    "reset": "リセット",
+    "function": "関数",
+    "add-words": "単語を追加",
+    "keys-generated": "丸鍵準備完了",
+    "round-keys": "ラウンドキー",
+    "disabled-input": "「リセット」ボタンをクリックして編集を有効にします",
+    "disabled-start": "入力を埋めてシミュレーションを有効にする",
+    "tutorial": {
+      "title": "チュートリアル",
+      "default": {
+        "description": "表示されている {tutorialIcon} をクリックすると、ここに関連情報が表示されます。"
+      },
+      "sandbox": {
+        "button": "サンドボックス",
+        "title": "サンドボックス",
+        "close": "近い"
+      },
+      "read-more": "続きを読む",
+      "plaintext-to-state": {
+        "body": "最初のステップは、暗号化プロセス全体で操作される状態マトリックスを作成することです。",
+        "learn-more": {
+          "matrices": "行列転置"
+        }
+      },
+      "ciphertext-to-state": {
+        "body": "最初のステップは、復号化プロセス全体で操作される状態マトリックスを作成することです。",
+        "learn-more": {
+          "matrices": "行列転置"
+        }
+      },
+      "key-to-state": {
+        "body": "最初のステップは、キー拡張プロセス全体で追加される状態ベクトルを作成することです。 <span class='highlight'>AES キーのスケジュールは、キーのサイズごとにわずかに異なります</span>、しかし、それは常に単語指向です。"
+      },
+      "add-key": {
+        "body": "キーは、状態マトリックスと XOR されます。 <i>キーホワイトニング</i>."
+      },
+      "add-round-key": {
+        "body": "ラウンド キーは、状態マトリックスと XOR されます。 <i>キー拡張</i> タブをクリックして、これらのラウンド キーの作成方法を確認してください。 <b>暗号化</b>の場合、ラウンド キーは作成された順序で使用されます。 <b>復号化</b>、ラウンドキーはで使用されます <b>反対</b> 注文。"
+      },
+      "add-words": {
+        "body": "ラウンドの後、最初の単語は最後の単語と XOR されます。 <span class='math'>𝑔</span>-関数が呼び出されました。 <b>256ビット</b> 重要なスケジュールがラウンドを開始 <span class='math'>ℎ</span>-通常どおり続行する前に、ラウンドで生成された 4 番目の単語で機能します。",
+        "note": "の <span class='math'>𝑔</span>-機能と <span class='math'>ℎ</span>-関数の計算は、次のラウンド ステップで概説されています。"
+      },
+      "round-g-fn": {
+        "body": "の <span class='math'>𝑔</span>-関数は、入力ワードのバイトに対する一連の操作で構成されます: バイトの置換、行のシフト (シフト = 1)、および最初のバイトは、 <i>ラウンド定数</i>.",
+        "learn-more": {
+          "rcon": "AES のラウンド定数の計算"
+        }
+      },
+      "round-h-fn": {
+        "body": "の <span class='math'>ℎ</span>-関数は、入力ワードのバイトの置換バイトで構成されます。"
+      },
+      "round-keys": {
+        "body": "これらのサブキーは、暗号化中に表示された順序で取得されます。 <b>復号化</b>、逆の順序で使用されます。"
+      },
+      "rounds-header": {
+        "body": "AES は、ラウンド単位で状態マトリックスを操作します。 <span class='highlight'>Mix Columns を含まない最終ラウンドを除く</span>. <b>復号化</b>、ステップはで実行されます <b>反対</b> オーダーと Mix Columns は最初のラウンドには含まれません。"
+      },
+      "key-rounds-header": {
+        "body": "AES の各ラウンドにはサブキーが必要で、さらにキー ホワイトニング用に 1 つ必要です。 ",
+        "aes-a": " AES アドベンチャーは、各ラウンドを Add Words、Round に分解します <span class='math'>𝑔</span>-関数とラウンド <span class='math'>ℎ</span>-機能ステップ。 <b>256ビット</b> 主要なスケジュールはラウンドを使用します <span class='math'>ℎ</span>-最終ラウンドを除く各ラウンドの機能ステップ。",
+        "note": "各ラウンドは、128 ビットのキー サイズに対して 1 つのサブキー、192 ビットに対して 1.5 サブキー、および 256 ビットに対して 2 つのサブキーを生成します。ただし、3 つのキー サイズすべてに対して 1 つのサブキーを生成する最終ラウンドを除きます。"
+      },
+      "rounds-stats": {
+        "diffusion": "<b>拡散</b> （現在の）暗号文に対する単一の平文ビットの影響です。 <i>雪崩</i> 効果。<br />Shift Rows と Mix Columns を総称して、 <i>拡散層</i> それらはAESの主要な拡散ステップであるためです。",
+        "confusion": "<b>錯乱</b> (現在の) 暗号文と鍵の間の関係です。 <br />Substitute Bytes は、AES で混乱を招きます。",
+        "learn-more": {
+          "conf-diff": "錯乱",
+          "avalanche": "なだれ効果"
+        }
+      },
+      "sub-bytes": {
+        "body": "Substitute Bytes は、各状態マトリックス バイトを置換ボックスからのバイトに置き換えます。これにより、AES で非線形性が提供されます (分析攻撃に対する保護)。 <b>復号化</b>、私たちはユニークな <b>逆</b> 置換ボックスの。",
+        "learn-more": {
+          "bijective": "全単射関数",
+          "sbox": "AES の置換ボックスの計算"
+        }
+      },
+      "shift-rows": {
+        "body": "Shift Rows は、状態行列の各行でバイト単位の巡回シフトを実行します。 <b>復号化</b>、シフトは <b>反対</b> 方向。"
+      },
+      "mix-columns": {
+        "body": "Mix Columns は、状態行列の各列ベクトルを定数の行列で乗算して、結果の状態行列の対応する列を生成します。 <b>復号化</b>、私たちはユニークな <b>逆</b> 定数行列の。",
+        "learn-more": {
+          "matrix-multiplication": "行列乗算",
+          "matrix-inversion": "逆行列",
+          "gf": "ガロア体",
+          "gf-arithmetic": "の算数 <span class='math'>𝐺𝐹(2̂8)</span>"
+        }
+      },
+      "state-to-ciphertext": {
+        "body": "最後のステップは、暗号化プロセスの出力である暗号文を作成することです。",
+        "learn-more": {
+          "matrices": "行列転置"
+        }
+      },
+      "state-to-plaintext": {
+        "body": "最後のステップは、復号化プロセスの出力である平文を作成することです。",
+        "learn-more": {
+          "matrices": "行列転置"
+        }
+      },
+      "state-to-round-keys": {
+        "body": "最後のステップは、鍵拡張プロセスの出力であるラウンド鍵を作成することです。"
+      }
+    },
+    "hexArea": {
+      "nibblesLeft": "ニブルが残った。",
+      "ready": "準備！",
+      "copied": "クリップボードにコピーされました。",
+      "duplicated-keys": "すべてのキー入力にコピーされます。",
+      "duplicated-plaintext": "入力を暗号化するためにコピーされます。",
+      "duplicated-ciphertext": "入力を復号化するためにコピーされます。",
+      "go": "行く"
+    }
+  }
+}

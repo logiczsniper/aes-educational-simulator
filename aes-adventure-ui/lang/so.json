@@ -1,0 +1,275 @@
+{
+  "title": "Adventure",
+  "infographic": "Soo deji xogta",
+  "edit": "Wax ka beddel",
+  "seo": {
+    "encrypt": "Sirin",
+    "decrypt": "Decrypt",
+    "expand": "Balaadhi furaha",
+    "encrypt-description": "Baro sida sirta AES ula shaqeyso jileeyaha tallaabo-tallaabo ee AES Adventure. ",
+    "decrypt-description": "Baro sida furida AES ay ula shaqeyso AES Adventure's simulator-tallaabo. ",
+    "expand-description": "Baro sida balaadhinta furaha AES ula shaqeyso jileeyaha tallaabo-tallaabo ee AES Adventure. ",
+    "feedback": "Jawaab celin",
+    "feedback-description": "Sii jawaab celintaada qiimaha leh hal-abuurka AES Adventure si aan u wanaajino khibradda qof walba.",
+    "guide": "Hagaha",
+    "guide-description": "Baro sida aad uga faa'iidaysan lahayd AES Adventure.",
+    "home-description": "Ku soo dhawoow AES Adventure, qalab waxbarasho oo dareen leh AES. ",
+    "settings": "Dejinta",
+    "settings-description": "Beddel sida AES Adventure u eg yahay si uu ugu habboonaado baahiyahaaga."
+  },
+  "error": {
+    "mistake": "Waxbaa qaldamay...",
+    "back": "Dib ugu noqo"
+  },
+  "home": {
+    "description": "Heerarka sirta sare waa kan ugu caansan sifaynta-furaha. ",
+    "go": "Tag Simulator",
+    "settings": {
+      "title": "Dejinta",
+      "badLang": "Luuqadaada si liidata ma loo turjumay mise lama heli karo?"
+    },
+    "guide": {
+      "title": "Hagaha",
+      "table-of-contents": "Tusmada Tusmada",
+      "intro": {
+        "header": "Hordhac",
+        "body": "Heerarka sirta sare waa a <i>simmetric block</i> cipher, taasoo la macno ah inay sirayso/qorito baloogyada cabbirka go'an oo leh hal fure oo keliya.  <b>Fiiro gaar ah:</b> Dhammaan xogta AES Adventure waxay u taagan tahay hexadecimal; "
+      },
+      "features": {
+        "header": "Astaamaha",
+        "animations": {
+          "header": "animations",
+          "body": "Dhammaan jilayaasha waxay isticmaalaan animations si ay si cad u muujiyaan tallaabo kasta oo habka. "
+        },
+        "tutorials": {
+          "header": "Casharrada",
+          "body": "Dhammaan simulatorsku waxay leeyihiin astaamo waxbarasho oo ku kala firirsan. "
+        },
+        "configuration": {
+          "header": "Habaynta",
+          "body": "Simulatorada sirta iyo furista waxay taageertaa qaabaynta xaddidan oo ay isticmaali karaan isticmaalayaasha horumarsan si ay ugu tijaabiyaan AES.  <i>Habee</i> Modal dhanka bidix ee boggan. <b>Fiiro gaar ah:</b> bedelida qaabeynta waxay dib u dajin doontaa simintirada iyo simulators decryption"
+        },
+        "persistence": {
+          "header": "Joogteynta deegaanka",
+          "body": "Dhamaan xaalada AES Adventure waxa lagu kaydiyay browserkaga <i>kaydinta deegaanka</i> oo leh furayaal ka bilaabma <span class='code'>'AES_ADVENTURE_UI__'</span>.  <i>kaydinta deegaanka</i> oo dib u cusbooneysiinaya bogga."
+        },
+        "duplicate-buttons": {
+          "header": "Koobi Badhamada",
+          "body": "Marka aagga wax gelinta ahi buuxo, waxaad arki doontaa 1 ama 2 <i>nuqul</i> badhamada icon.  <b>Fiiro gaar ah:</b> haddii hawlgalka nuqulku wax ka beddelo gelinta, jileeyaha bartilmaameedka ayaa dib loo dajin doonaa maadaama aan la beddeli karin jilitaanka dhexe."
+        },
+        "i18n": {
+          "header": "Caalamiyaynta",
+          "body": "Luuqadda abka oo dhan waxa lagu beddeli karaa 'Settings' "
+        }
+      },
+      "quick-points": {
+        "header": "Talooyin u dambeeya",
+        "cant-input": "Xog gelinta lama beddeli karo haddii jileeyaha uu hadda isticmaalayo. ",
+        "cant-start": "Simulators lama bilaabi karo ilaa dhammaan aagagga wax gelinta loo baahan yahay laga buuxiyo. ",
+        "nibble": "1 nibble dabcan waa nus byte! ",
+        "small": "Adventure AES waxaa loogu talagalay in lagu daawado shaashadaha ugu yaraan <b>13\"</b> cabbir ahaan. "
+      }
+    },
+    "feedback": {
+      "title": "Jawaab celin",
+      "body": "Kani waa mashruuc horumarinaya waxaanan jeclaan lahayn inaan ka helno jawaab celintaada qalabka. ",
+      "button": "Foomka Google-ka"
+    },
+    "gitlab": "GitLab"
+  },
+  "configure": {
+    "button": "Habee",
+    "modal": {
+      "title": "Habee",
+      "body": "Hoos ka dooro qaabaynta  <b>Fiiro gaar ah:</b> bedelida qaabeynta waxay dib u dajin doontaa simintirada iyo simulators decryption",
+      "defaults": {
+        "standard": {
+          "name": "Heerka",
+          "description": "Vanilla"
+        },
+        "short": {
+          "name": "Gaaban",
+          "description": "Tirada wareegyada kala badh."
+        },
+        "long": {
+          "name": "Dheer",
+          "description": "Laba laab tirada wareegyada"
+        },
+        "staticColumns": {
+          "name": "Tiirarka taagan",
+          "description": "Ma jiraan lakabyo MixColumns."
+        },
+        "staticRows": {
+          "name": "Safafka taagan",
+          "description": "Ma jiraan lakabyo ShiftRows"
+        },
+        "staticBytes": {
+          "name": "Joogta ah Bytes",
+          "description": "Ma jiro lakabyo beddel ah."
+        }
+      },
+      "close": "Xir"
+    }
+  },
+  "simulator": {
+    "hide": "Qari",
+    "show": "Muuji",
+    "quit": "Jooji",
+    "configurations": "Habaynta",
+    "configuration": "Habaynta",
+    "encrypt": "Sirin",
+    "decrypt": "Decrypt",
+    "key-expansion": "Balaadhinta Furaha",
+    "plaintext": "Qoraal cad",
+    "ciphertext": "Ciphertext",
+    "key": "Furaha",
+    "sbox": "Sanduuqa Beddelka",
+    "constant-matrix": "Matrix joogto ah",
+    "substitute-step": "Beddel",
+    "shift-step": "Shift",
+    "rcon": "Wareegga Joogtada ah",
+    "inverse": "rogan",
+    "state": "Gobolka",
+    "input": "Gelida",
+    "output": "Wax soo saarka",
+    "add-key": "Kudar Furaha",
+    "confusion": "Jahawareer",
+    "diffusion": "Faafsanaan",
+    "substitute-bytes": "Beddelka Bytes",
+    "shift-rows": "Shift saf",
+    "mix-columns": "Isku qas Tiirarka",
+    "add-round-key": "Kudar Furaha Wareega",
+    "encryption": "sir",
+    "decryption": "decryption",
+    "expansion": "ballaarinta",
+    "start": "Bilow",
+    "finish": "dhame",
+    "start-rounds": "Bilow wareegyada",
+    "finish-rounds": "Dhameystir wareegyada",
+    "no-mix-columns-last": "Demiyay sababtoo ah Isku-dhafka Tiirarka ayaa laga booday wareegii u dambeeyay!",
+    "no-mix-columns-first": "Demiyay sababtoo ah Mix Columns waa laga booday wareegga koowaad!",
+    "no-step-configuration": "Demiyay sababtoo ah qaabeynta la doortay ayaa ah",
+    "no-h-function-key-size": "Demiyay sababtoo ah cabbirka furuhu maaha 256 bits!",
+    "no-h-function-last": "Demiyay sababtoo ah <span class='math'>ℎ</span>-function waxaa loo isticmaalaa in lagu soo saaro kelmadda 5aad laakiin kaliya 4 kelmadood ayaa la soo saaray wareega ugu dambeeya!",
+    "round": "Wareeg",
+    "next-step": "Talaabada xigta",
+    "skip": "U gudub wareega u dambeeya",
+    "next-round": "Wareega xiga",
+    "copy": "Nuqul",
+    "reset": "Dib u dajin",
+    "function": "shaqayn",
+    "add-words": "Ku dar Erayo",
+    "keys-generated": "furayaasha wareega waa diyaar",
+    "round-keys": "Furayaasha Wareega",
+    "disabled-input": "Guji badhanka 'Dib u habeyn' si aad awood ugu yeelato tafatirka",
+    "disabled-start": "Buuxi gelinta(yada) si aad awood ugu yeelatid jilitaanka",
+    "tutorial": {
+      "title": "Waxbarashada",
+      "default": {
+        "description": "Guji {tutorialIcon} oo aad aragto si aad u muujiso macluumaadka khuseeya halkan."
+      },
+      "sandbox": {
+        "button": "Sanduuqa ciidda",
+        "title": "Sanduuqa ciidda",
+        "close": "Xir"
+      },
+      "read-more": "Akhri wax dheeraad ah",
+      "plaintext-to-state": {
+        "body": "Talaabada ugu horeysa waa in la abuuro jaantuska gobolka kaas oo lagu shaqeyn doono inta lagu jiro habka sirta. ",
+        "learn-more": {
+          "matrices": "Matrix Transposition"
+        }
+      },
+      "ciphertext-to-state": {
+        "body": "Talaabada ugu horeysa waa in la abuuro jaantuska gobolka ee lagu shaqeyn doono inta lagu jiro habka kala saarida. ",
+        "learn-more": {
+          "matrices": "Matrix Transposition"
+        }
+      },
+      "key-to-state": {
+        "body": "Talaabada ugu horeysa waa in la abuuro vector-ka gobolka kaas oo lagu dhejin doono inta lagu jiro habka balaadhinta muhiimka ah.  <span class='highlight'>Jadwalka furaha ee AES wax yar ayuu isu beddelaa cabbir kasta oo fure ah</span>, laakiin had iyo jeer waa eray-oriented."
+      },
+      "add-key": {
+        "body": "Furaha waxa lagu xardhay shaxanka gobolka.  <i>caddaynta furaha</i>."
+      },
+      "add-round-key": {
+        "body": "Furaha wareega waxa lagu XOR oo la socda jaantuska gobolka.  <i>Balaadhinta Furaha</i> tab si aad u barato sida furayaashan wareega loo sameeyo.  <b>sir</b>, furayaasha wareega waxaa loo isticmaalaa sida ay u kala horreeyaan.  <b>decryption</b>, furayaasha wareega waxaa loo isticmaalaa gudaha <b>lid ku ah</b> dalbo."
+      },
+      "add-words": {
+        "body": "Erayga ugu horreeya waxa lagu xardhay ereyga u dambeeya, ka dib Wareegga <span class='math'>𝑔</span>-shaqo ayaa lagu baaqay.  <b>256-bit</b> Jadwalka muhiimka ah wuxuu ku baaqayaa Wareegga <span class='math'>ℎ</span>-ku shaqaynayo kelmadda 4-aad ee ka soo baxday wareegga ka hor inta aan loo sii wadin sidii caadiga ahayd.",
+        "note": "The <span class='math'>𝑔</span>-shaqo iyo <span class='math'>ℎ</span>-Xisaabinta shaqada ayaa lagu qeexay talaabooyinka wareega ee soo socda."
+      },
+      "round-g-fn": {
+        "body": "The <span class='math'>𝑔</span>-shaqadu waxay ka kooban tahay hawlo taxane ah oo ku saabsan bytes-ka ereyga gelinta: Beddelka Bytes, Shift Rows (shift = 1), iyo byte ugu horreeya waxaa lagu XOR <i>wareeg joogto ah</i>. ",
+        "learn-more": {
+          "rcon": "Xisaabinta AES's Round Constants"
+        }
+      },
+      "round-h-fn": {
+        "body": "The <span class='math'>ℎ</span>-shaqadu waxay ka kooban tahay Beddelka Bytes on bytes ee erayga gelin. "
+      },
+      "round-keys": {
+        "body": "Furayaashan hoose waxa loo qaataa siday u kala horreeyaan marka la qarinayo.  <b>decryption</b>, waxaa loo isticmaalaa si ka soo horjeeda."
+      },
+      "rounds-header": {
+        "body": "AES waxay ku shaqeysaa shaxanka gobolka wareegyo.  <span class='highlight'>marka laga reebo wareega ugu dambeeya, oo aan ku jirin isku dhafka Columns</span>.  <b>decryption</b>, tillaabooyinka waxaa lagu fuliyay gudaha <b>lid ku ah</b> Dalabka iyo Isku-dhafka Tirooyinka kuma jiraan wareegga koowaad."
+      },
+      "key-rounds-header": {
+        "body": "Wareeg kasta oo AES ah wuxuu u baahan yahay fure-hoosaad, oo lagu daray 1 caddaynta furaha. ",
+        "aes-a": " Adventure AES wuxuu u kala baxaa wareeg kasta ku dar Erayada, Wareega <span class='math'>𝑔</span>-shaqo iyo Wareeg <span class='math'>ℎ</span>-tallaabooyinka shaqada.  <b>256-bit</b> jadwalka muhiimka ah wuxuu isticmaalaa Wareegga <span class='math'>ℎ</span>-tallaabo shaqo wareeg kasta, marka laga reebo wareegga ugu dambeeya.",
+        "note": "Wareeg kasta waxa uu soo saaraa 1 subkeys oo ah cabbirka muhiimka ah ee 128-bits, 1.5 subkeys ee 192-bits, iyo 2 subkeys ee 256-bits, marka laga reebo wareegga u dambeeya oo soo saara 1 subkeys dhammaan saddexda cabbir ee muhiimka ah."
+      },
+      "rounds-stats": {
+        "diffusion": "<b>Faafsanaan</b> waa saamaynta hal qoraal oo cad ku leeyahay qoraalka (hadda).  <i>baraf</i> saamayn. <br />Safafka Shift and Mix Columns waxaa laga yaabaa in si wadajir ah loo tixraaco sida <i>lakabka fidsan</i> sababtoo ah waxay yihiin talaabooyinka faafin ee ugu weyn ee AES.",
+        "confusion": "<b>Jahawareer</b> waa xidhiidhka ka dhexeeya qoraallada (hadda) iyo furaha. <br />Beddelka Bytes wuxuu soo bandhigaa jahawareer AES.",
+        "learn-more": {
+          "conf-diff": "Jahawareer",
+          "avalanche": "Saamaynta Burburka"
+        }
+      },
+      "sub-bytes": {
+        "body": "Beddelka Bytes-ka wuxuu ku beddelaa byte-ga matrix-ka gobol kasta oo leh byte ka soo baxay sanduuqa beddelka, kaas oo bixiya aan toos ahayn ee AES (ka ilaalinta weerarrada falanqaynta).  <b>decryption</b>, waxaan isticmaalnaa kuwa gaarka ah <b>rogan</b> ee sanduuqa beddelka.",
+        "learn-more": {
+          "bijective": "Shaqooyinka la taaban karo",
+          "sbox": "Xisaabinta Sanduuqa Beddelka ee AES"
+        }
+      },
+      "shift-rows": {
+        "body": "Shift Rows wuxuu sameeyaa wareeg wareeg ah oo caqli gal ah saf kasta oo ka mid ah shaxanka gobolka.  <b>decryption</b>, isbedelku wuxuu ku jiraa <b>lid ku ah</b> jihada. "
+      },
+      "mix-columns": {
+        "body": "Isku-dhafka Tiirarka waxa uu ku dhuftaa halbeeg kasta oo ka mid ah tiiradaha shax-goboleedka iyadoo loo eegayo jaangooyooyin joogto ah si loo soo saaro tiirka u dhigma ee matrix-ka gobolka ee ka dhashay.  <b>decryption</b>, waxaan isticmaalnaa kuwa gaarka ah <b>rogan</b> ee matrix joogto ah.",
+        "learn-more": {
+          "matrix-multiplication": "Iskudhufashada Matrix",
+          "matrix-inversion": "Matrix Inverses",
+          "gf": "Galois Fields",
+          "gf-arithmetic": "Xisaabinta in <span class='math'>(2 𝐹)</span>"
+        }
+      },
+      "state-to-ciphertext": {
+        "body": "Talaabada ugu danbeysa waa in la abuuro ciphertext kaas oo ah soo saarida habka sirta. ",
+        "learn-more": {
+          "matrices": "Matrix Transposition"
+        }
+      },
+      "state-to-plaintext": {
+        "body": "Talaabada ugu danbeysa waa in la abuuro qoraal cad oo ah wax soo saarka habka kala saarista ",
+        "learn-more": {
+          "matrices": "Matrix Transposition"
+        }
+      },
+      "state-to-round-keys": {
+        "body": "Tallaabada ugu dambeysa waa in la abuuro furayaasha wareega kuwaas oo ah wax soo saarka habka ballaarinta muhiimka ah. "
+      }
+    },
+    "hexArea": {
+      "nibblesLeft": "nibbles tagay.",
+      "ready": "Diyaar!",
+      "copied": "Lagu koobiyeeyay sabuuraddii",
+      "duplicated-keys": "Lagu koobiyeeyay dhammaan agabyada muhiimka ah",
+      "duplicated-plaintext": "La koobiyeeyay si loo sireeyo galinta",
+      "duplicated-ciphertext": "La koobiyeeyay si loo furfuro gelinta",
+      "go": "Tag"
+    }
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "title": "Petualangan",
+  "infographic": "Unduh Infografis",
+  "edit": "Sunting",
+  "seo": {
+    "encrypt": "Enkripsi",
+    "decrypt": "Dekripsi",
+    "expand": "Perluas Kunci",
+    "encrypt-description": "Pelajari cara kerja enkripsi AES dengan simulator langkah demi langkah AES Adventure. ",
+    "decrypt-description": "Pelajari cara kerja dekripsi AES dengan simulator langkah demi langkah AES Adventure. ",
+    "expand-description": "Pelajari cara kerja perluasan kunci AES dengan simulator langkah demi langkah AES Adventure. ",
+    "feedback": "Masukan",
+    "feedback-description": "Berikan umpan balik Anda yang berharga kepada pembuat AES Adventure sehingga kami dapat meningkatkan pengalaman untuk semua orang.",
+    "guide": "Memandu",
+    "guide-description": "Pelajari cara mendapatkan hasil maksimal dari AES Adventure.",
+    "home-description": "Selamat datang di AES Adventure, alat pendidikan AES yang intuitif. ",
+    "settings": "Pengaturan",
+    "settings-description": "Ubah tampilan AES Adventure agar sesuai dengan kebutuhan Anda."
+  },
+  "error": {
+    "mistake": "Ada yang salah...",
+    "back": "Kembali"
+  },
+  "home": {
+    "description": "Standar Enkripsi Lanjutan adalah cipher kunci simetris yang paling populer. ",
+    "go": "Pergi ke Simulator",
+    "settings": {
+      "title": "Pengaturan",
+      "badLang": "Apakah bahasa Anda diterjemahkan dengan buruk atau tidak tersedia?"
+    },
+    "guide": {
+      "title": "Memandu",
+      "table-of-contents": "Daftar isi",
+      "intro": {
+        "header": "Perkenalan",
+        "body": "Standar Enkripsi Lanjutan adalah a <i>blok simetris</i> sandi, artinya mengenkripsi/mendekripsi blok ukuran tetap hanya dengan satu kunci.  <b>Catatan:</b> semua data di AES Adventure direpresentasikan dalam heksadesimal; "
+      },
+      "features": {
+        "header": "Fitur",
+        "animations": {
+          "header": "Animasi",
+          "body": "Semua simulator menggunakan animasi untuk menunjukkan setiap langkah proses dengan jelas. "
+        },
+        "tutorials": {
+          "header": "Tutorial",
+          "body": "Semua simulator memiliki ikon Tutorial yang tersebar di seluruh. "
+        },
+        "configuration": {
+          "header": "Konfigurasi",
+          "body": "Simulator enkripsi dan dekripsi mendukung serangkaian konfigurasi terbatas yang dapat digunakan oleh pengguna tingkat lanjut untuk bereksperimen dengan AES.  <i>Konfigurasi</i> modal di sebelah kiri halaman ini. <b>Catatan:</b> mengubah konfigurasi akan mengatur ulang simulator enkripsi dan dekripsi."
+        },
+        "persistence": {
+          "header": "Kegigihan Lokal",
+          "body": "Seluruh keadaan AES Adventure disimpan ke browser Anda <i>penyimpanan lokal</i> dengan kunci yang dimulai dengan <span class='code'>'AES_ADVENTURE_UI__'</span>.  <i>penyimpanan lokal</i> dan menyegarkan halaman."
+        },
+        "duplicate-buttons": {
+          "header": "Salin Tombol",
+          "body": "Saat area input penuh, Anda akan melihat 1 atau 2 <i>menyalin</i> tombol ikon.  <b>Catatan:</b> jika operasi penyalinan mengubah input, simulator target akan disetel ulang karena input tidak dapat diubah di tengah simulasi."
+        },
+        "i18n": {
+          "header": "Penginternasionalan",
+          "body": "Bahasa seluruh aplikasi dapat diubah di 'Pengaturan'. "
+        }
+      },
+      "quick-points": {
+        "header": "Kiat Terakhir",
+        "cant-input": "Data input tidak dapat diubah jika simulator sedang menggunakannya. ",
+        "cant-start": "Simulator tidak dapat dimulai hingga semua area input yang diperlukan terisi. ",
+        "nibble": "1 gigitan tentu saja setengah byte! ",
+        "small": "AES Adventure dirancang untuk dilihat melalui layar yang minimal <b>13\"</b> dalam ukuran. "
+      }
+    },
+    "feedback": {
+      "title": "Masukan",
+      "body": "Ini adalah proyek pengembangan dan kami ingin mendapatkan umpan balik Anda tentang alat ini. ",
+      "button": "Formulir Google"
+    },
+    "gitlab": "GitLab"
+  },
+  "configure": {
+    "button": "Konfigurasi",
+    "modal": {
+      "title": "Konfigurasi",
+      "body": "Pilih konfigurasi di bawah ini.  <b>Catatan:</b> mengubah konfigurasi akan mengatur ulang simulator enkripsi dan dekripsi.",
+      "defaults": {
+        "standard": {
+          "name": "Standar",
+          "description": "Vanila."
+        },
+        "short": {
+          "name": "Pendek",
+          "description": "Setengah dari jumlah putaran."
+        },
+        "long": {
+          "name": "Panjang",
+          "description": "Gandakan jumlah putaran."
+        },
+        "staticColumns": {
+          "name": "Kolom Statis",
+          "description": "Tidak ada lapisan MixColumns."
+        },
+        "staticRows": {
+          "name": "Baris Statis",
+          "description": "Tidak ada lapisan ShiftRows."
+        },
+        "staticBytes": {
+          "name": "Byte Statis",
+          "description": "Tidak ada lapisan SubstituteBytes."
+        }
+      },
+      "close": "Menutup"
+    }
+  },
+  "simulator": {
+    "hide": "Bersembunyi",
+    "show": "Menunjukkan",
+    "quit": "Berhenti",
+    "configurations": "Konfigurasi",
+    "configuration": "Konfigurasi",
+    "encrypt": "Enkripsi",
+    "decrypt": "Dekripsi",
+    "key-expansion": "Ekspansi Kunci",
+    "plaintext": "Teks biasa",
+    "ciphertext": "Teks sandi",
+    "key": "Kunci",
+    "sbox": "Kotak Pergantian",
+    "constant-matrix": "Matriks Konstan",
+    "substitute-step": "Pengganti",
+    "shift-step": "Menggeser",
+    "rcon": "Konstanta Bulat",
+    "inverse": "Terbalik",
+    "state": "Negara",
+    "input": "Memasukkan",
+    "output": "Keluaran",
+    "add-key": "Tambahkan Kunci",
+    "confusion": "Kebingungan",
+    "diffusion": "Difusi",
+    "substitute-bytes": "Pengganti Byte",
+    "shift-rows": "Pergeseran Baris",
+    "mix-columns": "Kolom Campuran",
+    "add-round-key": "Tambahkan Kunci Bulat",
+    "encryption": "enkripsi",
+    "decryption": "dekripsi",
+    "expansion": "ekspansi",
+    "start": "Awal",
+    "finish": "Menyelesaikan",
+    "start-rounds": "Mulai putaran",
+    "finish-rounds": "Selesaikan putaran",
+    "no-mix-columns-last": "Dimatikan karena Kolom Campuran dilewati di babak terakhir!",
+    "no-mix-columns-first": "Dimatikan karena Kolom Campuran dilewati di babak pertama!",
+    "no-step-configuration": "Dimatikan karena konfigurasi yang dipilih adalah",
+    "no-h-function-key-size": "Dimatikan karena ukuran kuncinya bukan 256 bit!",
+    "no-h-function-last": "Dimatikan karena <span class='math'>ℎ</span>-fungsi digunakan untuk menghasilkan kata ke-5 tetapi hanya 4 kata yang dihasilkan di babak terakhir!",
+    "round": "Bulat",
+    "next-step": "Langkah berikutnya",
+    "skip": "Lewati ke babak terakhir",
+    "next-round": "Ronde selanjutnya",
+    "copy": "Menyalin",
+    "reset": "Mengatur ulang",
+    "function": "fungsi",
+    "add-words": "Tambahkan Kata",
+    "keys-generated": "kunci bulat siap",
+    "round-keys": "Kunci Bulat",
+    "disabled-input": "Klik tombol 'Reset' untuk mengaktifkan pengeditan",
+    "disabled-start": "Isi input untuk mengaktifkan simulasi",
+    "tutorial": {
+      "title": "Tutorial",
+      "default": {
+        "description": "Klik {tutorialIcon} yang Anda lihat untuk mengungkapkan informasi yang relevan di sini."
+      },
+      "sandbox": {
+        "button": "Bak pasir",
+        "title": "Bak pasir",
+        "close": "Menutup"
+      },
+      "read-more": "Baca selengkapnya",
+      "plaintext-to-state": {
+        "body": "Langkah pertama adalah membuat matriks status yang akan dioperasikan selama proses enkripsi. ",
+        "learn-more": {
+          "matrices": "Transposisi Matriks"
+        }
+      },
+      "ciphertext-to-state": {
+        "body": "Langkah pertama adalah membuat matriks status yang akan dioperasikan selama proses dekripsi. ",
+        "learn-more": {
+          "matrices": "Transposisi Matriks"
+        }
+      },
+      "key-to-state": {
+        "body": "Langkah pertama adalah membuat vektor status yang akan ditambahkan selama proses perluasan kunci.  <span class='highlight'>Jadwal kunci AES sedikit berubah dengan setiap ukuran kunci</span>, tetapi selalu berorientasi pada kata."
+      },
+      "add-key": {
+        "body": "Kuncinya di-XOR dengan matriks status.  <i>pemutihan kunci</i>."
+      },
+      "add-round-key": {
+        "body": "Kunci bulat di-XOR dengan matriks status.  <i>Ekspansi Kunci</i> tab untuk mempelajari bagaimana tombol bulat ini dibuat.  <b>enkripsi</b>, tombol bulat digunakan sesuai urutan pembuatannya.  <b>dekripsi</b>, tombol bulat digunakan dalam <b>di depan</b> memesan."
+      },
+      "add-words": {
+        "body": "Kata pertama di-XOR dengan kata terakhir, setelah Putaran <span class='math'>𝑔</span>-fungsi telah dipanggil di atasnya.  <b>256-bit</b> jadwal utama memanggil Putaran <span class='math'>ℎ</span>-berfungsi pada kata ke-4 yang dihasilkan di babak sebelum melanjutkan seperti biasa.",
+        "note": "Itu <span class='math'>𝑔</span>-fungsi dan <span class='math'>ℎ</span>-perhitungan fungsi diuraikan dalam langkah-langkah putaran berikut."
+      },
+      "round-g-fn": {
+        "body": "Itu <span class='math'>𝑔</span>-fungsi terdiri dari serangkaian operasi pada byte dari kata input: Substitute Bytes, Shift Rows (shift = 1), dan byte pertama di-XOR dengan <i>konstanta bulat</i>. ",
+        "learn-more": {
+          "rcon": "Menghitung Konstanta Putaran AES"
+        }
+      },
+      "round-h-fn": {
+        "body": "Itu <span class='math'>ℎ</span>-fungsi terdiri dari Byte Pengganti pada byte dari kata input. "
+      },
+      "round-keys": {
+        "body": "Subkunci ini diambil dalam urutan yang ditampilkan selama enkripsi.  <b>dekripsi</b>, mereka digunakan dalam urutan yang berlawanan."
+      },
+      "rounds-header": {
+        "body": "AES beroperasi pada matriks negara bagian dalam putaran.  <span class='highlight'>kecuali babak final yang tidak termasuk Kolom Campuran</span>.  <b>dekripsi</b>, langkah-langkah dijalankan di <b>di depan</b> order dan Mix Columns tidak termasuk dalam putaran pertama."
+      },
+      "key-rounds-header": {
+        "body": "Setiap putaran AES membutuhkan subkunci, ditambah 1 untuk pemutihan kunci. ",
+        "aes-a": " Petualangan AES memecah setiap putaran menjadi Tambah Kata, Putaran <span class='math'>𝑔</span>-fungsi dan Putaran <span class='math'>ℎ</span>-langkah fungsi  <b>256-bit</b> jadwal kunci menggunakan Putaran <span class='math'>ℎ</span>-berfungsi step pada setiap babak, kecuali babak final.",
+        "note": "Setiap putaran menghasilkan 1 subkunci untuk ukuran kunci 128 bit, 1,5 subkunci untuk 192 bit, dan 2 subkunci untuk 256 bit, kecuali putaran terakhir yang menghasilkan 1 subkunci untuk ketiga ukuran kunci tersebut."
+      },
+      "rounds-stats": {
+        "diffusion": "<b>Difusi</b> adalah pengaruh bit plaintext tunggal pada ciphertext (saat ini).  <i>salju longsor</i> memengaruhi. <br />Pergeseran Baris dan Kolom Campuran dapat secara kolektif disebut sebagai <i>lapisan difusi</i> karena mereka adalah langkah difusif utama dalam AES.",
+        "confusion": "<b>Kebingungan</b> adalah hubungan antara ciphertext (saat ini) dan kuncinya. <br />Byte Pengganti menimbulkan kebingungan di AES.",
+        "learn-more": {
+          "conf-diff": "Kebingungan",
+          "avalanche": "Efek Longsor"
+        }
+      },
+      "sub-bytes": {
+        "body": "Substitute Bytes mengganti setiap byte matriks status dengan byte dari kotak substitusi, yang memberikan non-linearitas dalam AES (perlindungan terhadap serangan analitik).  <b>dekripsi</b>, kami menggunakan yang unik <b>terbalik</b> dari kotak substitusi.",
+        "learn-more": {
+          "bijective": "Fungsi Bijektif",
+          "sbox": "Menghitung Kotak Substitusi AES"
+        }
+      },
+      "shift-rows": {
+        "body": "Shift Rows melakukan pergeseran siklik byte-bijaksana pada setiap baris matriks status.  <b>dekripsi</b>, pergeserannya ada di <b>di depan</b> arah. "
+      },
+      "mix-columns": {
+        "body": "Mix Columns mengalikan setiap vektor kolom dari matriks keadaan dengan matriks konstanta untuk menghasilkan kolom yang sesuai dari matriks keadaan yang dihasilkan.  <b>dekripsi</b>, kami menggunakan yang unik <b>terbalik</b> dari matriks konstan.",
+        "learn-more": {
+          "matrix-multiplication": "Perkalian Matriks",
+          "matrix-inversion": "Invers Matriks",
+          "gf": "Padang Galois",
+          "gf-arithmetic": "Aritmatika di <span class='math'>𝐺𝐹(2̂ 8)</span>"
+        }
+      },
+      "state-to-ciphertext": {
+        "body": "Langkah terakhir adalah membuat ciphertext yang merupakan keluaran dari proses enkripsi. ",
+        "learn-more": {
+          "matrices": "Transposisi Matriks"
+        }
+      },
+      "state-to-plaintext": {
+        "body": "Langkah terakhir adalah membuat plaintext yang merupakan keluaran dari proses dekripsi. ",
+        "learn-more": {
+          "matrices": "Transposisi Matriks"
+        }
+      },
+      "state-to-round-keys": {
+        "body": "Langkah terakhir adalah membuat kunci bulat yang merupakan output dari proses perluasan kunci. "
+      }
+    },
+    "hexArea": {
+      "nibblesLeft": "camilan tersisa.",
+      "ready": "Siap!",
+      "copied": "Disalin ke papan klip.",
+      "duplicated-keys": "Disalin ke semua input kunci.",
+      "duplicated-plaintext": "Disalin untuk mengenkripsi masukan.",
+      "duplicated-ciphertext": "Disalin untuk mendekripsi input.",
+      "go": "Pergi"
+    }
+  }
+}

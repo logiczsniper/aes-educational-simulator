@@ -29,12 +29,14 @@ watch(selectedLocaleCode, newLocaleCode => {
           hide-selected
           :menu-props="{
               closeOnContentClick: true,
+              contentClass: 'applyScrollbarToChild'
             }"
         >
           <template #item="{ item: { raw: { code, name, emoji } } }">
             <v-btn
               variant="plain"
               @click="selectedLocaleCode = code"
+              class="languageDropdownItem"
             >
               <span
                 v-if="emoji"
@@ -98,6 +100,8 @@ watch(selectedLocaleCode, newLocaleCode => {
         margin-left: -10px;
       }
 
+
+
       :deep(.v-field__append-inner) {
         align-items: center;
         padding: 0;
@@ -117,6 +121,14 @@ watch(selectedLocaleCode, newLocaleCode => {
     margin-top: -36px;
     padding-left: 0;
   }
+
+  .emoji {
+    margin-right: 8px;
+  }
+}
+
+.languageDropdownItem {
+  display: block;
 
   .emoji {
     margin-right: 8px;

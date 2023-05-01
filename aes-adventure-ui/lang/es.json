@@ -1,7 +1,275 @@
 {
   "title": "Aventura",
-  "infographic": "Descargar Infografía",
+  "infographic": "Descargar infografía",
+  "edit": "Editar",
+  "seo": {
+    "encrypt": "cifrar",
+    "decrypt": "descifrar",
+    "expand": "Expandir clave",
+    "encrypt-description": "Aprenda cómo funciona el cifrado AES con el simulador paso a paso de AES Adventure. ",
+    "decrypt-description": "Aprenda cómo funciona el descifrado AES con el simulador paso a paso de AES Adventure. ",
+    "expand-description": "Aprenda cómo funciona la expansión clave AES con el simulador paso a paso de AES Adventure. ",
+    "feedback": "Comentario",
+    "feedback-description": "Envíe sus valiosos comentarios a los creadores de AES Adventure para que podamos mejorar la experiencia de todos.",
+    "guide": "Guía",
+    "guide-description": "Aprenda a sacar el máximo provecho de AES Adventure.",
+    "home-description": "Bienvenido a AES Adventure, una herramienta educativa intuitiva de AES. ",
+    "settings": "Ajustes",
+    "settings-description": "Cambie la apariencia de AES Adventure para satisfacer sus necesidades."
+  },
+  "error": {
+    "mistake": "Algo salió mal...",
+    "back": "Regresa"
+  },
   "home": {
-    "description": "El estándar de cifrado avanzado es el cifrado de clave simétrica más popular. Si desea aprender los conceptos básicos, profundizar en los detalles o experimentar con AES: ¡está en el lugar correcto!"
+    "description": "El estándar de cifrado avanzado es el cifrado de clave simétrica más popular. ",
+    "go": "Ir al Simulador",
+    "settings": {
+      "title": "Ajustes",
+      "badLang": "¿Su idioma está mal traducido o no está disponible?"
+    },
+    "guide": {
+      "title": "Guía",
+      "table-of-contents": "Tabla de contenido",
+      "intro": {
+        "header": "Introducción",
+        "body": "El estándar de cifrado avanzado es un <i>bloque simétrico</i> cifrado, lo que significa que cifra/descifra bloques de tamaño fijo con una sola clave.  <b>Nota:</b> todos los datos en AES Adventure se representan en hexadecimal; "
+      },
+      "features": {
+        "header": "Características",
+        "animations": {
+          "header": "animaciones",
+          "body": "Todos los simuladores usan animaciones para mostrar claramente cada paso del proceso. "
+        },
+        "tutorials": {
+          "header": "Tutoriales",
+          "body": "Todos los simuladores tienen íconos de Tutorial esparcidos por todas partes. "
+        },
+        "configuration": {
+          "header": "Configuración",
+          "body": "Los simuladores de cifrado y descifrado admiten un conjunto limitado de configuraciones que pueden utilizar los usuarios más avanzados para experimentar con AES.  <i>Configurar</i> modal a la izquierda de esta página. <b>Nota:</b> cambiar la configuración restablecerá los simuladores de cifrado y descifrado."
+        },
+        "persistence": {
+          "header": "Persistencia local",
+          "body": "Todo el estado de AES Adventure se guarda en la cuenta de su navegador. <i>almacenamiento local</i> con claves que comienzan con <span class='code'>'AES_ADVENTURE_UI__'</span>.  <i>almacenamiento local</i> y refrescando la página."
+        },
+        "duplicate-buttons": {
+          "header": "Copiar botones",
+          "body": "Cuando un área de entrada está llena, verá 1 o 2 <i>Copiar</i> botones de icono.  <b>Nota:</b> si la operación de copia modifica la entrada, el simulador de destino se restablecerá ya que las entradas no se pueden cambiar a mitad de la simulación."
+        },
+        "i18n": {
+          "header": "internacionalización",
+          "body": "El idioma de toda la aplicación se puede cambiar en 'Configuración'. "
+        }
+      },
+      "quick-points": {
+        "header": "Consejos finales",
+        "cant-input": "Los datos de entrada no se pueden cambiar si un simulador los está utilizando actualmente. ",
+        "cant-start": "Los simuladores no se pueden iniciar hasta que se llenen todas las áreas de entrada requeridas. ",
+        "nibble": "¡1 nibble es medio byte, por supuesto! ",
+        "small": "AES Adventure está diseñado para ser visto a través de pantallas que son al menos <b>13\"</b> en tamaño. "
+      }
+    },
+    "feedback": {
+      "title": "Comentario",
+      "body": "Este es un proyecto en desarrollo y nos encantaría recibir sus comentarios sobre la herramienta. ",
+      "button": "Formulario de Google"
+    },
+    "gitlab": "GitLab"
+  },
+  "configure": {
+    "button": "Configurar",
+    "modal": {
+      "title": "Configurar",
+      "body": "Seleccione una configuración a continuación.  <b>Nota:</b> cambiar la configuración restablecerá los simuladores de cifrado y descifrado.",
+      "defaults": {
+        "standard": {
+          "name": "Estándar",
+          "description": "Vainilla."
+        },
+        "short": {
+          "name": "Corto",
+          "description": "La mitad del número de rondas."
+        },
+        "long": {
+          "name": "Largo",
+          "description": "Duplica el número de rondas."
+        },
+        "staticColumns": {
+          "name": "Columnas estáticas",
+          "description": "Sin capas MixColumns."
+        },
+        "staticRows": {
+          "name": "filas estáticas",
+          "description": "Sin capas ShiftRows."
+        },
+        "staticBytes": {
+          "name": "Bytes estáticos",
+          "description": "Sin capas de SubstituteBytes."
+        }
+      },
+      "close": "Cerca"
+    }
+  },
+  "simulator": {
+    "hide": "Esconder",
+    "show": "Espectáculo",
+    "quit": "Abandonar",
+    "configurations": "Configuraciones",
+    "configuration": "Configuración",
+    "encrypt": "cifrar",
+    "decrypt": "descifrar",
+    "key-expansion": "Expansión clave",
+    "plaintext": "Texto sin formato",
+    "ciphertext": "Texto cifrado",
+    "key": "Llave",
+    "sbox": "Caja de sustitución",
+    "constant-matrix": "Matriz constante",
+    "substitute-step": "Sustituto",
+    "shift-step": "Cambio",
+    "rcon": "Constante redonda",
+    "inverse": "Inverso",
+    "state": "Estado",
+    "input": "Aporte",
+    "output": "Producción",
+    "add-key": "Agregar clave",
+    "confusion": "Confusión",
+    "diffusion": "Difusión",
+    "substitute-bytes": "Bytes de sustitución",
+    "shift-rows": "Cambiar filas",
+    "mix-columns": "Mezclar columnas",
+    "add-round-key": "Agregar clave redonda",
+    "encryption": "cifrado",
+    "decryption": "descifrado",
+    "expansion": "expansión",
+    "start": "Comenzar",
+    "finish": "Finalizar",
+    "start-rounds": "Iniciar rondas",
+    "finish-rounds": "terminar rondas",
+    "no-mix-columns-last": "¡Apagado porque Mix Columns se omitió en la última ronda!",
+    "no-mix-columns-first": "¡Apagado porque Mix Columns se salta en la primera ronda!",
+    "no-step-configuration": "Desactivado porque la configuración seleccionada es",
+    "no-h-function-key-size": "¡Apagado porque el tamaño de la clave no es de 256 bits!",
+    "no-h-function-last": "Apagado porque el <span class='math'>ℎ</span>-¡La función se usa para generar la quinta palabra, pero solo se generan 4 palabras en la última ronda!",
+    "round": "Redondo",
+    "next-step": "Próximo paso",
+    "skip": "Saltar a la última ronda",
+    "next-round": "Proxima ronda",
+    "copy": "Copiar",
+    "reset": "Reiniciar",
+    "function": "función",
+    "add-words": "Agregar palabras",
+    "keys-generated": "llaves redondas listas",
+    "round-keys": "llaves redondas",
+    "disabled-input": "Haga clic en el botón 'Restablecer' para habilitar la edición",
+    "disabled-start": "Rellene la(s) entrada(s) para habilitar la simulación",
+    "tutorial": {
+      "title": "Tutorial",
+      "default": {
+        "description": "Haga clic en {tutorialIcon} que ve para revelar información relevante aquí."
+      },
+      "sandbox": {
+        "button": "Salvadera",
+        "title": "Salvadera",
+        "close": "Cerca"
+      },
+      "read-more": "Leer más",
+      "plaintext-to-state": {
+        "body": "El primer paso es crear la matriz de estado en la que se operará durante todo el proceso de encriptación. ",
+        "learn-more": {
+          "matrices": "Transposición de matriz"
+        }
+      },
+      "ciphertext-to-state": {
+        "body": "El primer paso es crear la matriz de estado en la que se operará durante todo el proceso de descifrado. ",
+        "learn-more": {
+          "matrices": "Transposición de matriz"
+        }
+      },
+      "key-to-state": {
+        "body": "El primer paso es crear el vector de estado que se agregará a lo largo del proceso de expansión clave.  <span class='highlight'>El programa de claves AES cambia ligeramente con cada tamaño de clave</span>, pero siempre está orientado a palabras."
+      },
+      "add-key": {
+        "body": "La clave es XORed con la matriz de estado.  <i>blanqueamiento clave</i>."
+      },
+      "add-round-key": {
+        "body": "La clave redonda se aplica XOR con la matriz de estado.  <i>Expansión clave</i> pestaña para aprender cómo se crean estas llaves redondas.  <b>cifrado</b>, las claves de ronda se utilizan en el orden en que se crean.  <b>descifrado</b>, las teclas redondas se utilizan en el <b>opuesto</b> orden."
+      },
+      "add-words": {
+        "body": "La primera palabra es XORed con la última palabra, después de la Ronda <span class='math'>𝑔</span>-función ha sido invocada en él.  <b>256 bits</b> calendario clave invoca la Ronda <span class='math'>ℎ</span>-función en la 4ª palabra generada en la ronda antes de continuar con normalidad.",
+        "note": "El <span class='math'>𝑔</span>-función y <span class='math'>ℎ</span>Los cálculos de función se describen en los siguientes pasos redondos."
+      },
+      "round-g-fn": {
+        "body": "El <span class='math'>𝑔</span>La función consta de una serie de operaciones en los bytes de la palabra de entrada: sustituir bytes, desplazar filas (desplazamiento = 1), y el primer byte se somete a XOR con el <i>constante redonda</i>. ",
+        "learn-more": {
+          "rcon": "Cálculo de las constantes redondas de AES"
+        }
+      },
+      "round-h-fn": {
+        "body": "El <span class='math'>ℎ</span>-La función consiste en un Bytes de sustitución en los bytes de la palabra de entrada. "
+      },
+      "round-keys": {
+        "body": "Estas subclaves se toman en el orden que se muestra durante el cifrado.  <b>descifrado</b>, se utilizan en orden inverso."
+      },
+      "rounds-header": {
+        "body": "AES opera en la matriz estatal en rondas.  <span class='highlight'>a excepción de la ronda final, que no incluye Mix Columns</span>.  <b>descifrado</b>, los pasos se ejecutan en el <b>opuesto</b> order and Mix Columns no está incluido en la primera ronda."
+      },
+      "key-rounds-header": {
+        "body": "Cada ronda de AES necesita una subclave, más 1 para el blanqueamiento de claves. ",
+        "aes-a": " AES Adventure divide cada ronda en Agregar palabras, Ronda <span class='math'>𝑔</span>-función y Ronda <span class='math'>ℎ</span>-pasos de función.  <b>256 bits</b> programa clave utiliza la Ronda <span class='math'>ℎ</span>-función de paso en cada vuelta, excepto en la vuelta final.",
+        "note": "Cada ronda genera 1 subclave para un tamaño de clave de 128 bits, 1,5 subclaves para 192 bits y 2 subclaves para 256 bits, excepto la ronda final que genera 1 subclave para los tres tamaños de clave."
+      },
+      "rounds-stats": {
+        "diffusion": "<b>Difusión</b> es la influencia de un solo bit de texto sin formato en el texto cifrado (actual).  <i>avalancha</i> efecto. <br />Shift Rows y Mix Columns pueden denominarse colectivamente como <i>capa de difusión</i> porque son los principales pasos de difusión en AES.",
+        "confusion": "<b>Confusión</b> es la relación entre el texto cifrado (actual) y la clave. <br />Substitute Bytes introduce confusión en AES.",
+        "learn-more": {
+          "conf-diff": "Confusión",
+          "avalanche": "Efecto de avalancha"
+        }
+      },
+      "sub-bytes": {
+        "body": "Substitute Bytes reemplaza cada byte de matriz de estado con un byte del cuadro de sustitución, lo que proporciona no linealidad en AES (protección contra ataques analíticos).  <b>descifrado</b>, usamos el único <b>inverso</b> del cuadro de sustitución.",
+        "learn-more": {
+          "bijective": "funciones biyectivas",
+          "sbox": "Cómputo de la caja de sustitución de AES"
+        }
+      },
+      "shift-rows": {
+        "body": "Shift Rows realiza un cambio cíclico de bytes en cada fila de la matriz de estado.  <b>descifrado</b>, el cambio es en el <b>opuesto</b> dirección. "
+      },
+      "mix-columns": {
+        "body": "Mix Columns multiplica cada vector de columna de la matriz de estado por una matriz de constantes para producir la columna correspondiente de la matriz de estado resultante.  <b>descifrado</b>, usamos el único <b>inverso</b> de la matriz constante.",
+        "learn-more": {
+          "matrix-multiplication": "Multiplicación de matrices",
+          "matrix-inversion": "Matriz inversa",
+          "gf": "Campos de Galois",
+          "gf-arithmetic": "aritmética en <span class='math'>𝐺𝐹(2 ̂ 8)</span>"
+        }
+      },
+      "state-to-ciphertext": {
+        "body": "El paso final es crear el texto cifrado que es el resultado del proceso de cifrado. ",
+        "learn-more": {
+          "matrices": "Transposición de matriz"
+        }
+      },
+      "state-to-plaintext": {
+        "body": "El paso final es crear el texto sin formato que es el resultado del proceso de descifrado. ",
+        "learn-more": {
+          "matrices": "Transposición de matriz"
+        }
+      },
+      "state-to-round-keys": {
+        "body": "El paso final es crear las llaves redondas que son el resultado del proceso de expansión de llaves. "
+      }
+    },
+    "hexArea": {
+      "nibblesLeft": "quedan mordiscos.",
+      "ready": "¡Listo!",
+      "copied": "Copiado al portapapeles.",
+      "duplicated-keys": "Copiado a todas las entradas clave.",
+      "duplicated-plaintext": "Copiado para cifrar la entrada.",
+      "duplicated-ciphertext": "Copiado para descifrar la entrada.",
+      "go": "Ir"
+    }
   }
 }

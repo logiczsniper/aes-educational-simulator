@@ -1,0 +1,275 @@
+{
+  "title": "冒险",
+  "infographic": "下载信息图",
+  "edit": "编辑",
+  "seo": {
+    "encrypt": "加密",
+    "decrypt": "解密",
+    "expand": "扩展键",
+    "encrypt-description": "了解 AES 加密如何与 AES Adventure 的分步模拟器一起使用。",
+    "decrypt-description": "了解 AES 解密如何与 AES Adventure 的分步模拟器一起工作。",
+    "expand-description": "了解 AES 密钥扩展如何与 AES Adventure 的分步模拟器一起工作。",
+    "feedback": "反馈",
+    "feedback-description": "向 AES Adventure 的创作者提供宝贵的反馈，以便我们改善每个人的体验。",
+    "guide": "指导",
+    "guide-description": "了解如何充分利用 AES Adventure。",
+    "home-description": "欢迎使用直观的 AES 教育工具 AES Adventure。",
+    "settings": "设置",
+    "settings-description": "更改 AES Adventure 的外观以满足您的需求。"
+  },
+  "error": {
+    "mistake": "出了些问题...",
+    "back": "回去"
+  },
+  "home": {
+    "description": "高级加密标准是最流行的对称密钥密码。",
+    "go": "转到模拟器",
+    "settings": {
+      "title": "设置",
+      "badLang": "您的语言是否翻译不当或无法使用？"
+    },
+    "guide": {
+      "title": "指导",
+      "table-of-contents": "目录",
+      "intro": {
+        "header": "介绍",
+        "body": "高级加密标准是 <i>对称块</i> 密码，这意味着它只用一个密钥加密/解密固定大小的块。  <b>笔记：</b> AES Adventure 中的所有数据均以十六进制表示； "
+      },
+      "features": {
+        "header": "特征",
+        "animations": {
+          "header": "动画",
+          "body": "所有模拟器都使用动画来清楚地显示过程的每个步骤。"
+        },
+        "tutorials": {
+          "header": "教程",
+          "body": "所有模拟器都有分散在各处的教程图标。"
+        },
+        "configuration": {
+          "header": "配置",
+          "body": "加密和解密模拟器支持一组有限的配置，更高级的用户可以使用这些配置来试验 AES。 <i>配置</i> 此页面左侧的模态。 <b>笔记：</b> 更改配置将重置加密和解密模拟器。"
+        },
+        "persistence": {
+          "header": "本地持久性",
+          "body": "AES Adventure 的整个状态保存到您的浏览器的 <i>本地存储</i> 以开头的键 <span class='code'>'AES_ADVENTURE_UI__'</span>. <i>本地存储</i> 并刷新页面。"
+        },
+        "duplicate-buttons": {
+          "header": "复制按钮",
+          "body": "当输入区域已满时，您将看到 1 或 2 <i>复制</i> 图标按钮。 <b>笔记：</b> 如果复制操作修改了输入，则目标模拟器将被重置，因为在模拟过程中无法更改输入。"
+        },
+        "i18n": {
+          "header": "国际化",
+          "body": "整个应用程序的语言可以在“设置”中更改。"
+        }
+      },
+      "quick-points": {
+        "header": "最后提示",
+        "cant-input": "如果模拟器当前正在使用输入数据，则无法更改它。",
+        "cant-start": "在填充所有必需的输入区域之前，无法启动模拟器。",
+        "nibble": "1 个半字节当然是半个字节！ ",
+        "small": "AES Adventure 旨在通过至少 <b>13\"</b> 在尺寸方面。"
+      }
+    },
+    "feedback": {
+      "title": "反馈",
+      "body": "这是一个开发中的项目，我们很乐意收到您对该工具的反馈。",
+      "button": "谷歌表格"
+    },
+    "gitlab": "GitLab"
+  },
+  "configure": {
+    "button": "配置",
+    "modal": {
+      "title": "配置",
+      "body": "选择下面的配置。 <b>笔记：</b> 更改配置将重置加密和解密模拟器。",
+      "defaults": {
+        "standard": {
+          "name": "标准",
+          "description": "香草。"
+        },
+        "short": {
+          "name": "短的",
+          "description": "回合数的一半。"
+        },
+        "long": {
+          "name": "长的",
+          "description": "轮数加倍。"
+        },
+        "staticColumns": {
+          "name": "静态列",
+          "description": "没有 MixColumns 层。"
+        },
+        "staticRows": {
+          "name": "静态行",
+          "description": "没有 ShiftRows 层。"
+        },
+        "staticBytes": {
+          "name": "静态字节",
+          "description": "没有 SubstituteBytes 层。"
+        }
+      },
+      "close": "关闭"
+    }
+  },
+  "simulator": {
+    "hide": "隐藏",
+    "show": "展示",
+    "quit": "辞职",
+    "configurations": "配置",
+    "configuration": "配置",
+    "encrypt": "加密",
+    "decrypt": "解密",
+    "key-expansion": "按键扩展",
+    "plaintext": "纯文本",
+    "ciphertext": "密文",
+    "key": "钥匙",
+    "sbox": "替换框",
+    "constant-matrix": "常数矩阵",
+    "substitute-step": "代替",
+    "shift-step": "转移",
+    "rcon": "圆常数",
+    "inverse": "逆",
+    "state": "状态",
+    "input": "输入",
+    "output": "输出",
+    "add-key": "添加密钥",
+    "confusion": "困惑",
+    "diffusion": "扩散",
+    "substitute-bytes": "替换字节",
+    "shift-rows": "换行",
+    "mix-columns": "混合列",
+    "add-round-key": "添加轮密钥",
+    "encryption": "加密",
+    "decryption": "解密",
+    "expansion": "扩张",
+    "start": "开始",
+    "finish": "结束",
+    "start-rounds": "开始回合",
+    "finish-rounds": "完成回合",
+    "no-mix-columns-last": "关闭，因为在最后一轮中跳过了 Mix Columns！",
+    "no-mix-columns-first": "关闭是因为在第一轮中跳过了 Mix Columns！",
+    "no-step-configuration": "已关闭，因为所选配置是",
+    "no-h-function-key-size": "关闭，因为密钥大小不是 256 位！",
+    "no-h-function-last": "关闭是因为 <span class='math'>ℎ</span>-function 用于生成第 5 个单词，但最后一轮只生成了 4 个单词！",
+    "round": "圆形的",
+    "next-step": "下一步",
+    "skip": "跳到最后一轮",
+    "next-round": "下一轮",
+    "copy": "复制",
+    "reset": "重置",
+    "function": "功能",
+    "add-words": "添加单词",
+    "keys-generated": "圆键准备就绪",
+    "round-keys": "圆键",
+    "disabled-input": "单击“重置”按钮以启用编辑",
+    "disabled-start": "填写输入以启用模拟",
+    "tutorial": {
+      "title": "教程",
+      "default": {
+        "description": "单击您看到的 {tutorialIcon} 以在此处显示相关信息。"
+      },
+      "sandbox": {
+        "button": "沙盒",
+        "title": "沙盒",
+        "close": "关闭"
+      },
+      "read-more": "阅读更多",
+      "plaintext-to-state": {
+        "body": "第一步是创建将在整个加密过程中运行的状态矩阵。",
+        "learn-more": {
+          "matrices": "矩阵转置"
+        }
+      },
+      "ciphertext-to-state": {
+        "body": "第一步是创建将在整个解密过程中运行的状态矩阵。",
+        "learn-more": {
+          "matrices": "矩阵转置"
+        }
+      },
+      "key-to-state": {
+        "body": "第一步是创建将在整个密钥扩展过程中附加的状态向量。 <span class='highlight'>AES 密钥时间表随每个密钥大小而略有变化</span>, 但它始终是面向单词的。"
+      },
+      "add-key": {
+        "body": "密钥与状态矩阵进行异或。 <i>按键美白</i>."
+      },
+      "add-round-key": {
+        "body": "轮密钥与状态矩阵进行异或运算。 <i>按键扩展</i> 选项卡以了解如何创建这些轮密钥。 <b>加密</b>，轮密钥按照它们创建的顺序使用。 <b>解密</b>，圆键用于 <b>对面的</b> 命令。"
+      },
+      "add-words": {
+        "body": "第一个词与最后一个词进行异或，在 Round 之后 <span class='math'>𝑔</span>-函数已被调用。 <b>256位</b> 关键时间表调用回合 <span class='math'>ℎ</span>- 在继续正常之前，在本轮中生成的第 4 个单词上运行。",
+        "note": "这 <span class='math'>𝑔</span>-功能和 <span class='math'>ℎ</span>-函数计算在以下回合步骤中概述。"
+      },
+      "round-g-fn": {
+        "body": "这 <span class='math'>𝑔</span>-function 由对输入字的字节进行一系列操作组成：Substitute Bytes、Shift Rows (shift = 1)，第一个字节与 <i>舍入常数</i>.",
+        "learn-more": {
+          "rcon": "计算 AES 的轮常数"
+        }
+      },
+      "round-h-fn": {
+        "body": "这 <span class='math'>ℎ</span>-function 由输入字字节上的 Substitute Bytes 组成。"
+      },
+      "round-keys": {
+        "body": "这些子密钥按照加密期间显示的顺序获取。 <b>解密</b>, 它们的使用顺序相反。"
+      },
+      "rounds-header": {
+        "body": "AES 对状态矩阵进行循环运算。  <span class='highlight'>除了最后一轮，不包括混合列</span>. <b>解密</b>，这些步骤在 <b>对面的</b> order 和 Mix Columns 不包括在第一轮中。"
+      },
+      "key-rounds-header": {
+        "body": "每轮AES都需要一个子密钥，加1进行密钥白化。 ",
+        "aes-a": " AES Adventure 将每一轮分解为 Add Words、Round <span class='math'>𝑔</span>-功能和圆形 <span class='math'>ℎ</span>-功能步骤。 <b>256位</b> key schedule 使用 Round <span class='math'>ℎ</span>- 每轮的功能步骤，最后一轮除外。",
+        "note": "每轮为 128 位密钥大小生成 1 个子密钥，为 192 位生成 1.5 个子密钥，为 256 位生成 2 个子密钥，除了最后一轮为所有三种密钥大小生成 1 个子密钥。"
+      },
+      "rounds-stats": {
+        "diffusion": "<b>扩散</b> 是单个明文位对（当前）密文的影响。 <i>雪崩</i> 影响。<br />Shift Rows 和 Mix Columns 可以统称为 <i>扩散层</i> 因为它们是 AES 中的主要扩散步骤。",
+        "confusion": "<b>困惑</b> 是（当前）密文和密钥之间的关系。<br />替换字节在 AES 中引入了混淆。",
+        "learn-more": {
+          "conf-diff": "困惑",
+          "avalanche": "雪崩效应"
+        }
+      },
+      "sub-bytes": {
+        "body": "替换字节用替换框中的一个字节替换每个状态矩阵字节，这在 AES 中提供非线性（防止分析攻击）。 <b>解密</b>，我们使用独特的 <b>逆</b> 的替换框。",
+        "learn-more": {
+          "bijective": "双射函数",
+          "sbox": "计算 AES 的替换框"
+        }
+      },
+      "shift-rows": {
+        "body": "Shift Rows 对状态矩阵的每一行执行逐字节循环移位。 <b>解密</b>，转变是在 <b>对面的</b> 方向。"
+      },
+      "mix-columns": {
+        "body": "Mix Columns 将状态矩阵的每个列向量乘以常数矩阵，以生成结果状态矩阵的相应列。 <b>解密</b>，我们使用独特的 <b>逆</b> 常数矩阵。",
+        "learn-more": {
+          "matrix-multiplication": "矩阵乘法",
+          "matrix-inversion": "逆矩阵",
+          "gf": "伽罗华域",
+          "gf-arithmetic": "算术在 <span class='math'>𝐺𝐹(2 ̂ 8)</span>"
+        }
+      },
+      "state-to-ciphertext": {
+        "body": "最后一步是创建作为加密过程输出的密文。",
+        "learn-more": {
+          "matrices": "矩阵转置"
+        }
+      },
+      "state-to-plaintext": {
+        "body": "最后一步是创建明文，即解密过程的输出。",
+        "learn-more": {
+          "matrices": "矩阵转置"
+        }
+      },
+      "state-to-round-keys": {
+        "body": "最后一步是创建作为密钥扩展过程输出的轮密钥。"
+      }
+    },
+    "hexArea": {
+      "nibblesLeft": "剩下一点点。",
+      "ready": "准备好！",
+      "copied": "复制到剪贴板。",
+      "duplicated-keys": "复制到所有关键输入。",
+      "duplicated-plaintext": "复制以加密输入。",
+      "duplicated-ciphertext": "复制以解密输入。",
+      "go": "去"
+    }
+  }
+}

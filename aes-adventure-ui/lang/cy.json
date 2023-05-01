@@ -1,0 +1,275 @@
+{
+  "title": "Antur",
+  "infographic": "Lawrlwythwch Inffograffeg",
+  "edit": "Golygu",
+  "seo": {
+    "encrypt": "Amgryptio",
+    "decrypt": "Dadgryptio",
+    "expand": "Ehangu Allwedd",
+    "encrypt-description": "Dysgwch sut mae amgryptio AES yn gweithio gydag efelychydd cam wrth gam AES Adventure. ",
+    "decrypt-description": "Dysgwch sut mae dadgryptio AES yn gweithio gydag efelychydd cam wrth gam AES Adventure. ",
+    "expand-description": "Dysgwch sut mae ehangiad allwedd AES yn gweithio gydag efelychydd cam wrth gam AES Adventure. ",
+    "feedback": "Adborth",
+    "feedback-description": "Rhowch eich adborth gwerthfawr i grewyr AES Adventure fel y gallwn wella'r profiad i bawb.",
+    "guide": "Tywysydd",
+    "guide-description": "Dysgwch sut i gael y gorau o AES Adventure.",
+    "home-description": "Croeso i AES Adventure, offeryn addysgol AES greddfol. ",
+    "settings": "Gosodiadau",
+    "settings-description": "Newidiwch sut mae AES Adventure yn edrych i weddu i'ch anghenion."
+  },
+  "error": {
+    "mistake": "Aeth rhywbeth o'i le...",
+    "back": "Mynd yn ôl"
+  },
+  "home": {
+    "description": "Y Safon Amgryptio Uwch yw'r seiffr allwedd cymesur mwyaf poblogaidd. ",
+    "go": "Ewch i Efelychydd",
+    "settings": {
+      "title": "Gosodiadau",
+      "badLang": "Ydy'ch iaith wedi'i chyfieithu'n wael neu ddim ar gael?"
+    },
+    "guide": {
+      "title": "Tywysydd",
+      "table-of-contents": "Tabl Cynnwys",
+      "intro": {
+        "header": "Rhagymadrodd",
+        "body": "Y Safon Amgryptio Uwch yw a <i>bloc cymesur</i> cipher, sy'n golygu ei fod yn amgryptio / dadgryptio blociau maint sefydlog gydag un allwedd yn unig.  <b>Nodyn:</b> cynrychiolir yr holl ddata yn AES Adventure mewn hecsadegol; "
+      },
+      "features": {
+        "header": "Nodweddion",
+        "animations": {
+          "header": "Animeiddiadau",
+          "body": "Mae pob un o'r efelychwyr yn defnyddio animeiddiadau i ddangos yn glir bob cam o'r broses. "
+        },
+        "tutorials": {
+          "header": "Tiwtorialau",
+          "body": "Mae gan bob un o'r efelychwyr eiconau Tiwtorial wedi'u gwasgaru drwyddi draw. "
+        },
+        "configuration": {
+          "header": "Cyfluniad",
+          "body": "Mae'r efelychwyr amgryptio a dadgryptio yn cefnogi set gyfyngedig o gyfluniadau y gellir eu defnyddio gan ddefnyddwyr mwy datblygedig i arbrofi gydag AES.  <i>Ffurfweddu</i> moddol ar ochr chwith y dudalen hon. <b>Nodyn:</b> bydd newid y cyfluniad yn ailosod yr efelychwyr amgryptio a dadgryptio."
+        },
+        "persistence": {
+          "header": "Dyfalbarhad Lleol",
+          "body": "Mae cyflwr cyfan AES Adventure yn cael ei gadw i'ch porwr <i>storfa leol</i> ag allweddi sy'n dechrau <span class='code'>'AES_ADVENTURE_UI__'</span>.  <i>storfa leol</i> ac adnewyddu'r dudalen."
+        },
+        "duplicate-buttons": {
+          "header": "Botymau Copïo",
+          "body": "Pan fydd ardal fewnbwn yn llawn, fe welwch 1 neu 2 <i>copi</i> botymau eicon.  <b>Nodyn:</b> os yw'r gweithrediad copi yn addasu mewnbwn, bydd yr efelychydd targed yn cael ei ailosod gan na ellir newid mewnbynnau ar ganol yr efelychiad."
+        },
+        "i18n": {
+          "header": "Rhyngwladoli",
+          "body": "Gellir newid iaith yr ap cyfan yn 'Settings'. "
+        }
+      },
+      "quick-points": {
+        "header": "Awgrymiadau Terfynol",
+        "cant-input": "Ni ellir newid data mewnbwn os yw efelychydd yn ei ddefnyddio ar hyn o bryd. ",
+        "cant-start": "Ni ellir cychwyn efelychwyr nes bod yr holl feysydd mewnbwn gofynnol wedi'u llenwi. ",
+        "nibble": "Mae 1 nibble yn hanner beit wrth gwrs! ",
+        "small": "Mae AES Adventure wedi'i gynllunio i'w weld trwy sgriniau sydd o leiaf <b>13\"</b> mewn maint. "
+      }
+    },
+    "feedback": {
+      "title": "Adborth",
+      "body": "Mae hwn yn brosiect sy'n datblygu a byddem wrth ein bodd yn cael eich adborth ar yr offeryn. ",
+      "button": "Ffurflen Google"
+    },
+    "gitlab": "GitLab"
+  },
+  "configure": {
+    "button": "Ffurfweddu",
+    "modal": {
+      "title": "Ffurfweddu",
+      "body": "Dewiswch ffurfweddiad isod.  <b>Nodyn:</b> bydd newid y cyfluniad yn ailosod yr efelychwyr amgryptio a dadgryptio.",
+      "defaults": {
+        "standard": {
+          "name": "Safonol",
+          "description": "Fanila."
+        },
+        "short": {
+          "name": "Byr",
+          "description": "Hanner nifer y rowndiau."
+        },
+        "long": {
+          "name": "Hir",
+          "description": "Dyblu nifer y rowndiau."
+        },
+        "staticColumns": {
+          "name": "Colofnau Statig",
+          "description": "Dim haenau MixColumns."
+        },
+        "staticRows": {
+          "name": "Rhesi Statig",
+          "description": "Dim haenau ShiftRows."
+        },
+        "staticBytes": {
+          "name": "Beitiau Statig",
+          "description": "Dim haenau SubstituteBytes."
+        }
+      },
+      "close": "Cau"
+    }
+  },
+  "simulator": {
+    "hide": "Cuddio",
+    "show": "Sioe",
+    "quit": "Ymadael",
+    "configurations": "Cyfluniadau",
+    "configuration": "Cyfluniad",
+    "encrypt": "Amgryptio",
+    "decrypt": "Dadgryptio",
+    "key-expansion": "Ehangu Allwedd",
+    "plaintext": "Testun plaen",
+    "ciphertext": "Ciphertext",
+    "key": "Allwedd",
+    "sbox": "Blwch Amnewid",
+    "constant-matrix": "Matrics Cyson",
+    "substitute-step": "Eilydd",
+    "shift-step": "Turn",
+    "rcon": "Cyson crwn",
+    "inverse": "gwrthdro",
+    "state": "Cyflwr",
+    "input": "Mewnbwn",
+    "output": "Allbwn",
+    "add-key": "Ychwanegu Allwedd",
+    "confusion": "Dryswch",
+    "diffusion": "Trylediad",
+    "substitute-bytes": "Amnewid Bytes",
+    "shift-rows": "Rhesi Sifft",
+    "mix-columns": "Cymysgu Colofnau",
+    "add-round-key": "Ychwanegu Allwedd Rownd",
+    "encryption": "amgryptio",
+    "decryption": "dadgryptio",
+    "expansion": "ehangu",
+    "start": "Dechrau",
+    "finish": "Gorffen",
+    "start-rounds": "Dechrau rowndiau",
+    "finish-rounds": "Gorffen rowndiau",
+    "no-mix-columns-last": "Wedi'i ddiffodd oherwydd bod Mix Columns wedi'i hepgor yn y rownd ddiwethaf!",
+    "no-mix-columns-first": "Wedi'i ddiffodd oherwydd bod Mix Columns yn cael ei hepgor yn y rownd gyntaf!",
+    "no-step-configuration": "Wedi'i ddiffodd oherwydd bod y ffurfweddiad a ddewiswyd",
+    "no-h-function-key-size": "Wedi'i ddiffodd oherwydd nad yw maint yr allwedd yn 256 did!",
+    "no-h-function-last": "Wedi'i ddiffodd oherwydd bod y <span class='math'>ℎ</span>-defnyddir swyddogaeth i gynhyrchu'r 5ed gair ond dim ond 4 gair sy'n cael eu cynhyrchu yn y rownd olaf!",
+    "round": "Rownd",
+    "next-step": "Cam nesaf",
+    "skip": "Neidio i'r rownd ddiwethaf",
+    "next-round": "Rownd nesaf",
+    "copy": "Copi",
+    "reset": "Ail gychwyn",
+    "function": "swyddogaeth",
+    "add-words": "Ychwanegu Geiriau",
+    "keys-generated": "allweddi crwn yn barod",
+    "round-keys": "Allweddi Crwn",
+    "disabled-input": "Cliciwch y botwm 'Ailosod' i alluogi golygu",
+    "disabled-start": "Llenwch y mewnbwn(au) i alluogi efelychiad",
+    "tutorial": {
+      "title": "Tiwtorial",
+      "default": {
+        "description": "Cliciwch ar {tutorialIcon} a welwch i ddatgelu gwybodaeth berthnasol yma."
+      },
+      "sandbox": {
+        "button": "Blwch tywod",
+        "title": "Blwch tywod",
+        "close": "Cau"
+      },
+      "read-more": "Darllen mwy",
+      "plaintext-to-state": {
+        "body": "Y cam cyntaf yw creu'r matrics cyflwr a fydd yn cael ei weithredu trwy gydol y broses amgryptio. ",
+        "learn-more": {
+          "matrices": "Trawsosod Matrics"
+        }
+      },
+      "ciphertext-to-state": {
+        "body": "Y cam cyntaf yw creu'r matrics cyflwr a fydd yn cael ei weithredu trwy gydol y broses ddadgryptio. ",
+        "learn-more": {
+          "matrices": "Trawsosod Matrics"
+        }
+      },
+      "key-to-state": {
+        "body": "Y cam cyntaf yw creu'r fector cyflwr a fydd yn cael ei atodi iddo trwy gydol y broses ehangu allweddol.  <span class='highlight'>Mae amserlen allwedd AES yn newid ychydig gyda phob maint allwedd</span>, ond mae bob amser wedi'i gyfeirio at eiriau."
+      },
+      "add-key": {
+        "body": "Yr allwedd yw XORed gyda'r matrics cyflwr.  <i>gwynnu allweddi</i>."
+      },
+      "add-round-key": {
+        "body": "Mae'r allwedd gron yn XORed gyda'r matrics cyflwr.  <i>Ehangu Allwedd</i> tab i ddysgu sut mae'r bysellau crwn hyn yn cael eu creu.  <b>amgryptio</b>, defnyddir yr allweddi crwn yn y drefn y cânt eu creu.  <b>dadgryptio</b>, defnyddir yr allweddi crwn yn y <b>gyferbyn</b> trefn."
+      },
+      "add-words": {
+        "body": "XORed y gair cyntaf â'r gair olaf, ar ol y Rownd <span class='math'>𝑔</span>-swyddogaeth wedi'i alw arno.  <b>256-did</b> amserlen allweddol yn galw y Rownd <span class='math'>ℎ</span>-swyddogaeth ar y 4ydd gair a gynhyrchir yn y rownd cyn parhau fel arfer.",
+        "note": "Mae'r <span class='math'>𝑔</span>-swyddogaeth a <span class='math'>ℎ</span>-mae cyfrifiannau swyddogaeth yn cael eu hamlinellu yn y camau rownd canlynol."
+      },
+      "round-g-fn": {
+        "body": "Mae'r <span class='math'>𝑔</span>-mae swyddogaeth yn cynnwys cyfres o weithrediadau ar beit y gair mewnbwn: Amnewid Bytes, Shift Rows (shift = 1), ac mae'r beit cyntaf wedi'i XORed gyda'r <i>cyson crwn</i>. ",
+        "learn-more": {
+          "rcon": "Cyfrifiadura Cysonion Rownd AES"
+        }
+      },
+      "round-h-fn": {
+        "body": "Mae'r <span class='math'>ℎ</span>-mae swyddogaeth yn cynnwys Beit Amnewid ar beit y gair mewnbwn. "
+      },
+      "round-keys": {
+        "body": "Cymerir yr isbychiadau hyn yn y drefn a ddangosir yn ystod yr amgryptio.  <b>dadgryptio</b>, fe'u defnyddir yn y drefn gyferbyn."
+      },
+      "rounds-header": {
+        "body": "Mae AES yn gweithredu ar y matrics cyflwr mewn rowndiau.  <span class='highlight'>heblaw am y rownd derfynol, nad yw'n cynnwys Colofnau Cymysgedd</span>.  <b>dadgryptio</b>, mae'r camau yn cael eu gweithredu yn y <b>gyferbyn</b> nid yw trefn a Cholofnau Cymysgedd wedi'u cynnwys yn y rownd gyntaf."
+      },
+      "key-rounds-header": {
+        "body": "Mae angen subkey ar bob rownd o AES, ynghyd ag 1 ar gyfer gwynnu allweddi. ",
+        "aes-a": " Mae AES Adventure yn rhannu pob rownd yn Add Words, Round <span class='math'>𝑔</span>-swyddogaeth a Rownd <span class='math'>ℎ</span>- camau swyddogaeth.  <b>256-did</b> amserlen allweddol yn defnyddio'r Rownd <span class='math'>ℎ</span>-function cam ym mhob rownd, ac eithrio ar gyfer y rownd derfynol.",
+        "note": "Mae pob rownd yn cynhyrchu 1 subkey ar gyfer maint allweddol o 128 did, 1.5 subkey ar gyfer 192 did, a 2 subkey ar gyfer 256 did, ac eithrio'r rownd derfynol sy'n cynhyrchu 1 subkey ar gyfer y tri maint allweddol."
+      },
+      "rounds-stats": {
+        "diffusion": "<b>Trylediad</b> yw dylanwad un darn testun plaen ar y testun cipher (cyfredol).  <i>eirlithriad</i> effaith. <br />Gellir cyfeirio at Rhesi Shift a Cholofnau Cymysgedd gyda'i gilydd fel y <i>haen trylediad</i> oherwydd dyma'r prif gamau gwasgaredig yn AES.",
+        "confusion": "<b>Dryswch</b> yw'r berthynas rhwng y ciphertext (cyfredol) a'r cywair. <br />Mae Substitute Bytes yn cyflwyno dryswch mewn AES.",
+        "learn-more": {
+          "conf-diff": "Dryswch",
+          "avalanche": "Effaith Avalanche"
+        }
+      },
+      "sub-bytes": {
+        "body": "Mae Substitute Bytes yn disodli pob beit matrics cyflwr gyda beit o'r blwch amnewid, sy'n darparu aflinoledd mewn AES (amddiffyniad rhag ymosodiadau dadansoddol).  <b>dadgryptio</b>, rydym yn defnyddio'r unigryw <b>gwrthdro</b> o'r blwch amnewid.",
+        "learn-more": {
+          "bijective": "Swyddogaethau Amlinellol",
+          "sbox": "Cyfrifiadura Blwch Amnewid AES"
+        }
+      },
+      "shift-rows": {
+        "body": "Mae Shift Rows yn perfformio shifft cylchol beit-ddoeth ar bob rhes o'r matrics cyflwr.  <b>dadgryptio</b>, mae'r shifft yn y <b>gyferbyn</b> cyfeiriad. "
+      },
+      "mix-columns": {
+        "body": "Mae Colofnau Cymysgedd yn lluosi pob colofn fector o'r matrics cyflwr â matrics o gysonion i gynhyrchu colofn gyfatebol y matrics cyflwr canlyniadol.  <b>dadgryptio</b>, rydym yn defnyddio'r unigryw <b>gwrthdro</b> o'r matrics cyson.",
+        "learn-more": {
+          "matrix-multiplication": "Lluosi Matrics",
+          "matrix-inversion": "Gwrthdroadau Matrics",
+          "gf": "Caeau Galois",
+          "gf-arithmetic": "Rhifyddeg yn <span class='math'>𝐺𝐹(2 ̂ 8)</span>"
+        }
+      },
+      "state-to-ciphertext": {
+        "body": "Y cam olaf yw creu'r ciphertext sef allbwn y broses amgryptio. ",
+        "learn-more": {
+          "matrices": "Trawsosod Matrics"
+        }
+      },
+      "state-to-plaintext": {
+        "body": "Y cam olaf yw creu'r testun plaen sef allbwn y broses ddadgryptio. ",
+        "learn-more": {
+          "matrices": "Trawsosod Matrics"
+        }
+      },
+      "state-to-round-keys": {
+        "body": "Y cam olaf yw creu'r allweddi crwn sy'n allbwn y broses ehangu allweddol. "
+      }
+    },
+    "hexArea": {
+      "nibblesLeft": "cnoi ar ôl.",
+      "ready": "Barod!",
+      "copied": "Wedi'i gopïo i'r clipfwrdd.",
+      "duplicated-keys": "Wedi'i gopïo i bob mewnbwn allweddol.",
+      "duplicated-plaintext": "Wedi'i gopïo i amgryptio mewnbwn.",
+      "duplicated-ciphertext": "Wedi'i gopïo i ddadgryptio mewnbwn.",
+      "go": "Ewch"
+    }
+  }
+}

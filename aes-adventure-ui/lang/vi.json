@@ -1,0 +1,275 @@
+{
+  "title": "Cuộc phiêu lưu",
+  "infographic": "Tải xuống đồ họa thông tin",
+  "edit": "Biên tập",
+  "seo": {
+    "encrypt": "mã hóa",
+    "decrypt": "giải mã",
+    "expand": "Mở rộng khóa",
+    "encrypt-description": "Tìm hiểu cách mã hóa AES hoạt động với trình giả lập từng bước của AES Adventure. ",
+    "decrypt-description": "Tìm hiểu cách giải mã AES hoạt động với trình giả lập từng bước của AES Adventure. ",
+    "expand-description": "Tìm hiểu cách mở rộng khóa AES hoạt động với trình giả lập từng bước của AES Adventure. ",
+    "feedback": "Nhận xét",
+    "feedback-description": "Cung cấp phản hồi có giá trị của bạn cho những người tạo ra AES Adventure để chúng tôi có thể cải thiện trải nghiệm cho mọi người.",
+    "guide": "Hướng dẫn",
+    "guide-description": "Tìm hiểu cách tận dụng tối đa AES Adventure.",
+    "home-description": "Chào mừng bạn đến với AES Adventure, một công cụ giáo dục AES trực quan. ",
+    "settings": "Cài đặt",
+    "settings-description": "Thay đổi giao diện của AES Adventure cho phù hợp với nhu cầu của bạn."
+  },
+  "error": {
+    "mistake": "Đã xảy ra sự cố...",
+    "back": "Quay lại"
+  },
+  "home": {
+    "description": "Tiêu chuẩn mã hóa nâng cao là mật mã khóa đối xứng phổ biến nhất. ",
+    "go": "Chuyển đến Trình mô phỏng",
+    "settings": {
+      "title": "Cài đặt",
+      "badLang": "Ngôn ngữ của bạn được dịch kém hoặc không có sẵn?"
+    },
+    "guide": {
+      "title": "Hướng dẫn",
+      "table-of-contents": "Mục lục",
+      "intro": {
+        "header": "Giới thiệu",
+        "body": "Tiêu chuẩn mã hóa nâng cao là một <i>khối đối xứng</i> mật mã, nghĩa là nó mã hóa/giải mã các khối có kích thước cố định chỉ bằng một khóa.  <b>Ghi chú:</b> tất cả dữ liệu trong AES Adventure được thể hiện ở dạng thập lục phân; "
+      },
+      "features": {
+        "header": "Đặc trưng",
+        "animations": {
+          "header": "Ảnh động",
+          "body": "Tất cả các trình mô phỏng đều sử dụng hình ảnh động để hiển thị rõ ràng từng bước của quy trình. "
+        },
+        "tutorials": {
+          "header": "hướng dẫn",
+          "body": "Tất cả các trình mô phỏng đều có các biểu tượng Hướng dẫn nằm rải rác khắp nơi. "
+        },
+        "configuration": {
+          "header": "Cấu hình",
+          "body": "Trình mô phỏng mã hóa và giải mã hỗ trợ một bộ cấu hình giới hạn mà những người dùng cao cấp hơn có thể sử dụng để thử nghiệm AES.  <i>định cấu hình</i> modal ở bên trái của trang này. <b>Ghi chú:</b> thay đổi cấu hình sẽ đặt lại trình mô phỏng mã hóa và giải mã."
+        },
+        "persistence": {
+          "header": "Kiên trì cục bộ",
+          "body": "Toàn bộ trạng thái của AES Adventure được lưu vào trình duyệt của bạn <i>lưu trữ cục bộ</i> với các phím bắt đầu bằng <span class='code'>'AES_ADVENTURE_UI__'</span>.  <i>lưu trữ cục bộ</i> và làm mới trang."
+        },
+        "duplicate-buttons": {
+          "header": "sao chép các nút",
+          "body": "Khi một khu vực đầu vào đầy, bạn sẽ thấy 1 hoặc 2 <i>sao chép</i> các nút biểu tượng.  <b>Ghi chú:</b> nếu thao tác sao chép làm thay đổi đầu vào, trình mô phỏng đích sẽ được đặt lại vì không thể thay đổi đầu vào trong quá trình mô phỏng."
+        },
+        "i18n": {
+          "header": "quốc tế hóa",
+          "body": "Có thể thay đổi ngôn ngữ của toàn bộ ứng dụng trong 'Cài đặt'. "
+        }
+      },
+      "quick-points": {
+        "header": "Lời khuyên cuối cùng",
+        "cant-input": "Dữ liệu đầu vào không thể thay đổi nếu trình mô phỏng hiện đang sử dụng nó. ",
+        "cant-start": "Không thể khởi động trình mô phỏng cho đến khi tất cả các khu vực đầu vào bắt buộc được lấp đầy. ",
+        "nibble": "Tất nhiên 1 nibble là nửa byte! ",
+        "small": "AES Adventure được thiết kế để xem qua các màn hình ít nhất <b>13\"</b> trong kích thước. "
+      }
+    },
+    "feedback": {
+      "title": "Nhận xét",
+      "body": "Đây là một dự án đang phát triển và chúng tôi rất muốn nhận được phản hồi của bạn về công cụ này. ",
+      "button": "Google Biểu mẫu"
+    },
+    "gitlab": "GitLab"
+  },
+  "configure": {
+    "button": "định cấu hình",
+    "modal": {
+      "title": "định cấu hình",
+      "body": "Chọn một cấu hình bên dưới.  <b>Ghi chú:</b> thay đổi cấu hình sẽ đặt lại trình mô phỏng mã hóa và giải mã.",
+      "defaults": {
+        "standard": {
+          "name": "Tiêu chuẩn",
+          "description": "Vanilla."
+        },
+        "short": {
+          "name": "Ngắn",
+          "description": "Một nửa số vòng."
+        },
+        "long": {
+          "name": "Dài",
+          "description": "Nhân đôi số vòng."
+        },
+        "staticColumns": {
+          "name": "Cột tĩnh",
+          "description": "Không có lớp MixColumns."
+        },
+        "staticRows": {
+          "name": "Hàng tĩnh",
+          "description": "Không có lớp ShiftRows."
+        },
+        "staticBytes": {
+          "name": "Byte tĩnh",
+          "description": "Không có lớp SubstitutBytes nào."
+        }
+      },
+      "close": "Đóng"
+    }
+  },
+  "simulator": {
+    "hide": "Trốn",
+    "show": "Trình diễn",
+    "quit": "Từ bỏ",
+    "configurations": "cấu hình",
+    "configuration": "Cấu hình",
+    "encrypt": "mã hóa",
+    "decrypt": "giải mã",
+    "key-expansion": "Mở rộng khóa",
+    "plaintext": "Văn bản thô",
+    "ciphertext": "bản mã",
+    "key": "Chìa khóa",
+    "sbox": "Hộp thay người",
+    "constant-matrix": "Ma trận không đổi",
+    "substitute-step": "Thay thế",
+    "shift-step": "Sự thay đổi",
+    "rcon": "Vòng không đổi",
+    "inverse": "nghịch đảo",
+    "state": "Tình trạng",
+    "input": "Đầu vào",
+    "output": "đầu ra",
+    "add-key": "Thêm khóa",
+    "confusion": "Lú lẫn",
+    "diffusion": "Khuếch tán",
+    "substitute-bytes": "Byte thay thế",
+    "shift-rows": "Dịch chuyển hàng",
+    "mix-columns": "Cột trộn",
+    "add-round-key": "Thêm phím tròn",
+    "encryption": "mã hóa",
+    "decryption": "giải mã",
+    "expansion": "sự bành trướng",
+    "start": "Bắt đầu",
+    "finish": "Hoàn thành",
+    "start-rounds": "bắt đầu vòng",
+    "finish-rounds": "kết thúc vòng",
+    "no-mix-columns-last": "Đã tắt vì Cột kết hợp bị bỏ qua trong vòng cuối cùng!",
+    "no-mix-columns-first": "Đã tắt vì Cột kết hợp bị bỏ qua trong vòng đầu tiên!",
+    "no-step-configuration": "Đã tắt vì cấu hình đã chọn là",
+    "no-h-function-key-size": "Bị tắt vì kích thước khóa không phải là 256 bit!",
+    "no-h-function-last": "Tắt vì <span class='math'>ℎ</span>-chức năng được sử dụng để tạo từ thứ 5 nhưng chỉ có 4 từ được tạo trong vòng cuối cùng!",
+    "round": "Tròn",
+    "next-step": "Bước tiếp theo",
+    "skip": "Bỏ qua vòng cuối cùng",
+    "next-round": "Vòng tiếp theo",
+    "copy": "Sao chép",
+    "reset": "Cài lại",
+    "function": "chức năng",
+    "add-words": "thêm từ",
+    "keys-generated": "phím tròn đã sẵn sàng",
+    "round-keys": "Phím tròn",
+    "disabled-input": "Nhấp vào nút 'Đặt lại' để bật chỉnh sửa",
+    "disabled-start": "Điền (các) đầu vào để kích hoạt mô phỏng",
+    "tutorial": {
+      "title": "hướng dẫn",
+      "default": {
+        "description": "Nhấp vào {tutorialIcon} mà bạn thấy để hiển thị thông tin liên quan tại đây."
+      },
+      "sandbox": {
+        "button": "hộp cát",
+        "title": "hộp cát",
+        "close": "Đóng"
+      },
+      "read-more": "Đọc thêm",
+      "plaintext-to-state": {
+        "body": "Bước đầu tiên là tạo ma trận trạng thái sẽ được vận hành trong suốt quá trình mã hóa. ",
+        "learn-more": {
+          "matrices": "Chuyển vị ma trận"
+        }
+      },
+      "ciphertext-to-state": {
+        "body": "Bước đầu tiên là tạo ma trận trạng thái sẽ được vận hành trong suốt quá trình giải mã. ",
+        "learn-more": {
+          "matrices": "Chuyển vị ma trận"
+        }
+      },
+      "key-to-state": {
+        "body": "Bước đầu tiên là tạo vectơ trạng thái sẽ được thêm vào trong suốt quá trình mở rộng khóa.  <span class='highlight'>Lịch trình khóa AES thay đổi một chút với từng kích thước khóa</span>, nhưng nó luôn hướng đến từ."
+      },
+      "add-key": {
+        "body": "Khóa được XOR với ma trận trạng thái.  <i>chìa khóa làm trắng</i>."
+      },
+      "add-round-key": {
+        "body": "Phím tròn được XOR với ma trận trạng thái.  <i>Mở rộng khóa</i> tab để tìm hiểu cách các phím tròn này được tạo ra.  <b>mã hóa</b>, các phím tròn được sử dụng theo thứ tự chúng được tạo.  <b>giải mã</b>, các phím tròn được sử dụng trong <b>đối diện</b> đặt hàng."
+      },
+      "add-words": {
+        "body": "Từ đầu tiên được XOR với từ cuối cùng, sau Vòng <span class='math'>𝑔</span>-chức năng đã được gọi trên nó.  <b>256-bit</b> lịch trình chính gọi Vòng <span class='math'>ℎ</span>-chức năng trên từ thứ 4 được tạo trong vòng trước khi tiếp tục như bình thường.",
+        "note": "Các <span class='math'>𝑔</span>-chức năng và <span class='math'>ℎ</span>-chức năng tính toán được phác thảo trong các bước vòng sau đây."
+      },
+      "round-g-fn": {
+        "body": "Các <span class='math'>𝑔</span>-chức năng bao gồm một loạt các hoạt động trên các byte của từ đầu vào: Bytes thay thế, Shift Rows (shift = 1) và byte đầu tiên được XOR với <i>hằng số tròn</i>. ",
+        "learn-more": {
+          "rcon": "Tính toán các hằng số tròn của AES"
+        }
+      },
+      "round-h-fn": {
+        "body": "Các <span class='math'>ℎ</span>-chức năng bao gồm một Byte thay thế trên các byte của từ đầu vào. "
+      },
+      "round-keys": {
+        "body": "Các khóa con này được lấy theo thứ tự hiển thị trong quá trình mã hóa.  <b>giải mã</b>, chúng được sử dụng theo thứ tự ngược lại."
+      },
+      "rounds-header": {
+        "body": "AES hoạt động trên ma trận trạng thái theo vòng.  <span class='highlight'>ngoại trừ vòng chung kết không bao gồm Cột trộn</span>.  <b>giải mã</b>, các bước được thực hiện trong <b>đối diện</b> Cột thứ tự và Kết hợp không được bao gồm trong vòng đầu tiên."
+      },
+      "key-rounds-header": {
+        "body": "Mỗi vòng AES cần một khóa con, cộng với 1 để làm trắng khóa. ",
+        "aes-a": " AES Adventure chia nhỏ từng vòng thành Thêm từ, Vòng <span class='math'>𝑔</span>-chức năng và Round <span class='math'>ℎ</span>-các bước chức năng.  <b>256-bit</b> lịch trình chính sử dụng Vòng <span class='math'>ℎ</span>-chức năng bước trong mỗi vòng, ngoại trừ vòng cuối cùng.",
+        "note": "Mỗi vòng tạo 1 khóa con cho kích thước khóa 128 bit, 1,5 khóa con cho 192 bit và 2 khóa con cho 256 bit, ngoại trừ vòng cuối cùng tạo 1 khóa con cho cả ba kích thước khóa."
+      },
+      "rounds-stats": {
+        "diffusion": "<b>Khuếch tán</b> là ảnh hưởng của một bit bản rõ duy nhất trên bản mã (hiện tại).  <i>tuyết lở</i> tác dụng. <br />Shift Rows và Mix Columns có thể được gọi chung là <i>lớp khuếch tán</i> bởi vì chúng là các bước phổ biến chính trong AES.",
+        "confusion": "<b>Lú lẫn</b> là mối quan hệ giữa bản mã (hiện tại) và khóa. <br />Byte thay thế gây nhầm lẫn trong AES.",
+        "learn-more": {
+          "conf-diff": "Lú lẫn",
+          "avalanche": "hiệu ứng tuyết lở"
+        }
+      },
+      "sub-bytes": {
+        "body": "Byte thay thế thay thế từng byte ma trận trạng thái bằng một byte từ hộp thay thế, cung cấp tính phi tuyến tính trong AES (bảo vệ chống lại các cuộc tấn công phân tích).  <b>giải mã</b>, chúng tôi sử dụng duy nhất <b>nghịch đảo</b> của hộp thay thế.",
+        "learn-more": {
+          "bijective": "Chức năng dự đoán",
+          "sbox": "Tính toán hộp thay thế của AES"
+        }
+      },
+      "shift-rows": {
+        "body": "Shift Rows thực hiện dịch chuyển tuần hoàn theo từng byte trên mỗi hàng của ma trận trạng thái.  <b>giải mã</b>, sự thay đổi là trong <b>đối diện</b> phương hướng. "
+      },
+      "mix-columns": {
+        "body": "Các Cột Trộn nhân mỗi vectơ cột của ma trận trạng thái với một ma trận các hằng số để tạo ra cột tương ứng của ma trận trạng thái kết quả.  <b>giải mã</b>, chúng tôi sử dụng duy nhất <b>nghịch đảo</b> của ma trận hằng.",
+        "learn-more": {
+          "matrix-multiplication": "Phép nhân ma trận",
+          "matrix-inversion": "Nghịch đảo ma trận",
+          "gf": "Cánh đồng Galois",
+          "gf-arithmetic": "số học trong <span class='math'>𝐺𝐹(2 ̂ 8)</span>"
+        }
+      },
+      "state-to-ciphertext": {
+        "body": "Bước cuối cùng là tạo bản mã là đầu ra của quá trình mã hóa. ",
+        "learn-more": {
+          "matrices": "Chuyển vị ma trận"
+        }
+      },
+      "state-to-plaintext": {
+        "body": "Bước cuối cùng là tạo bản rõ là đầu ra của quá trình giải mã. ",
+        "learn-more": {
+          "matrices": "Chuyển vị ma trận"
+        }
+      },
+      "state-to-round-keys": {
+        "body": "Bước cuối cùng là tạo các phím tròn là đầu ra của quá trình mở rộng phím. "
+      }
+    },
+    "hexArea": {
+      "nibblesLeft": "nhấm nháp trái.",
+      "ready": "Sẵn sàng!",
+      "copied": "Sao chép vào clipboard.",
+      "duplicated-keys": "Đã sao chép vào tất cả các đầu vào chính.",
+      "duplicated-plaintext": "Đã sao chép để mã hóa đầu vào.",
+      "duplicated-ciphertext": "Đã sao chép để giải mã đầu vào.",
+      "go": "Đi"
+    }
+  }
+}

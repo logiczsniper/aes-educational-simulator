@@ -1,0 +1,275 @@
+{
+  "title": "Avantura",
+  "infographic": "Preuzmite Infografiku",
+  "edit": "Uredi",
+  "seo": {
+    "encrypt": "Šifriraj",
+    "decrypt": "Dešifrirati",
+    "expand": "Proširi ključ",
+    "encrypt-description": "Naučite kako radi AES enkripcija s AES Adventure simulatorom korak po korak. ",
+    "decrypt-description": "Naučite kako AES dešifriranje radi s AES Adventure simulatorom korak po korak. ",
+    "expand-description": "Naučite kako proširenje AES ključa radi s AES Adventure simulatorom korak po korak. ",
+    "feedback": "Povratne informacije",
+    "feedback-description": "Dajte svoje vrijedne povratne informacije kreatorima AES Adventure kako bismo mogli poboljšati iskustvo za sve.",
+    "guide": "Vodič",
+    "guide-description": "Naučite kako najbolje iskoristiti AES Adventure.",
+    "home-description": "Dobrodošli u AES Adventure, intuitivni AES obrazovni alat. ",
+    "settings": "postavke",
+    "settings-description": "Promijenite izgled AES Adventure kako bi odgovarao vašim potrebama."
+  },
+  "error": {
+    "mistake": "Nešto je pošlo po zlu...",
+    "back": "Idi natrag"
+  },
+  "home": {
+    "description": "Napredni standard šifriranja najpopularnija je šifra sa simetričnim ključem. ",
+    "go": "Idite na Simulator",
+    "settings": {
+      "title": "postavke",
+      "badLang": "Je li vaš jezik loše preveden ili nedostupan?"
+    },
+    "guide": {
+      "title": "Vodič",
+      "table-of-contents": "Sadržaj",
+      "intro": {
+        "header": "Uvod",
+        "body": "Napredni standard šifriranja je a <i>simetrični blok</i> cipher, što znači da šifrira/dekriptira blokove fiksne veličine sa samo jednim ključem.  <b>Bilješka:</b> svi podaci u AES Adventure predstavljeni su u heksadecimalnom obliku; "
+      },
+      "features": {
+        "header": "Značajke",
+        "animations": {
+          "header": "Animacije",
+          "body": "Svi simulatori koriste animacije kako bi jasno prikazali svaki korak procesa. "
+        },
+        "tutorials": {
+          "header": "Tutorijali",
+          "body": "Svi simulatori imaju ikone vodiča razbacane posvuda. "
+        },
+        "configuration": {
+          "header": "Konfiguracija",
+          "body": "Simulatori šifriranja i dešifriranja podržavaju ograničen skup konfiguracija koje mogu koristiti napredniji korisnici za eksperimentiranje s AES-om.  <i>Konfigurirati</i> modalno lijevo od ove stranice. <b>Bilješka:</b> promjena konfiguracije će resetirati simulatore enkripcije i dešifriranja."
+        },
+        "persistence": {
+          "header": "Lokalna postojanost",
+          "body": "Cijelo stanje AES Adventure sprema se u vaš preglednik <i>lokalna pohrana</i> s ključevima koji počinju s <span class='code'>'AES_ADVENTURE_UI__'</span>.  <i>lokalna pohrana</i> i osvježavanje stranice."
+        },
+        "duplicate-buttons": {
+          "header": "Gumbi za kopiranje",
+          "body": "Kada je polje za unos puno, vidjet ćete 1 ili 2 <i>kopirati</i> gumbi ikona.  <b>Bilješka:</b> ako operacija kopiranja modificira ulaz, ciljni simulator će se resetirati jer se ulazi ne mogu promijeniti usred simulacije."
+        },
+        "i18n": {
+          "header": "Internacionalizacija",
+          "body": "Jezik cijele aplikacije može se promijeniti u 'Postavkama'. "
+        }
+      },
+      "quick-points": {
+        "header": "Završni savjeti",
+        "cant-input": "Ulazni podaci se ne mogu mijenjati ako ih trenutno koristi simulator. ",
+        "cant-start": "Simulatori se ne mogu pokrenuti dok se ne popune sva potrebna polja za unos. ",
+        "nibble": "1 grickanje je pola bajta naravno! ",
+        "small": "AES Adventure je dizajniran za gledanje kroz zaslone koji su najmanje <b>13\"</b> u veličini. "
+      }
+    },
+    "feedback": {
+      "title": "Povratne informacije",
+      "body": "Ovo je projekt u razvoju i voljeli bismo dobiti vaše povratne informacije o alatu. ",
+      "button": "Google obrazac"
+    },
+    "gitlab": "GitLab"
+  },
+  "configure": {
+    "button": "Konfigurirati",
+    "modal": {
+      "title": "Konfigurirati",
+      "body": "Odaberite konfiguraciju u nastavku.  <b>Bilješka:</b> promjena konfiguracije će resetirati simulatore enkripcije i dešifriranja.",
+      "defaults": {
+        "standard": {
+          "name": "Standard",
+          "description": "vanilija."
+        },
+        "short": {
+          "name": "Kratak",
+          "description": "Pola broja krugova."
+        },
+        "long": {
+          "name": "dugo",
+          "description": "Udvostručite broj krugova."
+        },
+        "staticColumns": {
+          "name": "Statički stupci",
+          "description": "Nema MixColumns slojeva."
+        },
+        "staticRows": {
+          "name": "Statični redovi",
+          "description": "Nema slojeva ShiftRows."
+        },
+        "staticBytes": {
+          "name": "Statički bajtovi",
+          "description": "Nema slojeva SubstituteBytes."
+        }
+      },
+      "close": "Zatvoriti"
+    }
+  },
+  "simulator": {
+    "hide": "Sakriti",
+    "show": "Pokazati",
+    "quit": "Prestati",
+    "configurations": "Konfiguracije",
+    "configuration": "Konfiguracija",
+    "encrypt": "Šifriraj",
+    "decrypt": "Dešifrirati",
+    "key-expansion": "Proširenje ključa",
+    "plaintext": "Čisti tekst",
+    "ciphertext": "Šifrirani tekst",
+    "key": "Ključ",
+    "sbox": "Kutija za zamjenu",
+    "constant-matrix": "Konstantna matrica",
+    "substitute-step": "Zamjena",
+    "shift-step": "Shift",
+    "rcon": "Okrugla konstanta",
+    "inverse": "Inverzan",
+    "state": "država",
+    "input": "Ulazni",
+    "output": "Izlaz",
+    "add-key": "Dodaj ključ",
+    "confusion": "Zbunjenost",
+    "diffusion": "Difuzija",
+    "substitute-bytes": "Zamjena bajtova",
+    "shift-rows": "Pomakni redove",
+    "mix-columns": "Pomiješajte stupce",
+    "add-round-key": "Dodajte okrugli ključ",
+    "encryption": "šifriranje",
+    "decryption": "dešifriranje",
+    "expansion": "proširenje",
+    "start": "Početak",
+    "finish": "Završi",
+    "start-rounds": "Započni runde",
+    "finish-rounds": "Završite runde",
+    "no-mix-columns-last": "Isključeno jer je Mix Columns preskočen u zadnjem krugu!",
+    "no-mix-columns-first": "Isključeno jer je Mix Columns preskočen u prvom krugu!",
+    "no-step-configuration": "Isključeno jer je odabrana konfiguracija",
+    "no-h-function-key-size": "Isključeno jer veličina ključa nije 256 bita!",
+    "no-h-function-last": "Isključeno jer <span class='math'>ℎ</span>-funkcija se koristi za generiranje 5. riječi, ali samo 4 riječi se generiraju u zadnjem krugu!",
+    "round": "Krug",
+    "next-step": "Sljedeći korak",
+    "skip": "Preskoči na posljednji krug",
+    "next-round": "Sljedeća runda",
+    "copy": "Kopirati",
+    "reset": "Resetiraj",
+    "function": "funkcija",
+    "add-words": "Dodajte riječi",
+    "keys-generated": "okrugli ključevi spremni",
+    "round-keys": "Okrugli ključevi",
+    "disabled-input": "Pritisnite gumb \"Reset\" da omogućite uređivanje",
+    "disabled-start": "Ispunite unos(e) da omogućite simulaciju",
+    "tutorial": {
+      "title": "Tutorial",
+      "default": {
+        "description": "Kliknite {tutorialIcon} koji vidite da biste ovdje otkrili relevantne informacije."
+      },
+      "sandbox": {
+        "button": "Pješčanik",
+        "title": "Pješčanik",
+        "close": "Zatvoriti"
+      },
+      "read-more": "Čitaj više",
+      "plaintext-to-state": {
+        "body": "Prvi korak je stvaranje matrice stanja na kojoj će se raditi tijekom procesa šifriranja. ",
+        "learn-more": {
+          "matrices": "Transpozicija matrice"
+        }
+      },
+      "ciphertext-to-state": {
+        "body": "Prvi korak je stvaranje matrice stanja na kojoj će se raditi tijekom procesa dešifriranja. ",
+        "learn-more": {
+          "matrices": "Transpozicija matrice"
+        }
+      },
+      "key-to-state": {
+        "body": "Prvi korak je stvaranje vektora stanja koji će se pridodati tijekom procesa proširenja ključa.  <span class='highlight'>Raspored AES ključeva lagano se mijenja sa svakom veličinom ključa</span>, ali uvijek je orijentirano na riječi."
+      },
+      "add-key": {
+        "body": "Ključ je XORed s matricom stanja.  <i>izbjeljivanje ključa</i>."
+      },
+      "add-round-key": {
+        "body": "Okrugli ključ je XOR s matricom stanja.  <i>Proširenje ključa</i> da biste saznali kako se stvaraju ovi okrugli ključevi.  <b>šifriranje</b>, okrugli ključevi koriste se redoslijedom kojim su stvoreni.  <b>dešifriranje</b>, okrugli ključevi se koriste u <b>suprotan</b> narudžba."
+      },
+      "add-words": {
+        "body": "Prva riječ je XOR s posljednjom riječi, nakon kruga <span class='math'>𝑔</span>- funkcija je pozvana na njemu.  <b>256-bitni</b> ključni raspored poziva krug <span class='math'>ℎ</span>-funkcija na 4. riječi generiranoj u krugu prije nego što se nastavi normalno.",
+        "note": "The <span class='math'>𝑔</span>-funkcija i <span class='math'>ℎ</span>-funkcijski proračuni navedeni su u sljedećim kružnim koracima."
+      },
+      "round-g-fn": {
+        "body": "The <span class='math'>𝑔</span>-funkcija se sastoji od niza operacija na bajtovima ulazne riječi: zamjena bajtova, pomak redaka (shift = 1), a prvi bajt se spaja XOR-om s <i>okrugla konstanta</i>. ",
+        "learn-more": {
+          "rcon": "Izračunavanje AES-ovih okruglih konstanti"
+        }
+      },
+      "round-h-fn": {
+        "body": "The <span class='math'>ℎ</span>-funkcija se sastoji od Zamjenskih bajtova na bajtovima ulazne riječi. "
+      },
+      "round-keys": {
+        "body": "Ovi podključevi se uzimaju redoslijedom prikazanim tijekom enkripcije.  <b>dešifriranje</b>, koriste se obrnutim redoslijedom."
+      },
+      "rounds-header": {
+        "body": "AES radi na matrici stanja u krugovima.  <span class='highlight'>osim posljednjeg kruga, koji ne uključuje Mix Columns</span>.  <b>dešifriranje</b>, koraci se izvode u <b>suprotan</b> poredak i miješanje stupaca nije uključeno u prvi krug."
+      },
+      "key-rounds-header": {
+        "body": "Svaki krug AES-a treba potključ, plus 1 za izbjeljivanje ključa. ",
+        "aes-a": " AES Adventure rastavlja svaki krug u Dodaj riječi, krug <span class='math'>𝑔</span>-funkcija i Okrugli <span class='math'>ℎ</span>-funkcijski koraci.  <b>256-bitni</b> raspored ključeva koristi krug <span class='math'>ℎ</span>-funkcionalni korak u svakom krugu, osim u finalnom krugu.",
+        "note": "Svaka runda generira 1 potključ za veličinu ključa od 128 bita, 1,5 potključeva za 192 bita i 2 potključa za 256 bita, osim završne runde koja generira 1 potključ za sve tri veličine ključa."
+      },
+      "rounds-stats": {
+        "diffusion": "<b>Difuzija</b> je utjecaj jednog bita otvorenog teksta na (trenutni) šifrat.  <i>lavina</i> posljedica. <br />Shift Rows i Mix Columns mogu se zajedno nazivati <i>difuzijski sloj</i> jer su to glavni difuzijski koraci u AES.",
+        "confusion": "<b>Zbunjenost</b> je odnos između (trenutačnog) šifriranog teksta i ključa. <br />Zamjenski bajtovi unose zabunu u AES.",
+        "learn-more": {
+          "conf-diff": "Zbunjenost",
+          "avalanche": "Efekt lavine"
+        }
+      },
+      "sub-bytes": {
+        "body": "Substitute Bytes zamjenjuje svaki bajt matrice stanja s bajtom iz okvira za zamjenu, što osigurava nelinearnost u AES-u (zaštita od analitičkih napada).  <b>dešifriranje</b>, koristimo jedinstveno <b>inverzan</b> kutije za zamjenu.",
+        "learn-more": {
+          "bijective": "Bijektivne funkcije",
+          "sbox": "Računalna AES-ova kutija za zamjenu"
+        }
+      },
+      "shift-rows": {
+        "body": "Shift Rows izvodi ciklički pomak po bajtovima na svakom retku matrice stanja.  <b>dešifriranje</b>, pomak je u <b>suprotan</b> smjer. "
+      },
+      "mix-columns": {
+        "body": "Mix Columns množi svaki vektor stupac matrice stanja s matricom konstanti kako bi proizveo odgovarajući stupac rezultirajuće matrice stanja.  <b>dešifriranje</b>, koristimo jedinstveno <b>inverzan</b> konstantne matrice.",
+        "learn-more": {
+          "matrix-multiplication": "Množenje matrice",
+          "matrix-inversion": "Inverzi matrica",
+          "gf": "Galoisova polja",
+          "gf-arithmetic": "Aritmetika u <span class='math'>𝐺𝐹(2 ̂ 8)</span>"
+        }
+      },
+      "state-to-ciphertext": {
+        "body": "Posljednji korak je stvaranje šifriranog teksta koji je rezultat procesa enkripcije. ",
+        "learn-more": {
+          "matrices": "Transpozicija matrice"
+        }
+      },
+      "state-to-plaintext": {
+        "body": "Posljednji korak je stvaranje otvorenog teksta koji je rezultat procesa dešifriranja. ",
+        "learn-more": {
+          "matrices": "Transpozicija matrice"
+        }
+      },
+      "state-to-round-keys": {
+        "body": "Posljednji korak je stvaranje okruglih ključeva koji su rezultat procesa proširenja ključa. "
+      }
+    },
+    "hexArea": {
+      "nibblesLeft": "grickalice lijevo.",
+      "ready": "Spreman!",
+      "copied": "Kopirano u međuspremnik.",
+      "duplicated-keys": "Kopirano na sve ulaze tipki.",
+      "duplicated-plaintext": "Kopirano za šifriranje unosa.",
+      "duplicated-ciphertext": "Kopirano za dešifriranje unosa.",
+      "go": "Ići"
+    }
+  }
+}
