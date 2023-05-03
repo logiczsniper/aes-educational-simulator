@@ -12,7 +12,7 @@
 .slide-enter-from,
 .slide-leave-to {
   position: absolute;
-  top: -100%;
+  top: -100vh;
 }
 
 .slide-left-enter-active,
@@ -20,24 +20,24 @@
 .slide-right-enter-active,
 .slide-right-leave-active {
   transition: all .5s;
-  // width: 100%;
+  // width: 100vh;
   position: absolute;
 }
 
 .slide-left-enter-from {
-  transform: translate(100%, 0);
+  transform: translate(100vh, 0);
 }
 
 .slide-left-leave-to {
-  transform: translate(-100%, 0);
+  transform: translate(-100vh, 0);
 }
 
 .slide-right-enter-from {
-  transform: translate(-100%, 0);
+  transform: translate(-100vh, 0);
 }
 
 .slide-right-leave-to {
-  transform: translate(100%, 0);
+  transform: translate(100vh, 0);
 }
 
 .fade-leave-active {
