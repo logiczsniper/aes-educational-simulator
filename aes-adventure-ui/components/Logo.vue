@@ -76,12 +76,16 @@ onMounted(() => {
     class="logo"
     :class="{ 'big': props.big }"
   >
-    <img
-      src="/logo.svg"
-      alt="AES Adventure logo"
+    <div
+      style="display: inherit;"
       :class="imageClass"
       @click="onClick"
-    />
+    >
+      <img
+        src="/logo.svg"
+        alt="AES Adventure logo"
+      />
+    </div>
     <h1
       class="title"
       :class="{ 'big': props.big }"
