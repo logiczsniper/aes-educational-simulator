@@ -42,7 +42,7 @@ watch(currentValue, newValue => emit('update:modelValue', newValue))
 const preventInvalidInput = (event: KeyboardEvent) => {
   const isHex = "0123456789ABCDEF".includes(event.key.toUpperCase())
   const isBackspace = event.key === 'Backspace'
-  const hasModifier = event.altKey || event.ctrlKey
+  const hasModifier = event.altKey || event.ctrlKey || event.metaKey
   const isNewCharacter = !isBackspace && !hasModifier
   const isPaste = (event.ctrlKey || event.metaKey) && event.key.toUpperCase() === "V"
 
