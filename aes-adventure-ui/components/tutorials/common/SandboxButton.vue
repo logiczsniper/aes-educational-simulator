@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import { useTheme } from 'vuetify';
 
 const props = defineProps<{
   subtitle?: string;
 }>()
 
 const { t } = useI18n();
+const theme = useTheme()
 
 const sandboxDialogOpen = ref(false)
 
@@ -37,7 +39,7 @@ const title = computed(() => t('simulator.tutorial.sandbox.title') + (props.subt
         </template>
         <v-card>
           <v-toolbar
-            color="white"
+            :color="theme.current.value.colors.surface"
             :title="title"
           >
             <template #prepend>

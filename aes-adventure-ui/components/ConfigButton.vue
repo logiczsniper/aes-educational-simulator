@@ -16,8 +16,6 @@ const defaultConfigurations = computed(() => Object.values(AesiDefaultConfig).ma
 const config = useConfig()
 const encryptState = useEncryptState()
 const decryptState = useDecryptState()
-const keyExpansionState = useKeyExpansionState()
-
 const resetSimulator = () => {
   encryptState.reset()
   decryptState.reset()
