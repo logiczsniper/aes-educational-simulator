@@ -42,11 +42,6 @@ export const computeConfusion = (key: Uint8Array, outputBinary: Array<number>) =
 export const computeConfusionPhi = (key: Uint8Array, outputBinary: Array<number>) => {
   const keyBinary = hexToBinary(key)
 
-  // const table = [
-  //   [0, 0],
-  //   [0, 0]
-  // ]
-
   let n00 = 0
   let n10 = 0
   let n01 = 0
@@ -56,18 +51,11 @@ export const computeConfusionPhi = (key: Uint8Array, outputBinary: Array<number>
     const x = keyBinary[i]
     const y = outputBinary[i]
 
-    // table[x][y] += 1
-
     if (x === 0 && y === 0) n00 += 1
     if (x === 0 && y === 1) n01 += 1
     if (x === 1 && y === 0) n10 += 1
     if (x === 1 && y === 1) n11 += 1
   }
-
-  // const [
-  //   [n00, n01],
-  //   [n10, n11]
-  // ] = table
 
   const n_1 = n11 + n01
   const n_0 = n10 + n00

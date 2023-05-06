@@ -31,7 +31,6 @@
     "apexcharts": "3.37.1",
     "firebase-admin": "^11.7.0",
     "firebase-functions": "^4.3.0",
-    "nanoid": "^4.0.1",
     "pinia": "^2.0.29",
     "sass": "^1.57.1",
     "vue3-apexcharts": "^1.4.1",

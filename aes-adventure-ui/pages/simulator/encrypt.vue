@@ -81,9 +81,9 @@ const onRoundProgressBarClick = (roundNumber: number) => {
               :disabled="encryptState.stage !== EncryptStage.Input"
               :disabled-text="t('simulator.disabled-input')"
               :duplicate="{
-                  snackbarMessage: t('simulator.hexArea.duplicated-keys'),
-                  onDuplicate: key => duplicateKey(key, Tab.Encrypt)
-                }"
+                snackbarMessage: t('simulator.hexArea.duplicated-keys'),
+                onDuplicate: key => duplicateKey(key, Tab.Encrypt)
+              }"
             >
               <template #after-title>
                 <v-btn-toggle
@@ -187,10 +187,10 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
-                            tutorial.close()
-                            restartAndPause()
-                            encryptState.stage = EncryptStage.SymmetryKeyAddition
-                          }"
+                          tutorial.close()
+                          restartAndPause()
+                          encryptState.stage = EncryptStage.SymmetryKeyAddition
+                        }"
                       >{{ t('simulator.next-step') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -225,10 +225,10 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                         prepend-icon="mdi-selection-ellipse-arrow-inside"
                         color="primary"
                         @click="() => {
-                            tutorial.close()
-                            restartAndPause()
-                            encryptState.startRounds()
-                          }"
+                          tutorial.close()
+                          restartAndPause()
+                          encryptState.startRounds()
+                        }"
                       >{{ t('simulator.start-rounds') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -250,8 +250,8 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                 <RoundProgressBar
                   class="roundProgressBar"
                   :class="{
-                      'moveUp': encryptState.showStats
-                    }"
+                    'moveUp': encryptState.showStats
+                  }"
                   :roundIndex="encryptState.roundIndex + roundProgressBarOffsetRoundOffset"
                   :roundCount="encryptState.roundCount"
                   @click="onRoundProgressBarClick"
@@ -291,10 +291,10 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
-                            tutorial.close()
-                            restartAndPause()
-                            encryptState.nextStep()
-                          }"
+                          tutorial.close()
+                          restartAndPause()
+                          encryptState.nextStep()
+                        }"
                       >{{ t('simulator.next-step') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -331,10 +331,10 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
-                            tutorial.close()
-                            restartAndPause()
-                            encryptState.nextStep()
-                          }"
+                          tutorial.close()
+                          restartAndPause()
+                          encryptState.nextStep()
+                        }"
                       >{{ t('simulator.next-step') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -372,10 +372,10 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
-                            tutorial.close()
-                            restartAndPause()
-                            encryptState.nextStep()
-                          }"
+                          tutorial.close()
+                          restartAndPause()
+                          encryptState.nextStep()
+                        }"
                       >{{ t('simulator.next-step') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -408,10 +408,10 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                         prepend-icon="mdi-arrow-u-down-right"
                         color="primary"
                         @click="(_: Event) => {
-                            tutorial.close()
-                            encryptState.skipToLastRound()
-                            scrollToRoundsHeader()
-                          }"
+                          tutorial.close()
+                          encryptState.skipToLastRound()
+                          scrollToRoundsHeader()
+                        }"
                       >{{ t('simulator.skip') }}</v-btn>
                       <v-btn
                         v-if="!encryptState.isLastStep"
@@ -419,10 +419,10 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                         prepend-icon="mdi-rotate-right"
                         color="primary"
                         @click="(_: Event) => {
-                            tutorial.close()
-                            encryptState.nextRound()
-                            scrollToRoundsHeader()
-                          }"
+                          tutorial.close()
+                          encryptState.nextRound()
+                          scrollToRoundsHeader()
+                        }"
                       >{{ t('simulator.next-round') }}</v-btn>
                       <v-btn
                         v-if="encryptState.isLastStep && encryptState.stage === EncryptStage.Rounds"
@@ -430,10 +430,10 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                         prepend-icon="mdi-flag-checkered"
                         color="primary"
                         @click="() => {
-                            tutorial.close()
-                            restartAndPause()
-                            encryptState.stage = EncryptStage.FromState
-                          }"
+                          tutorial.close()
+                          restartAndPause()
+                          encryptState.stage = EncryptStage.FromState
+                        }"
                       >{{ t('simulator.finish-rounds') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -465,10 +465,10 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                         prepend-icon="mdi-lock"
                         color="primary"
                         @click="() => {
-                            tutorial.close()
-                            restartAndPause()
-                            encryptState.stage = EncryptStage.Output
-                          }"
+                          tutorial.close()
+                          restartAndPause()
+                          encryptState.stage = EncryptStage.Output
+                        }"
                       >{{ `${t('simulator.finish')} ${t('simulator.encryption')}` }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -486,10 +486,10 @@ const onRoundProgressBarClick = (roundNumber: number) => {
               :max-length="128"
               disabled
               :duplicate="{
-                  snackbarMessage: t('simulator.hexArea.duplicated-ciphertext'),
-                  onDuplicate: duplicateCiphertext,
-                  goTo: Tab.Decrypt
-                }"
+                snackbarMessage: t('simulator.hexArea.duplicated-ciphertext'),
+                onDuplicate: duplicateCiphertext,
+                goTo: Tab.Decrypt
+              }"
             />
           </section>
           <div style="height: 140px;" />
@@ -501,12 +501,9 @@ const onRoundProgressBarClick = (roundNumber: number) => {
 
 <style scoped lang="scss">
 .encryptPage {
-  // width: 100%;
   height: 100%;
 
   .inputs {
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
     display: flex;
     justify-content: center;
     height: min-content;
