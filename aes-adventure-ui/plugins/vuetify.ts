@@ -23,6 +23,7 @@ const lightTheme: ThemeDefinition = {
     inverse: '#000000',
     skeleton: '#f0f0f0',
     "off-surface": '#d9d9d9',
+    "primary-darken-dynamic": '#2C1D66',
     ...baseColors
   }
 }
@@ -36,6 +37,7 @@ const darkTheme: ThemeDefinition = {
     inverse: '#ffffff',
     skeleton: '#141317',
     "off-surface": '#745CD0',
+    "primary-darken-dynamic": '#745CD0',
     ...baseColors
   }
 }

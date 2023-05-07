@@ -194,7 +194,7 @@ onMounted(() => {
 
 .selectedPlaybackSpeed,
 .selectedPlaybackSpeed:focus {
-  color: #2C1D66 !important;
+  color: rgb(var(--v-theme-primary-darken-dynamic)) !important;
   opacity: 1;
 }
 </style>

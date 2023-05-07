@@ -62,7 +62,6 @@ const resetSimulator = () => {
               v-model="config.selection"
               @update:model-value="resetSimulator"
               class="configDefaultsGrid"
-              color="primary-darken-1"
               hide-details
             >
               <v-radio
@@ -150,7 +149,7 @@ const resetSimulator = () => {
     p {
       transition: font-weight 0.1s ease-in;
       font-weight: bold;
-      color: #2C1D66;
+      color: rgb(var(--v-theme-primary-darken-dynamic));
     }
   }
 }
