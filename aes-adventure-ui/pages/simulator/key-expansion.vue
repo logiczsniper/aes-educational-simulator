@@ -81,6 +81,7 @@ const roundIndex = computed(() => Math.min(
               :disabled-text="t('simulator.disabled-input')"
               :duplicate="{
                 snackbarMessage: t('simulator.hexArea.duplicated-keys'),
+                tooltipMessage: t('simulator.hexArea.duplicate-keys-tooltip'),
                 onDuplicate: key => duplicateKey(key, Tab.KeyExpansion)
               }"
             >

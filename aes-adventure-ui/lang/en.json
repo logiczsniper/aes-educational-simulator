@@ -268,13 +268,13 @@
       "nibblesLeft": "nibbles left.",
       "ready": "Ready!",
       "copied": "Copied to clipboard.",
-      "copy-tooltip": "Copy to clipboard.",
-      "duplicate-keys-tooltip": "Copies to all key inputs.",
+      "copy-tooltip": "Copy to clipboard",
       "duplicated-keys": "Copied to all key inputs.",
+      "duplicate-keys-tooltip": "Copy to all key inputs",
       "duplicated-plaintext": "Copied to encrypt input.",
-      "duplicated-plaintext-tooltip": "Copies to encrypt input.",
+      "duplicate-plaintext-tooltip": "Copy to encrypt input",
       "duplicated-ciphertext": "Copied to decrypt input.",
-      "duplicated-ciphertext-tooltip": "Copies to decrypt input.",
+      "duplicate-ciphertext-tooltip": "Copy to decrypt input",
       "go": "Go"
     }
   }

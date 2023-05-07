@@ -82,6 +82,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
               :disabled-text="t('simulator.disabled-input')"
               :duplicate="{
                 snackbarMessage: t('simulator.hexArea.duplicated-keys'),
+                tooltipMessage: t('simulator.hexArea.duplicate-keys-tooltip'),
                 onDuplicate: key => duplicateKey(key, Tab.Decrypt)
               }"
             >
@@ -486,6 +487,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
               disabled
               :duplicate="{
                 snackbarMessage: t('simulator.hexArea.duplicated-plaintext'),
+                tooltipMessage: t('simulator.hexArea.duplicate-plaintext-tooltip'),
                 onDuplicate: duplicatePlaintext,
                 goTo: Tab.Encrypt
               }"

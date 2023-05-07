@@ -17,6 +17,7 @@ const props = defineProps<{
   hideFooter?: boolean,
   duplicate?: {
     snackbarMessage: string,
+    tooltipMessage: string,
     onDuplicate: (value: string) => void,
     goTo?: Tab,
   }
@@ -134,30 +135,49 @@ const onDuplicateClick = () => {
         appear
         name="opacity"
         :duration="{
-            'leave': 240
-          }"
+          'leave': 240
+        }"
       >
         <div
           v-if="isFull"
           class="copyButtons"
         >
-          <v-btn
-            icon
-            density="compact"
-            variant="plain"
-            @click="onCopyClick"
+          <v-tooltip
+            location="bottom"
+            :open-delay="250"
           >
-            <v-icon size="18">mdi-content-copy</v-icon>
-          </v-btn>
-          <v-btn
+            <p class="tooltip">{{ t('simulator.hexArea.copy-tooltip') }}</p>
+            <template v-slot:activator="{ props }">
+              <v-btn
+                v-bind="props"
+                icon
+                density="compact"
+                variant="plain"
+                @click="onCopyClick"
+              >
+                <v-icon size="18">mdi-content-copy</v-icon>
+              </v-btn>
+            </template>
+          </v-tooltip>
+          <v-tooltip
             v-if="duplicate"
-            icon
-            density="compact"
-            variant="plain"
-            @click="onDuplicateClick"
+            location="bottom"
+            :open-delay="250"
           >
-            <v-icon size="18">mdi-content-duplicate</v-icon>
-          </v-btn>
+            <p class="tooltip">{{ duplicate.tooltipMessage }}</p>
+            <template v-slot:activator="{ props }">
+              <v-btn
+                v-bind="props"
+                icon
+                density="compact"
+                variant="plain"
+                @click="onDuplicateClick"
+              >
+                <v-icon size="18">mdi-content-duplicate</v-icon>
+              </v-btn>
+            </template>
+          </v-tooltip>
+
         </div>
       </transition>
       <transition
@@ -264,11 +284,15 @@ const onDuplicateClick = () => {
   }
 }
 
+.tooltip {
+  color: white;
+}
+
 .snackbar {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #ded6ff;
+  color: white;
 
   .goButtonWrapper {
     margin-left: 8px;

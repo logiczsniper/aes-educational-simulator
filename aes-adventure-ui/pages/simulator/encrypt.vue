@@ -82,6 +82,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
               :disabled-text="t('simulator.disabled-input')"
               :duplicate="{
                 snackbarMessage: t('simulator.hexArea.duplicated-keys'),
+                tooltipMessage: t('simulator.hexArea.duplicate-keys-tooltip'),
                 onDuplicate: key => duplicateKey(key, Tab.Encrypt)
               }"
             >
@@ -148,7 +149,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
             <v-btn
               v-else
               prependIcon="mdi-lock-reset"
-              :variant="encryptState.stage === EncryptStage.Output ? 'flat' : 'text'"
+              :variant="encryptState.stage === EncryptStage.Output ? 'flat' : 'outlined'"
               color="primary"
               class="resetButton"
               @click="encryptState.reset"
@@ -487,6 +488,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
               disabled
               :duplicate="{
                 snackbarMessage: t('simulator.hexArea.duplicated-ciphertext'),
+                tooltipMessage: t('simulator.hexArea.duplicate-ciphertext-tooltip'),
                 onDuplicate: duplicateCiphertext,
                 goTo: Tab.Decrypt
               }"
