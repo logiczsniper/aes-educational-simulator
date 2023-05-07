@@ -70,7 +70,14 @@ export const useTutorial = defineStore(getKey`tutorialKey`, () => {
 
   function open(newKey: TutorialKey) {
     currentTutorialKey.value = newKey
-    sidebar.expand()
+
+    const mustOpenSidebar = !sidebar.open
+    const animationDelay = mustOpenSidebar ? 100 : 0
+
+    sidebar.open = true
+    setTimeout(() => {
+      sidebar.expand()
+    }, animationDelay)
   }
 
   function close() {
