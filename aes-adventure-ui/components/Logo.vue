@@ -2,6 +2,7 @@
 import anime from "animejs";
 
 const { t } = useI18n();
+const localePath = useLocalePath()
 
 const props = defineProps<{
   big?: boolean;
@@ -72,27 +73,29 @@ onMounted(() => {
 </script>
 
 <template>
-  <header
-    class="logo"
-    :class="{ 'big': props.big }"
-  >
-    <div
-      style="display: inherit;"
-      :class="imageClass"
-      @click="onClick"
-    >
-      <img
-        src="/logo.svg"
-        alt="AES Adventure logo"
-      />
-    </div>
-    <h1
-      class="title"
+  <NuxtLink :to="localePath('/')">
+    <header
+      class="logo"
       :class="{ 'big': props.big }"
     >
-      AES<br />{{ t('title') }}
-    </h1>
-  </header>
+      <div
+        style="display: inherit;"
+        :class="imageClass"
+        @click="onClick"
+      >
+        <img
+          src="/logo.svg"
+          alt="AES Adventure logo"
+        />
+      </div>
+      <h1
+        class="title"
+        :class="{ 'big': props.big }"
+      >
+        AES<br />{{ t('title') }}
+      </h1>
+    </header>
+  </NuxtLink>
 </template>
 
 <style scoped lang="scss">
