@@ -148,7 +148,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
             <v-btn
               v-else
               prependIcon="mdi-lock-reset"
-              :variant="encryptState.stage === EncryptStage.Output ? 'flat' : 'outlined'"
+              :variant="encryptState.stage === EncryptStage.Output ? 'flat' : 'text'"
               color="primary"
               class="resetButton"
               @click="encryptState.reset"
@@ -183,7 +183,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                       v-if="encryptState.stage === EncryptStage.ToState"
                     >
                       <v-btn
-                        :variant="timeline.currentTime > 7_000 ? 'flat' : 'plain'"
+                        :variant="timeline.currentTime > 7_000 ? 'flat' : 'text'"
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
@@ -221,7 +221,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                       v-if="encryptState.stage === EncryptStage.SymmetryKeyAddition"
                     >
                       <v-btn
-                        :variant="timeline.currentTime > 9_500 ? 'flat' : 'plain'"
+                        :variant="timeline.currentTime > 9_500 ? 'flat' : 'text'"
                         prepend-icon="mdi-selection-ellipse-arrow-inside"
                         color="primary"
                         @click="() => {
@@ -287,7 +287,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                       v-if="encryptState.step?.type === AesiRoundStepType.SubBytes && encryptState.stage === EncryptStage.Rounds"
                     >
                       <v-btn
-                        :variant="timeline.currentTime > 10_000 ? 'flat' : 'plain'"
+                        :variant="timeline.currentTime > 10_000 ? 'flat' : 'text'"
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
@@ -327,7 +327,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                       v-if="encryptState.step?.type === AesiRoundStepType.ShiftRows"
                     >
                       <v-btn
-                        :variant="timeline.currentTime > 10_000 ? 'flat' : 'plain'"
+                        :variant="timeline.currentTime > 10_000 ? 'flat' : 'text'"
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
@@ -368,7 +368,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                       v-if="encryptState.step?.type === AesiRoundStepType.MixColumns"
                     >
                       <v-btn
-                        :variant="timeline.currentTime > 9_000 ? 'flat' : 'plain'"
+                        :variant="timeline.currentTime > 9_000 ? 'flat' : 'text'"
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
@@ -404,7 +404,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                     >
                       <v-btn
                         v-if="!encryptState.isLastStep && !encryptState.isSecondToLastRound"
-                        :variant="timeline.currentTime > 9_500 ? 'outlined' : 'plain'"
+                        :variant="timeline.currentTime > 9_500 ? 'outlined' : 'text'"
                         prepend-icon="mdi-arrow-u-down-right"
                         color="primary"
                         @click="(_: Event) => {
@@ -415,7 +415,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                       >{{ t('simulator.skip') }}</v-btn>
                       <v-btn
                         v-if="!encryptState.isLastStep"
-                        :variant="timeline.currentTime > 9_500 ? 'flat' : 'plain'"
+                        :variant="timeline.currentTime > 9_500 ? 'flat' : 'text'"
                         prepend-icon="mdi-rotate-right"
                         color="primary"
                         @click="(_: Event) => {
@@ -426,7 +426,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                       >{{ t('simulator.next-round') }}</v-btn>
                       <v-btn
                         v-if="encryptState.isLastStep && encryptState.stage === EncryptStage.Rounds"
-                        :variant="timeline.currentTime > 9_500 ? 'flat' : 'plain'"
+                        :variant="timeline.currentTime > 9_500 ? 'flat' : 'text'"
                         prepend-icon="mdi-flag-checkered"
                         color="primary"
                         @click="() => {
@@ -461,7 +461,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                       v-if="encryptState.stage === EncryptStage.FromState"
                     >
                       <v-btn
-                        :variant="timeline.currentTime > 7_000 ? 'flat' : 'plain'"
+                        :variant="timeline.currentTime > 7_000 ? 'flat' : 'text'"
                         prepend-icon="mdi-lock"
                         color="primary"
                         @click="() => {

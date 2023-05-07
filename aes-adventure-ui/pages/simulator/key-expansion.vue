@@ -80,9 +80,9 @@ const roundIndex = computed(() => Math.min(
               :disabled="keyExpansionState.stage !== KeyExpansionStage.Input"
               :disabled-text="t('simulator.disabled-input')"
               :duplicate="{
-                  snackbarMessage: t('simulator.hexArea.duplicated-keys'),
-                  onDuplicate: key => duplicateKey(key, Tab.KeyExpansion)
-                }"
+                snackbarMessage: t('simulator.hexArea.duplicated-keys'),
+                onDuplicate: key => duplicateKey(key, Tab.KeyExpansion)
+              }"
             >
               <template #after-title>
                 <v-btn-toggle
@@ -184,14 +184,14 @@ const roundIndex = computed(() => Math.min(
                       v-if="keyExpansionState.stage === KeyExpansionStage.ToWords"
                     >
                       <v-btn
-                        :variant="timeline.currentTime > 7_000 ? 'flat' : 'plain'"
+                        :variant="timeline.currentTime > 7_000 ? 'flat' : 'text'"
                         prepend-icon="mdi-selection-ellipse-arrow-inside"
                         color="primary"
                         @click="() => {
-                            restartAndPause()
-                            tutorial.close()
-                            keyExpansionState.startRounds()
-                          }"
+                          restartAndPause()
+                          tutorial.close()
+                          keyExpansionState.startRounds()
+                        }"
                       >{{ t('simulator.start-rounds') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -257,14 +257,14 @@ const roundIndex = computed(() => Math.min(
                       v-if="keyExpansionState.step?.type === AesiExpandKeyRoundStepType.AddWords && keyExpansionState.stage === KeyExpansionStage.Rounds"
                     >
                       <v-btn
-                        :variant="timeline.currentTime > 20_000 ? 'flat' : 'plain'"
+                        :variant="timeline.currentTime > 20_000 ? 'flat' : 'text'"
                         prepend-icon="mdi-redo"
                         color="primary"
                         @click="() => {
-                            restartAndPause()
-                            tutorial.close()
-                            keyExpansionState.nextStep()
-                          }"
+                          restartAndPause()
+                          tutorial.close()
+                          keyExpansionState.nextStep()
+                        }"
                       >{{ t('simulator.next-step') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -291,46 +291,46 @@ const roundIndex = computed(() => Math.min(
                       <template v-if="noHFunction">
                         <v-btn
                           v-if="!keyExpansionState.isLastStep && !keyExpansionState.isSecondToLastRound"
-                          :variant="timeline.completed ? 'outlined' : 'plain'"
+                          :variant="timeline.completed ? 'outlined' : 'text'"
                           prepend-icon="mdi-arrow-u-down-right"
                           color="primary"
                           @click="(_: Event) => {
-                              tutorial.close()
-                              keyExpansionState.skipToLastRound()
-                            }"
+                            tutorial.close()
+                            keyExpansionState.skipToLastRound()
+                          }"
                         >{{ t('simulator.skip') }}</v-btn>
                         <v-btn
                           v-if="!keyExpansionState.isLastStep"
-                          :variant="timeline.completed ? 'flat' : 'plain'"
+                          :variant="timeline.completed ? 'flat' : 'text'"
                           prepend-icon="mdi-rotate-right"
                           color="primary"
                           @click="(_: Event) => {
-                              tutorial.close()
-                              keyExpansionState.nextRound()
-                            }"
+                            tutorial.close()
+                            keyExpansionState.nextRound()
+                          }"
                         >{{ t('simulator.next-round') }}</v-btn>
                         <v-btn
                           v-if="keyExpansionState.isLastStep && keyExpansionState.stage === KeyExpansionStage.Rounds"
-                          :variant="timeline.completed ? 'flat' : 'plain'"
+                          :variant="timeline.completed ? 'flat' : 'text'"
                           prepend-icon="mdi-flag-checkered"
                           color="primary"
                           @click="() => {
-                              restartAndPause()
-                              tutorial.close()
-                              keyExpansionState.stage = KeyExpansionStage.FromWords
-                            }"
+                            restartAndPause()
+                            tutorial.close()
+                            keyExpansionState.stage = KeyExpansionStage.FromWords
+                          }"
                         >{{ t('simulator.finish-rounds') }}</v-btn>
                       </template>
                       <template v-else>
                         <v-btn
-                          :variant="timeline.completed ? 'flat' : 'plain'"
+                          :variant="timeline.completed ? 'flat' : 'text'"
                           prepend-icon="mdi-redo"
                           color="primary"
                           @click="() => {
-                              restartAndPause()
-                              tutorial.close()
-                              keyExpansionState.nextStep()
-                            }"
+                            restartAndPause()
+                            tutorial.close()
+                            keyExpansionState.nextStep()
+                          }"
                         >{{ t('simulator.next-step') }}</v-btn>
                       </template>
                     </template>
@@ -366,34 +366,34 @@ const roundIndex = computed(() => Math.min(
                     >
                       <v-btn
                         v-if="!keyExpansionState.isLastStep && !keyExpansionState.isSecondToLastRound"
-                        :variant="timeline.currentTime > 9_500 ? 'outlined' : 'plain'"
+                        :variant="timeline.currentTime > 9_500 ? 'outlined' : 'text'"
                         prepend-icon="mdi-arrow-u-down-right"
                         color="primary"
                         @click="(_: Event) => {
-                            tutorial.close()
-                            keyExpansionState.skipToLastRound()
-                          }"
+                          tutorial.close()
+                          keyExpansionState.skipToLastRound()
+                        }"
                       >{{ t('simulator.skip') }}</v-btn>
                       <v-btn
                         v-if="!keyExpansionState.isLastStep"
-                        :variant="timeline.currentTime > 9_500 ? 'flat' : 'plain'"
+                        :variant="timeline.currentTime > 9_500 ? 'flat' : 'text'"
                         prepend-icon="mdi-rotate-right"
                         color="primary"
                         @click="(_: Event) => {
-                            tutorial.close()
-                            keyExpansionState.nextRound()
-                          }"
+                          tutorial.close()
+                          keyExpansionState.nextRound()
+                        }"
                       >{{ t('simulator.next-round') }}</v-btn>
                       <v-btn
                         v-if="keyExpansionState.isLastStep && keyExpansionState.stage === KeyExpansionStage.Rounds"
-                        :variant="timeline.currentTime > 9_500 ? 'flat' : 'plain'"
+                        :variant="timeline.currentTime > 9_500 ? 'flat' : 'text'"
                         prepend-icon="mdi-flag-checkered"
                         color="primary"
                         @click="() => {
-                            restartAndPause()
-                            tutorial.close()
-                            keyExpansionState.stage = KeyExpansionStage.FromWords
-                          }"
+                          restartAndPause()
+                          tutorial.close()
+                          keyExpansionState.stage = KeyExpansionStage.FromWords
+                        }"
                       >{{ t('simulator.finish-rounds') }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
@@ -422,14 +422,14 @@ const roundIndex = computed(() => Math.min(
                       v-if="keyExpansionState.stage === KeyExpansionStage.FromWords"
                     >
                       <v-btn
-                        :variant="timeline.currentTime > 7_000 ? 'flat' : 'plain'"
+                        :variant="timeline.currentTime > 7_000 ? 'flat' : 'text'"
                         prepend-icon="mdi-key-plus"
                         color="primary"
                         @click="() => {
-                            restartAndPause()
-                            tutorial.close()
-                            keyExpansionState.stage = KeyExpansionStage.Output
-                          }"
+                          restartAndPause()
+                          tutorial.close()
+                          keyExpansionState.stage = KeyExpansionStage.Output
+                        }"
                       >{{ `${t('simulator.finish')} ${t('simulator.key-expansion')}` }}</v-btn>
                     </template>
                   </AnimationAesAnimationFrame>
