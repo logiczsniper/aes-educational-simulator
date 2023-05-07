@@ -22,6 +22,7 @@ const lightTheme: ThemeDefinition = {
     opposite: '#0f0a23',
     inverse: '#000000',
     skeleton: '#f0f0f0',
+    "off-surface": '#d9d9d9',
     ...baseColors
   }
 }
@@ -34,6 +35,7 @@ const darkTheme: ThemeDefinition = {
     opposite: '#ded6ff',
     inverse: '#ffffff',
     skeleton: '#141317',
+    "off-surface": '#745CD0',
     ...baseColors
   }
 }

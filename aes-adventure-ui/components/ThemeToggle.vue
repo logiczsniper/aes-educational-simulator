@@ -7,6 +7,7 @@ const themeName = useThemeName()
     <v-icon
       class="themeIcon"
       icon="mdi-weather-sunny"
+      size="18"
     ></v-icon>
     <ClientOnly>
       <v-switch
@@ -14,7 +15,6 @@ const themeName = useThemeName()
         @update:model-value="themeName.flip"
         hide-details
         inset
-        color="primary"
       >
       </v-switch>
       <template #fallback>
@@ -24,6 +24,7 @@ const themeName = useThemeName()
     <v-icon
       class="themeIcon"
       icon="mdi-weather-night"
+      size="18"
     ></v-icon>
   </div>
 </template>
@@ -44,6 +45,14 @@ const themeName = useThemeName()
     width: 48px;
     margin: 14px 0;
     border-radius: 20px;
+  }
+
+  :deep(.v-switch__thumb) {
+    background-color: rgb(var(--v-theme-off-surface));
+  }
+
+  :deep(.v-switch__track) {
+    background-color: rgb(var(--v-theme-surface));
   }
 }
 
