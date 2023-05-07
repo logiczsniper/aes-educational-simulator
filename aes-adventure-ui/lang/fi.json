@@ -14,8 +14,8 @@
     "guide": "Opas",
     "guide-description": "Opi saamaan kaikki irti AES Adventuresta.",
     "home-description": "Tervetuloa AES Adventureen, intuitiiviseen AES-opetustyökaluun. ",
-    "settings": "asetukset",
-    "settings-description": "Muuta miltä AES Adventure näyttää tarpeidesi mukaan."
+    "preferences": "asetukset",
+    "preferences-description": "Muuta miltä AES Adventure näyttää tarpeidesi mukaan."
   },
   "error": {
     "mistake": "Jotain meni pieleen...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Advanced Encryption Standard on suosituin symmetrisen avaimen salaus. ",
     "go": "Siirry Simulaattoriin",
-    "settings": {
+    "preferences": {
       "title": "asetukset",
       "badLang": "Onko kielesi käännetty huonosti tai ei ole saatavilla?"
     },

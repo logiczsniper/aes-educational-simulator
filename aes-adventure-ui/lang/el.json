@@ -14,8 +14,8 @@
     "guide": "Οδηγός",
     "guide-description": "Μάθετε πώς να αξιοποιήσετε στο έπακρο το AES Adventure.",
     "home-description": "Καλώς ήρθατε στο AES Adventure, ένα διαισθητικό εκπαιδευτικό εργαλείο AES. ",
-    "settings": "Ρυθμίσεις",
-    "settings-description": "Αλλάξτε την εμφάνιση του AES Adventure για να ταιριάζει στις ανάγκες σας."
+    "preferences": "Ρυθμίσεις",
+    "preferences-description": "Αλλάξτε την εμφάνιση του AES Adventure για να ταιριάζει στις ανάγκες σας."
   },
   "error": {
     "mistake": "Κάτι πήγε στραβά...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Το Advanced Encryption Standard είναι ο πιο δημοφιλής κρυπτογράφηση συμμετρικού κλειδιού. ",
     "go": "Μεταβείτε στο Simulator",
-    "settings": {
+    "preferences": {
       "title": "Ρυθμίσεις",
       "badLang": "Η γλώσσα σας είναι κακώς μεταφρασμένη ή δεν είναι διαθέσιμη;"
     },

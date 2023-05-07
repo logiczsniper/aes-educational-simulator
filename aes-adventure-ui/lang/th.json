@@ -14,8 +14,8 @@
     "guide": "แนะนำ",
     "guide-description": "เรียนรู้วิธีรับประโยชน์สูงสุดจาก AES Adventure",
     "home-description": "ยินดีต้อนรับสู่ AES Adventure เครื่องมือการศึกษา AES ที่ใช้งานง่าย ",
-    "settings": "การตั้งค่า",
-    "settings-description": "เปลี่ยนรูปลักษณ์ของ AES Adventure ให้เหมาะกับความต้องการของคุณ"
+    "preferences": "การตั้งค่า",
+    "preferences-description": "เปลี่ยนรูปลักษณ์ของ AES Adventure ให้เหมาะกับความต้องการของคุณ"
   },
   "error": {
     "mistake": "บางอย่างผิดพลาด...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "มาตรฐานการเข้ารหัสขั้นสูงเป็นรหัสรหัสสมมาตรที่ได้รับความนิยมสูงสุด ",
     "go": "ไปที่โปรแกรมจำลอง",
-    "settings": {
+    "preferences": {
       "title": "การตั้งค่า",
       "badLang": "ภาษาของคุณแปลไม่ดีหรือไม่พร้อมใช้งาน?"
     },

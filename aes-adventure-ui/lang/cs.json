@@ -14,8 +14,8 @@
     "guide": "Průvodce",
     "guide-description": "Naučte se, jak z AES Adventure vytěžit maximum.",
     "home-description": "Vítejte v AES Adventure, intuitivním vzdělávacím nástroji AES. ",
-    "settings": "Nastavení",
-    "settings-description": "Změňte vzhled AES Adventure tak, aby vyhovoval vašim potřebám."
+    "preferences": "Nastavení",
+    "preferences-description": "Změňte vzhled AES Adventure tak, aby vyhovoval vašim potřebám."
   },
   "error": {
     "mistake": "Něco se pokazilo...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Advanced Encryption Standard je nejoblíbenější šifra se symetrickým klíčem. ",
     "go": "Přejděte na Simulátor",
-    "settings": {
+    "preferences": {
       "title": "Nastavení",
       "badLang": "Je váš jazyk špatně přeložený nebo nedostupný?"
     },

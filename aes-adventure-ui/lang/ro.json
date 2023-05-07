@@ -14,8 +14,8 @@
     "guide": "Ghid",
     "guide-description": "Aflați cum să profitați la maximum de AES Adventure.",
     "home-description": "Bun venit la AES Adventure, un instrument educațional AES intuitiv. ",
-    "settings": "Setări",
-    "settings-description": "Schimbați modul în care arată AES Adventure pentru a se potrivi nevoilor dvs."
+    "preferences": "Setări",
+    "preferences-description": "Schimbați modul în care arată AES Adventure pentru a se potrivi nevoilor dvs."
   },
   "error": {
     "mistake": "Ceva n-a mers bine...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Standardul de criptare avansată este cel mai popular cifru cu cheie simetrică. ",
     "go": "Accesați Simulator",
-    "settings": {
+    "preferences": {
       "title": "Setări",
       "badLang": "Limba dvs. este prost tradusă sau nu este disponibilă?"
     },

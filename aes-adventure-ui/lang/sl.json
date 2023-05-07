@@ -14,8 +14,8 @@
     "guide": "Vodnik",
     "guide-description": "Naučite se, kako kar najbolje izkoristiti AES Adventure.",
     "home-description": "Dobrodošli v AES Adventure, intuitivno izobraževalno orodje AES. ",
-    "settings": "nastavitve",
-    "settings-description": "Spremenite videz AES Adventure, da bo ustrezal vašim potrebam."
+    "preferences": "nastavitve",
+    "preferences-description": "Spremenite videz AES Adventure, da bo ustrezal vašim potrebam."
   },
   "error": {
     "mistake": "Nekaj ​​je šlo narobe...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Napredni standard šifriranja je najbolj priljubljena šifra s simetričnim ključem. ",
     "go": "Pojdite na Simulator",
-    "settings": {
+    "preferences": {
       "title": "nastavitve",
       "badLang": "Je vaš jezik slabo preveden ali ni na voljo?"
     },

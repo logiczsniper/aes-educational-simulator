@@ -14,8 +14,8 @@
     "guide": "Vadovas",
     "guide-description": "Sužinokite, kaip išnaudoti visas „AES Adventure“ galimybes.",
     "home-description": "Sveiki atvykę į AES Adventure – intuityvią AES mokymo priemonę. ",
-    "settings": "Nustatymai",
-    "settings-description": "Pakeiskite „AES Adventure“ išvaizdą, kad atitiktų jūsų poreikius."
+    "preferences": "Nustatymai",
+    "preferences-description": "Pakeiskite „AES Adventure“ išvaizdą, kad atitiktų jūsų poreikius."
   },
   "error": {
     "mistake": "Kažkas nutiko...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Išplėstinis šifravimo standartas yra populiariausias simetrinio rakto šifras. ",
     "go": "Eikite į Simuliatorių",
-    "settings": {
+    "preferences": {
       "title": "Nustatymai",
       "badLang": "Ar jūsų kalba prastai išversta arba nepasiekiama?"
     },

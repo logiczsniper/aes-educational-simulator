@@ -14,8 +14,8 @@
     "guide": "Guide",
     "guide-description": "Lær, hvordan du får mest muligt ud af AES Adventure.",
     "home-description": "Velkommen til AES Adventure, et intuitivt AES-undervisningsværktøj. ",
-    "settings": "Indstillinger",
-    "settings-description": "Skift, hvordan AES Adventure ser ud, så det passer til dine behov."
+    "preferences": "Indstillinger",
+    "preferences-description": "Skift, hvordan AES Adventure ser ud, så det passer til dine behov."
   },
   "error": {
     "mistake": "Noget gik galt...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Advanced Encryption Standard er den mest populære symmetriske nøglekryptering. ",
     "go": "Gå til Simulator",
-    "settings": {
+    "preferences": {
       "title": "Indstillinger",
       "badLang": "Er dit sprog dårligt oversat eller utilgængeligt?"
     },

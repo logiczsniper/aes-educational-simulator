@@ -14,8 +14,8 @@
     "guide": "ガイド",
     "guide-description": "AES Adventure を最大限に活用する方法を学びましょう。",
     "home-description": "直感的な AES 教育ツールである AES アドベンチャーへようこそ。",
-    "settings": "設定",
-    "settings-description": "ニーズに合わせて AES Adventure の外観を変更します。"
+    "preferences": "設定",
+    "preferences-description": "ニーズに合わせて AES Adventure の外観を変更します。"
   },
   "error": {
     "mistake": "何かがうまくいかなかった...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Advanced Encryption Standard は、最も一般的な対称キー暗号です。",
     "go": "シミュレーターに行く",
-    "settings": {
+    "preferences": {
       "title": "設定",
       "badLang": "あなたの言語は翻訳が不十分であるか、利用できませんか?"
     },

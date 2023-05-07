@@ -14,8 +14,8 @@
     "guide": "مرشد",
     "guide-description": "تعرف على كيفية تحقيق أقصى استفادة من مغامرة AES.",
     "home-description": "مرحبًا بكم في AES Adventure ، وهي أداة تعليمية سهلة الاستخدام من AES. ",
-    "settings": "إعدادات",
-    "settings-description": "غيّر كيف تبدو مغامرة AES لتناسب احتياجاتك."
+    "preferences": "إعدادات",
+    "preferences-description": "غيّر كيف تبدو مغامرة AES لتناسب احتياجاتك."
   },
   "error": {
     "mistake": "هناك خطأ ما...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "معيار التشفير المتقدم هو أكثر تشفير المفتاح المتماثل شيوعًا. ",
     "go": "اذهب إلى Simulator",
-    "settings": {
+    "preferences": {
       "title": "إعدادات",
       "badLang": "هل لغتك مترجمة بشكل سيئ أو غير متوفرة؟"
     },

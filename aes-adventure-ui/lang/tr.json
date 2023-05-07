@@ -14,8 +14,8 @@
     "guide": "Rehber",
     "guide-description": "AES Adventure'dan en iyi şekilde nasıl yararlanacağınızı öğrenin.",
     "home-description": "Sezgisel bir AES eğitim aracı olan AES Adventure'a hoş geldiniz. ",
-    "settings": "Ayarlar",
-    "settings-description": "AES Adventure'ın görünümünü ihtiyaçlarınıza göre değiştirin."
+    "preferences": "Ayarlar",
+    "preferences-description": "AES Adventure'ın görünümünü ihtiyaçlarınıza göre değiştirin."
   },
   "error": {
     "mistake": "Bir şeyler yanlış gitti...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Gelişmiş Şifreleme Standardı, en popüler simetrik anahtar şifresidir. ",
     "go": "Simulator'a git",
-    "settings": {
+    "preferences": {
       "title": "Ayarlar",
       "badLang": "Diliniz kötü tercüme edilmiş veya mevcut değil mi?"
     },

@@ -14,8 +14,8 @@
     "guide": "Przewodnik",
     "guide-description": "Dowiedz się, jak w pełni wykorzystać AES Adventure.",
     "home-description": "Witamy w AES Adventure, intuicyjnym narzędziu edukacyjnym AES. ",
-    "settings": "Ustawienia",
-    "settings-description": "Zmień wygląd AES Adventure, aby dostosować go do swoich potrzeb."
+    "preferences": "Ustawienia",
+    "preferences-description": "Zmień wygląd AES Adventure, aby dostosować go do swoich potrzeb."
   },
   "error": {
     "mistake": "Coś poszło nie tak...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Advanced Encryption Standard to najpopularniejszy szyfr z kluczem symetrycznym. ",
     "go": "Przejdź do Symulatora",
-    "settings": {
+    "preferences": {
       "title": "Ustawienia",
       "badLang": "Twój język jest słabo przetłumaczony lub niedostępny?"
     },

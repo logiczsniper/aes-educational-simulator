@@ -14,8 +14,8 @@
     "guide": "Guía",
     "guide-description": "Aprenda a sacar el máximo provecho de AES Adventure.",
     "home-description": "Bienvenido a AES Adventure, una herramienta educativa intuitiva de AES. ",
-    "settings": "Ajustes",
-    "settings-description": "Cambie la apariencia de AES Adventure para satisfacer sus necesidades."
+    "preferences": "Ajustes",
+    "preferences-description": "Cambie la apariencia de AES Adventure para satisfacer sus necesidades."
   },
   "error": {
     "mistake": "Algo salió mal...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "El estándar de cifrado avanzado es el cifrado de clave simétrica más popular. ",
     "go": "Ir al Simulador",
-    "settings": {
+    "preferences": {
       "title": "Ajustes",
       "badLang": "¿Su idioma está mal traducido o no está disponible?"
     },

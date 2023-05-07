@@ -14,8 +14,8 @@
     "guide": "Guide",
     "guide-description": "Apprenez à tirer le meilleur parti d'AES Adventure.",
     "home-description": "Bienvenue dans AES Adventure, un outil pédagogique AES intuitif. ",
-    "settings": "Paramètres",
-    "settings-description": "Modifiez l'apparence d'AES Adventure en fonction de vos besoins."
+    "preferences": "Paramètres",
+    "preferences-description": "Modifiez l'apparence d'AES Adventure en fonction de vos besoins."
   },
   "error": {
     "mistake": "Quelque chose s'est mal passé...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "L'Advanced Encryption Standard est le chiffrement à clé symétrique le plus populaire. ",
     "go": "Aller au simulateur",
-    "settings": {
+    "preferences": {
       "title": "Paramètres",
       "badLang": "Votre langue est mal traduite ou indisponible ?"
     },

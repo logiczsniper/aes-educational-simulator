@@ -14,8 +14,8 @@
     "guide": "Memandu",
     "guide-description": "Pelajari cara mendapatkan hasil maksimal dari AES Adventure.",
     "home-description": "Selamat datang di AES Adventure, alat pendidikan AES yang intuitif. ",
-    "settings": "Pengaturan",
-    "settings-description": "Ubah tampilan AES Adventure agar sesuai dengan kebutuhan Anda."
+    "preferences": "Pengaturan",
+    "preferences-description": "Ubah tampilan AES Adventure agar sesuai dengan kebutuhan Anda."
   },
   "error": {
     "mistake": "Ada yang salah...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Standar Enkripsi Lanjutan adalah cipher kunci simetris yang paling populer. ",
     "go": "Pergi ke Simulator",
-    "settings": {
+    "preferences": {
       "title": "Pengaturan",
       "badLang": "Apakah bahasa Anda diterjemahkan dengan buruk atau tidak tersedia?"
     },

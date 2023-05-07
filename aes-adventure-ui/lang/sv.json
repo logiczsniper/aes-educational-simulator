@@ -14,8 +14,8 @@
     "guide": "Guide",
     "guide-description": "Lär dig hur du får ut det mesta av AES Adventure.",
     "home-description": "Välkommen till AES Adventure, ett intuitivt AES-utbildningsverktyg. ",
-    "settings": "inställningar",
-    "settings-description": "Ändra hur AES Adventure ser ut för att passa dina behov."
+    "preferences": "inställningar",
+    "preferences-description": "Ändra hur AES Adventure ser ut för att passa dina behov."
   },
   "error": {
     "mistake": "Något gick fel...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Advanced Encryption Standard är den mest populära symmetriska nyckelchifferet. ",
     "go": "Gå till Simulator",
-    "settings": {
+    "preferences": {
       "title": "inställningar",
       "badLang": "Är ditt språk dåligt översatt eller otillgängligt?"
     },

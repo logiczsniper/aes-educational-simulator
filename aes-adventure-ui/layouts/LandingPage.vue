@@ -34,13 +34,13 @@ const simulatorTabs = useSimulatorTabs()
             {{ t('home.guide.title') }}
           </v-btn>
         </NuxtLink>
-        <NuxtLink :to="localePath('/settings')">
+        <NuxtLink :to="localePath('/preferences')">
           <v-btn
-            prependIcon="mdi-cog"
+            prependIcon="mdi-tune-variant"
             variant="plain"
             :color="plainButtonColor"
           >
-            {{ t('home.settings.title') }}
+            {{ t('home.preferences.title') }}
           </v-btn>
         </NuxtLink>
         <NuxtLink :to="localePath('/feedback')">

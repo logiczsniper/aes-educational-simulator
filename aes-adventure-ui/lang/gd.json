@@ -14,8 +14,8 @@
     "guide": "Stiùiridh",
     "guide-description": "Ionnsaich mar a gheibh thu a’ chuid as fheàrr de AES Adventure.",
     "home-description": "Fàilte gu AES Adventure, inneal foghlaim AES intuitive. ",
-    "settings": "Suidhichidhean",
-    "settings-description": "Atharraich mar a tha AES Adventure a’ coimhead a rèir na feumalachdan agad."
+    "preferences": "Suidhichidhean",
+    "preferences-description": "Atharraich mar a tha AES Adventure a’ coimhead a rèir na feumalachdan agad."
   },
   "error": {
     "mistake": "Chaidh rudeigin ceàrr...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Is e an Inbhe Crioptachaidh Adhartach an cipher iuchair co-chothromach as mòr-chòrdte. ",
     "go": "Rach gu simulator",
-    "settings": {
+    "preferences": {
       "title": "Suidhichidhean",
       "badLang": "A bheil do chànan air a dhroch eadar-theangachadh no nach eil e ri fhaighinn?"
     },

@@ -14,8 +14,8 @@
     "guide": "Hướng dẫn",
     "guide-description": "Tìm hiểu cách tận dụng tối đa AES Adventure.",
     "home-description": "Chào mừng bạn đến với AES Adventure, một công cụ giáo dục AES trực quan. ",
-    "settings": "Cài đặt",
-    "settings-description": "Thay đổi giao diện của AES Adventure cho phù hợp với nhu cầu của bạn."
+    "preferences": "Cài đặt",
+    "preferences-description": "Thay đổi giao diện của AES Adventure cho phù hợp với nhu cầu của bạn."
   },
   "error": {
     "mistake": "Đã xảy ra sự cố...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Tiêu chuẩn mã hóa nâng cao là mật mã khóa đối xứng phổ biến nhất. ",
     "go": "Chuyển đến Trình mô phỏng",
-    "settings": {
+    "preferences": {
       "title": "Cài đặt",
       "badLang": "Ngôn ngữ của bạn được dịch kém hoặc không có sẵn?"
     },

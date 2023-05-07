@@ -14,8 +14,8 @@
     "guide": "Gids",
     "guide-description": "Leer hoe u het meeste uit AES Adventure kunt halen.",
     "home-description": "Welkom bij AES Adventure, een intuïtieve AES educatieve tool. ",
-    "settings": "Instellingen",
-    "settings-description": "Pas het uiterlijk van AES Adventure aan uw behoeften aan."
+    "preferences": "Instellingen",
+    "preferences-description": "Pas het uiterlijk van AES Adventure aan uw behoeften aan."
   },
   "error": {
     "mistake": "Er is iets fout gegaan...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "De Advanced Encryption Standard is het meest populaire cijfer met symmetrische sleutel. ",
     "go": "Ga naar Simulatie",
-    "settings": {
+    "preferences": {
       "title": "Instellingen",
       "badLang": "Is uw taal slecht vertaald of niet beschikbaar?"
     },

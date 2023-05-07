@@ -14,8 +14,8 @@
     "guide": "Tywysydd",
     "guide-description": "Dysgwch sut i gael y gorau o AES Adventure.",
     "home-description": "Croeso i AES Adventure, offeryn addysgol AES greddfol. ",
-    "settings": "Gosodiadau",
-    "settings-description": "Newidiwch sut mae AES Adventure yn edrych i weddu i'ch anghenion."
+    "preferences": "Gosodiadau",
+    "preferences-description": "Newidiwch sut mae AES Adventure yn edrych i weddu i'ch anghenion."
   },
   "error": {
     "mistake": "Aeth rhywbeth o'i le...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Y Safon Amgryptio Uwch yw'r seiffr allwedd cymesur mwyaf poblogaidd. ",
     "go": "Ewch i Efelychydd",
-    "settings": {
+    "preferences": {
       "title": "Gosodiadau",
       "badLang": "Ydy'ch iaith wedi'i chyfieithu'n wael neu ddim ar gael?"
     },

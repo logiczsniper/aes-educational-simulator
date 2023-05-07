@@ -14,8 +14,8 @@
     "guide": "Führung",
     "guide-description": "Erfahren Sie, wie Sie das Beste aus AES Adventure herausholen.",
     "home-description": "Willkommen bei AES Adventure, einem intuitiven AES-Lerntool. ",
-    "settings": "Einstellungen",
-    "settings-description": "Passen Sie das Aussehen von AES Adventure an Ihre Bedürfnisse an."
+    "preferences": "Einstellungen",
+    "preferences-description": "Passen Sie das Aussehen von AES Adventure an Ihre Bedürfnisse an."
   },
   "error": {
     "mistake": "Etwas ist schief gelaufen...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Der Advanced Encryption Standard ist die beliebteste Chiffre mit symmetrischen Schlüsseln. ",
     "go": "Gehen Sie zum Simulator",
-    "settings": {
+    "preferences": {
       "title": "Einstellungen",
       "badLang": "Ist Ihre Sprache schlecht übersetzt oder nicht verfügbar?"
     },

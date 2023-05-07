@@ -14,8 +14,8 @@
     "guide": "Guia",
     "guide-description": "Saiba como aproveitar ao máximo o AES Adventure.",
     "home-description": "Bem-vindo ao AES Adventure, uma ferramenta educacional intuitiva do AES. ",
-    "settings": "Configurações",
-    "settings-description": "Altere a aparência do AES Adventure para atender às suas necessidades."
+    "preferences": "Configurações",
+    "preferences-description": "Altere a aparência do AES Adventure para atender às suas necessidades."
   },
   "error": {
     "mistake": "Algo deu errado...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "O Advanced Encryption Standard é a cifra de chave simétrica mais popular. ",
     "go": "Ir para Simulador",
-    "settings": {
+    "preferences": {
       "title": "Configurações",
       "badLang": "Seu idioma está mal traduzido ou indisponível?"
     },

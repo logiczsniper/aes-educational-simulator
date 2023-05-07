@@ -5,7 +5,7 @@ const props = defineProps<{
   gitlabHref: string;
 }>()
 
-// TODO: use in tutorials, the guide page, settings (translations)
+// TODO: use in tutorials, the guide page, preferences (translations)
 </script>
 
 <template>

@@ -14,8 +14,8 @@
     "guide": "指导",
     "guide-description": "了解如何充分利用 AES Adventure。",
     "home-description": "欢迎使用直观的 AES 教育工具 AES Adventure。",
-    "settings": "设置",
-    "settings-description": "更改 AES Adventure 的外观以满足您的需求。"
+    "preferences": "设置",
+    "preferences-description": "更改 AES Adventure 的外观以满足您的需求。"
   },
   "error": {
     "mistake": "出了些问题...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "高级加密标准是最流行的对称密钥密码。",
     "go": "转到模拟器",
-    "settings": {
+    "preferences": {
       "title": "设置",
       "badLang": "您的语言是否翻译不当或无法使用？"
     },

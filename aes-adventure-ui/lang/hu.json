@@ -14,8 +14,8 @@
     "guide": "Útmutató",
     "guide-description": "Ismerje meg, hogyan hozhatja ki a legtöbbet az AES Adventure-ből.",
     "home-description": "Üdvözöljük az AES Adventure intuitív AES oktatási eszközben. ",
-    "settings": "Beállítások",
-    "settings-description": "Módosítsa az AES Adventure megjelenését igényeinek megfelelően."
+    "preferences": "Beállítások",
+    "preferences-description": "Módosítsa az AES Adventure megjelenését igényeinek megfelelően."
   },
   "error": {
     "mistake": "Valami elromlott...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Az Advanced Encryption Standard a legnépszerűbb szimmetrikus kulcsú titkosítás. ",
     "go": "Menjen a Szimulátorhoz",
-    "settings": {
+    "preferences": {
       "title": "Beállítások",
       "badLang": "Az Ön nyelve rosszul van lefordítva vagy nem elérhető?"
     },

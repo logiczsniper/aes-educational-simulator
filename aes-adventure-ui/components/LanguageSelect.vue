@@ -28,9 +28,9 @@ watch(selectedLocaleCode, newLocaleCode => {
           variant="solo"
           hide-selected
           :menu-props="{
-              closeOnContentClick: true,
-              contentClass: 'applyScrollbarToChild'
-            }"
+            closeOnContentClick: true,
+            contentClass: 'applyScrollbarToChild'
+          }"
         >
           <template #item="{ item: { raw: { code, name, emoji } } }">
             <v-btn
@@ -74,7 +74,7 @@ watch(selectedLocaleCode, newLocaleCode => {
       class="languageHelp"
     >
       <!-- TODO: link to GitLab README explaining how to contribute -->
-      <p><small>{{ t('home.settings.badLang') }}</small></p>
+      <p><small>{{ t('home.preferences.badLang') }}</small></p>
     </v-btn>
   </div>
 </template>

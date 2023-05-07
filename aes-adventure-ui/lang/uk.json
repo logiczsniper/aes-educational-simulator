@@ -14,8 +14,8 @@
     "guide": "Гід",
     "guide-description": "Дізнайтеся, як отримати максимум від AES Adventure.",
     "home-description": "Ласкаво просимо в AES Adventure, інтуїтивно зрозумілий навчальний інструмент AES. ",
-    "settings": "Налаштування",
-    "settings-description": "Змініть вигляд AES Adventure відповідно до ваших потреб."
+    "preferences": "Налаштування",
+    "preferences-description": "Змініть вигляд AES Adventure відповідно до ваших потреб."
   },
   "error": {
     "mistake": "Щось пішло не так...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Розширений стандарт шифрування є найпопулярнішим шифром із симетричним ключем. ",
     "go": "Перейдіть до Simulator",
-    "settings": {
+    "preferences": {
       "title": "Налаштування",
       "badLang": "Ваша мова погано перекладена або недоступна?"
     },

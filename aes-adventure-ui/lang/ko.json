@@ -14,8 +14,8 @@
     "guide": "가이드",
     "guide-description": "AES Adventure를 최대한 활용하는 방법을 알아보세요.",
     "home-description": "직관적인 AES 교육 도구인 AES Adventure에 오신 것을 환영합니다. ",
-    "settings": "설정",
-    "settings-description": "필요에 맞게 AES Adventure의 모양을 변경합니다."
+    "preferences": "설정",
+    "preferences-description": "필요에 맞게 AES Adventure의 모양을 변경합니다."
   },
   "error": {
     "mistake": "문제가 발생했습니다...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Advanced Encryption Standard는 가장 널리 사용되는 대칭 키 암호입니다. ",
     "go": "시뮬레이터로 이동",
-    "settings": {
+    "preferences": {
       "title": "설정",
       "badLang": "귀하의 언어가 제대로 번역되지 않았거나 사용할 수 없습니까?"
     },

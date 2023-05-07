@@ -14,8 +14,8 @@
     "guide": "Panduan",
     "guide-description": "Ketahui cara untuk memanfaatkan Pengembaraan AES sepenuhnya.",
     "home-description": "Selamat datang ke AES Adventure, alat pendidikan AES yang intuitif. ",
-    "settings": "tetapan",
-    "settings-description": "Ubah rupa Pengembaraan AES untuk memenuhi keperluan anda."
+    "preferences": "tetapan",
+    "preferences-description": "Ubah rupa Pengembaraan AES untuk memenuhi keperluan anda."
   },
   "error": {
     "mistake": "Sesuatu telah berlaku...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Piawaian Penyulitan Lanjutan ialah sifir kunci simetri yang paling popular. ",
     "go": "Pergi ke Simulator",
-    "settings": {
+    "preferences": {
       "title": "tetapan",
       "badLang": "Adakah bahasa anda diterjemahkan dengan buruk atau tidak tersedia?"
     },

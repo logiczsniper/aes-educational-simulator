@@ -14,8 +14,8 @@
     "guide": "Hagaha",
     "guide-description": "Baro sida aad uga faa'iidaysan lahayd AES Adventure.",
     "home-description": "Ku soo dhawoow AES Adventure, qalab waxbarasho oo dareen leh AES. ",
-    "settings": "Dejinta",
-    "settings-description": "Beddel sida AES Adventure u eg yahay si uu ugu habboonaado baahiyahaaga."
+    "preferences": "Dejinta",
+    "preferences-description": "Beddel sida AES Adventure u eg yahay si uu ugu habboonaado baahiyahaaga."
   },
   "error": {
     "mistake": "Waxbaa qaldamay...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Heerarka sirta sare waa kan ugu caansan sifaynta-furaha. ",
     "go": "Tag Simulator",
-    "settings": {
+    "preferences": {
       "title": "Dejinta",
       "badLang": "Luuqadaada si liidata ma loo turjumay mise lama heli karo?"
     },

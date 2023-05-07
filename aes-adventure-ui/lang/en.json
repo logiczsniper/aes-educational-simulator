@@ -14,8 +14,8 @@
     "guide": "Guide",
     "guide-description": "Learn how to get the most out of AES Adventure.",
     "home-description": "Welcome to AES Adventure, an intuitive AES educational tool. Input your own data and walk through step-by-step encryption, decryption, and key expansion of all three key sizes.",
-    "settings": "Settings",
-    "settings-description": "Change how AES Adventure looks to suit your needs."
+    "preferences": "Preferences",
+    "preferences-description": "Change how AES Adventure looks to suit your needs."
   },
   "error": {
     "mistake": "Something went wrong...",
@@ -24,8 +24,8 @@
   "home": {
     "description": "The Advanced Encryption Standard is the most popular symmetric-key cipher. If you want to learn the basics, dig deep into the details, or experiment with AES: you're in the right place!",
     "go": "Go to Simulator",
-    "settings": {
-      "title": "Settings",
+    "preferences": {
+      "title": "Preferences",
       "badLang": "Is your language poorly translated or unavailable?"
     },
     "guide": {
@@ -59,7 +59,7 @@
         },
         "i18n": {
           "header": "Internationalization",
-          "body": "The language of the entire app can be changed in 'Settings'. These translations are expected to be imperfect; we did not hire professional translators to do this translation. Soon, there will be a way for you to request a fix/correction to the language files that store all of the translations."
+          "body": "The language of the entire app can be changed in preferences. These translations are expected to be imperfect; we did not hire professional translators to do this translation. Soon, there will be a way for you to request a fix/correction to the language files that store all of the translations."
         }
       },
       "quick-points": {
@@ -158,6 +158,7 @@
     "next-round": "Next round",
     "copy": "Copy",
     "reset": "Reset",
+    "skip-full": "Skip to output",
     "function": "function",
     "add-words": "Add Words",
     "keys-generated": "round keys ready",
@@ -267,9 +268,13 @@
       "nibblesLeft": "nibbles left.",
       "ready": "Ready!",
       "copied": "Copied to clipboard.",
+      "copy-tooltip": "Copy to clipboard.",
+      "duplicate-keys-tooltip": "Copies to all key inputs.",
       "duplicated-keys": "Copied to all key inputs.",
       "duplicated-plaintext": "Copied to encrypt input.",
+      "duplicated-plaintext-tooltip": "Copies to encrypt input.",
       "duplicated-ciphertext": "Copied to decrypt input.",
+      "duplicated-ciphertext-tooltip": "Copies to decrypt input.",
       "go": "Go"
     }
   }

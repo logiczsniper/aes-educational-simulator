@@ -14,8 +14,8 @@
     "guide": "Гид",
     "guide-description": "Узнайте, как получить максимальную отдачу от AES Adventure.",
     "home-description": "Добро пожаловать в AES Adventure, интуитивно понятный образовательный инструмент AES. ",
-    "settings": "Настройки",
-    "settings-description": "Измените внешний вид AES Adventure в соответствии с вашими потребностями."
+    "preferences": "Настройки",
+    "preferences-description": "Измените внешний вид AES Adventure в соответствии с вашими потребностями."
   },
   "error": {
     "mistake": "Что-то пошло не так...",
@@ -24,7 +24,7 @@
   "home": {
     "description": "Advanced Encryption Standard — самый популярный шифр с симметричным ключом. ",
     "go": "Перейти к симулятору",
-    "settings": {
+    "preferences": {
       "title": "Настройки",
       "badLang": "Ваш язык плохо переведен или недоступен?"
     },
