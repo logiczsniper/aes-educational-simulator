@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { TutorialKey } from '~~/composables/useTutorial';
 
+const { t } = useI18n();
+
 const props = defineProps<{
   modelValue: boolean;
   title: string;
   eager: boolean;
   turnedOff?: boolean;
+  layerIcon?: string;
   lineThroughTitle?: boolean;
   tutorialKey?: TutorialKey;
   backgroundColor?: string;
@@ -22,6 +25,7 @@ const expansionPanelValue = `step-dropdown--${props.title}`
 const backgroundColor = computed(() => (props.turnedOff ? '#C34A36' : undefined) ?? props.backgroundColor)
 const lineThroughTitle = computed(() => props.turnedOff ?? props.lineThroughTitle)
 const eager = computed(() => props.eager || hoverEager.value)
+const layerTooltip = computed(() => t(props.layerIcon === 'mdi-layers' ? 'simulator.layer-on' : 'simulator.layer-off'))
 
 const scrollTarget = ref<HTMLElement>()
 const tryScrollToBody = (animationDuration: number) => {
@@ -41,7 +45,6 @@ watch(() => props.modelValue, newModelValue => {
 onMounted(() => {
   if (props.modelValue) tryScrollToBody(900)
 })
-
 </script>
 
 <template>
@@ -64,15 +67,33 @@ onMounted(() => {
           ref="scrollTarget"
           style="position: absolute; top: 12px"
         />
-        <h3
-          class="title"
-          :class="{ 'strikeThrough': lineThroughTitle, 'underline': props.modelValue }"
-        >
-          <div v-html="props.title" />
-          <span v-if="props.tutorialKey !== undefined && !props.turnedOff">
-            <TutorialIconButton :tutorial-key="props.tutorialKey" />
-          </span>
-        </h3>
+        <div class="titleContainer">
+          <h3
+            class="title"
+            :class="{ 'strikeThrough': lineThroughTitle, 'underline': props.modelValue }"
+          >
+            <div v-html="props.title" />
+            <span v-if="props.tutorialKey !== undefined && !props.turnedOff">
+              <TutorialIconButton :tutorial-key="props.tutorialKey" />
+            </span>
+          </h3>
+          <v-tooltip>
+            <p
+              class="tooltip"
+              v-html="layerTooltip"
+            />
+            <template v-slot:activator="{ props }">
+              <v-icon
+                v-if="layerIcon"
+                v-bind="props"
+                class="layerIcon"
+                :icon="layerIcon"
+                size="20"
+              />
+            </template>
+          </v-tooltip>
+        </div>
+
       </template>
       <template #text>
         <slot />
@@ -89,37 +110,37 @@ onMounted(() => {
 .stepDropdown {
   content-visibility: auto;
 
-  .title {
+  .titleContainer {
     display: flex;
-    padding: 2px 0;
-    font-size: 1.26em;
-    transition: text-decoration 2.4s;
-    text-underline-offset: 6px;
-    text-decoration-color: transparent;
 
-    &.strikeThrough {
-      text-decoration: line-through;
+    .title {
+      display: flex;
+      padding: 2px 0;
+      font-size: 1.26em;
+      transition: text-decoration 2.4s;
+      text-underline-offset: 6px;
+      text-decoration-color: transparent;
+
+      &.strikeThrough {
+        text-decoration: line-through;
+      }
+
+      &.underline {
+        text-decoration: underline;
+        text-decoration-style: wavy;
+        text-decoration-color: rgba(var(--v-theme-opposite), 0.25);
+      }
+
+      span {
+        margin-top: -2px;
+        margin-left: 14px;
+      }
     }
 
-    &.underline {
-      text-decoration: underline;
-      text-decoration-style: wavy;
-      text-decoration-color: rgba(var(--v-theme-opposite), 0.25);
+    .layerIcon {
+      position: absolute;
+      right: 58px
     }
-
-    span {
-      margin-top: -2px;
-      margin-left: 14px;
-    }
-  }
-
-  .footerSlot {
-    display: flex;
-    gap: 8px;
-    justify-content: flex-end;
-    margin-right: 28px;
-    margin-top: -8px;
-    margin-bottom: 4px;
   }
 
   &.readonly {
@@ -133,5 +154,9 @@ onMounted(() => {
   :deep(.v-expansion-panel-title__overlay) {
     opacity: 0;
   }
+}
+
+.tooltip {
+  color: white;
 }
 </style>

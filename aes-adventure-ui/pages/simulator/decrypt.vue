@@ -261,6 +261,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                   :eager="decryptState.step?.type === AesiRoundStepType.AddRoundKey"
                   :title="`${t('simulator.mix-columns')}`"
                   :turned-off="noMixColumns"
+                  :layer-icon="configState.noMixColumns ? 'mdi-layers-off' : 'mdi-layers'"
                   :tutorial-key="TutorialKey.MixColumns"
                   variant="default"
                 >
@@ -302,6 +303,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                   :eager="decryptState.step?.type === AesiRoundStepType.MixColumns || ((decryptState.step?.type === AesiRoundStepType.AddRoundKey) && decryptState.roundIndex === 0)"
                   :title="`${t('simulator.shift-rows')}`"
                   :turned-off="configState.noShiftRows"
+                  :layer-icon="configState.noShiftRows ? 'mdi-layers-off' : 'mdi-layers'"
                   :tutorial-key="TutorialKey.ShiftRows"
                   variant="default"
                 >
@@ -342,6 +344,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
                   :eager="decryptState.step?.type === AesiRoundStepType.ShiftRows"
                   :title="`${t('simulator.substitute-bytes')}`"
                   :turned-off="configState.noSubBytes"
+                  :layer-icon="configState.noSubBytes ? 'mdi-layers-off' : 'mdi-layers'"
                   :tutorial-key="TutorialKey.SubBytes"
                   variant="default"
                 >
