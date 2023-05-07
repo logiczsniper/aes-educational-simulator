@@ -134,6 +134,14 @@ const chartOptions: ApexOptions = {
             <h4>/ {{ props.roundCount }}</h4>
             <TutorialIconButton :tutorial-key="TutorialKey.RoundHeader" />
           </div>
+          <p class="viewStats">
+            <transition
+              appear
+              name="opacity"
+            >
+              <b v-if="!props.modelValue">{{ t('simulator.view-stats') }}</b>
+            </transition>
+          </p>
         </div>
       </template>
       <template #text>
@@ -151,6 +159,7 @@ const chartOptions: ApexOptions = {
           ></ApexChart>
         </figure>
       </template>
+
     </v-expansion-panel>
   </v-expansion-panels>
 </template>
@@ -163,13 +172,19 @@ const chartOptions: ApexOptions = {
     display: grid;
 
     $toggle-icon-width: 22.5px;
+    $view-stats-width: 86px;
     align-items: center;
     width: 100%;
 
-    grid-template-columns: $toggle-icon-width 1fr 56px 1fr;
+    grid-template-columns: calc($toggle-icon-width + $view-stats-width) 1fr 56px 1fr $view-stats-width;
 
     &.singleDigit {
-      grid-template-columns: $toggle-icon-width 1fr 38px 1fr;
+      grid-template-columns: calc($toggle-icon-width + $view-stats-width) 1fr 38px 1fr $view-stats-width;
+    }
+
+    .viewStats {
+      justify-self: end;
+      margin-right: 12px;
     }
 
     .roundIndex {

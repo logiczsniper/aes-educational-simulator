@@ -152,6 +152,7 @@
     "no-h-function-key-size": "Turned off because the key size is not 256 bits!",
     "no-h-function-last": "Turned off because the <span class='math'>ℎ</span>-function is used to generate the 5th word but only 4 words are generated in the last round!",
     "round": "Round",
+    "view-stats": "View stats",
     "next-step": "Next step",
     "skip": "Skip to last round",
     "next-round": "Next round",
