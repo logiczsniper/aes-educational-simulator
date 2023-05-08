@@ -25,12 +25,14 @@ const emailHref = computed(() => `mailto:${props.email}`)
       <a
         :href="emailHref"
         rel="author"
+        aria-label="Email link."
       >
         <v-btn
           size="x-small"
           variant="plain"
           icon
           @click=""
+          aria-label="Email button."
         >
           <v-icon
             icon="mdi-email"
@@ -43,12 +45,14 @@ const emailHref = computed(() => `mailto:${props.email}`)
         target="_blank"
         :href="props.linkedin"
         rel="author"
+        aria-label="Linked-in link."
       >
         <v-btn
           size="x-small"
           variant="plain"
           icon
           @click=""
+          aria-label="Linked-in button."
         >
           <v-icon
             icon="mdi-linkedin"

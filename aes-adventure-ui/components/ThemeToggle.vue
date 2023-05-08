@@ -15,6 +15,7 @@ const themeName = useThemeName()
         @update:model-value="themeName.flip"
         hide-details
         inset
+        aria-label="Theme switch."
       >
       </v-switch>
       <template #fallback>

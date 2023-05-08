@@ -28,10 +28,14 @@ useHead({
   <div class="feedbackPage">
     <header class="feedbackHeader">
       <h2>{{ t('home.feedback.title') }}</h2>
-      <NuxtLink :to="localePath('/')">
+      <NuxtLink
+        :to="localePath('/')"
+        aria-label="Close feedback link."
+      >
         <v-btn
           variant="plain"
           icon
+          aria-label="Close feedback button."
         >
           <v-icon
             icon="mdi-close"

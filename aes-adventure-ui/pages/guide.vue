@@ -28,10 +28,14 @@ useHead({
   <div class="guidePage scrollbar">
     <header class="guideHeader">
       <h2>{{ t('home.guide.title') }}</h2>
-      <NuxtLink :to="localePath('/')">
+      <NuxtLink
+        :to="localePath('/')"
+        aria-label="Close guide link."
+      >
         <v-btn
           variant="plain"
           icon
+          aria-label="Close guide button."
         >
           <v-icon
             icon="mdi-close"

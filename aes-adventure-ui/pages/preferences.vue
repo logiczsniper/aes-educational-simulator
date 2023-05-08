@@ -28,10 +28,14 @@ useHead({
   <div class="preferencesPage">
     <header class="preferencesHeader">
       <h2>{{ t('home.preferences.title') }}</h2>
-      <NuxtLink :to="localePath('/')">
+      <NuxtLink
+        :to="localePath('/')"
+        aria-label="Close preferences link."
+      >
         <v-btn
           variant="plain"
           icon
+          aria-label="Close preferences button."
         >
           <v-icon
             icon="mdi-close"

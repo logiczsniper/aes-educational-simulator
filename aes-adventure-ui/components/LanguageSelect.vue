@@ -31,6 +31,7 @@ watch(selectedLocaleCode, newLocaleCode => {
             closeOnContentClick: true,
             contentClass: 'applyScrollbarToChild'
           }"
+          aria-label="Language select."
         >
           <template #item="{ item: { raw: { code, name, emoji } } }">
             <v-btn
