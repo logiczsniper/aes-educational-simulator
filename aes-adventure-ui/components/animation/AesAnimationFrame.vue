@@ -120,6 +120,7 @@ onMounted(() => {
               density="compact"
               variant="plain"
               class="playbackSpeedButton"
+              aria-label="Decrease animation speed button."
             >
               <v-icon size="18">mdi-tortoise</v-icon>
             </v-btn>
@@ -128,6 +129,7 @@ onMounted(() => {
               density="compact"
               variant="plain"
               class="playbackSpeedButton"
+              aria-label="Increase animation speed button."
             >
               <v-icon size="18">mdi-rabbit</v-icon>
             </v-btn>
@@ -139,6 +141,7 @@ onMounted(() => {
           density="compact"
           :icon="controlIconName"
           @click="onControlClick"
+          aria-label="Play and pause button."
         />
         <div class="appendControls">
           <slot

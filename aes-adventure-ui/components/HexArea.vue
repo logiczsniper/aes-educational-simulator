@@ -154,6 +154,7 @@ const onDuplicateClick = () => {
                 density="compact"
                 variant="plain"
                 @click="onCopyClick"
+                aria-label="Copy to clipboard button."
               >
                 <v-icon size="18">mdi-content-copy</v-icon>
               </v-btn>
@@ -172,6 +173,7 @@ const onDuplicateClick = () => {
                 density="compact"
                 variant="plain"
                 @click="onDuplicateClick"
+                aria-label="Copy to other input button."
               >
                 <v-icon size="18">mdi-content-duplicate</v-icon>
               </v-btn>

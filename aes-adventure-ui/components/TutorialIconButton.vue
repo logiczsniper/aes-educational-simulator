@@ -27,6 +27,7 @@ const onClick = (e: Event) => {
     size="xx-small"
     variant="flat"
     class="tutorialIconButton"
+    aria-label="Tutorial icon button."
     @click="onClick"
   />
 </template>

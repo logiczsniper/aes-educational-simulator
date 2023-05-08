@@ -110,6 +110,7 @@ const skipToOutput = () => {
                     density="compact"
                     variant="plain"
                     :value="128"
+                    aria-label="128-bit key size button."
                   >
                     <v-icon size="20">mdi-numeric-1</v-icon>
                     <v-icon size="20">mdi-numeric-2</v-icon>
@@ -120,6 +121,7 @@ const skipToOutput = () => {
                     density="compact"
                     variant="plain"
                     :value="192"
+                    aria-label="192-bit key size button."
                   >
                     <v-icon size="20">mdi-numeric-1</v-icon>
                     <v-icon size="20">mdi-numeric-9</v-icon>
@@ -130,6 +132,7 @@ const skipToOutput = () => {
                     density="compact"
                     variant="plain"
                     :value="256"
+                    aria-label="256-bit key size button."
                   >
                     <v-icon size="20">mdi-numeric-2</v-icon>
                     <v-icon size="20">mdi-numeric-5</v-icon>
