@@ -47,10 +47,7 @@ const resetSimulator = () => {
             :title="t('configure.modal.title')"
           >
             <template #prepend>
-              <v-icon
-                class="tuneIcon"
-                icon="mdi-tune-vertical"
-              />
+              <v-icon icon="mdi-layers-edit" />
             </template>
           </v-toolbar>
           <v-card-text>
