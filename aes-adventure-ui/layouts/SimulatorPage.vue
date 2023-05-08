@@ -117,8 +117,8 @@ watch(sidebarElement, newSidebarElement => {
           :to="localePath(simulatorTabs.getTabLink(tab))"
           class="tab"
           :class="{
-              'selected': simulatorTabs.currentTab === tab
-            }"
+            'selected': simulatorTabs.currentTab === tab
+          }"
           @click="simulatorTabs.goToTab(tab)"
         >
           {{ t(`simulator.${tab}`) }}
@@ -223,7 +223,12 @@ watch(sidebarElement, newSidebarElement => {
         border-radius: 6px;
         text-align: center;
         font-size: 14px;
+        transition: inherit;
         color: unset;
+
+        &:hover {
+          color: #745CD0;
+        }
 
         &.selected {
           transition: all .5s linear;

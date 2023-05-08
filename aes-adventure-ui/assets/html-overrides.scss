@@ -10,6 +10,10 @@ a:-webkit-any-link:active {
   background-color: transparent;
 }
 
+a {
+  text-decoration-line: none;
+}
+
 address {
   display: unset;
 }

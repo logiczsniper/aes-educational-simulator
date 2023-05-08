@@ -11,7 +11,9 @@ const { t } = useI18n();
       alt="AES infographic"
       class="infographic"
     />
-    <Logo class="logo" />
+    <div class="logo">
+      <Logo />
+    </div>
   </figure>
 
   <a
@@ -44,6 +46,6 @@ const { t } = useI18n();
 .downloadLink {
   display: block;
   text-align: right;
-  margin-top: 62px;
+  margin-top: 32px;
 }
 </style>
