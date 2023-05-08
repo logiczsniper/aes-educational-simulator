@@ -631,7 +631,7 @@ const skipToOutput = () => {
     gap: 6px;
 
     .denominator {
-      height: 22px;
+      height: min-content;
     }
   }
 
