@@ -572,7 +572,7 @@ const skipToOutput = () => {
 
   .controlButtonsContainer {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin: 36px 24px 12px 0;
   }
 

@@ -77,7 +77,7 @@ onMounted(() => {
               <TutorialIconButton :tutorial-key="props.tutorialKey" />
             </span>
           </h3>
-          <v-tooltip>
+          <v-tooltip location="top">
             <p
               class="tooltip"
               v-html="layerTooltip"
