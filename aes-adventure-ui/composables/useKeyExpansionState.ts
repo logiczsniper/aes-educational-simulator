@@ -103,6 +103,12 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
     stepIndex.value = 0
   }
 
+  const skipToOutput = () => {
+    roundIndex.value = (output.value?.rounds.length ?? 0) - 1
+    stepIndex.value = (output.value?.rounds.at(-1)?.steps.length ?? 0) - 1
+    stage.value = KeyExpansionStage.Output
+  }
+
   const reset = () => {
     output.value = undefined
     stage.value = KeyExpansionStage.Input
@@ -136,6 +142,7 @@ export const useKeyExpansionState = defineStore(getKey`keyExpansionState`, () =>
     nextRound,
     setRound,
     skipToLastRound,
+    skipToOutput,
     reset
   }
 }, {

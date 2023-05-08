@@ -55,6 +55,16 @@ const onRoundProgressBarClick = (roundNumber: number) => {
   const roundIndex = roundNumber - 1
   decryptState.setRound(roundIndex)
 }
+
+const outputHexArea = ref<HTMLElement>()
+const skipToOutput = () => {
+  decryptState.skipToOutput()
+  setTimeout(() => {
+    outputHexArea.value?.scrollIntoView({
+      behavior: 'smooth',
+    })
+  }, 500)
+}
 </script>
 
 <template>
@@ -130,33 +140,45 @@ const onRoundProgressBarClick = (roundNumber: number) => {
               </template>
             </HexArea>
           </section>
-          <transition
-            name="opacity"
-            mode="out-in"
-          >
-            <v-btn
-              v-if="decryptState.stage === DecryptStage.Input"
-              :disabled="!decryptState.canComputeDecryptOutput"
-              :title="!decryptState.canComputeDecryptOutput ? t('simulator.disabled-start') : ''"
-              prependIcon="mdi-lock-open-variant"
-              variant="flat"
-              color="primary"
-              class="startButton"
-              @click="decryptState.computeDecryptOutput"
+          <div class="controlButtonsContainer">
+            <transition
+              name="opacity"
+              mode="out-in"
             >
-              {{ `${t('simulator.start')} ${t('simulator.decryption')}` }}
-            </v-btn>
-            <v-btn
-              v-else
-              prependIcon="mdi-lock-reset"
-              :variant="decryptState.stage === DecryptStage.Output ? 'flat' : 'outlined'"
-              color="primary"
-              class="resetButton"
-              @click="decryptState.reset"
-            >
-              {{ t('simulator.reset') }}
-            </v-btn>
-          </transition>
+              <v-btn
+                v-if="decryptState.stage === DecryptStage.Input"
+                :disabled="!decryptState.canComputeDecryptOutput"
+                :title="!decryptState.canComputeDecryptOutput ? t('simulator.disabled-start') : ''"
+                prependIcon="mdi-lock-open-variant"
+                variant="flat"
+                color="primary"
+                @click="decryptState.computeDecryptOutput"
+              >
+                {{ `${t('simulator.start')} ${t('simulator.decryption')}` }}
+              </v-btn>
+              <div v-else>
+                <transition name="opacity">
+                  <v-btn
+                    v-if="decryptState.stage !== DecryptStage.Output"
+                    prepend-icon="mdi-arrow-u-down-right"
+                    variant="text"
+                    color="primary"
+                    @click="skipToOutput"
+                  >
+                    {{ t('simulator.skip-full') }}
+                  </v-btn>
+                </transition>
+                <v-btn
+                  prependIcon="mdi-lock-reset"
+                  :variant="decryptState.stage === DecryptStage.Output ? 'flat' : 'outlined'"
+                  color="primary"
+                  @click="decryptState.reset"
+                >
+                  {{ t('simulator.reset') }}
+                </v-btn>
+              </div>
+            </transition>
+          </div>
           <transition
             appear
             name="opacity"
@@ -482,6 +504,7 @@ const onRoundProgressBarClick = (roundNumber: number) => {
           <section
             class="output"
             v-if="decryptState.stage === DecryptStage.Output && decryptState.outputString"
+            ref="outputHexArea"
           >
             <HexArea
               v-model="decryptState.outputString"
@@ -547,10 +570,10 @@ const onRoundProgressBarClick = (roundNumber: number) => {
     height: min-content;
   }
 
-  .startButton,
-  .resetButton {
+  .controlButtonsContainer {
     display: flex;
-    margin: 36px 24px 12px auto;
+    justify-content: end;
+    margin: 36px 24px 12px 0;
   }
 
   .transposeStep {

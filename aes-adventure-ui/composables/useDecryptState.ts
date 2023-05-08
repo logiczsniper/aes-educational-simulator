@@ -88,6 +88,12 @@ export const useDecryptState = defineStore(getKey`decryptState`, () => {
     stepIndex.value = 0
   }
 
+  const skipToOutput = () => {
+    roundIndex.value = (output.value?.rounds.length ?? 0) - 1
+    stepIndex.value = (output.value?.rounds.at(-1)?.steps.length ?? 0) - 1
+    stage.value = DecryptStage.Output
+  }
+
   const reset = () => {
     output.value = undefined
     stage.value = DecryptStage.Input
@@ -125,6 +131,7 @@ export const useDecryptState = defineStore(getKey`decryptState`, () => {
     nextRound,
     setRound,
     skipToLastRound,
+    skipToOutput,
     reset
   }
 }, {

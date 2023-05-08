@@ -61,6 +61,16 @@ const roundIndex = computed(() => Math.min(
   keyExpansionState.roundCount,
   keyExpansionState.roundIndex + roundProgressBarOffsetRoundOffset.value + 1
 ))
+
+const outputHexArea = ref<HTMLElement>()
+const skipToOutput = () => {
+  keyExpansionState.skipToOutput()
+  setTimeout(() => {
+    outputHexArea.value?.scrollIntoView({
+      behavior: 'smooth',
+    })
+  }, 500)
+}
 </script>
 
 <template>
@@ -129,33 +139,45 @@ const roundIndex = computed(() => Math.min(
               </template>
             </HexArea>
           </section>
-          <transition
-            name="opacity"
-            mode="out-in"
-          >
-            <v-btn
-              v-if="keyExpansionState.stage === KeyExpansionStage.Input"
-              :disabled="!keyExpansionState.canComputeKeyExpansionOutput"
-              :title="!keyExpansionState.canComputeKeyExpansionOutput ? t('simulator.disabled-start') : ''"
-              prependIcon="mdi-key-plus"
-              variant="flat"
-              color="primary"
-              class="startButton"
-              @click="keyExpansionState.computeKeyExpansionOutput"
+          <div class="controlButtonsContainer">
+            <transition
+              name="opacity"
+              mode="out-in"
             >
-              {{ `${t('simulator.start')} ${t('simulator.expansion')}` }}
-            </v-btn>
-            <v-btn
-              v-else
-              prependIcon="mdi-restart"
-              :variant="keyExpansionState.stage === KeyExpansionStage.Output ? 'flat' : 'outlined'"
-              color="primary"
-              class="resetButton"
-              @click="keyExpansionState.reset"
-            >
-              {{ t('simulator.reset') }}
-            </v-btn>
-          </transition>
+              <v-btn
+                v-if="keyExpansionState.stage === KeyExpansionStage.Input"
+                :disabled="!keyExpansionState.canComputeKeyExpansionOutput"
+                :title="!keyExpansionState.canComputeKeyExpansionOutput ? t('simulator.disabled-start') : ''"
+                prependIcon="mdi-key-plus"
+                variant="flat"
+                color="primary"
+                @click="keyExpansionState.computeKeyExpansionOutput"
+              >
+                {{ `${t('simulator.start')} ${t('simulator.expansion')}` }}
+              </v-btn>
+              <div v-else>
+                <transition name="opacity">
+                  <v-btn
+                    v-if="keyExpansionState.stage !== KeyExpansionStage.Output"
+                    prepend-icon="mdi-arrow-u-down-right"
+                    variant="text"
+                    color="primary"
+                    @click="skipToOutput"
+                  >
+                    {{ t('simulator.skip-full') }}
+                  </v-btn>
+                </transition>
+                <v-btn
+                  prependIcon="mdi-restart"
+                  :variant="keyExpansionState.stage === KeyExpansionStage.Output ? 'flat' : 'outlined'"
+                  color="primary"
+                  @click="keyExpansionState.reset"
+                >
+                  {{ t('simulator.reset') }}
+                </v-btn>
+              </div>
+            </transition>
+          </div>
           <transition
             appear
             name="opacity"
@@ -441,6 +463,7 @@ const roundIndex = computed(() => Math.min(
           <section
             class="output"
             v-if="keyExpansionState.stage === KeyExpansionStage.Output"
+            ref="outputHexArea"
           >
             <div>
               <div class="outputHeader">
@@ -535,10 +558,10 @@ const roundIndex = computed(() => Math.min(
     }
   }
 
-  .startButton,
-  .resetButton {
+  .controlButtonsContainer {
     display: flex;
-    margin: 36px 24px 12px auto;
+    justify-content: end;
+    margin: 36px 24px 12px 0;
   }
 
   .transposeStep {
