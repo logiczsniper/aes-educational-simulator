@@ -105,6 +105,7 @@ onMounted(() => {
         class="slider"
         color="#745CD0"
         :thumb-size="0"
+        aria-label="Animation timeline slider."
       />
       <div class="controls">
         <div class="prependControls">

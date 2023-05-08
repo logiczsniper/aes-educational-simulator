@@ -9,6 +9,7 @@ const props = defineProps<{
 }>()
 
 const imageClass = `logo__${props.big ? 'big' : 'small'}`
+const imageSize = computed(() => props.big ? 100 : 30)
 const imageTarget = `.${imageClass}`
 
 const clickCount = ref(0)
@@ -85,6 +86,8 @@ onMounted(() => {
       >
         <img
           src="/logo.svg"
+          :width="imageSize"
+          :height="imageSize"
           alt="AES Adventure logo"
         />
       </div>

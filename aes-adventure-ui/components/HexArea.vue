@@ -145,6 +145,7 @@ const onDuplicateClick = () => {
           <v-tooltip
             location="bottom"
             :open-delay="250"
+            aria-label="Copy to clipboard tooltip."
           >
             <p class="tooltip">{{ t('simulator.hexArea.copy-tooltip') }}</p>
             <template v-slot:activator="{ props }">
@@ -164,6 +165,7 @@ const onDuplicateClick = () => {
             v-if="duplicate"
             location="bottom"
             :open-delay="250"
+            aria-label="Copy to other input tooltip."
           >
             <p class="tooltip">{{ duplicate.tooltipMessage }}</p>
             <template v-slot:activator="{ props }">

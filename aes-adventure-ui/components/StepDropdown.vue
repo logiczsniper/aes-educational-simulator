@@ -61,6 +61,8 @@ onMounted(() => {
       :eager="eager"
       elevation="0"
       :bg-color="backgroundColor"
+      role="region"
+      aria-label="AES step dropdown."
     >
       <template #title>
         <div
@@ -77,7 +79,10 @@ onMounted(() => {
               <TutorialIconButton :tutorial-key="props.tutorialKey" />
             </span>
           </h3>
-          <v-tooltip location="top">
+          <v-tooltip
+            location="top"
+            aria-label="Layer status tooltip."
+          >
             <p
               class="tooltip"
               v-html="layerTooltip"
