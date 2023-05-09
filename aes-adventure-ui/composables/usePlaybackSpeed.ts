@@ -16,7 +16,7 @@ export const usePlaybackSpeed = defineStore(getKey`playbackSpeed`, () => {
     //@ts-ignore We need to be able to change the speed here.
     if (newPlaybackSpeed === PlaybackSpeed.Slow) anime.speed = 0.5
     //@ts-ignore We need to be able to change the speed here.
-    if (newPlaybackSpeed === PlaybackSpeed.Fast) anime.speed = 2
+    if (newPlaybackSpeed === PlaybackSpeed.Fast) anime.speed = 2.5
 
   }
 
