@@ -271,6 +271,7 @@
       "ready": "Ready!",
       "copied": "Copied to clipboard.",
       "copy-tooltip": "Copy to clipboard",
+      "fill-tooltip": "Fill with random input",
       "duplicated-keys": "Copied to all key inputs.",
       "duplicate-keys-tooltip": "Copy to all key inputs",
       "duplicated-plaintext": "Copied to encrypt input.",

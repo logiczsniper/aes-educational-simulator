@@ -40,6 +40,7 @@ watch(currentValueFormatted, () => currentValueFormatted.value = formatInput(cur
 const currentValue = computed(() => currentValueFormatted.value.replaceAll(' ', ''))
 watch(currentValue, newValue => emit('update:modelValue', newValue))
 
+const HEX_VALUES = "0123456789ABCDEF"
 const preventInvalidInput = (event: KeyboardEvent) => {
   const isHex = "0123456789ABCDEF".includes(event.key.toUpperCase())
   const isBackspace = event.key === 'Backspace'
@@ -92,6 +93,12 @@ const onDuplicateClick = () => {
   openSnackbar(props.duplicate.snackbarMessage, props.duplicate.goTo)
   props.duplicate.onDuplicate(currentValue.value)
 }
+
+const onFillClick = () => {
+  currentValueFormatted.value = formatInput(
+    Array(maxLengthHex.value).fill(null).map(_ => HEX_VALUES.at(Math.round(Math.random() * (HEX_VALUES.length - 1)))).join('').toLowerCase()
+  )
+}
 </script>
 
 <template>
@@ -140,7 +147,7 @@ const onDuplicateClick = () => {
       >
         <div
           v-if="isFull"
-          class="copyButtons"
+          class="inlineButton"
         >
           <v-tooltip
             location="bottom"
@@ -181,7 +188,30 @@ const onDuplicateClick = () => {
               </v-btn>
             </template>
           </v-tooltip>
-
+        </div>
+        <div
+          v-else
+          class="inlineButton"
+        >
+          <v-tooltip
+            location="bottom"
+            :open-delay="250"
+            aria-label="Fill with random input."
+          >
+            <p class="tooltip">{{ t('simulator.hexArea.fill-tooltip') }}</p>
+            <template v-slot:activator="{ props }">
+              <v-btn
+                v-bind="props"
+                icon
+                density="compact"
+                variant="plain"
+                @click="onFillClick"
+                aria-label="Fill with random input."
+              >
+                <v-icon size="23">mdi-dice-multiple-outline</v-icon>
+              </v-btn>
+            </template>
+          </v-tooltip>
         </div>
       </transition>
       <transition
@@ -281,7 +311,7 @@ const onDuplicateClick = () => {
     min-height: 28px;
     position: relative;
 
-    .copyButtons {
+    .inlineButton {
       margin-left: -4px;
       position: absolute;
     }
