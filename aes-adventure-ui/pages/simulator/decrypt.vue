@@ -6,7 +6,6 @@ import { duplicateKey } from '~~/utils/state/duplicateKey';
 import { duplicatePlaintext } from '~~/utils/state/duplicatePlaintext';
 
 const { t } = useI18n();
-const { locale } = useI18n()
 
 definePageMeta({
   layout: 'simulator-page',
@@ -17,14 +16,11 @@ definePageMeta({
 
 useHead({
   titleTemplate: `%s: ${t('seo.decrypt')}`,
-  htmlAttrs: { lang: locale.value ?? 'en' },
-  link: [{ rel: 'canonical', href: `https://aes-adventure.web.app/${locale.value ?? 'en'}/simulator/decrypt` }],
   meta: [
     {
       name: 'description',
       content: t('seo.decrypt-description')
-    },
-    { property: 'og:locale', content: locale.value ?? 'en' },
+    }
   ]
 })
 

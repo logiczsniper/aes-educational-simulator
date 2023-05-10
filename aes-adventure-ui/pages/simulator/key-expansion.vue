@@ -3,8 +3,7 @@ import { useTheme } from 'vuetify';
 import { AesiExpandKeyRoundStepAddWords, AesiExpandKeyRoundStepRoundGFn, AesiExpandKeyRoundStepRoundHFn, AesiExpandKeyRoundStepType } from '~~/utils/aesi/aesi.types';
 import { duplicateKey } from '~~/utils/state/duplicateKey';
 
-const { t } = useI18n();
-const { locale } = useI18n()
+const { t } = useI18n()
 
 definePageMeta({
   layout: 'simulator-page',
@@ -15,14 +14,11 @@ definePageMeta({
 
 useHead({
   titleTemplate: `%s: ${t('seo.expand')}`,
-  htmlAttrs: { lang: locale.value ?? 'en' },
-  link: [{ rel: 'canonical', href: `https://aes-adventure.web.app/${locale.value ?? 'en'}/simulator/key-expansion` }],
   meta: [
     {
       name: 'description',
       content: t('seo.expand-description')
-    },
-    { property: 'og:locale', content: locale.value ?? 'en' },
+    }
   ]
 })
 

@@ -1,14 +1,24 @@
 <script setup lang="ts">
 const themeName = useThemeName()
 
+const { t } = useI18n()
+const i18nHead = useLocaleHead({
+  addSeoAttributes: true
+})
+
 useHead({
   title: 'AES Adventure',
   meta: [
-    { name: 'description', content: 'The Advanced Encryption Standard is the most popular symmetric-key cipher. If you want to learn the basics, dig deep into the details, or experiment with AES: you\'re in the right place!' }
+    { name: 'description', content: t('home.description') },
+    ...(i18nHead.value.meta ?? [])
   ],
   link: [
-    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-  ]
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    ...(i18nHead.value.link ?? [])
+  ],
+  htmlAttrs: {
+    ...(i18nHead.value.htmlAttrs ?? {})
+  }
 })
 
 onMounted(() => {

@@ -29,7 +29,6 @@ import tr from './lang/tr.json'
 import vi from './lang/vi.json'
 import zh from './lang/zh_CN.json'
 
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
@@ -82,7 +81,7 @@ export default defineNuxtConfig({
       {
         name: 'Монгол',
         code: 'mn',
-        iso: 'mn_MN',
+        iso: 'mn-mn',
         emoji: '🇲🇳'
       },
       {
@@ -202,7 +201,7 @@ export default defineNuxtConfig({
       {
         name: 'عربي',
         code: 'ar',
-        iso: 'ar_EG',
+        iso: 'ar-eg',
         emoji: '🇪🇬'
       },
       {
@@ -220,11 +219,12 @@ export default defineNuxtConfig({
       {
         name: '中国人',
         code: 'zh',
-        iso: 'zh_CN',
+        iso: 'zh-cn',
         emoji: '🇨🇳'
       }
     ],
     defaultLocale: 'en',
+    baseUrl: "https://aes-adventure.web.app",
     vueI18n: {
       legacy: false,
       missingWarn: false,
