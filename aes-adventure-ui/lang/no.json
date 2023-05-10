@@ -1,0 +1,285 @@
+{
+    "welcome_header": "Hei Verden!",
+    "title": "Eventyr",
+    "infographic": "Last ned infografikk",
+    "edit": "Redigere",
+    "seo": {
+        "encrypt": "Krypter",
+        "decrypt": "Dekrypter",
+        "expand": "Utvid-tast",
+        "encrypt-description": "Lær hvordan AES-kryptering fungerer med AES Adventures trinn-for-trinn-simulator. Støtter alle tre nøkkelstørrelsene og har veiledninger for å hjelpe deg med å lære!",
+        "decrypt-description": "Lær hvordan AES-dekryptering fungerer med AES Adventures steg-for-steg-simulator. Støtter alle tre nøkkelstørrelsene og har veiledninger for å hjelpe deg med å lære!",
+        "expand-description": "Lær hvordan AES-nøkkelutvidelsen fungerer med AES Adventures trinnvise simulator. Støtter alle tre nøkkelstørrelsene og har veiledninger for å hjelpe deg med å lære!",
+        "feedback": "Tilbakemelding",
+        "feedback-description": "Gi din verdifulle tilbakemelding til skaperne av AES Adventure, slik at vi kan forbedre opplevelsen for alle.",
+        "guide": "Guide",
+        "guide-description": "Lær hvordan du får mest mulig ut av AES Adventure.",
+        "home-description": "Velkommen til AES Adventure, et intuitivt AES-pedagogisk verktøy. Skriv inn dine egne data og gå gjennom steg-for-steg kryptering, dekryptering og nøkkelutvidelse av alle tre nøkkelstørrelsene.",
+        "preferences": "Preferanser",
+        "preferences-description": "Endre hvordan AES Adventure ser ut for å passe dine behov."
+    },
+    "error": {
+        "mistake": "Noe gikk galt...",
+        "back": "Gå tilbake"
+    },
+    "home": {
+        "description": "Advanced Encryption Standard er den mest populære symmetriske nøkkelkrypteringen. Hvis du vil lære det grunnleggende, grave dypt ned i detaljene eller eksperimentere med AES: du er på rett sted!",
+        "go": "Gå til Simulator",
+        "guide": {
+            "title": "Guide",
+            "table-of-contents": "Innholdsfortegnelse",
+            "intro": {
+                "header": "Introduksjon",
+                "body": "Advanced Encryption Standard er en <i> symmetrisk blokk </i> chiffer, noe som betyr at den krypterer/dekrypterer blokker med fast størrelse med bare én nøkkel. AES Adventure bryter ned AES i 3 primære prosesser: kryptering, dekryptering og nøkkelutvidelse. Nøkkelutvidelse er utledningen av undernøkler fra inngangsnøkkelen - disse undernøklene brukes av både kryptering og dekryptering. Hvert av disse komplekse aspektene ved AES har en simulator i AES Adventure som vil lede deg gjennom hvordan AES fungerer på input. AES Adventure støtter alle 3 nøkkelstørrelser som brukes av AES: 128, 192 og 256 biter. <b> Merk: </b> alle data i AES Adventure er representert i heksadesimal; 1 heksadesimalt siffer er 4 bits = 1 nibble = 0,5 byte."
+            },
+            "features": {
+                "header": "Egenskaper",
+                "animations": {
+                    "header": "Animasjoner",
+                    "body": "Alle simulatorene bruker animasjoner for å tydelig vise hvert trinn i prosessen. Disse animasjonene støtter avspilling, pause og søk-operasjoner. Avspillingshastigheten til alle animasjoner kan dobles eller halveres ved å bruke henholdsvis kanin- og skilpaddeikonene. Hvert trinn vil ha en knapp for å gå videre til neste trinn - hvis du lærer deg trinnet, anbefales det at du ikke går videre før knappen blir høylighet (som vanligvis skjer mot slutten av animasjonen)."
+                },
+                "tutorials": {
+                    "header": "Veiledninger",
+                    "body": "Alle simulatorene har veiledningsikoner spredt utover. For å få en tekstlig forklaring av hva ikonet er ved siden av, klikk på opplæringsikonet for å utvide simulatorsidefeltet og avsløre den tilsvarende opplæringen. Sidefeltet vil automatisk gå tilbake til den opprinnelige størrelsen ved å klikke på det samme opplæringsikonet eller gå videre til neste trinn. Alternativt kan sidefeltets bredde justeres manuelt ved å bruke drahåndtaket nederst til høyre."
+                },
+                "configuration": {
+                    "header": "Konfigurasjon",
+                    "body": "Krypterings- og dekrypteringssimulatorene støtter et begrenset sett med konfigurasjoner som kan brukes av mer avanserte brukere til å eksperimentere med AES. Disse konfigurasjonene finnes i <i> Konfigurer </i> -modalen til venstre på denne siden. <b> Merk: </b> endring av konfigurasjonen vil tilbakestille krypterings- og dekrypteringssimulatorene."
+                },
+                "persistence": {
+                    "header": "Lokal utholdenhet",
+                    "body": "Hele tilstanden til AES Adventure er lagret i nettleserens <i> lokale lagring </i> med nøkler som begynner med <span class='code'> 'AES_ADVENTURE_UI__' </span> . Dette betyr at hvis du lukker eller forlater AES Adventure, vil alle simuleringer som kjører for øyeblikket bli fullstendig gjenopprettet når du kommer tilbake. Hvis applikasjonen, uansett årsak, går inn i en ødelagt tilstand, kan den tilbakestilles hardt ved å slette dens data i <i> lokal lagring </i> og oppdatere siden."
+                },
+                "duplicate-buttons": {
+                    "header": "Kopier-knapper",
+                    "body": "Når et inndataområde er fullt, vil du se 1 eller 2 <i> kopi </i> ikonknapper. Den første knappen er en standard kopi-til-utklippstavle-knapp. Den andre har en spesiell brukervennlighetsfunksjon avhengig av hvilken inngang den er under. Under 'Ciphertext'-utgang for kryptering: kopierer chifferteksten til inngangen til dekrypteringssimulatoren. Under 'Rentekst'-utgang for dekryptering: kopierer klarteksten til inngangen til krypteringssimulatoren. Under enhver nøkkelinntasting: kopierer nøkkelen inn i alle andre simulatorer - dette er spesielt nyttig for raskt å bruke samme nøkkel for kryptering, dekryptering og nøkkelutvidelse. <b> Merk: </b> hvis kopieringsoperasjonen endrer inndata, vil målsimulatoren tilbakestilles ettersom innganger ikke kan endres midt i simulering."
+                },
+                "i18n": {
+                    "header": "Internasjonalisering",
+                    "body": "Språket til hele appen kan endres i preferanser. Disse oversettelsene forventes å være ufullkomne; vi hyret ikke inn profesjonelle oversettere til å gjøre denne oversettelsen. Snart vil det være en måte for deg å be om en rettelse/korrigering av språkfilene som lagrer alle oversettelsene."
+                }
+            },
+            "quick-points": {
+                "header": "Siste tips",
+                "cant-input": "Inndata kan ikke endres hvis en simulator bruker den. Trykk på 'Tilbakestill'-knappen for å avslutte gjeldende simulering, og du vil kunne endre inngangene en gang til.",
+                "cant-start": "Simulatorer kan ikke startes før alle nødvendige inndataområder er fylt. Alle inndataområder vil ha en teller for gjenværende nibbles under seg.",
+                "nibble": "1 bite er selvfølgelig en halv byte! (Også tilsvarende 1 heksadesimalt siffer)",
+                "small": "AES Adventure er designet for å kunne ses gjennom skjermer som er minst <b> 13\" </b> store. Dette er den minste standardstørrelsen for bærbar datamaskin, som vi forventer at alle våre brukere er utstyrt med. Hvis du finner deg selv med noe mindre , bruk nettleserens zoommuligheter og zoom ut. Hvis du er på mobil, roter enheten til liggende modus for å få så mye ekstra bredde som mulig."
+            }
+        },
+        "feedback": {
+            "title": "Tilbakemelding",
+            "body": "Dette er et utviklingsprosjekt, og vi vil gjerne ha tilbakemeldinger om verktøyet. Det er en {googleFormLink} som du kan fylle ut for å gi oss svært verdifull informasjon - dine tanker! Alternativt er skaperne av AES Adventure listet opp nedenfor, send oss gjerne en e-post hvis du har problemer med verktøyet.",
+            "button": "Google-skjema"
+        },
+        "gitlab": "GitLab",
+        "preferences": {
+            "title": "Preferanser",
+            "badLang": "Er språket ditt dårlig oversatt eller utilgjengelig?"
+        }
+    },
+    "configure": {
+        "button": "Konfigurer",
+        "modal": {
+            "title": "Konfigurer",
+            "body": "Velg en konfigurasjon nedenfor. Hvis du er ny til AES, anbefaler vi at du bruker standardsimulatoren før du bruker denne konfigurasjonen. <b> Merk: </b> endring av konfigurasjonen vil tilbakestille krypterings- og dekrypteringssimulatorene.",
+            "defaults": {
+                "standard": {
+                    "name": "Standard",
+                    "description": "Vanilje."
+                },
+                "short": {
+                    "name": "Kort",
+                    "description": "Halve antall runder."
+                },
+                "long": {
+                    "name": "Lang",
+                    "description": "Doble antall runder."
+                },
+                "staticColumns": {
+                    "name": "Statiske kolonner",
+                    "description": "Ingen MixColumns-lag."
+                },
+                "staticRows": {
+                    "name": "Statiske rader",
+                    "description": "Ingen ShiftRows-lag."
+                },
+                "staticBytes": {
+                    "name": "Statiske bytes",
+                    "description": "Ingen SubstituteBytes-lag."
+                }
+            },
+            "close": "Lukk"
+        }
+    },
+    "simulator": {
+        "hide": "Gjemme seg",
+        "show": "Forestilling",
+        "quit": "Slutte",
+        "configurations": "Konfigurasjoner",
+        "configuration": "Konfigurasjon",
+        "encrypt": "Krypter",
+        "decrypt": "Dekrypter",
+        "key-expansion": "Nøkkelutvidelse",
+        "plaintext": "Klartekst",
+        "ciphertext": "Chiffertekst",
+        "key": "Nøkkel",
+        "sbox": "Erstatningsboks",
+        "constant-matrix": "Konstant matrise",
+        "substitute-step": "Erstatning",
+        "shift-step": "Skifte",
+        "rcon": "Runde konstant",
+        "inverse": "Omvendt",
+        "state": "Stat",
+        "input": "Inndata",
+        "output": "Produksjon",
+        "add-key": "Legg til nøkkel",
+        "confusion": "Forvirring",
+        "diffusion": "Diffusjon",
+        "substitute-bytes": "Erstatningsbytes",
+        "shift-rows": "Skift rader",
+        "mix-columns": "Bland kolonner",
+        "add-round-key": "Legg til rundnøkkel",
+        "encryption": "kryptering",
+        "decryption": "dekryptering",
+        "expansion": "ekspansjon",
+        "start": "Start",
+        "finish": "Bli ferdig",
+        "start-rounds": "Start runder",
+        "finish-rounds": "Avslutt runder",
+        "no-mix-columns-last": "Slått av fordi Mix Columns ble hoppet over i siste runde!",
+        "no-mix-columns-first": "Slått av fordi Mix Columns hoppes over i første runde!",
+        "no-step-configuration": "Slått av fordi den valgte konfigurasjonen er",
+        "no-h-function-key-size": "Slått av fordi nøkkelstørrelsen ikke er 256 biter!",
+        "no-h-function-last": "Slått av fordi <span class='math'> ℎ </span> -funksjonen brukes til å generere det 5. ordet, men bare 4 ord blir generert i siste runde!",
+        "round": "Rund",
+        "next-step": "Neste steg",
+        "skip": "Hopp til siste runde",
+        "next-round": "Neste runde",
+        "copy": "Kopiere",
+        "reset": "Nullstille",
+        "function": "funksjon",
+        "add-words": "Legg til ord",
+        "keys-generated": "rundnøkler klare",
+        "round-keys": "Runde nøkler",
+        "disabled-input": "Klikk på 'Tilbakestill'-knappen for å aktivere redigering",
+        "disabled-start": "Fyll inn inngangen(e) for å aktivere simulering",
+        "tutorial": {
+            "title": "Opplæringen",
+            "default": {
+                "description": "Klikk på {tutorialIcon} som du ser for å avsløre relevant informasjon her."
+            },
+            "sandbox": {
+                "button": "Sandkasse",
+                "title": "Sandkasse",
+                "close": "Lukk"
+            },
+            "read-more": "Les mer",
+            "plaintext-to-state": {
+                "body": "Det første trinnet er å lage tilstandsmatrisen som skal opereres gjennom hele krypteringsprosessen. Klarteksten er ordnet i en 4x4-matrise med byte, og deretter transponeres denne matrisen.",
+                "learn-more": {
+                    "matrices": "Matrisetransposisjon"
+                }
+            },
+            "ciphertext-to-state": {
+                "body": "Det første trinnet er å lage tilstandsmatrisen som vil bli operert gjennom hele dekrypteringsprosessen. Chifferteksten er ordnet i en 4x4-matrise med byte, og deretter transponeres denne matrisen.",
+                "learn-more": {
+                    "matrices": "Matrisetransposisjon"
+                }
+            },
+            "key-to-state": {
+                "body": "Det første trinnet er å lage tilstandsvektoren som vil bli lagt til gjennom hele nøkkelutvidelsesprosessen. Nøkkelen er ordnet i en vektor av ord, der 1 ord er 4 byte. <span class='highlight'> AES-nøkkelplanen endres litt med hver nøkkelstørrelse </span> , men den er alltid ordorientert."
+            },
+            "add-key": {
+                "body": "Nøkkelen er XORed med tilstandsmatrisen. Merk at nøkkelen også er ordnet i en 4x4-matrise av byte og transponert, akkurat som inngangen. Dette blir også referert til som <i> nøkkelbleking </i> ."
+            },
+            "add-round-key": {
+                "body": "Den runde nøkkelen er XORed med tilstandsmatrisen. Legg merke til at den runde nøkkelen også er ordnet i en 4x4-matrise av byte og transponert. Gå over til <i> Key Expansion </i> -fanen for å finne ut hvordan disse runde nøklene lages. Under <b> kryptering </b> brukes de runde nøklene i den rekkefølgen de opprettes. Under <b> dekryptering </b> brukes de runde nøklene i <b> motsatt </b> rekkefølge."
+            },
+            "add-words": {
+                "body": "Det første ordet er XORed med det siste ordet, etter at Round <span class='math'> 𝑔 </span> -funksjonen har blitt påkalt på det. Derfra blir hvert ord XORed med det tidligere beregnede ordet for å lage et nytt ord som deretter legges til tilstandsvektoren. <b> 256-bit </b> nøkkelplanen påkaller Round <span class='math'> ℎ </span> -funksjonen på det fjerde ordet generert i runden før den fortsetter som normalt.",
+                "note": "<span class='math'> 𝑔 </span> -funksjonen og <span class='math'> ℎ </span> -funksjonsberegningene er skissert i de følgende rundetrinnene."
+            },
+            "round-g-fn": {
+                "body": "<span class='math'> 𝑔 </span> -funksjonen består av en serie operasjoner på bytene til inngangsordet: Substitute Bytes, Shift Rows (shift = 1), og den første byten XORed med <i> rund konstant </i> . Bytene blir deretter sammenkoblet for å danne utgangsordet.",
+                "learn-more": {
+                    "rcon": "Beregning av AES sine runde konstanter"
+                }
+            },
+            "round-h-fn": {
+                "body": "<span class='math'> ℎ </span> -funksjonen består av en erstatningsbyte på bytene til inngangsordet. Bytene blir deretter sammenkoblet for å danne utgangsordet."
+            },
+            "round-keys": {
+                "body": "Disse undernøklene tas i den rekkefølgen som vises under kryptering. Under <b> dekryptering </b> brukes de i motsatt rekkefølge."
+            },
+            "rounds-header": {
+                "body": "AES opererer på statsmatrisen i runder. 10 runder for en nøkkelstørrelse på 128 biter, 12 runder for 192 biter og 14 runder for 256 biter. Hver runde består av trinnene Substitute Bytes, Shift Rows, Mix Columns, Add Round Key; <span class='highlight'> bortsett fra siste runde, som ikke inkluderer blandekolonner </span> . Under <b> dekryptering </b> utføres trinnene i <b> motsatt </b> rekkefølge og blande kolonner er ikke inkludert i første runde."
+            },
+            "key-rounds-header": {
+                "body": "Hver runde med AES trenger en undernøkkel, pluss 1 for nøkkelbleking. 11 undernøkler for en nøkkelstørrelse på 128 biter, 13 undernøkler for 192 biter og 15 undernøkler for 256 biter. Hver runde opererer på forrige rundes utgang for å utlede nye ord.",
+                "aes-a": "AES Adventure deler opp hver runde i Legg til ord, runde <span class='math'> 𝑔 </span> -funksjon og runde <span class='math'> ℎ </span> -funksjonstrinn. Bare <b> 256-bit </b> nøkkelplanen bruker Round <span class='math'> ℎ </span> -funksjonstrinnet i hver runde, bortsett fra den siste runden.",
+                "note": "Hver runde genererer 1 undernøkkel for en nøkkelstørrelse på 128 biter, 1,5 undernøkler for 192 biter og 2 undernøkler for 256 biter, bortsett fra den siste runden som genererer 1 undernøkkel for alle tre nøkkelstørrelsene."
+            },
+            "rounds-stats": {
+                "diffusion": "<b> Diffusjon </b> er påvirkningen av en enkelt klartekstbit på den (gjeldende) chifferteksten. Beregningen er representert i AES Adventure av <i> skredeffekten </i> . Dette beregnes som følger: for hver klartekstbit, snu den og beregne (gjeldende) chiffertekst med den modifiserte klarteksten. Deretter teller du antall biter som er snudd i den (gjeldende) chifferteksten: metrikken er gjennomsnittlig antall biter som er snudd på tvers av alle rentekstvariasjoner. <br /> Skift rader og blandingskolonner kan kollektivt refereres til som <i> diffusjonslaget </i> fordi de er de viktigste diffusive trinnene i AES.",
+                "confusion": "<b> Forvirring </b> er forholdet mellom (nåværende) chiffertekst og nøkkelen. Metrikken er representert i AES Adventure ved et mål på assosiasjon mellom den (gjeldende) chifferteksten og nøkkelen der alle 0-er er kartlagt til -1-er. <br /> Substitute Bytes introduserer forvirring i AES.",
+                "learn-more": {
+                    "conf-diff": "Forvirring og spredning",
+                    "avalanche": "Skredeffekt"
+                }
+            },
+            "sub-bytes": {
+                "body": "Substitute Bytes erstatter hver tilstandsmatrisebyte med en byte fra substitusjonsboksen, som gir ikke-linearitet i AES (beskyttelse mot analytiske angrep). Det er en bijektiv kartlegging; under <b> dekryptering </b> bruker vi den unike <b> inverse </b> av erstatningsboksen.",
+                "learn-more": {
+                    "bijective": "Vedkommende funksjoner",
+                    "sbox": "Databehandling av AES sin erstatningsboks"
+                }
+            },
+            "shift-rows": {
+                "body": "Skift rader utfører en bytevis syklisk forskyvning på hver rad i tilstandsmatrisen. Under <b> dekryptering </b> er skiftet i <b> motsatt </b> retning. I begge tilfeller er skiftet på den første raden 0, noe som betyr at den første raden aldri påvirkes."
+            },
+            "mix-columns": {
+                "body": "Mix Columns multipliserer hver kolonnevektor i tilstandsmatrisen med en matrise av konstanter for å produsere den tilsvarende kolonnen i den resulterende tilstandsmatrisen. Den konstante matrisen er inverterbar; under <b> dekryptering </b> bruker vi den unike <b> inverse </b> av konstantmatrisen.",
+                "learn-more": {
+                    "matrix-multiplication": "Matrisemultiplikasjon",
+                    "matrix-inversion": "Matrix invers",
+                    "gf": "Galois Fields",
+                    "gf-arithmetic": "Aritmetikk i <span class='math'> 𝐺𝐹(2 ̂ 8) </span>"
+                }
+            },
+            "state-to-ciphertext": {
+                "body": "Det siste trinnet er å lage chifferteksten som er resultatet av krypteringsprosessen. Tilstandsmatrisen transponeres og deretter blir hver oppføring sammenkoblet.",
+                "learn-more": {
+                    "matrices": "Matrisetransposisjon"
+                }
+            },
+            "state-to-plaintext": {
+                "body": "Det siste trinnet er å lage klarteksten som er resultatet av dekrypteringsprosessen. Tilstandsmatrisen transponeres og deretter blir hver oppføring sammenkoblet.",
+                "learn-more": {
+                    "matrices": "Matrisetransposisjon"
+                }
+            },
+            "state-to-round-keys": {
+                "body": "Det siste trinnet er å lage de runde tastene som er resultatet av nøkkelutvidelsesprosessen. Tilstandsvektorordene tas 4 om gangen, og deretter kobles hver gruppe sammen for å danne en undernøkkel."
+            }
+        },
+        "hexArea": {
+            "nibblesLeft": "napper igjen.",
+            "ready": "Klar!",
+            "copied": "Kopiert til utklippstavlen.",
+            "duplicated-keys": "Kopiert til alle nøkkelinnganger.",
+            "duplicated-plaintext": "Kopiert for å kryptere inndata.",
+            "duplicated-ciphertext": "Kopiert for å dekryptere inndata.",
+            "go": "Gå",
+            "copy-tooltip": "Kopiere til utklippstavle",
+            "fill-tooltip": "Fyll med tilfeldig inndata",
+            "duplicate-keys-tooltip": "Kopier til alle viktige innganger",
+            "duplicate-plaintext-tooltip": "Kopier for å kryptere inndata",
+            "duplicate-ciphertext-tooltip": "Kopier for å dekryptere inndata"
+        },
+        "layer-off": "Laget er <b> av </b> . Avslutt og konfigurer for å slå den på.",
+        "layer-on": "Laget er <b> på </b> . Avslutt og konfigurer for å slå den av.",
+        "view-stats": "Se statistikk",
+        "skip-full": "Hopp til utdata"
+    }
+}

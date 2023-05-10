@@ -1,275 +1,285 @@
 {
-  "title": "Macera",
-  "infographic": "İnfografik İndir",
-  "edit": "Düzenlemek",
-  "seo": {
-    "encrypt": "Şifrele",
-    "decrypt": "şifresini çöz",
-    "expand": "Anahtarı Genişlet",
-    "encrypt-description": "AES Adventure'ın adım adım simülatörü ile AES şifrelemesinin nasıl çalıştığını öğrenin. ",
-    "decrypt-description": "AES şifre çözmenin AES Adventure'ın adım adım simülatörüyle nasıl çalıştığını öğrenin. ",
-    "expand-description": "AES anahtar genişletmenin, AES Adventure'ın adım adım simülatörüyle nasıl çalıştığını öğrenin. ",
-    "feedback": "Geri bildirim",
-    "feedback-description": "Deneyimi herkes için iyileştirebilmemiz için AES Adventure'ın yaratıcılarına değerli geri bildirimlerinizi iletin.",
-    "guide": "Rehber",
-    "guide-description": "AES Adventure'dan en iyi şekilde nasıl yararlanacağınızı öğrenin.",
-    "home-description": "Sezgisel bir AES eğitim aracı olan AES Adventure'a hoş geldiniz. ",
-    "preferences": "Ayarlar",
-    "preferences-description": "AES Adventure'ın görünümünü ihtiyaçlarınıza göre değiştirin."
-  },
-  "error": {
-    "mistake": "Bir şeyler yanlış gitti...",
-    "back": "Geri gitmek"
-  },
-  "home": {
-    "description": "Gelişmiş Şifreleme Standardı, en popüler simetrik anahtar şifresidir. ",
-    "go": "Simulator'a git",
-    "preferences": {
-      "title": "Ayarlar",
-      "badLang": "Diliniz kötü tercüme edilmiş veya mevcut değil mi?"
+    "welcome_header": "Selam Dünya!",
+    "title": "Macera",
+    "infographic": "İnfografik İndir",
+    "edit": "Düzenlemek",
+    "seo": {
+        "encrypt": "Şifrele",
+        "decrypt": "şifresini çöz",
+        "expand": "Anahtarı Genişlet",
+        "encrypt-description": "AES Adventure'ın adım adım simülatörü ile AES şifrelemesinin nasıl çalıştığını öğrenin. Üç temel boyutu da destekler ve öğrenmenize rehberlik edecek öğreticilere sahiptir!",
+        "decrypt-description": "AES şifre çözmenin AES Adventure'ın adım adım simülatörüyle nasıl çalıştığını öğrenin. Üç temel boyutu da destekler ve öğrenmenize rehberlik edecek öğreticilere sahiptir!",
+        "expand-description": "AES anahtar genişletmenin, AES Adventure'ın adım adım simülatörüyle nasıl çalıştığını öğrenin. Üç temel boyutu da destekler ve öğrenmenize rehberlik edecek öğreticilere sahiptir!",
+        "feedback": "Geri bildirim",
+        "feedback-description": "Deneyimi herkes için iyileştirebilmemiz için AES Adventure'ın yaratıcılarına değerli geri bildirimlerinizi iletin.",
+        "guide": "Rehber",
+        "guide-description": "AES Adventure'dan en iyi şekilde nasıl yararlanacağınızı öğrenin.",
+        "home-description": "Sezgisel bir AES eğitim aracı olan AES Adventure'a hoş geldiniz. Kendi verilerinizi girin ve her üç anahtar boyutu için adım adım şifreleme, şifre çözme ve anahtar genişletme işlemlerini yapın.",
+        "preferences": "Tercihler",
+        "preferences-description": "AES Adventure'ın görünümünü ihtiyaçlarınıza göre değiştirin."
     },
-    "guide": {
-      "title": "Rehber",
-      "table-of-contents": "İçindekiler",
-      "intro": {
-        "header": "giriiş",
-        "body": "Gelişmiş Şifreleme Standardı, <i>simetrik blok</i> şifre, yani sabit boyutlu blokları yalnızca bir anahtarla şifreler/şifresini çözer.  <b>Not:</b> AES Adventure'daki tüm veriler onaltılık olarak gösterilir; "
-      },
-      "features": {
-        "header": "Özellikler",
-        "animations": {
-          "header": "Animasyonlar",
-          "body": "Tüm simülatörler, sürecin her adımını açıkça göstermek için animasyonlar kullanır. "
+    "error": {
+        "mistake": "Bir şeyler yanlış gitti...",
+        "back": "Geri gitmek"
+    },
+    "home": {
+        "description": "Gelişmiş Şifreleme Standardı, en popüler simetrik anahtar şifresidir. Temel bilgileri öğrenmek, ayrıntılara derinlemesine inmek veya AES ile deney yapmak istiyorsanız: doğru yerdesiniz!",
+        "go": "Simulator'a git",
+        "guide": {
+            "title": "Rehber",
+            "table-of-contents": "İçindekiler",
+            "intro": {
+                "header": "giriiş",
+                "body": "Gelişmiş Şifreleme Standardı bir <i> simetrik blok </i> şifresidir, yani sabit boyutlu blokları tek bir anahtarla şifreler/şifresini çözer. AES Adventure, AES'i 3 ana işleme ayırır: şifreleme, şifre çözme ve anahtar genişletme. Anahtar genişletme, giriş anahtarından alt anahtarların türetilmesidir - bu alt anahtarlar hem şifreleme hem de şifre çözme tarafından kullanılır. AES'in bu karmaşık özelliklerinin her biri, AES Adventure'da AES'in girdilerinize göre nasıl çalıştığı konusunda size yol gösterecek bir simülatöre sahiptir. AES Adventure, AES tarafından kullanılan 3 anahtar boyutunu da destekler: 128, 192 ve 256 bit. <b> Not: </b> AES Adventure'daki tüm veriler onaltılık biçimde gösterilir; 1 onaltılık basamak 4 bit = 1 yarım bayt = 0,5 bayttır."
+            },
+            "features": {
+                "header": "Özellikler",
+                "animations": {
+                    "header": "Animasyonlar",
+                    "body": "Tüm simülatörler, sürecin her adımını net bir şekilde göstermek için animasyonlar kullanır. Bu animasyonlar oynatma, duraklatma ve arama işlemlerini destekler. Tüm animasyonların oynatma hızı sırasıyla tavşan ve kaplumbağa simgeleri kullanılarak iki katına veya yarıya indirilebilir. Her adımda bir sonraki adıma geçmek için bir düğme olacaktır - adımı öğreniyorsanız, düğme vurgulanana kadar (genellikle animasyonun sonuna doğru gerçekleşir) ilerlememeniz önerilir."
+                },
+                "tutorials": {
+                    "header": "Öğreticiler",
+                    "body": "Tüm simülatörlerin her yerine dağılmış Öğretici simgeleri vardır. Simgenin yanında ne olduğuna dair metinsel bir açıklama almak için eğitim simgesini tıklayarak simülatör kenar çubuğunu genişletin ve ilgili öğreticiyi görüntüleyin. Kenar çubuğu, aynı eğitim simgesine tıklandığında veya bir sonraki adıma geçildiğinde otomatik olarak orijinal boyutuna dönecektir. Alternatif olarak, kenar çubuğu genişliği sağ alttaki sürükleme kolu kullanılarak manuel olarak ayarlanabilir."
+                },
+                "configuration": {
+                    "header": "Yapılandırma",
+                    "body": "Şifreleme ve şifre çözme simülatörleri, daha ileri düzey kullanıcılar tarafından AES ile deney yapmak için kullanılabilen sınırlı sayıda yapılandırmayı destekler. Bu yapılandırmalar, bu sayfanın solundaki <i> Yapılandır </i> kipinde bulunabilir. <b> Not: </b> yapılandırmanın değiştirilmesi, şifreleme ve şifre çözme simülatörlerini sıfırlayacaktır."
+                },
+                "persistence": {
+                    "header": "Yerel Kalıcılık",
+                    "body": "AES Adventure'ın tüm durumu <span class='code'> 'AES_ADVENTURE_UI__' </span> ile başlayan anahtarlarla tarayıcınızın <i> yerel deposuna </i> kaydedilir. Bu, AES Adventure'ı kapatır veya bırakırsanız, çalışmakta olan tüm simülasyonların geri döndüğünüzde tamamen geri yükleneceği anlamına gelir. Herhangi bir nedenle uygulama bozuk bir duruma girerse, <i> yerel depolama </i> içindeki verileri silinerek ve sayfa yenilenerek donanımdan sıfırlanabilir."
+                },
+                "duplicate-buttons": {
+                    "header": "Düğmeleri Kopyala",
+                    "body": "Bir giriş alanı dolduğunda, 1 veya 2 <i> kopyala </i> simge düğmesi göreceksiniz. İlk düğme, standart bir panoya kopyala düğmesidir. İkincisi, hangi girişin altında olduğuna bağlı olarak özel bir kullanım kolaylığı işlevine sahiptir. Şifrelemenin 'Şifreli Metin' çıktısı altında: şifreli metni şifre çözme simülatörünün girişine kopyalar. 'Düz metin' şifre çözme çıktısı altında: düz metni şifreleme simülatörünün girişine kopyalar. Herhangi bir anahtar girişi altında: anahtarı diğer tüm simülatörlere kopyalar - bu, aynı anahtarı şifreleme, şifre çözme ve anahtar genişletme için hızlı bir şekilde kullanmak için özellikle yararlıdır. <b> Not: </b> kopyalama işlemi girişi değiştirirse, girişler simülasyonun ortasında değiştirilemediğinden hedef simülatör sıfırlanacaktır."
+                },
+                "i18n": {
+                    "header": "Uluslararasılaşma",
+                    "body": "Tüm uygulamanın dili tercihlerde değiştirilebilir. Bu çevirilerin kusurlu olması beklenmektedir; bu çeviriyi yapması için profesyonel çevirmenler tutmadık. Yakında, tüm çevirileri saklayan dil dosyalarında düzeltme/düzeltme talebinde bulunmanın bir yolu olacak."
+                }
+            },
+            "quick-points": {
+                "header": "Son İpuçları",
+                "cant-input": "Şu anda bir simülatör kullanıyorsa, giriş verileri değiştirilemez. Mevcut simülasyondan çıkmak için 'Sıfırla' düğmesine basın ve girişleri bir kez daha değiştirebileceksiniz.",
+                "cant-start": "Gerekli tüm giriş alanları doldurulana kadar simülatörler başlatılamaz. Tüm giriş alanlarının altında bir \"kalan yarım bayt\" sayacı olacaktır.",
+                "nibble": "1 yarım bayt elbette yarım bayttır! (Ayrıca 1 onaltılık basamağa eşdeğerdir)",
+                "small": "AES Adventure, boyutu en az <b> 13\" </b> olan ekranlardan izlenebilecek şekilde tasarlanmıştır. Bu, tüm kullanıcılarımızın sahip olmasını beklediğimiz en küçük standart dizüstü bilgisayar boyutudur. Kendinize daha küçük bir şey bulursanız , tarayıcının yakınlaştırma özelliklerinden yararlanın ve uzaklaştırın.Mobil kullanıyorsanız, mümkün olduğunca fazla ek genişlik elde etmek için cihazı yatay moda döndürün."
+            }
         },
-        "tutorials": {
-          "header": "Öğreticiler",
-          "body": "Tüm simülatörlerin her yerine dağılmış Öğretici simgeleri vardır. "
+        "feedback": {
+            "title": "Geri bildirim",
+            "body": "Bu gelişmekte olan bir projedir ve araçla ilgili geri bildiriminizi almak isteriz. Bize çok değerli bazı bilgiler - düşünceleriniz - vermek için doldurabileceğiniz bir {googleFormLink} var! Alternatif olarak, AES Adventure'ın yaratıcıları aşağıda listelenmiştir, araçla ilgili sorun yaşıyorsanız bize e-posta göndermekten çekinmeyin.",
+            "button": "Google Formu"
         },
-        "configuration": {
-          "header": "Yapılandırma",
-          "body": "Şifreleme ve şifre çözme simülatörleri, daha ileri düzey kullanıcılar tarafından AES ile deney yapmak için kullanılabilen sınırlı sayıda yapılandırmayı destekler.  <i>Yapılandır</i> bu sayfanın solundaki modal. <b>Not:</b> yapılandırmanın değiştirilmesi, şifreleme ve şifre çözme simülatörlerini sıfırlayacaktır."
-        },
-        "persistence": {
-          "header": "Yerel Kalıcılık",
-          "body": "AES Adventure'ın tüm durumu tarayıcınızın <i>yerel depolama</i> ile başlayan tuşlarla <span class='code'>\"AES_ADVENTURE_UI__\"</span>.  <i>yerel depolama</i> ve sayfayı yenilemek."
-        },
-        "duplicate-buttons": {
-          "header": "Düğmeleri Kopyala",
-          "body": "Bir giriş alanı dolduğunda 1 veya 2 göreceksiniz. <i>kopyalamak</i> simge düğmeleri.  <b>Not:</b> kopyalama işlemi girişi değiştirirse, girişler simülasyonun ortasında değiştirilemediğinden hedef simülatör sıfırlanacaktır."
-        },
-        "i18n": {
-          "header": "Uluslararasılaşma",
-          "body": "Tüm uygulamanın dili 'Ayarlar'da değiştirilebilir. "
+        "gitlab": "GitLab",
+        "preferences": {
+            "title": "Tercihler",
+            "badLang": "Diliniz kötü tercüme edilmiş veya mevcut değil mi?"
         }
-      },
-      "quick-points": {
-        "header": "Son İpuçları",
-        "cant-input": "Şu anda bir simülatör kullanıyorsa, giriş verileri değiştirilemez. ",
-        "cant-start": "Gerekli tüm giriş alanları doldurulana kadar simülatörler başlatılamaz. ",
-        "nibble": "1 yarım bayt elbette yarım bayttır! ",
-        "small": "AES Adventure, en azından aşağıdaki ekranlardan izlenebilecek şekilde tasarlanmıştır: <b>13\"</b> boyutunda. "
-      }
     },
-    "feedback": {
-      "title": "Geri bildirim",
-      "body": "Bu gelişmekte olan bir projedir ve araçla ilgili geri bildiriminizi almak isteriz. ",
-      "button": "Google Formu"
-    },
-    "gitlab": "GitLab"
-  },
-  "configure": {
-    "button": "Yapılandır",
-    "modal": {
-      "title": "Yapılandır",
-      "body": "Aşağıdan bir yapılandırma seçin.  <b>Not:</b> yapılandırmanın değiştirilmesi, şifreleme ve şifre çözme simülatörlerini sıfırlayacaktır.",
-      "defaults": {
-        "standard": {
-          "name": "Standart",
-          "description": "Vanilya."
-        },
-        "short": {
-          "name": "Kısa",
-          "description": "Tur sayısının yarısı."
-        },
-        "long": {
-          "name": "Uzun",
-          "description": "Tur sayısını ikiye katlayın."
-        },
-        "staticColumns": {
-          "name": "Statik Sütunlar",
-          "description": "MixColumns katmanı yok."
-        },
-        "staticRows": {
-          "name": "Statik Satırlar",
-          "description": "ShiftRows katmanı yok."
-        },
-        "staticBytes": {
-          "name": "Statik Bayt",
-          "description": "SubstituteBytes katmanı yok."
+    "configure": {
+        "button": "Yapılandır",
+        "modal": {
+            "title": "Yapılandır",
+            "body": "Aşağıdan bir yapılandırma seçin. AES'te yeniyseniz, bu yapılandırmayı kullanmadan önce varsayılan simülatörü kullanmanızı öneririz. <b> Not: </b> yapılandırmanın değiştirilmesi, şifreleme ve şifre çözme simülatörlerini sıfırlayacaktır.",
+            "defaults": {
+                "standard": {
+                    "name": "Standart",
+                    "description": "Vanilya."
+                },
+                "short": {
+                    "name": "Kısa",
+                    "description": "Tur sayısının yarısı."
+                },
+                "long": {
+                    "name": "Uzun",
+                    "description": "Tur sayısını ikiye katlayın."
+                },
+                "staticColumns": {
+                    "name": "Statik Sütunlar",
+                    "description": "MixColumns katmanı yok."
+                },
+                "staticRows": {
+                    "name": "Statik Satırlar",
+                    "description": "ShiftRows katmanı yok."
+                },
+                "staticBytes": {
+                    "name": "Statik Bayt",
+                    "description": "SubstituteBytes katmanı yok."
+                }
+            },
+            "close": "Kapalı"
         }
-      },
-      "close": "Kapalı"
+    },
+    "simulator": {
+        "hide": "Saklamak",
+        "show": "Göstermek",
+        "quit": "Çıkış yapmak",
+        "configurations": "Yapılandırmalar",
+        "configuration": "Yapılandırma",
+        "encrypt": "Şifrele",
+        "decrypt": "şifresini çöz",
+        "key-expansion": "Anahtar Genişletme",
+        "plaintext": "düz metin",
+        "ciphertext": "şifreli metin",
+        "key": "Anahtar",
+        "sbox": "Değiştirme Kutusu",
+        "constant-matrix": "sabit matris",
+        "substitute-step": "Yerine geçmek",
+        "shift-step": "Vardiya",
+        "rcon": "Yuvarlak Sabit",
+        "inverse": "Ters",
+        "state": "Durum",
+        "input": "Giriş",
+        "output": "Çıktı",
+        "add-key": "Anahtar Ekle",
+        "confusion": "Bilinç bulanıklığı, konfüzyon",
+        "diffusion": "difüzyon",
+        "substitute-bytes": "Yedek Bayt",
+        "shift-rows": "Satırları Kaydır",
+        "mix-columns": "Karışık Sütunlar",
+        "add-round-key": "Yuvarlak Anahtar Ekle",
+        "encryption": "şifreleme",
+        "decryption": "şifre çözme",
+        "expansion": "genleşme",
+        "start": "Başlangıç",
+        "finish": "Sona ermek",
+        "start-rounds": "Turları başlat",
+        "finish-rounds": "Turları bitir",
+        "no-mix-columns-last": "Son turda Karışık Sütunlar atlandığı için kapatıldı!",
+        "no-mix-columns-first": "İlk turda Karışık Sütunlar atlandığı için kapatıldı!",
+        "no-step-configuration": "Seçili yapılandırma şu olduğundan kapatıldı:",
+        "no-h-function-key-size": "Anahtar boyutu 256 bit olmadığı için kapatıldı!",
+        "no-h-function-last": "<span class='math'> ℎ </span> -işlevi 5. kelimeyi oluşturmak için kullanıldığından, ancak son turda yalnızca 4 kelime üretildiğinden kapatıldı!",
+        "round": "Yuvarlak",
+        "next-step": "Sonraki adım",
+        "skip": "Son tura atla",
+        "next-round": "sonraki tur",
+        "copy": "Kopyala",
+        "reset": "Sıfırla",
+        "function": "işlev",
+        "add-words": "kelime ekle",
+        "keys-generated": "yuvarlak anahtarlar hazır",
+        "round-keys": "Yuvarlak Tuşlar",
+        "disabled-input": "Düzenlemeyi etkinleştirmek için 'Sıfırla' düğmesini tıklayın",
+        "disabled-start": "Simülasyonu etkinleştirmek için girişleri doldurun",
+        "tutorial": {
+            "title": "Öğretici",
+            "default": {
+                "description": "İlgili bilgileri burada görmek için gördüğünüz {tutorialIcon} öğesini tıklayın."
+            },
+            "sandbox": {
+                "button": "Kum havuzu",
+                "title": "Kum havuzu",
+                "close": "Kapalı"
+            },
+            "read-more": "Devamını oku",
+            "plaintext-to-state": {
+                "body": "İlk adım, şifreleme işlemi boyunca üzerinde çalışacak durum matrisini oluşturmaktır. Düz metin, 4x4'lük bir bayt matrisi halinde düzenlenir ve ardından bu matrisin yeri değiştirilir.",
+                "learn-more": {
+                    "matrices": "Matris Aktarımı"
+                }
+            },
+            "ciphertext-to-state": {
+                "body": "İlk adım, şifre çözme işlemi boyunca üzerinde çalışacak olan durum matrisini oluşturmaktır. Şifreli metin 4x4'lük bir bayt matrisi halinde düzenlenir ve ardından bu matrisin yeri değiştirilir.",
+                "learn-more": {
+                    "matrices": "Matris Aktarımı"
+                }
+            },
+            "key-to-state": {
+                "body": "İlk adım, anahtar genişletme işlemi boyunca eklenecek durum vektörünü oluşturmaktır. Anahtar, 1 kelimenin 4 bayt olduğu bir kelime vektörü halinde düzenlenmiştir. <span class='highlight'> AES anahtar programı, her anahtar boyutuna göre biraz değişir </span> ama her zaman sözcük odaklıdır."
+            },
+            "add-key": {
+                "body": "Anahtar, durum matrisi ile XORlanır. Anahtarın aynı giriş gibi 4x4'lük bir bayt matrisi halinde düzenlendiğini ve yer değiştirdiğini unutmayın. Buna <i> anahtar beyazlatma </i> da denir."
+            },
+            "add-round-key": {
+                "body": "Yuvarlak anahtar, durum matrisi ile XORlanır. Yuvarlak anahtarın ayrıca 4x4'lük bir bayt matrisi halinde düzenlendiğini ve aktarıldığını unutmayın. Bu yuvarlak tuşların nasıl oluşturulduğunu öğrenmek için <i> Anahtar Genişletme </i> sekmesine gidin. <b> şifreleme </b> sırasında yuvarlak anahtarlar oluşturuldukları sırayla kullanılır. <b> şifre çözme </b> sırasında, yuvarlak anahtarlar <b> zıt </b> sırada kullanılır."
+            },
+            "add-words": {
+                "body": "İlk kelime, üzerinde Round <span class='math'> 𝑔 </span> -işlevi çağrıldıktan sonra, son kelimeyle XORlanır. Oradan, her kelime daha sonra durum vektörüne eklenen yeni bir kelime oluşturmak için önceden hesaplanan kelime ile XORlanır. <b> 256-bit </b> anahtar programı, normal şekilde devam etmeden önce turda oluşturulan 4. kelimede Round <span class='math'> ℎ </span> -işlevini çağırır.",
+                "note": "<span class='math'> 𝑔 </span> -fonksiyonu ve <span class='math'> ℎ </span> -fonksiyon hesaplamaları aşağıdaki yuvarlak adımlarda özetlenmiştir."
+            },
+            "round-g-fn": {
+                "body": "<span class='math'> 𝑔 </span> -işlevi, giriş kelimesinin baytları üzerinde bir dizi işlemden oluşur: Baytları Değiştir, Satırları Kaydır (shift = 1) ve ilk bayt, <i> ile XORlanır. <i> yuvarlak sabit </i> . Baytlar daha sonra çıkış kelimesini oluşturmak için birleştirilir.",
+                "learn-more": {
+                    "rcon": "AES Yuvarlak Sabitlerini Hesaplama"
+                }
+            },
+            "round-h-fn": {
+                "body": "<span class='math'> ℎ </span> -işlevi, giriş word'ünün baytlarında bir Yedek Bayttan oluşur. Baytlar daha sonra çıkış kelimesini oluşturmak için birleştirilir."
+            },
+            "round-keys": {
+                "body": "Bu alt anahtarlar, şifreleme sırasında gösterilen sırayla alınır. <b> şifre çözme </b> sırasında, ters sırada kullanılırlar."
+            },
+            "rounds-header": {
+                "body": "AES, turlar halinde durum matrisinde çalışır. 128 bit anahtar boyutu için 10 tur, 192 bit için 12 tur ve 256 bit için 14 tur. Her tur, Baytları Değiştir, Satırları Kaydır, Sütunları Karıştır, Yuvarlak Anahtar Ekle adımlarından oluşur; <span class='highlight'> Karma Sütunları içermeyen son tur hariç </span> . <b> şifre çözme </b> sırasında, adımlar <b> zıt </b> sırayla yürütülür ve Karma Sütunlar ilk turda yer almaz."
+            },
+            "key-rounds-header": {
+                "body": "AES'in her turunda bir alt anahtara ve anahtar beyazlatma için 1'e ihtiyaç vardır. 128 bit anahtar boyutu için 11 alt anahtar, 192 bit için 13 alt anahtar ve 256 bit için 15 alt anahtar. Her tur, yeni kelimeler türetmek için bir önceki turun çıktısına göre çalışır.",
+                "aes-a": "AES Adventure, her turu Kelime Ekle, Yuvarlak <span class='math'> 𝑔 </span> -fonksiyon ve Yuvarlak <span class='math'> ℎ </span> -fonksiyon adımlarına ayırır. Yalnızca <b> 256-bit </b> anahtar programı, son tur hariç her turda Yuvarlak <span class='math'> ℎ </span> -fonksiyon adımını kullanır.",
+                "note": "Her tur, 128 bitlik bir anahtar boyutu için 1 alt anahtar, 192 bit için 1,5 alt anahtar ve 256 bit için 2 alt anahtar üretir, ancak son tur, üç anahtar boyutunun tümü için 1 alt anahtar üretir."
+            },
+            "rounds-stats": {
+                "diffusion": "<b> Yayılma </b> tek bir düz metin bitinin (geçerli) şifreli metin üzerindeki etkisidir. Metrik, AES Adventure'da <i> çığ </i> efektiyle temsil edilir. Bu, şu şekilde hesaplanır: her düz metin biti için, ters çevirin ve (mevcut) şifreli metni değiştirilmiş düz metinle hesaplayın. Ardından, (mevcut) şifreli metinde çevrilen bitlerin sayısını sayın: metrik, tüm düz metin varyasyonlarında çevrilen ortalama bit sayısıdır. <br /> Satırları Kaydırma ve Karma Sütunlar, AES'deki ana yayılma adımları oldukları için toplu olarak <i> yayılma katmanı </i> olarak anılabilir.",
+                "confusion": "<b> Karışıklık </b> (mevcut) şifreli metin ile anahtar arasındaki ilişkidir. Metrik, AES Adventure'da, tüm 0'ların -1'lere eşlendiği (mevcut) şifreli metin ve anahtar arasındaki bir ilişki ölçüsü ile temsil edilir. <br /> Yedek Baytlar, AES'de kafa karışıklığına neden olur.",
+                "learn-more": {
+                    "conf-diff": "Karışıklık ve Yayılma",
+                    "avalanche": "Çığ Etkisi"
+                }
+            },
+            "sub-bytes": {
+                "body": "Yedek Bayt, her durum matrisi baytını, AES'de doğrusal olmama (analitik saldırılara karşı koruma) sağlayan, ikame kutusundaki bir baytla değiştirir. Bijektif bir eşlemedir; <b> şifre çözme </b> sırasında, ikame kutusunun benzersiz <b> tersini </b> kullanırız.",
+                "learn-more": {
+                    "bijective": "Bijektif Fonksiyonlar",
+                    "sbox": "AES'in Değiştirme Kutusunu Hesaplama"
+                }
+            },
+            "shift-rows": {
+                "body": "Satırları Kaydır, durum matrisinin her satırında bayt bazında bir döngüsel kaydırma gerçekleştirir. <b> şifre çözme </b> sırasında, kaydırma <b> ters </b> yöndedir. Her iki durumda da, ilk satırdaki kaydırma 0'dır, yani ilk satır hiçbir zaman etkilenmez."
+            },
+            "mix-columns": {
+                "body": "Karışık Sütunlar, elde edilen durum matrisinin karşılık gelen sütununu üretmek için durum matrisinin her bir sütun vektörünü bir sabitler matrisi ile çarpar. Sabit matris tersine çevrilebilir; <b> şifre çözme </b> sırasında, sabit matrisin benzersiz <b> tersini </b> kullanırız.",
+                "learn-more": {
+                    "matrix-multiplication": "Matris Çarpımı",
+                    "matrix-inversion": "Matris Tersleri",
+                    "gf": "Galois Tarlaları",
+                    "gf-arithmetic": "<span class='math'> 𝐺𝐹(2 ̂ 8) </span> içinde aritmetik"
+                }
+            },
+            "state-to-ciphertext": {
+                "body": "Son adım, şifreleme işleminin çıktısı olan şifreli metni oluşturmaktır. Durum matrisi aktarılır ve ardından her giriş birleştirilir.",
+                "learn-more": {
+                    "matrices": "Matris Aktarımı"
+                }
+            },
+            "state-to-plaintext": {
+                "body": "Son adım, şifre çözme işleminin çıktısı olan düz metni oluşturmaktır. Durum matrisi aktarılır ve ardından her giriş birleştirilir.",
+                "learn-more": {
+                    "matrices": "Matris Aktarımı"
+                }
+            },
+            "state-to-round-keys": {
+                "body": "Son adım, anahtar genişletme işleminin çıktısı olan yuvarlak anahtarları oluşturmaktır. Durum vektörü kelimeleri bir seferde 4 alınır ve daha sonra her grup bir alt anahtar oluşturmak üzere birleştirilir."
+            }
+        },
+        "hexArea": {
+            "nibblesLeft": "lokmalar kaldı.",
+            "ready": "Hazır!",
+            "copied": "Panoya kopyalandı.",
+            "duplicated-keys": "Tüm tuş girişlerine kopyalandı.",
+            "duplicated-plaintext": "Girişi şifrelemek için kopyalandı.",
+            "duplicated-ciphertext": "Girdinin şifresini çözmek için kopyalandı.",
+            "go": "Gitmek",
+            "copy-tooltip": "Panoya kopyala",
+            "fill-tooltip": "Rastgele girdi ile doldurun",
+            "duplicate-keys-tooltip": "Tüm tuş girişlerine kopyala",
+            "duplicate-plaintext-tooltip": "Girişi şifrelemek için kopyala",
+            "duplicate-ciphertext-tooltip": "Girdinin şifresini çözmek için kopyala"
+        },
+        "layer-off": "Katman <b> kapalı </b> . Çıkın ve açmak için yapılandırın.",
+        "layer-on": "Katman <b> açık </b> . Çıkın ve kapatmak için yapılandırın.",
+        "view-stats": "İstatistikleri görüntüle",
+        "skip-full": "Çıktıya atla"
     }
-  },
-  "simulator": {
-    "hide": "Saklamak",
-    "show": "Göstermek",
-    "quit": "Çıkış yapmak",
-    "configurations": "Yapılandırmalar",
-    "configuration": "Yapılandırma",
-    "encrypt": "Şifrele",
-    "decrypt": "şifresini çöz",
-    "key-expansion": "Anahtar Genişletme",
-    "plaintext": "düz metin",
-    "ciphertext": "şifreli metin",
-    "key": "Anahtar",
-    "sbox": "Değiştirme Kutusu",
-    "constant-matrix": "sabit matris",
-    "substitute-step": "Yerine geçmek",
-    "shift-step": "Vardiya",
-    "rcon": "Yuvarlak Sabit",
-    "inverse": "Ters",
-    "state": "Durum",
-    "input": "Giriş",
-    "output": "Çıktı",
-    "add-key": "Anahtar Ekle",
-    "confusion": "Bilinç bulanıklığı, konfüzyon",
-    "diffusion": "Difüzyon",
-    "substitute-bytes": "Yedek Bayt",
-    "shift-rows": "Satırları Kaydır",
-    "mix-columns": "Karışık Sütunlar",
-    "add-round-key": "Yuvarlak Anahtar Ekle",
-    "encryption": "şifreleme",
-    "decryption": "şifre çözme",
-    "expansion": "genleşme",
-    "start": "Başlangıç",
-    "finish": "Sona ermek",
-    "start-rounds": "Turları başlat",
-    "finish-rounds": "Turları bitir",
-    "no-mix-columns-last": "Son turda Karışık Sütunlar atlandığı için kapatıldı!",
-    "no-mix-columns-first": "İlk turda Karışık Sütunlar atlandığı için kapatıldı!",
-    "no-step-configuration": "Seçili yapılandırma şu olduğundan kapatıldı:",
-    "no-h-function-key-size": "Anahtar boyutu 256 bit olmadığı için kapatıldı!",
-    "no-h-function-last": "kapatıldı çünkü <span class='math'>ℎ</span>-fonksiyon 5. kelimeyi oluşturmak için kullanılır, ancak son turda sadece 4 kelime üretilir!",
-    "round": "Yuvarlak",
-    "next-step": "Sonraki adım",
-    "skip": "Son tura atla",
-    "next-round": "sonraki tur",
-    "copy": "kopyala",
-    "reset": "Sıfırla",
-    "function": "işlev",
-    "add-words": "kelime ekle",
-    "keys-generated": "yuvarlak anahtarlar hazır",
-    "round-keys": "Yuvarlak Tuşlar",
-    "disabled-input": "Düzenlemeyi etkinleştirmek için 'Sıfırla' düğmesini tıklayın",
-    "disabled-start": "Simülasyonu etkinleştirmek için girişleri doldurun",
-    "tutorial": {
-      "title": "Öğretici",
-      "default": {
-        "description": "İlgili bilgileri burada görmek için gördüğünüz {tutorialIcon} öğesini tıklayın."
-      },
-      "sandbox": {
-        "button": "Kum havuzu",
-        "title": "Kum havuzu",
-        "close": "Kapalı"
-      },
-      "read-more": "Devamını oku",
-      "plaintext-to-state": {
-        "body": "İlk adım, şifreleme işlemi boyunca üzerinde çalışacak durum matrisini oluşturmaktır. ",
-        "learn-more": {
-          "matrices": "Matris Aktarımı"
-        }
-      },
-      "ciphertext-to-state": {
-        "body": "İlk adım, şifre çözme işlemi boyunca üzerinde çalışacak olan durum matrisini oluşturmaktır. ",
-        "learn-more": {
-          "matrices": "Matris Aktarımı"
-        }
-      },
-      "key-to-state": {
-        "body": "İlk adım, anahtar genişletme işlemi boyunca eklenecek durum vektörünü oluşturmaktır.  <span class='highlight'>AES anahtar programı, her anahtar boyutunda biraz değişir</span>, ancak her zaman kelime odaklıdır."
-      },
-      "add-key": {
-        "body": "Anahtar, durum matrisi ile XORlanır.  <i>anahtar beyazlatma</i>."
-      },
-      "add-round-key": {
-        "body": "Yuvarlak anahtar, durum matrisi ile XORlanır.  <i>Anahtar Genişletme</i> sekmesine tıklayarak bu yuvarlak tuşların nasıl oluşturulduğunu öğrenin.  <b>şifreleme</b>, yuvarlak tuşlar oluşturuldukları sırayla kullanılır.  <b>şifre çözme</b>, yuvarlak tuşlar <b>zıt</b> emir."
-      },
-      "add-words": {
-        "body": "Turdan sonra ilk kelime son kelime ile XORlanır. <span class='math'>𝑔</span>-işlev üzerinde çağrıldı.  <b>256 bit</b> kilit program Round'u çağırır <span class='math'>ℎ</span>-normal olarak devam etmeden önce turda oluşturulan 4. kelimede işlev.",
-        "note": "bu <span class='math'>𝑔</span>-işlev ve <span class='math'>ℎ</span>-fonksiyon hesaplamaları aşağıdaki yuvarlak adımlarda özetlenmiştir."
-      },
-      "round-g-fn": {
-        "body": "bu <span class='math'>𝑔</span>-işlev, giriş kelimesinin baytları üzerinde bir dizi işlemden oluşur: Baytları Değiştir, Satırları Kaydır (shift = 1) ve ilk bayt, <i>yuvarlak sabit</i>. ",
-        "learn-more": {
-          "rcon": "AES Yuvarlak Sabitlerini Hesaplama"
-        }
-      },
-      "round-h-fn": {
-        "body": "bu <span class='math'>ℎ</span>-işlev, giriş kelimesinin baytlarında bir Yedek Bayttan oluşur. "
-      },
-      "round-keys": {
-        "body": "Bu alt anahtarlar, şifreleme sırasında gösterilen sırada alınır.  <b>şifre çözme</b>, ters sırada kullanılırlar."
-      },
-      "rounds-header": {
-        "body": "AES, turlar halinde durum matrisinde çalışır.  <span class='highlight'>Karışık Sütunları içermeyen son tur hariç</span>.  <b>şifre çözme</b>, adımlar içinde yürütülür <b>zıt</b> sipariş ve Karma Sütunlar ilk tura dahil değildir."
-      },
-      "key-rounds-header": {
-        "body": "AES'in her turunda bir alt anahtara ve anahtar beyazlatma için 1'e ihtiyaç vardır. ",
-        "aes-a": " AES Adventure, her turu Kelime Ekle, Yuvarlak olarak ayırır <span class='math'>𝑔</span>-fonksiyon ve Yuvarlak <span class='math'>ℎ</span>-fonksiyon adımları.  <b>256 bit</b> anahtar program Turu kullanır <span class='math'>ℎ</span>-son tur hariç her turda işlev adımı.",
-        "note": "Her tur, 128 bitlik bir anahtar boyutu için 1 alt anahtar, 192 bit için 1,5 alt anahtar ve 256 bit için 2 alt anahtar üretir, ancak son tur, üç anahtar boyutunun tümü için 1 alt anahtar üretir."
-      },
-      "rounds-stats": {
-        "diffusion": "<b>Difüzyon</b> tek bir düz metin bitinin (mevcut) şifreli metin üzerindeki etkisidir.  <i>çığ</i> etki. <br />Satırları Kaydır ve Sütunları Karıştır topluca <i>difüzyon tabakası</i> çünkü bunlar AES'deki başlıca yayılma adımlarıdır.",
-        "confusion": "<b>Bilinç bulanıklığı, konfüzyon</b> (mevcut) şifreli metin ile anahtar arasındaki ilişkidir. <br />Yedek Baytlar, AES'de kafa karışıklığına neden olur.",
-        "learn-more": {
-          "conf-diff": "Bilinç bulanıklığı, konfüzyon",
-          "avalanche": "Çığ Etkisi"
-        }
-      },
-      "sub-bytes": {
-        "body": "Yedek Bayt, her durum matrisi baytını, AES'de doğrusal olmama (analitik saldırılara karşı koruma) sağlayan, ikame kutusundaki bir baytla değiştirir.  <b>şifre çözme</b>, benzersiz kullanıyoruz <b>ters</b> değiştirme kutusundan.",
-        "learn-more": {
-          "bijective": "Bijektif Fonksiyonlar",
-          "sbox": "AES'in Değiştirme Kutusunu Hesaplama"
-        }
-      },
-      "shift-rows": {
-        "body": "Satırları Kaydır, durum matrisinin her satırında bayt bazında bir döngüsel kaydırma gerçekleştirir.  <b>şifre çözme</b>, vardiya <b>zıt</b> yön. "
-      },
-      "mix-columns": {
-        "body": "Karışık Sütunlar, elde edilen durum matrisinin karşılık gelen sütununu üretmek için durum matrisinin her bir sütun vektörünü bir sabitler matrisi ile çarpar.  <b>şifre çözme</b>, benzersiz kullanıyoruz <b>ters</b> sabit matrisin.",
-        "learn-more": {
-          "matrix-multiplication": "Matris Çarpımı",
-          "matrix-inversion": "Matris Tersleri",
-          "gf": "Galois Tarlaları",
-          "gf-arithmetic": "aritmetik <span class='math'>𝐺𝐹(2 ̂ 8)</span>"
-        }
-      },
-      "state-to-ciphertext": {
-        "body": "Son adım, şifreleme işleminin çıktısı olan şifreli metni oluşturmaktır. ",
-        "learn-more": {
-          "matrices": "Matris Aktarımı"
-        }
-      },
-      "state-to-plaintext": {
-        "body": "Son adım, şifre çözme işleminin çıktısı olan düz metni oluşturmaktır. ",
-        "learn-more": {
-          "matrices": "Matris Aktarımı"
-        }
-      },
-      "state-to-round-keys": {
-        "body": "Son adım, anahtar genişletme işleminin çıktısı olan yuvarlak anahtarları oluşturmaktır. "
-      }
-    },
-    "hexArea": {
-      "nibblesLeft": "lokmalar kaldı.",
-      "ready": "Hazır!",
-      "copied": "Panoya kopyalandı.",
-      "duplicated-keys": "Tüm tuş girişlerine kopyalandı.",
-      "duplicated-plaintext": "Girişi şifrelemek için kopyalandı.",
-      "duplicated-ciphertext": "Girdinin şifresini çözmek için kopyalandı.",
-      "go": "Gitmek"
-    }
-  }
 }

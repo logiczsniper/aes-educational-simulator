@@ -1,275 +1,285 @@
 {
-  "title": "Seikkailu",
-  "infographic": "Lataa infografiikka",
-  "edit": "Muokata",
-  "seo": {
-    "encrypt": "Salaa",
-    "decrypt": "Pura salaus",
-    "expand": "Laajenna avain",
-    "encrypt-description": "Opi kuinka AES-salaus toimii AES Adventuren vaiheittaisella simulaattorilla. ",
-    "decrypt-description": "Opi kuinka AES-salauksen purku toimii AES Adventuren vaiheittaisella simulaattorilla. ",
-    "expand-description": "Opi kuinka AES-avaimen laajennus toimii AES Adventuren vaiheittaisella simulaattorilla. ",
-    "feedback": "Palaute",
-    "feedback-description": "Anna arvokasta palautetta AES Adventuren tekijöille, jotta voimme parantaa käyttökokemusta kaikille.",
-    "guide": "Opas",
-    "guide-description": "Opi saamaan kaikki irti AES Adventuresta.",
-    "home-description": "Tervetuloa AES Adventureen, intuitiiviseen AES-opetustyökaluun. ",
-    "preferences": "asetukset",
-    "preferences-description": "Muuta miltä AES Adventure näyttää tarpeidesi mukaan."
-  },
-  "error": {
-    "mistake": "Jotain meni pieleen...",
-    "back": "Mene takaisin"
-  },
-  "home": {
-    "description": "Advanced Encryption Standard on suosituin symmetrisen avaimen salaus. ",
-    "go": "Siirry Simulaattoriin",
-    "preferences": {
-      "title": "asetukset",
-      "badLang": "Onko kielesi käännetty huonosti tai ei ole saatavilla?"
+    "welcome_header": "Hei maailma!",
+    "title": "Seikkailu",
+    "infographic": "Lataa infografiikka",
+    "edit": "Muokata",
+    "seo": {
+        "encrypt": "Salaa",
+        "decrypt": "Pura salaus",
+        "expand": "Laajenna avain",
+        "encrypt-description": "Opi kuinka AES-salaus toimii AES Adventuren vaiheittaisella simulaattorilla. Tukee kaikkia kolmea avainkokoa ja sisältää opetusohjelmia, jotka auttavat ohjaamaan oppimistasi!",
+        "decrypt-description": "Opi kuinka AES-salauksen purku toimii AES Adventuren vaiheittaisella simulaattorilla. Tukee kaikkia kolmea avainkokoa ja sisältää opetusohjelmia, jotka auttavat ohjaamaan oppimistasi!",
+        "expand-description": "Opi kuinka AES-avaimen laajennus toimii AES Adventuren vaiheittaisella simulaattorilla. Tukee kaikkia kolmea avainkokoa ja sisältää opetusohjelmia, jotka auttavat ohjaamaan oppimistasi!",
+        "feedback": "Palaute",
+        "feedback-description": "Anna arvokasta palautetta AES Adventuren tekijöille, jotta voimme parantaa käyttökokemusta kaikille.",
+        "guide": "Opas",
+        "guide-description": "Opi saamaan kaikki irti AES Adventuresta.",
+        "home-description": "Tervetuloa AES Adventureen, intuitiiviseen AES-opetustyökaluun. Syötä omat tietosi ja käy läpi vaiheittainen salaus, salauksen purku ja avaimen laajennus kaikissa kolmessa avainkokossa.",
+        "preferences": "Asetukset",
+        "preferences-description": "Muuta miltä AES Adventure näyttää tarpeidesi mukaan."
     },
-    "guide": {
-      "title": "Opas",
-      "table-of-contents": "Sisällysluettelo",
-      "intro": {
-        "header": "Johdanto",
-        "body": "Advanced Encryption Standard on a <i>symmetrinen lohko</i> salaus, mikä tarkoittaa, että se salaa/purkaa kiinteäkokoiset lohkot vain yhdellä avaimella.  <b>Huomautus:</b> kaikki AES Adventuren tiedot esitetään heksadesimaalimuodossa; "
-      },
-      "features": {
-        "header": "ominaisuudet",
-        "animations": {
-          "header": "Animaatiot",
-          "body": "Kaikki simulaattorit käyttävät animaatioita prosessin jokaisen vaiheen näyttämiseen selkeästi. "
+    "error": {
+        "mistake": "Jotain meni pieleen...",
+        "back": "Mene takaisin"
+    },
+    "home": {
+        "description": "Advanced Encryption Standard on suosituin symmetrisen avaimen salaus. Jos haluat oppia perusasiat, syvenny yksityiskohtiin tai kokeile AES:ää: olet oikeassa paikassa!",
+        "go": "Siirry Simulaattoriin",
+        "guide": {
+            "title": "Opas",
+            "table-of-contents": "Sisällysluettelo",
+            "intro": {
+                "header": "Johdanto",
+                "body": "Advanced Encryption Standard on <i> symmetrinen lohko </i> -salaus, mikä tarkoittaa, että se salaa/purkaa kiinteäkokoiset lohkot vain yhdellä avaimella. AES Adventure jakaa AES:n kolmeen pääprosessiin: salaukseen, salauksen purkamiseen ja avaimen laajentamiseen. Avaimen laajennus on aliavaimien johtamista syöttöavaimesta – näitä aliavaimia käytetään sekä salauksessa että salauksen purkamisessa. Jokaisessa näistä monimutkaisista AES:n osista on AES Adventure -simulaattori, joka opastaa sinut läpi, kuinka AES toimii syötteelläsi. AES Adventure tukee kaikkia kolmea AES:n käyttämää avainkokoa: 128, 192 ja 256 bittiä. <b> Huomautus: </b> kaikki AES Adventuren tiedot esitetään heksadesimaalimuodossa; 1 heksadesimaaliluku on 4 bittiä = 1 nibble = 0,5 tavua."
+            },
+            "features": {
+                "header": "ominaisuudet",
+                "animations": {
+                    "header": "Animaatiot",
+                    "body": "Kaikki simulaattorit käyttävät animaatioita prosessin jokaisen vaiheen näyttämiseen selkeästi. Nämä animaatiot tukevat toistoa, taukoa ja hakutoimintoja. Kaikkien animaatioiden toistonopeus voidaan kaksinkertaistaa tai puolittaa käyttämällä kani- ja kilpikonnakuvakkeita. Jokaisessa vaiheessa on painike, jolla siirryt seuraavaan vaiheeseen – jos opettelet vaihetta, on suositeltavaa, että et siirry eteenpäin ennen kuin painike on korostettu (mikä tapahtuu yleensä animaation lopussa)."
+                },
+                "tutorials": {
+                    "header": "Oppaat",
+                    "body": "Kaikissa simulaattoreissa on Tutorial-kuvakkeet hajallaan. Saadaksesi tekstillisen selityksen kuvakkeen viereisestä, napsauta opetusohjelman kuvaketta laajentaaksesi simulaattorin sivupalkkia ja paljastaaksesi vastaavan opetusohjelman. Sivupalkki palautuu automaattisesti alkuperäiseen kokoon napsauttamalla samaa opetusohjelman kuvaketta tai siirtymällä seuraavaan vaiheeseen. Vaihtoehtoisesti sivupalkin leveyttä voidaan säätää manuaalisesti käyttämällä oikeassa alakulmassa olevaa vetokahvaa."
+                },
+                "configuration": {
+                    "header": "Kokoonpano",
+                    "body": "Salaus- ja salauksenpurkusimulaattorit tukevat rajoitettua määrää kokoonpanoja, joita edistyneemmät käyttäjät voivat käyttää AES-kokeilussa. Nämä asetukset löytyvät tämän sivun vasemmalla puolella olevasta <i> Configure </i> -modaalista. <b> Huomautus: </b> määrityksen muuttaminen nollaa salaus- ja salauksenpurkusimulaattorit."
+                },
+                "persistence": {
+                    "header": "Paikallinen pysyvyys",
+                    "body": "AES Adventuren koko tila tallennetaan selaimesi <i> paikalliseen tallennustilaan </i> avaimilla, jotka alkavat <span class='code'> 'AES_ADVENTURE_UI__' </span> . Tämä tarkoittaa, että jos suljet AES Adventuren tai poistut siitä, kaikki käynnissä olevat simulaatiot palautetaan täysin, kun palaat. Jos sovellus jostain syystä menee rikki, se voidaan nollata poistamalla sen tiedot <i> paikallisesta tallennustilasta </i> ja päivittämällä sivu."
+                },
+                "duplicate-buttons": {
+                    "header": "Kopioi painikkeet",
+                    "body": "Kun syöttöalue on täynnä, näet 1 tai 2 <i> kopioi </i> -kuvakepainiketta. Ensimmäinen painike on tavallinen kopiointi leikepöydälle -painike. Toisessa on erityinen helppokäyttöisyystoiminto riippuen siitä, minkä tulon alla se on. Salauksen 'Ciphertext'-ulostulossa: kopioi salatun tekstin salauksenpurkusimulaattorin tuloon. Salauksen purkamisen 'Plaintext'-ulostulossa: kopioi selkeän tekstin salaussimulaattorin tuloon. Millä tahansa avainsyötöllä: kopioi avaimen kaikkiin muihin simulaattoreihin - tämä on erityisen hyödyllistä, kun haluat käyttää samaa avainta nopeasti salaukseen, salauksen purkamiseen ja avaimen laajentamiseen. <b> Huomautus: </b> jos kopiointitoiminto muuttaa syöttöä, kohdesimulaattori nollataan, koska tuloja ei voi muuttaa simulaation aikana."
+                },
+                "i18n": {
+                    "header": "Kansainvälistyminen",
+                    "body": "Koko sovelluksen kieltä voidaan muuttaa asetuksissa. Näiden käännösten odotetaan olevan epätäydellisiä; emme palkanneet ammattikääntäjiä tekemään tätä käännöstä. Pian voit pyytää korjausta/korjausta kaikki käännökset tallentaviin kielitiedostoihin."
+                }
+            },
+            "quick-points": {
+                "header": "Viimeiset vinkit",
+                "cant-input": "Syöttötietoja ei voi muuttaa, jos simulaattori parhaillaan käyttää sitä. Paina 'Reset'-painiketta poistuaksesi nykyisestä simulaatiosta ja voit muokata tuloja vielä kerran.",
+                "cant-start": "Simulaattoreita ei voi käynnistää ennen kuin kaikki tarvittavat syöttöalueet on täytetty. Kaikkien syöttöalueiden alla on \"jäljellä olevien napojen\" -laskuri.",
+                "nibble": "1 nibble on tietysti puoli tavua! (Vastaa myös yhtä heksadesimaalilukua)",
+                "small": "AES Adventure on suunniteltu katseltavaksi vähintään <b> 13\" </b> kooltaan näytöiltä. Tämä on pienin kannettavan tietokoneen vakiokoko, jonka odotamme kaikkien käyttäjiemme varustavan. Jos löydät jotain pienempää , käytä selaimen zoomausominaisuuksia ja loitonna. Jos käytät mobiililaitetta, käännä laite vaakasuuntaan saadaksesi mahdollisimman paljon leveyttä."
+            }
         },
-        "tutorials": {
-          "header": "Oppaat",
-          "body": "Kaikissa simulaattoreissa on Tutorial-kuvakkeet hajallaan. "
+        "feedback": {
+            "title": "Palaute",
+            "body": "Tämä on kehitysprojekti ja otamme mielellämme vastaan palautetta työkalusta. Voit täyttää {googleFormLink} -lomakkeen ja antaa meille erittäin arvokasta tietoa – ajatuksiasi! Vaihtoehtoisesti AES Adventuren luojat on lueteltu alla. Lähetä meille sähköpostia, jos sinulla on ongelmia työkalun kanssa.",
+            "button": "Google-lomake"
         },
-        "configuration": {
-          "header": "Kokoonpano",
-          "body": "Salaus- ja salauksenpurkusimulaattorit tukevat rajoitettua määrää kokoonpanoja, joita edistyneemmät käyttäjät voivat käyttää AES-kokeilussa.  <i>Määritä</i> modaali tämän sivun vasemmalla puolella. <b>Huomautus:</b> kokoonpanon muuttaminen nollaa salaus- ja salauksenpurkusimulaattorit."
-        },
-        "persistence": {
-          "header": "Paikallinen pysyvyys",
-          "body": "AES Adventuren koko tila tallennetaan selaimeesi <i>paikallinen varasto</i> avaimilla, jotka alkavat <span class='code'>'AES_ADVENTURE_UI__'</span>.  <i>paikallinen varasto</i> ja päivittää sivua."
-        },
-        "duplicate-buttons": {
-          "header": "Kopioi painikkeet",
-          "body": "Kun syöttöalue on täynnä, näet 1 tai 2 <i>kopio</i> kuvakepainikkeet.  <b>Huomautus:</b> Jos kopiointitoiminto muuttaa syöttöä, kohdesimulaattori nollataan, koska tuloja ei voi muuttaa simulaation puolivälissä."
-        },
-        "i18n": {
-          "header": "Kansainvälistyminen",
-          "body": "Koko sovelluksen kieli voidaan vaihtaa \"Asetukset\"-kohdassa. "
+        "gitlab": "GitLab",
+        "preferences": {
+            "title": "Asetukset",
+            "badLang": "Onko kielesi käännetty huonosti tai ei ole saatavilla?"
         }
-      },
-      "quick-points": {
-        "header": "Viimeiset vinkit",
-        "cant-input": "Syöttötietoja ei voi muuttaa, jos simulaattori parhaillaan käyttää sitä. ",
-        "cant-start": "Simulaattoreita ei voi käynnistää ennen kuin kaikki tarvittavat syöttöalueet on täytetty. ",
-        "nibble": "1 nibble on tietysti puoli tavua! ",
-        "small": "AES Adventure on suunniteltu katsottavaksi vähintään näytöiltä <b>13\"</b> kooltaan. "
-      }
     },
-    "feedback": {
-      "title": "Palaute",
-      "body": "Tämä on kehitysprojekti ja otamme mielellämme vastaan ​​palautetta työkalusta. ",
-      "button": "Google-lomake"
-    },
-    "gitlab": "GitLab"
-  },
-  "configure": {
-    "button": "Määritä",
-    "modal": {
-      "title": "Määritä",
-      "body": "Valitse kokoonpano alta.  <b>Huomautus:</b> kokoonpanon muuttaminen nollaa salaus- ja salauksenpurkusimulaattorit.",
-      "defaults": {
-        "standard": {
-          "name": "Vakio",
-          "description": "Vanilja."
-        },
-        "short": {
-          "name": "Lyhyt",
-          "description": "Puolet kierrosten määrästä."
-        },
-        "long": {
-          "name": "Pitkä",
-          "description": "Tuplaa kierrosten määrä."
-        },
-        "staticColumns": {
-          "name": "Staattiset sarakkeet",
-          "description": "Ei MixColumns-tasoja."
-        },
-        "staticRows": {
-          "name": "Staattiset rivit",
-          "description": "Ei ShiftRows-tasoja."
-        },
-        "staticBytes": {
-          "name": "Staattiset tavut",
-          "description": "Ei SubstituteBytes-tasoja."
+    "configure": {
+        "button": "Määritä",
+        "modal": {
+            "title": "Määritä",
+            "body": "Valitse kokoonpano alta. Jos olet uusi AES-käyttäjä, suosittelemme, että käytät oletussimulaattoria ennen tämän kokoonpanon käyttämistä. <b> Huomautus: </b> määrityksen muuttaminen nollaa salaus- ja salauksenpurkusimulaattorit.",
+            "defaults": {
+                "standard": {
+                    "name": "Vakio",
+                    "description": "Vanilja."
+                },
+                "short": {
+                    "name": "Lyhyt",
+                    "description": "Puolet kierrosten määrästä."
+                },
+                "long": {
+                    "name": "Pitkä",
+                    "description": "Tuplaa kierrosten määrä."
+                },
+                "staticColumns": {
+                    "name": "Staattiset sarakkeet",
+                    "description": "Ei MixColumns-tasoja."
+                },
+                "staticRows": {
+                    "name": "Staattiset rivit",
+                    "description": "Ei ShiftRows-tasoja."
+                },
+                "staticBytes": {
+                    "name": "Staattiset tavut",
+                    "description": "Ei SubstituteBytes-tasoja."
+                }
+            },
+            "close": "kiinni"
         }
-      },
-      "close": "kiinni"
+    },
+    "simulator": {
+        "hide": "Piilottaa",
+        "show": "Näytä",
+        "quit": "Lopettaa",
+        "configurations": "Kokoonpanot",
+        "configuration": "Kokoonpano",
+        "encrypt": "Salaa",
+        "decrypt": "Pura salaus",
+        "key-expansion": "Avaimen laajennus",
+        "plaintext": "Selkeä teksti",
+        "ciphertext": "Salateksti",
+        "key": "Avain",
+        "sbox": "Korvauslaatikko",
+        "constant-matrix": "Jatkuva Matrix",
+        "substitute-step": "Korvaava",
+        "shift-step": "Siirtää",
+        "rcon": "Pyöreä vakio",
+        "inverse": "Käänteinen",
+        "state": "Osavaltio",
+        "input": "Syöte",
+        "output": "Lähtö",
+        "add-key": "Lisää avain",
+        "confusion": "Hämmennys",
+        "diffusion": "Diffuusio",
+        "substitute-bytes": "Korvaavat tavut",
+        "shift-rows": "Vaihda rivit",
+        "mix-columns": "Sekoita sarakkeet",
+        "add-round-key": "Lisää pyöreä avain",
+        "encryption": "salaus",
+        "decryption": "salauksen purku",
+        "expansion": "laajennus",
+        "start": "alkaa",
+        "finish": "Suorittaa loppuun",
+        "start-rounds": "Aloita kierrokset",
+        "finish-rounds": "Lopeta kierrokset",
+        "no-mix-columns-last": "Pois päältä, koska Mix Columns ohitetaan viimeisellä kierroksella!",
+        "no-mix-columns-first": "Pois päältä, koska Mix Columns ohitetaan ensimmäisellä kierroksella!",
+        "no-step-configuration": "Poistettu käytöstä, koska valittu kokoonpano on",
+        "no-h-function-key-size": "Pois päältä, koska avaimen koko ei ole 256 bittiä!",
+        "no-h-function-last": "Pois päältä, koska <span class='math'> ℎ </span> -funktiota käytetään viidennen sanan luomiseen, mutta vain 4 sanaa luodaan viimeisellä kierroksella!",
+        "round": "Pyöristää",
+        "next-step": "Seuraava askel",
+        "skip": "Siirry viimeiseen kierrokseen",
+        "next-round": "Seuraava kierros",
+        "copy": "Kopio",
+        "reset": "Nollaa",
+        "function": "toiminto",
+        "add-words": "Lisää sanoja",
+        "keys-generated": "pyöreät avaimet valmiina",
+        "round-keys": "Pyöreät avaimet",
+        "disabled-input": "Ota muokkaus käyttöön napsauttamalla Palauta-painiketta",
+        "disabled-start": "Täytä syötteet ottaaksesi simuloinnin käyttöön",
+        "tutorial": {
+            "title": "Opetusohjelma",
+            "default": {
+                "description": "Napsauta näkemääsi {tutorialIcon} nähdäksesi asiaankuuluvat tiedot täällä."
+            },
+            "sandbox": {
+                "button": "Hiekkalaatikko",
+                "title": "Hiekkalaatikko",
+                "close": "kiinni"
+            },
+            "read-more": "Lue lisää",
+            "plaintext-to-state": {
+                "body": "Ensimmäinen askel on luoda tilamatriisi, jota käytetään koko salausprosessin ajan. Selkeä teksti järjestetään 4x4 tavumatriisiksi ja sitten tämä matriisi transponoidaan.",
+                "learn-more": {
+                    "matrices": "Matriisitransponointi"
+                }
+            },
+            "ciphertext-to-state": {
+                "body": "Ensimmäinen askel on luoda tilamatriisi, jota käytetään koko salauksenpurkuprosessin ajan. Salateksti järjestetään 4x4 tavumatriisiksi ja sitten tämä matriisi transponoidaan.",
+                "learn-more": {
+                    "matrices": "Matriisitransponointi"
+                }
+            },
+            "key-to-state": {
+                "body": "Ensimmäinen vaihe on luoda tilavektori, joka liitetään koko avaimen laajennusprosessin aikana. Avain on järjestetty sanavektoriksi, jossa 1 sana on 4 tavua. <span class='highlight'> AES-näppäinaikataulu muuttuu hieman jokaisen avaimen koon mukaan </span> , mutta se on aina sanasuuntautunut."
+            },
+            "add-key": {
+                "body": "Avain on XORed tilamatriisin kanssa. Huomaa, että avain on myös järjestetty 4x4 tavumatriisiin ja transponoitu, aivan kuten syöte. Tätä kutsutaan myös <i> näppäinvalkaisuksi </i> ."
+            },
+            "add-round-key": {
+                "body": "Pyöreä avain on XOR-korjattu tilamatriisin kanssa. Huomaa, että pyöreä avain on myös järjestetty 4x4 tavumatriisiksi ja transponoitu. Siirry <i> Avaimen laajennus </i> -välilehteen saadaksesi lisätietoja näiden pyöreiden avainten luomisesta. <b> salauksen </b> aikana pyöreitä avaimia käytetään niiden luomisjärjestyksessä. <b> salauksen purkamisen </b> aikana pyöreitä avaimia käytetään <b> päinvastaisessa </b> järjestyksessä."
+            },
+            "add-words": {
+                "body": "Ensimmäinen sana XORedetaan viimeisellä sanalla sen jälkeen, kun siihen on kutsuttu Round <span class='math'> 𝑔 </span> -funktio. Sieltä jokainen sana XOR-korjataan aiemmin lasketulla sanalla uuden sanan luomiseksi, joka sitten liitetään tilavektoriin. <b> 256-bittinen </b> -avainaikataulu kutsuu kierroksen <span class='math'> ℎ </span> -funktion kierroksen neljännellä sanalla, ennen kuin jatkaa normaalisti.",
+                "note": "<span class='math'> 𝑔 </span> -funktion ja <span class='math'> ℎ </span> -funktion laskelmat on kuvattu seuraavissa kierrosvaiheissa."
+            },
+            "round-g-fn": {
+                "body": "<span class='math'> 𝑔 </span> -funktio koostuu sarjasta syöttösanan tavuille suoritettavia operaatioita: Korvaatavuja, Vaihtorivejä (shift = 1), ja ensimmäinen tavu XOR-koodilla <i> pyöreä vakio </i> . Tavut ketjutetaan sitten tulossanan muodostamiseksi.",
+                "learn-more": {
+                    "rcon": "AES:n pyöreän vakioiden laskeminen"
+                }
+            },
+            "round-h-fn": {
+                "body": "<span class='math'> ℎ </span> -funktio koostuu Korvaustavuista syöttösanan tavuissa. Tavut ketjutetaan sitten tulossanan muodostamiseksi."
+            },
+            "round-keys": {
+                "body": "Nämä aliavaimet otetaan salauksen aikana näytetyssä järjestyksessä. <b> salauksen purkamisen </b> aikana niitä käytetään päinvastaisessa järjestyksessä."
+            },
+            "rounds-header": {
+                "body": "AES toimii tilamatriisissa kierroksittain. 10 kierrosta 128 bitin avaimelle, 12 kierrosta 192 bitille ja 14 kierrosta 256 bitille. Jokainen kierros koostuu vaiheista Korvaatavuja, Vaihtorivejä, Sekoita sarakkeita, Lisää kierrosavain; <span class='highlight'> paitsi viimeinen kierros, joka ei sisällä Mix Columneja </span> . <b> Salauksen purkamisen </b> aikana vaiheet suoritetaan <b> päinvastaisessa </b> järjestyksessä, eikä Mix Columns -sarakkeita sisällytetä ensimmäiseen kierrokseen."
+            },
+            "key-rounds-header": {
+                "body": "Jokainen AES-kierros tarvitsee aliavaimen sekä yhden avaimen valkaisuun. 11 aliavainta 128-bittiselle avaimelle, 13 192-bittiselle avaimelle ja 15 256-bittiselle avaimelle. Jokainen kierros käyttää edellisen kierroksen tulosta uusien sanojen johtamiseksi.",
+                "aes-a": "AES Adventure jakaa jokaisen kierroksen lisäsanojen, kierroksen <span class='math'> 𝑔 </span> -funktioon ja kierroksen <span class='math'> ℎ </span> -funktioon. Vain <b> 256-bittinen </b> -näppäinaikataulu käyttää kierroksen <span class='math'> ℎ </span> -funktion vaihetta jokaisella kierroksella, paitsi viimeisellä kierroksella.",
+                "note": "Jokainen kierros tuottaa 1 aliavaimen 128-bittiselle avaimelle, 1,5 aliavainta 192-bittiselle ja 2 aliavainta 256-bitille, paitsi viimeinen kierros, joka tuottaa yhden aliavaimen kaikille kolmelle avainkoolle."
+            },
+            "rounds-stats": {
+                "diffusion": "<b> Diffuusio </b> on yhden tavallisen tekstibitin vaikutus (nykyiseen) salatekstiin. Mittari esitetään AES Adventuressa <i> lumivyöry </i> -efektillä. Tämä lasketaan seuraavasti: käännä jokaiselle selväkielibitille se ja laske (nykyinen) salateksti muokatun puhtaan tekstin kanssa. Laske sitten (nykyisessä) salatekstissä käännettyjen bittien määrä: metriikka on kaikkien selvätekstimuunnelmien välillä käännettyjen bittien keskimäärä. <br /> Siirtorivejä ja sekoitussarakkeita voidaan kutsua yhteisesti <i> diffuusiokerrokseksi </i> , koska ne ovat AES:n tärkeimmät diffuusiovaiheet.",
+                "confusion": "<b> Sekaannus </b> on (nykyisen) salatekstin ja avaimen välinen suhde. Mittari esitetään AES Adventuressa (nykyisen) salatekstin ja avaimen, jossa kaikki 0:t on kohdistettu -1:ksi, välinen assosiaatiomitta. <br /> Korvaavat tavut aiheuttavat sekaannusta AES:ssä.",
+                "learn-more": {
+                    "conf-diff": "Hämmennys & diffuusio",
+                    "avalanche": "Lumivyörysymys"
+                }
+            },
+            "sub-bytes": {
+                "body": "Korvaavat tavut korvaavat jokaisen tilamatriisitavun korvauslaatikon tavulla, mikä tarjoaa epälineaarisuuden AES:ssä (suojaus analyyttisiä hyökkäyksiä vastaan). Se on bijektiivinen kartoitus; <b> salauksen purkamisen </b> aikana käytämme korvauslaatikon ainutlaatuista <b> käänteistä </b> .",
+                "learn-more": {
+                    "bijective": "Bijektiiviset funktiot",
+                    "sbox": "AES:n korvauslaatikon laskeminen"
+                }
+            },
+            "shift-rows": {
+                "body": "Shift Rows suorittaa tavukohtaisen syklisen siirron tilamatriisin jokaisella rivillä. <b> salauksen purkamisen </b> aikana siirto tapahtuu <b> vastakkaiseen </b> suuntaan. Molemmissa tapauksissa ensimmäisen rivin siirto on 0, mikä tarkoittaa, että se ei vaikuta koskaan ensimmäiseen riviin."
+            },
+            "mix-columns": {
+                "body": "Mix Columns kertoo kunkin tilamatriisin sarakevektorin vakiomatriisilla tuottaakseen vastaavan sarakkeen tuloksena olevasta tilamatriisista. Vakiomatriisi on käännettävä; <b> salauksen purkamisen </b> aikana käytämme vakiomatriisin ainutlaatuista <b> käänteistä </b> .",
+                "learn-more": {
+                    "matrix-multiplication": "Matriisin kertolasku",
+                    "matrix-inversion": "Matriisin käänteiset",
+                    "gf": "Galois Fields",
+                    "gf-arithmetic": "Aritmetiikka kielellä <span class='math'> 𝐺𝐹(2 ̂ 8) </span>"
+                }
+            },
+            "state-to-ciphertext": {
+                "body": "Viimeinen vaihe on luoda salateksti, joka on salausprosessin tulos. Tilamatriisi transponoidaan ja sitten jokainen merkintä ketjutetaan.",
+                "learn-more": {
+                    "matrices": "Matriisitransponointi"
+                }
+            },
+            "state-to-plaintext": {
+                "body": "Viimeinen vaihe on luoda selkeä teksti, joka on salauksenpurkuprosessin tulos. Tilamatriisi transponoidaan ja sitten jokainen merkintä ketjutetaan.",
+                "learn-more": {
+                    "matrices": "Matriisitransponointi"
+                }
+            },
+            "state-to-round-keys": {
+                "body": "Viimeinen vaihe on luoda pyöreät avaimet, jotka ovat avaimen laajennusprosessin tulos. Tilavektorisanat otetaan 4 kerrallaan ja sitten kukin ryhmä ketjutetaan muodostamaan aliavain."
+            }
+        },
+        "hexArea": {
+            "nibblesLeft": "nappuloita jäljellä.",
+            "ready": "Valmis!",
+            "copied": "Kopioitu leikepöydälle.",
+            "duplicated-keys": "Kopioitu kaikkiin avainsyötteisiin.",
+            "duplicated-plaintext": "Kopioitu syötteen salaamiseksi.",
+            "duplicated-ciphertext": "Kopioitu syötteen salauksen purkamiseksi.",
+            "go": "Mennä",
+            "copy-tooltip": "Kopioi leikepöydälle",
+            "fill-tooltip": "Täytä satunnaisella syötteellä",
+            "duplicate-keys-tooltip": "Kopioi kaikkiin avainsyötteisiin",
+            "duplicate-plaintext-tooltip": "Kopioi syötteen salaamiseksi",
+            "duplicate-ciphertext-tooltip": "Kopioi syötteen salauksen purkamiseksi"
+        },
+        "layer-off": "Taso on <b> pois päältä </b> . Lopeta ja ota se käyttöön määrittämällä se.",
+        "layer-on": "Taso on <b> päällä </b> . Lopeta ja määritä se sammuttamaan se.",
+        "view-stats": "Näytä tilastot",
+        "skip-full": "Siirry ulostuloon"
     }
-  },
-  "simulator": {
-    "hide": "Piilottaa",
-    "show": "Näytä",
-    "quit": "Lopettaa",
-    "configurations": "Kokoonpanot",
-    "configuration": "Kokoonpano",
-    "encrypt": "Salaa",
-    "decrypt": "Pura salaus",
-    "key-expansion": "Avaimen laajennus",
-    "plaintext": "Selkeä teksti",
-    "ciphertext": "Salateksti",
-    "key": "Avain",
-    "sbox": "Korvauslaatikko",
-    "constant-matrix": "Jatkuva Matrix",
-    "substitute-step": "Korvaava",
-    "shift-step": "Siirtää",
-    "rcon": "Pyöreä vakio",
-    "inverse": "Käänteinen",
-    "state": "Osavaltio",
-    "input": "Syöte",
-    "output": "Lähtö",
-    "add-key": "Lisää avain",
-    "confusion": "Hämmennys",
-    "diffusion": "Diffuusio",
-    "substitute-bytes": "Korvaavat tavut",
-    "shift-rows": "Vaihda rivit",
-    "mix-columns": "Sekoita sarakkeet",
-    "add-round-key": "Lisää pyöreä avain",
-    "encryption": "salaus",
-    "decryption": "salauksen purku",
-    "expansion": "laajennus",
-    "start": "alkaa",
-    "finish": "Suorittaa loppuun",
-    "start-rounds": "Aloita kierrokset",
-    "finish-rounds": "Lopeta kierrokset",
-    "no-mix-columns-last": "Pois päältä, koska Mix Columns ohitetaan viimeisellä kierroksella!",
-    "no-mix-columns-first": "Pois päältä, koska Mix Columns ohitetaan ensimmäisellä kierroksella!",
-    "no-step-configuration": "Poistettu käytöstä, koska valittu kokoonpano on",
-    "no-h-function-key-size": "Pois päältä, koska avaimen koko ei ole 256 bittiä!",
-    "no-h-function-last": "Pois päältä, koska <span class='math'>ℎ</span>-funktiota käytetään luomaan 5. sana, mutta vain 4 sanaa luodaan viimeisellä kierroksella!",
-    "round": "Pyöristää",
-    "next-step": "Seuraava askel",
-    "skip": "Siirry viimeiseen kierrokseen",
-    "next-round": "Seuraava kierros",
-    "copy": "Kopio",
-    "reset": "Nollaa",
-    "function": "toiminto",
-    "add-words": "Lisää sanoja",
-    "keys-generated": "pyöreät avaimet valmiina",
-    "round-keys": "Pyöreät avaimet",
-    "disabled-input": "Ota muokkaus käyttöön napsauttamalla Palauta-painiketta",
-    "disabled-start": "Täytä syötteet ottaaksesi simuloinnin käyttöön",
-    "tutorial": {
-      "title": "Opetusohjelma",
-      "default": {
-        "description": "Napsauta näkemääsi {tutorialIcon} nähdäksesi asiaankuuluvat tiedot täällä."
-      },
-      "sandbox": {
-        "button": "Hiekkalaatikko",
-        "title": "Hiekkalaatikko",
-        "close": "kiinni"
-      },
-      "read-more": "Lue lisää",
-      "plaintext-to-state": {
-        "body": "Ensimmäinen askel on luoda tilamatriisi, jota käytetään koko salausprosessin ajan. ",
-        "learn-more": {
-          "matrices": "Matriisitransponointi"
-        }
-      },
-      "ciphertext-to-state": {
-        "body": "Ensimmäinen askel on luoda tilamatriisi, jota käytetään koko salauksenpurkuprosessin ajan. ",
-        "learn-more": {
-          "matrices": "Matriisitransponointi"
-        }
-      },
-      "key-to-state": {
-        "body": "Ensimmäinen vaihe on luoda tilavektori, joka liitetään koko avaimen laajennusprosessin aikana.  <span class='highlight'>AES-näppäinaikataulu muuttuu hieman kunkin avaimen koon mukaan</span>, mutta se on aina sanasuuntautunut."
-      },
-      "add-key": {
-        "body": "Avain on XORed tilamatriisin kanssa.  <i>avainten valkaisu</i>."
-      },
-      "add-round-key": {
-        "body": "Pyöreä avain on XOR-korjattu tilamatriisin kanssa.  <i>Avaimen laajennus</i> -välilehteä oppiaksesi kuinka nämä pyöreät näppäimet luodaan.  <b>salaus</b>, pyöreitä avaimia käytetään niiden luomisjärjestyksessä.  <b>salauksen purku</b>, pyöreitä avaimia käytetään <b>vastapäätä</b> Tilaus."
-      },
-      "add-words": {
-        "body": "Ensimmäinen sana XOR-korjataan viimeisellä sanalla kierroksen jälkeen <span class='math'>𝑔</span>-toiminto on vedetty siihen.  <b>256-bittinen</b> avainaikataulu kutsuu kierroksen <span class='math'>ℎ</span>-funktio kierroksen neljännellä sanalla ennen jatkamista normaalisti.",
-        "note": "The <span class='math'>𝑔</span>-toiminto ja <span class='math'>ℎ</span>-funktiolaskelmat on kuvattu seuraavissa kierrosvaiheissa."
-      },
-      "round-g-fn": {
-        "body": "The <span class='math'>𝑔</span>-funktio koostuu sarjasta syöttösanan tavuille suoritettavia operaatioita: Korvaatavuja, Vaihtorivejä (shift = 1), ja ensimmäinen tavu XOR-korjataan <i>pyöreä vakio</i>. ",
-        "learn-more": {
-          "rcon": "AES:n pyöreän vakioiden laskeminen"
-        }
-      },
-      "round-h-fn": {
-        "body": "The <span class='math'>ℎ</span>-funktio koostuu Korvaustavuista syöttösanan tavuissa. "
-      },
-      "round-keys": {
-        "body": "Nämä aliavaimet otetaan salauksen aikana näytetyssä järjestyksessä.  <b>salauksen purku</b>, niitä käytetään päinvastaisessa järjestyksessä."
-      },
-      "rounds-header": {
-        "body": "AES toimii tilamatriisissa kierroksittain.  <span class='highlight'>paitsi viimeinen kierros, joka ei sisällä Mix Columneja</span>.  <b>salauksen purku</b>, vaiheet suoritetaan kohdassa <b>vastapäätä</b> tilaus ja Mix Columns ei sisälly ensimmäiseen kierrokseen."
-      },
-      "key-rounds-header": {
-        "body": "Jokainen AES-kierros tarvitsee aliavaimen sekä yhden avaimen valkaisuun. ",
-        "aes-a": " AES Adventure jakaa jokaisen kierroksen osiin Add Words, Round <span class='math'>𝑔</span>-funktio ja pyöreä <span class='math'>ℎ</span>-toimintovaiheet.  <b>256-bittinen</b> avainaikataulu käyttää kierrosta <span class='math'>ℎ</span>-toimintoaskel jokaisella kierroksella, paitsi viimeisellä kierroksella.",
-        "note": "Jokainen kierros tuottaa 1 aliavaimen 128-bittiselle avaimelle, 1,5 aliavainta 192-bittiselle ja 2 aliavainta 256-bitille, paitsi viimeinen kierros, joka tuottaa yhden aliavaimen kaikille kolmelle avainkoolle."
-      },
-      "rounds-stats": {
-        "diffusion": "<b>Diffuusio</b> on yhden selkeän tekstin bitin vaikutus (nykyiseen) salatekstiin.  <i>lumivyöry</i> vaikutus. <br />Shift Rivejä ja Sekoitussarakkeita voidaan kutsua yhteisesti nimellä <i>diffuusiokerros</i> koska ne ovat AES:n tärkeimmät leviävät vaiheet.",
-        "confusion": "<b>Hämmennys</b> on (nykyisen) salatekstin ja avaimen välinen suhde. <br />Korvaavat tavut aiheuttavat sekaannusta AES:ssä.",
-        "learn-more": {
-          "conf-diff": "Hämmennys",
-          "avalanche": "Lumivyörysymys"
-        }
-      },
-      "sub-bytes": {
-        "body": "Korvaavat tavut korvaavat jokaisen tilamatriisitavun korvauslaatikon tavulla, mikä tarjoaa epälineaarisuuden AES:ssä (suojaus analyyttisiä hyökkäyksiä vastaan).  <b>salauksen purku</b>, käytämme ainutlaatuista <b>käänteinen</b> vaihtolaatikosta.",
-        "learn-more": {
-          "bijective": "Bijektiiviset funktiot",
-          "sbox": "AES:n korvauslaatikon laskeminen"
-        }
-      },
-      "shift-rows": {
-        "body": "Shift Rows suorittaa tavukohtaisen syklisen siirron tilamatriisin jokaisella rivillä.  <b>salauksen purku</b>, vaihto on <b>vastapäätä</b> suunta. "
-      },
-      "mix-columns": {
-        "body": "Mix Columns kertoo kunkin tilamatriisin sarakevektorin vakiomatriisilla tuottaakseen vastaavan sarakkeen tuloksena olevasta tilamatriisista.  <b>salauksen purku</b>, käytämme ainutlaatuista <b>käänteinen</b> vakiomatriisista.",
-        "learn-more": {
-          "matrix-multiplication": "Matriisin kertolasku",
-          "matrix-inversion": "Matriisin käänteiset",
-          "gf": "Galois Fields",
-          "gf-arithmetic": "Aritmetiikka sisään <span class='math'>𝐺𝐹(2 ̂ 8)</span>"
-        }
-      },
-      "state-to-ciphertext": {
-        "body": "Viimeinen vaihe on luoda salateksti, joka on salausprosessin tulos. ",
-        "learn-more": {
-          "matrices": "Matriisitransponointi"
-        }
-      },
-      "state-to-plaintext": {
-        "body": "Viimeinen vaihe on luoda selkeä teksti, joka on salauksenpurkuprosessin tulos. ",
-        "learn-more": {
-          "matrices": "Matriisitransponointi"
-        }
-      },
-      "state-to-round-keys": {
-        "body": "Viimeinen vaihe on luoda pyöreät avaimet, jotka ovat avaimen laajennusprosessin tulos. "
-      }
-    },
-    "hexArea": {
-      "nibblesLeft": "nappuloita jäljellä.",
-      "ready": "Valmis!",
-      "copied": "Kopioitu leikepöydälle.",
-      "duplicated-keys": "Kopioitu kaikkiin avainsyötteisiin.",
-      "duplicated-plaintext": "Kopioitu syötteen salaamiseksi.",
-      "duplicated-ciphertext": "Kopioitu syötteen salauksen purkamiseksi.",
-      "go": "Mennä"
-    }
-  }
 }

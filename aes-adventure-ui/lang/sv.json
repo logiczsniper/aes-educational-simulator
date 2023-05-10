@@ -1,275 +1,285 @@
 {
-  "title": "Äventyr",
-  "infographic": "Ladda ner infographic",
-  "edit": "Redigera",
-  "seo": {
-    "encrypt": "Kryptera",
-    "decrypt": "Avkryptera",
-    "expand": "Expand Key",
-    "encrypt-description": "Lär dig hur AES-kryptering fungerar med AES Adventures steg-för-steg-simulator. ",
-    "decrypt-description": "Lär dig hur AES-dekryptering fungerar med AES Adventures steg-för-steg-simulator. ",
-    "expand-description": "Lär dig hur AES-nyckelexpansion fungerar med AES Adventures steg-för-steg-simulator. ",
-    "feedback": "Respons",
-    "feedback-description": "Ge din värdefulla feedback till skaparna av AES Adventure så att vi kan förbättra upplevelsen för alla.",
-    "guide": "Guide",
-    "guide-description": "Lär dig hur du får ut det mesta av AES Adventure.",
-    "home-description": "Välkommen till AES Adventure, ett intuitivt AES-utbildningsverktyg. ",
-    "preferences": "inställningar",
-    "preferences-description": "Ändra hur AES Adventure ser ut för att passa dina behov."
-  },
-  "error": {
-    "mistake": "Något gick fel...",
-    "back": "Gå tillbaka"
-  },
-  "home": {
-    "description": "Advanced Encryption Standard är den mest populära symmetriska nyckelchifferet. ",
-    "go": "Gå till Simulator",
-    "preferences": {
-      "title": "inställningar",
-      "badLang": "Är ditt språk dåligt översatt eller otillgängligt?"
+    "welcome_header": "Hej världen!",
+    "title": "Äventyr",
+    "infographic": "Ladda ner infographic",
+    "edit": "Redigera",
+    "seo": {
+        "encrypt": "Kryptera",
+        "decrypt": "Avkryptera",
+        "expand": "Expand Key",
+        "encrypt-description": "Lär dig hur AES-kryptering fungerar med AES Adventures steg-för-steg-simulator. Stöder alla tre nyckelstorlekar och har handledningar som hjälper dig att lära dig!",
+        "decrypt-description": "Lär dig hur AES-dekryptering fungerar med AES Adventures steg-för-steg-simulator. Stöder alla tre nyckelstorlekar och har handledningar som hjälper dig att lära dig!",
+        "expand-description": "Lär dig hur AES-nyckelexpansion fungerar med AES Adventures steg-för-steg-simulator. Stöder alla tre nyckelstorlekar och har handledningar som hjälper dig att lära dig!",
+        "feedback": "Respons",
+        "feedback-description": "Ge din värdefulla feedback till skaparna av AES Adventure så att vi kan förbättra upplevelsen för alla.",
+        "guide": "Guide",
+        "guide-description": "Lär dig hur du får ut det mesta av AES Adventure.",
+        "home-description": "Välkommen till AES Adventure, ett intuitivt AES-utbildningsverktyg. Mata in dina egna data och gå igenom steg-för-steg kryptering, dekryptering och nyckelexpansion av alla tre nyckelstorlekarna.",
+        "preferences": "Inställningar",
+        "preferences-description": "Ändra hur AES Adventure ser ut för att passa dina behov."
     },
-    "guide": {
-      "title": "Guide",
-      "table-of-contents": "Innehållsförteckning",
-      "intro": {
-        "header": "Introduktion",
-        "body": "Advanced Encryption Standard är en <i>symmetriskt block</i> chiffer, vilket betyder att det krypterar/dekrypterar block med fast storlek med endast en nyckel.  <b>Notera:</b> all data i AES Adventure representeras i hexadecimal; "
-      },
-      "features": {
-        "header": "Funktioner",
-        "animations": {
-          "header": "Animationer",
-          "body": "Alla simulatorer använder animationer för att tydligt visa varje steg i processen. "
+    "error": {
+        "mistake": "Något gick fel...",
+        "back": "Gå tillbaka"
+    },
+    "home": {
+        "description": "Advanced Encryption Standard är det mest populära symmetriska nyckelchifferet. Om du vill lära dig grunderna, gräva djupt i detaljerna eller experimentera med AES: du är på rätt plats!",
+        "go": "Gå till Simulator",
+        "guide": {
+            "title": "Guide",
+            "table-of-contents": "Innehållsförteckning",
+            "intro": {
+                "header": "Introduktion",
+                "body": "Advanced Encryption Standard är ett <i> symmetriskt block </i> chiffer, vilket betyder att det krypterar/dekrypterar block med fast storlek med endast en nyckel. AES Adventure delar upp AES i tre primära processer: kryptering, dekryptering och nyckelexpansion. Nyckelexpansion är härledningen av undernycklar från inmatningsnyckeln - dessa undernycklar används av både kryptering och dekryptering. Var och en av dessa komplexa aspekter av AES har en simulator i AES Adventure som leder dig genom hur AES fungerar på din input. AES Adventure stöder alla 3 nyckelstorlekar som används av AES: 128, 192 och 256 bitar. <b> Obs: </b> all data i AES Adventure representeras i hexadecimal; 1 hexadecimal siffra är 4 bitar = 1 nibble = 0,5 byte."
+            },
+            "features": {
+                "header": "Funktioner",
+                "animations": {
+                    "header": "Animationer",
+                    "body": "Alla simulatorer använder animationer för att tydligt visa varje steg i processen. Dessa animationer stöder uppspelning, paus och sökning. Uppspelningshastigheten för alla animationer kan dubblas eller halveras med hjälp av kanin- respektive sköldpaddsikonerna. Varje steg kommer att ha en knapp för att gå vidare till nästa steg - om du lär dig steget rekommenderas det att du inte går vidare förrän knappen blir highlighed (vilket vanligtvis inträffar nära slutet av animeringen)."
+                },
+                "tutorials": {
+                    "header": "Handledningar",
+                    "body": "Alla simulatorer har självstudieikoner utspridda. För att få en textförklaring av vad ikonen är bredvid, klicka på handledningsikonen för att expandera simulatorns sidofält och visa motsvarande handledning. Sidofältet återgår automatiskt till den ursprungliga storleken genom att klicka på samma självstudieikon eller gå vidare till nästa steg. Alternativt kan sidofältets bredd justeras manuellt med hjälp av draghandtaget nere till höger."
+                },
+                "configuration": {
+                    "header": "Konfiguration",
+                    "body": "Krypterings- och dekrypteringssimulatorerna stöder en begränsad uppsättning konfigurationer som kan användas av mer avancerade användare för att experimentera med AES. Dessa konfigurationer kan hittas i <i> Konfigurera </i> modal till vänster på denna sida. <b> Obs: </b> om du ändrar konfigurationen återställs krypterings- och dekrypteringssimulatorerna."
+                },
+                "persistence": {
+                    "header": "Lokal uthållighet",
+                    "body": "Hela tillståndet för AES Adventure sparas i din webbläsares <i> lokala lagring </i> med nycklar som börjar med <span class='code'> 'AES_ADVENTURE_UI__' </span> . Det betyder att om du stänger eller lämnar AES Adventure kommer alla simuleringar som körs för närvarande att återställas helt när du kommer tillbaka. Om programmet, av någon anledning, går in i ett trasigt tillstånd, kan det hårdåterställas genom att radera dess data i <i> lokal lagring </i> och uppdatera sidan."
+                },
+                "duplicate-buttons": {
+                    "header": "Kopiera knappar",
+                    "body": "När ett inmatningsområde är fullt kommer du att se 1 eller 2 <i> kopiera </i> ikonknappar. Den första knappen är en standardknapp för att kopiera till urklipp. Den andra har en speciell användarvänlig funktion beroende på vilken ingång den är under. Under \"Chiffertext\"-utgången för kryptering: kopierar chiffertexten till ingången för dekrypteringssimulatorn. Under 'Plantext'-utgången för dekryptering: kopierar klartexten till ingången på krypteringssimulatorn. Under valfri nyckelinmatning: kopierar nyckeln till alla andra simulatorer - detta är särskilt användbart för att snabbt använda samma nyckel för kryptering, dekryptering och nyckelexpansion. <b> Obs: </b> om kopieringsoperationen ändrar inmatning, kommer målsimulatorn att återställas eftersom ingångar inte kan ändras mitt i simuleringen."
+                },
+                "i18n": {
+                    "header": "Internationalisering",
+                    "body": "Språket för hela appen kan ändras i inställningarna. Dessa översättningar förväntas vara ofullkomliga; vi anlitade inte professionella översättare för att göra denna översättning. Snart kommer det att finnas ett sätt för dig att begära en korrigering/korrigering av språkfilerna som lagrar alla översättningar."
+                }
+            },
+            "quick-points": {
+                "header": "Sista tips",
+                "cant-input": "Indata kan inte ändras om en simulator för närvarande använder den. Tryck på \"Återställ\"-knappen för att avsluta den aktuella simuleringen och du kommer att kunna ändra ingångarna en gång till.",
+                "cant-start": "Simulatorer kan inte startas förrän alla nödvändiga inmatningsområden är fyllda. Alla inmatningsområden kommer att ha en räknare för \"återstående nibbles\" under sig.",
+                "nibble": "1 napp är förstås en halv byte! (Även motsvarande 1 hexadecimal siffra)",
+                "small": "AES Adventure är utformad för att ses genom skärmar som är minst <b> 13\" </b> i storlek. Detta är den minsta standardstorleken för bärbar dator, som vi förväntar oss att alla våra användare ska vara utrustade med. Om du hittar dig själv med något mindre , använd webbläsarens zoomfunktioner och zooma ut. Om du använder mobilen, vrid enheten till liggande läge för att få så mycket extra bredd som möjligt."
+            }
         },
-        "tutorials": {
-          "header": "Handledningar",
-          "body": "Alla simulatorer har självstudieikoner utspridda. "
+        "feedback": {
+            "title": "Respons",
+            "body": "Detta är ett utvecklande projekt och vi vill gärna få din feedback om verktyget. Det finns en {googleFormLink} som du kan fylla i för att ge oss mycket värdefull information - dina tankar! Alternativt är skaparna av AES Adventure listade nedan, skicka oss gärna ett e-postmeddelande om du har problem med verktyget.",
+            "button": "Google Form"
         },
-        "configuration": {
-          "header": "Konfiguration",
-          "body": "Krypterings- och dekrypteringssimulatorerna stöder en begränsad uppsättning konfigurationer som kan användas av mer avancerade användare för att experimentera med AES.  <i>Konfigurera</i> modal till vänster på denna sida. <b>Notera:</b> Om du ändrar konfigurationen återställs krypterings- och dekrypteringssimulatorerna."
-        },
-        "persistence": {
-          "header": "Lokal uthållighet",
-          "body": "Hela tillståndet för AES Adventure sparas i din webbläsares <i>lokalt utrymme</i> med nycklar som börjar med <span class='code'>'AES_ADVENTURE_UI__'</span>.  <i>lokalt utrymme</i> och uppdatera sidan."
-        },
-        "duplicate-buttons": {
-          "header": "Kopiera knappar",
-          "body": "När ett inmatningsområde är fullt ser du 1 eller 2 <i>kopiera</i> ikon knappar.  <b>Notera:</b> om kopieringsoperationen ändrar ingången kommer målsimulatorn att återställas eftersom ingångar inte kan ändras mitt i simuleringen."
-        },
-        "i18n": {
-          "header": "Internationalisering",
-          "body": "Språket för hela appen kan ändras i \"Inställningar\". "
+        "gitlab": "GitLab",
+        "preferences": {
+            "title": "Inställningar",
+            "badLang": "Är ditt språk dåligt översatt eller otillgängligt?"
         }
-      },
-      "quick-points": {
-        "header": "Sista tips",
-        "cant-input": "Indata kan inte ändras om en simulator för närvarande använder den. ",
-        "cant-start": "Simulatorer kan inte startas förrän alla nödvändiga inmatningsområden är fyllda. ",
-        "nibble": "1 napp är förstås en halv byte! ",
-        "small": "AES Adventure är designat för att ses genom skärmar som är åtminstone <b>13\"</b> i storlek. "
-      }
     },
-    "feedback": {
-      "title": "Respons",
-      "body": "Detta är ett utvecklande projekt och vi vill gärna få din feedback om verktyget. ",
-      "button": "Google Form"
-    },
-    "gitlab": "GitLab"
-  },
-  "configure": {
-    "button": "Konfigurera",
-    "modal": {
-      "title": "Konfigurera",
-      "body": "Välj en konfiguration nedan.  <b>Notera:</b> Om du ändrar konfigurationen återställs krypterings- och dekrypteringssimulatorerna.",
-      "defaults": {
-        "standard": {
-          "name": "Standard",
-          "description": "Vanilj."
-        },
-        "short": {
-          "name": "Kort",
-          "description": "Halva antalet omgångar."
-        },
-        "long": {
-          "name": "Lång",
-          "description": "Dubbla antalet omgångar."
-        },
-        "staticColumns": {
-          "name": "Statiska kolumner",
-          "description": "Inga MixColumns-lager."
-        },
-        "staticRows": {
-          "name": "Statiska rader",
-          "description": "Inga ShiftRows-lager."
-        },
-        "staticBytes": {
-          "name": "Statiska bytes",
-          "description": "Inga SubstituteBytes-lager."
+    "configure": {
+        "button": "Konfigurera",
+        "modal": {
+            "title": "Konfigurera",
+            "body": "Välj en konfiguration nedan. Om du är ny på AES rekommenderar vi att du använder standardsimulatorn innan du använder den här konfigurationen. <b> Obs: </b> om du ändrar konfigurationen återställs krypterings- och dekrypteringssimulatorerna.",
+            "defaults": {
+                "standard": {
+                    "name": "Standard",
+                    "description": "Vanilj."
+                },
+                "short": {
+                    "name": "Kort",
+                    "description": "Halva antalet omgångar."
+                },
+                "long": {
+                    "name": "Lång",
+                    "description": "Dubbla antalet omgångar."
+                },
+                "staticColumns": {
+                    "name": "Statiska kolumner",
+                    "description": "Inga MixColumns-lager."
+                },
+                "staticRows": {
+                    "name": "Statiska rader",
+                    "description": "Inga ShiftRows-lager."
+                },
+                "staticBytes": {
+                    "name": "Statiska bytes",
+                    "description": "Inga SubstituteBytes-lager."
+                }
+            },
+            "close": "Stänga"
         }
-      },
-      "close": "Stänga"
+    },
+    "simulator": {
+        "hide": "Dölj",
+        "show": "Show",
+        "quit": "Sluta",
+        "configurations": "Konfigurationer",
+        "configuration": "Konfiguration",
+        "encrypt": "Kryptera",
+        "decrypt": "Avkryptera",
+        "key-expansion": "Nyckelexpansion",
+        "plaintext": "Oformatterad text",
+        "ciphertext": "Chiffertext",
+        "key": "Nyckel",
+        "sbox": "Ersättningslåda",
+        "constant-matrix": "Konstant matris",
+        "substitute-step": "Ersättning",
+        "shift-step": "Flytta",
+        "rcon": "Rund konstant",
+        "inverse": "Omvänd",
+        "state": "stat",
+        "input": "Inmatning",
+        "output": "Produktion",
+        "add-key": "Lägg till nyckel",
+        "confusion": "Förvirring",
+        "diffusion": "Diffusion",
+        "substitute-bytes": "Ersätt byte",
+        "shift-rows": "Skift rader",
+        "mix-columns": "Blanda kolumner",
+        "add-round-key": "Lägg till rund nyckel",
+        "encryption": "kryptering",
+        "decryption": "dekryptering",
+        "expansion": "expansion",
+        "start": "Start",
+        "finish": "Avsluta",
+        "start-rounds": "Starta omgångar",
+        "finish-rounds": "Avsluta omgångarna",
+        "no-mix-columns-last": "Avstängd eftersom Mix Columns hoppades över i sista omgången!",
+        "no-mix-columns-first": "Avstängd eftersom Mix Columns hoppades över i första omgången!",
+        "no-step-configuration": "Avstängd eftersom den valda konfigurationen är",
+        "no-h-function-key-size": "Avstängd eftersom nyckelstorleken inte är 256 bitar!",
+        "no-h-function-last": "Avstängd eftersom <span class='math'> ℎ </span> -funktionen används för att generera det 5:e ordet men endast 4 ord genereras i den sista omgången!",
+        "round": "Runda",
+        "next-step": "Nästa steg",
+        "skip": "Hoppa till sista omgången",
+        "next-round": "Nästa runda",
+        "copy": "Kopiera",
+        "reset": "Återställa",
+        "function": "fungera",
+        "add-words": "Lägg till ord",
+        "keys-generated": "runda nycklar redo",
+        "round-keys": "Runda nycklar",
+        "disabled-input": "Klicka på knappen \"Återställ\" för att aktivera redigering",
+        "disabled-start": "Fyll i ingångarna för att möjliggöra simulering",
+        "tutorial": {
+            "title": "Handledning",
+            "default": {
+                "description": "Klicka på {tutorialIcon} som du ser för att visa relevant information här."
+            },
+            "sandbox": {
+                "button": "Sandlåda",
+                "title": "Sandlåda",
+                "close": "Stänga"
+            },
+            "read-more": "Läs mer",
+            "plaintext-to-state": {
+                "body": "Det första steget är att skapa tillståndsmatrisen som kommer att användas under hela krypteringsprocessen. Klartexten arrangeras i en 4x4-matris av bytes och sedan transponeras denna matris.",
+                "learn-more": {
+                    "matrices": "Matristransponering"
+                }
+            },
+            "ciphertext-to-state": {
+                "body": "Det första steget är att skapa tillståndsmatrisen som kommer att användas under hela dekrypteringsprocessen. Chiffertexten arrangeras i en 4x4-matris av bytes och sedan transponeras denna matris.",
+                "learn-more": {
+                    "matrices": "Matristransponering"
+                }
+            },
+            "key-to-state": {
+                "body": "Det första steget är att skapa tillståndsvektorn som kommer att läggas till under hela nyckelexpansionsprocessen. Nyckeln är ordnad i en vektor av ord, där 1 ord är 4 byte. <span class='highlight'> AES-nyckelschemat ändras något med varje nyckelstorlek </span> , men det är alltid ordorienterat."
+            },
+            "add-key": {
+                "body": "Nyckeln XORed med tillståndsmatrisen. Observera att nyckeln också arrangeras i en 4x4-matris av bytes och transponeras, precis som inmatningen. Detta kallas också för <i> nyckelblekning </i> ."
+            },
+            "add-round-key": {
+                "body": "Den runda nyckeln XORed med tillståndsmatrisen. Observera att den runda tangenten också är arrangerad i en 4x4-matris av byte och transponerad. Gå över till fliken <i> Key Expansion </i> för att lära dig hur dessa runda nycklar skapas. Under <b> kryptering </b> används de runda nycklarna i den ordning de skapas. Under <b> dekryptering </b> används de runda nycklarna i <b> motsatt </b> ordning."
+            },
+            "add-words": {
+                "body": "Det första ordet XORed med det sista ordet, efter att Round <span class='math'> 𝑔 </span> -funktionen har anropats på det. Därifrån XOReds varje ord med det tidigare beräknade ordet för att skapa ett nytt ord som sedan läggs till tillståndsvektorn. Nyckelschemat <b> 256-bitars </b> anropar Round <span class='math'> ℎ </span> -funktionen på det 4:e ordet som genereras i omgången innan det fortsätter som vanligt.",
+                "note": "<span class='math'> 𝑔 </span> -funktions- och <span class='math'> ℎ </span> -funktionsberäkningarna beskrivs i följande steg."
+            },
+            "round-g-fn": {
+                "body": "<span class='math'> 𝑔 </span> -funktionen består av en serie operationer på byten i inmatningsordet: Substitute Bytes, Shift Rows (shift = 1), och den första byten XORed med <i> rund konstant </i> . Bitgrupperna sammanfogas sedan för att bilda utmatningsordet.",
+                "learn-more": {
+                    "rcon": "Beräknar AES:s runda konstanter"
+                }
+            },
+            "round-h-fn": {
+                "body": "<span class='math'> ℎ </span> -funktionen består av en Substitute Bytes på byten i inmatningsordet. Bitgrupperna sammanfogas sedan för att bilda utmatningsordet."
+            },
+            "round-keys": {
+                "body": "Dessa undernycklar tas i den ordning som visas under kryptering. Under <b> dekryptering </b> används de i motsatt ordning."
+            },
+            "rounds-header": {
+                "body": "AES arbetar på tillståndsmatrisen i omgångar. 10 rundor för en nyckelstorlek på 128 bitar, 12 rundor för 192 bitar och 14 rundor för 256 bitar. Varje omgång består av stegen Substitute Bytes, Shift Rows, Mix Columns, Add Round Key; <span class='highlight'> förutom sista omgången, som inte inkluderar mixkolumner </span> . Under <b> dekryptering </b> exekveras stegen i <b> motsatt </b> ordning och blanda kolumner ingår inte i den första omgången."
+            },
+            "key-rounds-header": {
+                "body": "Varje omgång av AES behöver en undernyckel, plus 1 för nyckelblekning. 11 undernycklar för en nyckelstorlek på 128 bitar, 13 undernycklar för 192 bitar och 15 undernycklar för 256 bitar. Varje omgång arbetar på föregående omgångs utdata för att härleda nya ord.",
+                "aes-a": "AES Adventure delar upp varje omgång i Lägg till ord, Runda <span class='math'> 𝑔 </span> -funktion och Round <span class='math'> ℎ </span> -funktionssteg. Endast <b> 256-bitars </b> nyckelschemat använder Round <span class='math'> ℎ </span> -funktionssteget i varje omgång, förutom den sista omgången.",
+                "note": "Varje omgång genererar 1 undernyckel för en nyckelstorlek på 128 bitar, 1,5 undernycklar för 192 bitar och 2 undernycklar för 256 bitar, förutom den sista omgången som genererar 1 undernyckel för alla tre nyckelstorlekarna."
+            },
+            "rounds-stats": {
+                "diffusion": "<b> Diffusion </b> är påverkan av en enkel klartextbit på den (nuvarande) chiffertexten. Måttet representeras i AES Adventure av <i> lavineffekten </i> . Detta beräknas enligt följande: för varje klartextbit, vänd den och beräkna den (nuvarande) chiffertexten med den modifierade klartexten. Räkna sedan antalet bitar som vänts i den (nuvarande) chiffertexten: måttet är det genomsnittliga antalet bitar som vänts över alla klartextvarianter. <br /> Skift rader och blanda kolumner kan gemensamt kallas <i> diffusionsskiktet </i> eftersom de är de viktigaste diffusionsstegen i AES.",
+                "confusion": "<b> Förvirring </b> är förhållandet mellan den (nuvarande) chiffertexten och nyckeln. Måttet representeras i AES Adventure av ett mått på association mellan den (nuvarande) chiffertexten och nyckeln där alla nollor har mappats till -1:or. <br /> Substitute Bytes introducerar förvirring i AES.",
+                "learn-more": {
+                    "conf-diff": "Förvirring & diffusion",
+                    "avalanche": "Lavineffekt"
+                }
+            },
+            "sub-bytes": {
+                "body": "Substitute Bytes ersätter varje tillståndsmatrisbyte med en byte från substitutionsrutan, vilket ger icke-linjäritet i AES (skydd mot analytiska attacker). Det är en bijektiv kartläggning; under <b> dekryptering </b> använder vi den unika <b> inversen </b> av ersättningsrutan.",
+                "learn-more": {
+                    "bijective": "Bijektiva funktioner",
+                    "sbox": "Beräkning av AES:s substitutionsbox"
+                }
+            },
+            "shift-rows": {
+                "body": "Skift rader utför en bytevis cyklisk växling på varje rad i tillståndsmatrisen. Under <b> dekryptering </b> är skiftet i <b> motsatt </b> riktning. I båda fallen är skiftet på den första raden 0, vilket betyder att den första raden aldrig påverkas."
+            },
+            "mix-columns": {
+                "body": "Mix Columns multiplicerar varje kolumnvektor i tillståndsmatrisen med en matris av konstanter för att producera motsvarande kolumn i den resulterande tillståndsmatrisen. Den konstanta matrisen är inverterbar; under <b> dekryptering </b> använder vi den unika <b> inversen </b> av konstantmatrisen.",
+                "learn-more": {
+                    "matrix-multiplication": "Matrismultiplikation",
+                    "matrix-inversion": "Matrix inverser",
+                    "gf": "Galois Fields",
+                    "gf-arithmetic": "Aritmetik i <span class='math'> 𝐺𝐹(2 ̂ 8) </span>"
+                }
+            },
+            "state-to-ciphertext": {
+                "body": "Det sista steget är att skapa chiffertexten som är resultatet av krypteringsprocessen. Tillståndsmatrisen transponeras och sedan sammanfogas varje post.",
+                "learn-more": {
+                    "matrices": "Matristransponering"
+                }
+            },
+            "state-to-plaintext": {
+                "body": "Det sista steget är att skapa den klartext som är resultatet av dekrypteringsprocessen. Tillståndsmatrisen transponeras och sedan sammanfogas varje post.",
+                "learn-more": {
+                    "matrices": "Matristransponering"
+                }
+            },
+            "state-to-round-keys": {
+                "body": "Det sista steget är att skapa de runda nycklar som är resultatet av nyckelexpansionsprocessen. Tillståndsvektororden tas 4 åt gången och sedan sammanfogas varje grupp för att bilda en undernyckel."
+            }
+        },
+        "hexArea": {
+            "nibblesLeft": "napp kvar.",
+            "ready": "Redo!",
+            "copied": "Kopierade till urklipp.",
+            "duplicated-keys": "Kopieras till alla viktiga ingångar.",
+            "duplicated-plaintext": "Kopierade för att kryptera indata.",
+            "duplicated-ciphertext": "Kopierade för att dekryptera indata.",
+            "go": "Gå",
+            "copy-tooltip": "Kopiera till urklipp",
+            "fill-tooltip": "Fyll med slumpmässig inmatning",
+            "duplicate-keys-tooltip": "Kopiera till alla viktiga ingångar",
+            "duplicate-plaintext-tooltip": "Kopiera för att kryptera indata",
+            "duplicate-ciphertext-tooltip": "Kopiera för att dekryptera indata"
+        },
+        "layer-off": "Lager är <b> av </b> . Avsluta och konfigurera för att slå på den.",
+        "layer-on": "Layer är <b> på </b> . Avsluta och konfigurera för att stänga av den.",
+        "view-stats": "Visa statistik",
+        "skip-full": "Hoppa till utgång"
     }
-  },
-  "simulator": {
-    "hide": "Dölj",
-    "show": "Show",
-    "quit": "Sluta",
-    "configurations": "Konfigurationer",
-    "configuration": "Konfiguration",
-    "encrypt": "Kryptera",
-    "decrypt": "Avkryptera",
-    "key-expansion": "Nyckelexpansion",
-    "plaintext": "Oformatterad text",
-    "ciphertext": "Chiffertext",
-    "key": "Nyckel",
-    "sbox": "Ersättningslåda",
-    "constant-matrix": "Konstant matris",
-    "substitute-step": "Ersättning",
-    "shift-step": "Flytta",
-    "rcon": "Rund konstant",
-    "inverse": "Omvänd",
-    "state": "stat",
-    "input": "Inmatning",
-    "output": "Produktion",
-    "add-key": "Lägg till nyckel",
-    "confusion": "Förvirring",
-    "diffusion": "Diffusion",
-    "substitute-bytes": "Ersätt byte",
-    "shift-rows": "Skift rader",
-    "mix-columns": "Blanda kolumner",
-    "add-round-key": "Lägg till rund nyckel",
-    "encryption": "kryptering",
-    "decryption": "dekryptering",
-    "expansion": "expansion",
-    "start": "Start",
-    "finish": "Avsluta",
-    "start-rounds": "Starta omgångar",
-    "finish-rounds": "Avsluta omgångarna",
-    "no-mix-columns-last": "Avstängd eftersom Mix Columns hoppades över i sista omgången!",
-    "no-mix-columns-first": "Avstängd eftersom Mix Columns hoppades över i första omgången!",
-    "no-step-configuration": "Avstängd eftersom den valda konfigurationen är",
-    "no-h-function-key-size": "Avstängd eftersom nyckelstorleken inte är 256 bitar!",
-    "no-h-function-last": "Avstängd eftersom <span class='math'>ℎ</span>-funktionen används för att generera det 5:e ordet men endast 4 ord genereras i den sista omgången!",
-    "round": "Runda",
-    "next-step": "Nästa steg",
-    "skip": "Hoppa till sista omgången",
-    "next-round": "Nästa runda",
-    "copy": "Kopiera",
-    "reset": "Återställa",
-    "function": "fungera",
-    "add-words": "Lägg till ord",
-    "keys-generated": "runda nycklar redo",
-    "round-keys": "Runda nycklar",
-    "disabled-input": "Klicka på knappen \"Återställ\" för att aktivera redigering",
-    "disabled-start": "Fyll i ingångarna för att möjliggöra simulering",
-    "tutorial": {
-      "title": "Handledning",
-      "default": {
-        "description": "Klicka på {tutorialIcon} som du ser för att visa relevant information här."
-      },
-      "sandbox": {
-        "button": "Sandlåda",
-        "title": "Sandlåda",
-        "close": "Stänga"
-      },
-      "read-more": "Läs mer",
-      "plaintext-to-state": {
-        "body": "Det första steget är att skapa tillståndsmatrisen som kommer att användas under hela krypteringsprocessen. ",
-        "learn-more": {
-          "matrices": "Matristransponering"
-        }
-      },
-      "ciphertext-to-state": {
-        "body": "Det första steget är att skapa tillståndsmatrisen som kommer att användas under hela dekrypteringsprocessen. ",
-        "learn-more": {
-          "matrices": "Matristransponering"
-        }
-      },
-      "key-to-state": {
-        "body": "Det första steget är att skapa tillståndsvektorn som kommer att läggas till under hela nyckelexpansionsprocessen.  <span class='highlight'>AES-nyckelschemat ändras något med varje nyckelstorlek</span>, men det är alltid ordorienterat."
-      },
-      "add-key": {
-        "body": "Nyckeln XORed med tillståndsmatrisen.  <i>nyckelblekning</i>."
-      },
-      "add-round-key": {
-        "body": "Den runda nyckeln XORed med tillståndsmatrisen.  <i>Nyckelexpansion</i> fliken för att lära dig hur dessa runda nycklar skapas.  <b>kryptering</b>, de runda nycklarna används i den ordning de skapas.  <b>dekryptering</b>, de runda tangenterna används i <b>motsatt</b> beställa."
-      },
-      "add-words": {
-        "body": "Det första ordet är XORed med det sista ordet, efter rundan <span class='math'>𝑔</span>-funktion har anropats på den.  <b>256-bitars</b> nyckelschema åberopar omgången <span class='math'>ℎ</span>-funktion på det 4:e ordet som genereras i omgången innan du fortsätter som vanligt.",
-        "note": "De <span class='math'>𝑔</span>-funktion och <span class='math'>ℎ</span>-funktionsberäkningar beskrivs i följande steg."
-      },
-      "round-g-fn": {
-        "body": "De <span class='math'>𝑔</span>-funktionen består av en serie operationer på byten av inmatningsordet: Substitute Bytes, Shift Rows (shift = 1), och den första byten XORed med <i>rund konstant</i>. ",
-        "learn-more": {
-          "rcon": "Beräknar AES:s runda konstanter"
-        }
-      },
-      "round-h-fn": {
-        "body": "De <span class='math'>ℎ</span>-funktionen består av en ersättningsbytes på byten av inmatningsordet. "
-      },
-      "round-keys": {
-        "body": "Dessa undernycklar tas i den ordning som visas under kryptering.  <b>dekryptering</b>, används de i motsatt ordning."
-      },
-      "rounds-header": {
-        "body": "AES arbetar på tillståndsmatrisen i omgångar.  <span class='highlight'>förutom sista omgången, som inte inkluderar Mix Columns</span>.  <b>dekryptering</b>, utförs stegen i <b>motsatt</b> order och Mix Columns ingår inte i första omgången."
-      },
-      "key-rounds-header": {
-        "body": "Varje omgång av AES behöver en undernyckel, plus 1 för nyckelblekning. ",
-        "aes-a": " AES Adventure delar upp varje omgång i Add Words, Round <span class='math'>𝑔</span>-funktion och rund <span class='math'>ℎ</span>-funktionssteg.  <b>256-bitars</b> nyckelschema använder rundan <span class='math'>ℎ</span>-funktionssteg i varje omgång, förutom sista omgången.",
-        "note": "Varje omgång genererar 1 undernyckel för en nyckelstorlek på 128 bitar, 1,5 undernycklar för 192 bitar och 2 undernycklar för 256 bitar, förutom den sista omgången som genererar 1 undernyckel för alla tre nyckelstorlekarna."
-      },
-      "rounds-stats": {
-        "diffusion": "<b>Diffusion</b> är påverkan av en enkel klartextbit på den (nuvarande) chiffertexten.  <i>lavin</i> effekt. <br />Skift rader och blanda kolumner kan gemensamt kallas för <i>diffusionsskikt</i> eftersom de är de stora diffusiva stegen i AES.",
-        "confusion": "<b>Förvirring</b> är förhållandet mellan den (nuvarande) chiffertexten och nyckeln. <br />Substitute Bytes introducerar förvirring i AES.",
-        "learn-more": {
-          "conf-diff": "Förvirring",
-          "avalanche": "Lavineffekt"
-        }
-      },
-      "sub-bytes": {
-        "body": "Substitute Bytes ersätter varje tillståndsmatrisbyte med en byte från substitutionsrutan, vilket ger icke-linjäritet i AES (skydd mot analytiska attacker).  <b>dekryptering</b>, vi använder det unika <b>omvänd</b> av ersättningslådan.",
-        "learn-more": {
-          "bijective": "Bijektiva funktioner",
-          "sbox": "Beräkning av AES:s substitutionsbox"
-        }
-      },
-      "shift-rows": {
-        "body": "Skift rader utför en bytevis cyklisk förskjutning på varje rad i tillståndsmatrisen.  <b>dekryptering</b>, skiftet är i <b>motsatt</b> riktning. "
-      },
-      "mix-columns": {
-        "body": "Mix Columns multiplicerar varje kolumnvektor i tillståndsmatrisen med en matris av konstanter för att producera motsvarande kolumn i den resulterande tillståndsmatrisen.  <b>dekryptering</b>, vi använder det unika <b>omvänd</b> av den konstanta matrisen.",
-        "learn-more": {
-          "matrix-multiplication": "Matrismultiplikation",
-          "matrix-inversion": "Matrix inverser",
-          "gf": "Galois Fields",
-          "gf-arithmetic": "Aritmetik i <span class='math'>𝐺𝐹(2 ̂ 8)</span>"
-        }
-      },
-      "state-to-ciphertext": {
-        "body": "Det sista steget är att skapa chiffertexten som är resultatet av krypteringsprocessen. ",
-        "learn-more": {
-          "matrices": "Matristransponering"
-        }
-      },
-      "state-to-plaintext": {
-        "body": "Det sista steget är att skapa den klartext som är resultatet av dekrypteringsprocessen. ",
-        "learn-more": {
-          "matrices": "Matristransponering"
-        }
-      },
-      "state-to-round-keys": {
-        "body": "Det sista steget är att skapa de runda nycklar som är resultatet av nyckelexpansionsprocessen. "
-      }
-    },
-    "hexArea": {
-      "nibblesLeft": "napp kvar.",
-      "ready": "Redo!",
-      "copied": "Kopierade till urklipp.",
-      "duplicated-keys": "Kopieras till alla viktiga ingångar.",
-      "duplicated-plaintext": "Kopierade för att kryptera indata.",
-      "duplicated-ciphertext": "Kopierade för att dekryptera indata.",
-      "go": "Gå"
-    }
-  }
 }

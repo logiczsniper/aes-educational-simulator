@@ -1,275 +1,285 @@
 {
-  "title": "Nuotykis",
-  "infographic": "Atsisiųskite infografiką",
-  "edit": "Redaguoti",
-  "seo": {
-    "encrypt": "Šifruoti",
-    "decrypt": "Iššifruoti",
-    "expand": "Išskleisti raktą",
-    "encrypt-description": "Sužinokite, kaip veikia AES šifravimas, naudodami AES Adventure nuoseklųjį simuliatorių. ",
-    "decrypt-description": "Sužinokite, kaip veikia AES iššifravimas su AES Adventure žingsnis po žingsnio simuliatoriumi. ",
-    "expand-description": "Sužinokite, kaip veikia AES rakto išplėtimas su AES Adventure žingsnis po žingsnio simuliatoriumi. ",
-    "feedback": "Atsiliepimas",
-    "feedback-description": "Pateikite vertingų atsiliepimų „AES Adventure“ kūrėjams, kad galėtume pagerinti patirtį visiems.",
-    "guide": "Vadovas",
-    "guide-description": "Sužinokite, kaip išnaudoti visas „AES Adventure“ galimybes.",
-    "home-description": "Sveiki atvykę į AES Adventure – intuityvią AES mokymo priemonę. ",
-    "preferences": "Nustatymai",
-    "preferences-description": "Pakeiskite „AES Adventure“ išvaizdą, kad atitiktų jūsų poreikius."
-  },
-  "error": {
-    "mistake": "Kažkas nutiko...",
-    "back": "Eik atgal"
-  },
-  "home": {
-    "description": "Išplėstinis šifravimo standartas yra populiariausias simetrinio rakto šifras. ",
-    "go": "Eikite į Simuliatorių",
-    "preferences": {
-      "title": "Nustatymai",
-      "badLang": "Ar jūsų kalba prastai išversta arba nepasiekiama?"
+    "welcome_header": "Labas pasauli!",
+    "title": "Nuotykis",
+    "infographic": "Atsisiųskite infografiką",
+    "edit": "Redaguoti",
+    "seo": {
+        "encrypt": "Šifruoti",
+        "decrypt": "Iššifruoti",
+        "expand": "Išskleisti raktą",
+        "encrypt-description": "Sužinokite, kaip veikia AES šifravimas, naudodami AES Adventure nuoseklųjį simuliatorių. Palaiko visus tris pagrindinius dydžius ir yra vadovėlių, padėsiančių mokytis!",
+        "decrypt-description": "Sužinokite, kaip veikia AES iššifravimas, naudodami AES Adventure nuoseklųjį simuliatorių. Palaiko visus tris pagrindinius dydžius ir yra vadovėlių, padėsiančių mokytis!",
+        "expand-description": "Sužinokite, kaip veikia AES rakto išplėtimas su AES Adventure žingsnis po žingsnio simuliatoriumi. Palaiko visus tris pagrindinius dydžius ir yra vadovėlių, padėsiančių mokytis!",
+        "feedback": "Atsiliepimas",
+        "feedback-description": "Pateikite vertingų atsiliepimų „AES Adventure“ kūrėjams, kad galėtume pagerinti patirtį visiems.",
+        "guide": "Vadovas",
+        "guide-description": "Sužinokite, kaip išnaudoti visas „AES Adventure“ galimybes.",
+        "home-description": "Sveiki atvykę į AES Adventure – intuityvią AES mokymo priemonę. Įveskite savo duomenis ir žingsnis po žingsnio atlikite visų trijų raktų dydžių šifravimą, iššifravimą ir rakto išplėtimą.",
+        "preferences": "Parinktys",
+        "preferences-description": "Pakeiskite „AES Adventure“ išvaizdą, kad atitiktų jūsų poreikius."
     },
-    "guide": {
-      "title": "Vadovas",
-      "table-of-contents": "Turinys",
-      "intro": {
-        "header": "Įvadas",
-        "body": "Išplėstinis šifravimo standartas yra a <i>simetriškas blokas</i> šifras, tai reiškia, kad jis užšifruoja / iššifruoja fiksuoto dydžio blokus tik vienu raktu.  <b>Pastaba:</b> visi AES Adventure duomenys pateikiami šešioliktaine tvarka; "
-      },
-      "features": {
-        "header": "funkcijos",
-        "animations": {
-          "header": "Animacijos",
-          "body": "Visi treniruokliai naudoja animaciją, kad aiškiai parodytų kiekvieną proceso žingsnį. "
+    "error": {
+        "mistake": "Kažkas nutiko...",
+        "back": "Eik atgal"
+    },
+    "home": {
+        "description": "Išplėstinis šifravimo standartas yra populiariausias simetrinio rakto šifras. Jei norite išmokti pagrindus, įsigilinkite į detales arba eksperimentuokite su AES: esate tinkamoje vietoje!",
+        "go": "Eikite į Simuliatorių",
+        "guide": {
+            "title": "Vadovas",
+            "table-of-contents": "Turinys",
+            "intro": {
+                "header": "Įvadas",
+                "body": "Išplėstinis šifravimo standartas yra <i> simetriškas blokas </i> šifras, tai reiškia, kad jis užšifruoja / iššifruoja fiksuoto dydžio blokus tik vienu raktu. AES Adventure suskirsto AES į 3 pagrindinius procesus: šifravimą, iššifravimą ir rakto išplėtimą. Rakto išplėtimas yra dalinių raktų išvedimas iš įvesties rakto – šie daliniai raktai naudojami tiek šifruojant, tiek iššifruojant. Kiekvienas iš šių sudėtingų AES aspektų turi AES Adventure simuliatorių, kuris paaiškins, kaip AES veikia pagal jūsų įvestį. AES Adventure palaiko visus 3 raktų dydžius, naudojamus AES: 128, 192 ir 256 bitų. <b> Pastaba: </b> visi AES Adventure duomenys pateikiami šešioliktaine tvarka; 1 šešioliktainis skaitmuo yra 4 bitai = 1 nibble = 0,5 baito."
+            },
+            "features": {
+                "header": "funkcijos",
+                "animations": {
+                    "header": "Animacijos",
+                    "body": "Visi treniruokliai naudoja animaciją, kad aiškiai parodytų kiekvieną proceso žingsnį. Šios animacijos palaiko atkūrimo, pristabdymo ir paieškos operacijas. Visų animacijų atkūrimo greitis gali būti padvigubintas arba sumažintas perpus, naudojant atitinkamai triušio ir vėžlio piktogramas. Kiekvienas veiksmas turės mygtuką, kad pereitumėte prie kito žingsnio – jei mokotės šio žingsnio, rekomenduojama nejudinti tol, kol mygtukas nebus paryškintas (kas paprastai būna animacijos pabaigoje)."
+                },
+                "tutorials": {
+                    "header": "Pamokos",
+                    "body": "Visuose treniruokliuose yra mokymo programos piktogramos. Norėdami gauti tekstinį paaiškinimą, prie ko yra piktograma, spustelėkite mokymo programos piktogramą, kad išskleistumėte treniruoklio šoninę juostą ir atskleistumėte atitinkamą mokymo programą. Šoninė juosta automatiškai grįš į pradinį dydį, spustelėjus tą pačią mokymo programos piktogramą arba pereinant prie kito veiksmo. Arba šoninės juostos plotį galima reguliuoti rankiniu būdu naudojant vilkimo rankenėlę apačioje dešinėje."
+                },
+                "configuration": {
+                    "header": "Konfigūracija",
+                    "body": "Šifravimo ir iššifravimo modeliuokliai palaiko ribotą konfigūracijų rinkinį, kurį gali naudoti patyrę vartotojai eksperimentuodami su AES. Šias konfigūracijas galite rasti modale <i> Konfigūruoti </i> šio puslapio kairėje. <b> Pastaba: </b> pakeitus konfigūraciją šifravimo ir iššifravimo modeliuokliai bus nustatyti iš naujo."
+                },
+                "persistence": {
+                    "header": "Vietinis patvarumas",
+                    "body": "Visa „AES Adventure“ būsena išsaugoma jūsų naršyklės <i> vietinėje saugykloje </i> naudojant raktus, prasidedančius <span class='code'> „AES_ADVENTURE_UI__“ </span> . Tai reiškia, kad jei uždarysite arba paliksite „AES Adventure“, visi šiuo metu vykdomi modeliai bus visiškai atkurti, kai grįšite. Jei dėl kokios nors priežasties programa tampa neveikiančia, ją galima sunkiai atkurti ištrinant jos duomenis <i> vietinėje saugykloje </i> ir atnaujinant puslapį."
+                },
+                "duplicate-buttons": {
+                    "header": "Kopijavimo mygtukai",
+                    "body": "Kai įvesties sritis bus pilna, pamatysite 1 arba 2 <i> kopijavimo </i> piktogramos mygtukus. Pirmasis mygtukas yra standartinis kopijavimo į iškarpinę mygtukas. Antrasis turi specialią naudojimo paprastumo funkciją, priklausomai nuo to, kuri įvestis yra po juo. Pagal šifravimo išvestį „Šifruotas tekstas“: nukopijuoja šifruotą tekstą į iššifravimo treniruoklio įvestį. Pagal iššifravimo išvestį „Paprastas tekstas“: nukopijuoja paprastą tekstą į šifravimo treniruoklio įvestį. Įvedus bet kurį raktą: nukopijuoja raktą į visus kitus treniruoklius – tai ypač naudinga norint greitai naudoti tą patį raktą šifravimui, iššifravimui ir rakto išplėtimui. <b> Pastaba: </b> jei kopijavimo operacija pakeičia įvestį, tikslinis modeliuoklis bus nustatytas iš naujo, nes įvesties negalima pakeisti imituojant."
+                },
+                "i18n": {
+                    "header": "Internacionalizacija",
+                    "body": "Visos programos kalbą galima pakeisti nuostatose. Tikimasi, kad šie vertimai bus netobuli; šiam vertimui nesamdėme profesionalių vertėjų. Netrukus galėsite pateikti užklausą dėl kalbos failų, kuriuose saugomi visi vertimai, pataisymo / pataisymo."
+                }
+            },
+            "quick-points": {
+                "header": "Paskutiniai patarimai",
+                "cant-input": "Įvesties duomenys negali būti pakeisti, jei treniruoklis šiuo metu juos naudoja. Paspauskite mygtuką „Atstatyti“, kad išeitumėte iš dabartinio modeliavimo ir galėsite dar kartą keisti įvestis.",
+                "cant-start": "Simuliatorių negalima paleisti, kol neužpildytos visos reikiamos įvesties sritys. Visose įvesties srityse po jais bus rodomas skaitiklis „likę įkandimai“.",
+                "nibble": "Žinoma, 1 nibble yra pusė baito! (Taip pat atitinka 1 šešioliktainį skaitmenį)",
+                "small": "„AES Adventure“ sukurtas taip, kad būtų galima žiūrėti per mažiausiai <b> 13 colių </b> dydžio ekranus. Tai mažiausias standartinis nešiojamasis kompiuteris, kurį tikimės turėti visi naudotojai. Jei rasite ką nors mažesnio , naudokite naršyklės mastelio keitimo galimybes ir nutolinkite. Jei naudojate mobilųjį telefoną, pasukite įrenginį į gulsčio režimą, kad gautumėte kuo daugiau papildomo pločio."
+            }
         },
-        "tutorials": {
-          "header": "Pamokos",
-          "body": "Visuose treniruokliuose yra mokymo programos piktogramos. "
+        "feedback": {
+            "title": "Atsiliepimas",
+            "body": "Tai vystomas projektas ir norėtume sulaukti jūsų atsiliepimų apie įrankį. Yra {googleFormLink} , kurį galite užpildyti, kad suteiktumėte mums labai vertingos informacijos – savo minčių! Arba toliau išvardyti AES Adventure kūrėjai. Jei kyla problemų dėl įrankio, nedvejodami atsiųskite mums el. laišką.",
+            "button": "Google forma"
         },
-        "configuration": {
-          "header": "Konfigūracija",
-          "body": "Šifravimo ir iššifravimo modeliuokliai palaiko ribotą konfigūracijų rinkinį, kurį gali naudoti patyrę vartotojai eksperimentuodami su AES.  <i>Konfigūruoti</i> modalinis šio puslapio kairėje. <b>Pastaba:</b> pakeitus konfigūraciją, šifravimo ir iššifravimo simuliatoriai bus nustatyti iš naujo."
-        },
-        "persistence": {
-          "header": "Vietinis patvarumas",
-          "body": "Visa „AES Adventure“ būsena išsaugoma jūsų naršyklėje <i>vietinė parduotuvė</i> su raktais, kurie prasideda <span class='code'>„AES_ADVENTURE_UI__“</span>.  <i>vietinė parduotuvė</i> ir atnaujinti puslapį."
-        },
-        "duplicate-buttons": {
-          "header": "Kopijavimo mygtukai",
-          "body": "Kai įvesties sritis pilna, pamatysite 1 arba 2 <i>kopija</i> piktogramų mygtukai.  <b>Pastaba:</b> jei kopijavimo operacija pakeičia įvestį, tikslinis treniruoklis bus nustatytas iš naujo, nes įvesčių negalima pakeisti imituojant."
-        },
-        "i18n": {
-          "header": "Internacionalizacija",
-          "body": "Visos programos kalbą galima pakeisti skiltyje „Nustatymai“. "
+        "gitlab": "GitLab",
+        "preferences": {
+            "title": "Parinktys",
+            "badLang": "Ar jūsų kalba prastai išversta arba nepasiekiama?"
         }
-      },
-      "quick-points": {
-        "header": "Paskutiniai patarimai",
-        "cant-input": "Įvesties duomenys negali būti pakeisti, jei treniruoklis šiuo metu juos naudoja. ",
-        "cant-start": "Simuliatorių negalima paleisti, kol neužpildytos visos reikiamos įvesties sritys. ",
-        "nibble": "Žinoma, 1 nibble yra pusė baito! ",
-        "small": "„AES Adventure“ sukurta taip, kad ją būtų galima žiūrėti per ekranus, kurie yra bent <b>13\"</b> dydžio. "
-      }
     },
-    "feedback": {
-      "title": "Atsiliepimas",
-      "body": "Tai vystomas projektas ir norėtume sulaukti jūsų atsiliepimų apie įrankį. ",
-      "button": "Google forma"
-    },
-    "gitlab": "GitLab"
-  },
-  "configure": {
-    "button": "Konfigūruoti",
-    "modal": {
-      "title": "Konfigūruoti",
-      "body": "Toliau pasirinkite konfigūraciją.  <b>Pastaba:</b> pakeitus konfigūraciją, šifravimo ir iššifravimo simuliatoriai bus nustatyti iš naujo.",
-      "defaults": {
-        "standard": {
-          "name": "Standartinis",
-          "description": "Vanilė."
-        },
-        "short": {
-          "name": "Trumpas",
-          "description": "Pusė raundų skaičiaus."
-        },
-        "long": {
-          "name": "Ilgai",
-          "description": "Padvigubinkite raundų skaičių."
-        },
-        "staticColumns": {
-          "name": "Statiniai stulpeliai",
-          "description": "Nėra „MixColumns“ sluoksnių."
-        },
-        "staticRows": {
-          "name": "Statinės eilutės",
-          "description": "Nėra „ShiftRows“ sluoksnių."
-        },
-        "staticBytes": {
-          "name": "Statiniai baitai",
-          "description": "Nėra „SubstituteBytes“ sluoksnių."
+    "configure": {
+        "button": "Konfigūruoti",
+        "modal": {
+            "title": "Konfigūruoti",
+            "body": "Toliau pasirinkite konfigūraciją. Jei pirmą kartą naudojate AES, rekomenduojame prieš naudojant šią konfigūraciją naudoti numatytąjį simuliatorių. <b> Pastaba: </b> pakeitus konfigūraciją šifravimo ir iššifravimo modeliuokliai bus nustatyti iš naujo.",
+            "defaults": {
+                "standard": {
+                    "name": "Standartinis",
+                    "description": "Vanilė."
+                },
+                "short": {
+                    "name": "Trumpas",
+                    "description": "Pusė raundų skaičiaus."
+                },
+                "long": {
+                    "name": "Ilgai",
+                    "description": "Padvigubinkite raundų skaičių."
+                },
+                "staticColumns": {
+                    "name": "Statiniai stulpeliai",
+                    "description": "Nėra „MixColumns“ sluoksnių."
+                },
+                "staticRows": {
+                    "name": "Statinės eilutės",
+                    "description": "Nėra „ShiftRows“ sluoksnių."
+                },
+                "staticBytes": {
+                    "name": "Statiniai baitai",
+                    "description": "Nėra „SubstituteBytes“ sluoksnių."
+                }
+            },
+            "close": "Uždaryti"
         }
-      },
-      "close": "Uždaryti"
+    },
+    "simulator": {
+        "hide": "Slėpti",
+        "show": "Rodyti",
+        "quit": "Išeik",
+        "configurations": "Konfigūracijos",
+        "configuration": "Konfigūracija",
+        "encrypt": "Šifruoti",
+        "decrypt": "Iššifruoti",
+        "key-expansion": "Raktų išplėtimas",
+        "plaintext": "Paprastas tekstas",
+        "ciphertext": "Šifruotas tekstas",
+        "key": "Raktas",
+        "sbox": "Pakaitinė dėžutė",
+        "constant-matrix": "Pastovi matrica",
+        "substitute-step": "Pakaitalas",
+        "shift-step": "Shift",
+        "rcon": "Apvali konstanta",
+        "inverse": "Atvirkščiai",
+        "state": "valstybė",
+        "input": "Įvestis",
+        "output": "Išvestis",
+        "add-key": "Pridėti raktą",
+        "confusion": "Sumišimas",
+        "diffusion": "Difuzija",
+        "substitute-bytes": "Pakaitiniai baitai",
+        "shift-rows": "Shift Rows",
+        "mix-columns": "Sumaišykite stulpelius",
+        "add-round-key": "Pridėti apvalų raktą",
+        "encryption": "šifravimas",
+        "decryption": "iššifravimas",
+        "expansion": "išplėtimas",
+        "start": "Pradėti",
+        "finish": "Baigti",
+        "start-rounds": "Pradėkite ratus",
+        "finish-rounds": "Baigti ratus",
+        "no-mix-columns-last": "Išjungta, nes Mix Columns buvo praleistas paskutiniame raunde!",
+        "no-mix-columns-first": "Išjungta, nes Mix Columns praleidžiamas pirmame rate!",
+        "no-step-configuration": "Išjungta, nes pasirinkta konfigūracija yra",
+        "no-h-function-key-size": "Išjungta, nes rakto dydis nėra 256 bitai!",
+        "no-h-function-last": "Išjungta, nes funkcija <span class='math'> ℎ </span> naudojama 5-ajam žodžiui generuoti, tačiau paskutiniame ture sugeneruojami tik 4 žodžiai!",
+        "round": "Apvalus",
+        "next-step": "Kitas žingsnis",
+        "skip": "Pereiti į paskutinį turą",
+        "next-round": "Kitas turas",
+        "copy": "Kopijuoti",
+        "reset": "Nustatyti iš naujo",
+        "function": "funkcija",
+        "add-words": "Pridėti žodžius",
+        "keys-generated": "apvalūs raktai paruošti",
+        "round-keys": "Apvalūs raktai",
+        "disabled-input": "Spustelėkite mygtuką „Atstatyti“, kad įgalintumėte redagavimą",
+        "disabled-start": "Užpildykite įvestį (-es), kad įjungtumėte modeliavimą",
+        "tutorial": {
+            "title": "Pamoka",
+            "default": {
+                "description": "Spustelėkite {tutorialIcon} , kurią matote, kad čia atskleistumėte atitinkamą informaciją."
+            },
+            "sandbox": {
+                "button": "Smėlio dėžė",
+                "title": "Smėlio dėžė",
+                "close": "Uždaryti"
+            },
+            "read-more": "Skaityti daugiau",
+            "plaintext-to-state": {
+                "body": "Pirmas žingsnis yra sukurti būsenos matricą, kuri bus naudojama viso šifravimo proceso metu. Paprastas tekstas suskirstomas į 4x4 baitų matricą ir tada ši matrica perkeliama.",
+                "learn-more": {
+                    "matrices": "Matricos perkėlimas"
+                }
+            },
+            "ciphertext-to-state": {
+                "body": "Pirmasis žingsnis yra sukurti būsenos matricą, kuri bus naudojama viso iššifravimo proceso metu. Šifruotas tekstas yra suskirstytas į 4x4 baitų matricą ir tada ši matrica perkeliama.",
+                "learn-more": {
+                    "matrices": "Matricos perkėlimas"
+                }
+            },
+            "key-to-state": {
+                "body": "Pirmasis žingsnis yra sukurti būsenos vektorių, kuris bus pridedamas per visą rakto išplėtimo procesą. Raktas suskirstytas į žodžių vektorių, kur 1 žodis yra 4 baitai. <span class='highlight'> AES klavišų tvarkaraštis šiek tiek keičiasi priklausomai nuo kiekvieno klavišo dydžio </span> , tačiau jis visada yra orientuotas į žodžius."
+            },
+            "add-key": {
+                "body": "Raktas yra XORed su būsenos matrica. Atminkite, kad raktas taip pat yra išdėstytas 4x4 baitų matricoje ir perkeltas, kaip ir įvestis. Tai taip pat vadinama <i> klavišų balinimu </i> ."
+            },
+            "add-round-key": {
+                "body": "Apvalus raktas yra XOR su būsenos matrica. Atkreipkite dėmesį, kad apvalus klavišas taip pat yra išdėstytas 4x4 baitų matricoje ir perkeltas. Eikite į skirtuką <i> Raktų išplėtimas </i> ir sužinokite, kaip sukuriami šie apvalūs klavišai. Atliekant <b> šifravimą </b> , apvalūs raktai naudojami tokia tvarka, kokia jie buvo sukurti. Atliekant <b> iššifravimą </b> , apvalūs raktai naudojami <b> priešinga </b> tvarka."
+            },
+            "add-words": {
+                "body": "Pirmasis žodis XOR pakeičiamas paskutiniu žodžiu po to, kai jame buvo iškviesta Round <span class='math'> 𝑔 </span> funkcija. Iš ten kiekvienas žodis XOR sujungiamas su anksčiau apskaičiuotu žodžiu, kad būtų sukurtas naujas žodis, kuris pridedamas prie būsenos vektoriaus. <b> 256 bitų </b> klavišų tvarkaraštis iškviečia funkciją <span class='math'> ℎ </span> raundo 4-ajame žodyje, sugeneruotame raunde, prieš tęsiant kaip įprasta.",
+                "note": "Funkcijos <span class='math'> 𝑔 </span> ir <span class='math'> ℎ </span> -funkcijos skaičiavimai aprašyti toliau pateikiamuose etapuose."
+            },
+            "round-g-fn": {
+                "body": "Funkcija <span class='math'> 𝑔 </span> susideda iš eilės operacijų su įvesties žodžio baitais: Pakaitiniai baitai, Shift Rows (Shift = 1), o pirmasis baitas XOR pažymimas su <i> apvali konstanta </i> . Tada baitai sujungiami, kad būtų sudarytas išvesties žodis.",
+                "learn-more": {
+                    "rcon": "AES apvalių konstantų skaičiavimas"
+                }
+            },
+            "round-h-fn": {
+                "body": "Funkciją <span class='math'> ℎ </span> sudaro pakaitiniai baitai įvesties žodžio baituose. Tada baitai sujungiami, kad būtų sudarytas išvesties žodis."
+            },
+            "round-keys": {
+                "body": "Šie daliniai raktai paimami tokia tvarka, kokia parodyta šifravimo metu. Atliekant <b> iššifravimą </b> , jie naudojami priešinga tvarka."
+            },
+            "rounds-header": {
+                "body": "AES veikia būsenos matricoje ratais. 10 raundų 128 bitų raktui, 12 raundų 192 bitams ir 14 raundų 256 bitams. Kiekvienas raundas susideda iš žingsnių Pakaitiniai baitai, Shift Rows, Mix Columns, Add Round Key; <span class='highlight'> išskyrus paskutinį turą, kuriame nėra mišinių stulpelių </span> . Atliekant <b> iššifravimą </b> , veiksmai atliekami <b> priešinga </b> tvarka, o maišymo stulpeliai neįtraukiami į pirmąjį etapą."
+            },
+            "key-rounds-header": {
+                "body": "Kiekvienam AES etapui reikia dalinio rakto ir 1 rakto balinimui. 11 dalinių raktų 128 bitų dydžiui, 13 dalinių raktų 192 bitams ir 15 dalinių raktų 256 bitams. Kiekvienas raundas veikia pagal ankstesnio raundo išvestį, kad gautų naujus žodžius.",
+                "aes-a": "AES Adventure kiekvieną turą suskirsto į žodžių pridėjimo, <span class='math'> 𝑔 </span> raundo ir <span class='math'> ℎ </span> raundo -funkcijos veiksmus. Tik <b> 256 bitų </b> klavišų tvarkaraštis naudoja <span class='math'> ℎ </span> raundo funkcijos veiksmą kiekviename raunde, išskyrus paskutinį raundą.",
+                "note": "Kiekvienas raundas generuoja 1 dalinį raktą 128 bitų dydžiui, 1,5 dalinį raktą 192 bitams ir 2 dalinius raktus 256 bitams, išskyrus paskutinį raundą, kuris generuoja 1 dalinį raktą visiems trijų dydžių raktams."
+            },
+            "rounds-stats": {
+                "diffusion": "<b> Sklaidymas </b> yra vieno paprasto teksto bito įtaka (dabartiniam) šifruotam tekstui. AES Adventure metriką vaizduoja <i> lavinos </i> efektas. Tai apskaičiuojama taip: apverskite kiekvieną grynojo teksto bitą ir apskaičiuokite (dabartinį) šifruotą tekstą su pakeistu paprastu tekstu. Tada suskaičiuokite (dabartiniame) šifruotame tekste apverstų bitų skaičių: metrika yra vidutinis bitų, apverstų visuose paprastojo teksto variantuose, skaičius. <br /> Eilučių perkėlimas ir maišymo stulpeliai gali būti bendrai vadinami <i> difuzijos sluoksniu </i> , nes jie yra pagrindiniai AES sklaidos žingsniai.",
+                "confusion": "<b> Painiava </b> yra ryšys tarp (dabarto) šifruoto teksto ir rakto. Metrika AES Adventure pavaizduota asociacijos tarp (dabarto) šifruoto teksto ir rakto, kuriame visi 0 buvo susieti su -1, matas. <br /> Pakaitiniai baitai sukelia painiavą AES.",
+                "learn-more": {
+                    "conf-diff": "Sumišimas ir difuzija",
+                    "avalanche": "Lavinos efektas"
+                }
+            },
+            "sub-bytes": {
+                "body": "Pakaitiniai baitai pakeičia kiekvieną būsenos matricos baitą baitu iš pakeitimo langelio, kuris užtikrina netiesiškumą AES (apsauga nuo analitinių atakų). Tai yra bijektyvus žemėlapis; <b> iššifravimo </b> metu naudojame unikalų <b> atvirkštinį </b> pakeitimo laukelį.",
+                "learn-more": {
+                    "bijective": "Bijektyvios funkcijos",
+                    "sbox": "AES pakeitimo dėžutės skaičiavimas"
+                }
+            },
+            "shift-rows": {
+                "body": "„Shift Rows“ atlieka ciklinį baitų poslinkį kiekvienoje būsenos matricos eilutėje. <b> iššifravimo </b> metu poslinkis vyksta <b> priešinga </b> kryptimi. Abiem atvejais pirmosios eilutės poslinkis yra 0, o tai reiškia, kad pirmoji eilutė niekada neveikia."
+            },
+            "mix-columns": {
+                "body": "Mix Columns padaugina kiekvieną būsenos matricos stulpelio vektorių iš konstantų matricos, kad gautų atitinkamą gautos būsenos matricos stulpelį. Konstanta matrica yra apverčiama; <b> iššifravimo </b> metu naudojame unikalią pastovios matricos <b> atvirkštinę </b> vertę.",
+                "learn-more": {
+                    "matrix-multiplication": "Matricos daugyba",
+                    "matrix-inversion": "Matricos atvirkštiniai",
+                    "gf": "Galois Fieldsas",
+                    "gf-arithmetic": "Aritmetika <span class='math'> 𝐺𝐹(2 ̂ 8) </span>"
+                }
+            },
+            "state-to-ciphertext": {
+                "body": "Paskutinis žingsnis yra sukurti šifruotą tekstą, kuris yra šifravimo proceso išvestis. Būsenos matrica perkeliama ir tada kiekvienas įrašas sujungiamas.",
+                "learn-more": {
+                    "matrices": "Matricos perkėlimas"
+                }
+            },
+            "state-to-plaintext": {
+                "body": "Paskutinis žingsnis yra sukurti paprastą tekstą, kuris yra iššifravimo proceso išvestis. Būsenos matrica perkeliama ir tada kiekvienas įrašas sujungiamas.",
+                "learn-more": {
+                    "matrices": "Matricos perkėlimas"
+                }
+            },
+            "state-to-round-keys": {
+                "body": "Paskutinis žingsnis yra sukurti apvalius klavišus, kurie yra rakto išplėtimo proceso rezultatas. Būsenos vektoriaus žodžiai paimami 4 vienu metu, o tada kiekviena grupė sujungiama, kad būtų sudarytas dalinis raktas."
+            }
+        },
+        "hexArea": {
+            "nibblesLeft": "liko kramtyti.",
+            "ready": "Pasiruošę!",
+            "copied": "Nukopijuota į mainų sritį.",
+            "duplicated-keys": "Nukopijuota į visas pagrindines įvestis.",
+            "duplicated-plaintext": "Nukopijuota įvesties šifravimui.",
+            "duplicated-ciphertext": "Nukopijuota įvesties iššifravimui.",
+            "go": "Eik",
+            "copy-tooltip": "Nukopijuoti į iškarpinę",
+            "fill-tooltip": "Užpildykite atsitiktine įvestis",
+            "duplicate-keys-tooltip": "Kopijuoti į visus pagrindinius įvestis",
+            "duplicate-plaintext-tooltip": "Nukopijuokite, kad šifruotumėte įvestį",
+            "duplicate-ciphertext-tooltip": "Nukopijuokite, kad iššifruotumėte įvestį"
+        },
+        "layer-off": "Sluoksnis <b> išjungtas </b> . Išeikite ir sukonfigūruokite, kad jį įjungtumėte.",
+        "layer-on": "Sluoksnis yra <b> įjungtas </b> . Išeikite ir sukonfigūruokite, kad jį išjungtumėte.",
+        "view-stats": "Žiūrėti statistiką",
+        "skip-full": "Pereiti prie išvesties"
     }
-  },
-  "simulator": {
-    "hide": "Slėpti",
-    "show": "Rodyti",
-    "quit": "Išeik",
-    "configurations": "Konfigūracijos",
-    "configuration": "Konfigūracija",
-    "encrypt": "Šifruoti",
-    "decrypt": "Iššifruoti",
-    "key-expansion": "Raktų išplėtimas",
-    "plaintext": "Paprastas tekstas",
-    "ciphertext": "Šifruotas tekstas",
-    "key": "Raktas",
-    "sbox": "Pakaitinė dėžutė",
-    "constant-matrix": "Pastovi matrica",
-    "substitute-step": "Pakaitalas",
-    "shift-step": "Shift",
-    "rcon": "Apvali konstanta",
-    "inverse": "Atvirkščiai",
-    "state": "valstybė",
-    "input": "Įvestis",
-    "output": "Išvestis",
-    "add-key": "Pridėti raktą",
-    "confusion": "Sumišimas",
-    "diffusion": "Difuzija",
-    "substitute-bytes": "Pakaitiniai baitai",
-    "shift-rows": "Shift Rows",
-    "mix-columns": "Sumaišykite stulpelius",
-    "add-round-key": "Pridėti apvalų raktą",
-    "encryption": "šifravimas",
-    "decryption": "iššifravimas",
-    "expansion": "išplėtimas",
-    "start": "Pradėti",
-    "finish": "Baigti",
-    "start-rounds": "Pradėkite ratus",
-    "finish-rounds": "Baigti ratus",
-    "no-mix-columns-last": "Išjungta, nes Mix Columns buvo praleistas paskutiniame raunde!",
-    "no-mix-columns-first": "Išjungta, nes Mix Columns praleidžiamas pirmame rate!",
-    "no-step-configuration": "Išjungta, nes pasirinkta konfigūracija yra",
-    "no-h-function-key-size": "Išjungta, nes rakto dydis nėra 256 bitai!",
-    "no-h-function-last": "Išjungtas, nes <span class='math'>ℎ</span>-Funkcija naudojama generuoti 5-ąjį žodį, tačiau paskutiniame ture sugeneruojami tik 4 žodžiai!",
-    "round": "Apvalus",
-    "next-step": "Kitas žingsnis",
-    "skip": "Pereiti į paskutinį turą",
-    "next-round": "Kitas turas",
-    "copy": "Kopijuoti",
-    "reset": "Nustatyti iš naujo",
-    "function": "funkcija",
-    "add-words": "Pridėti žodžius",
-    "keys-generated": "apvalūs raktai paruošti",
-    "round-keys": "Apvalūs raktai",
-    "disabled-input": "Spustelėkite mygtuką „Atstatyti“, kad įgalintumėte redagavimą",
-    "disabled-start": "Užpildykite įvestį (-es), kad įjungtumėte modeliavimą",
-    "tutorial": {
-      "title": "Pamoka",
-      "default": {
-        "description": "Spustelėkite {tutorialIcon}, kurią matote, kad atskleistumėte atitinkamą informaciją."
-      },
-      "sandbox": {
-        "button": "Smėlio dėžė",
-        "title": "Smėlio dėžė",
-        "close": "Uždaryti"
-      },
-      "read-more": "Skaityti daugiau",
-      "plaintext-to-state": {
-        "body": "Pirmasis žingsnis yra sukurti būsenos matricą, kuri bus naudojama viso šifravimo proceso metu. ",
-        "learn-more": {
-          "matrices": "Matricos perkėlimas"
-        }
-      },
-      "ciphertext-to-state": {
-        "body": "Pirmasis žingsnis yra sukurti būsenos matricą, kuri bus naudojama viso iššifravimo proceso metu. ",
-        "learn-more": {
-          "matrices": "Matricos perkėlimas"
-        }
-      },
-      "key-to-state": {
-        "body": "Pirmasis žingsnis yra sukurti būsenos vektorių, kuris bus pridedamas per visą rakto išplėtimo procesą.  <span class='highlight'>AES klavišų tvarkaraštis šiek tiek keičiasi priklausomai nuo kiekvieno rakto dydžio</span>, bet jis visada orientuotas į žodžius."
-      },
-      "add-key": {
-        "body": "Raktas yra XORed su būsenos matrica.  <i>raktų balinimas</i>."
-      },
-      "add-round-key": {
-        "body": "Apvalus raktas yra XOR su būsenos matrica.  <i>Raktų išplėtimas</i> skirtuką, kad sužinotumėte, kaip sukuriami šie apvalūs klavišai.  <b>šifravimas</b>, apvalūs klavišai naudojami tokia tvarka, kokia jie buvo sukurti.  <b>iššifravimas</b>, naudojami apvalūs klavišai <b>priešingas</b> įsakymas."
-      },
-      "add-words": {
-        "body": "Pirmasis žodis XOR pakeičiamas paskutiniu žodžiu po raundo <span class='math'>𝑔</span>- jame buvo iškviesta funkcija.  <b>256 bitų</b> pagrindinis tvarkaraštis iškviečia raundą <span class='math'>ℎ</span>-funkcija 4-ajame žodyje, sugeneruotame raunde, prieš tęsiant kaip įprasta.",
-        "note": "The <span class='math'>𝑔</span>- funkcija ir <span class='math'>ℎ</span>-Funkcijų skaičiavimai aprašyti sekančiais etapais."
-      },
-      "round-g-fn": {
-        "body": "The <span class='math'>𝑔</span>-funkcija susideda iš eilės operacijų su įvesties žodžio baitais: Pakaitiniai baitai, Shift Rows (Shift = 1), o pirmasis baitas yra XOR. <i>apvali konstanta</i>. ",
-        "learn-more": {
-          "rcon": "AES apvalių konstantų skaičiavimas"
-        }
-      },
-      "round-h-fn": {
-        "body": "The <span class='math'>ℎ</span>-funkcija susideda iš pakaitinių baitų įvesties žodžio baituose. "
-      },
-      "round-keys": {
-        "body": "Šie daliniai raktai paimami tokia tvarka, kokia parodyta šifravimo metu.  <b>iššifravimas</b>, jie naudojami priešinga tvarka."
-      },
-      "rounds-header": {
-        "body": "AES veikia būsenos matricoje ratais.  <span class='highlight'>išskyrus paskutinį turą, kuriame nėra mišinių stulpelių</span>.  <b>iššifravimas</b>, veiksmai atliekami <b>priešingas</b> tvarka ir Mix Columns neįtraukiamas į pirmąjį etapą."
-      },
-      "key-rounds-header": {
-        "body": "Kiekvienam AES etapui reikia dalinio rakto ir 1 rakto balinimui. ",
-        "aes-a": " „AES Adventure“ kiekvieną turą suskirsto į „Add Words“, „Round“. <span class='math'>𝑔</span>-funkcinis ir apvalus <span class='math'>ℎ</span>-funkciniai žingsniai.  <b>256 bitų</b> pagrindinis tvarkaraštis naudoja raundą <span class='math'>ℎ</span>-funkcinis žingsnis kiekviename ture, išskyrus paskutinį turą.",
-        "note": "Kiekvienas raundas generuoja 1 dalinį raktą 128 bitų dydžiui, 1,5 dalinį raktą 192 bitams ir 2 dalinius raktus 256 bitams, išskyrus paskutinį raundą, kuris generuoja 1 dalinį raktą visiems trijų dydžių raktams."
-      },
-      "rounds-stats": {
-        "diffusion": "<b>Difuzija</b> yra vieno paprasto teksto bito įtaka (dabartiniam) šifruotam tekstui.  <i>lavina</i> poveikis. <br />„Shift Rows“ ir „Mix“ stulpeliai gali būti bendrai vadinami „ <i>difuzinis sluoksnis</i> nes jie yra pagrindiniai AES sklaidos žingsniai.",
-        "confusion": "<b>Sumišimas</b> yra ryšys tarp (dabartinio) šifruoto teksto ir rakto. <br />Pakaitiniai baitai sukelia painiavą AES.",
-        "learn-more": {
-          "conf-diff": "Sumišimas",
-          "avalanche": "Lavinos efektas"
-        }
-      },
-      "sub-bytes": {
-        "body": "Pakaitiniai baitai pakeičia kiekvieną būsenos matricos baitą baitu iš pakeitimo langelio, kuris užtikrina netiesiškumą AES (apsauga nuo analitinių atakų).  <b>iššifravimas</b>, naudojame unikalų <b>atvirkštinis</b> pakeitimo dėžutės.",
-        "learn-more": {
-          "bijective": "Bijektyvios funkcijos",
-          "sbox": "AES pakeitimo dėžutės skaičiavimas"
-        }
-      },
-      "shift-rows": {
-        "body": "„Shift Rows“ atlieka ciklinį baitų poslinkį kiekvienoje būsenos matricos eilutėje.  <b>iššifravimas</b>, pamaina yra <b>priešingas</b> kryptis. "
-      },
-      "mix-columns": {
-        "body": "Mix Columns padaugina kiekvieną būsenos matricos stulpelio vektorių iš konstantų matricos, kad gautų atitinkamą gautos būsenos matricos stulpelį.  <b>iššifravimas</b>, naudojame unikalų <b>atvirkštinis</b> pastovios matricos.",
-        "learn-more": {
-          "matrix-multiplication": "Matricos daugyba",
-          "matrix-inversion": "Matricos atvirkštiniai",
-          "gf": "Galois Fieldsas",
-          "gf-arithmetic": "Aritmetika į <span class='math'>𝐺𝐹 (2 ̂ 8)</span>"
-        }
-      },
-      "state-to-ciphertext": {
-        "body": "Paskutinis žingsnis yra sukurti šifruotą tekstą, kuris yra šifravimo proceso išvestis. ",
-        "learn-more": {
-          "matrices": "Matricos perkėlimas"
-        }
-      },
-      "state-to-plaintext": {
-        "body": "Paskutinis žingsnis yra sukurti paprastą tekstą, kuris yra iššifravimo proceso išvestis. ",
-        "learn-more": {
-          "matrices": "Matricos perkėlimas"
-        }
-      },
-      "state-to-round-keys": {
-        "body": "Paskutinis žingsnis yra sukurti apvalius klavišus, kurie yra rakto išplėtimo proceso rezultatas. "
-      }
-    },
-    "hexArea": {
-      "nibblesLeft": "liko kramtyti.",
-      "ready": "Pasiruošę!",
-      "copied": "Nukopijuota į mainų sritį.",
-      "duplicated-keys": "Nukopijuota į visas pagrindines įvestis.",
-      "duplicated-plaintext": "Nukopijuota įvesties šifravimui.",
-      "duplicated-ciphertext": "Nukopijuota įvesties iššifravimui.",
-      "go": "Eik"
-    }
-  }
 }

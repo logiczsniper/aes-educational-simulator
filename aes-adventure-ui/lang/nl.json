@@ -1,275 +1,285 @@
 {
-  "title": "Avontuur",
-  "infographic": "Infographic downloaden",
-  "edit": "Bewerking",
-  "seo": {
-    "encrypt": "Versleutelen",
-    "decrypt": "Ontsleutelen",
-    "expand": "Sleutel uitvouwen",
-    "encrypt-description": "Leer hoe AES-codering werkt met de stapsgewijze simulator van AES Adventure. ",
-    "decrypt-description": "Leer hoe AES-decodering werkt met de stapsgewijze simulator van AES Adventure. ",
-    "expand-description": "Ontdek hoe AES-toetsuitbreiding werkt met de stapsgewijze simulator van AES Adventure. ",
-    "feedback": "Feedback",
-    "feedback-description": "Geef uw waardevolle feedback aan de makers van AES Adventure, zodat we de ervaring voor iedereen kunnen verbeteren.",
-    "guide": "Gids",
-    "guide-description": "Leer hoe u het meeste uit AES Adventure kunt halen.",
-    "home-description": "Welkom bij AES Adventure, een intuïtieve AES educatieve tool. ",
-    "preferences": "Instellingen",
-    "preferences-description": "Pas het uiterlijk van AES Adventure aan uw behoeften aan."
-  },
-  "error": {
-    "mistake": "Er is iets fout gegaan...",
-    "back": "Ga terug"
-  },
-  "home": {
-    "description": "De Advanced Encryption Standard is het meest populaire cijfer met symmetrische sleutel. ",
-    "go": "Ga naar Simulatie",
-    "preferences": {
-      "title": "Instellingen",
-      "badLang": "Is uw taal slecht vertaald of niet beschikbaar?"
+    "welcome_header": "Hallo Wereld!",
+    "title": "Avontuur",
+    "infographic": "Infographic downloaden",
+    "edit": "Bewerking",
+    "seo": {
+        "encrypt": "Versleutelen",
+        "decrypt": "Ontsleutelen",
+        "expand": "Sleutel uitvouwen",
+        "encrypt-description": "Leer hoe AES-codering werkt met de stapsgewijze simulator van AES Adventure. Ondersteunt alle drie de sleutelgroottes en heeft tutorials om u te helpen bij het leren!",
+        "decrypt-description": "Leer hoe AES-decodering werkt met de stapsgewijze simulator van AES Adventure. Ondersteunt alle drie de sleutelgroottes en heeft tutorials om u te helpen bij het leren!",
+        "expand-description": "Ontdek hoe AES-toetsuitbreiding werkt met de stapsgewijze simulator van AES Adventure. Ondersteunt alle drie de sleutelgroottes en heeft tutorials om u te helpen bij het leren!",
+        "feedback": "Feedback",
+        "feedback-description": "Geef uw waardevolle feedback aan de makers van AES Adventure, zodat we de ervaring voor iedereen kunnen verbeteren.",
+        "guide": "Gids",
+        "guide-description": "Leer hoe u het meeste uit AES Adventure kunt halen.",
+        "home-description": "Welkom bij AES Adventure, een intuïtieve AES educatieve tool. Voer uw eigen gegevens in en doorloop stapsgewijze codering, decodering en sleuteluitbreiding van alle drie de sleutelgroottes.",
+        "preferences": "Voorkeuren",
+        "preferences-description": "Pas het uiterlijk van AES Adventure aan uw behoeften aan."
     },
-    "guide": {
-      "title": "Gids",
-      "table-of-contents": "Inhoudsopgave",
-      "intro": {
-        "header": "Invoering",
-        "body": "De geavanceerde versleutelingsstandaard is een <i>symmetrisch blok</i> cipher, wat betekent dat het blokken met een vaste grootte codeert/decodeert met slechts één sleutel.  <b>Opmerking:</b> alle gegevens in AES Adventure worden weergegeven in hexadecimaal; "
-      },
-      "features": {
-        "header": "Functies",
-        "animations": {
-          "header": "Animaties",
-          "body": "Alle simulatoren gebruiken animaties om elke stap van het proces duidelijk weer te geven. "
+    "error": {
+        "mistake": "Er is iets fout gegaan...",
+        "back": "Ga terug"
+    },
+    "home": {
+        "description": "De Advanced Encryption Standard is het meest populaire cijfer met symmetrische sleutel. Als je de basis wilt leren, diep in de details wilt duiken of wilt experimenteren met AES: je bent op de juiste plek!",
+        "go": "Ga naar Simulatie",
+        "guide": {
+            "title": "Gids",
+            "table-of-contents": "Inhoudsopgave",
+            "intro": {
+                "header": "Invoering",
+                "body": "De Advanced Encryption Standard is een <i> symmetrisch blok </i> cijfer, wat inhoudt dat het blokken met een vaste grootte codeert/decodeert met slechts één sleutel. AES Adventure splitst AES op in 3 primaire processen: codering, decodering en sleuteluitbreiding. Sleuteluitbreiding is het afleiden van subsleutels van de invoersleutel - deze subsleutels worden gebruikt voor zowel codering als decodering. Elk van deze complexe aspecten van AES heeft een simulator in AES Adventure die u laat zien hoe AES werkt op basis van uw invoer. AES Adventure ondersteunt alle 3 sleutelgroottes die door AES worden gebruikt: 128, 192 en 256 bits. <b> Opmerking: </b> alle gegevens in AES Adventure worden weergegeven in hexadecimaal; 1 hexadecimaal cijfer is 4 bits = 1 nibble = 0,5 bytes."
+            },
+            "features": {
+                "header": "Functies",
+                "animations": {
+                    "header": "Animaties",
+                    "body": "Alle simulatoren gebruiken animaties om elke stap van het proces duidelijk weer te geven. Deze animaties ondersteunen afspelen, pauzeren en zoeken. De afspeelsnelheid van alle animaties kan worden verdubbeld of gehalveerd met behulp van respectievelijk de konijn- en schildpadpictogrammen. Elke stap heeft een knop om naar de volgende stap te gaan - als u de stap aan het leren bent, is het raadzaam om niet verder te gaan totdat de knop wordt gemarkeerd (wat meestal gebeurt aan het einde van de animatie)."
+                },
+                "tutorials": {
+                    "header": "Tutorials",
+                    "body": "Alle simulators hebben verspreid over Tutorial-iconen. Om een tekstuele uitleg te krijgen van wat het pictogram ernaast is, klikt u op het zelfstudiepictogram om de zijbalk van de simulator uit te vouwen en de bijbehorende zelfstudie weer te geven. De zijbalk keert automatisch terug naar de oorspronkelijke grootte door op hetzelfde zelfstudiepictogram te klikken of door naar de volgende stap te gaan. Als alternatief kan de breedte van de zijbalk handmatig worden aangepast met behulp van de sleephendel rechtsonder."
+                },
+                "configuration": {
+                    "header": "Configuratie",
+                    "body": "De coderings- en decoderingssimulatoren ondersteunen een beperkt aantal configuraties die door meer gevorderde gebruikers kunnen worden gebruikt om met AES te experimenteren. Deze configuraties zijn te vinden in het <i> Configureren </i> modaal aan de linkerkant van deze pagina. <b> Opmerking: </b> als u de configuratie wijzigt, worden de coderings- en decoderingssimulatoren gereset."
+                },
+                "persistence": {
+                    "header": "Lokale volharding",
+                    "body": "De volledige status van AES Adventure wordt opgeslagen in de <i> lokale opslag </i> van uw browser met sleutels die beginnen met <span class='code'> 'AES_ADVENTURE_UI__' </span> . Dit betekent dat als u AES Adventure sluit of verlaat, alle simulaties die momenteel worden uitgevoerd, volledig worden hersteld wanneer u terugkeert. Als, om wat voor reden dan ook, de applicatie in een kapotte toestand terechtkomt, kan deze een harde reset uitvoeren door de gegevens in <i> localstorage </i> te verwijderen en de pagina te vernieuwen."
+                },
+                "duplicate-buttons": {
+                    "header": "Knoppen kopiëren",
+                    "body": "Als een invoergebied vol is, ziet u 1 of 2 <i> kopiëren </i> pictogramknoppen. De eerste knop is een standaard knop voor kopiëren naar klembord. De tweede heeft een speciale gebruiksvriendelijke functie, afhankelijk van onder welke ingang hij zich bevindt. Onder de 'cijfertekst'-uitvoer van codering: kopieert de cijfertekst naar de invoer van de decoderingssimulator. Onder de 'Plaintext'-uitvoer van decodering: kopieert de platte tekst naar de invoer van de coderingssimulator. Onder elke sleutelinvoer: kopieert de sleutel naar alle andere simulatoren - dit is vooral handig om snel dezelfde sleutel te gebruiken voor codering, decodering en sleuteluitbreiding. <b> Opmerking: </b> als de kopieerbewerking de invoer wijzigt, wordt de doelsimulator gereset omdat de invoer tijdens de simulatie niet kan worden gewijzigd."
+                },
+                "i18n": {
+                    "header": "Internationalisering",
+                    "body": "De taal van de hele app kan worden gewijzigd in voorkeuren. Van deze vertalingen wordt verwacht dat ze onvolmaakt zijn; we hebben geen professionele vertalers ingehuurd om deze vertaling te doen. Binnenkort is er een manier waarop u een fix/correctie kunt aanvragen voor de taalbestanden waarin alle vertalingen zijn opgeslagen."
+                }
+            },
+            "quick-points": {
+                "header": "Laatste tips",
+                "cant-input": "Invoergegevens kunnen niet worden gewijzigd als deze momenteel door een simulator worden gebruikt. Druk op de knop 'Resetten' om de huidige simulatie af te sluiten en u kunt de invoer opnieuw wijzigen.",
+                "cant-start": "Simulators kunnen pas worden gestart als alle vereiste invoergebieden zijn gevuld. Onder alle invoergebieden staat een teller voor 'resterende knabbels'.",
+                "nibble": "1 knabbel is natuurlijk een halve byte! (Ook gelijk aan 1 hexadecimaal cijfer)",
+                "small": "AES Adventure is ontworpen om te worden bekeken via schermen van minimaal <b> 13\" </b> groot. Dit is het kleinste standaard laptopformaat, waarvan we verwachten dat al onze gebruikers ermee zijn uitgerust. Als je merkt dat je iets kleiners hebt , gebruik de zoommogelijkheden van de browser en zoom uit. Als u mobiel bent, draait u het apparaat in de liggende modus om zoveel mogelijk extra breedte te krijgen."
+            }
         },
-        "tutorials": {
-          "header": "Tutorials",
-          "body": "Alle simulators hebben verspreid over Tutorial-iconen. "
+        "feedback": {
+            "title": "Feedback",
+            "body": "Dit is een ontwikkelingsproject en we zouden graag uw feedback over de tool ontvangen. Er is een {googleFormLink} die u kunt invullen om ons zeer waardevolle informatie te geven - uw mening! Als alternatief worden de makers van AES Adventure hieronder vermeld. Stuur ons gerust een e-mail als u problemen ondervindt met de tool.",
+            "button": "Google-formulier"
         },
-        "configuration": {
-          "header": "Configuratie",
-          "body": "De coderings- en decoderingssimulatoren ondersteunen een beperkt aantal configuraties die door meer gevorderde gebruikers kunnen worden gebruikt om met AES te experimenteren.  <i>Configureren</i> modaal aan de linkerkant van deze pagina. <b>Opmerking:</b> door de configuratie te wijzigen, worden de coderings- en decoderingssimulatoren gereset."
-        },
-        "persistence": {
-          "header": "Lokale volharding",
-          "body": "De volledige status van AES Adventure wordt opgeslagen in uw browser <i>lokale opslag</i> met toetsen die beginnen met <span class='code'>'AES_ADVENTURE_UI__'</span>.  <i>lokale opslag</i> en de pagina vernieuwen."
-        },
-        "duplicate-buttons": {
-          "header": "Knoppen kopiëren",
-          "body": "Als een invoergebied vol is, ziet u er 1 of 2 <i>kopiëren</i> pictogram knoppen.  <b>Opmerking:</b> als de kopieerbewerking de invoer wijzigt, wordt de doelsimulator gereset omdat de invoer tijdens de simulatie niet kan worden gewijzigd."
-        },
-        "i18n": {
-          "header": "Internationalisering",
-          "body": "De taal van de gehele app kan worden gewijzigd in 'Instellingen'. "
+        "gitlab": "GitLab",
+        "preferences": {
+            "title": "Voorkeuren",
+            "badLang": "Is uw taal slecht vertaald of niet beschikbaar?"
         }
-      },
-      "quick-points": {
-        "header": "Laatste tips",
-        "cant-input": "Invoergegevens kunnen niet worden gewijzigd als deze momenteel door een simulator worden gebruikt. ",
-        "cant-start": "Simulators kunnen pas worden gestart als alle vereiste invoergebieden zijn gevuld. ",
-        "nibble": "1 knabbel is natuurlijk een halve byte! ",
-        "small": "AES Adventure is ontworpen om te worden bekeken via schermen die tenminste <b>13\"</b> in grootte. "
-      }
     },
-    "feedback": {
-      "title": "Feedback",
-      "body": "Dit is een ontwikkelingsproject en we zouden graag uw feedback over de tool ontvangen. ",
-      "button": "Google-formulier"
-    },
-    "gitlab": "GitLab"
-  },
-  "configure": {
-    "button": "Configureren",
-    "modal": {
-      "title": "Configureren",
-      "body": "Selecteer hieronder een configuratie.  <b>Opmerking:</b> door de configuratie te wijzigen, worden de coderings- en decoderingssimulatoren gereset.",
-      "defaults": {
-        "standard": {
-          "name": "Standaard",
-          "description": "Vanille."
-        },
-        "short": {
-          "name": "Kort",
-          "description": "De helft van het aantal rondes."
-        },
-        "long": {
-          "name": "Lang",
-          "description": "Verdubbel het aantal rondes."
-        },
-        "staticColumns": {
-          "name": "Statische kolommen",
-          "description": "Geen MixColumns-lagen."
-        },
-        "staticRows": {
-          "name": "Statische rijen",
-          "description": "Geen ShiftRows-lagen."
-        },
-        "staticBytes": {
-          "name": "Statische bytes",
-          "description": "Geen SubstituteBytes-lagen."
+    "configure": {
+        "button": "Configureren",
+        "modal": {
+            "title": "Configureren",
+            "body": "Selecteer hieronder een configuratie. Als AES nieuw voor u is, raden we u aan de standaardsimulator te gebruiken voordat u deze configuratie gebruikt. <b> Opmerking: </b> als u de configuratie wijzigt, worden de coderings- en decoderingssimulatoren gereset.",
+            "defaults": {
+                "standard": {
+                    "name": "Standaard",
+                    "description": "Vanille."
+                },
+                "short": {
+                    "name": "Kort",
+                    "description": "De helft van het aantal rondes."
+                },
+                "long": {
+                    "name": "Lang",
+                    "description": "Verdubbel het aantal rondes."
+                },
+                "staticColumns": {
+                    "name": "Statische kolommen",
+                    "description": "Geen MixColumns-lagen."
+                },
+                "staticRows": {
+                    "name": "Statische rijen",
+                    "description": "Geen ShiftRows-lagen."
+                },
+                "staticBytes": {
+                    "name": "Statische bytes",
+                    "description": "Geen SubstituteBytes-lagen."
+                }
+            },
+            "close": "Dichtbij"
         }
-      },
-      "close": "Dichtbij"
+    },
+    "simulator": {
+        "hide": "Verbergen",
+        "show": "Show",
+        "quit": "Ontslag nemen",
+        "configurations": "Configuraties",
+        "configuration": "Configuratie",
+        "encrypt": "Versleutelen",
+        "decrypt": "Ontsleutelen",
+        "key-expansion": "Sleuteluitbreiding",
+        "plaintext": "Platte tekst",
+        "ciphertext": "Cijfertekst",
+        "key": "Sleutel",
+        "sbox": "Vervangende doos",
+        "constant-matrix": "Constante matrix",
+        "substitute-step": "Vervanging",
+        "shift-step": "Verschuiving",
+        "rcon": "Ronde constante",
+        "inverse": "Omgekeerd",
+        "state": "Staat",
+        "input": "Invoer",
+        "output": "Uitgang",
+        "add-key": "Sleutel toevoegen",
+        "confusion": "Verwarring",
+        "diffusion": "Verspreiding",
+        "substitute-bytes": "Vervang bytes",
+        "shift-rows": "Rijen verschuiven",
+        "mix-columns": "Mix Kolommen",
+        "add-round-key": "Ronde sleutel toevoegen",
+        "encryption": "encryptie",
+        "decryption": "decodering",
+        "expansion": "uitbreiding",
+        "start": "Begin",
+        "finish": "Finish",
+        "start-rounds": "Start rondes",
+        "finish-rounds": "Voltooi rondes",
+        "no-mix-columns-last": "Uitgeschakeld omdat Mix Columns is overgeslagen in de laatste ronde!",
+        "no-mix-columns-first": "Uitgeschakeld omdat Mix Columns wordt overgeslagen in de eerste ronde!",
+        "no-step-configuration": "Uitgezet omdat de geselecteerde configuratie is",
+        "no-h-function-key-size": "Uitgeschakeld omdat de sleutelgrootte niet 256 bits is!",
+        "no-h-function-last": "Uitgezet omdat de <span class='math'> ℎ </span> -functie wordt gebruikt om het 5e woord te genereren, maar er worden slechts 4 woorden gegenereerd in de laatste ronde!",
+        "round": "Ronde",
+        "next-step": "Volgende stap",
+        "skip": "Ga naar de laatste ronde",
+        "next-round": "Volgende ronde",
+        "copy": "Kopiëren",
+        "reset": "Resetten",
+        "function": "functie",
+        "add-words": "Woorden toevoegen",
+        "keys-generated": "ronde sleutels klaar",
+        "round-keys": "ronde sleutels",
+        "disabled-input": "Klik op de knop 'Resetten' om bewerken mogelijk te maken",
+        "disabled-start": "Vul de invoer(en) in om simulatie mogelijk te maken",
+        "tutorial": {
+            "title": "Zelfstudie",
+            "default": {
+                "description": "Klik op {tutorialIcon} dat u ziet om hier relevante informatie weer te geven."
+            },
+            "sandbox": {
+                "button": "Zandbak",
+                "title": "Zandbak",
+                "close": "Dichtbij"
+            },
+            "read-more": "Lees verder",
+            "plaintext-to-state": {
+                "body": "De eerste stap is het maken van de toestandsmatrix die tijdens het coderingsproces zal worden gebruikt. De platte tekst wordt gerangschikt in een 4x4 matrix van bytes en vervolgens wordt deze matrix getransponeerd.",
+                "learn-more": {
+                    "matrices": "Matrixtranspositie"
+                }
+            },
+            "ciphertext-to-state": {
+                "body": "De eerste stap is het maken van de toestandsmatrix die gedurende het hele decoderingsproces zal worden gebruikt. De cijfertekst wordt gerangschikt in een 4x4 matrix van bytes en vervolgens wordt deze matrix getransponeerd.",
+                "learn-more": {
+                    "matrices": "Matrixtranspositie"
+                }
+            },
+            "key-to-state": {
+                "body": "De eerste stap is het maken van de toestandsvector waaraan tijdens het sleuteluitbreidingsproces zal worden toegevoegd. De sleutel is gerangschikt in een vector van woorden, waarbij 1 woord 4 bytes is. <span class='highlight'> Het AES-sleutelschema verandert enigszins met elke sleutelgrootte </span> , maar het is altijd woordgericht."
+            },
+            "add-key": {
+                "body": "De sleutel is XORed met de toestandsmatrix. Merk op dat de sleutel ook is gerangschikt in een 4x4 matrix van bytes en getransponeerd is, net als de invoer. Dit wordt ook wel <i> sleutel bleken </i> genoemd."
+            },
+            "add-round-key": {
+                "body": "De ronde sleutel is XORed met de toestandsmatrix. Merk op dat de ronde sleutel ook is gerangschikt in een 4x4 matrix van bytes en getransponeerd. Ga naar het tabblad <i> Toetsuitbreiding </i> om te zien hoe deze ronde toetsen worden gemaakt. Tijdens <b> encryptie </b> worden de ronde sleutels gebruikt in de volgorde waarin ze zijn aangemaakt. Tijdens <b> decryptie </b> worden de ronde sleutels gebruikt in de <b> tegengestelde </b> volgorde."
+            },
+            "add-words": {
+                "body": "Het eerste woord wordt geXORed met het laatste woord, nadat de Round <span class='math'> 𝑔 </span> -functie erop is aangeroepen. Van daaruit wordt elk woord geXORed met het eerder berekende woord om een nieuw woord te creëren dat vervolgens wordt toegevoegd aan de toestandsvector. Het <b> 256-bits </b> sleutelschema roept de Round <span class='math'> ℎ </span> -functie aan op het 4e woord dat in de ronde wordt gegenereerd voordat het normaal wordt voortgezet.",
+                "note": "De berekeningen van de <span class='math'> 𝑔 </span> -functie en <span class='math'> ℎ </span> -functie worden beschreven in de volgende stappen."
+            },
+            "round-g-fn": {
+                "body": "De <span class='math'> 𝑔 </span> -functie bestaat uit een reeks bewerkingen op de bytes van het ingevoerde woord: Substitute Bytes, Shift Rows (shift = 1), en de eerste byte wordt geXORed met de <i> ronde constante </i> . De bytes worden vervolgens aaneengeschakeld om het uitgangswoord te vormen.",
+                "learn-more": {
+                    "rcon": "De ronde constanten van AES berekenen"
+                }
+            },
+            "round-h-fn": {
+                "body": "De <span class='math'> ℎ </span> -functie bestaat uit een Vervangende Bytes op de bytes van het ingevoerde woord. De bytes worden vervolgens aaneengeschakeld om het uitvoerwoord te vormen."
+            },
+            "round-keys": {
+                "body": "Deze subsleutels worden gebruikt in de volgorde die wordt weergegeven tijdens de codering. Tijdens <b> decryptie </b> worden ze in omgekeerde volgorde gebruikt."
+            },
+            "rounds-header": {
+                "body": "AES werkt in rondes op de toestandsmatrix. 10 ronden voor een sleutelgrootte van 128 bits, 12 ronden voor 192 bits en 14 ronden voor 256 bits. Elke ronde bestaat uit de stappen Bytes vervangen, Rijen verschuiven, Kolommen mixen, Rondesleutel toevoegen; <span class='highlight'> behalve de laatste ronde, die geen mixkolommen bevat </span> . Tijdens <b> decryptie </b> worden de stappen uitgevoerd in de <b> tegengestelde </b> volgorde en Mix Columns is niet opgenomen in de eerste ronde."
+            },
+            "key-rounds-header": {
+                "body": "Elke AES-ronde heeft een subsleutel nodig, plus 1 voor het bleken van sleutels. 11 subsleutels voor een sleutelgrootte van 128 bits, 13 subsleutels voor 192 bits en 15 subsleutels voor 256 bits. Elke ronde werkt op de uitvoer van de vorige ronde om nieuwe woorden af te leiden.",
+                "aes-a": "AES Adventure splitst elke ronde op in Woorden toevoegen, Ronde <span class='math'> 𝑔 </span> -functie en Ronde <span class='math'> ℎ </span> -functie stappen. Alleen het <b> 256-bits </b> sleutelschema gebruikt de ronde <span class='math'> ℎ </span> -functiestap in elke ronde, behalve in de laatste ronde.",
+                "note": "Elke ronde genereert 1 subsleutel voor een sleutelgrootte van 128 bits, 1,5 subsleutels voor 192 bits en 2 subsleutels voor 256 bits, behalve de laatste ronde die 1 subsleutel genereert voor alle drie de sleutelgroottes."
+            },
+            "rounds-stats": {
+                "diffusion": "<b> Diffusie </b> is de invloed van een enkele leesbare bit op de (huidige) cijfertekst. De statistiek wordt in AES Adventure weergegeven door het <i> lawine </i> -effect. Dit wordt als volgt berekend: draai voor elk stukje platte tekst het om en bereken de (huidige) cijfertekst met de gewijzigde platte tekst. Tel vervolgens het aantal bits dat is omgedraaid in de (huidige) gecodeerde tekst: de metriek is het gemiddelde aantal bits dat is omgedraaid over alle leesbare tekstvariaties. <br /> Shift Rows en Mix Columns kunnen samen de <i> diffusielaag </i> worden genoemd, omdat dit de belangrijkste diffusiestappen in AES zijn.",
+                "confusion": "<b> Verwarring </b> is de relatie tussen de (huidige) cijfertekst en de sleutel. De metriek wordt in AES Adventure weergegeven door een associatiemaat tussen de (huidige) cijfertekst en de sleutel waarin alle nullen zijn toegewezen aan -1's. <br /> Vervangende bytes zorgen voor verwarring in AES.",
+                "learn-more": {
+                    "conf-diff": "Verwarring en verspreiding",
+                    "avalanche": "Lawine-effect"
+                }
+            },
+            "sub-bytes": {
+                "body": "Substitute Bytes vervangt elke statusmatrixbyte door een byte uit het substitutievak, wat zorgt voor niet-lineariteit in AES (bescherming tegen analytische aanvallen). Het is een bijectieve mapping; tijdens <b> decryptie </b> gebruiken we de unieke <b> inverse </b> van het substitutievak.",
+                "learn-more": {
+                    "bijective": "Bijectieve functies",
+                    "sbox": "De vervangingsbox van AES berekenen"
+                }
+            },
+            "shift-rows": {
+                "body": "Shift Rows voert een bytegewijze cyclische verschuiving uit op elke rij van de toestandsmatrix. Tijdens <b> decryptie </b> is de verschuiving in de <b> tegengestelde </b> richting. In beide gevallen is de verschuiving op de eerste rij 0, wat betekent dat de eerste rij nooit wordt beïnvloed."
+            },
+            "mix-columns": {
+                "body": "Mix Columns vermenigvuldigt elke kolomvector van de toestandsmatrix met een matrix van constanten om de overeenkomstige kolom van de resulterende toestandsmatrix te produceren. De constante matrix is inverteerbaar; tijdens <b> decryptie </b> gebruiken we de unieke <b> inverse </b> van de constante matrix.",
+                "learn-more": {
+                    "matrix-multiplication": "Matrix vermenigvuldiging",
+                    "matrix-inversion": "Matrix Inversen",
+                    "gf": "Galois velden",
+                    "gf-arithmetic": "Rekenen in <span class='math'> 𝐺𝐹(2 ̂ 8) </span>"
+                }
+            },
+            "state-to-ciphertext": {
+                "body": "De laatste stap is het maken van de cijfertekst die de uitvoer is van het coderingsproces. De toestandsmatrix wordt getransponeerd en vervolgens wordt elk item aaneengeschakeld.",
+                "learn-more": {
+                    "matrices": "Matrixtranspositie"
+                }
+            },
+            "state-to-plaintext": {
+                "body": "De laatste stap is het maken van de leesbare tekst die de uitvoer is van het decoderingsproces. De toestandsmatrix wordt getransponeerd en vervolgens wordt elk item aaneengeschakeld.",
+                "learn-more": {
+                    "matrices": "Matrixtranspositie"
+                }
+            },
+            "state-to-round-keys": {
+                "body": "De laatste stap is het maken van de ronde toetsen die het resultaat zijn van het toetsuitbreidingsproces. De toestandsvectorwoorden worden met 4 tegelijk genomen en vervolgens wordt elke groep aaneengeschakeld om een subsleutel te vormen."
+            }
+        },
+        "hexArea": {
+            "nibblesLeft": "knabbels over.",
+            "ready": "Klaar!",
+            "copied": "Gekopieerd naar het klembord.",
+            "duplicated-keys": "Gekopieerd naar alle toetsinvoeren.",
+            "duplicated-plaintext": "Gekopieerd om invoer te versleutelen.",
+            "duplicated-ciphertext": "Gekopieerd om invoer te decoderen.",
+            "go": "Gaan",
+            "copy-tooltip": "Kopieer naar klembord",
+            "fill-tooltip": "Vul met willekeurige invoer",
+            "duplicate-keys-tooltip": "Kopieer naar alle toetsinvoeren",
+            "duplicate-plaintext-tooltip": "Kopiëren om invoer te versleutelen",
+            "duplicate-ciphertext-tooltip": "Kopiëren om invoer te decoderen"
+        },
+        "layer-off": "Laag is <b> uit </b> . Sluit af en configureer om het in te schakelen.",
+        "layer-on": "Laag staat <b> aan </b> . Sluit af en configureer om het uit te schakelen.",
+        "view-stats": "Statistieken bekijken",
+        "skip-full": "Ga naar uitvoer"
     }
-  },
-  "simulator": {
-    "hide": "Verbergen",
-    "show": "Show",
-    "quit": "Ontslag nemen",
-    "configurations": "Configuraties",
-    "configuration": "Configuratie",
-    "encrypt": "Versleutelen",
-    "decrypt": "Ontsleutelen",
-    "key-expansion": "Sleuteluitbreiding",
-    "plaintext": "Platte tekst",
-    "ciphertext": "Cijfertekst",
-    "key": "Sleutel",
-    "sbox": "Vervangende doos",
-    "constant-matrix": "Constante matrix",
-    "substitute-step": "Vervanging",
-    "shift-step": "Verschuiving",
-    "rcon": "Ronde constante",
-    "inverse": "Omgekeerd",
-    "state": "Staat",
-    "input": "Invoer",
-    "output": "Uitgang",
-    "add-key": "Sleutel toevoegen",
-    "confusion": "Verwarring",
-    "diffusion": "Verspreiding",
-    "substitute-bytes": "Vervang bytes",
-    "shift-rows": "Rijen verschuiven",
-    "mix-columns": "Mix Kolommen",
-    "add-round-key": "Ronde sleutel toevoegen",
-    "encryption": "encryptie",
-    "decryption": "decodering",
-    "expansion": "uitbreiding",
-    "start": "Begin",
-    "finish": "Finish",
-    "start-rounds": "Start rondes",
-    "finish-rounds": "Voltooi rondes",
-    "no-mix-columns-last": "Uitgeschakeld omdat Mix Columns is overgeslagen in de laatste ronde!",
-    "no-mix-columns-first": "Uitgeschakeld omdat Mix Columns wordt overgeslagen in de eerste ronde!",
-    "no-step-configuration": "Uitgezet omdat de geselecteerde configuratie is",
-    "no-h-function-key-size": "Uitgeschakeld omdat de sleutelgrootte niet 256 bits is!",
-    "no-h-function-last": "Uitgezet omdat de <span class='math'>ℎ</span>-functie wordt gebruikt om het 5e woord te genereren, maar er worden slechts 4 woorden gegenereerd in de laatste ronde!",
-    "round": "Ronde",
-    "next-step": "Volgende stap",
-    "skip": "Ga naar de laatste ronde",
-    "next-round": "Volgende ronde",
-    "copy": "Kopiëren",
-    "reset": "Resetten",
-    "function": "functie",
-    "add-words": "Woorden toevoegen",
-    "keys-generated": "ronde sleutels klaar",
-    "round-keys": "ronde sleutels",
-    "disabled-input": "Klik op de knop 'Resetten' om bewerken mogelijk te maken",
-    "disabled-start": "Vul de invoer(en) in om simulatie mogelijk te maken",
-    "tutorial": {
-      "title": "Zelfstudie",
-      "default": {
-        "description": "Klik op {tutorialIcon} dat u ziet om hier relevante informatie weer te geven."
-      },
-      "sandbox": {
-        "button": "Zandbak",
-        "title": "Zandbak",
-        "close": "Dichtbij"
-      },
-      "read-more": "Lees verder",
-      "plaintext-to-state": {
-        "body": "De eerste stap is het maken van de toestandsmatrix die tijdens het coderingsproces zal worden gebruikt. ",
-        "learn-more": {
-          "matrices": "Matrixtranspositie"
-        }
-      },
-      "ciphertext-to-state": {
-        "body": "De eerste stap is het maken van de toestandsmatrix die gedurende het hele decoderingsproces zal worden gebruikt. ",
-        "learn-more": {
-          "matrices": "Matrixtranspositie"
-        }
-      },
-      "key-to-state": {
-        "body": "De eerste stap is het maken van de toestandsvector waaraan tijdens het sleuteluitbreidingsproces zal worden toegevoegd.  <span class='highlight'>Het AES-sleutelschema verandert enigszins met elke sleutelgrootte</span>, maar het is altijd woordgericht."
-      },
-      "add-key": {
-        "body": "De sleutel is XORed met de toestandsmatrix.  <i>sleutel bleken</i>."
-      },
-      "add-round-key": {
-        "body": "De ronde sleutel is XORed met de toestandsmatrix.  <i>Sleuteluitbreiding</i> tab om te zien hoe deze ronde toetsen worden gemaakt.  <b>encryptie</b>, worden de ronde toetsen gebruikt in de volgorde waarin ze zijn gemaakt.  <b>decodering</b>, worden de ronde toetsen gebruikt in de <b>tegenovergestelde</b> volgorde."
-      },
-      "add-words": {
-        "body": "Het eerste woord wordt geXORed met het laatste woord, na de ronde <span class='math'>𝑔</span>-functie is erop aangeroepen.  <b>256-bits</b> sleutelschema roept de ronde op <span class='math'>ℎ</span>-functie op het 4e woord dat in de ronde wordt gegenereerd voordat u verder gaat zoals normaal.",
-        "note": "De <span class='math'>𝑔</span>-functie en <span class='math'>ℎ</span>-functieberekeningen worden beschreven in de volgende ronde stappen."
-      },
-      "round-g-fn": {
-        "body": "De <span class='math'>𝑔</span>-functie bestaat uit een reeks bewerkingen op de bytes van het invoerwoord: vervangende bytes, rijen verschuiven (shift = 1), en de eerste byte wordt geXORed met de <i>ronde constante</i>. ",
-        "learn-more": {
-          "rcon": "De ronde constanten van AES berekenen"
-        }
-      },
-      "round-h-fn": {
-        "body": "De <span class='math'>ℎ</span>-functie bestaat uit een vervangende bytes op de bytes van het invoerwoord. "
-      },
-      "round-keys": {
-        "body": "Deze subsleutels worden gebruikt in de volgorde die tijdens de codering wordt weergegeven.  <b>decodering</b>, worden ze in omgekeerde volgorde gebruikt."
-      },
-      "rounds-header": {
-        "body": "AES werkt in rondes op de toestandsmatrix.  <span class='highlight'>behalve de laatste ronde, die geen mixkolommen bevat</span>.  <b>decodering</b>, worden de stappen uitgevoerd in de <b>tegenovergestelde</b> bestellen en mixen van kolommen is niet inbegrepen in de eerste ronde."
-      },
-      "key-rounds-header": {
-        "body": "Elke AES-ronde heeft een subsleutel nodig, plus 1 voor het bleken van sleutels. ",
-        "aes-a": " AES Adventure splitst elke ronde op in Woorden toevoegen, Ronde <span class='math'>𝑔</span>-functie en rond <span class='math'>ℎ</span>-functie stappen.  <b>256-bits</b> sleutelschema gebruikt de ronde <span class='math'>ℎ</span>-functiestap in elke ronde, behalve de laatste ronde.",
-        "note": "Elke ronde genereert 1 subsleutel voor een sleutelgrootte van 128 bits, 1,5 subsleutels voor 192 bits en 2 subsleutels voor 256 bits, behalve de laatste ronde die 1 subsleutel genereert voor alle drie de sleutelgroottes."
-      },
-      "rounds-stats": {
-        "diffusion": "<b>Verspreiding</b> is de invloed van een enkele leesbare bit op de (huidige) cijfertekst.  <i>lawine</i> effect. <br />Shift Rows en Mix Columns kunnen gezamenlijk worden aangeduid als de <i>diffusie laag</i> omdat dit de belangrijkste diffusiestappen in AES zijn.",
-        "confusion": "<b>Verwarring</b> is de relatie tussen de (huidige) cijfertekst en de sleutel. <br />Vervangende Bytes introduceert verwarring in AES.",
-        "learn-more": {
-          "conf-diff": "Verwarring",
-          "avalanche": "Lawine-effect"
-        }
-      },
-      "sub-bytes": {
-        "body": "Substitute Bytes vervangt elke statusmatrixbyte door een byte uit het substitutievak, wat zorgt voor niet-lineariteit in AES (bescherming tegen analytische aanvallen).  <b>decodering</b>, gebruiken we de unieke <b>omgekeerd</b> van de wisselbox.",
-        "learn-more": {
-          "bijective": "Bijectieve functies",
-          "sbox": "De vervangingsbox van AES berekenen"
-        }
-      },
-      "shift-rows": {
-        "body": "Shift Rows voert een bytegewijze cyclische verschuiving uit op elke rij van de toestandsmatrix.  <b>decodering</b>, de verschuiving zit in de <b>tegenovergestelde</b> richting. "
-      },
-      "mix-columns": {
-        "body": "Mix Columns vermenigvuldigt elke kolomvector van de toestandsmatrix met een matrix van constanten om de overeenkomstige kolom van de resulterende toestandsmatrix te produceren.  <b>decodering</b>, gebruiken we de unieke <b>omgekeerd</b> van de constante matrix.",
-        "learn-more": {
-          "matrix-multiplication": "Matrix vermenigvuldiging",
-          "matrix-inversion": "Matrix Inversen",
-          "gf": "Galois velden",
-          "gf-arithmetic": "Rekenen erbij <span class='math'>𝐺𝐹(2 ̂ 8)</span>"
-        }
-      },
-      "state-to-ciphertext": {
-        "body": "De laatste stap is het maken van de cijfertekst die de uitvoer is van het coderingsproces. ",
-        "learn-more": {
-          "matrices": "Matrixtranspositie"
-        }
-      },
-      "state-to-plaintext": {
-        "body": "De laatste stap is het maken van de leesbare tekst die de uitvoer is van het decoderingsproces. ",
-        "learn-more": {
-          "matrices": "Matrixtranspositie"
-        }
-      },
-      "state-to-round-keys": {
-        "body": "De laatste stap is het maken van de ronde toetsen die het resultaat zijn van het toetsuitbreidingsproces. "
-      }
-    },
-    "hexArea": {
-      "nibblesLeft": "knabbels over.",
-      "ready": "Klaar!",
-      "copied": "Gekopieerd naar het klembord.",
-      "duplicated-keys": "Gekopieerd naar alle toetsinvoeren.",
-      "duplicated-plaintext": "Gekopieerd om invoer te versleutelen.",
-      "duplicated-ciphertext": "Gekopieerd om invoer te decoderen.",
-      "go": "Gaan"
-    }
-  }
 }

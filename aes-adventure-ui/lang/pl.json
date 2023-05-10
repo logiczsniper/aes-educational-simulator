@@ -1,275 +1,285 @@
 {
-  "title": "Przygoda",
-  "infographic": "Pobierz infografikę",
-  "edit": "Edytować",
-  "seo": {
-    "encrypt": "Szyfruj",
-    "decrypt": "Odszyfruj",
-    "expand": "Rozwiń klucz",
-    "encrypt-description": "Dowiedz się, jak działa szyfrowanie AES, korzystając z symulatora AES Adventure krok po kroku. ",
-    "decrypt-description": "Dowiedz się, jak działa deszyfrowanie AES, korzystając z symulatora AES Adventure krok po kroku. ",
-    "expand-description": "Dowiedz się, jak działa rozszerzanie klucza AES, korzystając z symulatora AES Adventure krok po kroku. ",
-    "feedback": "Informacja zwrotna",
-    "feedback-description": "Przekaż swoją cenną opinię twórcom AES Adventure, abyśmy mogli poprawić wrażenia dla wszystkich.",
-    "guide": "Przewodnik",
-    "guide-description": "Dowiedz się, jak w pełni wykorzystać AES Adventure.",
-    "home-description": "Witamy w AES Adventure, intuicyjnym narzędziu edukacyjnym AES. ",
-    "preferences": "Ustawienia",
-    "preferences-description": "Zmień wygląd AES Adventure, aby dostosować go do swoich potrzeb."
-  },
-  "error": {
-    "mistake": "Coś poszło nie tak...",
-    "back": "Wróć"
-  },
-  "home": {
-    "description": "Advanced Encryption Standard to najpopularniejszy szyfr z kluczem symetrycznym. ",
-    "go": "Przejdź do Symulatora",
-    "preferences": {
-      "title": "Ustawienia",
-      "badLang": "Twój język jest słabo przetłumaczony lub niedostępny?"
+    "welcome_header": "Witaj świecie!",
+    "title": "Przygoda",
+    "infographic": "Pobierz infografikę",
+    "edit": "Edytować",
+    "seo": {
+        "encrypt": "Szyfruj",
+        "decrypt": "Odszyfruj",
+        "expand": "Rozwiń klucz",
+        "encrypt-description": "Dowiedz się, jak działa szyfrowanie AES, korzystając z symulatora AES Adventure krok po kroku. Obsługuje wszystkie trzy kluczowe rozmiary i zawiera samouczki, które pomogą Ci w nauce!",
+        "decrypt-description": "Dowiedz się, jak działa deszyfrowanie AES, korzystając z symulatora AES Adventure krok po kroku. Obsługuje wszystkie trzy kluczowe rozmiary i zawiera samouczki, które pomogą Ci w nauce!",
+        "expand-description": "Dowiedz się, jak działa rozszerzanie klucza AES, korzystając z symulatora AES Adventure krok po kroku. Obsługuje wszystkie trzy kluczowe rozmiary i zawiera samouczki, które pomogą Ci w nauce!",
+        "feedback": "Informacja zwrotna",
+        "feedback-description": "Przekaż swoją cenną opinię twórcom AES Adventure, abyśmy mogli poprawić wrażenia dla wszystkich.",
+        "guide": "Przewodnik",
+        "guide-description": "Dowiedz się, jak najlepiej wykorzystać AES Adventure.",
+        "home-description": "Witamy w AES Adventure, intuicyjnym narzędziu edukacyjnym AES. Wprowadź własne dane i przejdź krok po kroku przez proces szyfrowania, odszyfrowywania i rozszerzania klucza we wszystkich trzech rozmiarach.",
+        "preferences": "Preferencje",
+        "preferences-description": "Zmień wygląd AES Adventure, aby dostosować go do swoich potrzeb."
     },
-    "guide": {
-      "title": "Przewodnik",
-      "table-of-contents": "Spis treści",
-      "intro": {
-        "header": "Wstęp",
-        "body": "Zaawansowany standard szyfrowania to a <i>blok symetryczny</i> szyfr, co oznacza, że ​​szyfruje/odszyfrowuje bloki o stałym rozmiarze za pomocą tylko jednego klucza.  <b>Notatka:</b> wszystkie dane w AES Adventure są reprezentowane w systemie szesnastkowym; "
-      },
-      "features": {
-        "header": "Cechy",
-        "animations": {
-          "header": "animacje",
-          "body": "Wszystkie symulatory wykorzystują animacje, aby wyraźnie pokazać każdy etap procesu. "
+    "error": {
+        "mistake": "Coś poszło nie tak...",
+        "back": "Wróć"
+    },
+    "home": {
+        "description": "Advanced Encryption Standard to najpopularniejszy szyfr z kluczem symetrycznym. Jeśli chcesz poznać podstawy, zagłębić się w szczegóły lub poeksperymentować z AES: jesteś we właściwym miejscu!",
+        "go": "Przejdź do Symulatora",
+        "guide": {
+            "title": "Przewodnik",
+            "table-of-contents": "Spis treści",
+            "intro": {
+                "header": "Wstęp",
+                "body": "Zaawansowany standard szyfrowania jest <i> symetrycznym szyfrem blokowym </i> , co oznacza, że szyfruje/odszyfrowuje bloki o stałym rozmiarze za pomocą tylko jednego klucza. AES Adventure dzieli AES na 3 podstawowe procesy: szyfrowanie, deszyfrowanie i rozszerzenie klucza. Ekspansja klucza to wyprowadzenie podkluczy z klucza wejściowego - te podklucze są używane zarówno do szyfrowania, jak i deszyfrowania. Każdy z tych złożonych aspektów AES ma symulator w AES Adventure, który przeprowadzi Cię przez proces działania AES na podstawie danych wejściowych. AES Adventure obsługuje wszystkie 3 rozmiary kluczy używanych przez AES: 128, 192 i 256 bitów. <b> Uwaga: </b> wszystkie dane w AES Adventure są reprezentowane w systemie szesnastkowym; 1 cyfra szesnastkowa to 4 bity = 1 półbajt = 0,5 bajta."
+            },
+            "features": {
+                "header": "Cechy",
+                "animations": {
+                    "header": "animacje",
+                    "body": "Wszystkie symulatory wykorzystują animacje, aby wyraźnie pokazać każdy etap procesu. Te animacje obsługują operacje odtwarzania, wstrzymywania i wyszukiwania. Szybkość odtwarzania wszystkich animacji można podwoić lub zmniejszyć o połowę, używając odpowiednio ikon królika i żółwia. Każdy krok będzie miał przycisk, aby przejść do następnego kroku - jeśli uczysz się kroku, zaleca się, aby nie przechodzić dalej, dopóki przycisk nie zostanie podświetlony (co zwykle ma miejsce pod koniec animacji)."
+                },
+                "tutorials": {
+                    "header": "Samouczki",
+                    "body": "Wszystkie symulatory mają rozrzucone ikony samouczków. Aby uzyskać tekstowe wyjaśnienie, czym jest ikona obok, kliknij ikonę samouczka, aby rozwinąć pasek boczny symulatora i wyświetlić odpowiedni samouczek. Pasek boczny automatycznie powróci do pierwotnego rozmiaru po kliknięciu tej samej ikony samouczka lub przejściu do następnego kroku. Alternatywnie szerokość paska bocznego można dostosować ręcznie za pomocą uchwytu do przeciągania w prawym dolnym rogu."
+                },
+                "configuration": {
+                    "header": "Konfiguracja",
+                    "body": "Symulatory szyfrowania i deszyfrowania obsługują ograniczony zestaw konfiguracji, których bardziej zaawansowani użytkownicy mogą używać do eksperymentowania z AES. Konfiguracje te można znaleźć w oknie modalnym <i> Konfiguruj </i> po lewej stronie tej strony. <b> Uwaga: </b> zmiana konfiguracji spowoduje zresetowanie symulatorów szyfrowania i deszyfrowania."
+                },
+                "persistence": {
+                    "header": "Trwałość lokalna",
+                    "body": "Cały stan AES Adventure jest zapisywany w <i> localstorage </i> Twojej przeglądarki z kluczami zaczynającymi się od <span class='code'> 'AES_ADVENTURE_UI__' </span> . Oznacza to, że jeśli zamkniesz lub opuścisz AES Adventure, wszelkie aktualnie uruchomione symulacje zostaną całkowicie przywrócone po powrocie. Jeśli z jakiegokolwiek powodu aplikacja ulegnie awarii, można ją zresetować, usuwając jej dane w <i> localstorage </i> i odświeżając stronę."
+                },
+                "duplicate-buttons": {
+                    "header": "Kopiuj przyciski",
+                    "body": "Gdy obszar wprowadzania jest pełny, zobaczysz 1 lub 2 przyciski z ikonami <i> kopiowania </i> . Pierwszy przycisk to standardowy przycisk kopiowania do schowka. Drugi ma specjalną funkcję ułatwiającą obsługę w zależności od tego, pod którym wejściem się znajduje. Pod wyjściem szyfrowania „Tekst zaszyfrowany”: kopiuje tekst zaszyfrowany na wejście symulatora deszyfrowania. Pod wyjściem „Zwykły tekst” deszyfrowania: kopiuje tekst jawny na wejście symulatora szyfrowania. Pod dowolnym kluczem wejściowym: kopiuje klucz do wszystkich innych symulatorów - jest to szczególnie przydatne do szybkiego użycia tego samego klucza do szyfrowania, deszyfrowania i rozszerzania klucza. <b> Uwaga: </b> jeśli operacja kopiowania modyfikuje dane wejściowe, symulator docelowy zostanie zresetowany, ponieważ nie można zmienić danych wejściowych w trakcie symulacji."
+                },
+                "i18n": {
+                    "header": "Umiędzynarodowienie",
+                    "body": "Język całej aplikacji można zmienić w preferencjach. Oczekuje się, że te tłumaczenia będą niedoskonałe; nie zatrudnialiśmy profesjonalnych tłumaczy do wykonania tego tłumaczenia. Wkrótce będzie można poprosić o poprawkę/korektę plików językowych, w których przechowywane są wszystkie tłumaczenia."
+                }
+            },
+            "quick-points": {
+                "header": "Wskazówki końcowe",
+                "cant-input": "Danych wejściowych nie można zmienić, jeśli symulator ich aktualnie używa. Naciśnij przycisk „Resetuj”, aby wyjść z bieżącej symulacji i ponownie zmodyfikować dane wejściowe.",
+                "cant-start": "Symulatory nie mogą zostać uruchomione, dopóki wszystkie wymagane pola wejściowe nie zostaną wypełnione. Wszystkie obszary wejściowe będą miały pod sobą licznik „pozostałych półbajtów”.",
+                "nibble": "1 półbajt to oczywiście pół bajta! (Również odpowiednik 1 cyfry szesnastkowej)",
+                "small": "AES Adventure jest przeznaczony do przeglądania na ekranach o przekątnej co najmniej <b> 13\" </b> . Jest to najmniejszy standardowy rozmiar laptopa, w który wszyscy nasi użytkownicy powinni być wyposażeni. Jeśli znajdziesz coś mniejszego , skorzystaj z funkcji powiększania i pomniejszania przeglądarki. Jeśli korzystasz z telefonu komórkowego, obróć urządzenie do trybu poziomego, aby uzyskać jak największą szerokość."
+            }
         },
-        "tutorials": {
-          "header": "Samouczki",
-          "body": "Wszystkie symulatory mają rozrzucone ikony samouczków. "
+        "feedback": {
+            "title": "Informacja zwrotna",
+            "body": "Jest to rozwijający się projekt i chcielibyśmy poznać Twoją opinię na temat tego narzędzia. Istnieje {googleFormLink} , który możesz wypełnić, aby przekazać nam bardzo cenne informacje – Twoje przemyślenia! Alternatywnie, twórcy AES Adventure są wymienieni poniżej. Jeśli masz problemy z narzędziem, wyślij nam wiadomość e-mail.",
+            "button": "Formularz Google"
         },
-        "configuration": {
-          "header": "Konfiguracja",
-          "body": "Symulatory szyfrowania i deszyfrowania obsługują ograniczony zestaw konfiguracji, których bardziej zaawansowani użytkownicy mogą używać do eksperymentowania z AES.  <i>Skonfiguruj</i> modalny po lewej stronie tej strony. <b>Notatka:</b> zmiana konfiguracji spowoduje zresetowanie symulatorów szyfrowania i deszyfrowania."
-        },
-        "persistence": {
-          "header": "Trwałość lokalna",
-          "body": "Cały stan AES Adventure jest zapisywany w przeglądarce <i>Lokalny magazyn</i> z kluczami zaczynającymi się od <span class='code'>„AES_ADVENTURE_UI__”</span>.  <i>Lokalny magazyn</i> i odświeżenie strony."
-        },
-        "duplicate-buttons": {
-          "header": "Kopiuj przyciski",
-          "body": "Gdy obszar wprowadzania jest pełny, zobaczysz 1 lub 2 <i>Kopiuj</i> przyciski ikon.  <b>Notatka:</b> jeśli operacja kopiowania modyfikuje dane wejściowe, symulator docelowy zostanie zresetowany, ponieważ dane wejściowe nie mogą być zmieniane w trakcie symulacji."
-        },
-        "i18n": {
-          "header": "Umiędzynarodowienie",
-          "body": "Język całej aplikacji można zmienić w „Ustawieniach”. "
+        "gitlab": "GitLab",
+        "preferences": {
+            "title": "Preferencje",
+            "badLang": "Twój język jest słabo przetłumaczony lub niedostępny?"
         }
-      },
-      "quick-points": {
-        "header": "Wskazówki końcowe",
-        "cant-input": "Danych wejściowych nie można zmienić, jeśli symulator ich aktualnie używa. ",
-        "cant-start": "Symulatory nie mogą zostać uruchomione, dopóki wszystkie wymagane pola wejściowe nie zostaną wypełnione. ",
-        "nibble": "1 półbajt to oczywiście pół bajta! ",
-        "small": "AES Adventure jest przeznaczony do oglądania na co najmniej ekranach <b>13\"</b> W rozmiarze. "
-      }
     },
-    "feedback": {
-      "title": "Informacja zwrotna",
-      "body": "Jest to rozwijający się projekt i chcielibyśmy poznać Twoją opinię na temat tego narzędzia. ",
-      "button": "Formularz Google"
-    },
-    "gitlab": "GitLab"
-  },
-  "configure": {
-    "button": "Skonfiguruj",
-    "modal": {
-      "title": "Skonfiguruj",
-      "body": "Wybierz konfigurację poniżej.  <b>Notatka:</b> zmiana konfiguracji spowoduje zresetowanie symulatorów szyfrowania i deszyfrowania.",
-      "defaults": {
-        "standard": {
-          "name": "Standard",
-          "description": "Wanilia."
-        },
-        "short": {
-          "name": "Krótki",
-          "description": "Połowa liczby rund."
-        },
-        "long": {
-          "name": "Długi",
-          "description": "Podwój liczbę rund."
-        },
-        "staticColumns": {
-          "name": "Kolumny statyczne",
-          "description": "Brak warstw MixColumns."
-        },
-        "staticRows": {
-          "name": "Rzędy statyczne",
-          "description": "Brak warstw ShiftRows."
-        },
-        "staticBytes": {
-          "name": "Bajty statyczne",
-          "description": "Brak warstw SubstituteBytes."
+    "configure": {
+        "button": "Skonfiguruj",
+        "modal": {
+            "title": "Skonfiguruj",
+            "body": "Wybierz konfigurację poniżej. Jeśli dopiero zaczynasz korzystać z usługi AES, zalecamy skorzystanie z domyślnego symulatora przed użyciem tej konfiguracji. <b> Uwaga: </b> zmiana konfiguracji spowoduje zresetowanie symulatorów szyfrowania i deszyfrowania.",
+            "defaults": {
+                "standard": {
+                    "name": "Standard",
+                    "description": "Wanilia."
+                },
+                "short": {
+                    "name": "Krótki",
+                    "description": "Połowa liczby rund."
+                },
+                "long": {
+                    "name": "Długi",
+                    "description": "Podwój liczbę rund."
+                },
+                "staticColumns": {
+                    "name": "Kolumny statyczne",
+                    "description": "Brak warstw MixColumns."
+                },
+                "staticRows": {
+                    "name": "Rzędy statyczne",
+                    "description": "Brak warstw ShiftRows."
+                },
+                "staticBytes": {
+                    "name": "Bajty statyczne",
+                    "description": "Brak warstw SubstituteBytes."
+                }
+            },
+            "close": "Zamknąć"
         }
-      },
-      "close": "Zamknąć"
+    },
+    "simulator": {
+        "hide": "Ukrywać",
+        "show": "Pokazywać",
+        "quit": "Zrezygnować",
+        "configurations": "Konfiguracje",
+        "configuration": "Konfiguracja",
+        "encrypt": "Szyfruj",
+        "decrypt": "Odszyfruj",
+        "key-expansion": "Rozszerzenie klucza",
+        "plaintext": "Zwykły tekst",
+        "ciphertext": "szyfrogram",
+        "key": "Klucz",
+        "sbox": "Pudełko zastępcze",
+        "constant-matrix": "Stała macierz",
+        "substitute-step": "Zastąpić",
+        "shift-step": "Zmiana",
+        "rcon": "Okrągła stała",
+        "inverse": "Odwrotność",
+        "state": "Państwo",
+        "input": "Wejście",
+        "output": "Wyjście",
+        "add-key": "Dodaj klucz",
+        "confusion": "Dezorientacja",
+        "diffusion": "Dyfuzja",
+        "substitute-bytes": "Zastąp bajty",
+        "shift-rows": "Przesuń rzędy",
+        "mix-columns": "Mieszaj kolumny",
+        "add-round-key": "Dodaj okrągły klucz",
+        "encryption": "szyfrowanie",
+        "decryption": "deszyfrowanie",
+        "expansion": "ekspansja",
+        "start": "Początek",
+        "finish": "Skończyć",
+        "start-rounds": "Rozpocznij rundy",
+        "finish-rounds": "Zakończ rundy",
+        "no-mix-columns-last": "Wyłączono, ponieważ Mix Columns jest pomijany w ostatniej rundzie!",
+        "no-mix-columns-first": "Wyłączono, ponieważ mieszanie kolumn jest pomijane w pierwszej rundzie!",
+        "no-step-configuration": "Wyłączona, ponieważ wybrana konfiguracja jest",
+        "no-h-function-key-size": "Wyłączono, ponieważ rozmiar klucza nie wynosi 256 bitów!",
+        "no-h-function-last": "Wyłączona, ponieważ funkcja <span class='math'> ℎ </span> jest używana do generowania piątego słowa, ale w ostatniej rundzie generowane są tylko 4 słowa!",
+        "round": "Okrągły",
+        "next-step": "Następny krok",
+        "skip": "Przejdź do ostatniej rundy",
+        "next-round": "Następna runda",
+        "copy": "Kopiuj",
+        "reset": "Resetowanie",
+        "function": "funkcjonować",
+        "add-words": "Dodaj słowa",
+        "keys-generated": "okrągłe klucze gotowe",
+        "round-keys": "Okrągłe klucze",
+        "disabled-input": "Kliknij przycisk „Resetuj”, aby włączyć edycję",
+        "disabled-start": "Wypełnij dane wejściowe, aby umożliwić symulację",
+        "tutorial": {
+            "title": "Instruktaż",
+            "default": {
+                "description": "Kliknij {tutorialIcon} , który widzisz, aby wyświetlić tutaj odpowiednie informacje."
+            },
+            "sandbox": {
+                "button": "Piaskownica",
+                "title": "Piaskownica",
+                "close": "Zamknąć"
+            },
+            "read-more": "Czytaj więcej",
+            "plaintext-to-state": {
+                "body": "Pierwszym krokiem jest utworzenie macierzy stanów, na której będzie działać cały proces szyfrowania. Tekst jawny jest układany w macierz bajtów 4x4, a następnie ta macierz jest transponowana.",
+                "learn-more": {
+                    "matrices": "Transpozycja macierzy"
+                }
+            },
+            "ciphertext-to-state": {
+                "body": "Pierwszym krokiem jest utworzenie macierzy stanu, na której będzie działać cały proces deszyfrowania. Zaszyfrowany tekst jest układany w macierz bajtów 4x4, a następnie ta macierz jest transponowana.",
+                "learn-more": {
+                    "matrices": "Transpozycja macierzy"
+                }
+            },
+            "key-to-state": {
+                "body": "Pierwszym krokiem jest utworzenie wektora stanu, który będzie dołączany do całego procesu rozszerzania klucza. Klucz jest ułożony w wektor słów, gdzie 1 słowo to 4 bajty. <span class='highlight'> Harmonogram kluczy AES zmienia się nieznacznie z każdym rozmiarem klucza </span> , ale zawsze jest zorientowany na słowa."
+            },
+            "add-key": {
+                "body": "Klucz jest XORowany z macierzą stanu. Zauważ, że klucz jest również ułożony w macierz bajtów 4x4 i transponowany, podobnie jak dane wejściowe. Nazywa się to również <i> rozjaśnianiem klawiszy </i> ."
+            },
+            "add-round-key": {
+                "body": "Okrągły klucz jest XORowany z macierzą stanu. Zauważ, że okrągły klucz jest również ułożony w macierz bajtów 4x4 i transponowany. Przejdź do karty <i> Rozszerzenie klucza </i> , aby dowiedzieć się, jak tworzone są te okrągłe klucze. Podczas <b> szyfrowania </b> klucze okrągłe są używane w kolejności ich tworzenia. Podczas <b> odszyfrowywania </b> okrągłe klucze są używane w <b> odwrotnej </b> kolejności."
+            },
+            "add-words": {
+                "body": "Pierwsze słowo jest XORowane z ostatnim słowem, po wywołaniu na nim funkcji Round <span class='math'> 𝑔 </span> . Stamtąd każde słowo jest poddawane operacji XOR z wcześniej obliczonym słowem w celu utworzenia nowego słowa, które jest następnie dołączane do wektora stanu. Harmonogram kluczy <b> 256-bitowych </b> wywołuje funkcję Round <span class='math'> ℎ </span> na czwartym słowie wygenerowanym w rundzie przed kontynuowaniem w normalny sposób.",
+                "note": "Obliczenia <span class='math'> 𝑔 </span> -funkcji i <span class='math'> ℎ </span> -funkcji są opisane w następujących okrągłych krokach."
+            },
+            "round-g-fn": {
+                "body": "<span class='math'> 𝑔 </span> -funkcja składa się z serii operacji na bajtach słowa wejściowego: Substitute Bytes, Shift Rows (shift = 1), a pierwszy bajt jest XORowany z <i> stała zaokrąglająca </i> . Bajty są następnie łączone w celu utworzenia słowa wyjściowego.",
+                "learn-more": {
+                    "rcon": "Obliczanie okrągłych stałych AES"
+                }
+            },
+            "round-h-fn": {
+                "body": "<span class='math'> ℎ </span> -funkcja składa się z zastępowania bajtów bajtami słowa wejściowego. Bajty są następnie łączone w celu utworzenia słowa wyjściowego."
+            },
+            "round-keys": {
+                "body": "Te podklucze są pobierane w kolejności pokazanej podczas szyfrowania. Podczas <b> odszyfrowywania </b> są one używane w odwrotnej kolejności."
+            },
+            "rounds-header": {
+                "body": "AES działa na macierzy stanu w rundach. 10 rund dla rozmiaru klucza 128 bitów, 12 rund dla 192 bitów i 14 rund dla 256 bitów. Każda runda składa się z kroków Zastąp bajty, Przesuń wiersze, Mieszaj kolumny, Dodaj okrągły klucz; <span class='highlight'> z wyjątkiem rundy finałowej, która nie obejmuje mieszanych kolumn </span> . Podczas <b> odszyfrowywania </b> kroki są wykonywane w <b> odwrotnej </b> kolejności, a opcja Mix Columns nie jest uwzględniana w pierwszej rundzie."
+            },
+            "key-rounds-header": {
+                "body": "Każda runda AES wymaga podklucza plus 1 do wybielania klucza. 11 podkluczy dla rozmiaru klucza 128 bitów, 13 podkluczy dla 192 bitów i 15 podkluczy dla 256 bitów. Każda runda działa na danych wyjściowych poprzedniej rundy, aby uzyskać nowe słowa.",
+                "aes-a": "AES Adventure dzieli każdą rundę na etapy Dodaj słowa, Rundę <span class='math'> 𝑔 </span> -funkcja i Rundę <span class='math'> ℎ </span> -funkcję. Tylko <b> 256-bitowy </b> harmonogram kluczy używa kroku funkcji Round <span class='math'> ℎ </span> w każdej rundzie, z wyjątkiem rundy finałowej.",
+                "note": "Każda runda generuje 1 podklucz dla rozmiaru klucza 128 bitów, 1,5 podklucza dla 192 bitów i 2 podklucze dla 256 bitów, z wyjątkiem ostatniej rundy, która generuje 1 podklucz dla wszystkich trzech rozmiarów klucza."
+            },
+            "rounds-stats": {
+                "diffusion": "<b> Rozpowszechnianie </b> to wpływ pojedynczego bitu tekstu jawnego na (bieżący) tekst zaszyfrowany. Metryka jest reprezentowana w AES Adventure przez efekt <i> lawiny </i> . Oblicza się to w następujący sposób: dla każdego bitu tekstu jawnego odwróć go i oblicz (bieżący) tekst zaszyfrowany ze zmodyfikowanym tekstem jawnym. Następnie policz liczbę bitów odwróconych w (bieżącym) tekście zaszyfrowanym: metryka to średnia liczba bitów odwróconych we wszystkich odmianach tekstu jawnego. <br /> Shift Rows i Mix Columns mogą być zbiorczo określane jako <i> warstwa dyfuzyjna </i> , ponieważ są to główne etapy dyfuzyjne w AES.",
+                "confusion": "<b> Zamieszanie </b> to związek między (bieżącym) tekstem zaszyfrowanym a kluczem. Metryka jest reprezentowana w AES Adventure przez miarę powiązania między (bieżącym) tekstem zaszyfrowanym a kluczem, w którym wszystkie 0 zostały odwzorowane na -1. <br /> Substitute Bytes wprowadza zamieszanie w AES.",
+                "learn-more": {
+                    "conf-diff": "Zamieszanie i rozproszenie",
+                    "avalanche": "Efekt lawiny"
+                }
+            },
+            "sub-bytes": {
+                "body": "Substitute Bytes zastępuje każdy bajt macierzy stanu bajtem z pola podstawień, co zapewnia nieliniowość w AES (ochrona przed atakami analitycznymi). Jest to odwzorowanie bijektywne; podczas <b> deszyfrowania </b> używamy unikalnej <b> odwrotności </b> pola podstawienia.",
+                "learn-more": {
+                    "bijective": "Funkcje bijekcyjne",
+                    "sbox": "Computing AES's Substitution Box"
+                }
+            },
+            "shift-rows": {
+                "body": "Shift Rows wykonuje bajtowe przesunięcie cykliczne w każdym wierszu macierzy stanu. Podczas <b> odszyfrowywania </b> przesunięcie następuje w <b> przeciwnym </b> kierunku. W obu przypadkach przesunięcie w pierwszym wierszu wynosi 0, co oznacza, że pierwszy wiersz nigdy nie jest zmieniany."
+            },
+            "mix-columns": {
+                "body": "Funkcja Mix Columns mnoży każdy wektor kolumnowy macierzy stanu przez macierz stałych, aby utworzyć odpowiednią kolumnę wynikowej macierzy stanu. Stała macierz jest odwracalna; podczas <b> deszyfrowania </b> używamy unikalnej <b> odwrotności </b> macierzy stałych.",
+                "learn-more": {
+                    "matrix-multiplication": "Mnożenie macierzy",
+                    "matrix-inversion": "Odwrotności macierzy",
+                    "gf": "Pola Galois",
+                    "gf-arithmetic": "Arytmetyka w <span class='math'> 𝐺𝐹(2 ̂ 8) </span>"
+                }
+            },
+            "state-to-ciphertext": {
+                "body": "Ostatnim krokiem jest utworzenie tekstu zaszyfrowanego, który jest wynikiem procesu szyfrowania. Macierz stanu jest transponowana, a następnie każdy wpis jest łączony.",
+                "learn-more": {
+                    "matrices": "Transpozycja macierzy"
+                }
+            },
+            "state-to-plaintext": {
+                "body": "Ostatnim krokiem jest utworzenie zwykłego tekstu, który jest wynikiem procesu deszyfrowania. Macierz stanu jest transponowana, a następnie każdy wpis jest łączony.",
+                "learn-more": {
+                    "matrices": "Transpozycja macierzy"
+                }
+            },
+            "state-to-round-keys": {
+                "body": "Ostatnim krokiem jest utworzenie okrągłych kluczy, które są wynikiem procesu rozszerzania klucza. Słowa wektora stanu są pobierane po 4 na raz, a następnie każda grupa jest łączona w celu utworzenia podklucza."
+            }
+        },
+        "hexArea": {
+            "nibblesLeft": "pozostały kąski.",
+            "ready": "Gotowy!",
+            "copied": "Skopiowane do schowka.",
+            "duplicated-keys": "Skopiowane do wszystkich kluczowych wejść.",
+            "duplicated-plaintext": "Skopiowano w celu zaszyfrowania danych wejściowych.",
+            "duplicated-ciphertext": "Skopiowano w celu odszyfrowania danych wejściowych.",
+            "go": "Iść",
+            "copy-tooltip": "Skopiuj do schowka",
+            "fill-tooltip": "Wypełnij losowymi danymi wejściowymi",
+            "duplicate-keys-tooltip": "Skopiuj do wszystkich kluczowych wejść",
+            "duplicate-plaintext-tooltip": "Kopiuj, aby zaszyfrować dane wejściowe",
+            "duplicate-ciphertext-tooltip": "Skopiuj, aby odszyfrować dane wejściowe"
+        },
+        "layer-off": "Warstwa jest <b> wyłączona </b> . Zamknij i skonfiguruj, aby go włączyć.",
+        "layer-on": "Warstwa jest <b> włączona </b> . Zamknij i skonfiguruj, aby go wyłączyć.",
+        "view-stats": "Zobacz statystyki",
+        "skip-full": "Przejdź do wyjścia"
     }
-  },
-  "simulator": {
-    "hide": "Ukrywać",
-    "show": "Pokazywać",
-    "quit": "Zrezygnować",
-    "configurations": "Konfiguracje",
-    "configuration": "Konfiguracja",
-    "encrypt": "Szyfruj",
-    "decrypt": "Odszyfruj",
-    "key-expansion": "Rozszerzenie klucza",
-    "plaintext": "Zwykły tekst",
-    "ciphertext": "szyfrogram",
-    "key": "Klucz",
-    "sbox": "Pudełko zastępcze",
-    "constant-matrix": "Stała macierz",
-    "substitute-step": "Zastąpić",
-    "shift-step": "Zmiana",
-    "rcon": "Okrągła stała",
-    "inverse": "Odwrotność",
-    "state": "Państwo",
-    "input": "Wejście",
-    "output": "Wyjście",
-    "add-key": "Dodaj klucz",
-    "confusion": "Dezorientacja",
-    "diffusion": "Dyfuzja",
-    "substitute-bytes": "Zastąp bajty",
-    "shift-rows": "Przesuń rzędy",
-    "mix-columns": "Mieszaj kolumny",
-    "add-round-key": "Dodaj okrągły klucz",
-    "encryption": "szyfrowanie",
-    "decryption": "deszyfrowanie",
-    "expansion": "ekspansja",
-    "start": "Początek",
-    "finish": "Skończyć",
-    "start-rounds": "Rozpocznij rundy",
-    "finish-rounds": "Zakończ rundy",
-    "no-mix-columns-last": "Wyłączono, ponieważ Mix Columns jest pomijany w ostatniej rundzie!",
-    "no-mix-columns-first": "Wyłączono, ponieważ mieszanie kolumn jest pomijane w pierwszej rundzie!",
-    "no-step-configuration": "Wyłączona, ponieważ wybrana konfiguracja jest",
-    "no-h-function-key-size": "Wyłączono, ponieważ rozmiar klucza nie wynosi 256 bitów!",
-    "no-h-function-last": "Wyłączony, ponieważ <span class='math'>ℎ</span>-funkcja służy do generowania piątego słowa, ale w ostatniej rundzie generowane są tylko 4 słowa!",
-    "round": "Okrągły",
-    "next-step": "Następny krok",
-    "skip": "Przejdź do ostatniej rundy",
-    "next-round": "Następna runda",
-    "copy": "Kopiuj",
-    "reset": "Resetowanie",
-    "function": "funkcjonować",
-    "add-words": "Dodaj słowa",
-    "keys-generated": "okrągłe klucze gotowe",
-    "round-keys": "Okrągłe klucze",
-    "disabled-input": "Kliknij przycisk „Resetuj”, aby włączyć edycję",
-    "disabled-start": "Wypełnij dane wejściowe, aby umożliwić symulację",
-    "tutorial": {
-      "title": "Instruktaż",
-      "default": {
-        "description": "Kliknij {tutorialIcon}, który widzisz, aby wyświetlić tutaj odpowiednie informacje."
-      },
-      "sandbox": {
-        "button": "Piaskownica",
-        "title": "Piaskownica",
-        "close": "Zamknąć"
-      },
-      "read-more": "Czytaj więcej",
-      "plaintext-to-state": {
-        "body": "Pierwszym krokiem jest utworzenie macierzy stanu, na której będzie działać cały proces szyfrowania. ",
-        "learn-more": {
-          "matrices": "Transpozycja macierzy"
-        }
-      },
-      "ciphertext-to-state": {
-        "body": "Pierwszym krokiem jest utworzenie macierzy stanu, na której będzie działać cały proces deszyfrowania. ",
-        "learn-more": {
-          "matrices": "Transpozycja macierzy"
-        }
-      },
-      "key-to-state": {
-        "body": "Pierwszym krokiem jest utworzenie wektora stanu, który będzie dołączany do całego procesu rozszerzania klucza.  <span class='highlight'>Harmonogram kluczy AES zmienia się nieznacznie z każdym rozmiarem klucza</span>, ale zawsze jest zorientowany na słowa."
-      },
-      "add-key": {
-        "body": "Klucz jest XORowany z macierzą stanu.  <i>wybielanie klucza</i>."
-      },
-      "add-round-key": {
-        "body": "Okrągły klucz jest XORowany z macierzą stanu.  <i>Rozszerzenie klucza</i> kartę, aby dowiedzieć się, jak tworzone są te okrągłe klucze.  <b>szyfrowanie</b>, okrągłe klawisze są używane w kolejności, w jakiej zostały utworzone.  <b>deszyfrowanie</b>, okrągłe klawisze są używane w <b>naprzeciwko</b> zamówienie."
-      },
-      "add-words": {
-        "body": "Pierwsze słowo jest XORowane z ostatnim słowem po Rundzie <span class='math'>𝑔</span>-funkcja została na nim wywołana.  <b>256-bitowy</b> kluczowy harmonogram wywołuje rundę <span class='math'>ℎ</span>-funkcja na czwartym słowie wygenerowanym w rundzie przed kontynuacją w normalny sposób.",
-        "note": "The <span class='math'>𝑔</span>-funkcja i <span class='math'>ℎ</span>Obliczenia -funkcji są opisane w następujących okrągłych krokach."
-      },
-      "round-g-fn": {
-        "body": "The <span class='math'>𝑔</span>-funkcja składa się z serii operacji na bajtach słowa wejściowego: Substitute Bytes, Shift Rows (shift = 1), a pierwszy bajt jest XORowany z <i>okrągła stała</i>. ",
-        "learn-more": {
-          "rcon": "Obliczanie okrągłych stałych AES"
-        }
-      },
-      "round-h-fn": {
-        "body": "The <span class='math'>ℎ</span>-funkcja składa się z bajtów zastępczych na bajtach słowa wejściowego. "
-      },
-      "round-keys": {
-        "body": "Te podklucze są pobierane w kolejności pokazanej podczas szyfrowania.  <b>deszyfrowanie</b>, są używane w odwrotnej kolejności."
-      },
-      "rounds-header": {
-        "body": "AES działa na macierzy stanu w rundach.  <span class='highlight'>z wyjątkiem rundy finałowej, która nie obejmuje mieszanych kolumn</span>.  <b>deszyfrowanie</b>, kroki są wykonywane w <b>naprzeciwko</b> kolejność i mieszanie kolumn nie jest uwzględniane w pierwszej rundzie."
-      },
-      "key-rounds-header": {
-        "body": "Każda runda AES wymaga podklucza plus 1 do wybielania klucza. ",
-        "aes-a": " AES Adventure dzieli każdą rundę na Add Words, Round <span class='math'>𝑔</span>-Funkcja i Okrągły <span class='math'>ℎ</span>-kroki funkcyjne.  <b>256-bitowy</b> kluczowy harmonogram wykorzystuje Rundę <span class='math'>ℎ</span>-krok funkcyjny w każdej rundzie, z wyjątkiem rundy finałowej.",
-        "note": "Każda runda generuje 1 podklucz dla rozmiaru klucza 128 bitów, 1,5 podklucza dla 192 bitów i 2 podklucze dla 256 bitów, z wyjątkiem ostatniej rundy, która generuje 1 podklucz dla wszystkich trzech rozmiarów klucza."
-      },
-      "rounds-stats": {
-        "diffusion": "<b>Dyfuzja</b> to wpływ pojedynczego bitu tekstu jawnego na (bieżący) tekst zaszyfrowany.  <i>lawina</i> efekt. <br />Wiersze Shift i Mix Columns mogą być łącznie określane jako <i>warstwa dyfuzyjna</i> ponieważ są to główne kroki dyfuzyjne w AES.",
-        "confusion": "<b>Dezorientacja</b> to związek między (bieżącym) tekstem zaszyfrowanym a kluczem. <br />Substitute Bytes wprowadza zamieszanie w AES.",
-        "learn-more": {
-          "conf-diff": "Dezorientacja",
-          "avalanche": "Efekt lawiny"
-        }
-      },
-      "sub-bytes": {
-        "body": "Substitute Bytes zastępuje każdy bajt macierzy stanu bajtem z pola podstawień, co zapewnia nieliniowość w AES (ochrona przed atakami analitycznymi).  <b>deszyfrowanie</b>, używamy unikalnego <b>odwrotność</b> pola zastępczego.",
-        "learn-more": {
-          "bijective": "Funkcje bijekcyjne",
-          "sbox": "Computing AES's Substitution Box"
-        }
-      },
-      "shift-rows": {
-        "body": "Shift Rows wykonuje bajtowe przesunięcie cykliczne w każdym wierszu macierzy stanu.  <b>deszyfrowanie</b>, zmiana jest w <b>naprzeciwko</b> kierunek. "
-      },
-      "mix-columns": {
-        "body": "Funkcja Mix Columns mnoży każdy wektor kolumnowy macierzy stanu przez macierz stałych, aby utworzyć odpowiednią kolumnę wynikowej macierzy stanu.  <b>deszyfrowanie</b>, używamy unikalnego <b>odwrotność</b> stałej macierzy.",
-        "learn-more": {
-          "matrix-multiplication": "Mnożenie macierzy",
-          "matrix-inversion": "Odwrotności macierzy",
-          "gf": "Pola Galois",
-          "gf-arithmetic": "Arytmetyka w <span class='math'>𝐺𝐹(2 ̂ 8)</span>"
-        }
-      },
-      "state-to-ciphertext": {
-        "body": "Ostatnim krokiem jest utworzenie tekstu zaszyfrowanego, który jest wynikiem procesu szyfrowania. ",
-        "learn-more": {
-          "matrices": "Transpozycja macierzy"
-        }
-      },
-      "state-to-plaintext": {
-        "body": "Ostatnim krokiem jest utworzenie zwykłego tekstu, który jest wynikiem procesu deszyfrowania. ",
-        "learn-more": {
-          "matrices": "Transpozycja macierzy"
-        }
-      },
-      "state-to-round-keys": {
-        "body": "Ostatnim krokiem jest utworzenie okrągłych kluczy, które są wynikiem procesu rozszerzania klucza. "
-      }
-    },
-    "hexArea": {
-      "nibblesLeft": "pozostały kąski.",
-      "ready": "Gotowy!",
-      "copied": "Skopiowane do schowka.",
-      "duplicated-keys": "Skopiowane do wszystkich kluczowych wejść.",
-      "duplicated-plaintext": "Skopiowano w celu zaszyfrowania danych wejściowych.",
-      "duplicated-ciphertext": "Skopiowano w celu odszyfrowania danych wejściowych.",
-      "go": "Iść"
-    }
-  }
 }

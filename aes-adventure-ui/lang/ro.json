@@ -1,275 +1,285 @@
 {
-  "title": "Aventură",
-  "infographic": "Descărcați infografică",
-  "edit": "Editați | ×",
-  "seo": {
-    "encrypt": "Criptează",
-    "decrypt": "Decriptează",
-    "expand": "Expand Key",
-    "encrypt-description": "Aflați cum funcționează criptarea AES cu simulatorul pas cu pas al AES Adventure. ",
-    "decrypt-description": "Aflați cum funcționează decriptarea AES cu simulatorul pas cu pas al AES Adventure. ",
-    "expand-description": "Aflați cum funcționează extinderea cheii AES cu simulatorul pas cu pas al AES Adventure. ",
-    "feedback": "Părere",
-    "feedback-description": "Oferă feedback-ul tău valoros creatorilor AES Adventure, astfel încât să putem îmbunătăți experiența pentru toată lumea.",
-    "guide": "Ghid",
-    "guide-description": "Aflați cum să profitați la maximum de AES Adventure.",
-    "home-description": "Bun venit la AES Adventure, un instrument educațional AES intuitiv. ",
-    "preferences": "Setări",
-    "preferences-description": "Schimbați modul în care arată AES Adventure pentru a se potrivi nevoilor dvs."
-  },
-  "error": {
-    "mistake": "Ceva n-a mers bine...",
-    "back": "Întoarce-te"
-  },
-  "home": {
-    "description": "Standardul de criptare avansată este cel mai popular cifru cu cheie simetrică. ",
-    "go": "Accesați Simulator",
-    "preferences": {
-      "title": "Setări",
-      "badLang": "Limba dvs. este prost tradusă sau nu este disponibilă?"
+    "welcome_header": "Salut Lume!",
+    "title": "Aventură",
+    "infographic": "Descărcați infografică",
+    "edit": "Editați | ×",
+    "seo": {
+        "encrypt": "Criptează",
+        "decrypt": "Decriptează",
+        "expand": "Expand Key",
+        "encrypt-description": "Aflați cum funcționează criptarea AES cu simulatorul pas cu pas al AES Adventure. Acceptă toate cele trei dimensiuni de cheie și are tutoriale pentru a vă ghida învățarea!",
+        "decrypt-description": "Aflați cum funcționează decriptarea AES cu simulatorul pas cu pas al AES Adventure. Acceptă toate cele trei dimensiuni de cheie și are tutoriale pentru a vă ghida învățarea!",
+        "expand-description": "Aflați cum funcționează extinderea cheii AES cu simulatorul pas cu pas al AES Adventure. Acceptă toate cele trei dimensiuni de cheie și are tutoriale pentru a vă ghida învățarea!",
+        "feedback": "Părere",
+        "feedback-description": "Oferă feedback-ul tău valoros creatorilor AES Adventure, astfel încât să putem îmbunătăți experiența pentru toată lumea.",
+        "guide": "Ghid",
+        "guide-description": "Aflați cum să profitați la maximum de AES Adventure.",
+        "home-description": "Bun venit la AES Adventure, un instrument educațional AES intuitiv. Introduceți propriile date și parcurgeți pas cu pas criptarea, decriptarea și extinderea cheilor pentru toate cele trei dimensiuni de chei.",
+        "preferences": "Preferințe",
+        "preferences-description": "Schimbați modul în care arată AES Adventure pentru a se potrivi nevoilor dvs."
     },
-    "guide": {
-      "title": "Ghid",
-      "table-of-contents": "Cuprins",
-      "intro": {
-        "header": "Introducere",
-        "body": "Standardul avansat de criptare este a <i>bloc simetric</i> cifru, ceea ce înseamnă că criptează/decriptează blocuri de dimensiuni fixe cu o singură cheie.  <b>Notă:</b> toate datele din AES Adventure sunt reprezentate în hexazecimal; "
-      },
-      "features": {
-        "header": "Caracteristici",
-        "animations": {
-          "header": "Animații",
-          "body": "Toate simulatoarele folosesc animații pentru a arăta în mod clar fiecare pas al procesului. "
+    "error": {
+        "mistake": "Ceva n-a mers bine...",
+        "back": "Întoarce-te"
+    },
+    "home": {
+        "description": "Standardul de criptare avansată este cel mai popular cifru cu cheie simetrică. Dacă doriți să învățați elementele de bază, să explorați adânc în detalii sau să experimentați cu AES: sunteți în locul potrivit!",
+        "go": "Accesați Simulator",
+        "guide": {
+            "title": "Ghid",
+            "table-of-contents": "Cuprins",
+            "intro": {
+                "header": "Introducere",
+                "body": "Standardul de criptare avansată este un cod <i> bloc simetric </i> , ceea ce înseamnă că criptează/decriptează blocuri de dimensiuni fixe cu o singură cheie. AES Adventure descompune AES în 3 procese principale: criptare, decriptare și extindere a cheilor. Extinderea cheii este derivarea subcheilor din cheia de intrare - aceste subchei sunt utilizate atât de criptare, cât și de decriptare. Fiecare dintre aceste aspecte complexe ale AES are un simulator în AES Adventure, care vă va ghida prin modul în care funcționează AES la intrarea dvs. AES Adventure acceptă toate cele 3 dimensiuni de cheie utilizate de AES: 128, 192 și 256 de biți. <b> Notă: </b> toate datele din AES Adventure sunt reprezentate în hexazecimal; 1 cifră hexazecimală este de 4 biți = 1 nibble = 0,5 octeți."
+            },
+            "features": {
+                "header": "Caracteristici",
+                "animations": {
+                    "header": "Animații",
+                    "body": "Toate simulatoarele folosesc animații pentru a arăta în mod clar fiecare pas al procesului. Aceste animații acceptă operațiuni de redare, pauză și căutare. Viteza de redare a tuturor animațiilor poate fi dublată sau redusă la jumătate folosind pictogramele iepure și, respectiv, broasca țestoasă. Fiecare pas va avea un buton pentru a trece la pasul următor - dacă înveți pasul, se recomandă să nu mergi mai departe până când butonul nu devine evidențiat (ceea ce se întâmplă în general aproape de sfârșitul animației)."
+                },
+                "tutorials": {
+                    "header": "Tutoriale",
+                    "body": "Toate simulatoarele au pictograme Tutorial împrăștiate peste tot. Pentru a obține o explicație textuală a pictogramei de lângă, faceți clic pe pictograma tutorial pentru a extinde bara laterală a simulatorului și a afișa tutorialul corespunzător. Bara laterală va reveni automat la dimensiunea inițială făcând clic pe aceeași pictogramă tutorial sau trecând la pasul următor. Alternativ, lățimea barei laterale poate fi ajustată manual folosind mânerul de glisare din dreapta jos."
+                },
+                "configuration": {
+                    "header": "Configurare",
+                    "body": "Simulatoarele de criptare și decriptare acceptă un set limitat de configurații care pot fi folosite de utilizatorii mai avansați pentru a experimenta AES. Aceste configurații pot fi găsite în modalul <i> Configurare </i> din stânga acestei pagini. <b> Notă: </b> modificarea configurației va reseta simulatoarele de criptare și decriptare."
+                },
+                "persistence": {
+                    "header": "Persistența locală",
+                    "body": "Întreaga stare a AES Adventure este salvată în <i> stocarea locală </i> a browserului dvs. cu chei care încep cu <span class='code'> „AES_ADVENTURE_UI__” </span> . Aceasta înseamnă că, dacă închideți sau părăsiți AES Adventure, orice simulare care rulează în prezent va fi complet restabilită când vă întoarceți. Dacă, din orice motiv, aplicația intră într-o stare defectă, poate fi resetata complet prin ștergerea datelor din <i> stocare locală </i> și reîmprospătând pagina."
+                },
+                "duplicate-buttons": {
+                    "header": "Butoane de copiere",
+                    "body": "Când o zonă de introducere este plină, veți vedea 1 sau 2 butoane pictograme <i> copiere </i> . Primul buton este un buton standard de copiere în clipboard. Al doilea are o funcție specială de ușurință în utilizare, în funcție de intrarea în care se află. Sub ieșirea „Ciphertext” a criptării: copiază textul cifrat în intrarea simulatorului de decriptare. Sub ieșirea „Text simplu” a decriptării: copiează textul simplu în intrarea simulatorului de criptare. Sub orice intrare de cheie: copiază cheia în toate celelalte simulatoare - acest lucru este deosebit de util pentru a utiliza rapid aceeași cheie pentru criptare, decriptare și extindere a cheii. <b> Notă: </b> dacă operația de copiere modifică intrarea, simulatorul țintă va fi resetat deoarece intrările nu pot fi modificate la mijlocul simulării."
+                },
+                "i18n": {
+                    "header": "Internaționalizarea",
+                    "body": "Limba întregii aplicații poate fi schimbată în preferințe. Aceste traduceri sunt de așteptat să fie imperfecte; nu am angajat traducători profesioniști pentru a face această traducere. În curând, va exista o modalitate de a solicita o remediere/corecție a fișierelor de limbă care stochează toate traducerile."
+                }
+            },
+            "quick-points": {
+                "header": "Sfaturi finale",
+                "cant-input": "Datele de intrare nu pot fi modificate dacă un simulator le utilizează în prezent. Apăsați butonul „Resetare” pentru a părăsi simularea curentă și veți putea modifica încă o dată intrările.",
+                "cant-start": "Simulatoarele nu pot fi pornite până când toate zonele de intrare necesare nu sunt completate. Toate zonele de intrare vor avea un contor „nibbles rămas” sub ele.",
+                "nibble": "1 ciugulă înseamnă o jumătate de octet, desigur! (De asemenea, echivalent cu 1 cifră hexazecimală)",
+                "small": "AES Adventure este conceput pentru a fi vizualizat pe ecrane care au o dimensiune de cel puțin <b> 13 inchi </b> . Aceasta este cea mai mică dimensiune standard de laptop, cu care ne așteptăm să fie echipate toți utilizatorii noștri. Dacă vă aflați cu ceva mai mic , utilizați capacitățile de zoom ale browserului și micșorați. Dacă sunteți pe mobil, rotiți dispozitivul în modul peisaj pentru a obține cât mai multă lățime suplimentară."
+            }
         },
-        "tutorials": {
-          "header": "Tutoriale",
-          "body": "Toate simulatoarele au pictograme Tutorial împrăștiate peste tot. "
+        "feedback": {
+            "title": "Părere",
+            "body": "Acesta este un proiect în curs de dezvoltare și ne-ar plăcea să primim feedback-ul dumneavoastră despre instrument. Există un {googleFormLink} pe care îl puteți completa pentru a ne oferi informații extrem de valoroase - gândurile dvs.! Alternativ, creatorii AES Adventure sunt enumerați mai jos; nu ezitați să ne trimiteți un e-mail dacă aveți probleme cu instrumentul.",
+            "button": "Formular Google"
         },
-        "configuration": {
-          "header": "Configurare",
-          "body": "Simulatoarele de criptare și decriptare acceptă un set limitat de configurații care pot fi utilizate de utilizatorii mai avansați pentru a experimenta AES.  <i>Configurați</i> modal în stânga acestei pagini. <b>Notă:</b> modificarea configurației va reseta simulatoarele de criptare și decriptare."
-        },
-        "persistence": {
-          "header": "Persistența locală",
-          "body": "Întreaga stare a AES Adventure este salvată în browser-ul dumneavoastră <i>stocare locală</i> cu chei care încep cu <span class='code'>„AES_ADVENTURE_UI__”</span>.  <i>stocare locală</i> și reîmprospătarea paginii."
-        },
-        "duplicate-buttons": {
-          "header": "Butoane de copiere",
-          "body": "Când o zonă de intrare este plină, veți vedea 1 sau 2 <i>copie</i> butoane pictograme.  <b>Notă:</b> dacă operația de copiere modifică intrarea, simulatorul țintă va fi resetat deoarece intrările nu pot fi modificate la mijlocul simulării."
-        },
-        "i18n": {
-          "header": "Internaționalizarea",
-          "body": "Limba întregii aplicații poate fi schimbată în „Setări”. "
+        "gitlab": "GitLab",
+        "preferences": {
+            "title": "Preferințe",
+            "badLang": "Limba dvs. este prost tradusă sau nu este disponibilă?"
         }
-      },
-      "quick-points": {
-        "header": "Sfaturi finale",
-        "cant-input": "Datele de intrare nu pot fi modificate dacă un simulator le utilizează în prezent. ",
-        "cant-start": "Simulatoarele nu pot fi pornite până când toate zonele de intrare necesare nu sunt completate. ",
-        "nibble": "1 ciugulă înseamnă o jumătate de octet, desigur! ",
-        "small": "AES Adventure este conceput pentru a fi vizualizat prin ecrane care sunt cel puțin <b>13\"</b> in marime. "
-      }
     },
-    "feedback": {
-      "title": "Părere",
-      "body": "Acesta este un proiect în curs de dezvoltare și ne-ar plăcea să primim feedback-ul dumneavoastră despre instrument. ",
-      "button": "Formular Google"
-    },
-    "gitlab": "GitLab"
-  },
-  "configure": {
-    "button": "Configurați",
-    "modal": {
-      "title": "Configurați",
-      "body": "Selectați o configurație de mai jos.  <b>Notă:</b> modificarea configurației va reseta simulatoarele de criptare și decriptare.",
-      "defaults": {
-        "standard": {
-          "name": "Standard",
-          "description": "Vanilie."
-        },
-        "short": {
-          "name": "Mic de statura",
-          "description": "Jumătate din numărul de runde."
-        },
-        "long": {
-          "name": "Lung",
-          "description": "Dublați numărul de runde."
-        },
-        "staticColumns": {
-          "name": "Coloane statice",
-          "description": "Fără straturi MixColumns."
-        },
-        "staticRows": {
-          "name": "Rânduri statice",
-          "description": "Fără straturi ShiftRows."
-        },
-        "staticBytes": {
-          "name": "Octeți statici",
-          "description": "Fără straturi SubstituteBytes."
+    "configure": {
+        "button": "Configurați",
+        "modal": {
+            "title": "Configurați",
+            "body": "Selectați o configurație de mai jos. Dacă sunteți nou în AES, vă recomandăm să utilizați simulatorul implicit înainte de a utiliza această configurație. <b> Notă: </b> modificarea configurației va reseta simulatoarele de criptare și decriptare.",
+            "defaults": {
+                "standard": {
+                    "name": "Standard",
+                    "description": "Vanilie."
+                },
+                "short": {
+                    "name": "Mic de statura",
+                    "description": "Jumătate din numărul de runde."
+                },
+                "long": {
+                    "name": "Lung",
+                    "description": "Dublați numărul de runde."
+                },
+                "staticColumns": {
+                    "name": "Coloane statice",
+                    "description": "Fără straturi MixColumns."
+                },
+                "staticRows": {
+                    "name": "Rânduri statice",
+                    "description": "Fără straturi ShiftRows."
+                },
+                "staticBytes": {
+                    "name": "Octeți statici",
+                    "description": "Fără straturi SubstituteBytes."
+                }
+            },
+            "close": "Închide"
         }
-      },
-      "close": "Închide"
+    },
+    "simulator": {
+        "hide": "Ascunde",
+        "show": "Spectacol",
+        "quit": "Părăsi",
+        "configurations": "Configurații",
+        "configuration": "Configurare",
+        "encrypt": "Criptează",
+        "decrypt": "Decriptează",
+        "key-expansion": "Extindere cheie",
+        "plaintext": "Text simplu",
+        "ciphertext": "Text cifrat",
+        "key": "Cheie",
+        "sbox": "Cutia de înlocuire",
+        "constant-matrix": "Matricea constantă",
+        "substitute-step": "Substitui",
+        "shift-step": "Schimb",
+        "rcon": "Constanta rotunda",
+        "inverse": "Invers",
+        "state": "Stat",
+        "input": "Intrare",
+        "output": "Ieșire",
+        "add-key": "Adăugați cheia",
+        "confusion": "Confuzie",
+        "diffusion": "Difuzia",
+        "substitute-bytes": "Înlocuiți octeții",
+        "shift-rows": "Schimbați rândurile",
+        "mix-columns": "Amestecați coloanele",
+        "add-round-key": "Adăugați cheia rotundă",
+        "encryption": "criptare",
+        "decryption": "decriptare",
+        "expansion": "expansiune",
+        "start": "start",
+        "finish": "finalizarea",
+        "start-rounds": "Începe rundele",
+        "finish-rounds": "Termină runde",
+        "no-mix-columns-last": "Dezactivat deoarece Coloanele de amestecare sunt omise în ultima rundă!",
+        "no-mix-columns-first": "Dezactivat deoarece Coloanele de amestecare sunt omise în prima rundă!",
+        "no-step-configuration": "Dezactivat deoarece configurația selectată este",
+        "no-h-function-key-size": "Dezactivat deoarece dimensiunea cheii nu este de 256 de biți!",
+        "no-h-function-last": "Dezactivat deoarece funcția <span class='math'> ℎ </span> - este folosită pentru a genera al 5-lea cuvânt, dar numai 4 cuvinte sunt generate în ultima rundă!",
+        "round": "Rundă",
+        "next-step": "Urmatorul pas",
+        "skip": "Treci la ultima rundă",
+        "next-round": "Următoarea rundă",
+        "copy": "Copie",
+        "reset": "Resetați",
+        "function": "funcţie",
+        "add-words": "Adăugați cuvinte",
+        "keys-generated": "cheile rotunde sunt gata",
+        "round-keys": "Chei rotunde",
+        "disabled-input": "Faceți clic pe butonul „Resetare” pentru a activa editarea",
+        "disabled-start": "Completați intrările pentru a activa simularea",
+        "tutorial": {
+            "title": "Tutorial",
+            "default": {
+                "description": "Faceți clic pe {tutorialIcon} pe care îl vedeți pentru a dezvălui informații relevante aici."
+            },
+            "sandbox": {
+                "button": "Cutie cu nisip",
+                "title": "Cutie cu nisip",
+                "close": "Închide"
+            },
+            "read-more": "Citeşte mai mult",
+            "plaintext-to-state": {
+                "body": "Primul pas este crearea matricei de stare care va fi operată pe tot parcursul procesului de criptare. Textul simplu este aranjat într-o matrice 4x4 de octeți și apoi această matrice este transpusă.",
+                "learn-more": {
+                    "matrices": "Transpunerea matricei"
+                }
+            },
+            "ciphertext-to-state": {
+                "body": "Primul pas este crearea matricei de stare care va fi operată pe tot parcursul procesului de decriptare. Textul cifrat este aranjat într-o matrice 4x4 de octeți și apoi această matrice este transpusă.",
+                "learn-more": {
+                    "matrices": "Transpunerea matricei"
+                }
+            },
+            "key-to-state": {
+                "body": "Primul pas este crearea vectorului de stare care va fi atașat pe tot parcursul procesului de extindere a cheii. Cheia este aranjată într-un vector de cuvinte, unde 1 cuvânt este de 4 octeți. <span class='highlight'> Programul cheilor AES se modifică ușor cu fiecare dimensiune a tastei </span> , dar este întotdeauna orientat spre cuvinte."
+            },
+            "add-key": {
+                "body": "Cheia este XOR cu matricea de stări. Rețineți că cheia este, de asemenea, aranjată într-o matrice 4x4 de octeți și transpusă, la fel ca și intrarea. Acest lucru este denumit și <i> albire cheie </i> ."
+            },
+            "add-round-key": {
+                "body": "Cheia rotundă este XOR cu matricea de stări. Rețineți că cheia rotundă este, de asemenea, aranjată într-o matrice 4x4 de octeți și transpusă. Accesați fila <i> Key Expansion </i> pentru a afla cum sunt create aceste taste rotunde. În timpul <b> criptării </b> , cheile rotunde sunt folosite în ordinea în care au fost create. În timpul <b> decriptării </b> , cheile rotunde sunt folosite în ordinea <b> opusă </b> ."
+            },
+            "add-words": {
+                "body": "Primul cuvânt este XOR cu ultimul cuvânt, după ce funcția Run <span class='math'> 𝑔 </span> a fost invocată pe el. De acolo, fiecare cuvânt este XOR cu cuvântul calculat anterior pentru a crea un cuvânt nou care este apoi atașat vectorului de stare. Programul cheii <b> 256 de biți </b> invocă funcția Runda <span class='math'> ℎ </span> pe al 4-lea cuvânt generat în rundă înainte de a continua ca de obicei.",
+                "note": "Calculele pentru funcția <span class='math'> 𝑔 </span> și <span class='math'> ℎ </span> sunt prezentate în următorii pași rotunji."
+            },
+            "round-g-fn": {
+                "body": "Funcția <span class='math'> 𝑔 </span> - constă dintr-o serie de operații pe octeții cuvântului de intrare: Substitute Bytes, Shift Rows (shift = 1), iar primul octet este XOR cu <i> constantă rotundă </i> . Octeții sunt apoi concatenați pentru a forma cuvântul de ieșire.",
+                "learn-more": {
+                    "rcon": "Calcularea constantelor rotunde ale AES"
+                }
+            },
+            "round-h-fn": {
+                "body": "Funcția <span class='math'> ℎ </span> constă dintr-un octeți de substituție pe octeții cuvântului de intrare. Octeții sunt apoi concatenați pentru a forma cuvântul de ieșire."
+            },
+            "round-keys": {
+                "body": "Aceste subchei sunt luate în ordinea afișată în timpul criptării. În timpul <b> decriptării </b> , acestea sunt utilizate în ordine opusă."
+            },
+            "rounds-header": {
+                "body": "AES operează pe matricea de stări în runde. 10 runde pentru o dimensiune a cheii de 128 de biți, 12 runde pentru 192 de biți și 14 runde pentru 256 de biți. Fiecare rundă constă din pașii Substitute Bytes, Shift Rows, Mix Columns, Add Round Key; <span class='highlight'> cu excepția rundei finale, care nu include Coloanele Mix </span> . În timpul <b> decriptării </b> , pașii sunt executați în ordinea <b> opusă </b> și Coloanele Mix nu sunt incluse în prima rundă."
+            },
+            "key-rounds-header": {
+                "body": "Fiecare rundă de AES are nevoie de o subcheie, plus 1 pentru albirea cheii. 11 subchei pentru o dimensiune de cheie de 128 de biți, 13 subchei pentru 192 de biți și 15 subchei pentru 256 de biți. Fiecare rundă operează pe rezultatul rundei precedente pentru a deriva cuvinte noi.",
+                "aes-a": "AES Adventure descompune fiecare rundă în pași Adăugați cuvinte, Funcție <span class='math'> 𝑔 </span> Rotundă și pași de funcție <span class='math'> ℎ </span> . Numai programul cheii <b> 256 de biți </b> utilizează pasul funcției Runda <span class='math'> ℎ </span> în fiecare rundă, cu excepția rundei finale.",
+                "note": "Fiecare rundă generează 1 subcheie pentru o dimensiune de cheie de 128 de biți, 1,5 subchei pentru 192 de biți și 2 subchei pentru 256 de biți, cu excepția rundei finale care generează 1 subcheie pentru toate cele trei dimensiuni de cheie."
+            },
+            "rounds-stats": {
+                "diffusion": "<b> Difuzia </b> este influența unui singur bit de text simplu asupra textului cifrat (actual). Valoarea este reprezentată în AES Adventure prin efectul de <i> avalanșă </i> . Acesta se calculează după cum urmează: pentru fiecare bit de text simplu, întoarceți-l și calculați textul cifrat (actual) cu textul simplu modificat. Apoi, numărați numărul de biți răsturnați în textul cifrat (actual): metrica este numărul mediu de biți răsturnați în toate variațiile de text simplu. <br /> Shift Rows și Mix Colons pot fi denumite în mod colectiv <i> strat de difuzie </i> deoarece sunt etapele difuzive majore în AES.",
+                "confusion": "<b> Confuzia </b> este relația dintre textul cifrat (actual) și cheie. Valoarea este reprezentată în AES Adventure printr-o măsură de asociere între textul cifrat (actual) și cheia în care toate 0-urile au fost mapate la -1. <br /> Substitute Bytes introduce confuzie în AES.",
+                "learn-more": {
+                    "conf-diff": "Confuzie & Difuzie",
+                    "avalanche": "Efectul de avalanșă"
+                }
+            },
+            "sub-bytes": {
+                "body": "Substitute Bytes înlocuiește fiecare octet al matricei de stare cu un octet din caseta de substituție, care oferă neliniaritate în AES (protecție împotriva atacurilor analitice). Este o mapare bijectiva; în timpul <b> decriptării </b> , folosim <b> inversul unic </b> al casetei de înlocuire.",
+                "learn-more": {
+                    "bijective": "Funcții bijective",
+                    "sbox": "Calcularea casetei de înlocuire a AES"
+                }
+            },
+            "shift-rows": {
+                "body": "Shift Rows efectuează o deplasare ciclică în funcție de octeți pe fiecare rând al matricei de stare. În timpul <b> decriptării </b> , schimbarea este în direcția <b> opusă </b> . În ambele cazuri, deplasarea pe primul rând este 0, ceea ce înseamnă că primul rând nu este niciodată afectat."
+            },
+            "mix-columns": {
+                "body": "Mix Columns înmulțește fiecare vector coloană al matricei de stare cu o matrice de constante pentru a produce coloana corespunzătoare a matricei de stare rezultată. Matricea constantă este inversabilă; în timpul <b> decriptării </b> , folosim <b> inversul unic </b> al matricei constante.",
+                "learn-more": {
+                    "matrix-multiplication": "Înmulțirea matriceală",
+                    "matrix-inversion": "Inversurile matriceale",
+                    "gf": "Câmpurile Galois",
+                    "gf-arithmetic": "Aritmetică în <span class='math'> 𝐺𝐹(2 ̂ 8) </span>"
+                }
+            },
+            "state-to-ciphertext": {
+                "body": "Pasul final este crearea textului cifrat care este rezultatul procesului de criptare. Matricea de stări este transpusă și apoi fiecare intrare este concatenată.",
+                "learn-more": {
+                    "matrices": "Transpunerea matricei"
+                }
+            },
+            "state-to-plaintext": {
+                "body": "Pasul final este crearea textului simplu care este rezultatul procesului de decriptare. Matricea de stări este transpusă și apoi fiecare intrare este concatenată.",
+                "learn-more": {
+                    "matrices": "Transpunerea matricei"
+                }
+            },
+            "state-to-round-keys": {
+                "body": "Pasul final este crearea tastelor rotunde care sunt rezultatul procesului de extindere a tastelor. Cuvintele vector de stare sunt luate câte 4 și apoi fiecare grup este concatenat pentru a forma o subcheie."
+            }
+        },
+        "hexArea": {
+            "nibblesLeft": "ciuguli rămase.",
+            "ready": "Gata!",
+            "copied": "Copiat în clipboard.",
+            "duplicated-keys": "Copiat în toate intrările cheie.",
+            "duplicated-plaintext": "Copiat pentru a cripta intrarea.",
+            "duplicated-ciphertext": "Copiat pentru a decripta intrarea.",
+            "go": "Merge",
+            "copy-tooltip": "Copiați în clipboard",
+            "fill-tooltip": "Completați cu intrare aleatorie",
+            "duplicate-keys-tooltip": "Copiați în toate intrările cheie",
+            "duplicate-plaintext-tooltip": "Copiați pentru a cripta intrarea",
+            "duplicate-ciphertext-tooltip": "Copiați pentru a decripta intrarea"
+        },
+        "layer-off": "Stratul este <b> dezactivat </b> . Ieșiți și configurați pentru a-l porni.",
+        "layer-on": "Stratul este <b> activat </b> . Ieșiți și configurați pentru a-l opri.",
+        "view-stats": "Vedeți statistici",
+        "skip-full": "Treci la ieșire"
     }
-  },
-  "simulator": {
-    "hide": "Ascunde",
-    "show": "Spectacol",
-    "quit": "Părăsi",
-    "configurations": "Configurații",
-    "configuration": "Configurare",
-    "encrypt": "Criptează",
-    "decrypt": "Decriptează",
-    "key-expansion": "Extindere cheie",
-    "plaintext": "Text simplu",
-    "ciphertext": "Text cifrat",
-    "key": "Cheie",
-    "sbox": "Cutia de înlocuire",
-    "constant-matrix": "Matricea constantă",
-    "substitute-step": "Substitui",
-    "shift-step": "Schimb",
-    "rcon": "Constanta rotunda",
-    "inverse": "Invers",
-    "state": "Stat",
-    "input": "Intrare",
-    "output": "Ieșire",
-    "add-key": "Adăugați cheia",
-    "confusion": "Confuzie",
-    "diffusion": "Difuzia",
-    "substitute-bytes": "Înlocuiți octeții",
-    "shift-rows": "Schimbați rândurile",
-    "mix-columns": "Amestecați coloanele",
-    "add-round-key": "Adăugați cheia rotundă",
-    "encryption": "criptare",
-    "decryption": "decriptare",
-    "expansion": "expansiune",
-    "start": "start",
-    "finish": "finalizarea",
-    "start-rounds": "Începe rundele",
-    "finish-rounds": "Termină runde",
-    "no-mix-columns-last": "Dezactivat deoarece Coloanele de amestecare sunt omise în ultima rundă!",
-    "no-mix-columns-first": "Dezactivat deoarece Coloanele de amestecare sunt omise în prima rundă!",
-    "no-step-configuration": "Dezactivat deoarece configurația selectată este",
-    "no-h-function-key-size": "Dezactivat deoarece dimensiunea cheii nu este de 256 de biți!",
-    "no-h-function-last": "Dezactivat deoarece <span class='math'>ℎ</span>-funcția este folosită pentru a genera al 5-lea cuvânt, dar numai 4 cuvinte sunt generate în ultima rundă!",
-    "round": "Rundă",
-    "next-step": "Urmatorul pas",
-    "skip": "Treci la ultima rundă",
-    "next-round": "Următoarea rundă",
-    "copy": "Copie",
-    "reset": "Resetați",
-    "function": "funcţie",
-    "add-words": "Adăugați cuvinte",
-    "keys-generated": "cheile rotunde sunt gata",
-    "round-keys": "Chei rotunde",
-    "disabled-input": "Faceți clic pe butonul „Resetare” pentru a activa editarea",
-    "disabled-start": "Completați intrările pentru a activa simularea",
-    "tutorial": {
-      "title": "Tutorial",
-      "default": {
-        "description": "Faceți clic pe {tutorialIcon} pe care îl vedeți pentru a dezvălui informații relevante aici."
-      },
-      "sandbox": {
-        "button": "Cutie cu nisip",
-        "title": "Cutie cu nisip",
-        "close": "Închide"
-      },
-      "read-more": "Citeşte mai mult",
-      "plaintext-to-state": {
-        "body": "Primul pas este crearea matricei de stare care va fi operată pe tot parcursul procesului de criptare. ",
-        "learn-more": {
-          "matrices": "Transpunerea matricei"
-        }
-      },
-      "ciphertext-to-state": {
-        "body": "Primul pas este crearea matricei de stare care va fi operată pe tot parcursul procesului de decriptare. ",
-        "learn-more": {
-          "matrices": "Transpunerea matricei"
-        }
-      },
-      "key-to-state": {
-        "body": "Primul pas este crearea vectorului de stare care va fi atașat pe tot parcursul procesului de extindere a cheii.  <span class='highlight'>Programul cheilor AES se modifică ușor cu fiecare dimensiune a tastei</span>, dar este întotdeauna orientat spre cuvinte."
-      },
-      "add-key": {
-        "body": "Cheia este XOR cu matricea de stări.  <i>albirea cheii</i>."
-      },
-      "add-round-key": {
-        "body": "Cheia rotundă este XOR cu matricea de stări.  <i>Extindere cheie</i> pentru a afla cum sunt create aceste taste rotunde.  <b>criptare</b>, cheile rotunde sunt folosite în ordinea în care au fost create.  <b>decriptare</b>, tastele rotunde sunt folosite în <b>opus</b> Ordin."
-      },
-      "add-words": {
-        "body": "Primul cuvânt este XOR cu ultimul cuvânt, după Rundă <span class='math'>𝑔</span>-funcția a fost invocată pe ea.  <b>256 de biți</b> programul cheie invocă Runda <span class='math'>ℎ</span>-funcție pe al 4-lea cuvânt generat în rundă înainte de a continua normal.",
-        "note": "The <span class='math'>𝑔</span>-funcţia şi <span class='math'>ℎ</span>- calculele funcției sunt subliniate în următorii pași rotunji."
-      },
-      "round-g-fn": {
-        "body": "The <span class='math'>𝑔</span>-funcția constă dintr-o serie de operații pe octeții cuvântului de intrare: Substitute Bytes, Shift Rows (shift = 1), iar primul octet este XORed cu <i>constantă rotundă</i>. ",
-        "learn-more": {
-          "rcon": "Calcularea constantelor rotunde ale AES"
-        }
-      },
-      "round-h-fn": {
-        "body": "The <span class='math'>ℎ</span>-funcția constă dintr-un Substitute Bytes pe octeții cuvântului de intrare. "
-      },
-      "round-keys": {
-        "body": "Aceste subchei sunt luate în ordinea afișată în timpul criptării.  <b>decriptare</b>, sunt folosite în ordine inversă."
-      },
-      "rounds-header": {
-        "body": "AES operează pe matricea de stări în runde.  <span class='highlight'>cu excepția rundei finale, care nu include Coloanele Mix</span>.  <b>decriptare</b>, pașii sunt executați în <b>opus</b> comanda și Coloanele Mix nu este inclusă în prima rundă."
-      },
-      "key-rounds-header": {
-        "body": "Fiecare rundă de AES are nevoie de o subcheie, plus 1 pentru albirea cheii. ",
-        "aes-a": " AES Adventure descompune fiecare rundă în Adăugați cuvinte, rundă <span class='math'>𝑔</span>-funcție și rotund <span class='math'>ℎ</span>-pașii funcției.  <b>256 de biți</b> programul cheie folosește Runda <span class='math'>ℎ</span>-pas de functie in fiecare runda, cu exceptia rundei finale.",
-        "note": "Fiecare rundă generează 1 subcheie pentru o dimensiune de cheie de 128 de biți, 1,5 subchei pentru 192 de biți și 2 subchei pentru 256 de biți, cu excepția rundei finale care generează 1 subcheie pentru toate cele trei dimensiuni de cheie."
-      },
-      "rounds-stats": {
-        "diffusion": "<b>Difuzia</b> este influența unui singur bit de text simplu asupra textului cifrat (actual).  <i>avalanşă</i> efect. <br />Shift Rows și Coloanele Mix pot fi denumite în mod colectiv <i>strat de difuzie</i> deoarece acestea sunt etapele difuzive majore în AES.",
-        "confusion": "<b>Confuzie</b> este relația dintre textul cifrat (actual) și cheie. <br />Substitute Bytes introduce confuzie în AES.",
-        "learn-more": {
-          "conf-diff": "Confuzie",
-          "avalanche": "Efectul de avalanșă"
-        }
-      },
-      "sub-bytes": {
-        "body": "Substitute Bytes înlocuiește fiecare octet al matricei de stare cu un octet din caseta de substituție, care oferă neliniaritate în AES (protecție împotriva atacurilor analitice).  <b>decriptare</b>, folosim unic <b>invers</b> a casetei de înlocuire.",
-        "learn-more": {
-          "bijective": "Funcții bijective",
-          "sbox": "Calcularea casetei de înlocuire a AES"
-        }
-      },
-      "shift-rows": {
-        "body": "Shift Rows efectuează o deplasare ciclică în funcție de octeți pe fiecare rând al matricei de stare.  <b>decriptare</b>, schimbarea este în <b>opus</b> direcţie. "
-      },
-      "mix-columns": {
-        "body": "Mix Columns înmulțește fiecare vector coloană al matricei de stare cu o matrice de constante pentru a produce coloana corespunzătoare a matricei de stare rezultată.  <b>decriptare</b>, folosim unic <b>invers</b> a matricei constante.",
-        "learn-more": {
-          "matrix-multiplication": "Înmulțirea matriceală",
-          "matrix-inversion": "Inversurile matriceale",
-          "gf": "Câmpurile Galois",
-          "gf-arithmetic": "Aritmetica în <span class='math'>𝐺𝐹(2 ̂ 8)</span>"
-        }
-      },
-      "state-to-ciphertext": {
-        "body": "Pasul final este crearea textului cifrat care este rezultatul procesului de criptare. ",
-        "learn-more": {
-          "matrices": "Transpunerea matricei"
-        }
-      },
-      "state-to-plaintext": {
-        "body": "Pasul final este crearea textului simplu care este rezultatul procesului de decriptare. ",
-        "learn-more": {
-          "matrices": "Transpunerea matricei"
-        }
-      },
-      "state-to-round-keys": {
-        "body": "Pasul final este crearea tastelor rotunde care sunt rezultatul procesului de extindere a tastelor. "
-      }
-    },
-    "hexArea": {
-      "nibblesLeft": "ciuguli rămase.",
-      "ready": "Gata!",
-      "copied": "Copiat în clipboard.",
-      "duplicated-keys": "Copiat în toate intrările cheie.",
-      "duplicated-plaintext": "Copiat pentru a cripta intrarea.",
-      "duplicated-ciphertext": "Copiat pentru a decripta intrarea.",
-      "go": "Merge"
-    }
-  }
 }

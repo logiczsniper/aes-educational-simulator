@@ -1,275 +1,285 @@
 {
-  "title": "Kaland",
-  "infographic": "Infografika letöltése",
-  "edit": "Szerkesztés",
-  "seo": {
-    "encrypt": "Titkosítás",
-    "decrypt": "Dekódolás",
-    "expand": "Kulcs kibontása",
-    "encrypt-description": "Ismerje meg, hogyan működik az AES titkosítás az AES Adventure lépésről lépésre szimulátorával. ",
-    "decrypt-description": "Ismerje meg, hogyan működik az AES visszafejtés az AES Adventure lépésről lépésre szimulátorával. ",
-    "expand-description": "Ismerje meg, hogyan működik az AES kulcsbővítés az AES Adventure lépésről lépésre szimulátorával. ",
-    "feedback": "Visszacsatolás",
-    "feedback-description": "Adja meg értékes visszajelzéseit az AES Adventure alkotóinak, hogy mindenki számára javíthassuk az élményt.",
-    "guide": "Útmutató",
-    "guide-description": "Ismerje meg, hogyan hozhatja ki a legtöbbet az AES Adventure-ből.",
-    "home-description": "Üdvözöljük az AES Adventure intuitív AES oktatási eszközben. ",
-    "preferences": "Beállítások",
-    "preferences-description": "Módosítsa az AES Adventure megjelenését igényeinek megfelelően."
-  },
-  "error": {
-    "mistake": "Valami elromlott...",
-    "back": "Menjen vissza"
-  },
-  "home": {
-    "description": "Az Advanced Encryption Standard a legnépszerűbb szimmetrikus kulcsú titkosítás. ",
-    "go": "Menjen a Szimulátorhoz",
-    "preferences": {
-      "title": "Beállítások",
-      "badLang": "Az Ön nyelve rosszul van lefordítva vagy nem elérhető?"
+    "welcome_header": "Helló Világ!",
+    "title": "Kaland",
+    "infographic": "Infografika letöltése",
+    "edit": "Szerkesztés",
+    "seo": {
+        "encrypt": "Titkosítás",
+        "decrypt": "Dekódolás",
+        "expand": "Kulcs kibontása",
+        "encrypt-description": "Ismerje meg, hogyan működik az AES titkosítás az AES Adventure lépésről lépésre szimulátorával. Támogatja mindhárom kulcsméretet, és oktatóanyagai segítenek a tanulásban!",
+        "decrypt-description": "Ismerje meg, hogyan működik az AES visszafejtés az AES Adventure lépésről lépésre szimulátorával. Támogatja mindhárom kulcsméretet, és oktatóanyagai segítenek a tanulásban!",
+        "expand-description": "Ismerje meg, hogyan működik az AES kulcsbővítés az AES Adventure lépésről-lépésre szimulátorával. Támogatja mindhárom kulcsméretet, és oktatóanyagai segítenek a tanulásban!",
+        "feedback": "Visszacsatolás",
+        "feedback-description": "Adja meg értékes visszajelzéseit az AES Adventure alkotóinak, hogy mindenki számára javíthassuk az élményt.",
+        "guide": "Útmutató",
+        "guide-description": "Ismerje meg, hogyan hozhatja ki a legtöbbet az AES Adventure-ből.",
+        "home-description": "Üdvözöljük az AES Adventure intuitív AES oktatási eszközben. Vigye be saját adatait, és lépésről lépésre végigjárja mindhárom kulcsméret titkosítását, visszafejtését és kulcsbővítését.",
+        "preferences": "preferenciák",
+        "preferences-description": "Módosítsa az AES Adventure megjelenését igényeinek megfelelően."
     },
-    "guide": {
-      "title": "Útmutató",
-      "table-of-contents": "Tartalomjegyzék",
-      "intro": {
-        "header": "Bevezetés",
-        "body": "Az Advanced Encryption Standard a <i>szimmetrikus blokk</i> titkosítás, ami azt jelenti, hogy csak egy kulccsal titkosítja/fejti vissza a rögzített méretű blokkokat.  <b>Jegyzet:</b> az AES Adventure összes adata hexadecimálisan van ábrázolva; "
-      },
-      "features": {
-        "header": "Jellemzők",
-        "animations": {
-          "header": "Animációk",
-          "body": "Az összes szimulátor animációkat használ a folyamat egyes lépéseinek világos bemutatására. "
+    "error": {
+        "mistake": "Valami elromlott...",
+        "back": "Menjen vissza"
+    },
+    "home": {
+        "description": "Az Advanced Encryption Standard a legnépszerűbb szimmetrikus kulcsú titkosítás. Ha meg szeretné tanulni az alapokat, mélyedjen el a részletekben, vagy kísérletezzen az AES-sel: jó helyen jár!",
+        "go": "Menjen a Szimulátorhoz",
+        "guide": {
+            "title": "Útmutató",
+            "table-of-contents": "Tartalomjegyzék",
+            "intro": {
+                "header": "Bevezetés",
+                "body": "Az Advanced Encryption Standard egy <i> szimmetrikus blokk </i> titkosítás, ami azt jelenti, hogy csak egy kulccsal titkosítja/fejti vissza a rögzített méretű blokkokat. Az AES Adventure az AES-t 3 elsődleges folyamatra bontja: titkosításra, visszafejtésre és kulcsbővítésre. A kulcsbővítés az alkulcsok származtatása a bemeneti kulcsból – ezeket az alkulcsokat titkosítás és visszafejtés egyaránt használja. Az AES ezen összetett aspektusainak mindegyikéhez tartozik egy szimulátor az AES Adventure programban, amely végigvezeti Önt, hogyan működik az AES az Ön bemenetén. Az AES Adventure az AES által használt mindhárom kulcsméretet támogatja: 128, 192 és 256 bit. <b> Megjegyzés: </b> az AES Adventure összes adata hexadecimálisan van ábrázolva; 1 hexadecimális számjegy 4 bit = 1 nibble = 0,5 bájt."
+            },
+            "features": {
+                "header": "Jellemzők",
+                "animations": {
+                    "header": "Animációk",
+                    "body": "Az összes szimulátor animációkat használ a folyamat egyes lépéseinek világos bemutatására. Ezek az animációk támogatják a lejátszási, szüneteltetési és keresési műveleteket. Az összes animáció lejátszási sebessége megduplázható vagy felére csökkenthető a nyúl és teknős ikonok segítségével. Minden lépéshez tartozik egy gomb, amellyel továbbléphet a következő lépésre – ha tanulja a lépést, ajánlatos addig ne lépjen tovább, amíg a gomb ki nem jelölődik (ami általában az animáció vége felé fordul elő)."
+                },
+                "tutorials": {
+                    "header": "Oktatóanyagok",
+                    "body": "Az összes szimulátoron megtalálhatók az oktatóikonok szétszórva. Ha szöveges magyarázatot szeretne kapni az ikon mellett, kattintson az oktatóprogram ikonjára a szimulátor oldalsávjának kibontásához és a megfelelő oktatóanyag megjelenítéséhez. Az oldalsáv automatikusan visszaáll az eredeti méretre, ha ugyanarra az oktatóikonra kattint, vagy továbblép a következő lépésre. Alternatív megoldásként az oldalsáv szélessége manuálisan is beállítható a jobb alsó sarokban található fogantyú segítségével."
+                },
+                "configuration": {
+                    "header": "Konfiguráció",
+                    "body": "A titkosítási és visszafejtési szimulátorok korlátozott számú konfigurációt támogatnak, amelyeket a haladóbb felhasználók használhatnak az AES-sel való kísérletezéshez. Ezek a konfigurációk az oldal bal oldalán található <i> Konfigurálás </i> módban találhatók. <b> Megjegyzés: </b> a konfiguráció megváltoztatása visszaállítja a titkosítási és visszafejtési szimulátorokat."
+                },
+                "persistence": {
+                    "header": "Helyi kitartás",
+                    "body": "Az AES Adventure teljes állapota a böngésző <i> helyi tárhelyére </i> kerül elmentésre, olyan kulcsokkal, amelyek a következővel kezdődnek <span class='code'> 'AES_ADVENTURE_UI__' </span> . Ez azt jelenti, hogy ha bezárja vagy elhagyja az AES Adventure programot, a jelenleg futó szimulációk teljesen visszaállnak, amikor visszatér. Ha az alkalmazás bármilyen okból hibás állapotba kerül, akkor az adatok törlésével <i> helyi tárolóból </i> és az oldal frissítésével keményen visszaállítható."
+                },
+                "duplicate-buttons": {
+                    "header": "Gombok másolása",
+                    "body": "Ha egy beviteli terület megtelik, 1 vagy 2 <i> másolás </i> ikont fog látni. Az első gomb egy szabványos másolás a vágólapra gomb. A második speciális egyszerű használat funkcióval rendelkezik, attól függően, hogy melyik bemenet alatt van. A titkosítás „Ciphertext” kimenete alatt: átmásolja a titkosított szöveget a visszafejtő szimulátor bemenetére. A dekódolás „Plaintext” kimenete alatt: átmásolja a nyílt szöveget a titkosítási szimulátor bemenetére. Bármilyen kulcsbevitelnél: a kulcsot az összes többi szimulátorba másolja – ez különösen hasznos, ha ugyanazt a kulcsot gyorsan használhatja titkosításhoz, visszafejtéshez és kulcsbővítéshez. <b> Megjegyzés: </b> ha a másolási művelet módosítja a bemenetet, a célszimulátor alaphelyzetbe áll, mivel a bemenetek nem módosíthatók a szimuláció közben."
+                },
+                "i18n": {
+                    "header": "Nemzetközivé válás",
+                    "body": "Az egész alkalmazás nyelve a beállításokban módosítható. Ezek a fordítások várhatóan tökéletlenek lesznek; ehhez a fordításhoz nem fogadtunk fel hivatásos fordítókat. Hamarosan mód nyílik arra, hogy javítást/javítást kérjen az összes fordítást tároló nyelvi fájlhoz."
+                }
+            },
+            "quick-points": {
+                "header": "Utolsó tippek",
+                "cant-input": "A bemeneti adatok nem módosíthatók, ha egy szimulátor éppen használja. Nyomja meg a 'Reset' gombot az aktuális szimulációból való kilépéshez, és ismét módosíthatja a bemeneteket.",
+                "cant-start": "A szimulátorok addig nem indíthatók el, amíg az összes szükséges beviteli terület nincs kitöltve. Az összes beviteli terület alatt lesz egy „maradt rágcsálás” számláló.",
+                "nibble": "1 nibble persze fél byte! (Szintén 1 hexadecimális számjegynek felel meg)",
+                "small": "Az AES Adventure úgy lett kialakítva, hogy legalább <b> 13\" </b> méretű képernyőkön keresztül nézhető legyen. Ez a legkisebb szabványos laptopméret, amellyel minden felhasználónkat fel kell szerelni. Ha valami kisebbet talál magának , használja ki a böngésző nagyítási lehetőségeit és kicsinyítsen. Ha mobilt használ, fordítsa az eszközt fekvő módba, hogy minél nagyobb szélességet kapjon."
+            }
         },
-        "tutorials": {
-          "header": "Oktatóanyagok",
-          "body": "Az összes szimulátoron megtalálhatók az oktatóikonok szétszórva. "
+        "feedback": {
+            "title": "Visszacsatolás",
+            "body": "Ez egy fejlesztési projekt, és szeretnénk visszajelzést kapni az eszközről. Van egy {googleFormLink} , amelyet kitöltve megadhat nekünk néhány rendkívül értékes információt – gondolatait! Alternatív megoldásként az AES Adventure készítőit alább felsoroljuk. Ha problémái vannak az eszközzel, küldjön nekünk e-mailt.",
+            "button": "Google űrlap"
         },
-        "configuration": {
-          "header": "Konfiguráció",
-          "body": "A titkosítási és visszafejtési szimulátorok korlátozott számú konfigurációt támogatnak, amelyeket a haladóbb felhasználók használhatnak az AES-sel való kísérletezéshez.  <i>Beállítás</i> modális az oldal bal oldalán. <b>Jegyzet:</b> a konfiguráció megváltoztatása visszaállítja a titkosítási és visszafejtési szimulátorokat."
-        },
-        "persistence": {
-          "header": "Helyi kitartás",
-          "body": "Az AES Adventure teljes állapota a böngészőjébe kerül <i>helyi raktár</i> betűvel kezdődő billentyűkkel <span class='code'>„AES_ADVENTURE_UI__”</span>.  <i>helyi raktár</i> és frissíti az oldalt."
-        },
-        "duplicate-buttons": {
-          "header": "Gombok másolása",
-          "body": "Ha egy beviteli terület megtelt, 1 vagy 2 jelenik meg <i>másolat</i> ikon gombok.  <b>Jegyzet:</b> Ha a másolási művelet módosítja a bemenetet, a célszimulátor alaphelyzetbe áll, mivel a bemenetek nem módosíthatók a szimuláció közben."
-        },
-        "i18n": {
-          "header": "Nemzetközivé válás",
-          "body": "A teljes alkalmazás nyelve a „Beállítások” részben módosítható. "
+        "gitlab": "GitLab",
+        "preferences": {
+            "title": "preferenciák",
+            "badLang": "Az Ön nyelve rosszul van lefordítva vagy nem elérhető?"
         }
-      },
-      "quick-points": {
-        "header": "Utolsó tippek",
-        "cant-input": "A bemeneti adatok nem módosíthatók, ha egy szimulátor éppen használja. ",
-        "cant-start": "A szimulátorok addig nem indíthatók el, amíg az összes szükséges beviteli terület nincs kitöltve. ",
-        "nibble": "1 nibble persze fél byte! ",
-        "small": "Az AES Adventure úgy lett kialakítva, hogy legalább olyan képernyőkön keresztül nézhető legyen <b>13\"</b> méretben. "
-      }
     },
-    "feedback": {
-      "title": "Visszacsatolás",
-      "body": "Ez egy fejlesztési projekt, és szeretnénk visszajelzést kapni az eszközről. ",
-      "button": "Google űrlap"
-    },
-    "gitlab": "GitLab"
-  },
-  "configure": {
-    "button": "Beállítás",
-    "modal": {
-      "title": "Beállítás",
-      "body": "Válasszon egy konfigurációt lent.  <b>Jegyzet:</b> a konfiguráció megváltoztatása visszaállítja a titkosítási és visszafejtési szimulátorokat.",
-      "defaults": {
-        "standard": {
-          "name": "Alapértelmezett",
-          "description": "Vanília."
-        },
-        "short": {
-          "name": "Rövid",
-          "description": "A körök számának fele."
-        },
-        "long": {
-          "name": "Hosszú",
-          "description": "Duplázd meg a körök számát."
-        },
-        "staticColumns": {
-          "name": "Statikus oszlopok",
-          "description": "Nincsenek MixColumns rétegek."
-        },
-        "staticRows": {
-          "name": "Statikus sorok",
-          "description": "Nincs ShiftRows réteg."
-        },
-        "staticBytes": {
-          "name": "Statikus bájtok",
-          "description": "Nincsenek SubstituteBytes rétegek."
+    "configure": {
+        "button": "Beállítás",
+        "modal": {
+            "title": "Beállítás",
+            "body": "Válasszon egy konfigurációt lent. Ha még nem ismeri az AES-t, javasoljuk, hogy a konfiguráció használata előtt használja az alapértelmezett szimulátort. <b> Megjegyzés: </b> a konfiguráció megváltoztatása visszaállítja a titkosítási és visszafejtési szimulátorokat.",
+            "defaults": {
+                "standard": {
+                    "name": "Alapértelmezett",
+                    "description": "Vanília."
+                },
+                "short": {
+                    "name": "Rövid",
+                    "description": "A körök számának fele."
+                },
+                "long": {
+                    "name": "Hosszú",
+                    "description": "Duplázd meg a körök számát."
+                },
+                "staticColumns": {
+                    "name": "Statikus oszlopok",
+                    "description": "Nincsenek MixColumns rétegek."
+                },
+                "staticRows": {
+                    "name": "Statikus sorok",
+                    "description": "Nincs ShiftRows réteg."
+                },
+                "staticBytes": {
+                    "name": "Statikus bájtok",
+                    "description": "Nincsenek SubstituteBytes rétegek."
+                }
+            },
+            "close": "Bezárás"
         }
-      },
-      "close": "Bezárás"
+    },
+    "simulator": {
+        "hide": "Elrejt",
+        "show": "Előadás",
+        "quit": "Kilépés",
+        "configurations": "Konfigurációk",
+        "configuration": "Konfiguráció",
+        "encrypt": "Titkosítás",
+        "decrypt": "Dekódolás",
+        "key-expansion": "Kulcsbővítés",
+        "plaintext": "Egyszerű szöveg",
+        "ciphertext": "Rejtjelezett szöveg",
+        "key": "Kulcs",
+        "sbox": "Csere doboz",
+        "constant-matrix": "Állandó Mátrix",
+        "substitute-step": "Helyettes",
+        "shift-step": "Váltás",
+        "rcon": "Kerek állandó",
+        "inverse": "Inverz",
+        "state": "Állapot",
+        "input": "Bemenet",
+        "output": "Kimenet",
+        "add-key": "Kulcs hozzáadása",
+        "confusion": "Zavar",
+        "diffusion": "Diffúzió",
+        "substitute-bytes": "Helyettesítő bájtok",
+        "shift-rows": "Sorok eltolása",
+        "mix-columns": "Keverjük össze az oszlopokat",
+        "add-round-key": "Kerek kulcs hozzáadása",
+        "encryption": "Titkosítás",
+        "decryption": "dekódolás",
+        "expansion": "terjeszkedés",
+        "start": "Rajt",
+        "finish": "Befejez",
+        "start-rounds": "Indítsa el a köröket",
+        "finish-rounds": "Fejezd be a köröket",
+        "no-mix-columns-last": "Kikapcsolva, mert a Mix Columns kimaradt az utolsó körben!",
+        "no-mix-columns-first": "Ki van kapcsolva, mert a Mix Columns kimarad az első körben!",
+        "no-step-configuration": "Ki van kapcsolva, mert a kiválasztott konfiguráció",
+        "no-h-function-key-size": "Kikapcsolva, mert a kulcs mérete nem 256 bites!",
+        "no-h-function-last": "Ki van kapcsolva, mert a <span class='math'> ℎ </span> -függvény az 5. szó generálására szolgál, de az utolsó körben csak 4 szó jön létre!",
+        "round": "Kerek",
+        "next-step": "Következő lépés",
+        "skip": "Ugrás az utolsó körre",
+        "next-round": "Következő kör",
+        "copy": "Másolat",
+        "reset": "Visszaállítás",
+        "function": "funkció",
+        "add-words": "Szavak hozzáadása",
+        "keys-generated": "kerek kulcsok készen",
+        "round-keys": "Kerek billentyűk",
+        "disabled-input": "A szerkesztés engedélyezéséhez kattintson a „Reset” gombra",
+        "disabled-start": "Töltse ki a bemenet(eke)t a szimuláció engedélyezéséhez",
+        "tutorial": {
+            "title": "Oktatóanyag",
+            "default": {
+                "description": "Kattintson a megjelenő {tutorialIcon} elemre, hogy felfedje a releváns információkat."
+            },
+            "sandbox": {
+                "button": "Sandbox",
+                "title": "Sandbox",
+                "close": "Bezárás"
+            },
+            "read-more": "Olvass tovább",
+            "plaintext-to-state": {
+                "body": "Az első lépés az állapotmátrix létrehozása, amely a titkosítási folyamat során végig fog működni. A nyílt szöveget egy 4x4-es bájtos mátrixba rendezzük, majd ezt a mátrixot transzponáljuk.",
+                "learn-more": {
+                    "matrices": "Mátrix transzpozíció"
+                }
+            },
+            "ciphertext-to-state": {
+                "body": "Az első lépés az állapotmátrix létrehozása, amely a visszafejtési folyamat során végig fog működni. A titkosított szöveget egy 4x4-es bájtos mátrixba rendezzük, majd ezt a mátrixot transzponáljuk.",
+                "learn-more": {
+                    "matrices": "Mátrix transzpozíció"
+                }
+            },
+            "key-to-state": {
+                "body": "Az első lépés az állapotvektor létrehozása, amelyhez a kulcsbővítési folyamat során hozzá lesz fűzve. A kulcs szavakból álló vektorba van rendezve, ahol 1 szó 4 bájt. <span class='highlight'> Az AES kulcsütemezése az egyes kulcsméretekkel enyhén változik </span> , de mindig szóorientált."
+            },
+            "add-key": {
+                "body": "A kulcs XOR-re van rögzítve az állapotmátrixszal. Vegye figyelembe, hogy a kulcs szintén egy 4x4-es bájtmátrixba van rendezve, és transzponálva van, akárcsak a bemenet. Ezt <i> kulcsfehérítésnek </i> is nevezik."
+            },
+            "add-round-key": {
+                "body": "A kerek kulcs XOR-re van állítva az állapotmátrixszal. Ne feledje, hogy a kerek kulcs is egy 4x4-es bájtmátrixba van rendezve és transzponálva. Lépjen a <i> Kulcsbővítés </i> fülre, hogy megtudja, hogyan készülnek ezek a kerek kulcsok. <b> titkosítás </b> során a kerek kulcsok a létrehozásuk sorrendjében kerülnek felhasználásra. A <b> visszafejtés </b> során a kerek kulcsok <b> ellentétes </b> sorrendben kerülnek felhasználásra."
+            },
+            "add-words": {
+                "body": "Az első szó XOR-re kerül az utolsó szóval, miután a Round <span class='math'> 𝑔 </span> -függvény meghívásra került rajta. Innentől kezdve minden szót az előzőleg kiszámított szóval XOR-re írunk, hogy új szót hozzunk létre, amelyet azután hozzáfűzünk az állapotvektorhoz. A <b> 256 bites </b> kulcsütemezés meghívja a kör <span class='math'> ℎ </span> -függvényét a körben generált 4. szónál, mielőtt a szokásos módon folytatná.",
+                "note": "A <span class='math'> 𝑔 </span> -függvény és <span class='math'> ℎ </span> -függvény számításait a következő körlépésekben ismertetjük."
+            },
+            "round-g-fn": {
+                "body": "A <span class='math'> 𝑔 </span> -függvény a bemeneti szó bájtjain végzett műveletek sorozatából áll: Substitute Bytes, Shift Rows (shift = 1), és az első bájt XOR-re kerül a <i> jellel. <i> kerek állandó </i> . A bájtokat ezután összefűzik a kimeneti szó létrehozásához.",
+                "learn-more": {
+                    "rcon": "Az AES kerek konstansainak kiszámítása"
+                }
+            },
+            "round-h-fn": {
+                "body": "A <span class='math'> ℎ </span> -függvény a bemeneti szó bájtjain lévő helyettesítő bájtokból áll. A bájtokat ezután összefűzik a kimeneti szó létrehozásához."
+            },
+            "round-keys": {
+                "body": "Ezek az alkulcsok a titkosítás során látható sorrendben kerülnek felvételre. A <b> visszafejtés </b> során fordított sorrendben használatosak."
+            },
+            "rounds-header": {
+                "body": "Az AES körökben működik az állapotmátrixon. 10 kör 128 bites kulcshoz, 12 kör 192 biteshez és 14 kör 256 biteshez. Minden kör a következő lépésekből áll: Pótbájtok, Shift Rows, Mix Columns, Add Round Key; <span class='highlight'> kivéve az utolsó fordulót, amely nem tartalmazza a keverőoszlopokat </span> . <b> visszafejtés </b> során a lépések <b> ellentétes </b> sorrendben hajtódnak végre, és a Mix oszlopok nem szerepelnek az első körben."
+            },
+            "key-rounds-header": {
+                "body": "Az AES minden köréhez szükség van egy alkulcsra, plusz 1-re a kulcsfehérítéshez. 11 alkulcs 128 bites kulcsmérethez, 13 alkulcs 192 biteshez és 15 alkulcs 256 biteshez. Minden kör az előző kör kimenetén dolgozik, hogy új szavakat hozzon létre.",
+                "aes-a": "Az AES Adventure minden kört a szavak hozzáadása, a <span class='math'> kör 𝑔 </span> -függvény és a <span class='math'> kör ℎ </span> -függvény lépéseire bont. Csak a <b> 256 bites </b> kulcsütemezés használja a kör <span class='math'> ℎ </span> -függvény lépését minden körben, kivéve az utolsó kört.",
+                "note": "Minden kör 1 alkulcsot generál 128 bites kulcshoz, 1,5 alkulcsot 192 bithez és 2 alkulcsot 256 bithez, kivéve az utolsó kört, amely 1 alkulcsot generál mindhárom kulcsmérethez."
+            },
+            "rounds-stats": {
+                "diffusion": "<b> diffúzió </b> egyetlen egyszerű szöveges bitnek az (aktuális) titkosított szövegre gyakorolt hatása. A mérőszámot az AES Adventure-ben a <i> lavina </i> effektus képviseli. Ennek kiszámítása a következőképpen történik: minden egyszerű szöveg bitnél fordítsa meg, és számítsa ki az (aktuális) titkosított szöveget a módosított nyílt szöveggel. Ezután számolja meg a (jelenlegi) titkosított szövegben megfordított bitek számát: a metrika az összes egyszerű szöveges változatban átfordított bitek átlagos száma. <br /> A sorok eltolása és az oszlopok keverése együttesen <i> diffúziós rétegnek </i> nevezhető, mivel ezek az AES fő diffúziós lépései.",
+                "confusion": "<b> Zavar </b> az (aktuális) titkosított szöveg és a kulcs közötti kapcsolat. A metrikát az AES Adventure programban a (jelenlegi) rejtjelezett szöveg és a kulcs közötti asszociációs mérőszám képviseli, amelyben minden 0-t -1-re rendeltek. <br /> A helyettesítő bájtok zavart okoz az AES-ben.",
+                "learn-more": {
+                    "conf-diff": "Zavar és diffúzió",
+                    "avalanche": "Lavina hatás"
+                }
+            },
+            "sub-bytes": {
+                "body": "A helyettesítő bájtok minden állapotmátrix bájtot lecserélnek egy bájtra a helyettesítési mezőből, ami nemlinearitást biztosít az AES-ben (analitikai támadások elleni védelem). Ez egy bijektív leképezés; a <b> visszafejtés </b> során a helyettesítő doboz egyedi <b> inverzét </b> használjuk.",
+                "learn-more": {
+                    "bijective": "Bijektív függvények",
+                    "sbox": "Az AES helyettesítő dobozának számítása"
+                }
+            },
+            "shift-rows": {
+                "body": "A Shift Rows byte-onkénti ciklikus eltolást hajt végre az állapotmátrix minden sorában. <b> visszafejtés </b> során az eltolás <b> ellentétes </b> irányban történik. Mindkét esetben az első sor eltolása 0, vagyis az első sort soha nem érinti."
+            },
+            "mix-columns": {
+                "body": "A Mix Columns az állapotmátrix minden oszlopvektorát megszorozza egy konstansmátrixszal, így az eredményül kapott állapotmátrix megfelelő oszlopát állítja elő. A konstans mátrix invertálható; a <b> visszafejtés </b> során a konstans mátrix egyedi <b> inverzét </b> használjuk.",
+                "learn-more": {
+                    "matrix-multiplication": "Mátrixszorzás",
+                    "matrix-inversion": "Mátrix inverzek",
+                    "gf": "Galois Fields",
+                    "gf-arithmetic": "Aritmetika a következőben <span class='math'> 𝐺𝐹(2 ̂ 8) </span>"
+                }
+            },
+            "state-to-ciphertext": {
+                "body": "Az utolsó lépés a titkosított szöveg létrehozása, amely a titkosítási folyamat kimenete. Az állapotmátrixot transzponáljuk, majd minden bejegyzést összefűzünk.",
+                "learn-more": {
+                    "matrices": "Mátrix transzpozíció"
+                }
+            },
+            "state-to-plaintext": {
+                "body": "Az utolsó lépés az egyszerű szöveg létrehozása, amely a visszafejtési folyamat kimenete. Az állapotmátrixot transzponáljuk, majd minden bejegyzést összefűzünk.",
+                "learn-more": {
+                    "matrices": "Mátrix transzpozíció"
+                }
+            },
+            "state-to-round-keys": {
+                "body": "Az utolsó lépés a kerek kulcsok létrehozása, amelyek a kulcsbővítési folyamat kimenetei. Az állapotvektor szavakat egyszerre 4-en veszik, majd minden csoportot összefűznek, hogy alkolcsot alkossanak."
+            }
+        },
+        "hexArea": {
+            "nibblesLeft": "rágcsálnivalók maradtak.",
+            "ready": "Kész!",
+            "copied": "Vágólapra másolva.",
+            "duplicated-keys": "Minden kulcsbemenetre másolva.",
+            "duplicated-plaintext": "A bemenet titkosítására másolva.",
+            "duplicated-ciphertext": "A bemenet visszafejtéséhez másolva.",
+            "go": "Megy",
+            "copy-tooltip": "Másolja a vágólapra",
+            "fill-tooltip": "Töltse ki véletlenszerű bevitellel",
+            "duplicate-keys-tooltip": "Másolás az összes kulcsbemenetre",
+            "duplicate-plaintext-tooltip": "Másolás a bemenet titkosításához",
+            "duplicate-ciphertext-tooltip": "Másolás a bemenet visszafejtéséhez"
+        },
+        "layer-off": "A réteg <b> ki van kapcsolva </b> . Lépjen ki, és konfigurálja a bekapcsoláshoz.",
+        "layer-on": "A réteg <b> bekapcsolva </b> . Lépjen ki, és állítsa be a kikapcsoláshoz.",
+        "view-stats": "Statisztikák megtekintése",
+        "skip-full": "Ugrás a kimenetre"
     }
-  },
-  "simulator": {
-    "hide": "Elrejt",
-    "show": "Előadás",
-    "quit": "Kilépés",
-    "configurations": "Konfigurációk",
-    "configuration": "Konfiguráció",
-    "encrypt": "Titkosítás",
-    "decrypt": "Dekódolás",
-    "key-expansion": "Kulcsbővítés",
-    "plaintext": "Egyszerű szöveg",
-    "ciphertext": "Rejtjelezett szöveg",
-    "key": "Kulcs",
-    "sbox": "Csere doboz",
-    "constant-matrix": "Állandó Mátrix",
-    "substitute-step": "Helyettes",
-    "shift-step": "Váltás",
-    "rcon": "Kerek állandó",
-    "inverse": "Inverz",
-    "state": "Állapot",
-    "input": "Bemenet",
-    "output": "Kimenet",
-    "add-key": "Kulcs hozzáadása",
-    "confusion": "Zavar",
-    "diffusion": "Diffúzió",
-    "substitute-bytes": "Helyettesítő bájtok",
-    "shift-rows": "Sorok eltolása",
-    "mix-columns": "Keverjük össze az oszlopokat",
-    "add-round-key": "Kerek kulcs hozzáadása",
-    "encryption": "Titkosítás",
-    "decryption": "dekódolás",
-    "expansion": "terjeszkedés",
-    "start": "Rajt",
-    "finish": "Befejez",
-    "start-rounds": "Indítsa el a köröket",
-    "finish-rounds": "Fejezd be a köröket",
-    "no-mix-columns-last": "Ki van kapcsolva, mert a Mix Columns kimaradt az utolsó körben!",
-    "no-mix-columns-first": "Ki van kapcsolva, mert a Mix Columns kimarad az első körben!",
-    "no-step-configuration": "Ki van kapcsolva, mert a kiválasztott konfiguráció",
-    "no-h-function-key-size": "Kikapcsolva, mert a kulcs mérete nem 256 bites!",
-    "no-h-function-last": "Kikapcsolva, mert a <span class='math'>ℎ</span>A -függvény az 5. szó generálására szolgál, de az utolsó körben csak 4 szó jön létre!",
-    "round": "Kerek",
-    "next-step": "Következő lépés",
-    "skip": "Ugrás az utolsó körre",
-    "next-round": "Következő kör",
-    "copy": "Másolat",
-    "reset": "Visszaállítás",
-    "function": "funkció",
-    "add-words": "Szavak hozzáadása",
-    "keys-generated": "kerek kulcsok készen",
-    "round-keys": "Kerek billentyűk",
-    "disabled-input": "A szerkesztés engedélyezéséhez kattintson a „Reset” gombra",
-    "disabled-start": "Töltse ki a bemenet(eke)t a szimuláció engedélyezéséhez",
-    "tutorial": {
-      "title": "oktatóanyag",
-      "default": {
-        "description": "Kattintson a megjelenő {tutorialIcon} elemre, hogy felfedje a releváns információkat."
-      },
-      "sandbox": {
-        "button": "Sandbox",
-        "title": "Sandbox",
-        "close": "Bezárás"
-      },
-      "read-more": "Olvass tovább",
-      "plaintext-to-state": {
-        "body": "Az első lépés az állapotmátrix létrehozása, amely a titkosítási folyamat során végig fog működni. ",
-        "learn-more": {
-          "matrices": "Mátrix transzpozíció"
-        }
-      },
-      "ciphertext-to-state": {
-        "body": "Az első lépés az állapotmátrix létrehozása, amely a visszafejtési folyamat során végig fog működni. ",
-        "learn-more": {
-          "matrices": "Mátrix transzpozíció"
-        }
-      },
-      "key-to-state": {
-        "body": "Az első lépés az állapotvektor létrehozása, amelyhez a kulcsbővítési folyamat során hozzá lesz fűzve.  <span class='highlight'>Az AES kulcs ütemezése minden kulcsmérettel kissé változik</span>, de mindig szóorientált."
-      },
-      "add-key": {
-        "body": "A kulcs XOR-re van rögzítve az állapotmátrixszal.  <i>kulcsfehérítés</i>."
-      },
-      "add-round-key": {
-        "body": "A kerek kulcs XOR-re van állítva az állapotmátrixszal.  <i>Kulcsbővítés</i> lapon megtudhatja, hogyan jönnek létre ezek a kerek billentyűk.  <b>Titkosítás</b>, a kerek gombokat a létrehozásuk sorrendjében használják.  <b>dekódolás</b>, a kerek gombokat a <b>szemben</b> rendelés."
-      },
-      "add-words": {
-        "body": "Az első szó XOR-re kerül az utolsó szóval, a forduló után <span class='math'>𝑔</span>-függvény meg lett hívva rajta.  <b>256 bites</b> kulcs ütemezés hívja a fordulót <span class='math'>ℎ</span>-függvény a körben generált 4. szónál, mielőtt a szokásos módon folytatná.",
-        "note": "A <span class='math'>𝑔</span>-funkció és <span class='math'>ℎ</span>-függvény számításokat a következő körlépésekben ismertetjük."
-      },
-      "round-g-fn": {
-        "body": "A <span class='math'>𝑔</span>-függvény a bemeneti szó bájtjain végzett műveletek sorozatából áll: Substitute Bytes, Shift Rows (shift = 1), és az első bájt XOR-re kerül a <i>kerek állandó</i>. ",
-        "learn-more": {
-          "rcon": "Az AES kerek konstansainak kiszámítása"
-        }
-      },
-      "round-h-fn": {
-        "body": "A <span class='math'>ℎ</span>-függvény egy helyettesítő bájtból áll a bemeneti szó bájtjain. "
-      },
-      "round-keys": {
-        "body": "Ezek az alkulcsok a titkosítás során látható sorrendben kerülnek felvételre.  <b>dekódolás</b>, ellenkező sorrendben használatosak."
-      },
-      "rounds-header": {
-        "body": "Az AES körökben működik az állapotmátrixon.  <span class='highlight'>kivéve az utolsó kört, amely nem tartalmazza a keverőoszlopokat</span>.  <b>dekódolás</b>, a lépések végrehajtása a <b>szemben</b> sorrend és a Mix Columns nem szerepel az első körben."
-      },
-      "key-rounds-header": {
-        "body": "Az AES minden köréhez szükség van egy alkulcsra, plusz 1-re a kulcsfehérítéshez. ",
-        "aes-a": " Az AES Adventure minden kört felbont: Add Words, Round <span class='math'>𝑔</span>-funkció és Kerek <span class='math'>ℎ</span>-funkció lépései.  <b>256 bites</b> kulcsfontosságú ütemezés a fordulót használja <span class='math'>ℎ</span>-funkció lépés minden körben, kivéve az utolsó kört.",
-        "note": "Minden kör 1 alkulcsot generál 128 bites kulcshoz, 1,5 alkulcsot 192 bithez és 2 alkulcsot 256 bithez, kivéve az utolsó kört, amely 1 alkulcsot generál mindhárom kulcsmérethez."
-      },
-      "rounds-stats": {
-        "diffusion": "<b>Diffúzió</b> egyetlen egyszerű szöveg bit hatása az (aktuális) titkosított szövegre.  <i>lavina</i> hatás. <br />A sorok eltolása és az oszlopok keverése együttesen a <i>diffúziós réteg</i> mert ezek az AES fő diffúziós lépései.",
-        "confusion": "<b>Zavar</b> az (aktuális) titkosított szöveg és a kulcs közötti kapcsolat. <br />A helyettesítő bájtok zavart okoznak az AES-ben.",
-        "learn-more": {
-          "conf-diff": "Zavar",
-          "avalanche": "Lavina hatás"
-        }
-      },
-      "sub-bytes": {
-        "body": "A helyettesítő bájtok minden állapotmátrix bájtot lecserélnek egy bájtra a helyettesítési mezőből, ami nemlinearitást biztosít az AES-ben (analitikai támadások elleni védelem).  <b>dekódolás</b>, az egyedit használjuk <b>inverz</b> a helyettesítő dobozból.",
-        "learn-more": {
-          "bijective": "Bijektív függvények",
-          "sbox": "Az AES helyettesítő dobozának kiszámítása"
-        }
-      },
-      "shift-rows": {
-        "body": "A Shift Rows byte-onkénti ciklikus eltolást hajt végre az állapotmátrix minden sorában.  <b>dekódolás</b>, a műszak a <b>szemben</b> irány. "
-      },
-      "mix-columns": {
-        "body": "A Mix Columns az állapotmátrix minden oszlopvektorát megszorozza egy konstansmátrixszal, így az eredményül kapott állapotmátrix megfelelő oszlopát állítja elő.  <b>dekódolás</b>, az egyedit használjuk <b>inverz</b> a konstans mátrixból.",
-        "learn-more": {
-          "matrix-multiplication": "Mátrixszorzás",
-          "matrix-inversion": "Mátrix inverzek",
-          "gf": "Galois Fields",
-          "gf-arithmetic": "Aritmetika be <span class='math'>𝐺𝐹(2 ̂ 8)</span>"
-        }
-      },
-      "state-to-ciphertext": {
-        "body": "Az utolsó lépés a titkosított szöveg létrehozása, amely a titkosítási folyamat kimenete. ",
-        "learn-more": {
-          "matrices": "Mátrix transzpozíció"
-        }
-      },
-      "state-to-plaintext": {
-        "body": "Az utolsó lépés az egyszerű szöveg létrehozása, amely a visszafejtési folyamat kimenete. ",
-        "learn-more": {
-          "matrices": "Mátrix transzpozíció"
-        }
-      },
-      "state-to-round-keys": {
-        "body": "Az utolsó lépés a kerek kulcsok létrehozása, amelyek a kulcsbővítési folyamat kimenetei. "
-      }
-    },
-    "hexArea": {
-      "nibblesLeft": "rágcsálnivalók maradtak.",
-      "ready": "Kész!",
-      "copied": "Vágólapra másolva.",
-      "duplicated-keys": "Minden kulcsbemenetre másolva.",
-      "duplicated-plaintext": "A bemenet titkosítására másolva.",
-      "duplicated-ciphertext": "A bemenet visszafejtéséhez másolva.",
-      "go": "Megy"
-    }
-  }
 }

@@ -1,4 +1,5 @@
 {
+  "welcome_header": "Hello world!",
   "title": "Adventure",
   "infographic": "Download Infographic",
   "edit": "Edit",
@@ -24,10 +25,6 @@
   "home": {
     "description": "The Advanced Encryption Standard is the most popular symmetric-key cipher. If you want to learn the basics, dig deep into the details, or experiment with AES: you're in the right place!",
     "go": "Go to Simulator",
-    "preferences": {
-      "title": "Preferences",
-      "badLang": "Is your language poorly translated or unavailable?"
-    },
     "guide": {
       "title": "Guide",
       "table-of-contents": "Table of Contents",
@@ -39,11 +36,11 @@
         "header": "Features",
         "animations": {
           "header": "Animations",
-          "body": "All of the simulators use animations to clearly show each step of the process. These animations support play, pause and seek operations. The playback speed of all animations can be doubled or halved using the rabbit and turtle icons respectively. Each step will have a button to move on to the next step - if you are learning the step, it is recommended that you do not move on until the button becomes highlighed (which generally occurs near the end of the animation)."
+          "body": "All the simulators use animations to clearly show each step of the process. These animations support play, pause and seek operations. The playback speed of all animations can be doubled or halved using the rabbit and turtle icons respectively. Each step will have a button to move on to the next step - if you are learning the step, it is recommended that you do not move on until the button becomes highlighted (which generally occurs near the end of the animation)."
         },
         "tutorials": {
           "header": "Tutorials",
-          "body": "All of the simulators have Tutorial icons scattered throughout. To get a textual explanation of what the icon is beside, click the tutorial icon to expand the simulator sidebar and reveal the corresponding tutorial. The sidebar will automatically return to the original size by clicking the same tutorial icon or moving on to the next step. Alternatively, the sidebar width can be manually adjusted using the dragging handle in the bottom right."
+          "body": "All the simulators have Tutorial icons scattered throughout. To get a textual explanation of what the icon is beside, click the tutorial icon to expand the simulator sidebar and reveal the corresponding tutorial. The sidebar will automatically return to the original size by clicking the same tutorial icon or moving on to the next step. Alternatively, the sidebar width can be manually adjusted using the dragging handle in the bottom right."
         },
         "configuration": {
           "header": "Configuration",
@@ -51,7 +48,7 @@
         },
         "persistence": {
           "header": "Local Persistence",
-          "body": "The entire state of AES Adventure is saved to your browser's <i>localstorage</i> with keys that begin with <span class='code'>'AES_ADVENTURE_UI__'</span>. This means that if you close or leave AES Adventure, any simulations that are currently running will be completely restored when you return. If, for whatever reason, the application enters a broken state, it can be hard reset by deleting it's data in <i>localstorage</i> and refreshing the page."
+          "body": "The entire state of AES Adventure is saved to your browsers <i>localStorage</i> with keys that begin with <span class='code'>'AES_ADVENTURE_UI__'</span>. This means that if you close or leave AES Adventure, any simulations that are currently running will be completely restored when you return. If, for whatever reason, the application enters a broken state, it can be hard reset by deleting its data in <i>localStorage</i> and refreshing the page."
         },
         "duplicate-buttons": {
           "header": "Copy Buttons",
@@ -59,7 +56,7 @@
         },
         "i18n": {
           "header": "Internationalization",
-          "body": "The language of the entire app can be changed in preferences. These translations are expected to be imperfect; we did not hire professional translators to do this translation. Soon, there will be a way for you to request a fix/correction to the language files that store all of the translations."
+          "body": "The language of the entire app can be changed in preferences. These translations are expected to be imperfect; we did not hire professional translators to do this translation. Soon, there will be a way for you to request a fix/correction to the language files that store all the translations."
         }
       },
       "quick-points": {
@@ -67,15 +64,19 @@
         "cant-input": "Input data cannot be changed if a simulator is currently using it. Hit the 'Reset' button to exit the current simulation and you will be able to modify the inputs once more.",
         "cant-start": "Simulators cannot be started until all required input areas are filled. All input areas will have a 'nibbles remaining' counter below them.",
         "nibble": "1 nibble is half a byte of course! (Also equivalent to 1 hexadecimal digit)",
-        "small": "AES Adventure is designed to be viewed through screens that are atleast <b>13\"</b> in size. This is the smallest standard laptop size, which we expect all our users to be equipped with. If you find yourself with something smaller, utilize the browser's zoom capabilities and zoom out. If you are on mobile, rotate the device into landscape mode to get as much additional width as possible."
+        "small": "AES Adventure is designed to be viewed through screens that are at least <b>13\"</b> in size. This is the smallest standard laptop size, which we expect all our users to be equipped with. If you find yourself with something smaller, utilize the browser's zoom capabilities and zoom out. If you are on mobile, rotate the device into landscape mode to get as much additional width as possible."
       }
     },
     "feedback": {
       "title": "Feedback",
-      "body": "This is a developing project and we would love to get your feedback on the tool. There is a{googleFormLink}that you can fill out to give us some highly valuable information - your thoughts! Alternatively, the creators of AES Adventure are listed below, feel free to send us an email if you're having issues with the tool.",
+      "body": "This is a developing project and we would love to get your feedback on the tool. There is a{googleFormLink}that you can fill out to give us some highly valuable information - your thoughts! Alternatively, the creators of AES Adventure are listed below, feel free to email us if you're having issues with the tool.",
       "button": "Google Form"
     },
-    "gitlab": "GitLab"
+    "gitlab": "GitLab",
+    "preferences": {
+      "title": "Preferences",
+      "badLang": "Is your language poorly translated or unavailable?"
+    }
   },
   "configure": {
     "button": "Configure",
@@ -146,21 +147,17 @@
     "finish": "Finish",
     "start-rounds": "Start rounds",
     "finish-rounds": "Finish rounds",
-    "layer-off": "Layer is <b>off</b>. Quit and configure to turn it on.",
-    "layer-on": "Layer is <b>on</b>. Quit and configure to turn it off.",
     "no-mix-columns-last": "Turned off because Mix Columns is skipped in the last round!",
     "no-mix-columns-first": "Turned off because Mix Columns is skipped in the first round!",
     "no-step-configuration": "Turned off because the selected configuration is",
     "no-h-function-key-size": "Turned off because the key size is not 256 bits!",
     "no-h-function-last": "Turned off because the <span class='math'>ℎ</span>-function is used to generate the 5th word but only 4 words are generated in the last round!",
     "round": "Round",
-    "view-stats": "View stats",
     "next-step": "Next step",
     "skip": "Skip to last round",
     "next-round": "Next round",
     "copy": "Copy",
     "reset": "Reset",
-    "skip-full": "Skip to output",
     "function": "function",
     "add-words": "Add Words",
     "keys-generated": "round keys ready",
@@ -270,15 +267,19 @@
       "nibblesLeft": "nibbles left.",
       "ready": "Ready!",
       "copied": "Copied to clipboard.",
+      "duplicated-keys": "Copied to all key inputs.",
+      "duplicated-plaintext": "Copied to encrypt input.",
+      "duplicated-ciphertext": "Copied to decrypt input.",
+      "go": "Go",
       "copy-tooltip": "Copy to clipboard",
       "fill-tooltip": "Fill with random input",
-      "duplicated-keys": "Copied to all key inputs.",
       "duplicate-keys-tooltip": "Copy to all key inputs",
-      "duplicated-plaintext": "Copied to encrypt input.",
       "duplicate-plaintext-tooltip": "Copy to encrypt input",
-      "duplicated-ciphertext": "Copied to decrypt input.",
-      "duplicate-ciphertext-tooltip": "Copy to decrypt input",
-      "go": "Go"
-    }
+      "duplicate-ciphertext-tooltip": "Copy to decrypt input"
+    },
+    "layer-off": "Layer is <b>off</b>. Quit and configure to turn it on.",
+    "layer-on": "Layer is <b>on</b>. Quit and configure to turn it off.",
+    "view-stats": "View stats",
+    "skip-full": "Skip to output"
   }
 }

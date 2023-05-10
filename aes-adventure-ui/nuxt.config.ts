@@ -1,6 +1,4 @@
-import ar from './lang/ar.json'
-import cs from './lang/cs.json'
-import cy from './lang/cy.json'
+import ar from './lang/ar_EG.json'
 import da from './lang/da.json'
 import de from './lang/de.json'
 import el from './lang/el.json'
@@ -8,7 +6,6 @@ import en from './lang/en.json'
 import es from './lang/es.json'
 import fi from './lang/fi.json'
 import fr from './lang/fr.json'
-import gd from './lang/gd.json'
 import hi from './lang/hi.json'
 import hr from './lang/hr.json'
 import hu from './lang/hu.json'
@@ -17,21 +14,20 @@ import it from './lang/it.json'
 import ja from './lang/ja.json'
 import ko from './lang/ko.json'
 import lt from './lang/lt.json'
-import mn from './lang/mn.json'
-import ms from './lang/ms.json'
+import mn from './lang/mn_MN.json'
 import nl from './lang/nl.json'
+import no from './lang/no.json'
 import pl from './lang/pl.json'
 import pt from './lang/pt.json'
 import ro from './lang/ro.json'
 import ru from './lang/ru.json'
-import sl from './lang/sl.json'
 import so from './lang/so.json'
+import sq from './lang/sq.json'
 import sv from './lang/sv.json'
 import th from './lang/th.json'
 import tr from './lang/tr.json'
-import uk from './lang/uk.json'
 import vi from './lang/vi.json'
-import zh from './lang/zh.json'
+import zh from './lang/zh_CN.json'
 
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -60,18 +56,6 @@ export default defineNuxtConfig({
         emoji: '🇪🇸'
       },
       {
-        name: 'Cymraeg',
-        code: 'cy',
-        iso: 'cy',
-        emoji: '🏴󠁧󠁢󠁷󠁬󠁳󠁿'
-      },
-      {
-        name: 'Україна',
-        code: 'uk',
-        iso: 'uk',
-        emoji: '🇺🇦'
-      },
-      {
         name: 'svenska',
         code: 'sv',
         iso: 'sv-se',
@@ -84,10 +68,10 @@ export default defineNuxtConfig({
         emoji: '🇸🇴'
       },
       {
-        name: 'Slovenščina',
-        code: 'sl',
-        iso: 'sl',
-        emoji: '🇸🇮'
+        name: 'shqiptare',
+        code: 'sq',
+        iso: 'sq',
+        emoji: '🇦🇱'
       },
       {
         name: 'Română',
@@ -98,14 +82,8 @@ export default defineNuxtConfig({
       {
         name: 'Монгол',
         code: 'mn',
-        iso: 'mn',
+        iso: 'mn_MN',
         emoji: '🇲🇳'
-      },
-      {
-        name: 'Melayu',
-        code: 'ms',
-        iso: 'ms-my',
-        emoji: '🇲🇾'
       },
       {
         name: 'lietuvių',
@@ -138,12 +116,6 @@ export default defineNuxtConfig({
         emoji: '🇩🇰'
       },
       {
-        name: 'čeština',
-        code: 'cs',
-        iso: 'cs',
-        emoji: '🇨🇿'
-      },
-      {
         name: 'Hrvatski',
         code: 'hr',
         iso: 'hr',
@@ -156,10 +128,10 @@ export default defineNuxtConfig({
         emoji: '🇳🇱'
       },
       {
-        name: 'Gaeilge',
-        code: 'gd',
-        iso: 'gd-ie',
-        emoji: '🇮🇪'
+        name: 'norsk',
+        code: 'no',
+        iso: 'no',
+        emoji: '🇳🇴'
       },
       {
         name: 'Polski',
@@ -198,6 +170,12 @@ export default defineNuxtConfig({
         emoji: '🇯🇵'
       },
       {
+        name: '한국인',
+        code: 'ko',
+        iso: 'ko',
+        emoji: '🇰🇷'
+      },
+      {
         name: 'Deutsch',
         code: 'de',
         iso: 'de-de',
@@ -224,7 +202,7 @@ export default defineNuxtConfig({
       {
         name: 'عربي',
         code: 'ar',
-        iso: 'ar-eg',
+        iso: 'ar_EG',
         emoji: '🇪🇬'
       },
       {
@@ -242,9 +220,9 @@ export default defineNuxtConfig({
       {
         name: '中国人',
         code: 'zh',
-        iso: 'zh-cn',
+        iso: 'zh_CN',
         emoji: '🇨🇳'
-      },
+      }
     ],
     defaultLocale: 'en',
     vueI18n: {
@@ -253,23 +231,17 @@ export default defineNuxtConfig({
       messages: {
         en,
         es,
-        cy,
-        uk,
         sv,
         so,
-        sl,
         ro,
         mn,
-        ms,
         lt,
         hu,
         el,
         fi,
         da,
-        cs,
         hr,
         nl,
-        gd,
         pl,
         th,
         it,
@@ -284,7 +256,9 @@ export default defineNuxtConfig({
         ar,
         fr,
         hi,
-        zh
+        zh,
+        no,
+        sq,
       }
     }
   },

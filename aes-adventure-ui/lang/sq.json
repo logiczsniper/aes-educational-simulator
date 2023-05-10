@@ -1,0 +1,285 @@
+{
+    "welcome_header": "Përshendetje Botë!",
+    "title": "Aventurë",
+    "infographic": "Shkarkoni Infografik",
+    "edit": "Redakto",
+    "seo": {
+        "encrypt": "Kripto",
+        "decrypt": "Deshifroni",
+        "expand": "Zgjero tastin",
+        "encrypt-description": "Mësoni se si funksionon enkriptimi AES me simulatorin hap pas hapi të AES Adventure. Mbështet të tre madhësitë kryesore dhe ka mësime për të ndihmuar në drejtimin e të mësuarit tuaj!",
+        "decrypt-description": "Mësoni se si funksionon deshifrimi AES me simulatorin hap pas hapi të AES Adventure. Mbështet të tre madhësitë kryesore dhe ka mësime për të ndihmuar në drejtimin e të mësuarit tuaj!",
+        "expand-description": "Mësoni se si funksionon zgjerimi i çelësit AES me simulatorin hap pas hapi të AES Adventure. Mbështet të tre madhësitë kryesore dhe ka mësime për të ndihmuar në drejtimin e të mësuarit tuaj!",
+        "feedback": "Feedback",
+        "feedback-description": "Jepni komentet tuaja të vlefshme për krijuesit e AES Adventure në mënyrë që të përmirësojmë përvojën për të gjithë.",
+        "guide": "Udhëzues",
+        "guide-description": "Mësoni se si të përfitoni sa më shumë nga AES Adventure.",
+        "home-description": "Mirë se vini në AES Adventure, një mjet arsimor intuitiv AES. Futni të dhënat tuaja dhe kaloni nëpër enkriptimin, deshifrimin dhe zgjerimin e çelësave hap pas hapi të të tre madhësive të çelësave.",
+        "preferences": "Preferencat",
+        "preferences-description": "Ndryshoni mënyrën se si duket AES Adventure për t'iu përshtatur nevojave tuaja."
+    },
+    "error": {
+        "mistake": "Dicka shkoi keq...",
+        "back": "Kthehu mbrapa"
+    },
+    "home": {
+        "description": "Standardi i avancuar i enkriptimit është kodi më i popullarizuar me çelësin simetrik. Nëse doni të mësoni bazat, gërmoni thellë në detaje ose eksperimentoni me AES: ju jeni në vendin e duhur!",
+        "go": "Shkoni te Simulator",
+        "guide": {
+            "title": "Udhëzues",
+            "table-of-contents": "Tabela e Përmbajtjes",
+            "intro": {
+                "header": "Prezantimi",
+                "body": "Standardi i avancuar i enkriptimit është një shifër <i> bllok simetrik </i> , që do të thotë se ai kodon/deshifron blloqet me madhësi fikse me vetëm një çelës. AES Adventure ndan AES në 3 procese kryesore: enkriptim, deshifrim dhe zgjerim të çelësit. Zgjerimi i çelësit është derivimi i nënçelësave nga çelësi i hyrjes - këta nënçelës përdoren si nga enkriptimi ashtu edhe nga deshifrimi. Secili prej këtyre aspekteve komplekse të AES ka një simulator në AES Adventure që do t'ju tregojë se si funksionon AES në të dhënat tuaja. AES Adventure mbështet të 3 madhësitë kryesore të përdorura nga AES: 128, 192 dhe 256 bit. <b> Shënim: </b> të gjitha të dhënat në AES Adventure paraqiten në heksadecimal; 1 shifër heksadecimal është 4 bit = 1 bit = 0,5 bajt."
+            },
+            "features": {
+                "header": "Veçoritë",
+                "animations": {
+                    "header": "Animacionet",
+                    "body": "Të gjithë simulatorët përdorin animacione për të treguar qartë çdo hap të procesit. Këto animacione mbështesin funksionet e luajtjes, ndalimit dhe kërkimit. Shpejtësia e luajtjes së të gjitha animacioneve mund të dyfishohet ose përgjysmohet duke përdorur përkatësisht ikonat e lepurit dhe breshkës. Çdo hap do të ketë një buton për të kaluar në hapin tjetër - nëse po mësoni hapin, rekomandohet që të mos ecni përpara derisa butoni të theksohet (që zakonisht ndodh afër fundit të animacionit)."
+                },
+                "tutorials": {
+                    "header": "Tutoriale",
+                    "body": "Të gjithë simulatorët kanë ikona Tutorial të shpërndara kudo. Për të marrë një shpjegim tekstual të asaj që ndodhet ikona pranë, klikoni ikonën e tutorialit për të zgjeruar shiritin anësor të simulatorit dhe për të zbuluar tutorialin përkatës. Shiriti anësor do të kthehet automatikisht në madhësinë origjinale duke klikuar të njëjtën ikonë tutorial ose duke kaluar në hapin tjetër. Përndryshe, gjerësia e shiritit anësor mund të rregullohet manualisht duke përdorur dorezën e zvarritjes në fund djathtas."
+                },
+                "configuration": {
+                    "header": "Konfigurimi",
+                    "body": "Simulatorët e kriptimit dhe deshifrimit mbështesin një grup të kufizuar konfigurimesh që mund të përdoren nga përdoruesit më të avancuar për të eksperimentuar me AES. Këto konfigurime mund të gjenden në modalin <i> Konfiguro </i> në të majtë të kësaj faqeje. <b> Shënim: </b> ndryshimi i konfigurimit do të rivendosë simulatorët e enkriptimit dhe deshifrimit."
+                },
+                "persistence": {
+                    "header": "Qëndrueshmëria lokale",
+                    "body": "E gjithë gjendja e AES Adventure ruhet në <i> hapësirën lokale </i> të shfletuesit tuaj me çelësat që fillojnë me <span class='code'> 'AES_ADVENTURE_UI__' </span> . Kjo do të thotë që nëse mbyllni ose largoheni nga AES Adventure, çdo simulim që po ekzekutohet aktualisht do të rikthehet plotësisht kur të ktheheni. Nëse, për çfarëdo arsye, aplikacioni hyn në një gjendje të prishur, ai mund të rivendoset me vështirësi duke fshirë të dhënat e tij në <i> ruajtje lokale </i> dhe duke rifreskuar faqen."
+                },
+                "duplicate-buttons": {
+                    "header": "Butonat e kopjimit",
+                    "body": "Kur një zonë hyrëse është plot, do të shihni 1 ose 2 butona ikonash <i> kopje </i> . Butoni i parë është një buton standard i kopjimit në clipboard. E dyta ka një funksion të veçantë lehtësie në përdorim, në varësi të cilës hyrje është poshtë. Nën daljen \"Ciphertext\" të enkriptimit: kopjon tekstin e shifruar në hyrjen e simulatorit të deshifrimit. Në daljen \"Plaintext\" të deshifrimit: kopjon tekstin e thjeshtë në hyrjen e simulatorit të enkriptimit. Nën çdo hyrje çelësi: kopjon çelësin në të gjithë simuluesit e tjerë - kjo është veçanërisht e dobishme për të përdorur shpejt të njëjtin çelës për enkriptim, deshifrim dhe zgjerim të çelësit. <b> Shënim: </b> nëse operacioni i kopjimit modifikon hyrjen, simulatori i synuar do të rivendoset pasi hyrjet nuk mund të ndryshohen në mes të simulimit."
+                },
+                "i18n": {
+                    "header": "Ndërkombëtarizimi",
+                    "body": "Gjuha e të gjithë aplikacionit mund të ndryshohet sipas preferencave. Këto përkthime pritet të jenë të papërsosura; ne nuk punësuam përkthyes profesionistë për të bërë këtë përkthim. Së shpejti, do të ketë një mënyrë që ju të kërkoni një rregullim/korrigjim të skedarëve të gjuhës që ruajnë të gjitha përkthimet."
+                }
+            },
+            "quick-points": {
+                "header": "Këshilla përfundimtare",
+                "cant-input": "Të dhënat hyrëse nuk mund të ndryshohen nëse një imitues po e përdor aktualisht. Shtypni butonin 'Rivendos' për të dalë nga simulimi aktual dhe do të mund të modifikoni edhe një herë hyrjet.",
+                "cant-start": "Simuluesit nuk mund të nisen derisa të plotësohen të gjitha zonat e nevojshme të hyrjes. Të gjitha zonat e hyrjes do të kenë një numërues 'të mbeturinave të grimcave' poshtë tyre.",
+                "nibble": "1 gërmim është gjysmë bajt sigurisht! (Gjithashtu ekuivalente me 1 shifër heksadecimal)",
+                "small": "AES Adventure është krijuar për t'u parë përmes ekraneve me madhësi të paktën <b> 13\" </b> . Kjo është madhësia më e vogël standarde e laptopit, me të cilën presim që të gjithë përdoruesit tanë të pajisen. Nëse e gjeni veten me diçka më të vogël , shfrytëzoni aftësitë e zmadhimit të shfletuesit dhe zvogëloni. Nëse jeni në celular, rrotullojeni pajisjen në modalitetin peizazh për të marrë sa më shumë gjerësi shtesë."
+            }
+        },
+        "feedback": {
+            "title": "Feedback",
+            "body": "Ky është një projekt në zhvillim dhe ne do të donim të merrnim komentet tuaja për mjetin. Ekziston një {googleFormLink} që mund ta plotësoni për të na dhënë disa informacione shumë të vlefshme - mendimet tuaja! Përndryshe, krijuesit e AES Adventure janë renditur më poshtë, mos ngurroni të na dërgoni një email nëse keni probleme me mjetin.",
+            "button": "Formulari i Google"
+        },
+        "gitlab": "GitLab",
+        "preferences": {
+            "title": "Preferencat",
+            "badLang": "Gjuha juaj është e përkthyer dobët apo e padisponueshme?"
+        }
+    },
+    "configure": {
+        "button": "Konfiguro",
+        "modal": {
+            "title": "Konfiguro",
+            "body": "Zgjidhni një konfigurim më poshtë. Nëse jeni i ri në AES, ju rekomandojmë të përdorni simulatorin e paracaktuar përpara se të përdorni këtë konfigurim. <b> Shënim: </b> ndryshimi i konfigurimit do të rivendosë simulatorët e enkriptimit dhe deshifrimit.",
+            "defaults": {
+                "standard": {
+                    "name": "Standard",
+                    "description": "Vanilje."
+                },
+                "short": {
+                    "name": "I shkurtër",
+                    "description": "Gjysma e numrit të raundeve."
+                },
+                "long": {
+                    "name": "E gjatë",
+                    "description": "Dyfishoni numrin e raundeve."
+                },
+                "staticColumns": {
+                    "name": "Kolonat statike",
+                    "description": "Nuk ka shtresa MixColumns."
+                },
+                "staticRows": {
+                    "name": "Rreshtat statike",
+                    "description": "Nuk ka shtresa ShiftRows."
+                },
+                "staticBytes": {
+                    "name": "Bajt statike",
+                    "description": "Nuk ka shtresa SubstituteBytes."
+                }
+            },
+            "close": "Mbylle"
+        }
+    },
+    "simulator": {
+        "hide": "Fshih",
+        "show": "Shfaqje",
+        "quit": "Hiq dorë",
+        "configurations": "Konfigurimet",
+        "configuration": "Konfigurimi",
+        "encrypt": "Kripto",
+        "decrypt": "Deshifroni",
+        "key-expansion": "Zgjerimi i çelësit",
+        "plaintext": "Teksti i thjeshtë",
+        "ciphertext": "Teksti shifror",
+        "key": "Celës",
+        "sbox": "Kutia e zëvendësimit",
+        "constant-matrix": "Matrica konstante",
+        "substitute-step": "Zëvendësues",
+        "shift-step": "Ndërrimi",
+        "rcon": "Konstante e rrumbullakët",
+        "inverse": "Anasjelltas",
+        "state": "Shtetit",
+        "input": "Input",
+        "output": "Prodhimi",
+        "add-key": "Shto çelës",
+        "confusion": "Konfuzion",
+        "diffusion": "Difuzioni",
+        "substitute-bytes": "Zëvendësimi i byteve",
+        "shift-rows": "Zhvendos rreshtat",
+        "mix-columns": "Përzierje kolonash",
+        "add-round-key": "Shto çelësin e rrumbullakët",
+        "encryption": "enkriptimi",
+        "decryption": "deshifrimi",
+        "expansion": "zgjerimi",
+        "start": "Filloni",
+        "finish": "Përfundo",
+        "start-rounds": "Filloni raundet",
+        "finish-rounds": "Përfundoni raundet",
+        "no-mix-columns-last": "U çaktivizua sepse Kolonat e Përzierjes u anashkaluan në raundin e fundit!",
+        "no-mix-columns-first": "U çaktivizua sepse Kolonat e Përzierjes janë anashkaluar në raundin e parë!",
+        "no-step-configuration": "E çaktivizuar sepse është konfigurimi i zgjedhur",
+        "no-h-function-key-size": "Është fikur sepse madhësia e çelësit nuk është 256 bit!",
+        "no-h-function-last": "U çaktivizua sepse funksioni <span class='math'> ℎ </span> - përdoret për të gjeneruar fjalën e 5-të, por vetëm 4 fjalë gjenerohen në raundin e fundit!",
+        "round": "Rrumbullakët",
+        "next-step": "Hapi tjeter",
+        "skip": "Kalo në raundin e fundit",
+        "next-round": "Raundi tjetër",
+        "copy": "Kopjo",
+        "reset": "Rivendos",
+        "function": "funksionin",
+        "add-words": "Shtoni fjalë",
+        "keys-generated": "çelësat e rrumbullakët gati",
+        "round-keys": "Çelësat e rrumbullakëta",
+        "disabled-input": "Klikoni butonin 'Rivendos' për të aktivizuar modifikimin",
+        "disabled-start": "Plotësoni hyrjen(at) për të mundësuar simulimin",
+        "tutorial": {
+            "title": "Tutorial",
+            "default": {
+                "description": "Klikoni mbi {tutorialIcon} që shihni për të zbuluar informacionin përkatës këtu."
+            },
+            "sandbox": {
+                "button": "Sandbox",
+                "title": "Sandbox",
+                "close": "Mbylle"
+            },
+            "read-more": "Lexo më shumë",
+            "plaintext-to-state": {
+                "body": "Hapi i parë është krijimi i matricës së gjendjes që do të operohet gjatë gjithë procesit të kriptimit. Teksti i thjeshtë rregullohet në një matricë 4x4 bajtësh dhe më pas kjo matricë transpozohet.",
+                "learn-more": {
+                    "matrices": "Transpozimi i matricës"
+                }
+            },
+            "ciphertext-to-state": {
+                "body": "Hapi i parë është krijimi i matricës së gjendjes që do të operohet gjatë gjithë procesit të deshifrimit. Teksti i shifruar rregullohet në një matricë 4x4 bajtësh dhe më pas kjo matricë transpozohet.",
+                "learn-more": {
+                    "matrices": "Transpozimi i matricës"
+                }
+            },
+            "key-to-state": {
+                "body": "Hapi i parë është krijimi i vektorit të gjendjes që do t'i bashkëngjitet gjatë gjithë procesit të zgjerimit të çelësit. Çelësi është rregulluar në një vektor fjalësh, ku 1 fjalë është 4 bajt. <span class='highlight'> Orari i tastit AES ndryshon pak me çdo madhësi tasti </span> , por është gjithmonë i orientuar drejt fjalëve."
+            },
+            "add-key": {
+                "body": "Çelësi është XOR i lidhur me matricën e gjendjes. Vini re se çelësi është rregulluar gjithashtu në një matricë 4x4 bajtësh dhe transpozohet, ashtu si hyrja. Kjo referohet gjithashtu si <i> zbardhja e çelësit </i> ."
+            },
+            "add-round-key": {
+                "body": "Çelësi i rrumbullakët është XOR i lidhur me matricën e gjendjes. Vini re se çelësi i rrumbullakët është rregulluar gjithashtu në një matricë 4x4 bajtësh dhe transpozohet. Shkoni te skeda <i> Zgjerimi i tastit </i> për të mësuar se si krijohen këta çelësa të rrumbullakët. Gjatë <b> enkriptimit </b> , çelësat e rrumbullakët përdoren sipas radhës që janë krijuar. Gjatë <b> deshifrimit </b> , çelësat e rrumbullakët përdoren në rendin <b> të kundërt </b> ."
+            },
+            "add-words": {
+                "body": "Fjala e parë është XOR me fjalën e fundit, pasi në të është thirrur funksioni Round <span class='math'> 𝑔 </span> -. Nga atje, secila fjalë XORohet me fjalën e llogaritur më parë për të krijuar një fjalë të re e cila më pas i shtohet vektorit të gjendjes. Orari i tastit <b> 256-bit </b> thërret funksionin Round <span class='math'> ℎ </span> - në fjalën e 4-të të krijuar në raund përpara se të vazhdojë si normale.",
+                "note": "Llogaritjet e funksionit <span class='math'> 𝑔 </span> dhe funksioni <span class='math'> ℎ </span> - përshkruhen në hapat e mëposhtëm të rrumbullakët."
+            },
+            "round-g-fn": {
+                "body": "Funksioni <span class='math'> 𝑔 </span> -përbëhet nga një seri operacionesh në bajtet e fjalës hyrëse: Zëvendëso Byte, Shift Rreshtat (shift = 1) dhe bajt i parë XORohet me <i> konstante e rrumbullakët </i> . Bajtet më pas bashkohen për të formuar fjalën dalëse.",
+                "learn-more": {
+                    "rcon": "Llogaritja e konstantave të rrumbullakëta të AES"
+                }
+            },
+            "round-h-fn": {
+                "body": "Funksioni <span class='math'> ℎ </span> -përbëhet nga një Bajt Zëvendësues në bajtet e fjalës hyrëse. Bajtet më pas bashkohen për të formuar fjalën dalëse."
+            },
+            "round-keys": {
+                "body": "Këta nënçelës merren sipas renditjes së treguar gjatë kriptimit. Gjatë <b> deshifrimit </b> , ato përdoren në rend të kundërt."
+            },
+            "rounds-header": {
+                "body": "AES operon në matricën e gjendjes në raunde. 10 raunde për një madhësi çelësi 128 bit, 12 raunde për 192 bit dhe 14 raunde për 256 bit. Çdo raund përbëhet nga hapat Zëvendësimi i Bajteve, Shift Rreshtat, Kolonat e Përzierjes, Shtimi i Tastit të Rrumbullakët; <span class='highlight'> përveç raundit përfundimtar, i cili nuk përfshin kolonat e përzierjes </span> . Gjatë <b> deshifrimit </b> , hapat ekzekutohen në rendin <b> të kundërt </b> dhe Kolonat e Përzierjes nuk përfshihen në raundin e parë."
+            },
+            "key-rounds-header": {
+                "body": "Çdo raund i AES ka nevojë për një nënçelë, plus 1 për zbardhjen e çelësit. 11 nënçelës për një madhësi çelësi 128 bit, 13 nënçelës për 192 bit dhe 15 nënçelës për 256 bit. Çdo raund funksionon në daljen e raundit të mëparshëm për të nxjerrë fjalë të reja.",
+                "aes-a": "AES Adventure zbërthen çdo raund në Shto fjalë, Rrumbullakët <span class='math'> 𝑔 </span> -funksioni dhe Rrumbullakët <span class='math'> ℎ </span> -funksioni hapa. Vetëm orari i tastit <b> 256-bit </b> përdor hapin e funksionit Round <span class='math'> ℎ </span> - në çdo raund, me përjashtim të raundit përfundimtar.",
+                "note": "Çdo raund gjeneron 1 nënçelës për një madhësi çelësi 128 bit, 1,5 nënçelës për 192 bit dhe 2 nënçelës për 256 bit, me përjashtim të raundit përfundimtar që gjeneron 1 nënçelës për të tre madhësitë e çelësave."
+            },
+            "rounds-stats": {
+                "diffusion": "<b> Difuzioni </b> është ndikimi i një biti të vetëm teksti të thjeshtë në tekstin shifror (aktual). Metrika përfaqësohet në AES Adventure nga efekti <i> orteku </i> . Kjo llogaritet si më poshtë: për çdo bit të tekstit të thjeshtë, kthejeni atë dhe llogarisni tekstin shifror (aktual) me tekstin e thjeshtë të modifikuar. Më pas, numëroni numrin e biteve të kthyera në tekstin shifror (aktual): metrika është numri mesatar i biteve të kthyera në të gjitha variacionet e tekstit të thjeshtë. <br /> Shift Rows dhe Mix Columns mund të referohen kolektivisht si <i> shtresa e difuzionit </i> sepse ato janë hapat kryesorë difuziv në AES.",
+                "confusion": "<b> Konfuzioni </b> është marrëdhënia midis tekstit të koduar (aktuale) dhe çelësit. Metrika përfaqësohet në AES Adventure nga një masë e lidhjes midis tekstit të shifruar (aktuale) dhe çelësit në të cilin të gjitha 0-të janë përcaktuar në -1. <br /> Bytes zëvendësues sjell konfuzion në AES.",
+                "learn-more": {
+                    "conf-diff": "Konfuzion & Difuzion",
+                    "avalanche": "Efekti i Ortekut"
+                }
+            },
+            "sub-bytes": {
+                "body": "Byte zëvendësuese zëvendëson çdo bajt të matricës së gjendjes me një bajt nga kutia e zëvendësimit, e cila siguron jolinearitet në AES (mbrojtje kundër sulmeve analitike). Është një hartë bijektive; gjatë <b> deshifrimit </b> , ne përdorim <b> anasjelltas </b> unike të kutisë së zëvendësimit.",
+                "learn-more": {
+                    "bijective": "Funksionet Bijektive",
+                    "sbox": "Llogaritja e kutisë së zëvendësimit të AES"
+                }
+            },
+            "shift-rows": {
+                "body": "Shift Rows kryen një zhvendosje ciklike sipas bajtit në çdo rresht të matricës së gjendjes. Gjatë <b> deshifrimit </b> , zhvendosja është në drejtimin <b> të kundërt </b> . Në të dyja rastet, zhvendosja në rreshtin e parë është 0, që do të thotë se rreshti i parë nuk preket kurrë."
+            },
+            "mix-columns": {
+                "body": "Mix Columns shumëzon çdo vektor kolone të matricës së gjendjes me një matricë konstante për të prodhuar kolonën përkatëse të matricës së gjendjes që rezulton. Matrica konstante është e kthyeshme; gjatë <b> deshifrimit </b> , ne përdorim <b> anasjelltas </b> unike të matricës konstante.",
+                "learn-more": {
+                    "matrix-multiplication": "Shumëzimi i matricës",
+                    "matrix-inversion": "Anasjellta e matricës",
+                    "gf": "Fushat Galois",
+                    "gf-arithmetic": "Aritmetika në <span class='math'> 𝐺𝐹(2 ̂ 8) </span>"
+                }
+            },
+            "state-to-ciphertext": {
+                "body": "Hapi i fundit është krijimi i tekstit të shifruar që është rezultati i procesit të kriptimit. Matrica e gjendjes transpozohet dhe më pas çdo hyrje bashkohet.",
+                "learn-more": {
+                    "matrices": "Transpozimi i matricës"
+                }
+            },
+            "state-to-plaintext": {
+                "body": "Hapi i fundit është krijimi i tekstit të thjeshtë që është rezultati i procesit të deshifrimit. Matrica e gjendjes transpozohet dhe më pas çdo hyrje bashkohet.",
+                "learn-more": {
+                    "matrices": "Transpozimi i matricës"
+                }
+            },
+            "state-to-round-keys": {
+                "body": "Hapi i fundit është krijimi i çelësave të rrumbullakët që janë rezultati i procesit të zgjerimit të çelësit. Fjalët e vektorit të gjendjes merren 4 në të njëjtën kohë dhe më pas secili grup lidhet për të formuar një nënçelës."
+            }
+        },
+        "hexArea": {
+            "nibblesLeft": "kafshata e mbetur.",
+            "ready": "Gati!",
+            "copied": "Kopjuar në kujtesën e fragmenteve.",
+            "duplicated-keys": "Kopjuar në të gjitha hyrjet kryesore.",
+            "duplicated-plaintext": "Kopjuar për të enkriptuar hyrjen.",
+            "duplicated-ciphertext": "Kopjuar për të deshifruar hyrjen.",
+            "go": "Shkoni",
+            "copy-tooltip": "Kopjo në kujtesën e fragmenteve",
+            "fill-tooltip": "Plotësoni me të dhëna të rastësishme",
+            "duplicate-keys-tooltip": "Kopjo në të gjitha hyrjet kryesore",
+            "duplicate-plaintext-tooltip": "Kopjo për të enkriptuar hyrjen",
+            "duplicate-ciphertext-tooltip": "Kopjo për të deshifruar hyrjen"
+        },
+        "layer-off": "Shtresa është <b> joaktive </b> . Dilni dhe konfiguroni për ta aktivizuar.",
+        "layer-on": "Shtresa është <b> në </b> . Dilni dhe konfiguroni për ta fikur.",
+        "view-stats": "Shiko statistikat",
+        "skip-full": "Kalo te prodhimi"
+    }
+}
